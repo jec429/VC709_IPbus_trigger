@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Memory #(parameter RAM_WIDTH = 36, parameter RAM_ADDR_BITS = 9, parameter INIT_FILE = "c:\USER_LOCAL\crs\CMS_trigger\Xilinx\VC709_trigger\jectest\viv_1\project_2\empty.txt" )(
+module Memory #(parameter RAM_WIDTH = 36, parameter RAM_ADDR_BITS = 9, parameter INIT_FILE = "D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/empty.txt" )(
     // Output
 	output reg [RAM_WIDTH-1:0] output_data,
 	// Input
@@ -36,8 +36,8 @@ module Memory #(parameter RAM_WIDTH = 36, parameter RAM_ADDR_BITS = 9, parameter
     
     //  The following code is only necessary if you wish to initialize the RAM 
     //  contents via an external file (use $readmemb for binary data)
-    //initial
-    //    $readmemh(INIT_FILE, RAM, 0, 2**RAM_ADDR_BITS-1);
+    initial
+        $readmemh(INIT_FILE, RAM, 0, 2**RAM_ADDR_BITS-1);
     
     always @(posedge clock) begin
       if (write_enable)

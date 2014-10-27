@@ -41,8 +41,8 @@ module ProjRouter(
     input wire first_clk,
     input wire not_first_clk,
     
-    input [5:0] number_in,
-    output reg [5:0] read_add,
+    input [5:0] number_in1,
+    output reg [5:0] read_add1,
     input [53:0] projin,
     
     output reg [53:0] allprojout,
@@ -65,20 +65,24 @@ module ProjRouter(
     parameter zbit = 29;
     
     initial begin
-        read_add = 6'h3f;
+        read_add1 = 6'h3f;
     end
     
     always @(posedge clk) begin
-        if(read_add + 1'b1 < number_in)
-            read_add <= read_add + 1'b1;
-        else
-            read_add <= read_add;
+        if(first_clk)
+            read_add1 <= 6'h3f;
+        else begin
+            if(read_add1 + 1'b1 < number_in1) 
+                read_add1 <= read_add1 + 1'b1;
+            else
+                read_add1 <= read_add1;
+        end
     end
     
     ///////////////////////////////////////////////////////////////////////////
       
     reg [5:0] index;
-    reg [17:0] vmprojout;
+    reg [12:0] vmprojout;
     
     initial begin
         vmprojoutPHI1Z1 = 0;
@@ -92,7 +96,7 @@ module ProjRouter(
     end
     
     always @(posedge clk) begin
-        index <= read_add;
+        index <= read_add1;
         allprojout <= projin;
         if(ODD) begin
             vmprojout <= {index,projin[40:38],projin[zbit-2'd3:zbit-3'd6]};
@@ -103,20 +107,20 @@ module ProjRouter(
             if(allprojout[zbit-2'd2] == 1'b0 & (allprojout[43:41] == 3'b011 |allprojout[43:41] == 3'b100))
                 vmprojoutPHI2Z1 <= vmprojout;
             else
-                vmprojoutPHI1Z1 <= 0;
+                vmprojoutPHI2Z1 <= 0;
             if(allprojout[zbit-2'd2] == 1'b0 & (allprojout[43:41] == 3'b101 |allprojout[43:41] == 3'b110))
                 vmprojoutPHI3Z1 <= vmprojout;
             else
-                vmprojoutPHI1Z1 <= 0;
+                vmprojoutPHI3Z1 <= 0;
             if(allprojout[zbit-2'd2] == 1'b1 & (allprojout[43:41] == 3'b001 |allprojout[43:41] == 3'b010))
                 vmprojoutPHI1Z2 <= vmprojout;
             else
-                vmprojoutPHI2Z2 <= 0;
-            if(allprojout[zbit-2'd2] == 1'b1 & (allprojout[43:41] == 3'b001 |allprojout[43:41] == 3'b010))
-                vmprojoutPHI1Z2 <= vmprojout;
+                vmprojoutPHI1Z2 <= 0;
+            if(allprojout[zbit-2'd2] == 1'b1 & (allprojout[43:41] == 3'b011 |allprojout[43:41] == 3'b100))
+                vmprojoutPHI2Z2 <= vmprojout;
             else
                 vmprojoutPHI2Z2 <= 0;
-            if(allprojout[zbit-2'd2] == 1'b1 & (allprojout[43:41] == 3'b001 |allprojout[43:41] == 3'b010))
+            if(allprojout[zbit-2'd2] == 1'b1 & (allprojout[43:41] == 3'b101 |allprojout[43:41] == 3'b110))
                 vmprojoutPHI3Z2 <= vmprojout;
             else
                 vmprojoutPHI3Z2 <= 0;
@@ -144,7 +148,7 @@ module ProjRouter(
            else
                vmprojoutPHI1Z2 <= 0;
            if(allprojout[zbit-2'd2] == 1'b1 & (allprojout[43:41] == 3'b010 |allprojout[43:41] == 3'b011))
-               vmprojoutPHI1Z2 <= vmprojout;
+               vmprojoutPHI2Z2 <= vmprojout;
            else
                vmprojoutPHI2Z2 <= 0;
            if(allprojout[zbit-2'd2] == 1'b1 & (allprojout[43:41] == 3'b100 |allprojout[43:41] == 3'b101))

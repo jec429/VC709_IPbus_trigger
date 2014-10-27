@@ -41,6 +41,8 @@ module LayerRouter(
     input wire first_clk,
     input wire not_first_clk,
     
+    output read_en,
+    
     input [35:0] stubin,
     output reg [35:0] stuboutL1, 
     output reg [35:0] stuboutL2,
@@ -67,6 +69,8 @@ module LayerRouter(
     reg wr_en4;
     reg wr_en5;
     reg wr_en6;
+    reg [35:0] stubin_hold;
+    reg [2:0] BX_read;
 
     initial begin
         stub_cnt = 0;
@@ -76,56 +80,82 @@ module LayerRouter(
         numberL4 = 0;
         numberL5 = 0;
         numberL6 = 0;
+        BX_read = 0;
     end
 
     always @(posedge clk) begin
-        wr_en1 <= stub_cnt < numberL1;
-        wr_en2 <= stub_cnt < numberL2 & stub_cnt >= numberL1;
-        wr_en3 <= stub_cnt < numberL3 & stub_cnt >= numberL2;
-        wr_en4 <= stub_cnt < numberL4 & stub_cnt >= numberL3;
-        wr_en5 <= stub_cnt < numberL5 & stub_cnt >= numberL4;
-        wr_en6 <= stub_cnt < numberL6 & stub_cnt >= numberL5;
+        stubin_hold <= stubin;
+        wr_en1 <= (stub_cnt < numberL1) ;//| (stubin[35:33] == 3'b111 & (stubin[24:0] == 25'h1ffffff | stubin[24:0] == 25'h0));
+        wr_en2 <= (stub_cnt < numberL2 & stub_cnt >= numberL1) ;//| (stubin[35:33] == 3'b111 & (stubin[24:0] == 25'h1ffffff | stubin[24:0] == 25'h0));
+        wr_en3 <= (stub_cnt < numberL3 & stub_cnt >= numberL2) ;//| (stubin[35:33] == 3'b111 & (stubin[24:0] == 25'h1ffffff | stubin[24:0] == 25'h0));
+        wr_en4 <= (stub_cnt < numberL4 & stub_cnt >= numberL3) ;//| (stubin[35:33] == 3'b111 & (stubin[24:0] == 25'h1ffffff | stubin[24:0] == 25'h0));
+        wr_en5 <= (stub_cnt < numberL5 & stub_cnt >= numberL4) ;//| (stubin[35:33] == 3'b111 & (stubin[24:0] == 25'h1ffffff | stubin[24:0] == 25'h0));
+        wr_en6 <= (stub_cnt < numberL6 & stub_cnt >= numberL5) ;//| (stubin[35:33] == 3'b111 & (stubin[24:0] == 25'h1ffffff | stubin[24:0] == 25'h0));
 
-        if(first_clk) begin
-            stub_cnt <= 0;
+//        if(first_clk) begin
+//            stub_cnt <= 6'b0;
+ 
+//        end
+//        else begin
+            if(stubin_hold[35:33] == 3'b111 & stubin_hold[24:0] == 25'h1ffffff) begin
+                stub_cnt <= 0;
+                numberL1 <= 0;
+                numberL2 <= 0;
+                numberL3 <= 0;
+                numberL4 <= 0;
+                numberL5 <= 0;
+                numberL6 <= 0;
+            end
+            else begin
+                if(stubin[32:25] != 0)
+                    stub_cnt <= stub_cnt + 1;
+                else
+                    stub_cnt <= stub_cnt;
+            end
+//        end
+        
+        if(wr_en1)
+            stuboutL1 <= stubin_hold;
+        else
+            stuboutL1 <= 0;
+        if(wr_en2)
+            stuboutL2 <= stubin_hold;
+        else
+            stuboutL2 <= 0;
+        if(wr_en3)
+            stuboutL3 <= stubin_hold;
+        else
+            stuboutL3 <= 0;
+        if(wr_en4)
+            stuboutL4 <= stubin_hold;
+        else
+            stuboutL4 <= 0;
+        if(wr_en5)
+            stuboutL5 <= stubin_hold;
+        else
+            stuboutL5 <= 0;
+        if(wr_en6)
+            stuboutL6 <= stubin_hold;
+        else
+            stuboutL6 <= 0;
+            
+        if(stubin[35:33] == 3'b111 & stubin[24:0] == 25'h0) begin
+            BX_read <= stubin[27:25] + 1'b1;
+        end
+        if(stubin_hold[35:33] == 3'b111 & stubin_hold[24:0] == 25'h1ffffff & stubin[35:33] != 3'b111 & stubin[24:0] != 25'h1ffffff) begin
             numberL1 <= stubin[35:30];
             numberL2 <= stubin[29:24];
             numberL3 <= stubin[23:18];
             numberL4 <= stubin[17:12];
             numberL5 <= stubin[11:6];
             numberL6 <= stubin[5:0];
-        end
-        else begin
-            if(stubin != 0)
-                stub_cnt <= stub_cnt + 1;
-            else 
-                stub_cnt <= stub_cnt;
-                
-            if(wr_en1)
-                stuboutL1 <= stubin;
-            else
-                stuboutL1 <= 0;
-            if(wr_en2)
-                stuboutL2 <= stubin;
-            else
-                stuboutL2 <= 0;
-            if(wr_en3)
-                stuboutL3 <= stubin;
-            else
-                stuboutL3 <= 0;
-            if(wr_en4)
-                stuboutL4 <= stubin;
-            else
-                stuboutL4 <= 0;
-            if(wr_en5)
-                stuboutL5 <= stubin;
-            else
-                stuboutL5 <= 0;
-            if(wr_en6)
-                stuboutL6 <= stubin;
-            else
-                stuboutL6 <= 0;
-        end
+        end        
+//        if(BX_read == BX)
+//            read_en <= 1;
+//        else
+//            read_en <= 0;
     end
+    
+    assign read_en = BX_read == BX;
     
 endmodule

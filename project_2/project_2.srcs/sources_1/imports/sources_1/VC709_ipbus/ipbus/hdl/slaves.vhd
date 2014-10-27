@@ -19,7 +19,8 @@ entity slaves is
 		eth_err_ctrl: out std_logic_vector(35 downto 0);
 		eth_err_stat: in std_logic_vector(47 downto 0) := X"000000000000";
 		pkt_rx: in std_logic := '0';
-		pkt_tx: in std_logic := '0'
+		pkt_tx: in std_logic := '0';
+		en_proc_switch: in std_logic
 	);
 
 end slaves;
@@ -125,7 +126,8 @@ begin
 			clk => ipb_clk,
 			reset => ipb_rst,
 			ipbus_in => ipbw(6),
-			ipbus_out => ipbr(6)
+			ipbus_out => ipbr(6),
+			en_proc_switch => en_proc_switch 
 		);
 
 end rtl;

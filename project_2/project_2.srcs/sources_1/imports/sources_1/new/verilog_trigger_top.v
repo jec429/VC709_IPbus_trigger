@@ -23,7 +23,6 @@
 module verilog_trigger_top(
     input wire clk200,
     input wire reset,
-    input wire en_proc,
     // programming interface
     // Note: address and data bus sizes are hard coded in "ipbus_package.vhd"
     // inputs
@@ -36,7 +35,8 @@ module verilog_trigger_top(
     output wire [31:0] ipb_rdata,    // data returned for read operations
     output wire ipb_ack,                // 'write' data has been stored, 'read' data is ready
     output wire ipb_err,                    // '1' if error, '0' if OK?
-    output wire led_test    
+    output wire led_test,
+    input wire en_proc_switch    
     );
     
     // Convert the 200 MHz clock to something representing 40 MHz bunch crossing clock,
@@ -90,7 +90,7 @@ module verilog_trigger_top(
     end
     
     always @(posedge proc_clk) begin
-        if(en_proc)
+        if(en_proc_switch)
             clk_cnt <= clk_cnt + 1'b1;
         else begin
             clk_cnt <= 6'b0;
@@ -113,7 +113,7 @@ module verilog_trigger_top(
         // clocks and reset
         .reset(reset),                        // active HI
         .clk(proc_clk),                // processing clock at a multiple of the crossing clock
-        .en_proc(en_proc),
+        .en_proc(en_proc_switch),
         // programming interface
         // inputs
         .io_clk(ipb_clk),                    // programming clock

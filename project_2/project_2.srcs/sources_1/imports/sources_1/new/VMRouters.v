@@ -41,19 +41,64 @@ module VMRouters(
     input wire first_clk,
     input wire not_first_clk,
     
-    input [5:0] number_in,
-    output reg [5:0] read_add,
+    input [5:0] number_in1,
+    output reg [5:0] read_add1,
     input [35:0] stubinLink1,
+    input [5:0] number_in2,
+    output reg [5:0] read_add2,
+    input [35:0] stubinLink2,
+    input [5:0] number_in3,
+    output reg [5:0] read_add3,
+    input [35:0] stubinLink3,
     
-    output reg [35:0] allstubout_n1,
-    output reg [17:0] vmstuboutPHI1Z1_n1,
-    output reg [17:0] vmstuboutPHI2Z1_n1,
-    output reg [17:0] vmstuboutPHI3Z1_n1,
-    output reg [17:0] vmstuboutPHI4Z1_n1,
-    output reg [17:0] vmstuboutPHI1Z2_n1,
-    output reg [17:0] vmstuboutPHI2Z2_n1,
-    output reg [17:0] vmstuboutPHI3Z2_n1,
-    output reg [17:0] vmstuboutPHI4Z2_n1
+    output reg [35:0] allstuboutn1,
+    output [35:0] allstuboutn2,
+    output [35:0] allstuboutn3,
+    
+    output reg [17:0] vmstuboutPHI1Z1n1,
+    output [17:0] vmstuboutPHI1Z1n2,
+    output [17:0] vmstuboutPHI1Z1n3,
+    output [17:0] vmstuboutPHI1Z1n4,
+    output [17:0] vmstuboutPHI1Z1n5,
+    output [17:0] vmstuboutPHI1Z1n6,
+    output reg [17:0] vmstuboutPHI1Z2n1,
+    output [17:0] vmstuboutPHI1Z2n2,
+    output [17:0] vmstuboutPHI1Z2n3,
+    output [17:0] vmstuboutPHI1Z2n4,
+    
+    output reg [17:0] vmstuboutPHI2Z1n1,
+    output [17:0] vmstuboutPHI2Z1n2,
+    output [17:0] vmstuboutPHI2Z1n3,
+    output [17:0] vmstuboutPHI2Z1n4,
+    output [17:0] vmstuboutPHI2Z1n5,
+    output [17:0] vmstuboutPHI2Z1n6,
+    output reg [17:0] vmstuboutPHI2Z2n1,
+    output [17:0] vmstuboutPHI2Z2n2,
+    output [17:0] vmstuboutPHI2Z2n3,
+    output [17:0] vmstuboutPHI2Z2n4,
+    output [17:0] vmstuboutPHI2Z2n5,
+    output [17:0] vmstuboutPHI2Z2n6,
+    
+    output reg [17:0] vmstuboutPHI3Z1n1,
+    output [17:0] vmstuboutPHI3Z1n2,
+    output [17:0] vmstuboutPHI3Z1n3,
+    output [17:0] vmstuboutPHI3Z1n4,
+    output [17:0] vmstuboutPHI3Z1n5,
+    output [17:0] vmstuboutPHI3Z1n6,
+    output reg [17:0] vmstuboutPHI3Z2n1,
+    output [17:0] vmstuboutPHI3Z2n2,
+    output [17:0] vmstuboutPHI3Z2n3,
+    output [17:0] vmstuboutPHI3Z2n4,
+    output [17:0] vmstuboutPHI3Z2n5,
+    output [17:0] vmstuboutPHI3Z2n6,
+        
+    output reg [17:0] vmstuboutPHI4Z1n1,
+    output [17:0] vmstuboutPHI4Z1n2,
+    output [17:0] vmstuboutPHI4Z1n3,
+    output reg [17:0] vmstuboutPHI4Z2n1,
+    output [17:0] vmstuboutPHI4Z2n2,
+    output [17:0] vmstuboutPHI4Z2n3,
+    output [17:0] vmstuboutPHI4Z2n4
     
     );
     
@@ -61,132 +106,246 @@ module VMRouters(
     assign io_rd_data[31:0] = 32'h00000000;
     assign io_rd_ack = 1'b0;
 
-    parameter INNER = 1'b1;
-    parameter ODD = 1'b1;
+	///////////////////////////////////////////////
+    reg [5:0] clk_cnt;
+    reg [2:0] BX_pipe;
+    reg first_clk_pipe;
     
     initial begin
-        read_add = 6'h3f;
+       clk_cnt = 6'b0;
+       BX_pipe = 3'b111;
     end
     
     always @(posedge clk) begin
-        if(read_add + 1'b1 < number_in)
-            read_add <= read_add + 1'b1;
-        else
-            read_add <= read_add;
-    end
-    
-    ///////////////////////////////////////////////////////////////////////////
-        
-    always @(posedge clk) begin
-        if(INNER) begin        
-            allstubout_n1[35:33] <= stubinLink1[2:0];               // Stub pt      
-            allstubout_n1[32:26] <= stubinLink1[35:29];             // r
-            allstubout_n1[25:14] <= stubinLink1[28:17];             // z
-            allstubout_n1[13:0]  <= stubinLink1[16:3];              // phi
+        if(en_proc)
+           clk_cnt <= clk_cnt + 1'b1;
+        else begin
+           clk_cnt <= 6'b0;
+           BX_pipe <= 3'b111;
+        end
+        if(clk_cnt == 7'b1) begin
+           BX_pipe <= BX_pipe + 1'b1;
+           first_clk_pipe <= 1'b1;
         end
         else begin
-            allstubout_n1[35:33] <= stubinLink1[2:0];               // Stub pt
-            allstubout_n1[32:25] <= stubinLink1[35:28];             // r
-            allstubout_n1[24:17] <= stubinLink1[27:20];             // z
-            allstubout_n1[16:0]  <= stubinLink1[19:3];              // phi
+           first_clk_pipe <= 1'b0;
         end
     end
-    
-    ///////////////////////////////////////////////////////////////////////////
-    
+    ///////////////////////////////////////////////////
+    parameter INNER = 1'b1;
+    parameter ODD = 1'b1;
     reg [5:0] index;
     reg [17:0] vmstubout;
     
     initial begin
-        vmstuboutPHI1Z1_n1 = 0;
-        vmstuboutPHI2Z1_n1 = 0;
-        vmstuboutPHI3Z1_n1 = 0;
-        vmstuboutPHI4Z1_n1 = 0;
-        vmstuboutPHI1Z2_n1 = 0;
-        vmstuboutPHI2Z2_n1 = 0;
-        vmstuboutPHI3Z2_n1 = 0;
-        vmstuboutPHI4Z2_n1 = 0;
+        read_add1 = 6'h3f;
+        read_add2 = 6'h3f;
+        read_add3 = 6'h3f;
+        index = 6'h0;
     end
     
     always @(posedge clk) begin
-        index <= read_add;
-        if(INNER) begin        
-            vmstubout[17:15] <= stubinLink1[2:0];     
-            vmstubout[14:9]  <= index;
-            vmstubout[8:5]   <= stubinLink1[25:22];
-            vmstubout[4:2]   <= {ODD ^ stubinLink1[14],stubinLink1[13:12]};
-            vmstubout[1:0]   <= stubinLink1[35:34];
-            if(allstubout_n1[23] == 1'b0 & (allstubout_n1[13:11] == (3'b000 + ODD) | allstubout_n1[13:11] == (3'b001 + ODD)))
-                vmstuboutPHI1Z1_n1 <= vmstubout;
-            else 
-                vmstuboutPHI1Z1_n1 <= 0; 
-            if(allstubout_n1[23] == 1'b0 & (allstubout_n1[13:11] == (3'b010 + ODD) | allstubout_n1[13:11] == (3'b011 + ODD)))
-                vmstuboutPHI2Z1_n1 <= vmstubout;
-            else 
-                vmstuboutPHI2Z1_n1 <= 0;
-            if(allstubout_n1[23] == 1'b0 & (allstubout_n1[13:11] == (3'b100 + ODD) | allstubout_n1[13:11] == (3'b101 + ODD)))
-                vmstuboutPHI3Z1_n1 <= vmstubout;
-            else 
-                vmstuboutPHI3Z1_n1 <= 0;
-            if(allstubout_n1[23] == 1'b0 & (allstubout_n1[13:11] == 3'b111))
-                vmstuboutPHI4Z1_n1 <= vmstubout;
-            else 
-                vmstuboutPHI4Z1_n1 <= 0;
-            if(allstubout_n1[23] == 1'b1 & (allstubout_n1[13:11] == (3'b000 + ODD) | allstubout_n1[13:11] == (3'b001 + ODD)))
-                vmstuboutPHI1Z2_n1 <= vmstubout;
-            else 
-                vmstuboutPHI1Z2_n1 <= 0;
-            if(allstubout_n1[23] == 1'b1 & (allstubout_n1[13:11] == (3'b010 + ODD) | allstubout_n1[13:11] == (3'b011 + ODD)))
-                vmstuboutPHI2Z2_n1 <= vmstubout;
-            else 
-                vmstuboutPHI2Z2_n1 <= 0;
-            if(allstubout_n1[23] == 1'b1 & (allstubout_n1[13:11] == (3'b100 + ODD) | allstubout_n1[13:11] == (3'b101 + ODD)))
-                vmstuboutPHI3Z2_n1 <= vmstubout;
-            else 
-                vmstuboutPHI3Z2_n1 <= 0;
-            if(allstubout_n1[23] == 1'b1 & (allstubout_n1[13:11] == 3'b111))
-                vmstuboutPHI4Z2_n1 <= vmstubout;
-            else 
-                vmstuboutPHI4Z2_n1 <= 0;
+        if(first_clk_pipe) begin
+            read_add1 <= 6'h3f;
+            read_add2 <= 6'h3f;
+            read_add3 <= 6'h3f;    
         end
         else begin
-            vmstubout[17:15] <= stubinLink1[2:0];
+            if(read_add1 + 1'b1 < number_in1) begin
+                read_add1 <= read_add1 + 1'b1;
+            end
+            else begin
+                read_add1 <= read_add1;
+                if(read_add2 + 1'b1 < number_in2) begin
+                    read_add2 <= read_add2 + 1'b1;
+                end
+                else begin
+                    read_add2 <= read_add2;
+                    if(read_add3 + 1'b1 < number_in3) begin
+                        read_add3 <= read_add3 + 1'b1;
+                    end
+                    else
+                        read_add3 <= read_add3;
+                end
+            end
+        end
+    end
+    
+    ///////////////////////////////////////////////////////////////////////////
+    
+    reg [35:0] stubin;
+    reg [35:0] stubin1;
+            
+    always @(posedge clk) begin
+        stubin1 <= stubin;
+        if(stubinLink3 != 0)
+            stubin <= stubinLink3;
+        else begin
+            if(stubinLink2 != 0)
+                stubin <= stubinLink2;
+            else begin
+                if(stubinLink1 != 0)
+                    stubin <= stubinLink1;
+                else 
+                    stubin <= 0; 
+            end
+        end
+        if(stubin1 == 0)
+            index = 6'h0;
+        else begin
+            if(stubin1[10:0] != stubin[10:0])
+                index = index + 1'b1;
+            else
+                index = index;
+        end
+        if(INNER) begin        
+            allstuboutn1[35:33] <= stubin[2:0];               // Stub pt      
+            allstuboutn1[32:26] <= stubin[35:29];             // r
+            allstuboutn1[25:14] <= stubin[28:17];             // z
+            allstuboutn1[13:0]  <= stubin[16:3];              // phi
+        end
+        else begin
+            allstuboutn1[35:33] <= stubin[2:0];               // Stub pt
+            allstuboutn1[32:25] <= stubin[35:28];             // r
+            allstuboutn1[24:17] <= stubin[27:20];             // z
+            allstuboutn1[16:0]  <= stubin[19:3];              // phi
+        end
+    end
+    
+    ///////////////////////////////////////////////////////////////////////////
+    
+    assign allstuboutn2 = allstuboutn1;
+    assign allstuboutn3 = allstuboutn1;
+    
+    assign vmstuboutPHI1Z1n2 = vmstuboutPHI1Z1n1;
+    assign vmstuboutPHI1Z1n3 = vmstuboutPHI1Z1n1;
+    assign vmstuboutPHI1Z1n4 = vmstuboutPHI1Z1n1;
+    assign vmstuboutPHI1Z1n5 = vmstuboutPHI1Z1n1;
+    assign vmstuboutPHI1Z1n6 = vmstuboutPHI1Z1n1;
+    assign vmstuboutPHI1Z2n2 = vmstuboutPHI1Z2n1;
+    assign vmstuboutPHI1Z2n3 = vmstuboutPHI1Z2n1;
+    assign vmstuboutPHI1Z2n4 = vmstuboutPHI1Z2n1;
+        
+    assign vmstuboutPHI2Z1n2 = vmstuboutPHI2Z1n1;
+    assign vmstuboutPHI2Z1n3 = vmstuboutPHI2Z1n1;
+    assign vmstuboutPHI2Z1n4 = vmstuboutPHI2Z1n1;
+    assign vmstuboutPHI2Z1n5 = vmstuboutPHI2Z1n1;
+    assign vmstuboutPHI2Z1n6 = vmstuboutPHI2Z1n1;
+    assign vmstuboutPHI2Z2n2 = vmstuboutPHI2Z2n1;
+    assign vmstuboutPHI2Z2n3 = vmstuboutPHI2Z2n1;
+    assign vmstuboutPHI2Z2n4 = vmstuboutPHI2Z2n1;
+    assign vmstuboutPHI2Z2n5 = vmstuboutPHI2Z2n1;
+    assign vmstuboutPHI2Z2n6 = vmstuboutPHI2Z2n1;
+        
+    assign vmstuboutPHI3Z1n2 = vmstuboutPHI3Z1n1;
+    assign vmstuboutPHI3Z1n3 = vmstuboutPHI3Z1n1;
+    assign vmstuboutPHI3Z1n4 = vmstuboutPHI3Z1n1;
+    assign vmstuboutPHI3Z1n5 = vmstuboutPHI3Z1n1;
+    assign vmstuboutPHI3Z1n6 = vmstuboutPHI3Z1n1;
+    assign vmstuboutPHI3Z2n2 = vmstuboutPHI3Z2n1;
+    assign vmstuboutPHI3Z2n3 = vmstuboutPHI3Z2n1;
+    assign vmstuboutPHI3Z2n4 = vmstuboutPHI3Z2n1;
+    assign vmstuboutPHI3Z2n5 = vmstuboutPHI3Z2n1;
+    assign vmstuboutPHI3Z2n6 = vmstuboutPHI3Z2n1;
+            
+    assign vmstuboutPHI4Z1n2 = vmstuboutPHI4Z1n1;
+    assign vmstuboutPHI4Z1n3 = vmstuboutPHI4Z1n1;
+    assign vmstuboutPHI4Z2n2 = vmstuboutPHI4Z2n1;
+    assign vmstuboutPHI4Z2n3 = vmstuboutPHI4Z2n1;
+    assign vmstuboutPHI4Z2n4 = vmstuboutPHI4Z2n1;
+    
+    ////////////////////////////////////////////////////////////////////////////
+    
+    
+    initial begin
+        vmstuboutPHI1Z1n1 = 0;
+        vmstuboutPHI2Z1n1 = 0;
+        vmstuboutPHI3Z1n1 = 0;
+        vmstuboutPHI4Z1n1 = 0;
+        vmstuboutPHI1Z2n1 = 0;
+        vmstuboutPHI2Z2n1 = 0;
+        vmstuboutPHI3Z2n1 = 0;
+        vmstuboutPHI4Z2n1 = 0;
+    end
+    
+    always @(posedge clk) begin
+        if(INNER) begin        
+            vmstubout[17:15] <= stubin[2:0];     
             vmstubout[14:9]  <= index;
-            vmstubout[8:5]   <= stubinLink1[24:21];
-            vmstubout[4:2]   <= {ODD ^ stubinLink1[17],stubinLink1[16:15]};
-            vmstubout[1:0]   <= stubinLink1[35:34];
-            if(allstubout_n1[22] == 1'b0 & (allstubout_n1[16:14] == (3'b000 + ODD) | allstubout_n1[16:14] == (3'b001 + ODD)))
-                vmstuboutPHI1Z1_n1 <= vmstubout;
+            vmstubout[8:5]   <= stubin[25:22];
+            vmstubout[4:2]   <= {ODD ^ stubin[14],stubin[13:12]};
+            vmstubout[1:0]   <= stubin[35:34];
+            if(stubin1 != 0 & allstuboutn1[23] == 1'b0 & (allstuboutn1[13:11] == (3'b000 + ODD) | allstuboutn1[13:11] == (3'b001 + ODD)))
+                vmstuboutPHI1Z1n1 <= vmstubout;
             else 
-                vmstuboutPHI1Z1_n1 <= 0;
-            if(allstubout_n1[22] == 1'b0 & (allstubout_n1[16:14] == (3'b010 + ODD) | allstubout_n1[16:14] == (3'b011 + ODD)))
-                vmstuboutPHI2Z1_n1 <= vmstubout;
+                vmstuboutPHI1Z1n1 <= 0; 
+            if(allstuboutn1[23] == 1'b0 & (allstuboutn1[13:11] == (3'b010 + ODD) | allstuboutn1[13:11] == (3'b011 + ODD)))
+                vmstuboutPHI2Z1n1 <= vmstubout;
             else 
-                vmstuboutPHI2Z1_n1 <= 0;
-            if(allstubout_n1[22] == 1'b0 & (allstubout_n1[16:14] == (3'b100 + ODD) | allstubout_n1[16:14] == (3'b101 + ODD)))
-                vmstuboutPHI3Z1_n1 <= vmstubout;
+                vmstuboutPHI2Z1n1 <= 0;
+            if(allstuboutn1[23] == 1'b0 & (allstuboutn1[13:11] == (3'b100 + ODD) | allstuboutn1[13:11] == (3'b101 + ODD)))
+                vmstuboutPHI3Z1n1 <= vmstubout;
             else 
-                vmstuboutPHI3Z1_n1 <= 0;
-            if(allstubout_n1[22] == 1'b0 & (allstubout_n1[16:14] == 3'b111))
-                vmstuboutPHI4Z1_n1 <= vmstubout;
+                vmstuboutPHI3Z1n1 <= 0;
+            if(allstuboutn1[23] == 1'b0 & (allstuboutn1[13:11] == (3'b110 + ODD) | allstuboutn1[13:11] == 3'b111))
+                vmstuboutPHI4Z1n1 <= vmstubout;
             else 
-                vmstuboutPHI4Z1_n1 <= 0;
-            if(allstubout_n1[22] == 1'b1 & (allstubout_n1[16:14] == (3'b000 + ODD) | allstubout_n1[16:14] == (3'b001 + ODD)))
-                vmstuboutPHI1Z2_n1 <= vmstubout;
+                vmstuboutPHI4Z1n1 <= 0;
+            if(allstuboutn1[23] == 1'b1 & (allstuboutn1[13:11] == (3'b000 + ODD) | allstuboutn1[13:11] == (3'b001 + ODD)))
+                vmstuboutPHI1Z2n1 <= vmstubout;
             else 
-                vmstuboutPHI1Z2_n1 <= 0;
-            if(allstubout_n1[22] == 1'b1 & (allstubout_n1[16:14] == (3'b010 + ODD) | allstubout_n1[16:14] == (3'b011 + ODD)))
-                vmstuboutPHI2Z2_n1 <= vmstubout;
+                vmstuboutPHI1Z2n1 <= 0;
+            if(allstuboutn1[23] == 1'b1 & (allstuboutn1[13:11] == (3'b010 + ODD) | allstuboutn1[13:11] == (3'b011 + ODD)))
+                vmstuboutPHI2Z2n1 <= vmstubout;
             else 
-                vmstuboutPHI2Z2_n1 <= 0;
-            if(allstubout_n1[22] == 1'b1 & (allstubout_n1[16:14] == (3'b100 + ODD) | allstubout_n1[16:14] == (3'b101 + ODD)))
-                vmstuboutPHI3Z2_n1 <= vmstubout;
+                vmstuboutPHI2Z2n1 <= 0;
+            if(allstuboutn1[23] == 1'b1 & (allstuboutn1[13:11] == (3'b100 + ODD) | allstuboutn1[13:11] == (3'b101 + ODD)))
+                vmstuboutPHI3Z2n1 <= vmstubout;
             else 
-                vmstuboutPHI3Z2_n1 <= 0;
-            if(allstubout_n1[22] == 1'b1 & (allstubout_n1[16:14] == 3'b111))
-                vmstuboutPHI4Z2_n1 <= vmstubout;
+                vmstuboutPHI3Z2n1 <= 0;
+            if(allstuboutn1[23] == 1'b1 & (allstuboutn1[13:11] == (3'b110 + ODD) | allstuboutn1[13:11] == 3'b111))
+                vmstuboutPHI4Z2n1 <= vmstubout;
             else 
-                vmstuboutPHI4Z2_n1 <= 0;
+                vmstuboutPHI4Z2n1 <= 0;
+        end
+        else begin
+            vmstubout[17:15] <= stubin[2:0];
+            vmstubout[14:9]  <= index;
+            vmstubout[8:5]   <= stubin[24:21];
+            vmstubout[4:2]   <= {ODD ^ stubin[17],stubin[16:15]};
+            vmstubout[1:0]   <= stubin[35:34];
+            if(stubin1 != 0 & allstuboutn1[22] == 1'b0 & (allstuboutn1[16:14] == (3'b000 + ODD) | allstuboutn1[16:14] == (3'b001 + ODD)))
+                vmstuboutPHI1Z1n1 <= vmstubout;
+            else 
+                vmstuboutPHI1Z1n1 <= 0;
+            if(allstuboutn1[22] == 1'b0 & (allstuboutn1[16:14] == (3'b010 + ODD) | allstuboutn1[16:14] == (3'b011 + ODD)))
+                vmstuboutPHI2Z1n1 <= vmstubout;
+            else 
+                vmstuboutPHI2Z1n1 <= 0;
+            if(allstuboutn1[22] == 1'b0 & (allstuboutn1[16:14] == (3'b100 + ODD) | allstuboutn1[16:14] == (3'b101 + ODD)))
+                vmstuboutPHI3Z1n1 <= vmstubout;
+            else 
+                vmstuboutPHI3Z1n1 <= 0;
+            if(allstuboutn1[22] == 1'b0 & (allstuboutn1[16:14] == (3'b110 + ODD) | allstuboutn1[16:14] == 3'b111))
+                vmstuboutPHI4Z1n1 <= vmstubout;
+            else 
+                vmstuboutPHI4Z1n1 <= 0;
+            if(allstuboutn1[22] == 1'b1 & (allstuboutn1[16:14] == (3'b000 + ODD) | allstuboutn1[16:14] == (3'b001 + ODD)))
+                vmstuboutPHI1Z2n1 <= vmstubout;
+            else 
+                vmstuboutPHI1Z2n1 <= 0;
+            if(allstuboutn1[22] == 1'b1 & (allstuboutn1[16:14] == (3'b010 + ODD) | allstuboutn1[16:14] == (3'b011 + ODD)))
+                vmstuboutPHI2Z2n1 <= vmstubout;
+            else 
+                vmstuboutPHI2Z2n1 <= 0;
+            if(allstuboutn1[22] == 1'b1 & (allstuboutn1[16:14] == (3'b100 + ODD) | allstuboutn1[16:14] == (3'b101 + ODD)))
+                vmstuboutPHI3Z2n1 <= vmstubout;
+            else 
+                vmstuboutPHI3Z2n1 <= 0;
+            if(allstuboutn1[22] == 1'b1 & (allstuboutn1[16:14] == (3'b110 + ODD) | allstuboutn1[16:14] == 3'b111))
+                vmstuboutPHI4Z2n1 <= vmstubout;
+            else 
+                vmstuboutPHI4Z2n1 <= 0;
         end
     end
     

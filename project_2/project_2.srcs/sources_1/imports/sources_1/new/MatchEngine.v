@@ -41,11 +41,11 @@ module MatchEngine(
     input wire first_clk,
     input wire not_first_clk,
     
-    input [5:0] number_in_stub,
-    output reg [5:0] read_add_stub,
+    input [5:0] number_in1,
+    output reg [5:0] read_add1,
     input [17:0] vmstubin,
-    input [5:0] number_in_proj,
-    output reg [5:0] read_add_proj,
+    input [5:0] number_in2,
+    output reg [5:0] read_add2,
     input [12:0] vmprojin,
     
     output reg [11:0] matchout
@@ -56,25 +56,25 @@ module MatchEngine(
     assign io_rd_ack = 1'b0;
 
     initial begin
-        read_add_stub = 6'h3f;
-        read_add_proj = 6'h3f;
+        read_add1 = 6'h3f;
+        read_add2 = 6'h3f;
     end
     
     always @(posedge clk) begin
-        if(read_add_stub + 1'b1 < number_in_stub)
-            read_add_stub <= read_add_stub + 1'b1;
+        if(read_add1 + 1'b1 < number_in1)
+            read_add1 <= read_add1 + 1'b1;
         else
-            read_add_stub <= read_add_stub;
-        if(read_add_proj + 1'b1 < number_in_proj)
-            read_add_proj <= read_add_proj + 1'b1;
+            read_add1 <= read_add1;
+        if(read_add2 + 1'b1 < number_in2)
+            read_add2 <= read_add2 + 1'b1;
         else
-            read_add_proj <= read_add_proj;
+            read_add2 <= read_add2;
     end
     
     ///////////////////////////////////////////////////////////////////////////
     
     always @(posedge clk)
-        if(number_in_stub > 0 & number_in_proj > 0)
+        if(vmprojin > 0 & vmstubin > 0)
             matchout <= {vmprojin[12:7],vmstubin[14:9]};
         else
             matchout <= 12'hfff;

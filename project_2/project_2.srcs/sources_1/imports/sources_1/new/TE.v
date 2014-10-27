@@ -20,7 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module TE(
+module TE #(parameter PHI_MEM = "D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/z1p1L1L2.txt",
+            parameter Z_MEM = "D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/z1p1L1L2.txt")
+    (
     input clk,
     input reset,
     input en_proc,
@@ -41,11 +43,11 @@ module TE(
     input wire first_clk,
     input wire not_first_clk,
     
-    input [5:0] number_in_inner,
-    output reg [5:0] read_add_inner,
+    input [5:0] number_in1,
+    output reg [5:0] read_add1,
     input [17:0] innervmstubin,
-    input [5:0] number_in_outer,
-    output reg [5:0] read_add_outer,
+    input [5:0] number_in2,
+    output reg [5:0] read_add2,
     input [17:0] outervmstubin,
     
     output reg [11:0] stubpairout
@@ -57,19 +59,19 @@ module TE(
     assign io_rd_ack = 1'b0;
     
     initial begin
-        read_add_inner = 6'h3f;
-        read_add_outer = 6'h3f;
+        read_add1 = 6'h3f;
+        read_add2 = 6'h3f;
     end
     
     always @(posedge clk) begin
-        if(read_add_inner + 1'b1 < number_in_inner)
-            read_add_inner <= read_add_inner + 1'b1;
+        if(read_add1 + 1'b1 < number_in1)
+            read_add1 <= read_add1 + 1'b1;
         else
-            read_add_inner <= read_add_inner;
-        if(read_add_outer + 1'b1 < number_in_outer)
-            read_add_outer <= read_add_outer + 1'b1;
+            read_add1 <= read_add1;
+        if(read_add2 + 1'b1 < number_in2)
+            read_add2 <= read_add2 + 1'b1;
         else
-            read_add_outer <= read_add_outer;
+            read_add2 <= read_add2;
     end
     
     //////////////////////////////////////////////////////////////////////////////
@@ -81,26 +83,30 @@ module TE(
     assign delta_phi = outervmstubin[4:2] - innervmstubin[4:2];
     assign delta_r   = outervmstubin[1:0] - innervmstubin[1:0];
     
-    //Memory #(1,13,"D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/z1p1L1L2.txt") lookup_phi(
-    Memory #(1,13,"c:\USER_LOCAL\crs\CMS_trigger\Xilinx\VC709_trigger\jectest\viv_1\project_2\z1p1L1L2.txt") lookup_phi(
+    Memory #(1,13,PHI_MEM) lookup_phi(
         // Output
         .output_data(dout_phi),
         // Input
         .clock(clk),
-        .read_address({innervmstubin[17:15],outervmstubin[17:15],delta_phi,delta_r})
+        .write_address(13'b0),
+        .write_enable(1'b0),
+        .read_address({innervmstubin[17:15],outervmstubin[17:15],delta_phi,delta_r}),
+        .input_data(1'b0)
     );
     
-    //Memory #(1,12,"D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/z1p1L1L2.txt") lookup_z(
-    Memory #(1,12,"c:\USER_LOCAL\crs\CMS_trigger\Xilinx\VC709_trigger\jectest\viv_1\project_2\z1p1L1L2.txt") lookup_z(
+    Memory #(1,12,Z_MEM) lookup_z(
         // Output
         .output_data(dout_z),
         // Input
         .clock(clk),
-        .read_address({innervmstubin[8:5],outervmstubin[8:5],innervmstubin[1:0],outervmstubin[1:0]})
+        .write_address(12'b0),
+        .write_enable(1'b0),
+        .read_address({innervmstubin[8:5],outervmstubin[8:5],innervmstubin[1:0],outervmstubin[1:0]}),
+        .input_data(1'b0)
     );
     
     always @(posedge clk)
-        if(dout_phi & dout_z)
+        if(dout_phi & dout_z & innervmstubin != 0 & outervmstubin != 0)
             stubpairout <= {innervmstubin[14:9],outervmstubin[14:9]};
         else
             stubpairout <= 12'hfff;

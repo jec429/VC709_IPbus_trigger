@@ -57,7 +57,7 @@ module TrackletProjections(
     parameter ZD_BITS = 8;
     parameter layer = 1'b1;
     parameter rproj = 16'h86a;
-     
+    
     // Step 0: Read the parameters and Constants
     wire signed [13:0] irinv_0;
     wire [16:0] iphi0_0;
@@ -188,7 +188,7 @@ module TrackletProjections(
     // Declare:
     reg signed [25:0] is5_5;
     wire signed [15:0] pre_is5_5;
-    reg signed [18:0] iz_der_5;
+    reg signed [12:0] iz_der_5;
     wire signed [12:0] pre_is3_5;
     
     always @(posedge clk) begin
@@ -227,7 +227,13 @@ module TrackletProjections(
     
     assign iz_proj_6 = (is6_6 >>> (5'd24 - Z_BITS)) + iz0_6;
     
-    always @(posedge clk)
+    always @(posedge clk) begin
+        //projection[8:0]     <= iz_der_6 <<< 9 - ZD_BITS;
+        //projection[17:9]    <= iphi_der_6 >>> PHID_BITS - 9;
+        //projection[29:18]   <= iz_proj_6 <<< 12 - Z_BITS;
+        //projection[43:30]   <= iphi_proj_6 >>> 17 - PHI_BITS;
+        //projection [53:44]  <= 10'h3ff;
         projection <= {10'h3ff,iphi_proj_6,iz_proj_6,iphi_der_6,iz_der_6};
+    end
     
 endmodule

@@ -12,7 +12,8 @@ entity ipbus_trigger_top is
 		clk: in STD_LOGIC;
 		reset: in STD_LOGIC;
 		ipbus_in: in ipb_wbus;
-		ipbus_out: out ipb_rbus
+		ipbus_out: out ipb_rbus;
+		en_proc_switch: in std_logic
 	);
 	
 end ipbus_trigger_top;
@@ -32,7 +33,8 @@ component verilog_trigger_top
     ipb_err : out std_logic; 
     ipb_addr : in std_logic_vector ( 31 downto 0 ); 
     ipb_wdata : in std_logic_vector ( 31 downto 0 ); 
-    ipb_rdata : out std_logic_vector ( 31 downto 0 ) 
+    ipb_rdata : out std_logic_vector ( 31 downto 0 );
+    en_proc_switch: in std_logic 
   );
 end component;
 
@@ -89,7 +91,8 @@ begin
 	   -- outputs
 	   ipb_rdata => ipbus_out.ipb_rdata,		-- data returned for read operations
 	   ipb_ack => ipbus_out.ipb_ack,			-- 'write' data has been stored, 'read' data is ready
-	   ipb_err => ipbus_out.ipb_err			-- '1' if error, '0' if OK?
+	   ipb_err => ipbus_out.ipb_err,			-- '1' if error, '0' if OK?
+	   en_proc_switch => en_proc_switch
       );
 
 end rtl;

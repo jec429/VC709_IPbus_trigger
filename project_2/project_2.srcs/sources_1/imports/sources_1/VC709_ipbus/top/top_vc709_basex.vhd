@@ -42,7 +42,9 @@ entity top is
         sfp_rs0, sfp_rs1: out std_logic;        
         sfp_tx_disable: out std_logic;  
         -- LEDs
-        leds: out std_logic_vector(7 downto 0)
+        leds: out std_logic_vector(7 downto 0);
+        -- Switch
+        en_proc_switch: in std_logic
     );
 end top;
 
@@ -75,7 +77,7 @@ begin
     sfp_tx_disable <= '0';
     light_detect <= not sfp_los;
     locked <= clk_locked and eth_locked;
-    leds <= (pkt_rx_led, pkt_tx_led, clkdiv_locked, clk_locked, eth_locked, onehz, light_detect, not sfp_mod_det);
+    leds <= (pkt_rx_led, pkt_tx_led, clkdiv_locked, clk_locked, eth_locked, onehz, light_detect, en_proc_switch);
     mac_addr <= X"000a3502ddcc";          -- from the sticker on the board ...
     ip_addr <= X"c0a8006f";               -- 192.168.0.111
   
@@ -158,7 +160,9 @@ begin
         ipb_out => ipb_master_in,
         rst_out => sys_rst,
         pkt_rx => pkt_rx,
-        pkt_tx => pkt_tx
+        pkt_tx => pkt_tx,
+        -- en proc switch
+        en_proc_switch => en_proc_switch
       );
 
 

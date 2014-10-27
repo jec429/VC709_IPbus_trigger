@@ -44,6 +44,57 @@ module TrackletCombiner(
     input [5:0] number_in1,
     output reg [5:0] read_add1,
     input [11:0] stubpair1in,
+    input [5:0] number_in2,
+    output reg [5:0] read_add2,
+    input [11:0] stubpair2in,
+    input [5:0] number_in3,
+    output reg [5:0] read_add3,
+    input [11:0] stubpair3in,
+    input [5:0] number_in4,
+    output reg [5:0] read_add4,
+    input [11:0] stubpair4in,
+    input [5:0] number_in5,
+    output reg [5:0] read_add5,
+    input [11:0] stubpair5in,
+    input [5:0] number_in6,
+    output reg [5:0] read_add6,
+    input [11:0] stubpair6in,
+    input [5:0] number_in7,
+    output reg [5:0] read_add7,
+    input [11:0] stubpair7in,
+    input [5:0] number_in8,
+    output reg [5:0] read_add8,
+    input [11:0] stubpair8in,
+    input [5:0] number_in9,
+    output reg [5:0] read_add9,
+    input [11:0] stubpair9in,
+    input [5:0] number_in10,
+    output reg [5:0] read_add10,
+    input [11:0] stubpair10in,
+    input [5:0] number_in11,
+    output reg [5:0] read_add11,
+    input [11:0] stubpair11in,
+    input [5:0] number_in12,
+    output reg [5:0] read_add12,
+    input [11:0] stubpair12in,
+    input [5:0] number_in13,
+    output reg [5:0] read_add13,
+    input [11:0] stubpair13in,
+    input [5:0] number_in14,
+    output reg [5:0] read_add14,
+    input [11:0] stubpair14in,
+    input [5:0] number_in15,
+    output reg [5:0] read_add15,
+    input [11:0] stubpair15in,
+    input [5:0] number_in16,
+    output reg [5:0] read_add16,
+    input [11:0] stubpair16in,
+    input [5:0] number_in17,
+    output reg [5:0] read_add17,
+    input [11:0] stubpair17in,
+    input [5:0] number_in18,
+    output reg [5:0] read_add18,
+    input [11:0] stubpair18in,
     
     output reg [5:0] read_add_innerall,
     output reg [5:0] read_add_outerall,
@@ -63,6 +114,23 @@ module TrackletCombiner(
     
     initial begin
         read_add1 = 6'h3f;
+        read_add2 = 6'h3f;
+        read_add3 = 6'h3f;
+        read_add4 = 6'h3f;
+        read_add5 = 6'h3f;
+        read_add6 = 6'h3f;
+        read_add7 = 6'h3f;
+        read_add8 = 6'h3f;
+        read_add9 = 6'h3f;
+        read_add10 = 6'h3f;
+        read_add11 = 6'h3f;
+        read_add12 = 6'h3f;
+        read_add13 = 6'h3f;
+        read_add14 = 6'h3f;
+        read_add15 = 6'h3f;
+        read_add16 = 6'h3f;
+        read_add17 = 6'h3f;
+        read_add18 = 6'h3f;
         read_add_innerall = 6'h3f;
         read_add_outerall = 6'h3f;
     end
@@ -70,19 +138,191 @@ module TrackletCombiner(
     always @(posedge clk) begin
         if(read_add1 + 1'b1 < number_in1)
             read_add1 <= read_add1 + 1'b1;
-        else
+        else begin
             read_add1 <= read_add1;
-            
-        if(read_add1 < 6'h3f) begin
-            read_add_innerall <= stubpair1in[11:6];
-            read_add_outerall <= stubpair1in[5:0];
+            if(read_add2 + 1'b1 < number_in2)
+                read_add2 <= read_add2 + 1'b1;
+            else begin
+                read_add2 <= read_add2;
+                if(read_add3 + 1'b1 < number_in3)
+                    read_add3 <= read_add3 + 1'b1;
+                else begin
+                    read_add3 <= read_add3;
+                    if(read_add4 + 1'b1 < number_in4)
+                        read_add4 <= read_add4 + 1'b1;
+                    else begin
+                        read_add4 <= read_add5;
+                        if(read_add5 + 1'b1 < number_in5)
+                            read_add5 <= read_add5 + 1'b1;
+                        else begin
+                            read_add5 <= read_add5;
+                            if(read_add6 + 1'b1 < number_in6)
+                                read_add6 <= read_add6 + 1'b1;
+                            else begin
+                                read_add6 <= read_add6;
+                                if(read_add7 + 1'b1 < number_in7)
+                                    read_add7 <= read_add7 + 1'b1;
+                                else begin
+                                    read_add7 <= read_add7;
+                                    if(read_add8 + 1'b1 < number_in8)
+                                        read_add8 <= read_add8 + 1'b1;
+                                    else begin
+                                        read_add8 <= read_add8;
+                                        if(read_add9 + 1'b1 < number_in9)
+                                            read_add9 <= read_add9 + 1'b1;
+                                        else begin
+                                            read_add9 <= read_add9;
+                                            if(read_add10 + 1'b1 < number_in10)
+                                                read_add10 <= read_add10 + 1'b1;
+                                            else begin
+                                                read_add10 <= read_add10;
+                                                if(read_add11 + 1'b1 < number_in11)
+                                                    read_add11 <= read_add11 + 1'b1;
+                                                else begin
+                                                    read_add11 <= read_add11;
+                                                    if(read_add12 + 1'b1 < number_in12)
+                                                        read_add12 <= read_add12 + 1'b1;
+                                                    else begin
+                                                        read_add12 <= read_add12;
+                                                        if(read_add13 + 1'b1 < number_in13)
+                                                            read_add13 <= read_add13 + 1'b1;
+                                                        else begin
+                                                            read_add13 <= read_add13;
+                                                            if(read_add14 + 1'b1 < number_in14)
+                                                                read_add14 <= read_add14 + 1'b1;
+                                                            else begin
+                                                                read_add14 <= read_add14;
+                                                                if(read_add15 + 1'b1 < number_in15)
+                                                                    read_add15 <= read_add15 + 1'b1;
+                                                                else begin
+                                                                    read_add15 <= read_add15;
+                                                                    if(read_add16 + 1'b1 < number_in16)
+                                                                        read_add16 <= read_add16 + 1'b1;
+                                                                    else begin
+                                                                        read_add16 <= read_add16;
+                                                                        if(read_add17 + 1'b1 < number_in17)
+                                                                            read_add17 <= read_add17 + 1'b1;
+                                                                        else begin
+                                                                            read_add17 <= read_add17;
+                                                                            if(read_add18 + 1'b1 < number_in18)
+                                                                                read_add18 <= read_add18 + 1'b1;
+                                                                            else begin
+                                                                                read_add18 <= read_add18;
+                                                                            end
+                                                                        end
+                                                                    end
+                                                                end
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
         end
     end
+    
+    
+    //////////////////////////////////////////////////////////////////
+           
+   reg [11:0] stubpair;
+   
+    always @(posedge clk) begin
+        if(stubpair18in != 12'hfff)
+            stubpair <= stubpair18in;
+        else begin
+            if(stubpair17in != 12'hfff)
+                stubpair <= stubpair17in;
+            else begin
+                if(stubpair16in != 12'hfff)
+                    stubpair <= stubpair16in;
+                else begin
+                    if(stubpair15in != 12'hfff)
+                        stubpair <= stubpair15in;
+                    else begin
+                        if(stubpair14in != 12'hfff)
+                            stubpair <= stubpair14in;
+                        else begin
+                            if(stubpair13in != 12'hfff)
+                                stubpair <= stubpair13in;
+                            else begin
+                                if(stubpair12in != 12'hfff)
+                                    stubpair <= stubpair12in;
+                                else begin
+                                    if(stubpair11in != 12'hfff)
+                                        stubpair <= stubpair11in;
+                                    else begin
+                                        if(stubpair10in != 12'hfff)
+                                            stubpair <= stubpair10in;
+                                        else begin
+                                            if(stubpair9in != 12'hfff)
+                                                stubpair <= stubpair9in;
+                                            else begin
+                                                if(stubpair8in != 12'hfff)
+                                                    stubpair <= stubpair8in;
+                                                else begin
+                                                    if(stubpair7in != 12'hfff)
+                                                        stubpair <= stubpair7in;
+                                                    else begin
+                                                        if(stubpair6in != 12'hfff)
+                                                            stubpair <= stubpair6in;
+                                                        else begin
+                                                            if(stubpair5in != 12'hfff)
+                                                                stubpair <= stubpair5in;
+                                                            else begin
+                                                                if(stubpair4in != 12'hfff)
+                                                                    stubpair <= stubpair4in;
+                                                                else begin
+                                                                    if(stubpair3in != 12'hfff)
+                                                                        stubpair <= stubpair3in;
+                                                                    else begin
+                                                                        if(stubpair2in != 12'hfff)
+                                                                            stubpair <= stubpair2in;
+                                                                        else begin
+                                                                            if(stubpair1in != 12'hfff)
+                                                                                stubpair <= stubpair1in;
+                                                                        end
+                                                                    end
+                                                                end
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        
+        if(stubpair >= 0) begin
+            read_add_innerall <= stubpair[11:6];
+            read_add_outerall <= stubpair[5:0];
+        end
+    end
+    
+   
     
     //////////////////////////////////////////////////////////////////
     
     parameter krA = 12'sd981;
     parameter krB = 12'sd1514;
+    parameter PHI_BITS = 17;
+    parameter Z_BITS = 8;
+    parameter PHID_BITS = 11;
+    parameter ZD_BITS = 8;
+    parameter layer = 1'b1;
+    parameter rproj = 16'h86a;
     
     // Step 0: Define the variables
     wire signed [7:0] r_A_0;
@@ -149,7 +389,10 @@ module TrackletCombiner(
         .output_data(idr_inv_2),
         // Input
         .clock(clk),
-        .read_address(idelta_r_1)
+        .write_address(14'b0),
+        .write_enable(1'b0),
+        .read_address(idelta_r_1),
+        .input_data(18'b0)
     );
     
     always @(posedge clk) begin
@@ -460,22 +703,22 @@ module TrackletCombiner(
     
     assign trackpar = {irinv_14,iphi0_14,iz0_14,it_14};
     
-    TrackletProjections #(14,12,9,9,1'b1,16'h86a) projection1(
+    TrackletProjections_test #(14,12,9,9,1'b1,16'h86a) projection1(
     // clocks and reset
         .clk(clk),                // processing clock
         .reset(reset),                        // active HI
         .en_proc(en_proc),
         // programming interface
         .io_clk(io_clk),                    // programming clock
-        .io_sel(1'b0),                    // this module is selected for an I/O operation
+        .io_sel(io_sel_R3_io_block),                    // this module is selected for an I/O operation
         .io_addr(io_addr),        // memory address, top 16 bits alread consumed
         .io_sync(io_sync),                // start the I/O operation
         .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
         .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
         .io_wr_data(io_wr_data[31:0]),// data to write for write operations
         // outputs
-        .io_rd_data(),        // data returned for read operations
-        .io_rd_ack(),            // 'read' data from this module is ready
+        .io_rd_data(io_rd_data_R3_io_block),        // data returned for read operations
+        .io_rd_ack(io_rd_ack_R3_io_block),            // 'read' data from this module is ready
         // clocks
         .BX(BX[2:0]),
         .first_clk(first_clk),
@@ -483,6 +726,81 @@ module TrackletCombiner(
         
         .tracklet(trackpar),
         .projection(proj1)
+    );
+    
+    TrackletProjections_test #(17,8,11,8,1'b0,16'hb66) projection2(
+    // clocks and reset
+        .clk(clk),                // processing clock
+        .reset(reset),                        // active HI
+        .en_proc(en_proc),
+        // programming interface
+        .io_clk(io_clk),                    // programming clock
+        .io_sel(io_sel_R3_io_block),                    // this module is selected for an I/O operation
+        .io_addr(io_addr),        // memory address, top 16 bits alread consumed
+        .io_sync(io_sync),                // start the I/O operation
+        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+        .io_wr_data(io_wr_data[31:0]),// data to write for write operations
+        // outputs
+        .io_rd_data(io_rd_data_R3_io_block),        // data returned for read operations
+        .io_rd_ack(io_rd_ack_R3_io_block),            // 'read' data from this module is ready
+        // clocks
+        .BX(BX[2:0]),
+        .first_clk(first_clk),
+        .not_first_clk(not_first_clk),
+        
+        .tracklet(trackpar),
+        .projection(proj2)
+    );
+    
+    TrackletProjections_test #(17,8,11,8,1'b0,16'hebb) projection3(
+    // clocks and reset
+        .clk(clk),                // processing clock
+        .reset(reset),                        // active HI
+        .en_proc(en_proc),
+        // programming interface
+        .io_clk(io_clk),                    // programming clock
+        .io_sel(io_sel_R3_io_block),                    // this module is selected for an I/O operation
+        .io_addr(io_addr),        // memory address, top 16 bits alread consumed
+        .io_sync(io_sync),                // start the I/O operation
+        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+        .io_wr_data(io_wr_data[31:0]),// data to write for write operations
+        // outputs
+        .io_rd_data(io_rd_data_R3_io_block),        // data returned for read operations
+        .io_rd_ack(io_rd_ack_R3_io_block),            // 'read' data from this module is ready
+        // clocks
+        .BX(BX[2:0]),
+        .first_clk(first_clk),
+        .not_first_clk(not_first_clk),
+        
+        .tracklet(trackpar),
+        .projection(proj3)
+    );
+    
+    TrackletProjections_test #(17,8,11,8,1'b0,16'h11f7) projection4(
+    // clocks and reset
+        .clk(clk),                // processing clock
+        .reset(reset),                        // active HI
+        .en_proc(en_proc),
+        // programming interface
+        .io_clk(io_clk),                    // programming clock
+        .io_sel(io_sel_R3_io_block),                    // this module is selected for an I/O operation
+        .io_addr(io_addr),        // memory address, top 16 bits alread consumed
+        .io_sync(io_sync),                // start the I/O operation
+        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+        .io_wr_data(io_wr_data[31:0]),// data to write for write operations
+        // outputs
+        .io_rd_data(io_rd_data_R3_io_block),        // data returned for read operations
+        .io_rd_ack(io_rd_ack_R3_io_block),            // 'read' data from this module is ready
+        // clocks
+        .BX(BX[2:0]),
+        .first_clk(first_clk),
+        .not_first_clk(not_first_clk),
+        
+        .tracklet(trackpar),
+        .projection(proj4)
     );
     
 endmodule

@@ -64,9 +64,34 @@ module VMStubs(
     reg [5:0] number_hold2;
     reg [5:0] number_hold3;
     
+    reg [5:0] clk_cnt;
+    reg [2:0] BX_pipe;
+    reg first_clk_pipe;
+    
+    initial begin
+        clk_cnt = 6'b0;
+        BX_pipe = 3'b111;
+    end
+    
+    always @(posedge clk) begin
+        if(en_proc)
+            clk_cnt <= clk_cnt + 1'b1;
+        else begin
+            clk_cnt <= 6'b0;
+            BX_pipe <= 3'b111;
+        end
+        if(clk_cnt == 7'b1) begin
+            BX_pipe <= BX_pipe + 1'b1;
+            first_clk_pipe <= 1'b1;
+        end
+        else begin
+            first_clk_pipe <= 1'b0;
+        end
+    end
+    
     always @(posedge clk) begin
         data_in_dly <= data_in;
-        if(first_clk) begin
+        if(first_clk_pipe) begin
             wr_add <= 6'h3f;
             number_out <= wr_add + 1'b1;
             number_hold0 <= number_out;
@@ -92,10 +117,10 @@ module VMStubs(
         .output_data(data_out),
         // Input
         .clock(clk),
-        .write_address({BX-3'b001,wr_add}),
+        .write_address({BX_pipe-3'b001,wr_add}),
         .write_enable(wr_en),
-        .read_address({BX-3'b010,read_add}),
-        .input_data(data_in)
+        .read_address({BX_pipe-3'b010,read_add}),
+        .input_data(data_in_dly)
     );
     
     Memory #(18) VMStub_ME(
@@ -103,10 +128,10 @@ module VMStubs(
         .output_data(data_out_ME),
         // Input
         .clock(clk),
-        .write_address({BX-3'b001,wr_add}),
+        .write_address({BX_pipe-3'b001,wr_add}),
         .write_enable(wr_en),
-        .read_address({BX-3'b101,read_add_ME}),
-        .input_data(data_in)
+        .read_address({BX_pipe-3'b101,read_add_ME}),
+        .input_data(data_in_dly)
     );
     
 endmodule

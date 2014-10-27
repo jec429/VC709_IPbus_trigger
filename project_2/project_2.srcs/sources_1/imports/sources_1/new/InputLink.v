@@ -41,15 +41,17 @@ module InputLink(
     input wire first_clk,
     input wire not_first_clk,
     
+    input read_en,
     output [35:0] data_out
     );
     
     parameter LINK = 3'b000;
     reg [31:0] data_in0;
     reg [31:0] data_in1;
-    reg [39:0] data_in;
-    reg [39:0] data_in_dly;
+    reg [35:0] data_in;
+    reg [35:0] data_in_dly;
     reg en_proc_dly;
+    reg en_proc_dly2;
     wire test;
     wire wr_en;
 
@@ -65,21 +67,27 @@ module InputLink(
     always @ (posedge io_clk) begin
         if (io_wr_en && io_sel_data_in0) data_in0 <= io_wr_data;
         if (io_wr_en && io_sel_data_in1) data_in1 <= io_wr_data;
+        data_in_dly   <= data_in;
+        if ( data_in0[28:28] == data_in1[28:28])
+          data_in <= {data_in0[15:0],data_in1[19:0]};
+        else
+            data_in <= 0;
     end
     
     assign test     = data_in != data_in_dly;
-    assign wr_en    = data_in[35:33] != 3'b111 && data_in != 0 && data_in_dly[39:37] == LINK && test;
+    //assign wr_en    = data_in[19:0] != 20'hfffff && data_in != 0 && data_in_dly[38:37] == LINK && test;
+    assign wr_en    = test;
             
+    // Crossing clock domains
     always @(posedge clk) begin
-        en_proc_dly <= en_proc;
-        data_in_dly   <= data_in;
-        if ( data_in0[28:28] == data_in1[28:28])
-          data_in <= {data_in0[19:0],data_in1[19:0]};
+        en_proc_dly <= en_proc; 
+        en_proc_dly2 <= en_proc_dly;
+        
      end
-    TP_raw_stub_fifo raw_stubs(.clk(clk), .rst(reset), .din(data_in_dly[35:0]),
-                                                    .wr_en(wr_en), 
-                                                    .rd_en(not_first_clk & en_proc_dly), .dout(data_out),
-                                                    .empty(raw_stubs_link1_fifo_empty), .full(raw_stubs_link1_fifo_full));
+    wire raw_stubs_link1_fifo_empty,raw_stubs_link1_fifo_full;
+    TP_raw_stub_fifo raw_stubs(.wr_clk(clk), .rst(reset), .din(data_in_dly), .wr_en(data_in != data_in_dly & data_in_dly != 0), 
+                                .rd_clk(clk), .rd_en(en_proc_dly2 & read_en), .dout(data_out),
+                                .empty(raw_stubs_link1_fifo_empty), .full(raw_stubs_link1_fifo_full));
     
     ///////////////////////////////////////////////////////////////////////////////////////////////
     // readback mux
