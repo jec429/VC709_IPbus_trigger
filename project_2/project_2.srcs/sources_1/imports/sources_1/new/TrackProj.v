@@ -63,6 +63,7 @@ module TrackProj(
     initial begin
        clk_cnt = 6'b0;
        BX_pipe = 3'b111;
+       data_in_dly = 54'h0;
     end
     
     always @(posedge clk) begin

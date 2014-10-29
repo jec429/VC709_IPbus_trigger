@@ -87,7 +87,7 @@ module FullMatches(
             number_out <= wr_add + 1'b1;
         end
         else begin
-            if(data_in != 0 & data_in != data_in_dly) begin
+            if(data_in[16:0] != 0 & data_in != data_in_dly) begin
                 wr_add <= wr_add + 1'b1;
                 wr_en <= 1'b1;
             end

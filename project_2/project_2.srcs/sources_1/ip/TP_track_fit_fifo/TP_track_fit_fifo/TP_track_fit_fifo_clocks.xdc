@@ -46,9 +46,8 @@
 # PART OF THIS FILE AT ALL TIMES.
 #
 ################################################################################
+#------------------------------------------------------------------------------#
+#                         Native FIFO Constraints                              #
+#------------------------------------------------------------------------------#
 
-# Core Period Constraint. This constraint can be modified, and is
-# valid as long as it is met after place and route.
-create_clock -name "TS_RD_CLK" -period 1000 [ get_ports rd_clk ]
-create_clock -name "TS_WR_CLK" -period 1000 [ get_ports wr_clk ]
 ################################################################################

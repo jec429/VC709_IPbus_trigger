@@ -58,9 +58,8 @@ module TracksPars(
             wr_en <= 0;
     end
     
-    TP_track_fit_fifo tracks_pars(.clk(clk), .rst(reset), .din(data_in_dly),
-                                .wr_en(wr_en), 
-                                .rd_en(io_rd_en), .dout(data_out),
+    TP_track_fit_fifo tracks_pars(.wr_clk(clk), .rst(reset), .din(data_in_dly),.wr_en(wr_en),
+                                .rd_clk(io_clk), .rd_en(io_sel && io_rd_en), .dout(data_out),
                                 .empty(fifo_empty), .full(fifo_full));
     
     

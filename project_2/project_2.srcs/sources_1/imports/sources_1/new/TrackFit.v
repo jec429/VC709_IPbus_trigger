@@ -60,12 +60,20 @@ module TrackFit(
     output [125:0] trackout
     );
     
+    reg [5:0] trk_cnt;
+    wire test1,test2,test3,test4;
+    assign test1 = ((trk_cnt-1'b1) == fullmatch1in[35:26]);
+    assign test2 = ((trk_cnt-1'b1) == fullmatch2in[35:26]);
+    assign test3 = ((trk_cnt-1'b1) == fullmatch3in[35:26]);
+    assign test4 = ((trk_cnt-1'b1) == fullmatch4in[35:26]);
+    
     initial begin
         read_add1 = 6'h3f;
         read_add2 = 6'h3f;
         read_add3 = 6'h3f;
         read_add4 = 6'h3f;
         read_add_pars = 6'h3f;
+        trk_cnt = 6'h3f;
     end
     
     always @(posedge clk) begin
@@ -75,8 +83,10 @@ module TrackFit(
             read_add3 <= 6'h3f;
             read_add4 <= 6'h3f;
             read_add_pars <= 6'h3f;
+            trk_cnt <= 6'h3f;
         end
         else begin
+            trk_cnt <= trk_cnt + 1'b1;
             if(read_add1 + 1'b1 < number_in1)
                 read_add1 <= read_add1 + 1'b1;
             else
@@ -156,9 +166,8 @@ module TrackFit(
     reg [3:0] read_mem_z_3_pipe2;
     
     // MAKE SURE THEY COME FROM THE SAME TRACKLET
-    
     assign track_matches = {fullmatch1in,fullmatch2in[24:0],fullmatch3in[24:0],fullmatch4in[24:0]};
-    assign read_mem_phi_0 = {|track_matches[15:0],|track_matches[40:25],|track_matches[65:50],|track_matches[90:75]};
+    assign read_mem_phi_0 = {|track_matches[15:0] & test1,|track_matches[40:25] & test2,|track_matches[65:50] & test3,|track_matches[90:75] & test4};
     
     always @(posedge clk) begin
         read_mem_z_0 <= read_mem_phi_0_pipe;
@@ -290,20 +299,30 @@ module TrackFit(
         
     always @(posedge clk) begin
        if(track_matches != 0) begin
-            iphi_res_0_init    <= track_matches[91:84];
-            iphi_res_1_init    <= track_matches[66:59];
-            iphi_res_2_init    <= track_matches[41:34];
-            iphi_res_3_init    <= track_matches[16:9];
-            iz_res_0_init        <= track_matches[82:75];
-            iz_res_1_init        <= track_matches[58:50];
-            iz_res_2_init        <= track_matches[33:25];
-            iz_res_3_init        <= track_matches[8:0];
+            if(test1) iphi_res_0_init    <= track_matches[91:84];
+            else iphi_res_0_init         <= 0; 
+            if(test2) iphi_res_1_init    <= track_matches[66:59];
+            else iphi_res_1_init         <= 0;
+            if(test3) iphi_res_2_init    <= track_matches[41:34];
+            else iphi_res_2_init         <= 0;
+            if(test4) iphi_res_3_init    <= track_matches[16:9];
+            else iphi_res_3_init         <= 0;
+            if(test1) iz_res_0_init        <= track_matches[82:75];
+            else iz_res_0_init         <= 0;
+            if(test2) iz_res_1_init        <= track_matches[58:50];
+            else iz_res_1_init         <= 0;
+            if(test3) iz_res_2_init        <= track_matches[33:25];
+            else iz_res_2_init         <= 0;
+            if(test4) iz_res_3_init        <= track_matches[8:0];
+            else iz_res_3_init         <= 0;
         end
     end
     
     // Step 1.0: Pipe M's:
     // Carry Over:
     reg [53:0] trackparsin_0_pipe;
+    reg test1_hold;
+    reg test1_hold2;
     reg signed [7:0] iphi_res_0_0_pipe;
     reg signed [7:0] iphi_res_1_0_pipe;
     reg signed [7:0] iphi_res_2_0_pipe;
@@ -319,7 +338,11 @@ module TrackFit(
     reg signed [14:0] m30;
     
     always @(posedge clk) begin
-        trackparsin_0_pipe       <= trackparsin;
+        test1_hold          <= test1;
+        test1_hold2         <= test1_hold;
+        if(test1_hold2) trackparsin_0_pipe       <= trackparsin;
+        else trackparsin_0_pipe <= 0;
+        
         iphi_res_0_0_pipe    <= iphi_res_0_init;
         iphi_res_1_0_pipe    <= iphi_res_1_init;
         iphi_res_2_0_pipe    <= iphi_res_2_init;
