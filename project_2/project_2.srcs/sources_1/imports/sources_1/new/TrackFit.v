@@ -359,35 +359,35 @@ module TrackFit(
     reg signed [17:0] iz0_corr_0;
    
     pipe_delay #(.STAGES(14), .WIDTH(54))
-        trackparsin_pipe(.pipe_in(en2_5), .pipe_out(en5b), .clk(clk),
+        trackparsin_pipe(.pipe_in(en_proc), .pipe_out(en5b), .clk(clk),
         .val_in(trackparsin_0), .val_out(trackparsin_pipe7));
         
-    pipe_delay #(.STAGES(3), .WIDTH(54))
-        iphi_res_1_pipe(.pipe_in(en2_5), .pipe_out(en5b), .clk(clk),
+    pipe_delay #(.STAGES(3), .WIDTH(8))
+        iphi_res_1_pipe(.pipe_in(en_proc), .pipe_out(en5b), .clk(clk),
         .val_in(iphi_res_1_0), .val_out(iphi_res_1_pipe2));
         
-    pipe_delay #(.STAGES(7), .WIDTH(54))
-        iphi_res_2_pipe(.pipe_in(en2_5), .pipe_out(en5b), .clk(clk),
+    pipe_delay #(.STAGES(7), .WIDTH(8))
+        iphi_res_2_pipe(.pipe_in(en_proc), .pipe_out(en5b), .clk(clk),
         .val_in(iphi_res_2_0), .val_out(iphi_res_2_pipe4));
         
-    pipe_delay #(.STAGES(11), .WIDTH(54))
-        iphi_res_3_pipe(.pipe_in(en2_5), .pipe_out(en5b), .clk(clk),
+    pipe_delay #(.STAGES(11), .WIDTH(8))
+        iphi_res_3_pipe(.pipe_in(en_proc), .pipe_out(en5b), .clk(clk),
         .val_in(iphi_res_3_0), .val_out(iphi_res_3_pipe6));
         
-    pipe_delay #(.STAGES(1), .WIDTH(54))
-        iz_res_0_pipe(.pipe_in(en2_5), .pipe_out(en5b), .clk(clk),
+    pipe_delay #(.STAGES(1), .WIDTH(8))
+        iz_res_0_pipe(.pipe_in(en_proc), .pipe_out(en5b), .clk(clk),
         .val_in(iz_res_0_0), .val_out(iz_res_0_pipe1));
         
-    pipe_delay #(.STAGES(5), .WIDTH(54))
-        iz_res_1_pipe(.pipe_in(en2_5), .pipe_out(en5b), .clk(clk),
+    pipe_delay #(.STAGES(5), .WIDTH(8))
+        iz_res_1_pipe(.pipe_in(en_proc), .pipe_out(en5b), .clk(clk),
         .val_in(iz_res_1_0), .val_out(iz_res_1_pipe3));
         
-    pipe_delay #(.STAGES(9), .WIDTH(54))
-        iz_res_2_pipe(.pipe_in(en2_5), .pipe_out(en5b), .clk(clk),
+    pipe_delay #(.STAGES(9), .WIDTH(8))
+        iz_res_2_pipe(.pipe_in(en_proc), .pipe_out(en5b), .clk(clk),
         .val_in(iz_res_2_0), .val_out(iz_res_2_pipe5));
         
-    pipe_delay #(.STAGES(13), .WIDTH(54))
-        iz_res_3_pipe(.pipe_in(en2_5), .pipe_out(en5b), .clk(clk),
+    pipe_delay #(.STAGES(13), .WIDTH(8))
+        iz_res_3_pipe(.pipe_in(en_proc), .pipe_out(en5b), .clk(clk),
         .val_in(iz_res_3_0), .val_out(iz_res_3_pipe7));
     
     always @(posedge clk) begin
@@ -797,5 +797,23 @@ module TrackFit(
     assign iz0         = pre_iz0 - (iz0_corr_7>>> 4'd10);
     
     assign trackout = {ipt,iphi0,it,iz0};
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // readback mux
+    // If a particular register or memory is addressed, connect that register's or memory's signals
+    // to the 'io_rd_data' output. At the same time, assert 'io_rd_ack' to tell downstream muxes to
+    // use the 'io_rd_data' from this module as their source of data.
+    reg [31:0] io_rd_data_reg;
+    assign io_rd_data[31:0] = io_rd_data_reg[31:0];
+    // Assert 'io_rd_ack' if chip select for this module is asserted during a 'read' operation.
+    reg io_rd_ack_reg;
+    assign io_rd_ack = io_rd_ack_reg;
+    always @(posedge io_clk) begin
+        io_rd_ack_reg <= io_sync & io_sel & io_rd_en;
+    end
+    // Route the selected memory to the 'rdbk' output.
+    always @(posedge io_clk) begin
+        if (io_sel) io_rd_data_reg <= trackout[31:0];
+    end
     
 endmodule

@@ -35,7 +35,6 @@ module verilog_trigger_top(
     output wire [31:0] ipb_rdata,    // data returned for read operations
     output wire ipb_ack,                // 'write' data has been stored, 'read' data is ready
     output wire ipb_err,                    // '1' if error, '0' if OK?
-    output wire led_test,
     input wire en_proc_switch    
     );
     
@@ -71,11 +70,7 @@ module verilog_trigger_top(
     wire io_sync;
     wire io_rd_en;
     wire io_wr_en;
-    wire led_test0;
-    wire led_test1;
-    wire led_test2;
-    wire led_test3;
-    wire led_test4;
+   
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     // create the BX clocks,
     reg [5:0] clk_cnt;
@@ -89,7 +84,7 @@ module verilog_trigger_top(
         BX = 3'b111;
     end
     
-    always @(posedge proc_clk) begin
+    always @(posedge clk200) begin
         if(en_proc_switch)
             clk_cnt <= clk_cnt + 1'b1;
         else begin
@@ -112,7 +107,7 @@ module verilog_trigger_top(
     Tracklet_processing tracklet_processing_phi0(
         // clocks and reset
         .reset(reset),                        // active HI
-        .clk(proc_clk),                // processing clock at a multiple of the crossing clock
+        .clk(clk200),                // processing clock at a multiple of the crossing clock
         .en_proc(en_proc_switch),
         // programming interface
         // inputs
@@ -126,15 +121,12 @@ module verilog_trigger_top(
         // outputs
         .io_rd_data(tracklet_processing_io_rd_data),    // data returned for read operations
         .io_rd_ack(tracklet_processing_io_rd_ack),        // 'read' data from this module is ready
-        .led_test(led_test0),
         // clocks
         .BX(BX),
         .first_clk(first_clk),
         .not_first_clk(not_first_clk)
         
         );    
-
-    assign led_test = led_test0 | led_test1 | led_test2 | led_test3 | led_test4;    
         
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     // connect a state machine to handle the IPbus transactions, wait states and drive 'ipb_ack'

@@ -43,7 +43,6 @@ module TrackPars(
     
     input [53:0] data_in,
     
-    output reg [5:0] number_out,
     input [5:0] read_add,
     output [53:0] data_out
     );
@@ -88,7 +87,6 @@ module TrackPars(
             data_in_dly <= 0;
         if(first_clk_pipe) begin
             wr_add <= 6'h3f;
-            number_out <= wr_add + 1'b1;
         end
         else begin
             if(data_in != 0 & data_in != data_in_dly) begin

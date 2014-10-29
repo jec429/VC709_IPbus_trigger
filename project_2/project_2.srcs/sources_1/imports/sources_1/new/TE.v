@@ -64,14 +64,20 @@ module TE #(parameter PHI_MEM = "D:/GLIB Firmware/branches/jectest/prj/viv_1/pro
     end
     
     always @(posedge clk) begin
-        if(read_add1 + 1'b1 < number_in1)
-            read_add1 <= read_add1 + 1'b1;
-        else
-            read_add1 <= read_add1;
-        if(read_add2 + 1'b1 < number_in2)
-            read_add2 <= read_add2 + 1'b1;
-        else
-            read_add2 <= read_add2;
+        if(first_clk) begin
+            read_add1 <= 6'h3f; 
+            read_add2 <= 6'h3f;
+        end
+        else begin
+            if(read_add1 + 1'b1 < number_in1)
+                read_add1 <= read_add1 + 1'b1;
+            else
+                read_add1 <= read_add1;
+            if(read_add2 + 1'b1 < number_in2)
+                read_add2 <= read_add2 + 1'b1;
+            else
+                read_add2 <= read_add2;
+        end
     end
     
     //////////////////////////////////////////////////////////////////////////////

@@ -59,8 +59,10 @@ module InputLink(
     // Address bits "io_addr[29:28] = 2'b01" are consumed when selecting 'tracklet_processing'
     // Address bits "io_addr[27:24] = 4'b0001" are consumed when selecting 'R1Link1'
     wire io_sel_data_in0, io_sel_data_in1;
-    assign io_sel_data_in0 = io_sel && (io_addr[2:0] == 3'b011);
-    assign io_sel_data_in1 = io_sel && (io_addr[2:0] == 3'b111);
+    wire io_sel_spy;
+    assign io_sel_data_in0  = io_sel && (io_addr[2:0] == 3'b011);
+    assign io_sel_data_in1  = io_sel && (io_addr[2:0] == 3'b111);
+    assign io_sel_spy       = io_sel && (io_addr[2:0] == 3'b000);
      
     // From the IPbus perspective, the goal here is to combine the data from two 32-bit words
     // into a 36-bit word, and write that word into the 'raw_stub' fifo.   
@@ -85,9 +87,14 @@ module InputLink(
         
      end
     wire raw_stubs_link1_fifo_empty,raw_stubs_link1_fifo_full;
-    TP_raw_stub_fifo raw_stubs(.wr_clk(clk), .rst(reset), .din(data_in_dly), .wr_en(data_in != data_in_dly & data_in_dly != 0), 
+    TP_raw_stub_fifo raw_stubs(.wr_clk(io_clk), .rst(reset), .din(data_in_dly), .wr_en(data_in != data_in_dly & data_in_dly != 0), 
                                 .rd_clk(clk), .rd_en(en_proc_dly2 & read_en), .dout(data_out),
                                 .empty(raw_stubs_link1_fifo_empty), .full(raw_stubs_link1_fifo_full));
+    
+   wire [35:0] data_out_spy;
+   TP_raw_stub_fifo raw_stubs_spy(.wr_clk(io_clk), .rst(reset), .din(data_in_dly), .wr_en(data_in != data_in_dly & data_in_dly != 0), 
+                                .rd_clk(io_clk), .rd_en(io_sel_spy & io_rd_en), .dout(data_out_spy),
+                                .empty(raw_stubs_spy_link1_fifo_empty), .full(raw_stubs_spy_link1_fifo_full));
     
     ///////////////////////////////////////////////////////////////////////////////////////////////
     // readback mux
@@ -104,8 +111,8 @@ module InputLink(
     end
     // Route the selected memory to the 'rdbk' output.
     always @(posedge io_clk) begin
-        if (io_sel_data_in0) io_rd_data_reg <= data_in0;
-        if (io_sel_data_in1) io_rd_data_reg <= data_in1;
+        if (io_sel_spy) io_rd_data_reg <= data_out_spy[31:0];
+        //if (io_sel_data_in1) io_rd_data_reg <= data_out_spy[35:4];
     end
 
 endmodule

@@ -84,7 +84,7 @@ module StubPairs(
     
     always @(posedge clk) begin
         if(first_clk_pipe) begin
-            data_in_dly <= 12'hfff;
+            //data_in_dly <= 12'hfff;
             wr_add <= 6'h3f;
             number_out <= wr_add + 1'b1;
         end
