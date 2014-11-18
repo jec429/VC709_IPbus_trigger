@@ -58,6 +58,7 @@ module StubPairs(
     
     reg [5:0] clk_cnt;
     reg [2:0] BX_pipe;
+    reg [2:0] BX_pipe_dly;
     reg first_clk_pipe;
     
     initial begin
@@ -79,6 +80,7 @@ module StubPairs(
         else begin
             first_clk_pipe <= 1'b0;
         end
+        BX_pipe_dly <= BX_pipe;
     end
     
     
@@ -109,7 +111,7 @@ module StubPairs(
         .clock(clk),
         .write_address({BX_pipe-3'b010,wr_add}),
         .write_enable(wr_en),
-        .read_address({BX_pipe-3'b011,read_add}),
+        .read_address({BX_pipe_dly-3'b011,read_add}),
         .input_data(data_in_dly)
     );
 endmodule

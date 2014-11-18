@@ -83,8 +83,14 @@ module AllStubs(
     reg [35:0] data_in_dly;
     reg [5:0] wr_add;
     reg wr_en;
+    reg [2:0] BX_hold_1;
+    reg [2:0] BX_hold_2;
+    reg [2:0] BX_hold_3;
     
     always @(posedge clk) begin
+        BX_hold_1 <= BX_pipe;
+        BX_hold_2 <= BX_hold_1;
+        BX_hold_3 <= BX_hold_2;
         data_in_dly <= data_in;
         if(first_clk_pipe) begin
             wr_add <= 6'h3f;
@@ -109,7 +115,7 @@ module AllStubs(
         .clock(clk),
         .write_address({BX_pipe-3'b001,wr_add}),
         .write_enable(wr_en),
-        .read_address({BX_pipe-3'b011,read_add}),
+        .read_address({BX_hold_3-3'b011,read_add}),
         .input_data(data_in_dly)
     );
     
@@ -120,7 +126,7 @@ module AllStubs(
         .clock(clk),
         .write_address({BX_pipe-3'b001,wr_add}),
         .write_enable(wr_en),
-        .read_address({BX_pipe-3'b110,read_add_MC}),
+        .read_address({BX_pipe_dly-3'b110,read_add_MC}),
         .input_data(data_in_dly)
     );
     

@@ -111,10 +111,13 @@ module TE #(parameter PHI_MEM = "D:/GLIB Firmware/branches/jectest/prj/viv_1/pro
         .input_data(1'b0)
     );
     
-    always @(posedge clk)
+    reg [11:0] stubpair;
+    always @(posedge clk) begin
+        stubpair <= {innervmstubin[14:9],outervmstubin[14:9]};
         if(dout_phi & dout_z & innervmstubin != 0 & outervmstubin != 0)
-            stubpairout <= {innervmstubin[14:9],outervmstubin[14:9]};
+            stubpairout <= stubpair;
         else
             stubpairout <= 12'hfff;
+    end
     
 endmodule

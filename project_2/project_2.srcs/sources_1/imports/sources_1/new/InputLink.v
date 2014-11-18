@@ -45,7 +45,6 @@ module InputLink(
     output [35:0] data_out
     );
     
-    parameter LINK = 3'b000;
     reg [31:0] data_in0;
     reg [31:0] data_in1;
     reg [35:0] data_in;
@@ -70,7 +69,7 @@ module InputLink(
         if (io_wr_en && io_sel_data_in0) data_in0 <= io_wr_data;
         if (io_wr_en && io_sel_data_in1) data_in1 <= io_wr_data;
         data_in_dly   <= data_in;
-        if ( data_in0[28:28] == data_in1[28:28])
+        if ( data_in0[31:28] == data_in1[31:28])
           data_in <= {data_in0[15:0],data_in1[19:0]};
         else
             data_in <= 0;

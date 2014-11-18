@@ -69,3 +69,5 @@ set_property IOSTANDARD LVCMOS18 [get_ports {leds[7]}]
 # Switch to enable and turn on LED
 set_property PACKAGE_PIN AU38 [get_ports en_proc_switch]
 set_property IOSTANDARD LVCMOS18 [get_ports en_proc_switch]
+
+

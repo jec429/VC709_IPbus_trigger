@@ -43,7 +43,7 @@ module verilog_trigger_top(
     // This is a ratio of 15:1
     // The timing constraint file needs to match
     // 10/24/2014: 'cross_clk' = 10 MHz, 'proc_clk' = 150 MHz
-    
+    /*
      trigger_clock_synth trigger_clock_synth (
         // Clock in ports
         .clk_in1(clk200),           // input clk_in1
@@ -54,7 +54,7 @@ module verilog_trigger_top(
         .reset(reset),              // input reset
         .locked(locked)             // output locked
     );      
-    
+    */
     // Address decoding to select modules below this level.
     // "ipb_addr[31:30] = 2'b01" have already been used above this point to get here.
     wire tracklet_processing_sel;
@@ -83,10 +83,15 @@ module verilog_trigger_top(
     initial begin
         clk_cnt = 6'b0;
         BX = 3'b111;
+        en_proc <= 1'b0;
     end
+    reg en_proc;
     
     always @(posedge clk200) begin
+        if(tracklet_processing_sel & ipb_addr[27:0]==28'h5000000) en_proc <= 1'b1;
+        else en_proc <= 1'b0;
         if(en_proc_switch)
+        //if(en_proc)
             clk_cnt <= clk_cnt + 1'b1;
         else begin
             clk_cnt <= 6'b0;
@@ -110,6 +115,7 @@ module verilog_trigger_top(
         .reset(reset),                        // active HI
         .clk(clk200),                // processing clock at a multiple of the crossing clock
         .en_proc(en_proc_switch),
+        //.en_proc(en_proc),
         // programming interface
         // inputs
         .io_clk(ipb_clk),                    // programming clock

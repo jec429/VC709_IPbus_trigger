@@ -59,6 +59,7 @@ module StubsByLayer(
     reg [5:0] clk_cnt;
     reg [2:0] BX_pipe;
     reg first_clk_pipe;
+    reg [2:0] BX_hold;
     
     initial begin
        clk_cnt = 6'b0;
@@ -79,6 +80,7 @@ module StubsByLayer(
         else begin
            first_clk_pipe <= 1'b0;
         end
+        BX_hold <= BX_pipe;
     end
             
     always @(posedge clk) begin
@@ -106,7 +108,7 @@ module StubsByLayer(
         .clock(clk),
         .write_address({BX_pipe,wr_add}),
         .write_enable(wr_en),
-        .read_address({BX_pipe-1'b1,read_add}),
+        .read_address({BX_hold-1'b1,read_add}),
         .input_data(data_in_dly)
     );
     

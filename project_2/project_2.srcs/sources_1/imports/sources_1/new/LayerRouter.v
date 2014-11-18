@@ -85,7 +85,7 @@ module LayerRouter(
 
     always @(posedge clk) begin
         stubin_hold <= stubin;
-        wr_en1 <= (stub_cnt < numberL1 & stubin[35:33] != 3'b111) ;
+        wr_en1 <= (stub_cnt < numberL1 & stubin[23:0] != 24'hffffff) ;
         wr_en2 <= (stub_cnt < numberL2 & stub_cnt >= numberL1 & stubin[7:0] != 8'h00) ;
         wr_en3 <= (stub_cnt < numberL3 & stub_cnt >= numberL2 & stubin[7:0] != 8'h00) ;
         wr_en4 <= (stub_cnt < numberL4 & stub_cnt >= numberL3 & stubin[7:0] != 8'h00) ;
@@ -107,7 +107,7 @@ module LayerRouter(
                 numberL6 <= 0;
             end
             else begin
-                if(stubin[32:25] != 0)
+                if(stubin_hold[24:0] != 25'h0)
                     stub_cnt <= stub_cnt + 1;
                 else
                     stub_cnt <= stub_cnt;
