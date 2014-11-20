@@ -16,28 +16,10 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_mult.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_delay.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Memory.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/Memory.v"/>
           <Attr Name="ImportTime" Val="1413405581"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/new/TrackletProjections_test.v">
-        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
@@ -58,54 +40,6 @@
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/VMProj.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/VMProj.v"/>
-          <Attr Name="ImportTime" Val="1413926655"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/TracksPars.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/TracksPars.v"/>
-          <Attr Name="ImportTime" Val="1413926655"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/TrackProj.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/TrackProj.v"/>
-          <Attr Name="ImportTime" Val="1413926655"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/TrackPars.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/TrackPars.v"/>
-          <Attr Name="ImportTime" Val="1413926655"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/TrackFit.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/TrackFit.v"/>
-          <Attr Name="ImportTime" Val="1413923189"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/TE.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/TE.v"/>
-          <Attr Name="ImportTime" Val="1413926654"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/StubsByLayer.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/StubsByLayer.v"/>
@@ -114,88 +48,10 @@
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/StubPairs.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/StubPairs.v"/>
-          <Attr Name="ImportTime" Val="1413926655"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/ProjRouter.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/ProjRouter.v"/>
-          <Attr Name="ImportTime" Val="1413926655"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/MatchEngine.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/MatchEngine.v"/>
-          <Attr Name="ImportTime" Val="1413926655"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/MatchCombiner.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/MatchCombiner.v"/>
-          <Attr Name="ImportTime" Val="1413926655"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Match.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/Match.v"/>
-          <Attr Name="ImportTime" Val="1413926655"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/LayerRouter.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/LayerRouter.v"/>
-          <Attr Name="ImportTime" Val="1413926654"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/InputLink.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/InputLink.v"/>
-          <Attr Name="ImportTime" Val="1413923189"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/FullMatches.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/FullMatches.v"/>
-          <Attr Name="ImportTime" Val="1413926655"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/AllStubs.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/AllStubs.v"/>
           <Attr Name="ImportTime" Val="1413926654"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/AllProj.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/AllProj.v"/>
-          <Attr Name="ImportTime" Val="1413926655"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/new/TrackletCombiner_test.v">
-        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
@@ -600,6 +456,150 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_mult.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_delay.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/new/TrackletProjections_test.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/VMProj.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/VMProj.v"/>
+          <Attr Name="ImportTime" Val="1413926655"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/TracksPars.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/TracksPars.v"/>
+          <Attr Name="ImportTime" Val="1413926655"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/TrackProj.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/TrackProj.v"/>
+          <Attr Name="ImportTime" Val="1413926655"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/TrackPars.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/TrackPars.v"/>
+          <Attr Name="ImportTime" Val="1413926655"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/TrackFit.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/TrackFit.v"/>
+          <Attr Name="ImportTime" Val="1413923189"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/TE.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/TE.v"/>
+          <Attr Name="ImportTime" Val="1413926654"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/StubPairs.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/StubPairs.v"/>
+          <Attr Name="ImportTime" Val="1413926655"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/ProjRouter.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/ProjRouter.v"/>
+          <Attr Name="ImportTime" Val="1413926655"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/MatchEngine.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/MatchEngine.v"/>
+          <Attr Name="ImportTime" Val="1413926655"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/MatchCombiner.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/MatchCombiner.v"/>
+          <Attr Name="ImportTime" Val="1413926655"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Match.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/Match.v"/>
+          <Attr Name="ImportTime" Val="1413926655"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/LayerRouter.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/LayerRouter.v"/>
+          <Attr Name="ImportTime" Val="1413926654"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/FullMatches.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/FullMatches.v"/>
+          <Attr Name="ImportTime" Val="1413926655"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/AllProj.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/AllProj.v"/>
+          <Attr Name="ImportTime" Val="1413926655"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/new/TrackletCombiner_test.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/InputLink.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/new/InputLink.v"/>
+          <Attr Name="ImportTime" Val="1413923189"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/VC709_ipbus/ipbus/ethernet/hdl/mac_arbiter_decl.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2/project_2.srcs/sources_1/VC709_ipbus/ipbus/ethernet/hdl/mac_arbiter_decl.vhd"/>
@@ -654,28 +654,7 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_mult.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_delay.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Memory.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/new/TrackletProjections_test.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -690,6 +669,69 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/VMRouters.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/StubsByLayer.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/AllStubs.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Tracklet_processing.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/sim5/IPB_IO_interface.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/verilog_trigger_top.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../../GLIB Firmware/branches/jectest/prj/viv_1/project_2/project_2.srcs/sim_1/imports/sim5/Simulation_Top.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_mult.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_delay.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/new/TrackletProjections_test.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -738,13 +780,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/StubsByLayer.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/StubPairs.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -787,21 +822,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/InputLink.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/FullMatches.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/AllStubs.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -822,28 +843,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Tracklet_processing.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/sim5/IPB_IO_interface.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/verilog_trigger_top.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../../GLIB Firmware/branches/jectest/prj/viv_1/project_2/project_2.srcs/sim_1/imports/sim5/Simulation_Top.v">
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/InputLink.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -952,7 +952,7 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="constrs_1" Description="Vivado Implementation Defaults" State="current" SynthRun="synth_1">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="constrs_1" Description="Vivado Implementation Defaults" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2013"/>
         <Step Id="init_design"/>
@@ -964,6 +964,7 @@
         <Step Id="route_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="TP_raw_stub_fifo_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="TP_raw_stub_fifo" Description="Vivado Implementation Defaults" SynthRun="TP_raw_stub_fifo_synth_1">
       <Strategy Version="1" Minor="2">

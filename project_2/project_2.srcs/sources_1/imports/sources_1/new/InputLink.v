@@ -91,10 +91,10 @@ module InputLink(
                                 .empty(raw_stubs_link1_fifo_empty), .full(raw_stubs_link1_fifo_full));
     
    wire [35:0] data_out_spy;
-   TP_raw_stub_fifo raw_stubs_spy(.wr_clk(io_clk), .rst(reset), .din(data_in_dly), .wr_en(data_in != data_in_dly & data_in_dly != 0), 
+ /*  TP_raw_stub_fifo raw_stubs_spy(.wr_clk(io_clk), .rst(reset), .din(data_in_dly), .wr_en(data_in != data_in_dly & data_in_dly != 0), 
                                 .rd_clk(io_clk), .rd_en(io_sel_spy & io_rd_en), .dout(data_out_spy),
                                 .empty(raw_stubs_spy_link1_fifo_empty), .full(raw_stubs_spy_link1_fifo_full));
-    
+   */ 
     ///////////////////////////////////////////////////////////////////////////////////////////////
     // readback mux
     // If a particular register or memory is addressed, connect that register's or memory's signals

@@ -80,12 +80,13 @@ module verilog_trigger_top(
     reg not_first_clk;
     wire [31:0] TP_ipb_wdata1;
     wire [31:0] TP_ipb_wdata2;
+    reg en_proc;
     initial begin
         clk_cnt = 6'b0;
         BX = 3'b111;
         en_proc <= 1'b0;
     end
-    reg en_proc;
+    
     
     always @(posedge clk200) begin
         if(tracklet_processing_sel & ipb_addr[27:0]==28'h5000000) en_proc <= 1'b1;
