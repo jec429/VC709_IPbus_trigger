@@ -43,18 +43,18 @@ module verilog_trigger_top(
     // This is a ratio of 15:1
     // The timing constraint file needs to match
     // 10/24/2014: 'cross_clk' = 10 MHz, 'proc_clk' = 150 MHz
-    /*
-     trigger_clock_synth trigger_clock_synth (
-        // Clock in ports
-        .clk_in1(clk200),           // input clk_in1
-        // Clock out ports
-        .cross_clk(cross_clk),       // bunch crossing clock
-        .proc_clk(proc_clk),        // processing clock
-        // Status and control signals
-        .reset(reset),              // input reset
-        .locked(locked)             // output locked
-    );      
-    */
+    
+//     trigger_clock_synth trigger_clock_synth (
+//        // Clock in ports
+//        .clk_in1(clk200),           // input clk_in1
+//        // Clock out ports
+//        .cross_clk(cross_clk),       // bunch crossing clock
+//        .proc_clk(proc_clk),        // processing clock
+//        // Status and control signals
+//        .reset(reset),              // input reset
+//        .locked(locked)             // output locked
+//    );      
+    
     // Address decoding to select modules below this level.
     // "ipb_addr[31:30] = 2'b01" have already been used above this point to get here.
     wire tracklet_processing_sel;
@@ -81,17 +81,24 @@ module verilog_trigger_top(
     wire [31:0] TP_ipb_wdata1;
     wire [31:0] TP_ipb_wdata2;
     reg en_proc;
+    reg en_proc_1;
+    reg en_proc_2;
     initial begin
         clk_cnt = 6'b0;
         BX = 3'b111;
-        en_proc <= 1'b0;
     end
     
-    
-    always @(posedge clk200) begin
-        if(tracklet_processing_sel & ipb_addr[27:0]==28'h5000000) en_proc <= 1'b1;
-        else en_proc <= 1'b0;
-        if(en_proc_switch)
+    wire io_sel_en;
+    assign io_sel_en = (ipb_addr[27:24] == 4'b0101);
+    always @(posedge ipb_clk) begin
+        if (io_wr_en && io_sel_en) 
+            en_proc <= ipb_wdata;
+    end
+     always @(posedge clk200) begin 
+        //en_proc_1 <= en_proc_switch;
+        en_proc_1 <= en_proc;
+        en_proc_2 <= en_proc_1;
+        if(en_proc_2)
         //if(en_proc)
             clk_cnt <= clk_cnt + 1'b1;
         else begin
@@ -115,7 +122,7 @@ module verilog_trigger_top(
         // clocks and reset
         .reset(reset),                        // active HI
         .clk(clk200),                // processing clock at a multiple of the crossing clock
-        .en_proc(en_proc_switch),
+        .en_proc(en_proc_2),
         //.en_proc(en_proc),
         // programming interface
         // inputs
