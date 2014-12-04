@@ -47,7 +47,7 @@ module AllStubs(
     input [5:0] read_add,
     output [35:0] data_out,
     input [5:0] read_add_MC,
-    output [35:0] data_out_MC
+    output reg [35:0] data_out_MC
     );
     
     // no IPbus here yet
@@ -86,11 +86,19 @@ module AllStubs(
     reg [2:0] BX_hold_1;
     reg [2:0] BX_hold_2;
     reg [2:0] BX_hold_3;
+    reg [2:0] BX_hold_4;
+    reg [2:0] BX_hold_5;
+    reg [2:0] BX_hold_6;
+    
+    wire [35:0] pre_data_out_MC;
     
     always @(posedge clk) begin
         BX_hold_1 <= BX_pipe;
         BX_hold_2 <= BX_hold_1;
         BX_hold_3 <= BX_hold_2;
+        BX_hold_4 <= BX_hold_3;
+        BX_hold_5 <= BX_hold_4;
+        BX_hold_6 <= BX_hold_5;
         data_in_dly <= data_in;
         if(first_clk_pipe) begin
             wr_add <= 6'h3f;
@@ -106,6 +114,7 @@ module AllStubs(
                 wr_en <= 1'b0;
             end
         end
+        data_out_MC <= pre_data_out_MC;
     end
 
     Memory AllStub(
@@ -115,18 +124,18 @@ module AllStubs(
         .clock(clk),
         .write_address({BX_pipe-3'b001,wr_add}),
         .write_enable(wr_en),
-        .read_address({BX_hold_3-3'b011,read_add}),
+        .read_address({BX_hold_6-3'b011,read_add}),
         .input_data(data_in_dly)
     );
     
     Memory AllStub_MC(
         // Output
-        .output_data(data_out_MC),
+        .output_data(pre_data_out_MC),
         // Input
         .clock(clk),
         .write_address({BX_pipe-3'b001,wr_add}),
         .write_enable(wr_en),
-        .read_address({BX_pipe_dly-3'b110,read_add_MC}),
+        .read_address({BX_hold_5-3'b110,read_add_MC}),
         .input_data(data_in_dly)
     );
     

@@ -45,7 +45,7 @@ module TrackProj(
     
     output reg [5:0] number_out,
     input [5:0] read_add,
-    output [53:0] data_out
+    output reg [53:0] data_out
     );
     
     // no IPbus here yet
@@ -82,6 +82,8 @@ module TrackProj(
        end
     end
     
+    wire [53:0] pre_data_out;
+    
     always @(posedge clk) begin
         if(data_in > 0)
             data_in_dly <= data_in;
@@ -101,11 +103,12 @@ module TrackProj(
                 wr_en <= 1'b0;
             end
         end
+        data_out <= pre_data_out;
     end
 
     Memory #(54) Projection(
         // Output
-        .output_data(data_out),
+        .output_data(pre_data_out),
         // Input
         .clock(clk),
         .write_address({BX_pipe-3'b011,wr_add}),

@@ -45,7 +45,7 @@ module AllProj(
     
     //output reg [5:0] number_out,
     input [5:0] read_add,
-    output [53:0] data_out
+    output reg [53:0] data_out
     );
 
     // no IPbus here yet
@@ -81,7 +81,19 @@ module AllProj(
        end
     end
     
+    reg [2:0] BX_hold_1;
+    reg [2:0] BX_hold_2;
+    reg [2:0] BX_hold_3;
+    reg [2:0] BX_hold_4;
+    reg [2:0] BX_hold_5;
+    wire [53:0] pre_data_out;
+
     always @(posedge clk) begin
+        BX_hold_1 <= BX_pipe;
+        BX_hold_2 <= BX_hold_1;
+        BX_hold_3 <= BX_hold_2;
+        BX_hold_4 <= BX_hold_3;
+        BX_hold_5 <= BX_hold_4;
         data_in_dly <= data_in;
         if(first_clk_pipe) begin
             wr_add <= 6'h3f;
@@ -97,16 +109,17 @@ module AllProj(
                 wr_en <= 1'b0;
             end
         end
+        data_out <= pre_data_out;
     end
 
     Memory #(54) AllProjection(
         // Output
-        .output_data(data_out),
+        .output_data(pre_data_out),
         // Input
         .clock(clk),
         .write_address({BX_pipe-3'b100,wr_add}),
         .write_enable(wr_en),
-        .read_address({BX_pipe-3'b110,read_add}),
+        .read_address({BX_hold_5-3'b110,read_add}),
         .input_data(data_in_dly)
     );
 endmodule

@@ -45,7 +45,7 @@ module FullMatches(
     
     output reg [5:0] number_out,
     input [5:0] read_add,
-    output [35:0] data_out
+    output reg [35:0] data_out
     );
     // no IPbus here yet
     assign io_rd_data[31:0] = 32'h00000000;
@@ -80,6 +80,8 @@ module FullMatches(
        end
     end
     
+    wire [35:0] pre_data_out;
+    
     always @(posedge clk) begin
         data_in_dly <= data_in;
         if(first_clk_pipe) begin
@@ -96,11 +98,12 @@ module FullMatches(
                 wr_en <= 1'b0;
             end
         end
+        data_out <= pre_data_out;
     end
 
     Memory #(36) FullMatch(
         // Output
-        .output_data(data_out),
+        .output_data(pre_data_out),
         // Input
         .clock(clk),
         .write_address({BX_pipe-3'b011,wr_add}),

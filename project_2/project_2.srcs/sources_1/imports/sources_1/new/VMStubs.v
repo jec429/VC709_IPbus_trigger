@@ -45,10 +45,10 @@ module VMStubs(
     
     output reg [5:0] number_out,
     input [5:0] read_add,
-    output [17:0] data_out,
+    output reg [17:0] data_out,
     output reg [5:0] number_out_ME,
     input [5:0] read_add_ME,
-    output [17:0] data_out_ME
+    output reg [17:0] data_out_ME
     );
 
     // no IPbus here yet
@@ -89,6 +89,9 @@ module VMStubs(
         end
     end
     
+    wire [17:0] pre_data_out;
+    wire [17:0] pre_data_out_ME;
+    
     always @(posedge clk) begin
         data_in_dly <= data_in;
         if(first_clk_pipe) begin
@@ -110,11 +113,13 @@ module VMStubs(
                 wr_en <= 1'b0;
             end
         end
+        data_out <= pre_data_out;
+        data_out_ME <= pre_data_out_ME;
     end
 
     Memory #(18) VMStub(
         // Output
-        .output_data(data_out),
+        .output_data(pre_data_out),
         // Input
         .clock(clk),
         .write_address({BX_pipe-3'b001,wr_add}),
@@ -125,7 +130,7 @@ module VMStubs(
     
     Memory #(18) VMStub_ME(
         // Output
-        .output_data(data_out_ME),
+        .output_data(pre_data_out_ME),
         // Input
         .clock(clk),
         .write_address({BX_pipe-3'b001,wr_add}),

@@ -74,12 +74,11 @@ module verilog_trigger_top(
    
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     // create the BX clocks,
-    reg [5:0] clk_cnt;
-    reg [2:0] BX;
+    reg [5:0] clk_cnt;      // clock counter that determines how long the BX is
+    reg [2:0] BX;           // Bunch Crossing counter
     reg first_clk;
     reg not_first_clk;
-    wire [31:0] TP_ipb_wdata1;
-    wire [31:0] TP_ipb_wdata2;
+   
     reg en_proc;
     reg en_proc_1;
     reg en_proc_2;
@@ -89,15 +88,21 @@ module verilog_trigger_top(
     end
     
     wire io_sel_en;
+    wire en_proc_bufg;
+    
+    //BUFG enable(.O(en_proc_bufg),.I(en_proc_2)); // Force the enable signal to be a BUFG
+    
     assign io_sel_en = (ipb_addr[27:24] == 4'b0101);
+    
     always @(posedge ipb_clk) begin
         if (io_wr_en && io_sel_en) 
-            en_proc <= ipb_wdata;
-    end
-     always @(posedge clk200) begin 
+            en_proc <= ipb_wdata;       // enable comes from IPbus if add == 32'h5500000
+    end    
+    
+    always @(posedge clk200) begin 
         //en_proc_1 <= en_proc_switch;
         en_proc_1 <= en_proc;
-        en_proc_2 <= en_proc_1;
+        en_proc_2 <= en_proc_1;         // synchronize enable since it comes from IPbus clock domain
         if(en_proc_2)
         //if(en_proc)
             clk_cnt <= clk_cnt + 1'b1;
@@ -115,6 +120,8 @@ module verilog_trigger_top(
             not_first_clk <= 1'b1;
         end
     end
+    
+    
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     // connect each sector
     

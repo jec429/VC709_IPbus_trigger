@@ -45,7 +45,7 @@ module Match(
     
     output reg [5:0] number_out,
     input [5:0] read_add,
-    output [11:0] data_out
+    output reg [11:0] data_out
     );
 
     // no IPbus here yet
@@ -81,6 +81,8 @@ module Match(
         end
     end
     
+    wire [11:0] pre_data_out;
+    
     always @(posedge clk) begin
         if(first_clk_pipe) begin
             //data_in_dly <= 12'hfff;
@@ -99,11 +101,12 @@ module Match(
                 wr_en <= 1'b0;
             end
         end
+        data_out <= pre_data_out;
     end
 
     Memory #(12,9,"D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/full.txt") Match(
         // Output
-        .output_data(data_out),
+        .output_data(pre_data_out),
         // Input
         .clock(clk),
         .write_address({BX_pipe-3'b011,wr_add}),

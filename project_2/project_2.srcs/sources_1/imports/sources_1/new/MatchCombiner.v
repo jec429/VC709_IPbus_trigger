@@ -82,6 +82,8 @@ module MatchCombiner(
     reg [5:0] clk_cnt;
     reg [2:0] BX_pipe;
     reg first_clk_pipe;
+    reg first_clk_dly;
+    reg first_clk_dly2;
     
     initial begin
        clk_cnt = 6'b0;
@@ -102,6 +104,7 @@ module MatchCombiner(
         else begin
            first_clk_pipe <= 1'b0;
         end
+        
     end
     ///////////////////////////////////////////////////
     parameter PHI_BITS 	= 14;
@@ -180,49 +183,56 @@ module MatchCombiner(
                 end
             end
         end
-            
-        if(match8in < 12'hfff) begin
-            read_add_allproj <= match8in[11:6];
-            read_add_allstub <= match8in[5:0];
+        first_clk_dly <= first_clk_pipe;
+        first_clk_dly2 <= first_clk_dly;
+        if(first_clk_dly) begin
+            read_add_allstub <= 6'h3f;
+            read_add_allproj <= 6'h3f;
         end
-        else begin 
-            if(match7in < 12'hfff) begin
-                read_add_allproj <= match7in[11:6];
-                read_add_allstub <= match7in[5:0];
+        else begin                
+            if(match8in < 12'hfff) begin
+                read_add_allproj <= match8in[11:6];
+                read_add_allstub <= match8in[5:0];
             end
             else begin 
-                if(match6in < 12'hfff) begin
-                    read_add_allproj <= match6in[11:6];
-                    read_add_allstub <= match6in[5:0];
+                if(match7in < 12'hfff) begin
+                    read_add_allproj <= match7in[11:6];
+                    read_add_allstub <= match7in[5:0];
                 end
-                else begin
-                    if(match5in < 12'hfff) begin
-                        read_add_allproj <= match5in[11:6];
-                        read_add_allstub <= match5in[5:0];
+                else begin 
+                    if(match6in < 12'hfff) begin
+                        read_add_allproj <= match6in[11:6];
+                        read_add_allstub <= match6in[5:0];
                     end
                     else begin
-                        if(match4in < 12'hfff) begin
-                            read_add_allproj <= match4in[11:6];
-                            read_add_allstub <= match4in[5:0];
+                        if(match5in < 12'hfff) begin
+                            read_add_allproj <= match5in[11:6];
+                            read_add_allstub <= match5in[5:0];
                         end
                         else begin
-                            if(match3in < 12'hfff) begin
-                                read_add_allproj <= match3in[11:6];
-                                read_add_allstub <= match3in[5:0];
+                            if(match4in < 12'hfff) begin
+                                read_add_allproj <= match4in[11:6];
+                                read_add_allstub <= match4in[5:0];
                             end
                             else begin
-                                if(match2in < 12'hfff) begin
-                                    read_add_allproj <= match2in[11:6];
-                                    read_add_allstub <= match2in[5:0];
+                                if(match3in < 12'hfff) begin
+                                    read_add_allproj <= match3in[11:6];
+                                    read_add_allstub <= match3in[5:0];
                                 end
                                 else begin
-                                    if(match1in < 12'hfff) begin
-                                        read_add_allproj <= match1in[11:6];
-                                        read_add_allstub <= match1in[5:0];
+                                    if(match2in < 12'hfff) begin
+                                        read_add_allproj <= match2in[11:6];
+                                        read_add_allstub <= match2in[5:0];
                                     end
                                     else begin
-                                        read_add_allproj <= 6'h3f;
-                                        read_add_allstub <= 6'h3f;
+                                        if(match1in < 12'hfff) begin
+                                            read_add_allproj <= match1in[11:6];
+                                            read_add_allstub <= match1in[5:0];
+                                        end
+                                        else begin
+                                            read_add_allproj <= 6'h3f;
+                                            read_add_allstub <= 6'h3f;
+                                        end
                                     end
                                 end
                             end
@@ -242,6 +252,8 @@ module MatchCombiner(
     reg signed [PHID_BITS-1:0] iphi_der_0;
     reg signed [ZD_BITS-1:0] iz_der_0;
     reg signed [R_BITS-1:0] ir_stub_0;
+    reg [5:0] pre_stub_index;
+    reg [5:0] pre_proj_index;
     reg [5:0] stub_index_0;
     reg [5:0] proj_index_0;
     reg [5:0] stub_index_0_pipe;
@@ -259,8 +271,10 @@ module MatchCombiner(
     end
     
     always @(posedge clk) begin
-        stub_index_0_pipe <= read_add_allstub;
-        proj_index_0_pipe <= read_add_allproj;
+        pre_stub_index <= read_add_allstub;
+        pre_proj_index <= read_add_allproj;
+        stub_index_0_pipe <= pre_stub_index;
+        proj_index_0_pipe <= pre_proj_index;
         stub_index_0 <= stub_index_0_pipe;
         proj_index_0 <= proj_index_0_pipe;
     end
