@@ -74,7 +74,7 @@ module verilog_trigger_top(
    
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     // create the BX clocks,
-    reg [5:0] clk_cnt;      // clock counter that determines how long the BX is
+    reg [6:0] clk_cnt;      // clock counter that determines how long the BX is
     reg [2:0] BX;           // Bunch Crossing counter
     reg first_clk;
     reg not_first_clk;
@@ -83,7 +83,7 @@ module verilog_trigger_top(
     reg en_proc_1;
     reg en_proc_2;
     initial begin
-        clk_cnt = 6'b0;
+        clk_cnt = 7'b0;
         BX = 3'b111;
     end
     
@@ -107,7 +107,7 @@ module verilog_trigger_top(
         //if(en_proc)
             clk_cnt <= clk_cnt + 1'b1;
         else begin
-            clk_cnt <= 6'b0;
+            clk_cnt <= 7'b0;
             BX <= 3'b111;
         end
         if(clk_cnt == 7'b1) begin

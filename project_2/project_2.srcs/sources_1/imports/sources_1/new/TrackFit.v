@@ -60,7 +60,7 @@ module TrackFit(
     output [125:0] trackout
     );
     
-    reg [5:0] trk_cnt;
+    reg [6:0] trk_cnt;
     wire test1,test2,test3,test4;
     assign test1 = ((trk_cnt-1'b1) == fullmatch1in[35:26]);
     assign test2 = ((trk_cnt-1'b1) == fullmatch2in[35:26]);
@@ -83,7 +83,7 @@ module TrackFit(
             read_add3 <= 6'h3f;
             read_add4 <= 6'h3f;
             read_add_pars <= 6'h3f;
-            trk_cnt <= 6'h3f;
+            trk_cnt <= 7'h7f;
         end
         else begin
             trk_cnt <= trk_cnt + 1'b1;

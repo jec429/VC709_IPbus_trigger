@@ -56,7 +56,7 @@ module LayerRouter(
     assign io_rd_data[31:0] = 32'h00000000;
     assign io_rd_ack = 1'b0;
     
-    reg [5:0] stub_cnt;
+    reg [6:0] stub_cnt;
     reg [5:0] numberL1;
     reg [5:0] numberL2;
     reg [5:0] numberL3;
@@ -70,7 +70,7 @@ module LayerRouter(
     reg wr_en5;
     reg wr_en6;
     reg [35:0] stubin_hold;
-    reg [2:0] BX_read;
+    reg [7:0] BX_read;
 
     initial begin
         stub_cnt = 0;
@@ -140,7 +140,7 @@ module LayerRouter(
             stuboutL6 <= 0;
             
         if(stubin[35:33] == 3'b111 & stubin[24:0] == 25'h0) begin
-            BX_read <= stubin[27:25] + 1'b1;
+            BX_read <= stubin[32:25] + 1'b1;
         end
         if(stubin_hold[35:33] == 3'b111 & stubin_hold[24:0] == 25'h1ffffff & stubin[35:33] != 3'b111 & stubin[24:0] != 25'h1ffffff) begin
             numberL1 <= stubin[35:30];
@@ -156,6 +156,6 @@ module LayerRouter(
 //            read_en <= 0;
     end
     
-    assign read_en = BX_read == BX;
+    assign read_en = (BX_read%8) == BX;
     
 endmodule

@@ -56,12 +56,12 @@ module TrackProj(
     reg [5:0] wr_add;
     reg wr_en;
     
-    reg [5:0] clk_cnt;
+    reg [6:0] clk_cnt;
     reg [2:0] BX_pipe;
     reg first_clk_pipe;
     
     initial begin
-       clk_cnt = 6'b0;
+       clk_cnt = 7'b0;
        BX_pipe = 3'b111;
        data_in_dly = 54'h0;
     end
@@ -70,7 +70,7 @@ module TrackProj(
        if(en_proc)
            clk_cnt <= clk_cnt + 1'b1;
        else begin
-           clk_cnt <= 6'b0;
+           clk_cnt <= 7'b0;
            BX_pipe <= 3'b111;
        end
        if(clk_cnt == 7'b1) begin

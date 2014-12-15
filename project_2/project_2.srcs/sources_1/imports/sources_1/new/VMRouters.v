@@ -107,12 +107,12 @@ module VMRouters(
     assign io_rd_ack = 1'b0;
 
 	///////////////////////////////////////////////
-    reg [5:0] clk_cnt;
+    reg [6:0] clk_cnt;
     reg [2:0] BX_pipe;
     reg first_clk_pipe;
     
     initial begin
-       clk_cnt = 6'b0;
+       clk_cnt = 7'b0;
        BX_pipe = 3'b111;
     end
     
@@ -120,7 +120,7 @@ module VMRouters(
         if(en_proc)
            clk_cnt <= clk_cnt + 1'b1;
         else begin
-           clk_cnt <= 6'b0;
+           clk_cnt <= 7'b0;
            BX_pipe <= 3'b111;
         end
         if(clk_cnt == 7'b1) begin
@@ -193,7 +193,7 @@ module VMRouters(
         if(stubin1 == 0)
             index = 6'h0;
         else begin
-            if(stubin1[10:0] != stubin[10:0])
+            if(stubin1 != stubin)
                 index = index + 1'b1;
             else
                 index = index;

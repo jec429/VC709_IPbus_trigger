@@ -62,12 +62,12 @@ module TE #(parameter PHI_MEM = "D:/GLIB Firmware/branches/jectest/prj/viv_1/pro
         read_add1 = 6'h3f;
         read_add2 = 6'h3f;
     end
-    reg [5:0] clk_cnt;
+    reg [6:0] clk_cnt;
     reg [2:0] BX_pipe;
     reg first_clk_pipe;
     
     initial begin
-       clk_cnt = 6'b0;
+       clk_cnt = 7'b0;
        BX_pipe = 3'b111;
     end
     
@@ -75,7 +75,7 @@ module TE #(parameter PHI_MEM = "D:/GLIB Firmware/branches/jectest/prj/viv_1/pro
        if(en_proc)
            clk_cnt <= clk_cnt + 1'b1;
        else begin
-           clk_cnt <= 6'b0;
+           clk_cnt <= 7'b0;
            BX_pipe <= 3'b111;
        end
        if(clk_cnt == 7'b1) begin
@@ -89,17 +89,24 @@ module TE #(parameter PHI_MEM = "D:/GLIB Firmware/branches/jectest/prj/viv_1/pro
     always @(posedge clk) begin
         if(first_clk_pipe) begin
             read_add1 <= 6'h3f; 
-            read_add2 <= 6'h3f;
+            read_add2 <= 6'h0; // if number_in2 > 0?
         end
         else begin
             if(read_add1 + 1'b1 < number_in1)
                 read_add1 <= read_add1 + 1'b1;
-            else
+            else begin
                 read_add1 <= read_add1;
-            if(read_add2 + 1'b1 < number_in2)
-                read_add2 <= read_add2 + 1'b1;
-            else
-                read_add2 <= read_add2;
+                if(read_add1 + 1'b1 == number_in1 && read_add2 + 1'b1 < number_in2) begin
+                    read_add2 <= read_add2 + 1'b1;
+                    read_add1 <= 6'h0;
+                end
+                else
+                    read_add2 <= read_add2;
+            end
+            //if(read_add2 + 1'b1 < number_in2)
+                //read_add2 <= read_add2 + 1'b1;
+            //else
+                //read_add2 <= read_add2;
         end
     end
     
