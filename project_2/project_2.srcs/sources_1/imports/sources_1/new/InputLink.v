@@ -78,7 +78,7 @@ module InputLink(
     assign test     = data_in != data_in_dly;
     //assign wr_en    = data_in[19:0] != 20'hfffff && data_in != 0 && data_in_dly[38:37] == LINK && test;
     assign wr_en    = test;
-            
+    
     // Crossing clock domains
     always @(posedge clk) begin
         en_proc_dly <= en_proc; 
