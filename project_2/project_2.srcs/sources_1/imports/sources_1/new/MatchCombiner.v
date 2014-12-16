@@ -71,7 +71,7 @@ module MatchCombiner(
     input [35:0] allstubin,
     input [53:0] allprojin,
     
-    output [35:0] projout
+    output reg [35:0] projout
     );
 
     // no IPbus here yet
@@ -366,20 +366,23 @@ module MatchCombiner(
     wire signed [12:0] iphi_res_3;
     reg [5:0] stub_index_3;
     reg [5:0] proj_index_3;
+    wire [35:0] pre_projout;
     
     always @(posedge clk) begin
         full_iphi_res_3     <= iphi_stub_2 - iphi_2;
         iz_res_3                 <= iz_stub_2 - iz_2;
         stub_index_3 <= stub_index_2;
         proj_index_3 <= proj_index_2;
+        projout <= pre_projout;
     end
 
     assign iphi_res_3 = full_iphi_res_3 <<< (2'b11 & {layer,layer} );
     
-    assign projout[8:0]     = iz_res_3;
-    assign projout[16:9]    = iphi_res_3[7:0];
-    assign projout[25:17]   = {3'b000,stub_index_3};
-    assign projout[35:26]   = {4'b0000,proj_index_3};
+    
+    assign pre_projout[8:0]     = iz_res_3;
+    assign pre_projout[16:9]    = iphi_res_3[7:0];
+    assign pre_projout[25:17]   = {3'b000,stub_index_3};
+    assign pre_projout[35:26]   = {4'b0000,proj_index_3};
 
     /////////////////////////////////////////////////////////
     

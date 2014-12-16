@@ -337,11 +337,15 @@ module TrackFit(
     reg signed [14:0] m20;
     reg signed [14:0] m30;
     
+    reg [59:0] dout_dphi_0_pipe;
+        
     always @(posedge clk) begin
         test1_hold          <= test1;
         test1_hold2         <= test1_hold;
         if(test1_hold2) trackparsin_0_pipe       <= trackparsin;
         else trackparsin_0_pipe <= 0;
+        
+        dout_dphi_0_pipe <= dout_dphi_0;
         
         iphi_res_0_0_pipe    <= iphi_res_0_init;
         iphi_res_1_0_pipe    <= iphi_res_1_init;
@@ -351,10 +355,10 @@ module TrackFit(
         iz_res_1_0_pipe        <= iz_res_1_init;
         iz_res_2_0_pipe        <= iz_res_2_init;
         iz_res_3_0_pipe        <= iz_res_3_init;
-        m00 <= -dout_dphi_0[59:45];
-        m10 <= -dout_dphi_0[44:30];
-        m20 <= -dout_dphi_0[29:15];
-        m30 <= -dout_dphi_0[14:0];
+        m00 <= -dout_dphi_0_pipe[59:45];
+        m10 <= -dout_dphi_0_pipe[44:30];
+        m20 <= -dout_dphi_0_pipe[29:15];
+        m30 <= -dout_dphi_0_pipe[14:0];
     end
     
     // Step 1.1: Read phi_0 LUT:
