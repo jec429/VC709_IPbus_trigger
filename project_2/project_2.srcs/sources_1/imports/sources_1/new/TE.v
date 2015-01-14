@@ -86,6 +86,12 @@ module TE #(parameter PHI_MEM = "D:/GLIB Firmware/branches/jectest/prj/viv_1/pro
            first_clk_pipe <= 1'b0;
        end
     end
+    
+    // Double nested loop
+    // Hold outer stub 2 clk cycles
+    reg [17:0] outervmstubin_hold1;
+    reg [17:0] outervmstubin_hold2;
+    
     always @(posedge clk) begin
         if(first_clk_pipe) begin
             read_add1 <= 6'h3f; 
@@ -108,6 +114,8 @@ module TE #(parameter PHI_MEM = "D:/GLIB Firmware/branches/jectest/prj/viv_1/pro
             //else
                 //read_add2 <= read_add2;
         end
+        outervmstubin_hold1 <= outervmstubin;
+        outervmstubin_hold2 <= outervmstubin_hold1;
     end
     
     //////////////////////////////////////////////////////////////////////////////
@@ -116,8 +124,8 @@ module TE #(parameter PHI_MEM = "D:/GLIB Firmware/branches/jectest/prj/viv_1/pro
     wire [2:0] delta_r;
     wire dout_phi;
     wire dout_z;
-    assign delta_phi = outervmstubin[4:2] - innervmstubin[4:2];
-    assign delta_r   = outervmstubin[1:0] - innervmstubin[1:0];
+    assign delta_phi = outervmstubin_hold2[4:2] - innervmstubin[4:2];
+    assign delta_r   = outervmstubin_hold2[1:0] - innervmstubin[1:0];
     
     Memory #(1,13,PHI_MEM) lookup_phi(
         // Output
