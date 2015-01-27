@@ -100,10 +100,10 @@ module verilog_trigger_top(
     end    
     
     always @(posedge clk200) begin 
-        //en_proc_1 <= en_proc_switch;
-        en_proc_1 <= en_proc;
+        en_proc_1 <= en_proc_switch;
+        //en_proc_1 <= en_proc;
         en_proc_2 <= en_proc_1;         // synchronize enable since it comes from IPbus clock domain
-        if(en_proc_2)
+        if(en_proc_switch)
         //if(en_proc)
             clk_cnt <= clk_cnt + 1'b1;
         else begin
@@ -129,7 +129,7 @@ module verilog_trigger_top(
         // clocks and reset
         .reset(reset),                        // active HI
         .clk(clk200),                // processing clock at a multiple of the crossing clock
-        .en_proc(en_proc_2),
+        .en_proc(en_proc_switch),
         //.en_proc(en_proc),
         // programming interface
         // inputs

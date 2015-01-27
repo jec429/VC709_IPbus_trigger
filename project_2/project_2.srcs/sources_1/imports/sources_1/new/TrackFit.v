@@ -59,7 +59,30 @@ module TrackFit(
     
     output [125:0] trackout
     );
+    reg [6:0] clk_cnt;
+    reg [2:0] BX_pipe;
+    reg first_clk_pipe;
     
+    initial begin
+       clk_cnt = 7'b0;
+       BX_pipe = 3'b111;
+    end
+    
+    always @(posedge clk) begin
+       if(en_proc)
+           clk_cnt <= clk_cnt + 1'b1;
+       else begin
+           clk_cnt <= 7'b0;
+           BX_pipe <= 3'b111;
+       end
+       if(clk_cnt == 7'b1) begin
+           BX_pipe <= BX_pipe + 1'b1;
+           first_clk_pipe <= 1'b1;
+       end
+       else begin
+           first_clk_pipe <= 1'b0;
+       end
+    end
     reg [6:0] trk_cnt;
     wire test1,test2,test3,test4;
     assign test1 = ((trk_cnt-1'b1) == fullmatch1in[35:26]);
@@ -77,7 +100,7 @@ module TrackFit(
     end
     
     always @(posedge clk) begin
-        if(first_clk) begin
+        if(first_clk_pipe) begin
             read_add1 <= 6'h3f;
             read_add2 <= 6'h3f;
             read_add3 <= 6'h3f;
@@ -124,7 +147,7 @@ module TrackFit(
     end
     
     /////////////////////////////////////////////////////////////////////
-    wire [110:0] track_matches;
+    reg [110:0] track_matches;
     wire [59:0] dout_dphi_0;
     wire [59:0] dout_dphi_1;
     wire [59:0] dout_dphi_2;
@@ -166,10 +189,10 @@ module TrackFit(
     reg [3:0] read_mem_z_3_pipe2;
     
     // MAKE SURE THEY COME FROM THE SAME TRACKLET
-    assign track_matches = {fullmatch1in,fullmatch2in[24:0],fullmatch3in[24:0],fullmatch4in[24:0]};
     assign read_mem_phi_0 = {|track_matches[15:0] & test1,|track_matches[40:25] & test2,|track_matches[65:50] & test3,|track_matches[90:75] & test4};
     
     always @(posedge clk) begin
+        track_matches <= {fullmatch1in,fullmatch2in[24:0],fullmatch3in[24:0],fullmatch4in[24:0]};
         read_mem_z_0 <= read_mem_phi_0_pipe;
         read_mem_phi_1 <= read_mem_z_0_pipe;
         read_mem_z_1 <= read_mem_phi_1_pipe;

@@ -134,7 +134,7 @@ module TE #(parameter PHI_MEM = "D:/GLIB Firmware/branches/jectest/prj/viv_1/pro
         .clock(clk),
         .write_address(13'b0),
         .write_enable(1'b0),
-        .read_address({innervmstubin[17:15],outervmstubin[17:15],delta_phi,delta_r}),
+        .read_address({innervmstubin[17:15],outervmstubin_hold2[17:15],delta_phi,delta_r}),
         .input_data(1'b0)
     );
     
@@ -145,15 +145,21 @@ module TE #(parameter PHI_MEM = "D:/GLIB Firmware/branches/jectest/prj/viv_1/pro
         .clock(clk),
         .write_address(12'b0),
         .write_enable(1'b0),
-        .read_address({innervmstubin[8:5],outervmstubin[8:5],innervmstubin[1:0],outervmstubin[1:0]}),
+        .read_address({innervmstubin[8:5],outervmstubin_hold2[8:5],innervmstubin[1:0],outervmstubin_hold2[1:0]}),
         .input_data(1'b0)
     );
     
     reg [11:0] stubpair;
+    reg [11:0] stubpair_pipe;
+    reg dout_phi_pipe; 
+    reg dout_z_pipe;
     always @(posedge clk) begin
-        stubpair <= {innervmstubin[14:9],outervmstubin[14:9]};
-        if(dout_phi & dout_z & innervmstubin != 0 & outervmstubin != 0)
-            stubpairout <= stubpair;
+        stubpair <= {innervmstubin[14:9],outervmstubin_hold2[14:9]};
+        stubpair_pipe <= stubpair;
+        dout_phi_pipe <= dout_phi;
+        dout_z_pipe <= dout_z;
+        if(dout_phi_pipe & dout_z_pipe & innervmstubin != 0 & outervmstubin_hold2 != 0)
+            stubpairout <= stubpair_pipe;
         else
             stubpairout <= 12'hfff;
     end

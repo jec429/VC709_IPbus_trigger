@@ -103,11 +103,13 @@ module MatchEngine(
     end
     
     ///////////////////////////////////////////////////////////////////////////
+    reg [11:0] match_pipe;
     
-    always @(posedge clk)
+    always @(posedge clk) begin
+        matchout   <= match_pipe;
         if(vmprojin > 0 & vmstubin > 0)
-            matchout <= {vmprojin[12:7],vmstubin[14:9]};
+            match_pipe <= {vmprojin[12:7],vmstubin[14:9]};
         else
-            matchout <= 12'hfff;
-    
+            match_pipe <= 12'hfff;
+    end
 endmodule

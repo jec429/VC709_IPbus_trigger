@@ -42,6 +42,7 @@ module VMStubs(
     input wire not_first_clk,
     
     input [17:0] data_in,
+    input enable,
     
     output reg [5:0] number_out,
     input [5:0] read_add,
@@ -123,7 +124,7 @@ module VMStubs(
         // Input
         .clock(clk),
         .write_address({BX_pipe-3'b001,wr_add}),
-        .write_enable(wr_en),
+        .write_enable(wr_en & enable),
         .read_address({BX_pipe-3'b010,read_add}),
         .input_data(data_in_dly)
     );
@@ -134,7 +135,7 @@ module VMStubs(
         // Input
         .clock(clk),
         .write_address({BX_pipe-3'b001,wr_add}),
-        .write_enable(wr_en),
+        .write_enable(wr_en & enable),
         .read_address({BX_pipe-3'b101,read_add_ME}),
         .input_data(data_in_dly)
     );

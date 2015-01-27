@@ -124,7 +124,7 @@ module AllStubs(
         .clock(clk),
         .write_address({BX_pipe-3'b001,wr_add}),
         .write_enable(wr_en),
-        .read_address({BX_hold_6-3'b011,read_add}),
+        .read_address({BX_hold_5-3'b011,read_add}),
         .input_data(data_in_dly)
     );
     
