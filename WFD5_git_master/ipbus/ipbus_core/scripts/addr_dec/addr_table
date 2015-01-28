@@ -1,0 +1,12 @@
+# Example addr_table file to show the format
+#
+# num	name		base	addr_width
+
+0	status_reg		0x0		    0
+1	ctrl_reg		0x1		    0
+2	ram	     		0x1000		10
+3	write_only_reg	0x2000		1
+4	counters		0x3000		4
+5	channel			0x4000		4
+6	daq_link		0x5000  	2
+7	ipbus_user		0x1000000	24
