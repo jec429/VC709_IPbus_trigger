@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2013.4 (64-bit)
+# SW Build 353583 on Mon Dec  9 17:49:19 MST 2013
+# IP Build 208076 on Mon Dec  2 12:38:17 MST 2013
+# Start of session at: Fri Jul 18 15:01:15 2014
+# Process ID: 12468
+# Log file: c:/user_local/crs/gminus2/xilinx/WFD5_git_master/scripts/vivado.log
+# Journal file: c:/user_local/crs/gminus2/xilinx/WFD5_git_master/scripts\vivado.jou
+#-----------------------------------------------------------
+source implement.tcl
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -name timing_1
+generate_target {Synthesis} [get_files C:/USER_LOCAL/crs/Gminus2/Xilinx/WFD5_git_master/ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0.xci]
