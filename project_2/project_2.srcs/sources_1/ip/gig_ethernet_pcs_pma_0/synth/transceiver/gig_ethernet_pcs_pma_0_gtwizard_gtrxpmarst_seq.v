@@ -2,7 +2,7 @@
 //   ____  ____ 
 //  /   /\/   /
 // /___/  \  /    Vendor: Xilinx
-// \   \   \/     Version : 3.2
+// \   \   \/     Version : 3.4
 //  \   \         Application : 7 Series FPGAs Transceivers Wizard
 //  /   /         Filename : gig_ethernet_pcs_pma_0_gtwizard_rxpmarst_seq.v
 // /___/   /\     
@@ -116,10 +116,11 @@ wire       rxpmareset_in_sync;
 reg        rxpmareset_s, rxpmareset_ss;
 wire       rxpmaresetdone_ss;
 wire       rst_sync;
-reg [15:0] rd_data, next_rd_data;
+reg [15:0] rd_data, next_rd_data, original_rd_data;
 
 reg        rxpmareset_i;
 reg        rxpmareset_o;
+reg        flag = 1'b0;
 reg        drpen_o;
 reg        drpwe_o;
 reg [8:0]  drpaddr_o;
@@ -229,7 +230,7 @@ always @ (rxpmareset_ss or DRPRDY or state or rxpmaresetdone_ss) begin
 end
 
 // drives DRP interface and RXPMARESET_OUT
-always @ (DRPRDY or state or rd_data or DRPDO or rxpmareset_ss or DRP_BUSY_IN) begin
+always @ (DRPRDY or state or rd_data or DRPDO or rxpmareset_ss or DRP_BUSY_IN or flag or original_rd_data) begin
 
 	// RX_DATA_WIDTH is located at addr 'h0011, [13:11]
 	// encoding is this : /16 = 'h2, /20 = 'h3, /32 = 'h4, /40 = 'h5
@@ -265,10 +266,15 @@ always @ (DRPRDY or state or rd_data or DRPDO or rxpmareset_ss or DRP_BUSY_IN) b
 		//wait to load rd data
 		wait_rd_data : begin 
                         drp_pma_busy_i  = 1'b1;
-			if (DRPRDY)
-		           next_rd_data = DRPDO;
-			else
-		           next_rd_data = rd_data;
+			if (DRPRDY && !flag) begin
+				next_rd_data = DRPDO;
+                         end
+			else if (DRPRDY && flag) begin
+				next_rd_data = original_rd_data;
+                         end
+                        else  begin 
+				next_rd_data = rd_data;
+                         end
 		end
 
 		//write to 16-bit mode
@@ -297,9 +303,7 @@ always @ (DRPRDY or state or rd_data or DRPDO or rxpmareset_ss or DRP_BUSY_IN) b
                         drp_pma_busy_i  = 1'b1;
 			drpen_o = 1'b1;
 			drpwe_o = 1'b1;
-//			drpdi_o = rd_data[15:0]; //restore user setting per prev read
-        drpdi_o = {rd_data[15:12], 1'b1, rd_data[10:0]}; 
-      
+			drpdi_o = rd_data[15:0]; //restore user setting per prev read
 		end
 
 		//wait to complete write to 20-bit mode
@@ -326,6 +330,27 @@ always @ (DRPRDY or state or rd_data or DRPDO or rxpmareset_ss or DRP_BUSY_IN) b
                 end
           
 	endcase
+end
+always @ (posedge DRPCLK)
+begin
+
+if( state == wr_16 || state == wait_pmareset || state == wr_20 || state == wait_wr_done1)
+
+flag <= 1'b1;
+
+else if(state == wait_wr_done2)
+
+flag <= 1'b0;
+ 
+end
+
+always @ (posedge DRPCLK)
+begin
+
+if( state == wait_rd_data && DRPRDY == 1'b1 && flag == 1'b0)
+
+original_rd_data <= DRPDO;
+
 end
 endmodule
 

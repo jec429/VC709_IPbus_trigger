@@ -19,7 +19,22 @@ entity slaves is
 		eth_err_ctrl: out std_logic_vector(35 downto 0);
 		eth_err_stat: in std_logic_vector(47 downto 0) := X"000000000000";
 		pkt_rx: in std_logic := '0';
-		pkt_tx: in std_logic := '0'
+		pkt_tx: in std_logic := '0';
+		--sfp
+		sfp3_tx_n: out std_logic;
+        sfp3_tx_p: out std_logic;
+        sfp3_rx_n: in std_logic;
+        sfp3_rx_p: in std_logic;
+        sfp4_tx_n: out std_logic;
+        sfp4_tx_p: out std_logic;
+        sfp4_rx_n: in std_logic;
+        sfp4_rx_p: in std_logic;
+        --gt ref clk
+        gt_clkp: in std_logic;
+        gt_clkn: in std_logic;
+        --init clk
+        init_clkp: in std_logic;
+        init_clkn: in std_logic
 	);
 
 end slaves;
@@ -125,7 +140,22 @@ begin
 			clk => ipb_clk,
 			reset => ipb_rst,
 			ipbus_in => ipbw(6),
-			ipbus_out => ipbr(6)
+			ipbus_out => ipbr(6),
+			--sfp
+			txn_pphi => sfp3_tx_n,
+            txp_pphi => sfp3_tx_p,
+            rxn_pphi => sfp3_rx_n,
+            rxp_pphi => sfp3_rx_p,
+            txn_mphi => sfp4_tx_n,
+            txp_mphi => sfp4_tx_p,
+            rxn_mphi => sfp4_rx_n,
+            rxp_mphi => sfp4_rx_p,
+            --gt ref clk
+            gt_refclkp => gt_clkp,
+            gt_refclkn => gt_clkn,
+            --init clk
+            init_clkp => init_clkp,
+            init_clkn => init_clkn
 		);
 
 end rtl;

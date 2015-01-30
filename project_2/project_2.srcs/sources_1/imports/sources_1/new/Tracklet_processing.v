@@ -40,19 +40,36 @@ module Tracklet_processing(
     //clocks
     input wire [2:0] BX,
     input wire first_clk,
-    input wire not_first_clk
+    input wire not_first_clk,
+    // links
+    output wire txn_pphi,          //Links to neighbouring sector board with larger phi (+phi)
+    output wire txp_pphi,          //Links to neighbouring sector board with larger phi (+phi)
+    input  wire rxn_pphi,          //Links to neighbouring sector board with larger phi (+phi)
+    input  wire rxp_pphi,          //Links to neighbouring sector board with larger phi (+phi)
+    output wire txn_mphi,          //Links to neighbouring sector board with smaller phi (phi)
+    output wire txp_mphi,          //Links to neighbouring sector board with smaller phi (phi)
+    input  wire rxn_mphi,          //Links to neighbouring sector board with smaller phi (phi)
+    input  wire rxp_mphi,          //Links to neighbouring sector board with smaller phi (phi)
+    //gt reference clock
+    input wire gt_refclkp,         
+    input wire gt_refclkn,
+    //initial clock
+    input wire init_clkp,
+    input wire init_clkn
     );
 
     // Address bits "io_addr[31:30] = 2'b01" are consumed when selecting 'slave6'
     // Address bits "io_addr[29:28] = 2'b01" are consumed when selecting 'tracklet_processing'
     wire InputLink_R1Link1_io_sel, TrackFit_TF_L1L2_sel;
+    wire Aurora_test_sel;
     assign InputLink_R1Link1_io_sel = io_sel && (io_addr[27:24] == 4'b0001);
     assign TrackFit_TF_L1L2_io_sel  = io_sel && (io_addr[27:24] == 4'b0010);
+    assign Aurora_test_sel          = io_sel && (io_addr[27:24] == 4'b0011);
  
     // data busses for readback
     wire [31:0] InputLink_R1Link1_io_rd_data, TrackFit_TF_L1L2_io_rd_data;
-
-        
+    wire [31:0] Aurora_test_io_rd_data;
+ 
     wire [35:0] R1Link1_R1Route1;
     wire [35:0] R1Route1_R1Link1L1;
     wire [35:0] R1Route1_R1Link1L2;
@@ -927,6 +944,31 @@ module Tracklet_processing(
     .first_clk(first_clk),
     .not_first_clk(not_first_clk));
  
+ 
+    Aurora_test aurora_test_top(
+        // clocks and reset
+        .clk(clk),                // processing clock
+        .reset(reset),                        // active HI
+        .en_proc(en_proc),
+        // programming interface
+        .io_clk(io_clk),                    // programming clock
+        .io_sel(Aurora_test_io_sel),                    // this module is selected for an I/O operation
+        .io_addr(io_addr[23:0]),        // memory address, top 8 bits alread consumed
+        .io_sync(io_sync),                // start the I/O operation
+        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+        .io_wr_data(io_wr_data[31:0]),// data to write for write operations
+        // outputs
+        .io_rd_data(Aurora_test_io_rd_data),        // data returned for read operations
+        .io_rd_ack(Aurora_test_io_rd_ack),            // 'read' data from this module is ready
+        // clocks
+        .BX(BX[2:0]),
+        .first_clk(first_clk),
+        .not_first_clk(not_first_clk)
+        
+           
+    );
+ 
     // readback mux
     // If a particular block is addressed, connect that block's signals
     // to the 'rdbk' output. At the same time, assert 'rdbk_sel' to tell downstream muxes to
@@ -937,12 +979,13 @@ module Tracklet_processing(
     reg io_rd_ack_reg;
     assign io_rd_ack = io_rd_ack_reg;
     always @ (posedge io_clk) begin
-        io_rd_ack_reg <= InputLink_R1Link1_io_rd_ack | TrackFit_TF_L1L2_io_rd_ack;
+        io_rd_ack_reg <= InputLink_R1Link1_io_rd_ack | TrackFit_TF_L1L2_io_rd_ack | Aurora_test_io_rd_ack;
     end
     // Route the selected register to the 'rdbk' output.
     always @(posedge io_clk) begin
         if (InputLink_R1Link1_io_sel) io_rd_data_reg[31:0] <= InputLink_R1Link1_io_rd_data[31:0];
         if (TrackFit_TF_L1L2_io_sel) io_rd_data_reg[31:0] <= TrackFit_TF_L1L2_io_rd_data[31:0];
+        if (Aurora_test_io_sel) io_rd_data_reg[31:0] <= Aurora_test_io_rd_data[31:0];
      end
 
 endmodule

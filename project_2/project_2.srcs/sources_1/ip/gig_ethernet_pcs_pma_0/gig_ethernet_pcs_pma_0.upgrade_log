@@ -1,4 +1,73 @@
 Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:24:04 MST 2014
+| Date         : Tue Jan 27 14:58:34 2015
+| Host         : PCPSB375 running 64-bit Service Pack 1  (build 7601)
+| Command      : upgrade_ip
+| Device       : xc7vx690tffg1761-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'gig_ethernet_pcs_pma_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of gig_ethernet_pcs_pma_0 from xilinx.com:ip:gig_ethernet_pcs_pma:14.2 (Rev. 1) to xilinx.com:ip:gig_ethernet_pcs_pma:14.3 (Rev. 1)
+
+After upgrade, an IP may have parameter differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality.
+
+2. Upgrade messages
+-------------------
+
+Added parameter Transceiver_type with value GTXE2
+
+3. Customization warnings
+-------------------------
+
+WARNING: An attempt to modify the value of disabled parameter 'Transceiver_type' from 'GTHE2' to 'GTXE2' has been ignored for IP 'gig_ethernet_pcs_pma_0'
+
+
+4. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  Please consult the warnings from the previous sections, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:ip:gig_ethernet_pcs_pma:14.3 -user_name gig_ethernet_pcs_pma_0
+set_property -dict "\
+  CONFIG.SGMII_Mode 10_100_1000 \
+  CONFIG.Management_Interface false \
+  CONFIG.Standard 1000BASEX \
+  CONFIG.Enable_1588 false \
+  CONFIG.EMAC_IF_TEMAC TEMAC \
+  CONFIG.Ext_Management_Interface false \
+  CONFIG.Enable_1588_1step false \
+  CONFIG.Auto_Negotiation true \
+  CONFIG.Physical_Interface Transceiver \
+  CONFIG.Transceiver_type GTXE2 \
+  CONFIG.MDIO_BOARD_INTERFACE Custom \
+  CONFIG.Timer_Format Time_of_day \
+  CONFIG.USE_BOARD_FLOW false \
+  CONFIG.ETHERNET_BOARD_INTERFACE Custom \
+  CONFIG.EXAMPLE_SIMULATION 0 \
+  CONFIG.C_PHYADDR 1 \
+  CONFIG.Component_Name gig_ethernet_pcs_pma_0 \
+  CONFIG.TransceiverControl false \
+  CONFIG.DIFFCLK_BOARD_INTERFACE Custom \
+  CONFIG.SupportLevel Include_Shared_Logic_in_Core \
+  CONFIG.SGMII_PHY_Mode false \
+  CONFIG.Transceiver_Tile A " [get_ips gig_ethernet_pcs_pma_0]
+
+
+
+
+
+
+
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------
 | Tool Version : Vivado v.2014.2 (win64) Build 932637 Wed Jun 11 13:33:10 MDT 2014
 | Date         : Fri Oct 24 16:16:51 2014

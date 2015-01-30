@@ -2,7 +2,7 @@
 //   ____  ____ 
 //  /   /\/   /
 // /___/  \  /    Vendor: Xilinx
-// \   \   \/     Version : 3.2
+// \   \   \/     Version : 3.4
 //  \   \         Application : 7 Series FPGAs Transceivers Wizard
 //  /   /         Filename : gig_ethernet_pcs_pma_0_gtwizard_gtrxreset_seq.v
 // /___/   /\     
@@ -114,11 +114,12 @@ reg        gtrxreset_s, gtrxreset_ss;
 wire       rxpmaresetdone_sync;
 wire       rst_sync;
 reg        rxpmaresetdone_s, rxpmaresetdone_ss, rxpmaresetdone_sss;
-reg [15:0] rd_data, next_rd_data;
+reg [15:0] rd_data, next_rd_data, original_rd_data;
 
 wire       pmarstdone_fall_edge;
 
 reg        gtrxreset_i;
+reg        flag = 1'b0;
 reg        gtrxreset_o;
 reg        drpen_o;
 reg        drpwe_o;
@@ -240,7 +241,7 @@ always @ (gtrxreset_ss or DRPRDY or state or pmarstdone_fall_edge) begin
 end
 
 // drives DRP interface and GTRXRESET_OUT
-always @ (DRPRDY or state or rd_data or DRPDO or gtrxreset_ss) begin
+always @ (DRPRDY or state or rd_data or DRPDO or gtrxreset_ss or flag or original_rd_data) begin
 
 	// assert GTRXRESET_OUT until wr to 16-bit is complete
 	// RX_DATA_WIDTH is located at addr 'h0011, [13:11]
@@ -271,10 +272,15 @@ always @ (DRPRDY or state or rd_data or DRPDO or gtrxreset_ss) begin
 		wait_rd_data : begin 
 			gtrxreset_i = 1'b1;
 
-			if (DRPRDY)
+			if (DRPRDY && !flag) begin
 				next_rd_data = DRPDO;
-			else
+                         end
+			else if (DRPRDY && flag) begin
+				next_rd_data = original_rd_data;
+                         end
+                        else  begin 
 				next_rd_data = rd_data;
+                         end
 		end
 
 		//assert reset and write to 16-bit mode
@@ -305,8 +311,7 @@ always @ (DRPRDY or state or rd_data or DRPDO or gtrxreset_ss) begin
 		wr_20 : begin 
 			drpen_o = 1'b1;
 			drpwe_o = 1'b1;
-//			drpdi_o = rd_data[15:0]; //restore user setting per prev read
-      drpdi_o = {rd_data[15:12], 1'b1, rd_data[10:0]}; 
+			drpdi_o = rd_data[15:0]; //restore user setting per prev read
 		end
 
 		//wait to complete write to 20-bit mode
@@ -323,6 +328,27 @@ always @ (DRPRDY or state or rd_data or DRPDO or gtrxreset_ss) begin
                 end
   
 	endcase
+end
+always @ (posedge DRPCLK)
+begin
+
+if( state == wr_16 || state == wait_pmareset || state == wr_20 || state == wait_wr_done1)
+
+flag <= 1'b1;
+
+else if(state == wait_wr_done2)
+
+flag <= 1'b0;
+ 
+end
+
+always @ (posedge DRPCLK)
+begin
+
+if( state == wait_rd_data && DRPRDY == 1'b1 && flag == 1'b0)
+
+original_rd_data <= DRPDO;
+
 end
 endmodule
 

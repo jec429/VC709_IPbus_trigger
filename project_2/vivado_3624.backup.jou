@@ -1,0 +1,51 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 18:24:04 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Thu Jan 29 09:43:15 2015
+# Process ID: 1616
+# Log file: C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/vivado.log
+# Journal file: C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.xpr
+update_compile_order -fileset sources_1
+create_project project_3 C:/Users/ZhengchengTao/Documents/GLIB_Aurora/prj/Aurora_1/project_3
+import_xise C:/Users/ZhengchengTao/Documents/GLIB_Aurora/prj/Aurora_1/Aurora_1.xise
+current_project project_2
+current_project project_3
+current_project project_2
+undo
+current_project project_2
+undo
+current_project project_2
+undo
+current_project project_2
+undo
+current_project project_2
+undo
+current_project project_2
+undo
+current_project project_2
+undo
+current_project project_2
+undo
+current_project project_2
+undo
+current_project project_2
+undo
+current_project project_2
+undo
+current_project project_2
+undo
+current_project project_2
+update_compile_order -fileset sources_1
+current_project project_3
+launch_runs synth_1
+wait_on_run synth_1
+current_project project_2
+update_compile_order -fileset sources_1
+reset_run TP_raw_stub_fifo_synth_1
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1

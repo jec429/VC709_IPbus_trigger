@@ -31,7 +31,7 @@ use UNISIM.vcomponents.all;
 entity top is
     port(
         -- clocking & GT
-        sma_clk_n, sma_clk_p: out std_logic;
+        sma_clk_n, sma_clk_p: inout std_logic;
         clk200_n, clk200_p: in std_logic;        
         prog_clk_n, prog_clk_p: in std_logic;        
         gt_clkp, gt_clkn: in std_logic;
@@ -41,6 +41,21 @@ entity top is
         sfp_los, sfp_mod_det: in std_logic;   
         sfp_rs0, sfp_rs1: out std_logic;        
         sfp_tx_disable: out std_logic;  
+        
+        SFP3_LOS_LS, SFP3_MOD_DETECT_LS: in std_logic;
+        SFP3_RS0_LS, SFP3_RS1_LS: out std_logic;
+        SFP3_TX_DISABLE_LS_B: out std_logic;
+        SFP3_TX_FAULT_LS: in std_logic; 
+        SFP3_RX_N, SFP3_RX_P: in std_logic;
+        SFP3_TX_N, SFP3_TX_P: out std_logic;
+        
+        SFP4_LOS_LS, SFP4_MOD_DETECT_LS: in std_logic;
+        SFP4_RS0_LS, SFP4_RS1_LS: out std_logic;
+        SFP4_TX_DISABLE_LS_B: out std_logic;
+        SFP4_TX_FAULT_LS: in std_logic; 
+        SFP4_RX_N, SFP4_RX_P: in std_logic;
+        SFP4_TX_N, SFP4_TX_P: out std_logic;
+        
         -- LEDs
         leds: out std_logic_vector(7 downto 0)
     );
@@ -158,7 +173,23 @@ begin
         ipb_out => ipb_master_in,
         rst_out => sys_rst,
         pkt_rx => pkt_rx,
-        pkt_tx => pkt_tx
+        pkt_tx => pkt_tx,
+        --interboard links
+        sfp3_tx_n => SFP3_TX_N,
+        sfp3_tx_p => SFP3_TX_P,
+        sfp3_rx_n => SFP3_RX_N,
+        sfp3_rx_p => SFP3_RX_P,
+        sfp4_tx_n => SFP4_TX_N,
+        sfp4_tx_p => SFP4_TX_P,
+        sfp4_rx_n => SFP4_RX_N,
+        sfp4_rx_p => SFP4_RX_P,
+        --gt ref clk
+        gt_clkp => gt_clkp,   --does not actually connected to pin AK8
+        gt_clkn => gt_clkn,
+        --init clk
+        init_clkp => sma_clk_p,
+        init_clkn => sma_clk_n
+        --add link controls?
       );
 
 

@@ -2,7 +2,7 @@
 //   ____  ____
 //  /   /\/   /
 // /___/  \  /    Vendor: Xilinx
-// \   \   \/     Version : 3.2
+// \   \   \/     Version : 3.4
 //  \   \         Application : 7 Series FPGAs Transceivers Wizard 
 //  /   /         Filename : gig_ethernet_pcs_pma_0_gtwizard_init.v
 // /___/   /\      
@@ -465,7 +465,6 @@ begin : no_chipscope
     assign  gt0_rxuserrdy_i                      =  gt0_rxuserrdy_t;
 end
 endgenerate 
-
 
 gig_ethernet_pcs_pma_0_TX_STARTUP_FSM #
           (
