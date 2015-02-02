@@ -50,8 +50,7 @@ module verilog_trigger_top(
     input wire gt_refclkp,
     input wire gt_refclkn,
     //initial clock
-    input wire init_clkp,
-    input wire init_clkn
+    input wire init_clk
     );
     
     // Convert the 200 MHz clock to something representing 40 MHz bunch crossing clock,
@@ -159,8 +158,7 @@ module verilog_trigger_top(
         .gt_refclkp(gt_refclkp),
         .gt_refclkn(gt_refclkn),
         //initial clock
-        .init_clkp(init_clkp),
-        .init_clkn(init_clkn)
+        .init_clk(init_clk)
         
         );    
 

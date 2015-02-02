@@ -52,24 +52,25 @@ module Aurora_Channel_0(
     input wire rxp, rxn,
     output wire txp, txn,
    // QPLL Ports
-    input gt0_qplllock,                 // input
-    input gt0_qpllrefclklost,           // input
-    input gt_qpllclk_quad2,             // input
-    input gt_qpllrefclk_quad2,          // input
-    output gt0_qpllreset,               // output
+    input wire gt0_qplllock,                 // input
+    input wire gt0_qpllrefclklost,           // input
+    input wire gt_qpllclk_quad2,             // input
+    input wire gt_qpllrefclk_quad2,          // input
+    output wire gt0_qpllreset,               // output
   
     // counter output ports
-    output frame_err,                    // output, to IPbus I/O
-    output hard_err,                     // output, to IPbus I/O
-    output soft_err,                     // output, to IPbus I/O
-    output channel_up,                   // output, to IPbus I/O
-    output lane_up,                      // output, to IPbus I/O
-    output pll_not_locked,               // input, from channel clock module
-    output tx_resetdone_out,             // output, to IPbus I/O
-    output rx_resetdone_out,             // output, to IPbus I/O
-    output link_reset_out                // output, to IPbus I/O   
+    output wire frame_err,                    // output, to IPbus I/O
+    output wire hard_err,                     // output, to IPbus I/O
+    output wire soft_err,                     // output, to IPbus I/O
+    output wire channel_up,                   // output, to IPbus I/O
+    output wire lane_up,                      // output, to IPbus I/O
+    //output wire pll_not_locked,               // input, from channel clock module
+    output wire tx_resetdone_out,             // output, to IPbus I/O
+    output wire rx_resetdone_out,             // output, to IPbus I/O
+    output wire link_reset_out                // output, to IPbus I/O   
 );
     
+    wire pll_not_locked;
     wire local_axis_resetn;                 // a local reset synched to the Aurora 'user_clk'
     wire aurora_user_clk;                      // used to connect to the parallel side of the Aurora
     wire [31:0] local_axis_tx_tdata, local_axis_rx_tdata;
@@ -182,8 +183,8 @@ module Aurora_Channel_0(
         // QPLL Ports
         .gt0_qplllock_in(gt0_qplllock),               // input
         .gt0_qpllrefclklost_in(gt0_qpllrefclklost),   // input
-        .gt_qpllclk_quad2_in(gt_qpllclk_quad2),       // input
-        .gt_qpllrefclk_quad2_in(gt_qpllrefclk_quad2), // input
+        //.gt_qpllrefclk_quad2_in(gt_qpllrefclk_quad2) // input
+        //.gt_qpllclk_quad2_in(gt_qpllclk_quad2),       // input
         .gt0_qpllreset_out(gt0_qpllreset)            // output    
     );
     
@@ -257,7 +258,7 @@ module Aurora_Channel_0(
       .soft_err(soft_err),                    // output, to IPbus I/O
       .channel_up(channel_up),                // output, to IPbus I/O
       .lane_up(lane_up),                      // output, to IPbus I/O
-      .pll_not_locked(pll_not_locked),        // input, from channel clock module
+      //.pll_not_locked(pll_not_locked),        // input, from channel clock module
       .tx_resetdone_out(tx_resetdone),        // output, to IPbus I/O
       .rx_resetdone_out(rx_resetdone),        // output, to IPbus I/O
       .link_reset_out(link_reset)             // output, to IPbus I/O

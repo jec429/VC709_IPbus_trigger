@@ -54,8 +54,7 @@ module Tracklet_processing(
     input wire gt_refclkp,         
     input wire gt_refclkn,
     //initial clock
-    input wire init_clkp,
-    input wire init_clkn
+    input wire init_clk
     );
 
     // Address bits "io_addr[31:30] = 2'b01" are consumed when selecting 'slave6'
@@ -964,9 +963,19 @@ module Tracklet_processing(
         // clocks
         .BX(BX[2:0]),
         .first_clk(first_clk),
-        .not_first_clk(not_first_clk)
-        
-           
+        .not_first_clk(not_first_clk),
+        //Links
+        .txp_pphi(txp_pphi),
+        .txn_pphi(txn_pphi),
+        .rxp_pphi(rxp_pphi),
+        .rxn_pphi(rxn_pphi),
+        .txp_mphi(txp_mphi),
+        .txn_mphi(txn_mphi),
+        .rxp_mphi(rxp_mphi),
+        .rxn_mphi(rxn_mphi),
+        .gt_refclkp(gt_refclkp),
+        .gt_refclkn(gt_refclkn),
+        .init_clk(init_clk)
     );
  
     // readback mux

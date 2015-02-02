@@ -187,8 +187,7 @@ begin
         gt_clkp => gt_clkp,   --does not actually connected to pin AK8
         gt_clkn => gt_clkn,
         --init clk
-        init_clkp => sma_clk_p,
-        init_clkn => sma_clk_n
+        init_clk => sma_clk_n
         --add link controls?
       );
 

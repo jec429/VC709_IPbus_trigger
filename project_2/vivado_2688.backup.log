@@ -2,18 +2,19 @@
 # Vivado v2014.4 (64-bit)
 # SW Build 1071353 on Tue Nov 18 18:24:04 MST 2014
 # IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
-# Start of session at: Tue Jan 27 17:53:07 2015
-# Process ID: 4380
+# Start of session at: Sun Feb 01 14:57:09 2015
+# Process ID: 3920
 # Log file: C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/vivado.log
 # Journal file: C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.xpr
-CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/archive_project_summary.txt'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2014.4/data/ip'.
-open_project: Time (s): cpu = 00:00:25 ; elapsed = 00:00:08 . Memory (MB): peak = 789.961 ; gain = 210.191
+open_project: Time (s): cpu = 00:00:27 ; elapsed = 00:00:10 . Memory (MB): peak = 796.141 ; gain = 222.641
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1

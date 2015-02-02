@@ -26,8 +26,7 @@ entity ipbus_trigger_top is
         gt_refclkp: in std_logic;
         gt_refclkn: in std_logic;
         --init clk
-        init_clkp: in std_logic;
-        init_clkn: in std_logic
+        init_clk: in std_logic
 	);
 	
 end ipbus_trigger_top;
@@ -61,8 +60,7 @@ component verilog_trigger_top
     gt_refclkp: in std_logic;
     gt_refclkn: in std_logic;
     --init clk
-    init_clkp: in std_logic;
-    init_clkn: in std_logic
+    init_clk: in std_logic
   );
 end component;
 
@@ -133,8 +131,7 @@ begin
        gt_refclkp => gt_refclkp,
        gt_refclkn => gt_refclkn,
        --init clk
-       init_clkp => init_clkp,
-       init_clkn => init_clkn
+       init_clk => init_clk
       );
 
 end rtl;

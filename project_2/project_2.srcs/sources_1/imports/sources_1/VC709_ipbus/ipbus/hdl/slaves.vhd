@@ -33,8 +33,7 @@ entity slaves is
         gt_clkp: in std_logic;
         gt_clkn: in std_logic;
         --init clk
-        init_clkp: in std_logic;
-        init_clkn: in std_logic
+        init_clk: in std_logic
 	);
 
 end slaves;
@@ -154,8 +153,7 @@ begin
             gt_refclkp => gt_clkp,
             gt_refclkn => gt_clkn,
             --init clk
-            init_clkp => init_clkp,
-            init_clkn => init_clkn
+            init_clk => init_clk
 		);
 
 end rtl;
