@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module MatchCombiner(
+module MatchCalculator(
     input clk,
     input reset,
     input en_proc,

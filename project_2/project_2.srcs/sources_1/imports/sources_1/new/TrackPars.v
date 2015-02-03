@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module TrackPars(
+module TrackletParameters(
     input clk,
     input reset,
     input en_proc,

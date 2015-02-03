@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module TrackProj(
+module TrackletProjections(
     input clk,
     input reset,
     input en_proc,

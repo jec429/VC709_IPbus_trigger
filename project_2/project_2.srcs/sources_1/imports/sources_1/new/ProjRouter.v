@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ProjRouter(
+module ProjectionRouter(
     input clk,
     input reset,
     input en_proc,
