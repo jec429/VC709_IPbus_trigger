@@ -24,7 +24,7 @@ module verilog_trigger_top(
     input wire clk200,
     input wire reset,
     input wire en_proc,
-    // programming interface
+    // programming interface 
     // Note: address and data bus sizes are hard coded in "ipbus_package.vhd"
     // inputs
     input wire ipb_clk,                    // programming clock

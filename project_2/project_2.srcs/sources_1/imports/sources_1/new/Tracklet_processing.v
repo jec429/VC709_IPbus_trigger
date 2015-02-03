@@ -63,7 +63,7 @@ module Tracklet_processing(
     wire Aurora_test_sel;
     assign InputLink_R1Link1_io_sel = io_sel && (io_addr[27:24] == 4'b0001);
     assign TrackFit_TF_L1L2_io_sel  = io_sel && (io_addr[27:24] == 4'b0010);
-    assign Aurora_test_sel          = io_sel && (io_addr[27:24] == 4'b0011);
+    assign Aurora_test_sel          = io_sel && (io_addr[27:24] == 4'b1010);
  
     // data busses for readback
     wire [31:0] InputLink_R1Link1_io_rd_data, TrackFit_TF_L1L2_io_rd_data;

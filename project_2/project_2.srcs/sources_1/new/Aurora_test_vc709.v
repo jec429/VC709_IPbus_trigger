@@ -235,6 +235,13 @@ module Aurora_test(
     reg [31:0] rxstat_pphi_reg;
     reg [31:0] rxstat_mphi_reg;
     
+    assign tx_tvalid_pphi = txstat_pphi_reg[5];
+    assign tx_tkeep_pphi = txstat_pphi_reg [4:1];
+    assign tx_tlast_pphi = txstat_pphi_reg[0];
+    assign tx_tvalid_mphi = txstat_mphi_reg[5];
+    assign tx_tkeep_mphi = txstat_mphi_reg [4:1];
+    assign tx_tlast_mphi = txstat_mphi_reg[0];
+    
     wire txdata_pphi_sel;
     wire txdata_mphi_sel;
     wire rxdata_pphi_sel;
@@ -317,6 +324,11 @@ module Aurora_test(
         if (io_rd_en & rxstat_mphi_sel) io_rd_data_reg[31:0] <= rxstat_mphi_reg;
         if (io_rd_en & Aurora_pphi_sel) io_rd_data_reg[31:0] <= io_rd_data_pphi;
         if (io_rd_en & Aurora_mphi_sel) io_rd_data_reg[31:0] <= io_rd_data_mphi;
+        if (io_rd_en & txdata_pphi_sel) io_rd_data_reg[31:0] <= txdata_pphi_reg;
+        if (io_rd_en & txdata_mphi_sel) io_rd_data_reg[31:0] <= txdata_mphi_reg;
+        if (io_rd_en & txstat_pphi_sel) io_rd_data_reg[31:0] <= txstat_pphi_reg;
+        if (io_rd_en & txstat_mphi_sel) io_rd_data_reg[31:0] <= txstat_mphi_reg;
+      
     end
     
 endmodule
