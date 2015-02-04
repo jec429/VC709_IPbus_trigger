@@ -46,14 +46,22 @@ module ProjectionRouter(
     input [53:0] projin,
     
     output reg [53:0] allprojout,
-    output reg [12:0] vmprojoutPHI1Z1,
-    output reg [12:0] vmprojoutPHI2Z1,
-    output reg [12:0] vmprojoutPHI3Z1,
-    output reg [12:0] vmprojoutPHI4Z1,
-    output reg [12:0] vmprojoutPHI1Z2,
-    output reg [12:0] vmprojoutPHI2Z2,
-    output reg [12:0] vmprojoutPHI3Z2,
-    output reg [12:0] vmprojoutPHI4Z2
+    output [12:0] vmprojoutPHI1Z1,
+    output [12:0] vmprojoutPHI2Z1,
+    output [12:0] vmprojoutPHI3Z1,
+    output [12:0] vmprojoutPHI4Z1,
+    output [12:0] vmprojoutPHI1Z2,
+    output [12:0] vmprojoutPHI2Z2,
+    output [12:0] vmprojoutPHI3Z2,
+    output [12:0] vmprojoutPHI4Z2,
+    output reg vmprojoutPHI1Z1_en,
+    output reg vmprojoutPHI2Z1_en,
+    output reg vmprojoutPHI3Z1_en,
+    output reg vmprojoutPHI4Z1_en,
+    output reg vmprojoutPHI1Z2_en,
+    output reg vmprojoutPHI2Z2_en,
+    output reg vmprojoutPHI3Z2_en,
+    output reg vmprojoutPHI4Z2_en
     
     );
 
@@ -109,16 +117,14 @@ module ProjectionRouter(
     reg [5:0] index;
     reg [12:0] vmprojout;
     
-    initial begin
-        vmprojoutPHI1Z1 = 0;
-        vmprojoutPHI2Z1 = 0;
-        vmprojoutPHI3Z1 = 0;
-        vmprojoutPHI4Z1 = 0;
-        vmprojoutPHI1Z2 = 0;
-        vmprojoutPHI2Z2 = 0;
-        vmprojoutPHI3Z2 = 0;
-        vmprojoutPHI4Z2 = 0;
-    end
+    assign vmprojoutPHI1Z1 = vmprojout;
+    assign vmprojoutPHI1Z2 = vmprojout;
+    assign vmprojoutPHI2Z1 = vmprojout;
+    assign vmprojoutPHI2Z2 = vmprojout;
+    assign vmprojoutPHI3Z1 = vmprojout;
+    assign vmprojoutPHI3Z2 = vmprojout;
+    assign vmprojoutPHI4Z1 = vmprojout;
+    assign vmprojoutPHI4Z2 = vmprojout;
     
     always @(posedge clk) begin
         index <= read_add1;
@@ -126,64 +132,64 @@ module ProjectionRouter(
         if(ODD) begin
             vmprojout <= {index,projin[40:38],projin[zbit-2'd3:zbit-3'd6]};
             if(allprojout[zbit-2'd2] == 1'b0 & (allprojout[43:41] == 3'b001 |allprojout[43:41] == 3'b010))
-                vmprojoutPHI1Z1 <= vmprojout;
+                vmprojoutPHI1Z1_en <= 1'b1;
             else
-                vmprojoutPHI1Z1 <= 0;
+                vmprojoutPHI1Z1_en <= 0;
             if(allprojout[zbit-2'd2] == 1'b0 & (allprojout[43:41] == 3'b011 |allprojout[43:41] == 3'b100))
-                vmprojoutPHI2Z1 <= vmprojout;
+                vmprojoutPHI2Z1_en <= 1'b1;
             else
-                vmprojoutPHI2Z1 <= 0;
+                vmprojoutPHI2Z1_en <= 0;
             if(allprojout[zbit-2'd2] == 1'b0 & (allprojout[43:41] == 3'b101 |allprojout[43:41] == 3'b110))
-                vmprojoutPHI3Z1 <= vmprojout;
+                vmprojoutPHI3Z1_en <= 1'b1;
             else
-                vmprojoutPHI3Z1 <= 0;
+                vmprojoutPHI3Z1_en <= 0;
             if(allprojout[zbit-2'd2] == 1'b1 & (allprojout[43:41] == 3'b001 |allprojout[43:41] == 3'b010))
-                vmprojoutPHI1Z2 <= vmprojout;
+                vmprojoutPHI1Z2_en <= 1'b1;
             else
-                vmprojoutPHI1Z2 <= 0;
+                vmprojoutPHI1Z2_en <= 0;
             if(allprojout[zbit-2'd2] == 1'b1 & (allprojout[43:41] == 3'b011 |allprojout[43:41] == 3'b100))
-                vmprojoutPHI2Z2 <= vmprojout;
+                vmprojoutPHI2Z2_en <= 1'b1;
             else
-                vmprojoutPHI2Z2 <= 0;
+                vmprojoutPHI2Z2_en <= 0;
             if(allprojout[zbit-2'd2] == 1'b1 & (allprojout[43:41] == 3'b101 |allprojout[43:41] == 3'b110))
-                vmprojoutPHI3Z2 <= vmprojout;
+                vmprojoutPHI3Z2_en <= 1'b1;
             else
-                vmprojoutPHI3Z2 <= 0;
+                vmprojoutPHI3Z2_en <= 0;
         end
         else begin
            vmprojout <= {index,!projin[40],projin[39:38],projin[zbit-2'd3:zbit-3'd6]};
            if(allprojout[zbit-2'd2] == 1'b0 & (allprojout[43:41] == 3'b000 |allprojout[43:41] == 3'b001))
-               vmprojoutPHI1Z1 <= vmprojout;
+               vmprojoutPHI1Z1_en <= 1'b1;
            else
-               vmprojoutPHI1Z1 <= 0;
+               vmprojoutPHI1Z1_en <= 0;
            if(allprojout[zbit-2'd2] == 1'b0 & (allprojout[43:41] == 3'b010 |allprojout[43:41] == 3'b011))
-               vmprojoutPHI2Z1 <= vmprojout;
+               vmprojoutPHI2Z1_en <= 1'b1;
            else
-               vmprojoutPHI2Z1 <= 0;
+               vmprojoutPHI2Z1_en <= 0;
            if(allprojout[zbit-2'd2] == 1'b0 & (allprojout[43:41] == 3'b100 |allprojout[43:41] == 3'b101))
-               vmprojoutPHI3Z1 <= vmprojout;
+               vmprojoutPHI3Z1_en <= 1'b1;
            else
-               vmprojoutPHI3Z1 <= 0;
+               vmprojoutPHI3Z1_en <= 0;
            if(allprojout[zbit-2'd2] == 1'b0 & (allprojout[43:41] == 3'b110 |allprojout[43:41] == 3'b111))
-               vmprojoutPHI4Z1 <= vmprojout;
+               vmprojoutPHI4Z1_en <= 1'b1;
            else
-               vmprojoutPHI4Z1 <= 0;
+               vmprojoutPHI4Z1_en <= 0;
            if(allprojout[zbit-2'd2] == 1'b1 & (allprojout[43:41] == 3'b000 |allprojout[43:41] == 3'b001))
-               vmprojoutPHI1Z2 <= vmprojout;
+               vmprojoutPHI1Z2_en <= 1'b1;
            else
-               vmprojoutPHI1Z2 <= 0;
+               vmprojoutPHI1Z2_en <= 0;
            if(allprojout[zbit-2'd2] == 1'b1 & (allprojout[43:41] == 3'b010 |allprojout[43:41] == 3'b011))
-               vmprojoutPHI2Z2 <= vmprojout;
+               vmprojoutPHI2Z2_en <= 1'b1;
            else
-               vmprojoutPHI2Z2 <= 0;
+               vmprojoutPHI2Z2_en <= 0;
            if(allprojout[zbit-2'd2] == 1'b1 & (allprojout[43:41] == 3'b100 |allprojout[43:41] == 3'b101))
-               vmprojoutPHI3Z2 <= vmprojout;
+               vmprojoutPHI3Z2_en <= 1'b1;
            else
-               vmprojoutPHI3Z2 <= 0;
+               vmprojoutPHI3Z2_en <= 0;
            if(allprojout[zbit-2'd2] == 1'b1 & (allprojout[43:41] == 3'b110 |allprojout[43:41] == 3'b111))
-               vmprojoutPHI4Z2 <= vmprojout;
+               vmprojoutPHI4Z2_en <= 1'b1;
            else
-               vmprojoutPHI4Z2 <= 0;
+               vmprojoutPHI4Z2_en <= 0;
        end
     end
     

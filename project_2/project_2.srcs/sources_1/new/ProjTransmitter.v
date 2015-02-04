@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 09/29/2014 04:00:52 PM
+// Create Date: 02/04/2015 11:52:43 AM
 // Design Name: 
-// Module Name: VMProj
+// Module Name: ProjTransmitter
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module VMProjections(
+module ProjTransmitter(
     input clk,
     input reset,
     input en_proc,
@@ -41,21 +41,43 @@ module VMProjections(
     input wire first_clk,
     input wire not_first_clk,
     
-    input [12:0] data_in,
-    input enable,
-    
-    output reg [5:0] number_out,
-    input [5:0] read_add,
-    output reg [12:0] data_out
+    input [5:0] number_in1,
+    output [5:0] read_add1,
+    input [35:0] inputL1L2_1,
+    input [5:0] number_in2,
+    output [5:0] read_add2,
+    input [35:0] inputL1L2_2,
+    input [5:0] number_in3,
+    output [5:0] read_add3,
+    input [35:0] inputL1L2_3,
+    input [5:0] number_in4,
+    output [5:0] read_add4,
+    input [35:0] inputL1L2_4,
+    input [5:0] number_in5,
+    output [5:0] read_add5,
+    input [35:0] inputL3L4_1,
+    input [5:0] number_in6,
+    output [5:0] read_add6,
+    input [35:0] inputL3L4_2,
+    input [5:0] number_in7,
+    output [5:0] read_add7,
+    input [35:0] inputL3L4_3,
+    input [5:0] number_in8,
+    output [5:0] read_add8,
+    input [35:0] inputL3L4_4,
+    input [5:0] number_in9,
+    output [5:0] read_add9,
+    input [35:0] inputL5L6_1,
+    input [5:0] number_in10,
+    output [5:0] read_add10,
+    input [35:0] inputL5L6_2,
+    input [5:0] number_in11,
+    output [5:0] read_add11,
+    input [35:0] inputL5L6_3,
+    input [5:0] number_in12,
+    output [5:0] read_add12,
+    input [35:0] inputL5L6_4
     );
-    
-    // no IPbus here yet
-    assign io_rd_data[31:0] = 32'h00000000;
-    assign io_rd_ack = 1'b0;
-
-    reg [12:0] data_in_dly;
-    reg [5:0] wr_add;
-    reg wr_en;
     
     reg [6:0] clk_cnt;
     reg [2:0] BX_pipe;
@@ -81,34 +103,5 @@ module VMProjections(
            first_clk_pipe <= 1'b0;
        end
     end
-    wire [12:0] pre_data_out;
-    always @(posedge clk) begin
-        data_in_dly <= data_in;
-        if(first_clk_pipe) begin
-            wr_add <= 6'h3f;
-            number_out <= wr_add + 1'b1;
-        end
-        else begin
-            if(data_in != 0 & data_in != data_in_dly) begin
-                wr_add <= wr_add + 1'b1;
-                wr_en <= 1'b1;
-            end
-            else begin
-                wr_add <= wr_add;
-                wr_en <= 1'b0;
-            end
-        end
-        data_out <= pre_data_out;
-    end
-
-    Memory #(13) VMProjection(
-        // Output
-        .output_data(pre_data_out),
-        // Input
-        .clock(clk),
-        .write_address({BX_pipe-3'b100,wr_add}),
-        .write_enable(wr_en & enable),
-        .read_address({BX_pipe-3'b101,read_add}),
-        .input_data(data_in_dly)
-    );
+    
 endmodule

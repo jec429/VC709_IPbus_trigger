@@ -72,10 +72,20 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/new/TrackletProjections_test.v">
+      <File Path="$PSRCDIR/sources_1/imports/new/TrackletProjections_test.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/imports/sources_1/new/TrackletProjections_test.v"/>
+          <Attr Name="ImportTime" Val="1422980252"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/ProjTransmitter.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/VMStubs.v">
@@ -230,10 +240,13 @@
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
-      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/new/TrackletCombiner_test.v">
+      <File Path="$PSRCDIR/sources_1/imports/new/TrackletCombiner_test.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/imports/sources_1/new/TrackletCombiner_test.v"/>
+          <Attr Name="ImportTime" Val="1422980252"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/VC709_ipbus/ipbus/ipbus_core/hdl/ipbus_trans_decl.vhd">
@@ -711,13 +724,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/new/TrackletProjections_test.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/VMStubs.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -851,13 +857,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/new/TrackletCombiner_test.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Tracklet_processing.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -966,7 +965,7 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="constrs_1" Description="Uses multiple algorithms for optimization, placement, and routing to get potentially better results." State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="constrs_1" Description="Uses multiple algorithms for optimization, placement, and routing to get potentially better results." State="current" SynthRun="synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Performance_Explore" Flow="Vivado Implementation 2014"/>
         <Step Id="init_design"/>
@@ -987,7 +986,6 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="TP_raw_stub_fifo_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="TP_raw_stub_fifo" Description="Vivado Implementation Defaults" SynthRun="TP_raw_stub_fifo_synth_1">
       <Strategy Version="1" Minor="2">
