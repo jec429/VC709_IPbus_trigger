@@ -47,8 +47,7 @@ module verilog_trigger_top(
     input  wire rxn_mphi,
     input  wire rxp_mphi,
     //gt reference clock
-    input wire gt_refclkp,
-    input wire gt_refclkn,
+    input wire gt_refclk,
     //initial clock
     input wire init_clk
     );
@@ -58,7 +57,7 @@ module verilog_trigger_top(
     // This is a ratio of 15:1
     // The timing constraint file needs to match
     // 10/24/2014: 'cross_clk' = 10 MHz, 'proc_clk' = 150 MHz
-/*     trigger_clock_synth trigger_clock_synth (
+     trigger_clock_synth trigger_clock_synth (
         // Clock in ports
         .clk_in1(clk200),           // input clk_in1
         // Clock out ports
@@ -67,7 +66,7 @@ module verilog_trigger_top(
         // Status and control signals
         .reset(reset),              // input reset
         .locked(locked)             // output locked
-    );   */   
+    );      
 
     // Address decoding to select modules below this level.
     // "ipb_addr[31:30] = 2'b01" have already been used above this point to get here.
@@ -103,7 +102,7 @@ module verilog_trigger_top(
         BX = 3'b111;
     end
     
-    always @(posedge clk200/*proc_clk*/) begin
+    always @(posedge proc_clk) begin
         if(en_proc)
             clk_cnt <= clk_cnt + 1'b1;
         else begin
@@ -126,7 +125,7 @@ module verilog_trigger_top(
     Tracklet_processing tracklet_processing_phi0(
         // clocks and reset
         .reset(reset),                        // active HI
-        .clk(clk200/*proc_clk*/),                // processing clock at a multiple of the crossing clock
+        .clk(proc_clk),                // processing clock at a multiple of the crossing clock
         .en_proc(en_proc),
         // programming interface
         // inputs
@@ -155,8 +154,7 @@ module verilog_trigger_top(
         .rxn_mphi(rxn_mphi),
         .rxp_mphi(rxp_mphi),
         //gt reference clock
-        .gt_refclkp(gt_refclkp),
-        .gt_refclkn(gt_refclkn),
+        .gt_refclk(gt_refclk),
         //initial clock
         .init_clk(init_clk)
         

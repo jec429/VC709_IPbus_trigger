@@ -51,8 +51,7 @@ module Tracklet_processing(
     input  wire rxn_mphi,          //Links to neighbouring sector board with smaller phi (phi)
     input  wire rxp_mphi,          //Links to neighbouring sector board with smaller phi (phi)
     //gt reference clock
-    input wire gt_refclkp,         
-    input wire gt_refclkn,
+    input wire gt_refclk,         
     //initial clock
     input wire init_clk
     );
@@ -63,7 +62,7 @@ module Tracklet_processing(
     wire Aurora_test_sel;
     assign InputLink_R1Link1_io_sel = io_sel && (io_addr[27:24] == 4'b0001);
     assign TrackFit_TF_L1L2_io_sel  = io_sel && (io_addr[27:24] == 4'b0010);
-    assign Aurora_test_sel          = io_sel && (io_addr[27:24] == 4'b1010);
+    assign Aurora_test_io_sel          = io_sel && (io_addr[27:24] == 4'b1010);
  
     // data busses for readback
     wire [31:0] InputLink_R1Link1_io_rd_data, TrackFit_TF_L1L2_io_rd_data;
@@ -973,8 +972,7 @@ module Tracklet_processing(
         .txn_mphi(txn_mphi),
         .rxp_mphi(rxp_mphi),
         .rxn_mphi(rxn_mphi),
-        .gt_refclkp(gt_refclkp),
-        .gt_refclkn(gt_refclkn),
+        .gt_refclk(gt_refclk),
         .init_clk(init_clk)
     );
  

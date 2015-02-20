@@ -1,13 +1,13 @@
 #200 MHz system clock
 # 'SYSCLK' in the VC709 manual, 'clk200' in this project
-create_clock -period 8.100 -name clk200 -waveform {0.000 4.050} [get_ports clk200_p]
+create_clock -period 5.000 -name clk200 [get_ports clk200_p]
 
 # trigger system clocks
 # We convert the 200 MHz clock to something representing 40 MHz bunch crossing clock,
 # and something representing the faster processing clock, maybe 15 times as fast.
 # They are currently 10 MHz and 150 MHz
-create_clock -period 100.000 -name cross_clk
-create_clock -period 10.000 -name proc_clk -waveform {0.000 5.000}
+#create_clock -period 100.000 -name cross_clk
+#create_clock -period 6.667 -name proc_clk
 
 # programmable oscillator
 # 'USER_CLOCK' in the VC709 manual, 'prog_clk' in this project
@@ -20,7 +20,7 @@ create_clock -period 8.000 -name gt_clk [get_ports gt_clkp]
 
 # specify what clocks are asynchronous to others
 set_clock_groups -asynchronous -group [get_clocks clk200]
-set_clock_groups -asynchronous -group [get_clocks cross_clk]
-set_clock_groups -asynchronous -group [get_clocks proc_clk]
+#set_clock_groups -asynchronous -group [get_clocks cross_clk]
+#set_clock_groups -asynchronous -group [get_clocks proc_clk]
 set_clock_groups -asynchronous -group [get_clocks prog_clk]
 set_clock_groups -asynchronous -group [get_clocks -include_generated_clocks gt_clk]

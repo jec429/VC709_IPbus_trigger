@@ -7,7 +7,7 @@
 
 
 module Aurora_Channel_0(
-    input wire clk,
+    //input wire clk,
     input wire reset,
     input wire en_proc,
     // programming interface
@@ -169,9 +169,9 @@ module Aurora_Channel_0(
         .loopback(loopback_set[2:0]),           // input [2:0], from IPbus I/O
         .init_clk_in(init_clk),                 // input, 50 MHz clock, passed to module
         .pll_not_locked(pll_not_locked),        // input, from channel clock module
-        .tx_resetdone_out(tx_resetdone),        // output, to IPbus I/O
-        .rx_resetdone_out(rx_resetdone),        // output, to IPbus I/O
-        .link_reset_out(link_reset),            // output, to IPbus I/O
+        .tx_resetdone_out(tx_resetdone_out),        // output, to IPbus I/O
+        .rx_resetdone_out(rx_resetdone_out),        // output, to IPbus I/O
+        .link_reset_out(link_reset_out),            // output, to IPbus I/O
         // drp interface is not used
         .drpclk_in(init_clk),                   // input, unused, but we drive the clock
         .drpaddr_in(drpaddr_in),                // input [8:0], tied off
@@ -183,8 +183,8 @@ module Aurora_Channel_0(
         // QPLL Ports
         .gt0_qplllock_in(gt0_qplllock),               // input
         .gt0_qpllrefclklost_in(gt0_qpllrefclklost),   // input
-        //.gt_qpllrefclk_quad2_in(gt_qpllrefclk_quad2) // input
-        //.gt_qpllclk_quad2_in(gt_qpllclk_quad2),       // input
+        .gt_qpllrefclk_quad4_in(gt_qpllrefclk_quad2), // input
+        .gt_qpllclk_quad4_in(gt_qpllclk_quad2),       // input
         .gt0_qpllreset_out(gt0_qpllreset)            // output    
     );
     
@@ -239,7 +239,7 @@ module Aurora_Channel_0(
     aurora_io_block io_block(
       // programming interface
       .io_clk(io_clk),                    // programming clock
-      .io_reset(io_reset),                        // active HI
+      .io_reset(reset),                        // active HI
       .io_sel(io_sel),                    // this module is selected for an I/O operation
       .io_addr(io_addr[19:0]),            // memory address, top 12 bits alread consumed
       .io_sync(io_sync),                  // start the I/O operation
@@ -259,9 +259,9 @@ module Aurora_Channel_0(
       .channel_up(channel_up),                // output, to IPbus I/O
       .lane_up(lane_up),                      // output, to IPbus I/O
       //.pll_not_locked(pll_not_locked),        // input, from channel clock module
-      .tx_resetdone_out(tx_resetdone),        // output, to IPbus I/O
-      .rx_resetdone_out(rx_resetdone),        // output, to IPbus I/O
-      .link_reset_out(link_reset)             // output, to IPbus I/O
+      .tx_resetdone_out(tx_resetdone_out),        // output, to IPbus I/O
+      .rx_resetdone_out(rx_resetdone_out),        // output, to IPbus I/O
+      .link_reset_out(link_reset_out)             // output, to IPbus I/O
     );       
     
 endmodule

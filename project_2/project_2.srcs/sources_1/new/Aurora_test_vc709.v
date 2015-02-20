@@ -51,8 +51,7 @@ module Aurora_test(
     input  wire rxn_mphi,          //Links to neighbouring sector board with smaller phi (-phi)
     input  wire rxp_mphi,          //Links to neighbouring sector board with smaller phi (-phi)    
     //clocks
-    input wire gt_refclkp,
-    input wire gt_refclkn,
+    input wire gt_refclk,
     input wire init_clk
     
     );
@@ -83,7 +82,18 @@ module Aurora_test(
     wire [31:0] io_rd_data_pphi, io_rd_data_mphi;
     wire io_rd_ack_pphi, io_rd_ack_mphi;
     
-    //--- Instance of GT differential buffer ---------//
+    wire txdata_pphi_sel;
+    wire txdata_mphi_sel;
+    wire rxdata_pphi_sel;
+    wire rxdata_mphi_sel;
+    wire txstat_pphi_sel;
+    wire txstat_mphi_sel;
+    wire rxstat_pphi_sel;
+    wire rxstat_mphi_sel;
+    //Access I/O Block in each aurora module
+    wire Aurora_pphi_sel, Aurora_mphi_sel;
+    
+/*    //--- Instance of GT differential buffer ---------//
     IBUFDS_GTE2 IBUFDS_GTE2_CLK1
     (
      .I(gt_refclkp),
@@ -92,14 +102,14 @@ module Aurora_test(
      .O(gt_refclk_i),
      .ODIV2()
     );
-    
+*/    
     //reset signal
     wire arst_n;
     assign arst_n = ~reset;
     
     
     Aurora_Channel_0 LinkProjPhiPlus (
-        .clk(clk),
+        //.clk(clk),
         .reset(reset),
         .en_proc(en_proc),
         // programming interface
@@ -123,7 +133,7 @@ module Aurora_test(
         //clocks and reset
         .init_clk(init_clk),
         .gt_reset_in(reset),
-        .gt_refclk(gt_refclk_i),
+        .gt_refclk(gt_refclk),
         //TX interface to slave side of transmit FIFO
         .s_axis_aresetn(arst_n),
         .s_axis_aclk(clk),
@@ -162,7 +172,7 @@ module Aurora_test(
     );
     
     Aurora_Channel_1 LinkProjPhiMinus (
-        .clk(clk),
+        //.clk(clk),
         .reset(reset),
         .en_proc(en_proc),
         // programming interface
@@ -186,7 +196,7 @@ module Aurora_test(
         //clocks and reset
         .init_clk(init_clk),
         .gt_reset_in(reset),
-        .gt_refclk(gt_refclk_i),
+        .gt_refclk(gt_refclk),
         //TX interface to slave side of transmit FIFO
         .s_axis_aresetn(arst_n),
         .s_axis_aclk(clk),
@@ -235,23 +245,14 @@ module Aurora_test(
     reg [31:0] rxstat_pphi_reg;
     reg [31:0] rxstat_mphi_reg;
     
+    assign tx_tdata_pphi = txdata_pphi_reg;
     assign tx_tvalid_pphi = txstat_pphi_reg[5];
     assign tx_tkeep_pphi = txstat_pphi_reg [4:1];
     assign tx_tlast_pphi = txstat_pphi_reg[0];
+    assign tx_tdata_mphi = txdata_mphi_reg;
     assign tx_tvalid_mphi = txstat_mphi_reg[5];
     assign tx_tkeep_mphi = txstat_mphi_reg [4:1];
     assign tx_tlast_mphi = txstat_mphi_reg[0];
-    
-    wire txdata_pphi_sel;
-    wire txdata_mphi_sel;
-    wire rxdata_pphi_sel;
-    wire rxdata_pphi_sel;
-    wire txstat_pphi_sel;
-    wire txstat_mphi_sel;
-    wire rxstat_pphi_sel;
-    wire rxstat_mphi_sel;
-    //Access I/O Block in each aurora module
-    wire Aurora_pphi_sel, Aurora_mphi_sel;
     
     //Address assignments
     assign Aurora_pphi_sel = io_sel && (io_addr[23:20] == 4'b0000);

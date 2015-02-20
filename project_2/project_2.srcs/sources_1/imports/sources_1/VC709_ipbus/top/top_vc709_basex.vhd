@@ -184,11 +184,9 @@ begin
         sfp4_rx_n => SFP4_RX_N,
         sfp4_rx_p => SFP4_RX_P,
         --gt ref clk
-        gt_clkp => gt_clkp,   --does not actually connected to pin AK8
-        gt_clkn => gt_clkn,
+        gt_clk => clk125_fr,   
         --init clk
-        init_clk => sma_clk_n
-        --add link controls?
+        init_clk => clk125
       );
 
 

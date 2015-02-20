@@ -1,10 +1,10 @@
 // Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2014.2 (win64) Build 932637 Wed Jun 11 13:33:10 MDT 2014
-// Date        : Tue Feb 03 14:47:38 2015
-// Host        : 0602-PC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim {C:/Users/Zhengcheng
-//               Tao/Documents/VC709_IPbus_trigger/project_1/project_1.srcs/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo_funcsim.v}
+// Tool Version: Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:24:04 MST 2014
+// Date        : Fri Feb 13 10:06:23 2015
+// Host        : PCPSB375 running 64-bit Service Pack 1  (build 7601)
+// Command     : write_verilog -force -mode funcsim
+//               C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo_funcsim.v
 // Design      : TP_raw_stub_fifo
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -2724,8 +2724,7 @@ FDCE #(
         .CLR(I1),
         .D(rd_pntr_plus1),
         .Q(O2[8]));
-(* counter = "2" *) 
-   FDPE #(
+FDPE #(
     .INIT(1'b1)) 
      \gc0.count_reg[0] 
        (.C(clk),
@@ -2733,8 +2732,7 @@ FDCE #(
         .D(plusOp[0]),
         .PRE(I1),
         .Q(Q[0]));
-(* counter = "2" *) 
-   FDCE #(
+FDCE #(
     .INIT(1'b0)) 
      \gc0.count_reg[1] 
        (.C(clk),
@@ -2742,8 +2740,7 @@ FDCE #(
         .CLR(I1),
         .D(plusOp[1]),
         .Q(Q[1]));
-(* counter = "2" *) 
-   FDCE #(
+FDCE #(
     .INIT(1'b0)) 
      \gc0.count_reg[2] 
        (.C(clk),
@@ -2751,8 +2748,7 @@ FDCE #(
         .CLR(I1),
         .D(plusOp[2]),
         .Q(Q[2]));
-(* counter = "2" *) 
-   FDCE #(
+FDCE #(
     .INIT(1'b0)) 
      \gc0.count_reg[3] 
        (.C(clk),
@@ -2760,8 +2756,7 @@ FDCE #(
         .CLR(I1),
         .D(plusOp[3]),
         .Q(Q[3]));
-(* counter = "2" *) 
-   FDCE #(
+FDCE #(
     .INIT(1'b0)) 
      \gc0.count_reg[4] 
        (.C(clk),
@@ -2769,8 +2764,7 @@ FDCE #(
         .CLR(I1),
         .D(plusOp[4]),
         .Q(Q[4]));
-(* counter = "2" *) 
-   FDCE #(
+FDCE #(
     .INIT(1'b0)) 
      \gc0.count_reg[5] 
        (.C(clk),
@@ -2778,8 +2772,7 @@ FDCE #(
         .CLR(I1),
         .D(plusOp[5]),
         .Q(Q[5]));
-(* counter = "2" *) 
-   FDCE #(
+FDCE #(
     .INIT(1'b0)) 
      \gc0.count_reg[6] 
        (.C(clk),
@@ -2787,8 +2780,7 @@ FDCE #(
         .CLR(I1),
         .D(plusOp[6]),
         .Q(Q[6]));
-(* counter = "2" *) 
-   FDCE #(
+FDCE #(
     .INIT(1'b0)) 
      \gc0.count_reg[7] 
        (.C(clk),
@@ -2796,8 +2788,7 @@ FDCE #(
         .CLR(I1),
         .D(plusOp[7]),
         .Q(Q[7]));
-(* counter = "2" *) 
-   FDCE #(
+FDCE #(
     .INIT(1'b0)) 
      \gc0.count_reg[8] 
        (.C(clk),
@@ -3103,18 +3094,18 @@ endmodule
 
 (* ORIG_REF_NAME = "reset_blk_ramfifo" *) 
 module TP_raw_stub_fifo_reset_blk_ramfifo
-   (rst_full_gen_i,
+   (rst_d2,
+    rst_full_gen_i,
     AR,
-    rst_d2,
     tmp_ram_rd_en,
     Q,
     clk,
     rst,
     rd_en,
     p_18_out);
+  output rst_d2;
   output rst_full_gen_i;
   output [0:0]AR;
-  output rst_d2;
   output tmp_ram_rd_en;
   output [1:0]Q;
   input clk;
@@ -3503,8 +3494,7 @@ FDCE #(
         .CLR(AR),
         .D(p_9_out),
         .Q(Q[8]));
-(* counter = "3" *) 
-   FDPE #(
+FDPE #(
     .INIT(1'b1)) 
      \gcc0.gc0.count_reg[0] 
        (.C(clk),
@@ -3512,8 +3502,7 @@ FDCE #(
         .D(plusOp__0[0]),
         .PRE(AR),
         .Q(O5[0]));
-(* counter = "3" *) 
-   FDCE #(
+FDCE #(
     .INIT(1'b0)) 
      \gcc0.gc0.count_reg[1] 
        (.C(clk),
@@ -3521,8 +3510,7 @@ FDCE #(
         .CLR(AR),
         .D(plusOp__0[1]),
         .Q(O5[1]));
-(* counter = "3" *) 
-   FDCE #(
+FDCE #(
     .INIT(1'b0)) 
      \gcc0.gc0.count_reg[2] 
        (.C(clk),
@@ -3530,8 +3518,7 @@ FDCE #(
         .CLR(AR),
         .D(plusOp__0[2]),
         .Q(O5[2]));
-(* counter = "3" *) 
-   FDCE #(
+FDCE #(
     .INIT(1'b0)) 
      \gcc0.gc0.count_reg[3] 
        (.C(clk),
@@ -3539,8 +3526,7 @@ FDCE #(
         .CLR(AR),
         .D(plusOp__0[3]),
         .Q(O5[3]));
-(* counter = "3" *) 
-   FDCE #(
+FDCE #(
     .INIT(1'b0)) 
      \gcc0.gc0.count_reg[4] 
        (.C(clk),
@@ -3548,8 +3534,7 @@ FDCE #(
         .CLR(AR),
         .D(plusOp__0[4]),
         .Q(O5[4]));
-(* counter = "3" *) 
-   FDCE #(
+FDCE #(
     .INIT(1'b0)) 
      \gcc0.gc0.count_reg[5] 
        (.C(clk),
@@ -3557,8 +3542,7 @@ FDCE #(
         .CLR(AR),
         .D(plusOp__0[5]),
         .Q(O5[5]));
-(* counter = "3" *) 
-   FDCE #(
+FDCE #(
     .INIT(1'b0)) 
      \gcc0.gc0.count_reg[6] 
        (.C(clk),
@@ -3566,8 +3550,7 @@ FDCE #(
         .CLR(AR),
         .D(plusOp__0[6]),
         .Q(O5[6]));
-(* counter = "3" *) 
-   FDCE #(
+FDCE #(
     .INIT(1'b0)) 
      \gcc0.gc0.count_reg[7] 
        (.C(clk),
@@ -3575,8 +3558,7 @@ FDCE #(
         .CLR(AR),
         .D(plusOp__0[7]),
         .Q(O5[7]));
-(* counter = "3" *) 
-   FDCE #(
+FDCE #(
     .INIT(1'b0)) 
      \gcc0.gc0.count_reg[8] 
        (.C(clk),

@@ -1,10 +1,10 @@
 -- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2014.2 (win64) Build 932637 Wed Jun 11 13:33:10 MDT 2014
--- Date        : Tue Feb 03 14:47:38 2015
--- Host        : 0602-PC running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {C:/Users/Zhengcheng
---               Tao/Documents/VC709_IPbus_trigger/project_1/project_1.srcs/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo_funcsim.vhdl}
+-- Tool Version: Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:24:04 MST 2014
+-- Date        : Fri Feb 13 10:06:23 2015
+-- Host        : PCPSB375 running 64-bit Service Pack 1  (build 7601)
+-- Command     : write_vhdl -force -mode funcsim
+--               C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo_funcsim.vhdl
 -- Design      : TP_raw_stub_fifo
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -444,16 +444,6 @@ architecture STRUCTURE of TP_raw_stub_fifo_rd_bin_cntr is
   attribute SOFT_HLUTNM of \gc0.count[6]_i_1\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \gc0.count[7]_i_1\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \gc0.count[8]_i_2\ : label is "soft_lutpair3";
-  attribute counter : integer;
-  attribute counter of \gc0.count_reg[0]\ : label is 2;
-  attribute counter of \gc0.count_reg[1]\ : label is 2;
-  attribute counter of \gc0.count_reg[2]\ : label is 2;
-  attribute counter of \gc0.count_reg[3]\ : label is 2;
-  attribute counter of \gc0.count_reg[4]\ : label is 2;
-  attribute counter of \gc0.count_reg[5]\ : label is 2;
-  attribute counter of \gc0.count_reg[6]\ : label is 2;
-  attribute counter of \gc0.count_reg[7]\ : label is 2;
-  attribute counter of \gc0.count_reg[8]\ : label is 2;
 begin
   O2(8 downto 0) <= \^o2\(8 downto 0);
   Q(7 downto 0) <= \^q\(7 downto 0);
@@ -926,9 +916,9 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity TP_raw_stub_fifo_reset_blk_ramfifo is
   port (
+    rst_d2 : out STD_LOGIC;
     rst_full_gen_i : out STD_LOGIC;
     AR : out STD_LOGIC_VECTOR ( 0 to 0 );
-    rst_d2 : out STD_LOGIC;
     tmp_ram_rd_en : out STD_LOGIC;
     Q : out STD_LOGIC_VECTOR ( 1 downto 0 );
     clk : in STD_LOGIC;
@@ -1188,16 +1178,6 @@ architecture STRUCTURE of TP_raw_stub_fifo_wr_bin_cntr is
   attribute SOFT_HLUTNM of \gcc0.gc0.count[6]_i_1\ : label is "soft_lutpair5";
   attribute SOFT_HLUTNM of \gcc0.gc0.count[7]_i_1\ : label is "soft_lutpair5";
   attribute SOFT_HLUTNM of \gcc0.gc0.count[8]_i_2\ : label is "soft_lutpair6";
-  attribute counter : integer;
-  attribute counter of \gcc0.gc0.count_reg[0]\ : label is 3;
-  attribute counter of \gcc0.gc0.count_reg[1]\ : label is 3;
-  attribute counter of \gcc0.gc0.count_reg[2]\ : label is 3;
-  attribute counter of \gcc0.gc0.count_reg[3]\ : label is 3;
-  attribute counter of \gcc0.gc0.count_reg[4]\ : label is 3;
-  attribute counter of \gcc0.gc0.count_reg[5]\ : label is 3;
-  attribute counter of \gcc0.gc0.count_reg[6]\ : label is 3;
-  attribute counter of \gcc0.gc0.count_reg[7]\ : label is 3;
-  attribute counter of \gcc0.gc0.count_reg[8]\ : label is 3;
 begin
   O5(7 downto 0) <= \^o5\(7 downto 0);
   Q(8 downto 0) <= \^q\(8 downto 0);

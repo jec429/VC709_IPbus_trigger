@@ -64,7 +64,7 @@ create_clock -period 8.0	 [get_ports gt_refclk1]
 create_clock -period 12.800	 [get_ports user_clk]
 create_clock -period 12.800	 [get_ports sync_clk]
 
-## 20.0 ns period INIT_CLK constraint
-create_clock -period 20.0 [get_ports init_clk_in]
-# 20.000	 ns DRP Clock Constraint 
-create_clock -period 20.000	 [get_ports drpclk_in]
+## 8.0 ns period INIT_CLK constraint
+create_clock -period 8.0 [get_ports init_clk_in]
+# 8.000	 ns DRP Clock Constraint 
+create_clock -period 8.000	 [get_ports drpclk_in]

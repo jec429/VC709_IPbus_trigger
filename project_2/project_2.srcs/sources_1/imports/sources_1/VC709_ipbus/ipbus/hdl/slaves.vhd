@@ -30,8 +30,7 @@ entity slaves is
         sfp4_rx_n: in std_logic;
         sfp4_rx_p: in std_logic;
         --gt ref clk
-        gt_clkp: in std_logic;
-        gt_clkn: in std_logic;
+        gt_clk: in std_logic;
         --init clk
         init_clk: in std_logic
 	);
@@ -150,8 +149,7 @@ begin
             rxn_mphi => sfp4_rx_n,
             rxp_mphi => sfp4_rx_p,
             --gt ref clk
-            gt_refclkp => gt_clkp,
-            gt_refclkn => gt_clkn,
+            gt_refclk => gt_clk,
             --init clk
             init_clk => init_clk
 		);

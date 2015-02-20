@@ -212,7 +212,7 @@ input           DRPEN_IN;
 output          DRPRDY_OUT;
 input           DRPWE_IN;
 
-    parameter STABLE_CLOCK_PERIOD  = 20 ; //Period of the stable clock driving this state-machine, unit is [ns]
+    parameter STABLE_CLOCK_PERIOD  = 8 ; //Period of the stable clock driving this state-machine, unit is [ns]
     //Typical CDRLOCK Time is 50,000UI, as per DS182/DS183
     parameter RX_CDRLOCK_TIME      = (EXAMPLE_SIMULATION == 1) ? 1000 : 50000/3.125;
        
