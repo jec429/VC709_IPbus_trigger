@@ -24,7 +24,6 @@ set_property IOSTANDARD LVDS [get_ports sma_clk_n]
 # MGTREFCLK1 SMA
 # SMA_MGT_REFCLK in the VC709 manual, 'gt_clkp, gt_clkn' in this project
 # These are externally looped back from the 'sma_clk'
-set_property PACKAGE_PIN AK7 [get_ports gt_clkn]
 set_property PACKAGE_PIN AK8 [get_ports gt_clkp]
 
 #### FIGURE OUT WHERE THIS GOES
@@ -57,14 +56,11 @@ set_property PACKAGE_PIN AD42 [get_ports SFP3_RS0_LS]
 set_property IOSTANDARD LVCMOS18 [get_ports SFP3_RS0_LS]
 set_property PACKAGE_PIN AE42 [get_ports SFP3_RS1_LS]
 set_property IOSTANDARD LVCMOS18 [get_ports SFP3_RS1_LS]
-set_property PACKAGE_PIN AL5 [get_ports SFP3_RX_N]
-set_property PACKAGE_PIN AL6 [get_ports SFP3_RX_P]
 set_property PACKAGE_PIN AC38 [get_ports SFP3_TX_DISABLE_LS_B]
 set_property IOSTANDARD LVCMOS18 [get_ports SFP3_TX_DISABLE_LS_B]
 set_property PACKAGE_PIN AA41 [get_ports SFP3_TX_FAULT_LS]
 set_property IOSTANDARD LVCMOS18 [get_ports SFP3_TX_FAULT_LS]
-set_property PACKAGE_PIN AM3 [get_ports SFP3_TX_N]
-set_property PACKAGE_PIN AM4 [get_ports SFP3_TX_P]
+set_property LOC GTHE2_CHANNEL_X1Y14 [get_cells slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/aurora_8b10b_0/inst/gt_wrapper_i/aurora_8b10b_0_multi_gt_i/gt0_aurora_8b10b_0_i/gthe2_i]
 
 #SFP4
 set_property PACKAGE_PIN AD40 [get_ports SFP4_LOS_LS]
@@ -75,13 +71,10 @@ set_property PACKAGE_PIN AE39 [get_ports SFP4_RS0_LS]
 set_property IOSTANDARD LVCMOS18 [get_ports SFP4_RS0_LS]
 set_property PACKAGE_PIN AE40 [get_ports SFP4_RS1_LS]
 set_property IOSTANDARD LVCMOS18 [get_ports SFP4_RS1_LS]
-set_property PACKAGE_PIN AJ5 [get_ports SFP4_RX_N]
-set_property PACKAGE_PIN AJ6 [get_ports SFP4_RX_P]
 set_property PACKAGE_PIN AC40 [get_ports SFP4_TX_DISABLE_LS_B]
 set_property IOSTANDARD LVCMOS18 [get_ports SFP4_TX_DISABLE_LS_B]
 set_property PACKAGE_PIN AE38 [get_ports SFP4_TX_FAULT_LS]
 set_property IOSTANDARD LVCMOS18 [get_ports SFP4_TX_FAULT_LS]
-set_property PACKAGE_PIN AL1 [get_ports SFP4_TX_N]
 set_property PACKAGE_PIN AL2 [get_ports SFP4_TX_P]
 
 # LEDs
@@ -102,6 +95,7 @@ set_property PACKAGE_PIN AP42 [get_ports {leds[6]}]
 set_property IOSTANDARD LVCMOS18 [get_ports {leds[6]}]
 set_property PACKAGE_PIN AU39 [get_ports {leds[7]}]
 set_property IOSTANDARD LVCMOS18 [get_ports {leds[7]}]
+
 
 
 
