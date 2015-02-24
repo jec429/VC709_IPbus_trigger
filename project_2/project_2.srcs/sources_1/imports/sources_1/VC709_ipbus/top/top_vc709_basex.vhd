@@ -42,17 +42,17 @@ entity top is
         sfp_rs0, sfp_rs1: out std_logic;        
         sfp_tx_disable: out std_logic;  
         
-        SFP3_LOS_LS, SFP3_MOD_DETECT_LS: in std_logic;
-        SFP3_RS0_LS, SFP3_RS1_LS: out std_logic;
-        SFP3_TX_DISABLE_LS_B: out std_logic;
-        SFP3_TX_FAULT_LS: in std_logic; 
+ --       SFP3_LOS_LS, SFP3_MOD_DETECT_LS: in std_logic;
+ --       SFP3_RS0_LS, SFP3_RS1_LS: out std_logic;
+ --       SFP3_TX_DISABLE_LS_B: out std_logic;
+ --       SFP3_TX_FAULT_LS: in std_logic; 
         SFP3_RX_N, SFP3_RX_P: in std_logic;
         SFP3_TX_N, SFP3_TX_P: out std_logic;
         
-        SFP4_LOS_LS, SFP4_MOD_DETECT_LS: in std_logic;
-        SFP4_RS0_LS, SFP4_RS1_LS: out std_logic;
-        SFP4_TX_DISABLE_LS_B: out std_logic;
-        SFP4_TX_FAULT_LS: in std_logic; 
+--        SFP4_LOS_LS, SFP4_MOD_DETECT_LS: in std_logic;
+--        SFP4_RS0_LS, SFP4_RS1_LS: out std_logic;
+---        SFP4_TX_DISABLE_LS_B: out std_logic;
+--        SFP4_TX_FAULT_LS: in std_logic; 
         SFP4_RX_N, SFP4_RX_P: in std_logic;
         SFP4_TX_N, SFP4_TX_P: out std_logic;
         
@@ -132,6 +132,7 @@ begin
         rx_error => mac_rx_error,
         clk125_out => clk125,
         clk125_out_fr => clk125_fr,
+        gt_refclk_out => gtrefclk_out,
         rsti => rst_eth,
         clk200 => clk200
       );
@@ -184,7 +185,7 @@ begin
         sfp4_rx_n => SFP4_RX_N,
         sfp4_rx_p => SFP4_RX_P,
         --gt ref clk
-        gt_clk => clk125_fr,   
+        gt_clk => gtrefclk_out,   
         --init clk
         init_clk => clk125
       );

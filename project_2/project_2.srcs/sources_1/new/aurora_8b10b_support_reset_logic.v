@@ -56,7 +56,7 @@ wire               SYSTEM_RESET;
            .c_reset_state   (0             ),  
            .c_single_bit    (1             ),  
            .c_vector_width  (2             ),  
-           .c_mtbf_stages   (5              )  
+           .c_mtbf_stages   (5              )  //3 un example design file
          )gt_rst_r_cdc_sync 
          (
            .prmry_aclk      (INIT_CLK_IN         ),

@@ -297,7 +297,7 @@ module Aurora_test(
     assign io_rd_data[31:0] = io_rd_data_reg[31:0];
     // Assert 'io_rd_ack' if chip select for this module is asserted during a 'read' operation.
     reg io_rd_ack_reg;
-    //assign io_rd_ack = io_rd_ack_reg;
+    assign io_rd_ack = io_rd_ack_reg;
     always @(posedge io_clk) begin
         io_rd_ack_reg <= io_sync & io_sel & io_rd_en;
         
