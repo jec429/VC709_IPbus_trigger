@@ -1,7 +1,7 @@
 Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:24:04 MST 2014
-| Date             : Tue Feb 24 15:43:05 2015
+| Date             : Wed Feb 25 13:02:56 2015
 | Host             : PCPSB375 running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb
 | Design           : top
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.498 |       0.293 |      0.205 |
+| Vccint    |       1.000 |     0.497 |       0.293 |      0.205 |
 | Vccaux    |       1.800 |     0.317 |       0.264 |      0.053 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
