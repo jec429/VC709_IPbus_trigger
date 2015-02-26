@@ -41,6 +41,9 @@ module MatchCalculator(
     input wire first_clk,
     input wire not_first_clk,
     
+    input start,
+    output done,
+    
     input [5:0] number_in1,
     input [5:0] number_in2,
     input [5:0] number_in3,

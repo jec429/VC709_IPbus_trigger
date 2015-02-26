@@ -41,9 +41,19 @@ module ProjectionRouter(
     input wire first_clk,
     input wire not_first_clk,
     
+    input start,
+    output reg done,
+    
     input [5:0] number_in1,
     output reg [5:0] read_add1,
     input [53:0] projin,
+    input [5:0] number_in2,
+    output reg [5:0] read_add2,
+    input [53:0] projplusin,
+    input [5:0] number_in3,
+    output reg [5:0] read_add3,
+    input [53:0] projminusin,
+    
     
     output reg [53:0] allprojout,
     output [12:0] vmprojoutPHI1Z1,
@@ -71,10 +81,7 @@ module ProjectionRouter(
     
     parameter ODD = 1'b1;
     parameter zbit = 29;
-    
-    initial begin
-        read_add1 = 6'h3f;
-    end
+    parameter [7:0] n_hold = 8'd3; 
     
     reg [6:0] clk_cnt;
     reg [2:0] BX_pipe;
@@ -92,7 +99,7 @@ module ProjectionRouter(
            clk_cnt <= 7'b0;
            BX_pipe <= 3'b111;
        end
-       if(clk_cnt == 7'b1) begin
+       if(start) begin
            BX_pipe <= BX_pipe + 1'b1;
            first_clk_pipe <= 1'b1;
        end
@@ -101,17 +108,47 @@ module ProjectionRouter(
        end
     end
     
-    always @(posedge clk) begin
-        if(first_clk_pipe)
-            read_add1 <= 6'h3f;
-        else begin
-            if(read_add1 + 1'b1 < number_in1) 
-                read_add1 <= read_add1 + 1'b1;
-            else
-                read_add1 <= read_add1;
-        end
+      
+   reg [n_hold:0] hold;
+   always @(posedge clk) begin
+       hold[0] <= start;
+       hold[n_hold:1] <= hold[n_hold-1:0];
+       done <= hold[n_hold];
+   end
+    
+    initial begin
+        read_add1 = 6'h3f;
+        read_add2 = 6'h3f;
+        read_add3 = 6'h3f;
+        index = 6'h0;
     end
     
+    always @(posedge clk) begin
+        if(first_clk_pipe) begin
+            read_add1 <= 6'h3f;
+            read_add2 <= 6'h3f;
+            read_add3 <= 6'h3f;    
+        end
+        else begin
+            if(read_add1 + 1'b1 < number_in1) begin
+                read_add1 <= read_add1 + 1'b1;
+            end
+            else begin
+                read_add1 <= read_add1;
+                if(read_add2 + 1'b1 < number_in2) begin
+                    read_add2 <= read_add2 + 1'b1;
+                end
+                else begin
+                    read_add2 <= read_add2;
+                    if(read_add3 + 1'b1 < number_in3) begin
+                        read_add3 <= read_add3 + 1'b1;
+                    end
+                    else
+                        read_add3 <= read_add3;
+                end
+            end
+        end
+    end
     ///////////////////////////////////////////////////////////////////////////
       
     reg [5:0] index;

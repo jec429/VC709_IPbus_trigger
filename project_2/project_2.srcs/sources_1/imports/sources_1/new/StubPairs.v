@@ -41,6 +41,9 @@ module StubPairs(
     input wire first_clk,
     input wire not_first_clk,
     
+    input start,
+    output done,
+    
     input [11:0] data_in,
     
     output reg [5:0] number_out,
@@ -73,7 +76,7 @@ module StubPairs(
             clk_cnt <= 7'b0;
             BX_pipe <= 3'b111;
         end
-        if(clk_cnt == 7'b1) begin
+        if(start) begin
             BX_pipe <= BX_pipe + 1'b1;
             first_clk_pipe <= 1'b1;
         end
@@ -104,6 +107,8 @@ module StubPairs(
         end
         data_out <= pre_data_out;
     end
+
+    assign done = start;
 
     Memory #(12,9,"D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/full.txt") StubPair(
         // Output

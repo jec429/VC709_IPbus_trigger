@@ -41,6 +41,9 @@ module LayerRouter(
     input wire first_clk,
     input wire not_first_clk,
     
+    input start,
+    output reg done,
+    
     output read_en,
     
     input [35:0] stubin,
@@ -71,6 +74,41 @@ module LayerRouter(
     reg wr_en6;
     reg [35:0] stubin_hold;
     reg [7:0] BX_read;
+    
+    reg [6:0] clk_cnt;
+    reg [2:0] BX_pipe;
+    reg first_clk_pipe;
+    reg [2:0] BX_hold;
+    
+    initial begin
+       clk_cnt = 7'b0;
+       BX_pipe = 3'b111;
+    end
+    
+    always @(posedge clk) begin
+        if(en_proc)
+           clk_cnt <= clk_cnt + 1'b1;
+        else begin
+           clk_cnt <= 7'b0;
+           BX_pipe <= 3'b111;
+        end
+        if(start) begin
+           BX_pipe <= BX_pipe + 1'b1;
+           first_clk_pipe <= 1'b1;
+        end
+        else begin
+           first_clk_pipe <= 1'b0;
+        end
+        BX_hold <= BX_pipe;       
+    end
+    
+    parameter [7:0] n_hold = 8'd2;  
+    reg [n_hold:0] hold;
+    always @(posedge clk) begin
+        hold[0] <= start;
+        hold[n_hold:1] <= hold[n_hold-1:0];
+        done <= hold[n_hold];
+    end
 
     initial begin
         stub_cnt = 0;
@@ -92,27 +130,22 @@ module LayerRouter(
         wr_en5 <= (stub_cnt < numberL5 & stub_cnt >= numberL4 & stubin[7:0] != 8'h00) ;
         wr_en6 <= (stub_cnt < numberL6 & stub_cnt >= numberL5 & stubin[7:0] != 8'h00) ;
 
-//        if(first_clk) begin
-//            stub_cnt <= 6'b0;
- 
-//        end
-//        else begin
-            if(stubin_hold[35:33] == 3'b111 & stubin_hold[24:0] == 25'h1ffffff) begin
-                stub_cnt <= 0;
-                numberL1 <= 0;
-                numberL2 <= 0;
-                numberL3 <= 0;
-                numberL4 <= 0;
-                numberL5 <= 0;
-                numberL6 <= 0;
-            end
-            else begin
-                if(stubin_hold[24:0] != 25'h0)
-                    stub_cnt <= stub_cnt + 1;
-                else
-                    stub_cnt <= stub_cnt;
-            end
-//        end
+
+        if(stubin_hold[35:33] == 3'b111 & stubin_hold[24:0] == 25'h1ffffff) begin
+            stub_cnt <= 0;
+            numberL1 <= 0;
+            numberL2 <= 0;
+            numberL3 <= 0;
+            numberL4 <= 0;
+            numberL5 <= 0;
+            numberL6 <= 0;
+        end
+        else begin
+            if(stubin_hold[24:0] != 25'h0)
+                stub_cnt <= stub_cnt + 1;
+            else
+                stub_cnt <= stub_cnt;
+        end
         
         if(wr_en1)
             stuboutL1 <= stubin_hold;
@@ -156,6 +189,6 @@ module LayerRouter(
 //            read_en <= 0;
     end
     
-    assign read_en = (BX_read%8) == BX;
+    assign read_en = (BX_read%8) == BX_pipe;
     
 endmodule

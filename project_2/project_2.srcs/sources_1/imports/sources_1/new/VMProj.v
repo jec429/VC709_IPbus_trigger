@@ -41,6 +41,9 @@ module VMProjections(
     input wire first_clk,
     input wire not_first_clk,
     
+    input start,
+    output done,
+    
     input [12:0] data_in,
     input enable,
     

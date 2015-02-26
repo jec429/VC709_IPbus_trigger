@@ -41,6 +41,9 @@ module StubsByLayer(
     input wire first_clk,
     input wire not_first_clk,
     
+    input start,
+    output done,
+    
     input [35:0] data_in,
     
     output reg [5:0] number_out,
@@ -48,6 +51,7 @@ module StubsByLayer(
     output reg [35:0] data_out
 
     );
+    
     // no IPbus here yet
     assign io_rd_data[31:0] = 32'h00000000;
     assign io_rd_ack = 1'b0;
@@ -73,7 +77,7 @@ module StubsByLayer(
            clk_cnt <= 7'b0;
            BX_pipe <= 3'b111;
         end
-        if(clk_cnt == 7'b1) begin
+        if(start) begin
            BX_pipe <= BX_pipe + 1'b1;
            first_clk_pipe <= 1'b1;
         end
@@ -104,12 +108,14 @@ module StubsByLayer(
         data_out <= pre_data_out;
     end
     
+    assign done = start;
+    
     Memory StubsMemory(
         // Output
         .output_data(pre_data_out),
         // Input
         .clock(clk),
-        .write_address({BX_pipe,wr_add}),
+        .write_address({BX_hold,wr_add}),
         .write_enable(wr_en),
         .read_address({BX_hold-1'b1,read_add}),
         .input_data(data_in_dly)

@@ -41,6 +41,9 @@ module TrackletParameters(
     input wire first_clk,
     input wire not_first_clk,
     
+    input start,
+    output done,
+    
     input [53:0] data_in,
     
     input [5:0] read_add,
@@ -76,7 +79,7 @@ module TrackletParameters(
            BX_pipe <= 3'b111;
            BX_pipe_spy <= 5'b11111;
        end
-       if(clk_cnt == 7'b1) begin
+       if(start) begin
            BX_pipe <= BX_pipe + 1'b1;
            BX_pipe_spy <= BX_pipe_spy + 1'b1;
            first_clk_pipe <= 1'b1;

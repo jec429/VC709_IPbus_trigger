@@ -41,6 +41,9 @@ module TrackletCalculator(
     input wire first_clk,
     input wire not_first_clk,
     
+    input start,
+    output reg done,
+    
     input [5:0] number_in1,
     output [5:0] read_add1,
     input [11:0] stubpair1in,
@@ -135,7 +138,7 @@ module TrackletCalculator(
            clk_cnt <= 7'b0;
            BX_pipe <= 3'b111;
         end
-        if(clk_cnt == 7'b1) begin
+        if(start) begin
            BX_pipe <= BX_pipe + 1'b1;
            first_clk_pipe <= 1'b1;
         end
@@ -143,146 +146,19 @@ module TrackletCalculator(
            first_clk_pipe <= 1'b0;
         end
     end
+    
+    parameter [7:0] n_hold = 8'd48;  
+    reg [n_hold:0] hold;
+    always @(posedge clk) begin
+        hold[0] <= start;
+        hold[n_hold:1] <= hold[n_hold-1:0];
+        done <= hold[n_hold];
+    end
     ///////////////////////////////////////////////////
     initial begin
-//        read_add1 = 6'h3f;
-//        read_add2 = 6'h3f;
-//        read_add3 = 6'h3f;
-//        read_add4 = 6'h3f;
-//        read_add5 = 6'h3f;
-//        read_add6 = 6'h3f;
-//        read_add7 = 6'h3f;
-//        read_add8 = 6'h3f;
-//        read_add9 = 6'h3f;
-//        read_add10 = 6'h3f;
-//        read_add11 = 6'h3f;
-//        read_add12 = 6'h3f;
-//        read_add13 = 6'h3f;
-//        read_add14 = 6'h3f;
-//        read_add15 = 6'h3f;
-//        read_add16 = 6'h3f;
-//        read_add17 = 6'h3f;
-//        read_add18 = 6'h3f;
         read_add_innerall = 6'h3f;
         read_add_outerall = 6'h3f;
     end
-    
-//    always @(posedge clk) begin
-//        if(first_clk_pipe) begin
-//            read_add1 <= 6'h3f;
-//            read_add2 <= 6'h3f;
-//            read_add3 <= 6'h3f;
-//            read_add4 <= 6'h3f;
-//            read_add5 <= 6'h3f;
-//            read_add6 <= 6'h3f;
-//            read_add7 <= 6'h3f;
-//            read_add8 <= 6'h3f;
-//            read_add9 <= 6'h3f;
-//            read_add10 <= 6'h3f;
-//            read_add11 <= 6'h3f;
-//            read_add12 <= 6'h3f;
-//            read_add13 <= 6'h3f;
-//            read_add14 <= 6'h3f;
-//            read_add15 <= 6'h3f;
-//            read_add16 <= 6'h3f;
-//            read_add17 <= 6'h3f;
-//            read_add18 <= 6'h3f;
-//            //read_add_innerall <= 6'h3f;
-//            //read_add_outerall <= 6'h3f;
-//        end
-//        else begin
-//            if(read_add1 + 1'b1 < number_in1)
-//                read_add1 <= read_add1 + 1'b1;
-//            else begin
-//                read_add1 <= read_add1;
-//                if(read_add2 + 1'b1 < number_in2)
-//                    read_add2 <= read_add2 + 1'b1;
-//                else begin
-//                    read_add2 <= read_add2;
-//                    if(read_add3 + 1'b1 < number_in3)
-//                        read_add3 <= read_add3 + 1'b1;
-//                    else begin
-//                        read_add3 <= read_add3;
-//                        if(read_add4 + 1'b1 < number_in4)
-//                            read_add4 <= read_add4 + 1'b1;
-//                        else begin
-//                            read_add4 <= read_add4;
-//                            if(read_add5 + 1'b1 < number_in5)
-//                                read_add5 <= read_add5 + 1'b1;
-//                            else begin
-//                                read_add5 <= read_add5;
-//                                if(read_add6 + 1'b1 < number_in6)
-//                                    read_add6 <= read_add6 + 1'b1;
-//                                else begin
-//                                    read_add6 <= read_add6;
-//                                    if(read_add7 + 1'b1 < number_in7)
-//                                        read_add7 <= read_add7 + 1'b1;
-//                                    else begin
-//                                        read_add7 <= read_add7;
-//                                        if(read_add8 + 1'b1 < number_in8)
-//                                            read_add8 <= read_add8 + 1'b1;
-//                                        else begin
-//                                            read_add8 <= read_add8;
-//                                            if(read_add9 + 1'b1 < number_in9)
-//                                                read_add9 <= read_add9 + 1'b1;
-//                                            else begin
-//                                                read_add9 <= read_add9;
-//                                                if(read_add10 + 1'b1 < number_in10)
-//                                                    read_add10 <= read_add10 + 1'b1;
-//                                                else begin
-//                                                    read_add10 <= read_add10;
-//                                                    if(read_add11 + 1'b1 < number_in11)
-//                                                        read_add11 <= read_add11 + 1'b1;
-//                                                    else begin
-//                                                        read_add11 <= read_add11;
-//                                                        if(read_add12 + 1'b1 < number_in12)
-//                                                            read_add12 <= read_add12 + 1'b1;
-//                                                        else begin
-//                                                            read_add12 <= read_add12;
-//                                                            if(read_add13 + 1'b1 < number_in13)
-//                                                                read_add13 <= read_add13 + 1'b1;
-//                                                            else begin
-//                                                                read_add13 <= read_add13;
-//                                                                if(read_add14 + 1'b1 < number_in14)
-//                                                                    read_add14 <= read_add14 + 1'b1;
-//                                                                else begin
-//                                                                    read_add14 <= read_add14;
-//                                                                    if(read_add15 + 1'b1 < number_in15)
-//                                                                        read_add15 <= read_add15 + 1'b1;
-//                                                                    else begin
-//                                                                        read_add15 <= read_add15;
-//                                                                        if(read_add16 + 1'b1 < number_in16)
-//                                                                            read_add16 <= read_add16 + 1'b1;
-//                                                                        else begin
-//                                                                            read_add16 <= read_add16;
-//                                                                            if(read_add17 + 1'b1 < number_in17)
-//                                                                                read_add17 <= read_add17 + 1'b1;
-//                                                                            else begin
-//                                                                                read_add17 <= read_add17;
-//                                                                                if(read_add18 + 1'b1 < number_in18)
-//                                                                                    read_add18 <= read_add18 + 1'b1;
-//                                                                                else begin
-//                                                                                    read_add18 <= read_add18;
-//                                                                                end
-//                                                                            end
-//                                                                        end
-//                                                                    end
-//                                                                end
-//                                                            end
-//                                                        end
-//                                                    end
-//                                                end
-//                                            end
-//                                        end
-//                                    end
-//                                end
-//                            end
-//                        end
-//                    end
-//                end
-//            end
-//        end
-//    end
     
     //////////////////////////////////////////////////////////////////
            
@@ -354,91 +230,6 @@ module TrackletCalculator(
       .valid(),
       .none()
       );
-   
-//    always @(posedge clk) begin
-//        first_clk_pipe_dly  <= first_clk_pipe;
-//        first_clk_pipe_dly2 <= first_clk_pipe_dly;
-//        if(first_clk_pipe_dly2)
-//            stubpair <= 12'hfff;
-//        else begin
-//            if(stubpair18in != 12'hfff)
-//                stubpair <= stubpair18in;
-//            else begin
-//                if(stubpair17in != 12'hfff)
-//                    stubpair <= stubpair17in;
-//                else begin
-//                    if(stubpair16in != 12'hfff)
-//                        stubpair <= stubpair16in;
-//                    else begin
-//                        if(stubpair15in != 12'hfff)
-//                            stubpair <= stubpair15in;
-//                        else begin
-//                            if(stubpair14in != 12'hfff)
-//                                stubpair <= stubpair14in;
-//                            else begin
-//                                if(stubpair13in != 12'hfff)
-//                                    stubpair <= stubpair13in;
-//                                else begin
-//                                    if(stubpair12in != 12'hfff)
-//                                        stubpair <= stubpair12in;
-//                                    else begin
-//                                        if(stubpair11in != 12'hfff)
-//                                            stubpair <= stubpair11in;
-//                                        else begin
-//                                            if(stubpair10in != 12'hfff)
-//                                                stubpair <= stubpair10in;
-//                                            else begin
-//                                                if(stubpair9in != 12'hfff)
-//                                                    stubpair <= stubpair9in;
-//                                                else begin
-//                                                    if(stubpair8in != 12'hfff)
-//                                                        stubpair <= stubpair8in;
-//                                                    else begin
-//                                                        if(stubpair7in != 12'hfff)
-//                                                            stubpair <= stubpair7in;
-//                                                        else begin
-//                                                            if(stubpair6in != 12'hfff)
-//                                                                stubpair <= stubpair6in;
-//                                                            else begin
-//                                                                if(stubpair5in != 12'hfff)
-//                                                                    stubpair <= stubpair5in;
-//                                                                else begin
-//                                                                    if(stubpair4in != 12'hfff)
-//                                                                        stubpair <= stubpair4in;
-//                                                                    else begin
-//                                                                        if(stubpair3in != 12'hfff)
-//                                                                            stubpair <= stubpair3in;
-//                                                                        else begin
-//                                                                            if(stubpair2in != 12'hfff)
-//                                                                                stubpair <= stubpair2in;
-//                                                                            else begin
-//                                                                                if(stubpair1in != 12'hfff)
-//                                                                                    stubpair <= stubpair1in;
-//                                                                                else
-//                                                                                    stubpair <= 12'hfff;
-//                                                                            end
-//                                                                        end
-//                                                                    end
-//                                                                end
-//                                                            end
-//                                                        end
-//                                                    end
-//                                                end
-//                                            end
-//                                        end
-//                                    end
-//                                end
-//                            end
-//                        end
-//                    end
-//                end
-//            end
-//        end
-//        if(stubpair >= 0) begin
-//            read_add_innerall <= stubpair[11:6];
-//            read_add_outerall <= stubpair[5:0];
-//        end
-//    end
     
     always @(posedge clk) begin
         first_clk_pipe_dly  <= first_clk_pipe;

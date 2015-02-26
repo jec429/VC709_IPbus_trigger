@@ -40,6 +40,9 @@ module AllStubs(
     input wire [2:0] BX,
     input wire first_clk,
     input wire not_first_clk,
+
+    input start,
+    output done,
     
     input [35:0] data_in,
     
@@ -71,7 +74,7 @@ module AllStubs(
            clk_cnt <= 7'b0;
            BX_pipe <= 3'b111;
         end
-        if(clk_cnt == 7'b1) begin
+        if(start) begin
            BX_pipe <= BX_pipe + 1'b1;
            first_clk_pipe <= 1'b1;
         end
@@ -83,22 +86,13 @@ module AllStubs(
     reg [35:0] data_in_dly;
     reg [5:0] wr_add;
     reg wr_en;
-    reg [2:0] BX_hold_1;
-    reg [2:0] BX_hold_2;
-    reg [2:0] BX_hold_3;
-    reg [2:0] BX_hold_4;
-    reg [2:0] BX_hold_5;
-    reg [2:0] BX_hold_6;
+    wire [2:0] BX_hold_1;
+    wire [2:0] BX_hold_2;
+    
     
     wire [35:0] pre_data_out_MC;
     
-    always @(posedge clk) begin
-        BX_hold_1 <= BX_pipe;
-        BX_hold_2 <= BX_hold_1;
-        BX_hold_3 <= BX_hold_2;
-        BX_hold_4 <= BX_hold_3;
-        BX_hold_5 <= BX_hold_4;
-        BX_hold_6 <= BX_hold_5;
+    always @(posedge clk) begin      
         data_in_dly <= data_in;
         if(first_clk_pipe) begin
             wr_add <= 6'h3f;
@@ -116,15 +110,21 @@ module AllStubs(
         end
         data_out_MC <= pre_data_out_MC;
     end
-
+    
+    assign done = start;
+    pipe_delay #(.STAGES(10), .WIDTH(3)) READ_BX1(.pipe_in(), .pipe_out(), .clk(clk),
+                                                       .val_in(BX_pipe), .val_out(BX_hold_1));
+    pipe_delay #(.STAGES(5), .WIDTH(3)) READ_BX2(.pipe_in(), .pipe_out(), .clk(clk),
+                                                       .val_in(BX_pipe), .val_out(BX_hold_2));
+                                                       
     Memory AllStub(
         // Output
         .output_data(data_out),
         // Input
         .clock(clk),
-        .write_address({BX_pipe-3'b001,wr_add}),
+        .write_address({BX_pipe-1'b1,wr_add}),
         .write_enable(wr_en),
-        .read_address({BX_hold_6-3'b011,read_add}),
+        .read_address({BX_hold_1-3'b011,read_add}),
         .input_data(data_in_dly)
     );
     
@@ -133,9 +133,9 @@ module AllStubs(
         .output_data(pre_data_out_MC),
         // Input
         .clock(clk),
-        .write_address({BX_pipe-3'b001,wr_add}),
+        .write_address({BX_pipe-1'b1,wr_add}),
         .write_enable(wr_en),
-        .read_address({BX_hold_5-3'b110,read_add_MC}),
+        .read_address({BX_hold_2-3'b101,read_add_MC}),
         .input_data(data_in_dly)
     );
     

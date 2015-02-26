@@ -41,6 +41,9 @@ module TrackFit(
     input wire first_clk,
     input wire not_first_clk,
     
+    input start,
+    output done,
+    
     input [125:0] data_in,
     output led_test
     );

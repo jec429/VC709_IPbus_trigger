@@ -40,6 +40,9 @@ module VMStubs(
     input wire [2:0] BX,
     input wire first_clk,
     input wire not_first_clk,
+
+    input start,
+    output done,
     
     input [17:0] data_in,
     input enable,
@@ -81,7 +84,7 @@ module VMStubs(
             clk_cnt <= 7'b0;
             BX_pipe <= 3'b111;
         end
-        if(clk_cnt == 7'b1) begin
+        if(start) begin
             BX_pipe <= BX_pipe + 1'b1;
             first_clk_pipe <= 1'b1;
         end
@@ -117,6 +120,8 @@ module VMStubs(
         data_out <= pre_data_out;
         data_out_ME <= pre_data_out_ME;
     end
+    
+    assign done = start;
 
     Memory #(18) VMStub(
         // Output

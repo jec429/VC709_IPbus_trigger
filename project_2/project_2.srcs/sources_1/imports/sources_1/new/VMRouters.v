@@ -41,6 +41,9 @@ module VMRouter(
     input wire first_clk,
     input wire not_first_clk,
     
+    input start,
+    output reg done,
+    
     input [5:0] number_in1,
     output reg [5:0] read_add1,
     input [35:0] stubinLink1,
@@ -132,7 +135,7 @@ module VMRouter(
            clk_cnt <= 7'b0;
            BX_pipe <= 3'b111;
         end
-        if(clk_cnt == 7'b1) begin
+        if(start) begin
            BX_pipe <= BX_pipe + 1'b1;
            first_clk_pipe <= 1'b1;
         end
@@ -140,9 +143,20 @@ module VMRouter(
            first_clk_pipe <= 1'b0;
         end
     end
-    ///////////////////////////////////////////////////
+    
+    
     parameter INNER = 1'b1;
     parameter ODD = 1'b1;
+    parameter [7:0] n_hold = 8'd3;  
+    reg [n_hold:0] hold;
+    always @(posedge clk) begin
+        hold[0] <= start;
+        hold[n_hold:1] <= hold[n_hold-1:0];
+        done <= hold[n_hold];
+    end
+    
+    ///////////////////////////////////////////////////
+    
     reg [5:0] index;
     reg [17:0] vmstubout;
     

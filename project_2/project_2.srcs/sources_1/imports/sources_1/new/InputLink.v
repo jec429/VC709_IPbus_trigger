@@ -41,6 +41,9 @@ module InputLink(
     input wire first_clk,
     input wire not_first_clk,
     
+    input start,
+    output done,
+    
     input read_en,
     output [35:0] data_out
     );

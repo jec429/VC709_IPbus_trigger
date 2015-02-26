@@ -41,6 +41,9 @@ module AllProj(
     input wire first_clk,
     input wire not_first_clk,
     
+    input start,
+    output done,
+    
     input [53:0] data_in,
     
     //output reg [5:0] number_out,

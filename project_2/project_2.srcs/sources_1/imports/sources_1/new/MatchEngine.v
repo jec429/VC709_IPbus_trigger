@@ -41,6 +41,9 @@ module MatchEngine(
     input wire first_clk,
     input wire not_first_clk,
     
+    input start,
+    output done,
+    
     input [5:0] number_in1,
     output reg [5:0] read_add1,
     input [17:0] vmstubin,
