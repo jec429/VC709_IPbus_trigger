@@ -1,7 +1,7 @@
 Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:24:04 MST 2014
-| Date             : Wed Feb 25 13:02:56 2015
+| Date             : Wed Mar 04 15:53:07 2015
 | Host             : PCPSB375 running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb
 | Design           : top
@@ -222,7 +222,7 @@ Table of Contents
 |       cfg                                                     |    <0.001 |
 |       iface                                                   |     0.002 |
 |       sm                                                      |     0.002 |
-|     udp_if                                                    |     0.035 |
+|     udp_if                                                    |     0.034 |
 |       ARP                                                     |    <0.001 |
 |       IPADDR                                                  |    <0.001 |
 |       RARP_block                                              |     0.002 |

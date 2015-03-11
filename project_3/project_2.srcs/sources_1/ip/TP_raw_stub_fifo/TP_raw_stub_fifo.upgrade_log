@@ -1,0 +1,44 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:24:04 MST 2014
+| Date         : Tue Jan 27 14:58:32 2015
+| Host         : PCPSB375 running 64-bit Service Pack 1  (build 7601)
+| Command      : upgrade_ip
+| Device       : xc7vx690tffg1761-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'TP_raw_stub_fifo'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of TP_raw_stub_fifo (xilinx.com:ip:fifo_generator:12.0) from (Rev. 1) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.2 (win64) Build 932637 Wed Jun 11 13:33:10 MDT 2014
+| Date         : Fri Oct 24 16:16:33 2014
+| Host         : 0602-PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7vx690tffg1761-2
+-----------------------------------------------------------------------------------
+
+Upgrade Log for IP 'TP_raw_stub_fifo'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of TP_raw_stub_fifo from xilinx.com:ip:fifo_generator:11.0 (Rev. 1) to xilinx.com:ip:fifo_generator:12.0 (Rev. 1)
+
+2. Upgrade messages
+-------------------
+
+Added parameter asymmetric_port_width with value false
+Added parameter ecc_pipeline_reg with value false
+Added parameter dynamic_power_saving with value false
+

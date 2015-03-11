@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Wed Feb 25 13:05:48 2015'>
+<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Wed Mar 04 15:56:58 2015'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="1071353" description="" />
-  <keyValuePair key="date_generated" value="Wed Feb 25 13:05:48 2015" description="" />
+  <keyValuePair key="date_generated" value="Wed Mar 04 15:56:58 2015" description="" />
   <keyValuePair key="os_platform" value="WIN64" description="" />
   <keyValuePair key="product_version" value="Vivado v2014.4 (64-bit)" description="" />
   <keyValuePair key="project_id" value="1f5f0bc8296943cfa16ac9b53b4cb138" description="" />
@@ -263,7 +263,7 @@
    <keyValuePair key="movable_instances" value="17484" description="" />
    <keyValuePair key="nets" value="22439" description="" />
    <keyValuePair key="pins" value="135272" description="" />
-   <keyValuePair key="placer_runtime" value="51.034000" description="" />
+   <keyValuePair key="placer_runtime" value="52.223000" description="" />
    <keyValuePair key="placer_timing_driven" value="1" description="" />
    <keyValuePair key="pll" value="0" description="" />
    <keyValuePair key="threads" value="2" description="" />
@@ -290,155 +290,7 @@
    <keyValuePair key="srls_total" value="322" description="" />
   </section>
  </section>
- <section name="report_power" level="1" order="6" description="">
-  <section name="command_line_options" level="2" order="1" description="">
-   <keyValuePair key="-append" value="default::[not_specified]" description="" />
-   <keyValuePair key="-file" value="[specified]" description="" />
-   <keyValuePair key="-format" value="default::text" description="" />
-   <keyValuePair key="-hier" value="default::power" description="" />
-   <keyValuePair key="-l" value="default::[not_specified]" description="" />
-   <keyValuePair key="-name" value="default::[not_specified]" description="" />
-   <keyValuePair key="-no_propagation" value="default::[not_specified]" description="" />
-   <keyValuePair key="-return_string" value="default::[not_specified]" description="" />
-   <keyValuePair key="-verbose" value="default::[not_specified]" description="" />
-   <keyValuePair key="-vid" value="default::[not_specified]" description="" />
-   <keyValuePair key="-xpe" value="default::[not_specified]" description="" />
-  </section>
-  <section name="usage" level="2" order="2" description="">
-   <keyValuePair key="airflow" value="250 (LFM)" description="" />
-   <keyValuePair key="ambient_temp" value="25.0 (C)" description="" />
-   <keyValuePair key="bi-dir_toggle" value="12.500000" description="" />
-   <keyValuePair key="bidir_output_enable" value="1.000000" description="" />
-   <keyValuePair key="board_layers" value="12to15 (12 to 15 Layers)" description="" />
-   <keyValuePair key="board_selection" value="medium (10&quot;x10&quot;)" description="" />
-   <keyValuePair key="bram" value="0.064988" description="" />
-   <keyValuePair key="clocks" value="0.104790" description="" />
-   <keyValuePair key="confidence_level_clock_activity" value="High" description="" />
-   <keyValuePair key="confidence_level_design_state" value="High" description="" />
-   <keyValuePair key="confidence_level_device_models" value="High" description="" />
-   <keyValuePair key="confidence_level_internal_activity" value="Medium" description="" />
-   <keyValuePair key="confidence_level_io_activity" value="Medium" description="" />
-   <keyValuePair key="confidence_level_overall" value="Medium" description="" />
-   <keyValuePair key="customer" value="TBD" description="" />
-   <keyValuePair key="customer_class" value="TBD" description="" />
-   <keyValuePair key="devstatic" value="0.383784" description="" />
-   <keyValuePair key="die" value="xc7vx690tffg1761-2" description="" />
-   <keyValuePair key="dsp" value="0.041716" description="" />
-   <keyValuePair key="dsp_output_toggle" value="12.500000" description="" />
-   <keyValuePair key="dynamic" value="1.550990" description="" />
-   <keyValuePair key="effective_thetaja" value="1.1" description="" />
-   <keyValuePair key="enable_probability" value="0.990000" description="" />
-   <keyValuePair key="family" value="virtex7" description="" />
-   <keyValuePair key="ff_toggle" value="12.500000" description="" />
-   <keyValuePair key="flow_state" value="routed" description="" />
-   <keyValuePair key="gth" value="0.796718" description="" />
-   <keyValuePair key="heatsink" value="medium (Medium Profile)" description="" />
-   <keyValuePair key="i/o" value="0.025934" description="" />
-   <keyValuePair key="input_toggle" value="12.500000" description="" />
-   <keyValuePair key="junction_temp" value="27.2 (C)" description="" />
-   <keyValuePair key="logic" value="0.018054" description="" />
-   <keyValuePair key="mgtavcc_dynamic_current" value="0.512820" description="" />
-   <keyValuePair key="mgtavcc_static_current" value="0.028479" description="" />
-   <keyValuePair key="mgtavcc_total_current" value="0.541299" description="" />
-   <keyValuePair key="mgtavcc_voltage" value="1.000000" description="" />
-   <keyValuePair key="mgtavtt_dynamic_current" value="0.208061" description="" />
-   <keyValuePair key="mgtavtt_static_current" value="0.007596" description="" />
-   <keyValuePair key="mgtavtt_total_current" value="0.215657" description="" />
-   <keyValuePair key="mgtavtt_voltage" value="1.200000" description="" />
-   <keyValuePair key="mgtvccaux_dynamic_current" value="0.000000" description="" />
-   <keyValuePair key="mgtvccaux_static_current" value="0.000022" description="" />
-   <keyValuePair key="mgtvccaux_total_current" value="0.000022" description="" />
-   <keyValuePair key="mgtvccaux_voltage" value="1.800000" description="" />
-   <keyValuePair key="mgtzavcc_dynamic_current" value="0.000000" description="" />
-   <keyValuePair key="mgtzavcc_static_current" value="0.000000" description="" />
-   <keyValuePair key="mgtzavcc_total_current" value="0.000000" description="" />
-   <keyValuePair key="mgtzavcc_voltage" value="1.075000" description="" />
-   <keyValuePair key="mgtzvcch_dynamic_current" value="0.000000" description="" />
-   <keyValuePair key="mgtzvcch_static_current" value="0.000000" description="" />
-   <keyValuePair key="mgtzvcch_total_current" value="0.000000" description="" />
-   <keyValuePair key="mgtzvcch_voltage" value="1.800000" description="" />
-   <keyValuePair key="mgtzvccl_dynamic_current" value="0.000000" description="" />
-   <keyValuePair key="mgtzvccl_static_current" value="0.000000" description="" />
-   <keyValuePair key="mgtzvccl_total_current" value="0.000000" description="" />
-   <keyValuePair key="mgtzvccl_voltage" value="1.075000" description="" />
-   <keyValuePair key="mmcm" value="0.470474" description="" />
-   <keyValuePair key="netlist_net_matched" value="NA" description="" />
-   <keyValuePair key="off-chip_power" value="0.001225" description="" />
-   <keyValuePair key="on-chip_power" value="1.934774" description="" />
-   <keyValuePair key="output_enable" value="1.000000" description="" />
-   <keyValuePair key="output_load" value="5.000000" description="" />
-   <keyValuePair key="output_toggle" value="12.500000" description="" />
-   <keyValuePair key="package" value="ffg1761" description="" />
-   <keyValuePair key="pct_clock_constrained" value="8.000000" description="" />
-   <keyValuePair key="pct_inputs_defined" value="25" description="" />
-   <keyValuePair key="platform" value="nt64" description="" />
-   <keyValuePair key="process" value="typical" description="" />
-   <keyValuePair key="ram_enable" value="50.000000" description="" />
-   <keyValuePair key="ram_write" value="50.000000" description="" />
-   <keyValuePair key="read_saif" value="False" description="" />
-   <keyValuePair key="set/reset_probability" value="0.000000" description="" />
-   <keyValuePair key="signal_rate" value="False" description="" />
-   <keyValuePair key="signals" value="0.028316" description="" />
-   <keyValuePair key="simulation_file" value="None" description="" />
-   <keyValuePair key="speedgrade" value="-2" description="" />
-   <keyValuePair key="static_prob" value="False" description="" />
-   <keyValuePair key="temp_grade" value="commercial" description="" />
-   <keyValuePair key="thetajb" value="1.9 (C/W)" description="" />
-   <keyValuePair key="thetasa" value="2.2 (C/W)" description="" />
-   <keyValuePair key="toggle_rate" value="False" description="" />
-   <keyValuePair key="user_board_temp" value="25.0 (C)" description="" />
-   <keyValuePair key="user_effective_thetaja" value="1.1" description="" />
-   <keyValuePair key="user_junc_temp" value="27.2 (C)" description="" />
-   <keyValuePair key="user_thetajb" value="1.9 (C/W)" description="" />
-   <keyValuePair key="user_thetasa" value="2.2 (C/W)" description="" />
-   <keyValuePair key="vccadc_dynamic_current" value="0.000000" description="" />
-   <keyValuePair key="vccadc_static_current" value="0.020000" description="" />
-   <keyValuePair key="vccadc_total_current" value="0.020000" description="" />
-   <keyValuePair key="vccadc_voltage" value="1.800000" description="" />
-   <keyValuePair key="vccaux_dynamic_current" value="0.263944" description="" />
-   <keyValuePair key="vccaux_io_dynamic_current" value="0.000000" description="" />
-   <keyValuePair key="vccaux_io_static_current" value="0.000000" description="" />
-   <keyValuePair key="vccaux_io_total_current" value="0.000000" description="" />
-   <keyValuePair key="vccaux_io_voltage" value="1.800000" description="" />
-   <keyValuePair key="vccaux_static_current" value="0.053376" description="" />
-   <keyValuePair key="vccaux_total_current" value="0.317320" description="" />
-   <keyValuePair key="vccaux_voltage" value="1.800000" description="" />
-   <keyValuePair key="vccbram_dynamic_current" value="0.003058" description="" />
-   <keyValuePair key="vccbram_static_current" value="0.006169" description="" />
-   <keyValuePair key="vccbram_total_current" value="0.009227" description="" />
-   <keyValuePair key="vccbram_voltage" value="1.000000" description="" />
-   <keyValuePair key="vccint_dynamic_current" value="0.292894" description="" />
-   <keyValuePair key="vccint_static_current" value="0.204605" description="" />
-   <keyValuePair key="vccint_total_current" value="0.497499" description="" />
-   <keyValuePair key="vccint_voltage" value="1.000000" description="" />
-   <keyValuePair key="vcco12_dynamic_current" value="0.000000" description="" />
-   <keyValuePair key="vcco12_static_current" value="0.000000" description="" />
-   <keyValuePair key="vcco12_total_current" value="0.000000" description="" />
-   <keyValuePair key="vcco12_voltage" value="1.200000" description="" />
-   <keyValuePair key="vcco135_dynamic_current" value="0.000000" description="" />
-   <keyValuePair key="vcco135_static_current" value="0.000000" description="" />
-   <keyValuePair key="vcco135_total_current" value="0.000000" description="" />
-   <keyValuePair key="vcco135_voltage" value="1.350000" description="" />
-   <keyValuePair key="vcco15_dynamic_current" value="0.000000" description="" />
-   <keyValuePair key="vcco15_static_current" value="0.001000" description="" />
-   <keyValuePair key="vcco15_total_current" value="0.001000" description="" />
-   <keyValuePair key="vcco15_voltage" value="1.500000" description="" />
-   <keyValuePair key="vcco18_dynamic_current" value="0.010373" description="" />
-   <keyValuePair key="vcco18_static_current" value="0.001000" description="" />
-   <keyValuePair key="vcco18_total_current" value="0.011373" description="" />
-   <keyValuePair key="vcco18_voltage" value="1.800000" description="" />
-   <keyValuePair key="vcco25_dynamic_current" value="0.000000" description="" />
-   <keyValuePair key="vcco25_static_current" value="0.000000" description="" />
-   <keyValuePair key="vcco25_total_current" value="0.000000" description="" />
-   <keyValuePair key="vcco25_voltage" value="2.500000" description="" />
-   <keyValuePair key="vcco33_dynamic_current" value="0.000000" description="" />
-   <keyValuePair key="vcco33_static_current" value="0.000000" description="" />
-   <keyValuePair key="vcco33_total_current" value="0.000000" description="" />
-   <keyValuePair key="vcco33_voltage" value="3.300000" description="" />
-   <keyValuePair key="version" value="2014.4" description="" />
-  </section>
- </section>
- <section name="report_utilization" level="1" order="7" description="">
+ <section name="report_utilization" level="1" order="6" description="">
   <section name="clocking" level="2" order="1" description="">
    <keyValuePair key="bufgctrl_available" value="32" description="" />
    <keyValuePair key="bufgctrl_fixed" value="0" description="" />
@@ -734,7 +586,7 @@
    <keyValuePair key="xadc_util_percentage" value="0.00" description="" />
   </section>
  </section>
- <section name="router" level="1" order="8" description="">
+ <section name="router" level="1" order="7" description="">
   <section name="usage" level="2" order="1" description="">
    <keyValuePair key="actual_expansions" value="22683642" description="" />
    <keyValuePair key="bogomips" value="0" description="" />
@@ -756,13 +608,13 @@
    <keyValuePair key="nets" value="22439" description="" />
    <keyValuePair key="pins" value="135272" description="" />
    <keyValuePair key="pll" value="0" description="" />
-   <keyValuePair key="router_runtime" value="267.699000" description="" />
+   <keyValuePair key="router_runtime" value="274.478000" description="" />
    <keyValuePair key="router_timing_driven" value="1" description="" />
    <keyValuePair key="threads" value="2" description="" />
    <keyValuePair key="timing_constraints_exist" value="1" description="" />
   </section>
  </section>
- <section name="synthesis" level="1" order="9" description="">
+ <section name="synthesis" level="1" order="8" description="">
   <section name="command_line_options" level="2" order="1" description="">
    <keyValuePair key="-bufg" value="default::12" description="" />
    <keyValuePair key="-constrset" value="default::[not_specified]" description="" />
@@ -786,13 +638,13 @@
    <keyValuePair key="-verilog_define" value="default::[not_specified]" description="" />
   </section>
   <section name="usage" level="2" order="2" description="">
-   <keyValuePair key="elapsed" value="00:02:03s" description="" />
+   <keyValuePair key="elapsed" value="00:02:10s" description="" />
    <keyValuePair key="hls_ip" value="0" description="" />
-   <keyValuePair key="memory_gain" value="842.219MB" description="" />
-   <keyValuePair key="memory_peak" value="1036.734MB" description="" />
+   <keyValuePair key="memory_gain" value="842.418MB" description="" />
+   <keyValuePair key="memory_peak" value="1036.793MB" description="" />
   </section>
  </section>
- <section name="unisim_transformation" level="1" order="10" description="">
+ <section name="unisim_transformation" level="1" order="9" description="">
   <section name="post_unisim_transformation" level="2" order="1" description="">
    <keyValuePair key="bufg" value="13" description="" />
    <keyValuePair key="bufmr" value="1" description="" />
@@ -860,7 +712,7 @@
    <keyValuePair key="vcc" value="356" description="" />
   </section>
  </section>
- <section name="vivado_usage" level="1" order="11" description="">
+ <section name="vivado_usage" level="1" order="10" description="">
   <section name="project_data" level="2" order="1" description="">
    <keyValuePair key="board" value="Virtex-7 VC709 Evaluation Platform" description="" />
    <keyValuePair key="constraintsetcount" value="2" description="" />
@@ -877,6 +729,12 @@
    <keyValuePair key="synthesisstrategy" value="Vivado Synthesis Defaults" description="" />
    <keyValuePair key="totalimplruns" value="7" description="" />
    <keyValuePair key="totalsynthesisruns" value="7" description="" />
+  </section>
+ </section>
+ <section name="xsim" level="1" order="11" description="">
+  <section name="command_line_options" level="2" order="1" description="">
+   <keyValuePair key="-sim_mode" value="default::behavioral" description="" />
+   <keyValuePair key="-sim_type" value="default::" description="" />
   </section>
  </section>
 </section>

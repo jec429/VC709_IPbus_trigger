@@ -2,13 +2,14 @@
 # Vivado v2014.4 (64-bit)
 # SW Build 1071353 on Tue Nov 18 18:24:04 MST 2014
 # IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
-# Start of session at: Wed Feb 25 12:53:47 2015
-# Process ID: 6720
+# Start of session at: Wed Mar 04 15:43:30 2015
+# Process ID: 6516
 # Log file: C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/top.vds
 # Journal file: C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top.tcl
 # set_param gui.test TreeTableDev
+# set_param xicom.use_bs_reader 1
 # debug::add_scope template.lib 1
 # set_msg_config -id {HDL 9-1061} -limit 100000
 # set_msg_config -id {HDL 9-1654} -limit 100000
@@ -129,7 +130,7 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx690t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx690t'
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 243.785 ; gain = 82.406
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 244.008 ; gain = 82.516
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/VC709_ipbus/top/top_vc709_basex.vhd:65]
 INFO: [Synth 8-638] synthesizing module 'clocks_7s_serdes' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/VC709_ipbus/ipbus/hdl/clocks_7s_serdes.vhd:34]
@@ -205,9 +206,9 @@ INFO: [Synth 8-113] binding component instance 'SRL16E_inst' to cell 'SRL16E' [C
 	Parameter IS_CLK_INVERTED bound to: 1'b0 
 INFO: [Synth 8-113] binding component instance 'i_ce_rx_crc_dl' to cell 'SRL16E' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/VC709_ipbus/ipbus/ethernet/hdl/soft_emac_AXI4.vhd:282]
 INFO: [Synth 8-256] done synthesizing module 'soft_emac' (4#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/VC709_ipbus/ipbus/ethernet/hdl/soft_emac_AXI4.vhd:62]
-INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_0' declared at 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/realtime/gig_ethernet_pcs_pma_0_stub.v:6' bound to instance 'phy' of component 'gig_ethernet_pcs_pma_0' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/VC709_ipbus/ipbus/ethernet/hdl/eth_7s_1000basex_new.vhd:209]
-INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_0' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/realtime/gig_ethernet_pcs_pma_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_0' (5#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/realtime/gig_ethernet_pcs_pma_0_stub.v:6]
+INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_0' declared at 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/realtime/gig_ethernet_pcs_pma_0_stub.v:6' bound to instance 'phy' of component 'gig_ethernet_pcs_pma_0' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/VC709_ipbus/ipbus/ethernet/hdl/eth_7s_1000basex_new.vhd:209]
+INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_0' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/realtime/gig_ethernet_pcs_pma_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_0' (5#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/realtime/gig_ethernet_pcs_pma_0_stub.v:6]
 INFO: [Synth 8-256] done synthesizing module 'eth_7s_1000basex' (6#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/VC709_ipbus/ipbus/ethernet/hdl/eth_7s_1000basex_new.vhd:55]
 INFO: [Synth 8-638] synthesizing module 'ipbus_ctrl' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/VC709_ipbus/ipbus/ipbus_core/hdl/ipbus_ctrl.vhd:66]
 	Parameter MAC_CFG bound to: 1'b0 
@@ -434,13 +435,13 @@ INFO: [Synth 8-256] done synthesizing module 'ipbus_peephole_ram' (40#1) [C:/Use
 INFO: [Synth 8-638] synthesizing module 'ipbus_trigger_top' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/VC709_ipbus/ipbus/slaves/hdl/ipbus_trigger_top.vhd:35]
 INFO: [Synth 8-3491] module 'verilog_trigger_top' declared at 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/new/verilog_trigger_top.v:23' bound to instance 'trigger_top' of component 'verilog_trigger_top' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/VC709_ipbus/ipbus/slaves/hdl/ipbus_trigger_top.vhd:103]
 INFO: [Synth 8-638] synthesizing module 'verilog_trigger_top' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/new/verilog_trigger_top.v:23]
-INFO: [Synth 8-638] synthesizing module 'trigger_clock_synth' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/realtime/trigger_clock_synth_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'trigger_clock_synth' (41#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/realtime/trigger_clock_synth_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'trigger_clock_synth' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/realtime/trigger_clock_synth_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'trigger_clock_synth' (41#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/realtime/trigger_clock_synth_stub.v:6]
 INFO: [Synth 8-638] synthesizing module 'Tracklet_processing' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/new/Tracklet_processing.v:23]
 INFO: [Synth 8-638] synthesizing module 'InputLink' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/new/InputLink.v:23]
 	Parameter LINK bound to: 3'b000 
-INFO: [Synth 8-638] synthesizing module 'TP_raw_stub_fifo' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/realtime/TP_raw_stub_fifo_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'TP_raw_stub_fifo' (42#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/realtime/TP_raw_stub_fifo_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'TP_raw_stub_fifo' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/realtime/TP_raw_stub_fifo_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'TP_raw_stub_fifo' (42#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/realtime/TP_raw_stub_fifo_stub.v:7]
 INFO: [Synth 8-256] done synthesizing module 'InputLink' (43#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/new/InputLink.v:23]
 INFO: [Synth 8-638] synthesizing module 'LayerRouter' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/new/LayerRouter.v:23]
 INFO: [Synth 8-256] done synthesizing module 'LayerRouter' (44#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/new/LayerRouter.v:23]
@@ -646,12 +647,12 @@ INFO: [Synth 8-638] synthesizing module 'TracksPars' [C:/Users/ZhengchengTao/Doc
 INFO: [Synth 8-256] done synthesizing module 'TracksPars' (64#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/new/TracksPars.v:23]
 INFO: [Synth 8-638] synthesizing module 'Aurora_test' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/Aurora_test_vc709.v:23]
 INFO: [Synth 8-638] synthesizing module 'Aurora_Channel_0' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/Aurora_Channel_0.v:9]
-INFO: [Synth 8-638] synthesizing module 'link_axis_data_fifo' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/realtime/link_axis_data_fifo_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'link_axis_data_fifo' (65#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/realtime/link_axis_data_fifo_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'link_axis_data_fifo' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/realtime/link_axis_data_fifo_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'link_axis_data_fifo' (65#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/realtime/link_axis_data_fifo_stub.v:7]
 WARNING: [Synth 8-350] instance 'tx_fifo' of module 'link_axis_data_fifo' requires 17 connections, but only 14 given [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/Aurora_Channel_0.v:99]
 WARNING: [Synth 8-350] instance 'rx_fifo' of module 'link_axis_data_fifo' requires 17 connections, but only 14 given [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/Aurora_Channel_0.v:117]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/realtime/aurora_8b10b_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0' (66#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/realtime/aurora_8b10b_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/realtime/aurora_8b10b_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0' (66#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/realtime/aurora_8b10b_0_stub.v:6]
 INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_CLOCK_MODULE' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/aurora_8b10b_clock_module.v:18]
 INFO: [Synth 8-638] synthesizing module 'BUFG' [D:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:606]
 INFO: [Synth 8-256] done synthesizing module 'BUFG' (67#1) [D:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:606]
@@ -697,8 +698,8 @@ INFO: [Synth 8-256] done synthesizing module 'Aurora_Channel_0' (74#1) [C:/Users
 INFO: [Synth 8-638] synthesizing module 'Aurora_Channel_1' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/Aurora_Channel_1.v:9]
 WARNING: [Synth 8-350] instance 'tx_fifo' of module 'link_axis_data_fifo' requires 17 connections, but only 14 given [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/Aurora_Channel_1.v:99]
 WARNING: [Synth 8-350] instance 'rx_fifo' of module 'link_axis_data_fifo' requires 17 connections, but only 14 given [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/Aurora_Channel_1.v:117]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_1' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/realtime/aurora_8b10b_1_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_1' (75#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/realtime/aurora_8b10b_1_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_1' [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/realtime/aurora_8b10b_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_1' (75#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/realtime/aurora_8b10b_1_stub.v:6]
 WARNING: [Synth 8-350] instance 'io_block' of module 'aurora_io_block' requires 20 connections, but only 19 given [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/Aurora_Channel_1.v:239]
 INFO: [Synth 8-256] done synthesizing module 'Aurora_Channel_1' (76#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/Aurora_Channel_1.v:9]
 INFO: [Synth 8-256] done synthesizing module 'Aurora_test' (77#1) [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/Aurora_test_vc709.v:23]
@@ -789,7 +790,7 @@ WARNING: [Synth 8-3917] design top has port sfp_rs0 driven by constant 0
 WARNING: [Synth 8-3917] design top has port sfp_rs1 driven by constant 0
 WARNING: [Synth 8-3917] design top has port sfp_tx_disable driven by constant 0
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 318.719 ; gain = 157.340
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 318.945 ; gain = 157.453
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -900,7 +901,7 @@ WARNING: [Synth 8-3295] tying undriven pin lookup_phi_0:input_data[28] to consta
 WARNING: [Synth 8-3295] tying undriven pin lookup_phi_0:input_data[27] to constant 0 [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/new/TrackFit.v:131]
 INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 318.719 ; gain = 157.340
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 318.945 ; gain = 157.453
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -915,14 +916,14 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/dcp/trigger_clock_synth_in_context.xdc] for cell 'slaves/slave6/trigger_top/trigger_clock_synth'
-Finished Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/dcp/trigger_clock_synth_in_context.xdc] for cell 'slaves/slave6/trigger_top/trigger_clock_synth'
-Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/dcp_2/aurora_8b10b_0_in_context.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/aurora_8b10b_0'
-Finished Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/dcp_2/aurora_8b10b_0_in_context.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/aurora_8b10b_0'
-Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/dcp_3/aurora_8b10b_1_in_context.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/aurora_8b10b_1'
-Finished Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/dcp_3/aurora_8b10b_1_in_context.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/aurora_8b10b_1'
-Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/dcp_4/gig_ethernet_pcs_pma_0_in_context.xdc] for cell 'eth/phy'
-Finished Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/dcp_4/gig_ethernet_pcs_pma_0_in_context.xdc] for cell 'eth/phy'
+Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/dcp/trigger_clock_synth_in_context.xdc] for cell 'slaves/slave6/trigger_top/trigger_clock_synth'
+Finished Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/dcp/trigger_clock_synth_in_context.xdc] for cell 'slaves/slave6/trigger_top/trigger_clock_synth'
+Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/dcp_2/aurora_8b10b_0_in_context.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/aurora_8b10b_0'
+Finished Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/dcp_2/aurora_8b10b_0_in_context.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/aurora_8b10b_0'
+Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/dcp_3/aurora_8b10b_1_in_context.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/aurora_8b10b_1'
+Finished Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/dcp_3/aurora_8b10b_1_in_context.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/aurora_8b10b_1'
+Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/dcp_4/gig_ethernet_pcs_pma_0_in_context.xdc] for cell 'eth/phy'
+Finished Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/dcp_4/gig_ethernet_pcs_pma_0_in_context.xdc] for cell 'eth/phy'
 Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/constrs_1/imports/new/pins.xdc]
 Finished Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/constrs_1/imports/new/pins.xdc]
 Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/constrs_1/imports/new/timing.xdc]
@@ -939,24 +940,24 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IBUFGDS => IBUFDS: 2 instances
   MMCME2_BASE => MMCME2_ADV: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 849.633 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 849.063 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 849.633 ; gain = 688.254
+Finished Constraint Validation : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 849.063 ; gain = 687.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7vx690tffg1761-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 849.633 ; gain = 688.254
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 849.063 ; gain = 687.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for gt_clkp. (constraint file  C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/dcp_4/gig_ethernet_pcs_pma_0_in_context.xdc, line 6).
-Applied set_property IO_BUFFER_TYPE = NONE for gt_clkn. (constraint file  C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6720-PCPSB375/dcp_4/gig_ethernet_pcs_pma_0_in_context.xdc, line 7).
+Applied set_property IO_BUFFER_TYPE = NONE for gt_clkp. (constraint file  C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/dcp_4/gig_ethernet_pcs_pma_0_in_context.xdc, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for gt_clkn. (constraint file  C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/.Xil/Vivado-6516-PCPSB375/dcp_4/gig_ethernet_pcs_pma_0_in_context.xdc, line 7).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 849.633 ; gain = 688.254
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 849.063 ; gain = 687.570
 ---------------------------------------------------------------------------------
 ROM "bad_crc" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
 ROM "invert" won't be mapped to Block RAM because address size (2) smaller than threshold (5) 
@@ -1099,7 +1100,7 @@ WARNING: [Synth 8-3848] Net led_test2 in module/entity verilog_trigger_top does 
 WARNING: [Synth 8-3848] Net led_test3 in module/entity verilog_trigger_top does not have driver. [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/new/verilog_trigger_top.v:90]
 WARNING: [Synth 8-3848] Net led_test4 in module/entity verilog_trigger_top does not have driver. [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/imports/sources_1/new/verilog_trigger_top.v:91]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 849.633 ; gain = 688.254
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 849.063 ; gain = 687.570
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2215,7 +2216,7 @@ BRAMs: 2940 (col length: RAMB18 200 RAMB36 100)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 849.633 ; gain = 688.254
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 849.063 ; gain = 687.570
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -2548,9 +2549,9 @@ WARNING: [Synth 8-3917] design top has port sfp_rs0 driven by constant 0
 WARNING: [Synth 8-3917] design top has port sfp_rs1 driven by constant 0
 WARNING: [Synth 8-3917] design top has port sfp_tx_disable driven by constant 0
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 849.633 ; gain = 688.254
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:51 . Memory (MB): peak = 849.063 ; gain = 687.570
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 849.633 ; gain = 688.254
+Finished Parallel Reinference  : Time (s): cpu = 00:00:47 ; elapsed = 00:00:51 . Memory (MB): peak = 849.063 ; gain = 687.570
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -2981,19 +2982,19 @@ INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instan
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 849.633 ; gain = 688.254
+Finished Area Optimization : Time (s): cpu = 00:01:23 ; elapsed = 00:01:28 . Memory (MB): peak = 849.063 ; gain = 687.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 849.633 ; gain = 688.254
+Finished Area Optimization : Time (s): cpu = 00:01:23 ; elapsed = 00:01:28 . Memory (MB): peak = 849.063 ; gain = 687.570
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 849.633 ; gain = 688.254
+Finished Parallel Area Optimization  : Time (s): cpu = 00:01:23 ; elapsed = 00:01:28 . Memory (MB): peak = 849.063 ; gain = 687.570
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 849.633 ; gain = 688.254
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:23 ; elapsed = 00:01:28 . Memory (MB): peak = 849.063 ; gain = 687.570
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
@@ -3006,10 +3007,10 @@ info: Source pin 'slaves/slave6/trigger_top/trigger_clock_synth/clk_in1' of gene
 info: Moving clock source from hierarchical pin '\slaves/slave6/trigger_top/trigger_clock_synth /clk_in1' to 'IBUFGDS_clk200/O'
 INFO: Moved 10 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:36 ; elapsed = 00:01:40 . Memory (MB): peak = 939.336 ; gain = 777.957
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:44 ; elapsed = 00:01:48 . Memory (MB): peak = 939.270 ; gain = 777.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:43 ; elapsed = 00:01:48 . Memory (MB): peak = 969.820 ; gain = 808.441
+Finished Timing Optimization : Time (s): cpu = 00:01:50 ; elapsed = 00:01:55 . Memory (MB): peak = 969.734 ; gain = 808.242
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3069,7 +3070,7 @@ INFO: [Synth 8-4480] The timing for the instance \slaves/slave6/trigger_top/trac
 INFO: [Synth 8-4480] The timing for the instance \slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/lookup_z_2/RAM_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance \slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/lookup_z_3/RAM_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:57 ; elapsed = 00:02:02 . Memory (MB): peak = 1036.734 ; gain = 875.355
+Finished Technology Mapping : Time (s): cpu = 00:02:03 ; elapsed = 00:02:09 . Memory (MB): peak = 1036.793 ; gain = 875.301
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3093,7 +3094,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:58 ; elapsed = 00:02:03 . Memory (MB): peak = 1036.734 ; gain = 875.355
+Finished IO Insertion : Time (s): cpu = 00:02:05 ; elapsed = 00:02:10 . Memory (MB): peak = 1036.793 ; gain = 875.301
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -3106,7 +3107,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:58 ; elapsed = 00:02:03 . Memory (MB): peak = 1036.734 ; gain = 875.355
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:05 ; elapsed = 00:02:10 . Memory (MB): peak = 1036.793 ; gain = 875.301
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3118,7 +3119,7 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:00 ; elapsed = 00:02:04 . Memory (MB): peak = 1036.734 ; gain = 875.355
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:06 ; elapsed = 00:02:11 . Memory (MB): peak = 1036.793 ; gain = 875.301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RAM, DSP and Shift Register Reporting
@@ -3376,11 +3377,11 @@ Report Instance Areas:
 |113   |              standard_cc_module      |aurora_8b10b_STANDARD_CC_MODULE        |    80|
 +------+--------------------------------------+---------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:00 ; elapsed = 00:02:05 . Memory (MB): peak = 1036.734 ; gain = 875.355
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:06 ; elapsed = 00:02:12 . Memory (MB): peak = 1036.793 ; gain = 875.301
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 3008 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:01:44 . Memory (MB): peak = 1036.734 ; gain = 306.426
-Synthesis Optimization Complete : Time (s): cpu = 00:02:00 ; elapsed = 00:02:05 . Memory (MB): peak = 1036.734 ; gain = 875.355
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:01:49 . Memory (MB): peak = 1036.793 ; gain = 307.363
+Synthesis Optimization Complete : Time (s): cpu = 00:02:07 ; elapsed = 00:02:12 . Memory (MB): peak = 1036.793 ; gain = 875.301
 INFO: [Project 1-571] Translating synthesized netlist
 WARNING: [Netlist 29-345] The value of SIM_DEVICE on instance 'ipbus/udp_if/ipbus_rx_ram/ram1_reg_0' of type 'RAMB36E1' is 'VIRTEX6'; it is being changed to match the current FPGA architecture, '7SERIES'. For functional simulation to match hardware behavior, the value of SIM_DEVICE should be changed in the source netlist or constraint file.
 WARNING: [Netlist 29-345] The value of SIM_DEVICE on instance 'ipbus/udp_if/ipbus_rx_ram/ram1_reg_1' of type 'RAMB36E1' is 'VIRTEX6'; it is being changed to match the current FPGA architecture, '7SERIES'. For functional simulation to match hardware behavior, the value of SIM_DEVICE should be changed in the source netlist or constraint file.
@@ -3440,8 +3441,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 588 Infos, 335 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:05 ; elapsed = 00:02:09 . Memory (MB): peak = 1036.734 ; gain = 842.219
+synth_design: Time (s): cpu = 00:02:11 ; elapsed = 00:02:16 . Memory (MB): peak = 1036.793 ; gain = 842.418
 # write_checkpoint -noxdef top.dcp
 # catch { report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb }
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.427 . Memory (MB): peak = 1036.734 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Feb 25 12:56:00 2015...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.326 . Memory (MB): peak = 1036.793 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 04 15:45:50 2015...

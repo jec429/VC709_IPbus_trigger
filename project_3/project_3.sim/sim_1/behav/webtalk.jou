@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Webtalk v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 18:24:04 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Wed Mar 04 13:32:50 2015
+# Process ID: 6136
+# Log file: C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.sim/sim_1/behav/webtalk.log
+# Journal file: C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.sim/sim_1/behav\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.sim/sim_1/behav/xsim.dir/aurora_sim_tb_behav/webtalk/xsim_webtalk.tcl -notrace
