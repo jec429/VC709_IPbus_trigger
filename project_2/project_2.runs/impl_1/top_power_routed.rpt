@@ -1,8 +1,8 @@
 Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:24:04 MST 2014
-| Date             : Wed Mar 04 15:53:07 2015
-| Host             : PCPSB375 running 64-bit Service Pack 1  (build 7601)
+| Tool Version     : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
+| Date             : Tue Mar 17 14:51:27 2015
+| Host             : 0602-PC running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb
 | Design           : top
 | Device           : xc7vx690tffg1761-2
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+--------+
-| Total On-Chip Power (W)  | 1.935  |
-| Dynamic (W)              | 1.551  |
+| Total On-Chip Power (W)  | 1.931  |
+| Dynamic (W)              | 1.548  |
 | Device Static (W)        | 0.384  |
 | Total Off-Chip Power (W) | 0.001  |
 | Effective TJA (C/W)      | 1.1    |
@@ -50,22 +50,22 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.105 |       20 |       --- |             --- |
-| Slice Logic             |     0.018 |    17309 |       --- |             --- |
-|   LUT as Logic          |     0.014 |     5547 |    433200 |            1.28 |
-|   Register              |     0.001 |     9140 |    866400 |            1.05 |
+| Clocks                  |     0.103 |       19 |       --- |             --- |
+| Slice Logic             |     0.018 |    17361 |       --- |             --- |
+|   LUT as Logic          |     0.014 |     5568 |    433200 |            1.28 |
+|   Register              |     0.001 |     9145 |    866400 |            1.05 |
 |   CARRY4                |     0.001 |      482 |    108300 |            0.44 |
 |   LUT as Shift Register |     0.001 |      235 |    174200 |            0.13 |
 |   F7/F8 Muxes           |    <0.001 |       79 |    433200 |            0.01 |
-|   Others                |     0.000 |      701 |       --- |             --- |
-| Signals                 |     0.028 |    16031 |       --- |             --- |
-| Block RAM               |     0.065 |     42.5 |      1470 |            2.89 |
+|   Others                |     0.000 |      705 |       --- |             --- |
+| Signals                 |     0.028 |    16076 |       --- |             --- |
+| Block RAM               |     0.064 |     42.5 |      1470 |            2.89 |
 | MMCM                    |     0.470 |        4 |        20 |           20.00 |
 | DSPs                    |     0.042 |       74 |      3600 |            2.05 |
-| I/O                     |     0.026 |       19 |       850 |            2.23 |
+| I/O                     |     0.026 |       25 |       850 |            2.94 |
 | GTH                     |     0.797 |        3 |       --- |             --- |
 | Static Power            |     0.384 |          |           |                 |
-| Total                   |     1.935 |          |           |                 |
+| Total                   |     1.931 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.497 |       0.293 |      0.205 |
+| Vccint    |       1.000 |     0.494 |       0.290 |      0.205 |
 | Vccaux    |       1.800 |     0.317 |       0.264 |      0.053 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -146,7 +146,6 @@ Table of Contents
 | clkout1                                                                                                                                                                              | eth/phy/inst/core_clocking_i/clkout1                                                                                                                                           |            16.0 |
 | eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/gthe2_i/TXOUTCLK                                                                          | eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/txoutclk                                                                            |            16.0 |
 | gt_clk                                                                                                                                                                               | gt_clkp                                                                                                                                                                        |             8.0 |
-| proc_clk                                                                                                                                                                             | slaves/slave6/trigger_top/trigger_clock_synth/inst/proc_clk                                                                                                                    |            10.0 |
 | proc_clk_trigger_clock_synth                                                                                                                                                         | slaves/slave6/trigger_top/trigger_clock_synth/inst/proc_clk_trigger_clock_synth                                                                                                |            10.0 |
 | prog_clk                                                                                                                                                                             | prog_clk_p                                                                                                                                                                     |             6.4 |
 | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/aurora_8b10b_1/inst/gt_wrapper_i/aurora_8b10b_1_multi_gt_i/gt0_aurora_8b10b_1_i/gthe2_i/TXOUTCLK | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/aurora_8b10b_1/inst/gt_wrapper_i/aurora_8b10b_1_multi_gt_i/gt0_aurora_8b10b_1_i/tx_out_clk |            12.8 |
@@ -163,31 +162,31 @@ Table of Contents
 +---------------------------------------------------------------+-----------+
 | Name                                                          | Power (W) |
 +---------------------------------------------------------------+-----------+
-| top                                                           |     1.551 |
+| top                                                           |     1.548 |
 |   clocks                                                      |     0.110 |
-|     clkdiv                                                    |     0.004 |
-|   eth                                                         |     0.407 |
+|     clkdiv                                                    |     0.003 |
+|   eth                                                         |     0.406 |
 |     mac                                                       |     0.004 |
 |       i_rx_CRC32D8                                            |     0.001 |
 |       i_tx_CRC32D8                                            |    <0.001 |
-|     phy                                                       |     0.403 |
-|       inst                                                    |     0.403 |
+|     phy                                                       |     0.402 |
+|       inst                                                    |     0.402 |
 |         core_clocking_i                                       |     0.106 |
 |         core_gt_common_i                                      |    <0.001 |
 |         core_resets_i                                         |    <0.001 |
-|         pcs_pma_block_i                                       |     0.296 |
+|         pcs_pma_block_i                                       |     0.295 |
 |           gig_ethernet_pcs_pma_0_core                         |     0.003 |
 |             gpcs_pma_inst                                     |     0.003 |
-|               HAS_AUTO_NEG.AUTO_NEGOTIATION                   |    <0.001 |
+|               HAS_AUTO_NEG.AUTO_NEGOTIATION                   |     0.001 |
 |               RECEIVER                                        |    <0.001 |
 |               SYNCHRONISATION                                 |    <0.001 |
 |               SYNC_SIGNAL_DETECT                              |    <0.001 |
 |               TRANSMITTER                                     |    <0.001 |
 |           sync_block_reset_done                               |    <0.001 |
 |           transceiver_inst                                    |     0.292 |
-|             gtwizard_inst                                     |     0.286 |
-|               inst                                            |     0.286 |
-|                 gt0_rxresetfsm_i                              |     0.020 |
+|             gtwizard_inst                                     |     0.285 |
+|               inst                                            |     0.285 |
+|                 gt0_rxresetfsm_i                              |     0.019 |
 |                   sync_RXRESETDONE                            |    <0.001 |
 |                   sync_cplllock                               |    <0.001 |
 |                   sync_data_valid                             |    <0.001 |
@@ -222,7 +221,7 @@ Table of Contents
 |       cfg                                                     |    <0.001 |
 |       iface                                                   |     0.002 |
 |       sm                                                      |     0.002 |
-|     udp_if                                                    |     0.034 |
+|     udp_if                                                    |     0.035 |
 |       ARP                                                     |    <0.001 |
 |       IPADDR                                                  |    <0.001 |
 |       RARP_block                                              |     0.002 |
@@ -236,7 +235,7 @@ Table of Contents
 |       ping                                                    |    <0.001 |
 |       resend                                                  |    <0.001 |
 |       rx_byte_sum                                             |    <0.001 |
-|       rx_packet_parser                                        |     0.003 |
+|       rx_packet_parser                                        |     0.004 |
 |       rx_ram_mux                                              |    <0.001 |
 |       rx_ram_selector                                         |    <0.001 |
 |       rx_reset_block                                          |    <0.001 |
@@ -247,17 +246,17 @@ Table of Contents
 |       tx_main                                                 |     0.002 |
 |       tx_ram_selector                                         |    <0.001 |
 |       tx_transactor                                           |     0.002 |
-|   slaves                                                      |     0.816 |
+|   slaves                                                      |     0.813 |
 |     slave0                                                    |    <0.001 |
 |     slave1                                                    |    <0.001 |
 |     slave2                                                    |    <0.001 |
 |     slave3                                                    |    <0.001 |
 |     slave4                                                    |    <0.001 |
 |     slave5                                                    |    <0.001 |
-|     slave6                                                    |     0.815 |
-|       trigger_top                                             |     0.815 |
+|     slave6                                                    |     0.812 |
+|       trigger_top                                             |     0.812 |
 |         IPB_IO_interface                                      |    <0.001 |
-|         tracklet_processing_phi0                              |     0.705 |
+|         tracklet_processing_phi0                              |     0.702 |
 |           AllProj_L3                                          |     0.007 |
 |             AllProjection                                     |     0.006 |
 |           AllStubs_R1L1n1                                     |     0.003 |
@@ -267,10 +266,10 @@ Table of Contents
 |           AllStubs_R1L3n1                                     |     0.002 |
 |             AllStub_MC                                        |     0.001 |
 |           FML3_L1L2                                           |     0.004 |
-|             FullMatch                                         |     0.003 |
+|             FullMatch                                         |     0.004 |
 |           Match_L3PHI1Z2                                      |    <0.001 |
 |             Match                                             |    <0.001 |
-|           ProjCombL3_L1L2                                     |     0.001 |
+|           ProjCombL3_L1L2                                     |     0.002 |
 |           ProjRouteL3_L1L2                                    |    <0.001 |
 |           Proj_L1L2_L3                                        |     0.008 |
 |             Projection                                        |     0.007 |
@@ -286,13 +285,13 @@ Table of Contents
 |           R1VMRouteL3                                         |     0.000 |
 |           StubPairs_L1PHI1Z2_L2PHI2Z2                         |     0.001 |
 |             StubPair                                          |     0.001 |
-|           TC_L1L2                                             |     0.037 |
+|           TC_L1L2                                             |     0.038 |
 |             lookup_dr_inv                                     |     0.002 |
 |             projection1                                       |     0.014 |
 |           TE_L1PHI1Z2_L2PHI2Z2                                |     0.002 |
 |             lookup_phi                                        |    <0.001 |
 |             lookup_z                                          |    <0.001 |
-|           TF_L1L2                                             |     0.053 |
+|           TF_L1L2                                             |     0.052 |
 |             lookup_phi_0                                      |     0.003 |
 |             lookup_phi_1                                      |     0.003 |
 |             lookup_phi_2                                      |     0.003 |
@@ -305,8 +304,8 @@ Table of Contents
 |             VMStub                                            |    <0.001 |
 |           VMStub_R1L2PHI2Z2n1                                 |    <0.001 |
 |             VMStub                                            |    <0.001 |
-|           aurora_test_top                                     |     0.583 |
-|             LinkProjPhiMinus                                  |     0.291 |
+|           aurora_test_top                                     |     0.579 |
+|             LinkProjPhiMinus                                  |     0.290 |
 |               aurora_8b10b_1                                  |     0.287 |
 |                 inst                                          |     0.287 |
 |                   aurora_8b10b_1_aurora_lane_4byte_0_i        |     0.002 |
@@ -370,12 +369,12 @@ Table of Contents
 |                 loopback_reg                                  |    <0.001 |
 |               reset_logic                                     |    <0.001 |
 |                 gt_rst_r_cdc_sync                             |    <0.001 |
-|               rx_fifo                                         |     0.002 |
-|                 inst                                          |     0.002 |
-|                   gen_fifo_generator.fifo_generator_inst      |     0.002 |
-|                     inst_fifo_gen                             |     0.002 |
-|                       gaxis_fifo.gaxisf.axisf                 |     0.002 |
-|                         grf.rf                                |     0.002 |
+|               rx_fifo                                         |    <0.001 |
+|                 inst                                          |    <0.001 |
+|                   gen_fifo_generator.fifo_generator_inst      |    <0.001 |
+|                     inst_fifo_gen                             |    <0.001 |
+|                       gaxis_fifo.gaxisf.axisf                 |    <0.001 |
+|                         grf.rf                                |    <0.001 |
 |                           gntv_or_sync_fifo.gcx.clkx          |    <0.001 |
 |                             gsync_stage[1].rd_stg_inst        |    <0.001 |
 |                             gsync_stage[1].wr_stg_inst        |    <0.001 |
@@ -403,12 +402,12 @@ Table of Contents
 |                                       prim_noinit.ram         |    <0.001 |
 |                           rstblk                              |    <0.001 |
 |               standard_cc_module                              |    <0.001 |
-|               tx_fifo                                         |     0.002 |
-|                 inst                                          |     0.002 |
-|                   gen_fifo_generator.fifo_generator_inst      |     0.002 |
-|                     inst_fifo_gen                             |     0.002 |
-|                       gaxis_fifo.gaxisf.axisf                 |     0.002 |
-|                         grf.rf                                |     0.002 |
+|               tx_fifo                                         |     0.001 |
+|                 inst                                          |     0.001 |
+|                   gen_fifo_generator.fifo_generator_inst      |     0.001 |
+|                     inst_fifo_gen                             |     0.001 |
+|                       gaxis_fifo.gaxisf.axisf                 |     0.001 |
+|                         grf.rf                                |     0.001 |
 |                           gntv_or_sync_fifo.gcx.clkx          |    <0.001 |
 |                             gsync_stage[1].rd_stg_inst        |    <0.001 |
 |                             gsync_stage[1].wr_stg_inst        |    <0.001 |
@@ -425,7 +424,7 @@ Table of Contents
 |                               c1                              |    <0.001 |
 |                               c2                              |    <0.001 |
 |                             wpntr                             |    <0.001 |
-|                           gntv_or_sync_fifo.mem               |     0.001 |
+|                           gntv_or_sync_fifo.mem               |    <0.001 |
 |                             gbm.gbmg.gbmga.ngecc.bmg          |    <0.001 |
 |                               inst_blk_mem_gen                |    <0.001 |
 |                                 gnativebmg.native_blk_mem_gen |    <0.001 |
@@ -435,9 +434,9 @@ Table of Contents
 |                                     ramloop[1].ram.r          |    <0.001 |
 |                                       prim_noinit.ram         |    <0.001 |
 |                           rstblk                              |    <0.001 |
-|             LinkProjPhiPlus                                   |     0.291 |
-|               aurora_8b10b_0                                  |     0.287 |
-|                 inst                                          |     0.287 |
+|             LinkProjPhiPlus                                   |     0.289 |
+|               aurora_8b10b_0                                  |     0.286 |
+|                 inst                                          |     0.286 |
 |                   aurora_8b10b_0_aurora_lane_4byte_0_i        |     0.002 |
 |                     aurora_8b10b_0_err_detect_4byte_i         |    <0.001 |
 |                     aurora_8b10b_0_hotplug_i                  |    <0.001 |
@@ -499,12 +498,12 @@ Table of Contents
 |                 loopback_reg                                  |    <0.001 |
 |               reset_logic                                     |    <0.001 |
 |                 gt_rst_r_cdc_sync                             |    <0.001 |
-|               rx_fifo                                         |     0.002 |
-|                 inst                                          |     0.002 |
-|                   gen_fifo_generator.fifo_generator_inst      |     0.002 |
-|                     inst_fifo_gen                             |     0.002 |
-|                       gaxis_fifo.gaxisf.axisf                 |     0.002 |
-|                         grf.rf                                |     0.002 |
+|               rx_fifo                                         |    <0.001 |
+|                 inst                                          |    <0.001 |
+|                   gen_fifo_generator.fifo_generator_inst      |    <0.001 |
+|                     inst_fifo_gen                             |    <0.001 |
+|                       gaxis_fifo.gaxisf.axisf                 |    <0.001 |
+|                         grf.rf                                |    <0.001 |
 |                           gntv_or_sync_fifo.gcx.clkx          |    <0.001 |
 |                             gsync_stage[1].rd_stg_inst        |    <0.001 |
 |                             gsync_stage[1].wr_stg_inst        |    <0.001 |
@@ -532,12 +531,12 @@ Table of Contents
 |                                       prim_noinit.ram         |    <0.001 |
 |                           rstblk                              |    <0.001 |
 |               standard_cc_module                              |    <0.001 |
-|               tx_fifo                                         |     0.002 |
-|                 inst                                          |     0.002 |
-|                   gen_fifo_generator.fifo_generator_inst      |     0.002 |
-|                     inst_fifo_gen                             |     0.002 |
-|                       gaxis_fifo.gaxisf.axisf                 |     0.002 |
-|                         grf.rf                                |     0.002 |
+|               tx_fifo                                         |     0.001 |
+|                 inst                                          |     0.001 |
+|                   gen_fifo_generator.fifo_generator_inst      |     0.001 |
+|                     inst_fifo_gen                             |     0.001 |
+|                       gaxis_fifo.gaxisf.axisf                 |     0.001 |
+|                         grf.rf                                |     0.001 |
 |                           gntv_or_sync_fifo.gcx.clkx          |    <0.001 |
 |                             gsync_stage[1].rd_stg_inst        |    <0.001 |
 |                             gsync_stage[1].wr_stg_inst        |    <0.001 |
@@ -554,7 +553,7 @@ Table of Contents
 |                               c1                              |    <0.001 |
 |                               c2                              |    <0.001 |
 |                             wpntr                             |    <0.001 |
-|                           gntv_or_sync_fifo.mem               |     0.001 |
+|                           gntv_or_sync_fifo.mem               |    <0.001 |
 |                             gbm.gbmg.gbmga.ngecc.bmg          |    <0.001 |
 |                               inst_blk_mem_gen                |    <0.001 |
 |                                 gnativebmg.native_blk_mem_gen |    <0.001 |
@@ -564,6 +563,8 @@ Table of Contents
 |                                     ramloop[1].ram.r          |    <0.001 |
 |                                       prim_noinit.ram         |    <0.001 |
 |                           rstblk                              |    <0.001 |
+|             init_clk_reset                                    |    <0.001 |
+|             io_clk_reset                                      |    <0.001 |
 |         trigger_clock_synth                                   |     0.110 |
 |           inst                                                |     0.110 |
 +---------------------------------------------------------------+-----------+

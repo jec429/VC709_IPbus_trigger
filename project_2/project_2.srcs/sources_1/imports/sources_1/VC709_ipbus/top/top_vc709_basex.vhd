@@ -42,16 +42,16 @@ entity top is
         sfp_rs0, sfp_rs1: out std_logic;        
         sfp_tx_disable: out std_logic;  
         
- --       SFP3_LOS_LS, SFP3_MOD_DETECT_LS: in std_logic;
- --       SFP3_RS0_LS, SFP3_RS1_LS: out std_logic;
- --       SFP3_TX_DISABLE_LS_B: out std_logic;
+        SFP3_LOS_LS, SFP3_MOD_DETECT_LS: in std_logic;
+        SFP3_RS0_LS, SFP3_RS1_LS: out std_logic;
+        SFP3_TX_DISABLE_LS_B: out std_logic;
  --       SFP3_TX_FAULT_LS: in std_logic; 
         SFP3_RX_N, SFP3_RX_P: in std_logic;
         SFP3_TX_N, SFP3_TX_P: out std_logic;
         
---        SFP4_LOS_LS, SFP4_MOD_DETECT_LS: in std_logic;
---        SFP4_RS0_LS, SFP4_RS1_LS: out std_logic;
----        SFP4_TX_DISABLE_LS_B: out std_logic;
+        SFP4_LOS_LS, SFP4_MOD_DETECT_LS: in std_logic;
+        SFP4_RS0_LS, SFP4_RS1_LS: out std_logic;
+        SFP4_TX_DISABLE_LS_B: out std_logic;
 --        SFP4_TX_FAULT_LS: in std_logic; 
         SFP4_RX_N, SFP4_RX_P: in std_logic;
         SFP4_TX_N, SFP4_TX_P: out std_logic;
@@ -85,6 +85,16 @@ architecture rtl of top is
 begin
 
     -- value initialization
+    SFP3_RS0_LS <= '0';
+    SFP3_RS1_LS <= '0';
+    SFP3_TX_DISABLE_LS_B <= '0';
+    --light_detect <= not SFP3_LOS_LS
+
+    SFP4_RS0_LS <= '0';
+    SFP4_RS1_LS <= '0';
+    SFP4_TX_DISABLE_LS_B <= '0';
+    --light_detect <= not SFP4_LOS_LS
+    
     sfp_rs0 <= '0';                       -- for AFBR-703SDDZ, sets 1.25 Gbps
     sfp_rs1 <= '0';                       --
     sfp_tx_disable <= '0';

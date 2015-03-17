@@ -52,10 +52,10 @@ set rc [catch {
   set_param xicom.use_bs_reader 1
   debug::add_scope template.lib 1
   open_checkpoint top_routed.dcp
-  set_property webtalk.parent_dir C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.cache/wt [current_project]
+  set_property webtalk.parent_dir {C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.cache/wt} [current_project]
   write_bitstream -force top.bit 
-  if { [file exists C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/top.hwdef] } {
-    catch { write_sysdef -hwdef C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/top.hwdef -bitfile top.bit -meminfo top.mmi -file top.sysdef }
+  if { [file exists {C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/top.hwdef}] } {
+    catch { write_sysdef -hwdef C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/top.hwdef -bitfile top.bit -meminfo top.mmi -file top.sysdef }
   }
   close_msg_db -file write_bitstream.pb
 } RESULT]

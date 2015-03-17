@@ -1,5 +1,0 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/constrs_1/imports/new/timing.xdc rfile:../../../project_2.srcs/constrs_1/imports/new/timing.xdc id:1} [current_design]
-set_property src_info {type:XDC file:1 line:10 export:INPUT save:INPUT read:READ} [current_design]
-create_clock -period 10.000 -name proc_clk [get_pins slaves/slave6/trigger_top/trigger_clock_synth/inst/clkout2_buf/O]
-set_property src_info {type:XDC file:1 line:24 export:INPUT save:INPUT read:READ} [current_design]
-set_clock_groups -asynchronous -group [get_clocks proc_clk]

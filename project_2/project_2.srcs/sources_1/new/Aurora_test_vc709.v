@@ -55,9 +55,7 @@ module Aurora_test(
     input wire init_clk
     
     );
-    
-    
-    //io_addr[23:20]: 0000 aurora0; 0001 aurora1; 0010 aurora0 tx_tdata_reg
+
     
     wire [0:31] tx_tdata_pphi;
     wire [0:3]  tx_tkeep_pphi;
@@ -92,6 +90,9 @@ module Aurora_test(
     wire rxstat_mphi_sel;
     //Access I/O Block in each aurora module
     wire Aurora_pphi_sel, Aurora_mphi_sel;
+    //link reset
+    wire link_rst_sel;
+    reg  link_rst;
     
 /*    //--- Instance of GT differential buffer ---------//
     IBUFDS_GTE2 IBUFDS_GTE2_CLK1
@@ -104,8 +105,25 @@ module Aurora_test(
     );
 */    
     //reset signal
+    //wire rst_proc;
+    //wire rst_init;
     wire arst_n;
-    assign arst_n = ~reset;
+    //two stage synchronizer for reset
+    Reset_Synchronizer io_clk_reset (
+        .CLK(io_clk),
+        .RESET_I(link_rst),
+        .RESET_O(),
+        .RESET_OB(arst_n)
+    );
+    
+    Reset_Synchronizer init_clk_reset (
+        .CLK(init_clk),
+        .RESET_I(link_rst),
+        .RESET_O(rst_init),
+        .RESET_OB()
+    );
+    
+    //assign arst_n = ~link_rst/*~reset*/;
     
     
     Aurora_Channel_0 LinkProjPhiPlus (
@@ -132,11 +150,11 @@ module Aurora_test(
         //Links
         //clocks and reset
         .init_clk(init_clk),
-        .gt_reset_in(reset),
+        .gt_reset_in(rst_init),
         .gt_refclk(gt_refclk),
         //TX interface to slave side of transmit FIFO
         .s_axis_aresetn(arst_n),
-        .s_axis_aclk(clk),
+        .s_axis_aclk(io_clk),
         .s_axis_tx_tdata(tx_tdata_pphi),
         .s_axis_tx_tkeep(tx_tkeep_pphi),
         .s_axis_tx_tvalid(tx_tvalid_pphi),
@@ -144,7 +162,7 @@ module Aurora_test(
         .s_axis_tx_tready(tx_tready_pphi),
         //RX interface to master side of receive FIFO
         .m_axis_aresetn(arst_n),
-        .m_axis_aclk(clk),
+        .m_axis_aclk(io_clk),
         .m_axis_rx_tdata(rx_tdata_pphi),
         .m_axis_rx_tkeep(rx_tkeep_pphi),
         .m_axis_rx_tvalid(rx_tvalid_pphi),
@@ -195,11 +213,11 @@ module Aurora_test(
         //Links
         //clocks and reset
         .init_clk(init_clk),
-        .gt_reset_in(reset),
+        .gt_reset_in(rst_init),
         .gt_refclk(gt_refclk),
         //TX interface to slave side of transmit FIFO
         .s_axis_aresetn(arst_n),
-        .s_axis_aclk(clk),
+        .s_axis_aclk(io_clk),
         .s_axis_tx_tdata(tx_tdata_mphi),
         .s_axis_tx_tkeep(tx_tkeep_mphi),
         .s_axis_tx_tvalid(tx_tvalid_mphi),
@@ -207,7 +225,7 @@ module Aurora_test(
         .s_axis_tx_tready(tx_tready_mphi),
         //RX interface to master side of receive FIFO
         .m_axis_aresetn(arst_n),
-        .m_axis_aclk(clk),
+        .m_axis_aclk(io_clk),
         .m_axis_rx_tdata(rx_tdata_mphi),
         .m_axis_rx_tkeep(rx_tkeep_mphi),
         .m_axis_rx_tvalid(rx_tvalid_mphi),
@@ -267,6 +285,8 @@ module Aurora_test(
     assign rxstat_pphi_sel = io_sel && (io_addr[23:20] == 4'b0100);
     assign rxstat_mphi_sel = io_sel && (io_addr[23:20] == 4'b1100);
     
+    assign link_rst_sel = io_sel && (io_addr[23:20] == 4'b1101);
+    
     initial begin 
         txdata_pphi_reg <= 32'b0;
         txdata_mphi_reg <= 32'b0;
@@ -276,6 +296,7 @@ module Aurora_test(
         txstat_mphi_reg <= 32'b0;
         rxstat_pphi_reg <= 32'b0;
         rxstat_mphi_reg <= 32'b0;
+        link_rst <= 1'b0;
     end
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -285,6 +306,7 @@ module Aurora_test(
         if (io_wr_en && txdata_mphi_sel) txdata_mphi_reg <= io_wr_data;
         if (io_wr_en && txstat_pphi_sel) txstat_pphi_reg <= io_wr_data;
         if (io_wr_en && txstat_mphi_sel) txstat_mphi_reg <= io_wr_data;
+        if (io_wr_en && link_rst_sel) link_rst <= io_wr_data[0];
     end
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -329,6 +351,7 @@ module Aurora_test(
         if (io_rd_en & txdata_mphi_sel) io_rd_data_reg[31:0] <= txdata_mphi_reg;
         if (io_rd_en & txstat_pphi_sel) io_rd_data_reg[31:0] <= txstat_pphi_reg;
         if (io_rd_en & txstat_mphi_sel) io_rd_data_reg[31:0] <= txstat_mphi_reg;
+        if (io_rd_en & link_rst_sel) io_rd_data_reg[31:0] <= {31'b0,link_rst};
       
     end
     

@@ -3,13 +3,14 @@
 <!--                                                         -->
 <!-- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="2" Path="C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.xpr">
+<Project Version="7" Minor="2" Path="C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="1f5f0bc8296943cfa16ac9b53b4cb138"/>
     <Option Name="Part" Val="xc7vx690tffg1761-2"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="BoardPart" Val="xilinx.com:vc709:part0:1.0"/>
+    <Option Name="SourceMgmtMode" Val="DisplayOnly"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
   </Configuration>
@@ -725,6 +726,13 @@
           <Attr Name="ImportTime" Val="1422990989"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/Reset_Synchronizer.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="top"/>
@@ -755,7 +763,7 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../../Downloads/aurora_sim.v">
+      <File Path="$PSRCDIR/sim_1/new/aurora_sim.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -766,6 +774,7 @@
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="aurora_sim_tb"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="SimMode" Val="post-implementation"/>
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>
     </FileSet>
@@ -906,21 +915,27 @@
     </Run>
     <Run Id="gig_ethernet_pcs_pma_0_synth_1" Type="Ft3:Synth" SrcSet="gig_ethernet_pcs_pma_0" Part="xc7vx690tffg1761-2" ConstrsSet="gig_ethernet_pcs_pma_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/gig_ethernet_pcs_pma_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="link_axis_data_fifo_synth_1" Type="Ft3:Synth" SrcSet="link_axis_data_fifo" Part="xc7vx690tffg1761-2" ConstrsSet="link_axis_data_fifo" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/link_axis_data_fifo_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="TP_raw_stub_fifo_synth_1" Type="Ft3:Synth" SrcSet="TP_raw_stub_fifo" Part="xc7vx690tffg1761-2" ConstrsSet="TP_raw_stub_fifo" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/TP_raw_stub_fifo_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -983,7 +998,9 @@
     </Run>
     <Run Id="gig_ethernet_pcs_pma_0_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="gig_ethernet_pcs_pma_0" Description="Vivado Implementation Defaults" SynthRun="gig_ethernet_pcs_pma_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
+          <Desc>Vivado Implementation Defaults</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -997,7 +1014,9 @@
     </Run>
     <Run Id="link_axis_data_fifo_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="link_axis_data_fifo" Description="Vivado Implementation Defaults" SynthRun="link_axis_data_fifo_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
+          <Desc>Vivado Implementation Defaults</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1011,7 +1030,9 @@
     </Run>
     <Run Id="TP_raw_stub_fifo_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="TP_raw_stub_fifo" Description="Vivado Implementation Defaults" SynthRun="TP_raw_stub_fifo_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
+          <Desc>Vivado Implementation Defaults</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

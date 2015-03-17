@@ -7,7 +7,7 @@ create_clock -period 5.000 -name clk200 [get_ports clk200_p]
 # and something representing the faster processing clock, maybe 15 times as fast.
 # They are currently 10 MHz and 150 MHz
 #create_clock -period 100.000 -name cross_clk
-create_clock -period 10.000 -name proc_clk [get_pins slaves/slave6/trigger_top/trigger_clock_synth/inst/clkout2_buf/O]
+#create_clock -period 10.000 -name proc_clk [get_pins slaves/slave6/trigger_top/trigger_clock_synth/inst/clkout2_buf/O]
 
 # programmable oscillator
 # 'USER_CLOCK' in the VC709 manual, 'prog_clk' in this project
@@ -21,7 +21,7 @@ create_clock -period 8.000 -name gt_clk [get_ports gt_clkp]
 # specify what clocks are asynchronous to others
 set_clock_groups -asynchronous -group [get_clocks clk200]
 #set_clock_groups -asynchronous -group [get_clocks cross_clk]
-set_clock_groups -asynchronous -group [get_clocks proc_clk]
+#set_clock_groups -asynchronous -group [get_clocks proc_clk]
 set_clock_groups -asynchronous -group [get_clocks prog_clk]
 set_clock_groups -asynchronous -group [get_clocks -include_generated_clocks gt_clk]
 

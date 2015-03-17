@@ -4,7 +4,7 @@
 
 
 ****** Vivado v2014.4 (64-bit)
-  **** SW Build 1071353 on Tue Nov 18 18:24:04 MST 2014
+  **** SW Build 1071353 on Tue Nov 18 18:29:27 MST 2014
   **** IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
     ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 
@@ -17,22 +17,22 @@ source aurora_8b10b_0.tcl
 # set_param project.compositeFile.enableAutoGeneration 0
 # set_param synth.vivado.isSynthRun true
 # set_msg_config -id {IP_Flow 19-2162} -severity warning -new_severity info
-# set_property webtalk.parent_dir C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.cache/wt [current_project]
-# set_property parent.project_path C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.xpr [current_project]
+# set_property webtalk.parent_dir {C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.cache/wt} [current_project]
+# set_property parent.project_path {C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.xpr} [current_project]
 # set_property default_lib xil_defaultlib [current_project]
 # set_property target_language Verilog [current_project]
 # set_property board_part xilinx.com:vc709:part0:1.0 [current_project]
-# read_ip C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0.xci
+# read_ip {{C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0.xci}}
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2014.4/data/ip'.
-WARNING: [IP_Flow 19-3664] IP 'aurora_8b10b_0' generated file not found 'c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0.dcp'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'aurora_8b10b_0' generated file not found 'c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_stub.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'aurora_8b10b_0' generated file not found 'c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_stub.vhdl'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'aurora_8b10b_0' generated file not found 'c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_funcsim.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'aurora_8b10b_0' generated file not found 'c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_funcsim.vhdl'. Please regenerate to continue.
-# set_property used_in_implementation false [get_files -all c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0.dcp]
-# set_property is_locked true [get_files C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0.xci]
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2014.4/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'aurora_8b10b_0' generated file not found 'c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'aurora_8b10b_0' generated file not found 'c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'aurora_8b10b_0' generated file not found 'c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'aurora_8b10b_0' generated file not found 'c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_funcsim.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'aurora_8b10b_0' generated file not found 'c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_funcsim.vhdl'. Please regenerate to continue.
+# set_property used_in_implementation false [get_files -all {{c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0.dcp}}]
+# set_property is_locked true [get_files {{C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0.xci}}]
 # catch { write_hwdef -file aurora_8b10b_0.hwdef }
 INFO: [Vivado_Tcl 4-279] hardware handoff file cannot be generated as there is no block diagram instance in the design
 # synth_design -top aurora_8b10b_0 -part xc7vx690tffg1761-2 -mode out_of_context
@@ -40,57 +40,57 @@ Command: synth_design -top aurora_8b10b_0 -part xc7vx690tffg1761-2 -mode out_of_
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx690t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx690t'
-WARNING: [Synth 8-2507] parameter declaration becomes local in aurora_8b10b_0_GT_WRAPPER with formal parameter declaration list [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_transceiver_wrapper.v:215]
-WARNING: [Synth 8-2507] parameter declaration becomes local in aurora_8b10b_0_GT_WRAPPER with formal parameter declaration list [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_transceiver_wrapper.v:217]
+WARNING: [Synth 8-2507] parameter declaration becomes local in aurora_8b10b_0_GT_WRAPPER with formal parameter declaration list [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_transceiver_wrapper.v:215]
+WARNING: [Synth 8-2507] parameter declaration becomes local in aurora_8b10b_0_GT_WRAPPER with formal parameter declaration list [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_transceiver_wrapper.v:217]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 276.355 ; gain = 113.586
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 273.117 ; gain = 113.863
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0.v:54]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_core' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_core.v:63]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0.v:54]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_core' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_core.v:63]
 	Parameter SIM_GTRESET_SPEEDUP bound to: FALSE - type: string 
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_RESET_LOGIC' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_reset_logic.v:62]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_cdc_sync' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:104]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_RESET_LOGIC' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_reset_logic.v:62]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_cdc_sync' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:104]
 	Parameter c_cdc_type bound to: 2'b01 
 	Parameter c_flop_input bound to: 1'b0 
 	Parameter c_reset_state bound to: 1'b0 
 	Parameter c_single_bit bound to: 1'b1 
 	Parameter c_vector_width bound to: 6'b000010 
 	Parameter c_mtbf_stages bound to: 3'b011 
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:129]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:130]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:131]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:132]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:133]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:134]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:135]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:138]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:139]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:140]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:141]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:142]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:143]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:150]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:151]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:152]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:153]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:154]
-INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:155]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_cdc_sync' (1#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:104]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_RESET_LOGIC' (2#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_reset_logic.v:62]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_AURORA_LANE_4BYTE' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_aurora_lane_4byte.v:65]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:129]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:130]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:131]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:132]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:133]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:134]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:135]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:138]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:139]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:140]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:141]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:142]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:143]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:150]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:151]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:152]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:153]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:154]
+INFO: [Synth 8-4472] Detected and applied attribute ASYNC_REG = true [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:155]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_cdc_sync' (1#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_cdc_sync.v:104]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_RESET_LOGIC' (2#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_reset_logic.v:62]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_AURORA_LANE_4BYTE' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_aurora_lane_4byte.v:65]
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_LANE_INIT_SM_4BYTE' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_lane_init_sm_4byte.v:62]
-INFO: [Synth 8-638] synthesizing module 'FDR' [D:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:3001]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_LANE_INIT_SM_4BYTE' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_lane_init_sm_4byte.v:62]
+INFO: [Synth 8-638] synthesizing module 'FDR' [C:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:3001]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-256] done synthesizing module 'FDR' (3#1) [D:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:3001]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_LANE_INIT_SM_4BYTE' (4#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_lane_init_sm_4byte.v:62]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_CHBOND_COUNT_DEC_4BYTE' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_chbond_count_dec_4byte.v:62]
+INFO: [Synth 8-256] done synthesizing module 'FDR' (3#1) [C:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:3001]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_LANE_INIT_SM_4BYTE' (4#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_lane_init_sm_4byte.v:62]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_CHBOND_COUNT_DEC_4BYTE' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_chbond_count_dec_4byte.v:62]
 	Parameter CHANNEL_BOND_LOAD_CODE bound to: 6'b100111 
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_CHBOND_COUNT_DEC_4BYTE' (5#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_chbond_count_dec_4byte.v:62]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_SYM_GEN_4BYTE' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_gen_4byte.v:77]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_SYM_GEN_4BYTE' (6#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_gen_4byte.v:77]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_SYM_DEC_4BYTE' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:64]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_CHBOND_COUNT_DEC_4BYTE' (5#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_chbond_count_dec_4byte.v:62]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_SYM_GEN_4BYTE' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_gen_4byte.v:77]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_SYM_GEN_4BYTE' (6#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_gen_4byte.v:77]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_SYM_DEC_4BYTE' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:64]
 	Parameter K_CHAR_0 bound to: 4'b1011 
 	Parameter K_CHAR_1 bound to: 4'b1100 
 	Parameter SP_DATA_0 bound to: 4'b0100 
@@ -117,30 +117,30 @@ INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_SYM_DEC_4BYTE' [c:/Users
 	Parameter VER_DATA_1 bound to: 4'b1000 
 	Parameter CC_CHAR_0 bound to: 4'b1111 
 	Parameter CC_CHAR_1 bound to: 4'b0111 
-INFO: [Synth 8-226] default block is never used [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:248]
-INFO: [Synth 8-226] default block is never used [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:260]
-INFO: [Synth 8-226] default block is never used [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:272]
-INFO: [Synth 8-226] default block is never used [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:284]
-INFO: [Synth 8-226] default block is never used [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:296]
-INFO: [Synth 8-226] default block is never used [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:308]
-INFO: [Synth 8-226] default block is never used [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:320]
-INFO: [Synth 8-226] default block is never used [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:332]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_SYM_DEC_4BYTE' (7#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:64]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_ERR_DETECT_4BYTE' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_err_detect_4byte.v:62]
+INFO: [Synth 8-226] default block is never used [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:248]
+INFO: [Synth 8-226] default block is never used [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:260]
+INFO: [Synth 8-226] default block is never used [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:272]
+INFO: [Synth 8-226] default block is never used [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:284]
+INFO: [Synth 8-226] default block is never used [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:296]
+INFO: [Synth 8-226] default block is never used [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:308]
+INFO: [Synth 8-226] default block is never used [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:320]
+INFO: [Synth 8-226] default block is never used [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:332]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_SYM_DEC_4BYTE' (7#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sym_dec_4byte.v:64]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_ERR_DETECT_4BYTE' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_err_detect_4byte.v:62]
 	Parameter ENABLE_SOFT_ERR_MONITOR bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_ERR_DETECT_4BYTE' (8#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_err_detect_4byte.v:62]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_hotplug' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_hotplug.v:53]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_ERR_DETECT_4BYTE' (8#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_err_detect_4byte.v:62]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_hotplug' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_hotplug.v:53]
 	Parameter ENABLE_HOTPLUG bound to: 1 - type: integer 
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
-INFO: [Synth 8-3936] Found unconnected internal register 'link_reset_r_reg' and it is trimmed from '2' to '1' bits. [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_hotplug.v:185]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_hotplug' (9#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_hotplug.v:53]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_AURORA_LANE_4BYTE' (10#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_aurora_lane_4byte.v:65]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_GT_WRAPPER' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_transceiver_wrapper.v:57]
+INFO: [Synth 8-3936] Found unconnected internal register 'link_reset_r_reg' and it is trimmed from '2' to '1' bits. [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_hotplug.v:185]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_hotplug' (9#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_hotplug.v:53]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_AURORA_LANE_4BYTE' (10#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_aurora_lane_4byte.v:65]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_GT_WRAPPER' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_transceiver_wrapper.v:57]
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
 	Parameter SIM_GTRESET_SPEEDUP bound to: FALSE - type: string 
 	Parameter STABLE_CLOCK_PERIOD bound to: 8 - type: integer 
 	Parameter RX_CDRLOCK_TIME bound to: 16000.000000 - type: float 
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_tx_startup_fsm' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_tx_startup_fsm.v:76]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_tx_startup_fsm' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_tx_startup_fsm.v:76]
 	Parameter GT_TYPE bound to: GTH - type: string 
 	Parameter STABLE_CLOCK_PERIOD bound to: 8 - type: integer 
 	Parameter RETRY_COUNTER_BITWIDTH bound to: 8 - type: integer 
@@ -171,8 +171,8 @@ INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_tx_startup_fsm' [c:/User
 	Parameter PORT_WIDTH bound to: 18 - type: integer 
 	Parameter MAX_RETRIES bound to: 255 - type: integer 
 	Parameter MAX_WAIT_BYPASS bound to: 86784 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_tx_startup_fsm' (11#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_tx_startup_fsm.v:76]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_rx_startup_fsm' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:75]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_tx_startup_fsm' (11#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_tx_startup_fsm.v:76]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_rx_startup_fsm' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:75]
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
 	Parameter GT_TYPE bound to: GTH - type: string 
 	Parameter EQ_MODE bound to: DFE - type: string 
@@ -205,16 +205,16 @@ INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_rx_startup_fsm' [c:/User
 	Parameter PORT_WIDTH bound to: 19 - type: integer 
 	Parameter MAX_RETRIES bound to: 255 - type: integer 
 	Parameter MAX_WAIT_BYPASS bound to: 5000 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_rx_startup_fsm' (12#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:75]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_multi_gt' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_multi_gt.v:55]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_rx_startup_fsm' (12#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:75]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_multi_gt' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_multi_gt.v:55]
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
 	Parameter WRAPPER_SIM_GTRESET_SPEEDUP bound to: FALSE - type: string 
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_gt' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_gt.v:55]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_gt' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_gt.v:55]
 	Parameter GT_SIM_GTRESET_SPEEDUP bound to: FALSE - type: string 
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
 	Parameter TXSYNC_OVRD_IN bound to: 1'b0 
 	Parameter TXSYNC_MULTILANE_IN bound to: 1'b0 
-INFO: [Synth 8-638] synthesizing module 'GTHE2_CHANNEL' [D:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:3860]
+INFO: [Synth 8-638] synthesizing module 'GTHE2_CHANNEL' [C:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:3860]
 	Parameter ALIGN_COMMA_DOUBLE bound to: FALSE - type: string 
 	Parameter ALIGN_MCOMMA_DET bound to: TRUE - type: string 
 	Parameter ALIGN_PCOMMA_DET bound to: TRUE - type: string 
@@ -483,8 +483,8 @@ INFO: [Synth 8-638] synthesizing module 'GTHE2_CHANNEL' [D:/Xilinx/Vivado/2014.4
 	Parameter TX_CLK25_DIV bound to: 5 - type: integer 
 	Parameter TX_DATA_WIDTH bound to: 40 - type: integer 
 	Parameter TX_INT_DATAWIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'GTHE2_CHANNEL' (13#1) [D:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:3860]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_gtrxreset_seq' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_gtrxreset_seq.v:54]
+INFO: [Synth 8-256] done synthesizing module 'GTHE2_CHANNEL' (13#1) [C:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:3860]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_gtrxreset_seq' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_gtrxreset_seq.v:54]
 	Parameter idle bound to: 3'b000 
 	Parameter drp_rd bound to: 3'b001 
 	Parameter wait_rd_data bound to: 3'b010 
@@ -493,87 +493,87 @@ INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_gtrxreset_seq' [c:/Users
 	Parameter wait_pmareset bound to: 3'b101 
 	Parameter wr_20 bound to: 3'b110 
 	Parameter wait_wr_done2 bound to: 3'b111 
-INFO: [Synth 8-226] default block is never used [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_gtrxreset_seq.v:235]
-INFO: [Synth 8-226] default block is never used [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_gtrxreset_seq.v:296]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_gtrxreset_seq' (14#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_gtrxreset_seq.v:54]
-INFO: [Synth 8-638] synthesizing module 'FD' [D:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:2773]
+INFO: [Synth 8-226] default block is never used [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_gtrxreset_seq.v:235]
+INFO: [Synth 8-226] default block is never used [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_gtrxreset_seq.v:296]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_gtrxreset_seq' (14#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_gtrxreset_seq.v:54]
+INFO: [Synth 8-638] synthesizing module 'FD' [C:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:2773]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-256] done synthesizing module 'FD' (15#1) [D:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:2773]
-INFO: [Synth 8-4471] merging register 'drp_busy_i2_reg' into 'drp_busy_i1_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_gt.v:1020]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_gt' (16#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_gt.v:55]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_multi_gt' (17#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_multi_gt.v:55]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_GT_WRAPPER' (18#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_transceiver_wrapper.v:57]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_GLOBAL_LOGIC' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_global_logic.v:62]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_CHANNEL_INIT_SM' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_channel_init_sm.v:79]
+INFO: [Synth 8-256] done synthesizing module 'FD' (15#1) [C:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:2773]
+INFO: [Synth 8-4471] merging register 'drp_busy_i2_reg' into 'drp_busy_i1_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_gt.v:1020]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_gt' (16#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_gt.v:55]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_multi_gt' (17#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_multi_gt.v:55]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_GT_WRAPPER' (18#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_transceiver_wrapper.v:57]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_GLOBAL_LOGIC' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_global_logic.v:62]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_CHANNEL_INIT_SM' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_channel_init_sm.v:79]
 	Parameter WATCHDOG_TIMEOUT bound to: 14 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'FD__parameterized0' [D:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:2773]
+INFO: [Synth 8-638] synthesizing module 'FD__parameterized0' [C:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:2773]
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-256] done synthesizing module 'FD__parameterized0' (18#1) [D:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:2773]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_CHANNEL_INIT_SM' (19#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_channel_init_sm.v:79]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_IDLE_AND_VER_GEN' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_idle_and_ver_gen.v:65]
-INFO: [Synth 8-638] synthesizing module 'SRL16' [D:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:34504]
+INFO: [Synth 8-256] done synthesizing module 'FD__parameterized0' (18#1) [C:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:2773]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_CHANNEL_INIT_SM' (19#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_channel_init_sm.v:79]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_IDLE_AND_VER_GEN' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_idle_and_ver_gen.v:65]
+INFO: [Synth 8-638] synthesizing module 'SRL16' [C:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:34504]
 	Parameter INIT bound to: 16'b0000000000000000 
-INFO: [Synth 8-256] done synthesizing module 'SRL16' (20#1) [D:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:34504]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_IDLE_AND_VER_GEN' (21#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_idle_and_ver_gen.v:65]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_CHANNEL_ERR_DETECT' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_channel_err_detect.v:65]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_CHANNEL_ERR_DETECT' (22#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_channel_err_detect.v:65]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_GLOBAL_LOGIC' (23#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_global_logic.v:62]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_AXI_TO_LL' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_axi_to_ll.v:62]
+INFO: [Synth 8-256] done synthesizing module 'SRL16' (20#1) [C:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:34504]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_IDLE_AND_VER_GEN' (21#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_idle_and_ver_gen.v:65]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_CHANNEL_ERR_DETECT' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_channel_err_detect.v:65]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_CHANNEL_ERR_DETECT' (22#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_channel_err_detect.v:65]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_GLOBAL_LOGIC' (23#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_global_logic.v:62]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_AXI_TO_LL' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_axi_to_ll.v:62]
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
 	Parameter STRB_WIDTH bound to: 4 - type: integer 
 	Parameter BC bound to: 4 - type: integer 
 	Parameter USE_4_NFC bound to: 0 - type: integer 
 	Parameter REM_WIDTH bound to: 2 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_AXI_TO_LL' (24#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_axi_to_ll.v:62]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_TX_LL' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll.v:63]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_TX_LL_DATAPATH' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll_datapath.v:62]
-INFO: [Synth 8-226] default block is never used [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll_datapath.v:194]
-INFO: [Synth 8-226] default block is never used [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll_datapath.v:237]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_TX_LL_DATAPATH' (25#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll_datapath.v:62]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_TX_LL_CONTROL' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll_control.v:63]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_TX_LL_CONTROL' (26#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll_control.v:63]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_TX_LL' (27#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll.v:63]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_LL_TO_AXI' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_ll_to_axi.v:62]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_AXI_TO_LL' (24#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_axi_to_ll.v:62]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_TX_LL' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll.v:63]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_TX_LL_DATAPATH' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll_datapath.v:62]
+INFO: [Synth 8-226] default block is never used [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll_datapath.v:194]
+INFO: [Synth 8-226] default block is never used [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll_datapath.v:237]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_TX_LL_DATAPATH' (25#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll_datapath.v:62]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_TX_LL_CONTROL' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll_control.v:63]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_TX_LL_CONTROL' (26#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll_control.v:63]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_TX_LL' (27#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll.v:63]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_LL_TO_AXI' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_ll_to_axi.v:62]
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
 	Parameter STRB_WIDTH bound to: 4 - type: integer 
 	Parameter USE_UFC_REM bound to: 0 - type: integer 
 	Parameter BC bound to: 4 - type: integer 
 	Parameter REM_WIDTH bound to: 2 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_LL_TO_AXI' (28#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_ll_to_axi.v:62]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_RX_LL' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_rx_ll.v:64]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_RX_LL_PDU_DATAPATH' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_rx_ll_pdu_datapath.v:63]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_RX_LL_DEFRAMER' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_rx_ll_deframer.v:64]
-INFO: [Synth 8-638] synthesizing module 'MUXCY' [D:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:16642]
-INFO: [Synth 8-256] done synthesizing module 'MUXCY' (29#1) [D:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:16642]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_RX_LL_DEFRAMER' (30#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_rx_ll_deframer.v:64]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_LEFT_ALIGN_CONTROL' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_left_align_control.v:63]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_LEFT_ALIGN_CONTROL' (31#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_left_align_control.v:63]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_VALID_DATA_COUNTER' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_valid_data_counter.v:70]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_VALID_DATA_COUNTER' (32#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_valid_data_counter.v:70]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_LEFT_ALIGN_MUX' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_left_align_mux.v:67]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_LEFT_ALIGN_MUX' (33#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_left_align_mux.v:67]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_STORAGE_COUNT_CONTROL' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_count_control.v:62]
-INFO: [Synth 8-226] default block is never used [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_count_control.v:116]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_STORAGE_COUNT_CONTROL' (34#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_count_control.v:62]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_STORAGE_CE_CONTROL' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_ce_control.v:63]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_STORAGE_CE_CONTROL' (35#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_ce_control.v:63]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_STORAGE_SWITCH_CONTROL' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_switch_control.v:62]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_STORAGE_SWITCH_CONTROL' (36#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_switch_control.v:62]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_OUTPUT_SWITCH_CONTROL' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_output_switch_control.v:62]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_OUTPUT_SWITCH_CONTROL' (37#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_output_switch_control.v:62]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_SIDEBAND_OUTPUT' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sideband_output.v:63]
-WARNING: [Synth 8-3936] Found unconnected internal register 'rx_rem_c_reg' and it is trimmed from '3' to '2' bits. [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sideband_output.v:276]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_SIDEBAND_OUTPUT' (38#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sideband_output.v:63]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_STORAGE_MUX' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_mux.v:64]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_STORAGE_MUX' (39#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_mux.v:64]
-INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_OUTPUT_MUX' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_output_mux.v:65]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_OUTPUT_MUX' (40#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_output_mux.v:65]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_RX_LL_PDU_DATAPATH' (41#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_rx_ll_pdu_datapath.v:63]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_RX_LL' (42#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_rx_ll.v:64]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_core' (43#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_core.v:63]
-INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0' (44#1) [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0.v:54]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_LL_TO_AXI' (28#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_ll_to_axi.v:62]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_RX_LL' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_rx_ll.v:64]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_RX_LL_PDU_DATAPATH' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_rx_ll_pdu_datapath.v:63]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_RX_LL_DEFRAMER' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_rx_ll_deframer.v:64]
+INFO: [Synth 8-638] synthesizing module 'MUXCY' [C:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:16642]
+INFO: [Synth 8-256] done synthesizing module 'MUXCY' (29#1) [C:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:16642]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_RX_LL_DEFRAMER' (30#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_rx_ll_deframer.v:64]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_LEFT_ALIGN_CONTROL' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_left_align_control.v:63]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_LEFT_ALIGN_CONTROL' (31#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_left_align_control.v:63]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_VALID_DATA_COUNTER' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_valid_data_counter.v:70]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_VALID_DATA_COUNTER' (32#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_valid_data_counter.v:70]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_LEFT_ALIGN_MUX' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_left_align_mux.v:67]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_LEFT_ALIGN_MUX' (33#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_left_align_mux.v:67]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_STORAGE_COUNT_CONTROL' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_count_control.v:62]
+INFO: [Synth 8-226] default block is never used [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_count_control.v:116]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_STORAGE_COUNT_CONTROL' (34#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_count_control.v:62]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_STORAGE_CE_CONTROL' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_ce_control.v:63]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_STORAGE_CE_CONTROL' (35#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_ce_control.v:63]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_STORAGE_SWITCH_CONTROL' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_switch_control.v:62]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_STORAGE_SWITCH_CONTROL' (36#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_switch_control.v:62]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_OUTPUT_SWITCH_CONTROL' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_output_switch_control.v:62]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_OUTPUT_SWITCH_CONTROL' (37#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_output_switch_control.v:62]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_SIDEBAND_OUTPUT' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sideband_output.v:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_rem_c_reg' and it is trimmed from '3' to '2' bits. [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sideband_output.v:276]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_SIDEBAND_OUTPUT' (38#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_sideband_output.v:63]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_STORAGE_MUX' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_mux.v:64]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_STORAGE_MUX' (39#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_storage_mux.v:64]
+INFO: [Synth 8-638] synthesizing module 'aurora_8b10b_0_OUTPUT_MUX' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_output_mux.v:65]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_OUTPUT_MUX' (40#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_output_mux.v:65]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_RX_LL_PDU_DATAPATH' (41#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_rx_ll_pdu_datapath.v:63]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_RX_LL' (42#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_rx_ll.v:64]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0_core' (43#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_core.v:63]
+INFO: [Synth 8-256] done synthesizing module 'aurora_8b10b_0' (44#1) [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0.v:54]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 306.301 ; gain = 143.531
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 302.270 ; gain = 143.016
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -582,27 +582,27 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin ll_to_axi_pdu_i:AXI4_S_IP_TREADY to constant 0 [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_core.v:681]
+WARNING: [Synth 8-3295] tying undriven pin ll_to_axi_pdu_i:AXI4_S_IP_TREADY to constant 0 [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_core.v:681]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 306.301 ; gain = 143.531
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 302.270 ; gain = 143.016
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 29 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-Loading clock regions from D:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/virtex7/xc7vx690t/ClockRegion.xml
-Loading clock buffers from D:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/virtex7/xc7vx690t/ClockBuffers.xml
-Loading clock placement rules from D:/Xilinx/Vivado/2014.4/data/parts/xilinx/virtex7/ClockPlacerRules.xml
-Loading package pin functions from D:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/PinFunctions.xml...
-Loading package from D:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/virtex7/xc7vx690t/ffg1761/Package.xml
-Loading io standards from D:/Xilinx/Vivado/2014.4/data\./parts/xilinx/virtex7/IOStandards.xml
-Loading device configuration modes from D:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/ConfigModes.xml
+Loading clock regions from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/virtex7/xc7vx690t/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/virtex7/xc7vx690t/ClockBuffers.xml
+Loading clock placement rules from C:/Xilinx/Vivado/2014.4/data/parts/xilinx/virtex7/ClockPlacerRules.xml
+Loading package pin functions from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/PinFunctions.xml...
+Loading package from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/virtex7/xc7vx690t/ffg1761/Package.xml
+Loading io standards from C:/Xilinx/Vivado/2014.4/data\./parts/xilinx/virtex7/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/ConfigModes.xml
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_ooc.xdc]
-Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_ooc.xdc]
-Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_clocks.xdc]
-Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_clocks.xdc]
+Parsing XDC File [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_ooc.xdc]
+Finished Parsing XDC File [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_ooc.xdc]
+Parsing XDC File [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_clocks.xdc]
+Finished Parsing XDC File [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_clocks.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
@@ -611,22 +611,22 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FDR => FDRE: 2 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.065 . Memory (MB): peak = 807.445 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 804.598 ; gain = 0.105
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 804.598 ; gain = 645.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7vx690tffg1761-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 804.598 ; gain = 645.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 804.598 ; gain = 645.344
 ---------------------------------------------------------------------------------
 ROM "TX_DATA" won't be mapped to Block RAM because address size (1) smaller than threshold (5) 
 ROM "left_align_select_r" won't be mapped to Block RAM because address size (4) smaller than threshold (5) 
@@ -650,11 +650,11 @@ ROM "tx_state" won't be mapped to Block RAM because address size (1) smaller tha
 ROM "tx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5) 
 ROM "tx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5) 
 ROM "tx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5) 
-INFO: [Synth 8-4471] merging register 'CPLL_RESET_reg' into 'QPLL_RESET_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:795]
-INFO: [Synth 8-4471] merging register 'RXLPMLFHOLD_reg' into 'QPLL_RESET_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:806]
-INFO: [Synth 8-4471] merging register 'RXLPMHFHOLD_reg' into 'QPLL_RESET_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:807]
-INFO: [Synth 8-4471] merging register 'recclk_mon_count_reset_reg' into 'adapt_count_reset_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:802]
-INFO: [Synth 8-4471] merging register 'RXDFELFHOLD_reg' into 'RXDFEAGCHOLD_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:805]
+INFO: [Synth 8-4471] merging register 'CPLL_RESET_reg' into 'QPLL_RESET_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:795]
+INFO: [Synth 8-4471] merging register 'RXLPMLFHOLD_reg' into 'QPLL_RESET_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:806]
+INFO: [Synth 8-4471] merging register 'RXLPMHFHOLD_reg' into 'QPLL_RESET_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:807]
+INFO: [Synth 8-4471] merging register 'recclk_mon_count_reset_reg' into 'adapt_count_reset_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:802]
+INFO: [Synth 8-4471] merging register 'RXDFELFHOLD_reg' into 'RXDFEAGCHOLD_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:805]
 INFO: [Synth 8-802] inferred FSM for state register 'rx_state_reg' in module 'aurora_8b10b_0_rx_startup_fsm'
 ROM "adapt_count" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
 ROM "time_out_adapt" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
@@ -679,7 +679,7 @@ ROM "rx_state" won't be mapped to Block RAM because address size (1) smaller tha
 ROM "flag" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
 ROM "rx_cdrlocked" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
 ROM "rx_cdrlock_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
-INFO: [Synth 8-4471] merging register 'eof_r_reg' into 'sof_and_eof_r_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll_control.v:217]
+INFO: [Synth 8-4471] merging register 'eof_r_reg' into 'sof_and_eof_r_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/src/aurora_8b10b_0_tx_ll_control.v:217]
 ROM "valid_c" won't be mapped to Block RAM because address size (2) smaller than threshold (5) 
 ROM "storage_select_c" won't be mapped to Block RAM because address size (4) smaller than threshold (5) 
 ROM "storage_select_c" won't be mapped to Block RAM because address size (4) smaller than threshold (5) 
@@ -687,7 +687,7 @@ ROM "output_select_c" won't be mapped to Block RAM because address size (4) smal
 INFO: [Synth 8-3354] encoded FSM with state register 'tx_state_reg' using encoding 'sequential' in module 'aurora_8b10b_0_tx_startup_fsm'
 INFO: [Synth 8-3354] encoded FSM with state register 'rx_state_reg' using encoding 'sequential' in module 'aurora_8b10b_0_rx_startup_fsm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 804.598 ; gain = 645.344
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1066,21 +1066,21 @@ BRAMs: 2940 (col length: RAMB18 200 RAMB36 100)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 807.445 ; gain = 644.676
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 804.598 ; gain = 645.344
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_txresetfsm_i/txresetdone_s3_reg' into 'inst/gt_wrapper_i/gt_txresetfsm_i/sync_TXRESETDONE_cdc_sync/s_level_out_d4_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_tx_startup_fsm.v:423]
-INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_txresetfsm_i/time_out_wait_bypass_s3_reg' into 'inst/gt_wrapper_i/gt_txresetfsm_i/sync_time_out_wait_bypass_cdc_sync/s_level_out_d4_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_tx_startup_fsm.v:422]
-INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_txresetfsm_i/tx_fsm_reset_done_int_s3_reg' into 'inst/gt_wrapper_i/gt_txresetfsm_i/sync_tx_fsm_reset_done_int_cdc_sync/s_level_out_d4_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_tx_startup_fsm.v:311]
-INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_txresetfsm_i/run_phase_alignment_int_s3_reg' into 'inst/gt_wrapper_i/gt_txresetfsm_i/sync_run_phase_alignment_int_cdc_sync/s_level_out_d4_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_tx_startup_fsm.v:310]
-INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_rxresetfsm_i/rxresetdone_s3_reg' into 'inst/gt_wrapper_i/gt_rxresetfsm_i/sync_RXRESETDONE_cdc_sync/s_level_out_d4_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:728]
-INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_rxresetfsm_i/time_out_wait_bypass_s3_reg' into 'inst/gt_wrapper_i/gt_rxresetfsm_i/sync_time_out_wait_bypass_cdc_sync/s_level_out_d4_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:726]
-INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_rxresetfsm_i/rx_fsm_reset_done_int_s3_reg' into 'inst/gt_wrapper_i/gt_rxresetfsm_i/sync_rx_fsm_reset_done_int_cdc_sync/s_level_out_d4_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:593]
-INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_rxresetfsm_i/run_phase_alignment_int_s3_reg' into 'inst/gt_wrapper_i/gt_rxresetfsm_i/sync_run_phase_alignment_int_cdc_sync/s_level_out_d4_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:591]
-INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_rxresetfsm_i/rxpmaresetdone_ss_reg' into 'inst/gt_wrapper_i/gt_rxresetfsm_i/sync_pmaresetdone_cdc_sync/s_level_out_d4_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:398]
-INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gtrxreset_r1_reg' into 'inst/gt_wrapper_i/gtrxreset_cdc_sync/s_level_out_d4_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_transceiver_wrapper.v:330]
-INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/link_reset_r_reg' into 'inst/core_reset_logic_i/link_reset_comb_r_reg' [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_transceiver_wrapper.v:338]
+INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_txresetfsm_i/txresetdone_s3_reg' into 'inst/gt_wrapper_i/gt_txresetfsm_i/sync_TXRESETDONE_cdc_sync/s_level_out_d4_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_tx_startup_fsm.v:423]
+INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_txresetfsm_i/time_out_wait_bypass_s3_reg' into 'inst/gt_wrapper_i/gt_txresetfsm_i/sync_time_out_wait_bypass_cdc_sync/s_level_out_d4_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_tx_startup_fsm.v:422]
+INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_txresetfsm_i/tx_fsm_reset_done_int_s3_reg' into 'inst/gt_wrapper_i/gt_txresetfsm_i/sync_tx_fsm_reset_done_int_cdc_sync/s_level_out_d4_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_tx_startup_fsm.v:311]
+INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_txresetfsm_i/run_phase_alignment_int_s3_reg' into 'inst/gt_wrapper_i/gt_txresetfsm_i/sync_run_phase_alignment_int_cdc_sync/s_level_out_d4_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_tx_startup_fsm.v:310]
+INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_rxresetfsm_i/rxresetdone_s3_reg' into 'inst/gt_wrapper_i/gt_rxresetfsm_i/sync_RXRESETDONE_cdc_sync/s_level_out_d4_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:728]
+INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_rxresetfsm_i/time_out_wait_bypass_s3_reg' into 'inst/gt_wrapper_i/gt_rxresetfsm_i/sync_time_out_wait_bypass_cdc_sync/s_level_out_d4_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:726]
+INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_rxresetfsm_i/rx_fsm_reset_done_int_s3_reg' into 'inst/gt_wrapper_i/gt_rxresetfsm_i/sync_rx_fsm_reset_done_int_cdc_sync/s_level_out_d4_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:593]
+INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_rxresetfsm_i/run_phase_alignment_int_s3_reg' into 'inst/gt_wrapper_i/gt_rxresetfsm_i/sync_run_phase_alignment_int_cdc_sync/s_level_out_d4_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:591]
+INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gt_rxresetfsm_i/rxpmaresetdone_ss_reg' into 'inst/gt_wrapper_i/gt_rxresetfsm_i/sync_pmaresetdone_cdc_sync/s_level_out_d4_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_rx_startup_fsm.v:398]
+INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/gtrxreset_r1_reg' into 'inst/gt_wrapper_i/gtrxreset_cdc_sync/s_level_out_d4_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_transceiver_wrapper.v:330]
+INFO: [Synth 8-4471] merging register 'inst/gt_wrapper_i/link_reset_r_reg' into 'inst/core_reset_logic_i/link_reset_comb_r_reg' [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0/gt/aurora_8b10b_0_transceiver_wrapper.v:338]
 ROM "inst/aurora_8b10b_0_rx_ll_i/rx_ll_pdu_datapath_i/stage_3_storage_switch_control_i/storage_select_c" won't be mapped to Block RAM because address size (4) smaller than threshold (5) 
 ROM "inst/aurora_8b10b_0_rx_ll_i/rx_ll_pdu_datapath_i/stage_3_storage_switch_control_i/storage_select_c" won't be mapped to Block RAM because address size (4) smaller than threshold (5) 
 ROM "inst/aurora_8b10b_0_rx_ll_i/rx_ll_pdu_datapath_i/stage_3_output_switch_control_i/output_select_c" won't be mapped to Block RAM because address size (4) smaller than threshold (5) 
@@ -1110,9 +1110,9 @@ WARNING: [Synth 8-3331] design aurora_8b10b_0 has unconnected port gt0_qplllock_
 WARNING: [Synth 8-3331] design aurora_8b10b_0 has unconnected port gt0_qpllrefclklost_in
 WARNING: [Synth 8-3331] design aurora_8b10b_0 has unconnected port pll_not_locked
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 804.598 ; gain = 645.344
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished Parallel Reinference  : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 804.598 ; gain = 645.344
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -1177,19 +1177,19 @@ WARNING: [Synth 8-3332] Sequential element (\inst/aurora_8b10b_0_rx_ll_i/rx_ll_p
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 804.598 ; gain = 645.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 804.598 ; gain = 645.344
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 804.598 ; gain = 645.344
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 804.598 ; gain = 645.344
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
@@ -1197,10 +1197,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:49 ; elapsed = 00:00:53 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 804.598 ; gain = 645.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:53 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 804.598 ; gain = 645.344
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1213,7 +1213,7 @@ Start Technology Mapping
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3332] Sequential element (\inst/aurora_8b10b_0_rx_ll_i/rx_ll_pdu_datapath_i/stage_1_start_detected_r_reg ) is unused and will be removed from module aurora_8b10b_0.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:55 ; elapsed = 00:01:04 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:00:57 . Memory (MB): peak = 804.598 ; gain = 645.344
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1237,7 +1237,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:01:05 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished IO Insertion : Time (s): cpu = 00:00:48 ; elapsed = 00:00:58 . Memory (MB): peak = 804.598 ; gain = 645.344
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1250,7 +1250,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:01:05 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:48 ; elapsed = 00:00:58 . Memory (MB): peak = 804.598 ; gain = 645.344
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1262,7 +1262,7 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:56 ; elapsed = 00:01:05 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:48 ; elapsed = 00:00:58 . Memory (MB): peak = 804.598 ; gain = 645.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RAM, DSP and Shift Register Reporting
@@ -1397,19 +1397,19 @@ Report Instance Areas:
 |67    |    ll_to_axi_pdu_i                                   |aurora_8b10b_0_LL_TO_AXI              |     3|
 +------+------------------------------------------------------+--------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:56 ; elapsed = 00:01:05 . Memory (MB): peak = 807.445 ; gain = 644.676
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:48 ; elapsed = 00:00:58 . Memory (MB): peak = 804.598 ; gain = 645.344
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 48 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:46 . Memory (MB): peak = 807.445 ; gain = 81.266
-Synthesis Optimization Complete : Time (s): cpu = 00:00:56 ; elapsed = 00:01:05 . Memory (MB): peak = 807.445 ; gain = 644.676
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:41 . Memory (MB): peak = 804.598 ; gain = 80.633
+Synthesis Optimization Complete : Time (s): cpu = 00:00:48 ; elapsed = 00:00:58 . Memory (MB): peak = 804.598 ; gain = 645.344
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 83 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_ooc.xdc]
-Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_ooc.xdc]
-Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_clocks.xdc]
-Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_clocks.xdc]
+Parsing XDC File [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_ooc.xdc]
+Finished Parsing XDC File [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_ooc.xdc]
+Parsing XDC File [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_clocks.xdc]
+Finished Parsing XDC File [c:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_clocks.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 31 instances were transformed.
@@ -1421,35 +1421,35 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 163 Infos, 52 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:56 ; elapsed = 00:01:06 . Memory (MB): peak = 807.445 ; gain = 582.410
+synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:00:58 . Memory (MB): peak = 804.598 ; gain = 582.961
 # rename_ref -prefix_all aurora_8b10b_0_
 INFO: [Coretcl 2-1174] Renamed 66 cell refs.
 # write_checkpoint -noxdef aurora_8b10b_0.dcp
 # catch { report_utilization -file aurora_8b10b_0_utilization_synth.rpt -pb aurora_8b10b_0_utilization_synth.pb }
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.197 . Memory (MB): peak = 807.445 ; gain = 0.000
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.187 . Memory (MB): peak = 804.598 ; gain = 0.000
 # if { [catch {
-#   file copy -force C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/aurora_8b10b_0_synth_1/aurora_8b10b_0.dcp C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0.dcp
+#   file copy -force {C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/aurora_8b10b_0_synth_1/aurora_8b10b_0.dcp} {C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0.dcp}
 # } _RESULT ] } { 
 #   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 # }
 # if { [catch {
-#   write_verilog -force -mode synth_stub C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_stub.v
+#   write_verilog -force -mode synth_stub {C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_stub.v}
 # } _RESULT ] } { 
 #   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 # }
 # if { [catch {
-#   write_vhdl -force -mode synth_stub C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_stub.vhdl
+#   write_vhdl -force -mode synth_stub {C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_stub.vhdl}
 # } _RESULT ] } { 
 #   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 # }
 # if { [catch {
-#   write_verilog -force -mode funcsim C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_funcsim.v
+#   write_verilog -force -mode funcsim {C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_funcsim.v}
 # } _RESULT ] } { 
 #   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 # }
 # if { [catch {
-#   write_vhdl -force -mode funcsim C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_funcsim.vhdl
+#   write_vhdl -force -mode funcsim {C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_funcsim.vhdl}
 # } _RESULT ] } { 
 #   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 # }
-INFO: [Common 17-206] Exiting Vivado at Tue Feb 24 15:14:12 2015...
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 16 16:48:37 2015...
