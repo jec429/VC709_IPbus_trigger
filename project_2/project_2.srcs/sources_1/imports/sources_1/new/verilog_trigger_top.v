@@ -38,11 +38,12 @@ module verilog_trigger_top(
     input wire en_proc_switch    
     );
     
-    // Convert the 200 MHz clock to something representing 40 MHz bunch crossing clock,
+    // Convert the 200 MHz clock to something representing 10 MHz bunch crossing clock,
     // and something representing the faster processing clock, maybe 600 MHz.
     // This is a ratio of 15:1
     // The timing constraint file needs to match
     // 10/24/2014: 'cross_clk' = 10 MHz, 'proc_clk' = 150 MHz
+    // 03/19/2015: 'cross_clk' = 10 MHz, 'proc_clk' = 250 MHz (This is set in the trigger_clock_synth module)
     
      trigger_clock_synth trigger_clock_synth (
         // Clock in ports
