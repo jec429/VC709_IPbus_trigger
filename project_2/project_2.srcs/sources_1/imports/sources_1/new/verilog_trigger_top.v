@@ -44,16 +44,16 @@ module verilog_trigger_top(
     // The timing constraint file needs to match
     // 10/24/2014: 'cross_clk' = 10 MHz, 'proc_clk' = 150 MHz
     
-//     trigger_clock_synth trigger_clock_synth (
-//        // Clock in ports
-//        .clk_in1(clk200),           // input clk_in1
-//        // Clock out ports
-//        .cross_clk(cross_clk),       // bunch crossing clock
-//        .proc_clk(proc_clk),        // processing clock
-//        // Status and control signals
-//        .reset(reset),              // input reset
-//        .locked(locked)             // output locked
-//    );      
+     trigger_clock_synth trigger_clock_synth (
+        // Clock in ports
+        .clk_in1(clk200),           // input clk_in1
+        // Clock out ports
+        .cross_clk(cross_clk),       // bunch crossing clock
+        .proc_clk(proc_clk),        // processing clock
+        // Status and control signals
+        .reset(reset),              // input reset
+        .locked(locked)             // output locked
+    );      
     
     // Address decoding to select modules below this level.
     // "ipb_addr[31:30] = 2'b01" have already been used above this point to get here.
@@ -99,7 +99,7 @@ module verilog_trigger_top(
             en_proc <= ipb_wdata;       // enable comes from IPbus if add == 32'h5500000
     end    
     
-    always @(posedge clk200) begin 
+    always @(posedge proc_clk) begin 
         //en_proc_1 <= en_proc_switch;
         en_proc_1 <= en_proc;
         en_proc_2 <= en_proc_1;         // synchronize enable since it comes from IPbus clock domain
@@ -125,7 +125,57 @@ module verilog_trigger_top(
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     // connect each sector
          
-//    Tracklet_Layer_Router layer_router(
+    Tracklet_processing layer_router(
+        // clocks and reset
+        .reset(reset),                        // active HI
+        .clk(proc_clk),                // processing clock at a multiple of the crossing clock
+        .en_proc(en_proc_2),
+        //.en_proc(en_proc),
+        // programming interface
+        // inputs
+        .io_clk(ipb_clk),                    // programming clock
+        .io_sel(tracklet_processing_sel),    // this module has been selected for an I/O operation
+        .io_sync(io_sync),                // start the I/O operation
+        .io_addr(ipb_addr[27:0]),        // slave address, memory or register. Top 4 bits already consumed.
+        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+        .io_wr_data(ipb_wdata),    // data to write for write operations
+        // outputs
+        .io_rd_data(tracklet_processing_io_rd_data),    // data returned for read operations
+        .io_rd_ack(tracklet_processing_io_rd_ack),        // 'read' data from this module is ready
+        // clocks
+        .BX(BX),
+        .first_clk(first_clk),
+        .not_first_clk(not_first_clk)
+        
+        );   
+         
+//       Tracklet_Layer_Router layer_router(
+//        // clocks and reset
+//        .reset(reset),                        // active HI
+//        .clk(proc_clk),                // processing clock at a multiple of the crossing clock
+//        .en_proc(en_proc_2),
+//        //.en_proc(en_proc),
+//        // programming interface
+//        // inputs
+//        .io_clk(ipb_clk),                    // programming clock
+//        .io_sel(tracklet_processing_sel),    // this module has been selected for an I/O operation
+//        .io_sync(io_sync),                // start the I/O operation
+//        .io_addr(ipb_addr[27:0]),        // slave address, memory or register. Top 4 bits already consumed.
+//        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+//        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+//        .io_wr_data(ipb_wdata),    // data to write for write operations
+//        // outputs
+//        .io_rd_data(tracklet_processing_io_rd_data),    // data returned for read operations
+//        .io_rd_ack(tracklet_processing_io_rd_ack),        // 'read' data from this module is ready
+//        // clocks
+//        .BX(BX),
+//        .first_clk(first_clk),
+//        .not_first_clk(not_first_clk)
+        
+//        );    
+        
+//     Tracklet_VM_Router vm_router(
 //        // clocks and reset
 //        .reset(reset),                        // active HI
 //        .clk(clk200),                // processing clock at a multiple of the crossing clock
@@ -149,31 +199,55 @@ module verilog_trigger_top(
 //        .not_first_clk(not_first_clk)
         
 //        );    
+
+
+//    Tracklet_Tracklet_Engine tengine(
+//        //clocks and reset
+//        .reset(reset),                        // active HI
+//        .clk(proc_clk),                // processing clock at a multiple of the crossing clock
+//        .en_proc(en_proc_2),
+//        //.en_proc(en_proc),
+//        // programming interface
+//        // inputs
+//        .io_clk(ipb_clk),                    // programming clock
+//        .io_sel(tracklet_processing_sel),    // this module has been selected for an I/O operation
+//        .io_sync(io_sync),                // start the I/O operation
+//        .io_addr(ipb_addr[27:0]),        // slave address, memory or register. Top 4 bits already consumed.
+//        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+//        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+//        .io_wr_data(ipb_wdata),    // data to write for write operations
+//        // outputs
+//        .io_rd_data(tracklet_processing_io_rd_data),    // data returned for read operations
+//        .io_rd_ack(tracklet_processing_io_rd_ack),        // 'read' data from this module is ready
+//        // clocks
+//        .BX(BX),
+//        .first_clk(first_clk),
+//        .not_first_clk(not_first_clk)
+//    );
         
-     Tracklet_VM_Router vm_router(
-        // clocks and reset
-        .reset(reset),                        // active HI
-        .clk(clk200),                // processing clock at a multiple of the crossing clock
-        .en_proc(en_proc_2),
-        //.en_proc(en_proc),
-        // programming interface
-        // inputs
-        .io_clk(ipb_clk),                    // programming clock
-        .io_sel(tracklet_processing_sel),    // this module has been selected for an I/O operation
-        .io_sync(io_sync),                // start the I/O operation
-        .io_addr(ipb_addr[27:0]),        // slave address, memory or register. Top 4 bits already consumed.
-        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
-        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
-        .io_wr_data(ipb_wdata),    // data to write for write operations
-        // outputs
-        .io_rd_data(tracklet_processing_io_rd_data),    // data returned for read operations
-        .io_rd_ack(tracklet_processing_io_rd_ack),        // 'read' data from this module is ready
-        // clocks
-        .BX(BX),
-        .first_clk(first_clk),
-        .not_first_clk(not_first_clk)
-        
-        );    
+//    Tracklet_TrackletCalculator TC(
+//        //clocks and reset
+//        .reset(reset),                        // active HI
+//        .clk(proc_clk),                // processing clock at a multiple of the crossing clock
+//        .en_proc(en_proc_2),
+//        //.en_proc(en_proc),
+//        // programming interface
+//        // inputs
+//        .io_clk(ipb_clk),                    // programming clock
+//        .io_sel(tracklet_processing_sel),    // this module has been selected for an I/O operation
+//        .io_sync(io_sync),                // start the I/O operation
+//        .io_addr(ipb_addr[27:0]),        // slave address, memory or register. Top 4 bits already consumed.
+//        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+//        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+//        .io_wr_data(ipb_wdata),    // data to write for write operations
+//        // outputs
+//        .io_rd_data(tracklet_processing_io_rd_data),    // data returned for read operations
+//        .io_rd_ack(tracklet_processing_io_rd_ack),        // 'read' data from this module is ready
+//        // clocks
+//        .BX(BX),
+//        .first_clk(first_clk),
+//        .not_first_clk(not_first_clk)
+//    );
         
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     // connect a state machine to handle the IPbus transactions, wait states and drive 'ipb_ack'
