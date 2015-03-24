@@ -42,6 +42,7 @@ module Tracklet_TrackletCalculator(
     input wire not_first_clk
     );
     
+    wire [31:0] reader_out;  
     wire io_sel_R3_io_block;
     assign io_sel_R3_io_block = io_sel && (io_addr[27:24] == 4'b1000);
    
@@ -1049,7 +1050,7 @@ module Tracklet_TrackletCalculator(
     .not_first_clk(not_first_clk)
     );
     
-    wire [31:0] reader_out;       
+         
     reader reader1( 
     .read_add1(TPAR_L1D3L2D3_FT_L1L2_read_add),  
     .number_in1(6'd2),

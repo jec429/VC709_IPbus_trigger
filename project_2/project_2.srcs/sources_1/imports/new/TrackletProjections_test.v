@@ -61,13 +61,11 @@ module TrackletProjections_test(
     reg signed [15:0] ir_0;
     
     always @(posedge clk) begin
-        if(tracklet > 0) begin
-            irinv_0     <= tracklet[53:40];
-            iphi0_0     <= tracklet[39:23];
-            iz0_0       <= tracklet[22:13];
-            it_0        <= tracklet[12:0];
-            ir_0        <= rproj;
-        end
+        irinv_0     <= tracklet[53:40];
+        iphi0_0     <= tracklet[39:23];
+        iz0_0       <= tracklet[22:13];
+        it_0        <= tracklet[12:0];
+        ir_0        <= rproj;
     end
     wire [16:0] iphi0_pipe3;
     wire signed [13:0] irinv_pipe2;
@@ -88,7 +86,7 @@ module TrackletProjections_test(
     
     // Step 1:
     // Declare:
-    (*USE_DPORT = "false"*) reg signed [30:0] full_is1;
+    wire signed [30:0] full_is1;
     reg signed [30:0] full_is1_pipe;
     reg signed [29:0] is1_1;
     reg signed [14:0] pre_is1_1;
@@ -96,37 +94,43 @@ module TrackletProjections_test(
     reg [11:0] constant_1;
     
     always @(posedge clk) begin
-        full_is1    <= ir_0 * irinv_0;
-        full_is1_pipe <= full_is1;
-        pre_is1_1 <= full_is1_pipe >>> 4'd10;
+        //full_is1    <= ir_0 * irinv_0;
+        //full_is1_pipe <= full_is1;
+        pre_is1_1 <= full_is1 >>> 4'd10;
         pre_is1_1_pipe <= pre_is1_1;
-        is1_1 <= full_is1_pipe >>> 1'b1;
+        is1_1 <= full_is1 >>> 1'b1;
         constant_1 <= 12'h1e8;
     end
-            
+    
+    pipe_mult #(.STAGES(2), .AWIDTH(16), .BWIDTH(14))
+            full_is1_test(.pipe_in(en_proc), .pipe_out(pipe), .clk(clk),
+            .a(ir_0), .b(irinv_0), .p(full_is1));
+          
     // Step 2:
     // Carry over:
     reg signed [29:0] is1_2;
     // Declare:
     wire signed [29:0] is2_2;
     
-    wire signed [41:0] pre_is2_2_5;
+    wire signed [41:0] pre_is2_2_5_test1;
+    wire signed [41:0] pre_is2_2_5_test2;
+    reg signed [41:0] pre_is2_2_5;
         
     pipe_mult #(.STAGES(2), .AWIDTH(15), .BWIDTH(15))
         is2_test(.pipe_in(en_proc), .pipe_out(pipe), .clk(clk),
         .a(pre_is1_1), .b(pre_is1_1), .p(is2_2));
         
-    pipe_mult #(.STAGES(2), .AWIDTH(12), .BWIDTH(30))
+    pipe_mult #(.STAGES(2), .AWIDTH(12), .BWIDTH(25))
         pre_is2_test1(.pipe_in(en_proc), .pipe_out(pipe), .clk(clk),
-        .a(constant_1), .b(is2_2), .p(pre_is2_2_5));
+        .a(constant_1), .b(is2_2[24:0]), .p(pre_is2_2_5_test1));
     
-//    pipe_mult #(.STAGES(2), .AWIDTH(12), .BWIDTH(6))
-//        pre_is2_test2(.pipe_in(en_proc), .pipe_out(pipe), .clk(clk),
-//        .a(constant_1), .b(is2_2[30:25]), .p(pre_is2_2_5_test2));
+    pipe_mult #(.STAGES(2), .AWIDTH(12), .BWIDTH(5))
+        pre_is2_test2(.pipe_in(en_proc), .pipe_out(pipe), .clk(clk),
+        .a(constant_1), .b(is2_2[29:25]), .p(pre_is2_2_5_test2));
     
     always @(posedge clk) begin
         is1_2       <= is1_1;
-        //pre_is2_2_5 <= (pre_is2_2_5_test2 <<< 6'd25) + pre_is2_2_5_test1;
+        pre_is2_2_5 <= (pre_is2_2_5_test2 <<< 6'd25) + pre_is2_2_5_test1;
     end
     
     // Step 2.5 Calculate s3:
@@ -153,7 +157,7 @@ module TrackletProjections_test(
     reg signed [12:0] iphi_der_3;
     wire signed [33:0] is4_3;
     reg signed [17:0] pre_is4_3;
-    reg signed [25:0] is5_3;
+    wire signed [25:0] is5_3;
     reg signed [25:0] is5_3_pipe;
     reg signed [15:0] pre_is5_3;
     wire signed [15:0] pre_is5_pipe3;
@@ -168,12 +172,16 @@ module TrackletProjections_test(
         iphi_der_3    <= iphi_der_2_5 >>> 1'b1;
         pre_is4_3    <= is4_3 >>> 4'd10;
         // Why wait? Do it now!
-        is5_3               <= ir_0 * it_0;
-        is5_3_pipe          <= is5_3;
+        //is5_3               <= ir_0 * it_0;
+        //is5_3_pipe          <= is5_3;
         iz_der_3            <= it_0[12:4];
-        pre_is5_3           <= is5_3_pipe >>> 4'h9;
+        pre_is5_3           <= is5_3 >>> 4'h9;
         pre_is3_3           <= is3_2_5 >>> 4'h9;
     end
+    
+    pipe_mult #(.STAGES(2), .AWIDTH(16), .BWIDTH(13))
+            is5_test(.pipe_in(en_proc), .pipe_out(pipe), .clk(clk),
+            .a(ir_0), .b(it_0), .p(is5_3));
     
     pipe_delay #(.STAGES(8), .WIDTH(16))
             pre_is5_pipe(.pipe_in(en_proc), .pipe_out(en5b), .clk(clk),
