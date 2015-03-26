@@ -1,5 +1,0 @@
-# compile vhdl design source files
-vhdl gig_ethernet_pcs_pma_v14_3  "../../../project_2.srcs/sources_1/ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_v14_3/hdl/gig_ethernet_pcs_pma_v14_3_rfs.vhd"
-vhdl fifo_generator_v12_0  "../../../project_2.srcs/sources_1/ip/link_axis_data_fifo/fifo_generator_v12_0/hdl/fifo_generator_v12_0_vh_rfs.vhd"
-vhdl fifo_generator_v12_0  "../../../project_2.srcs/sources_1/ip/TP_raw_stub_fifo/fifo_generator_v12_0/hdl/fifo_generator_v12_0_vh_rfs.vhd"
-vhdl xil_defaultlib  "../../../project_2.srcs/sources_1/ip/TP_raw_stub_fifo/sim/TP_raw_stub_fifo.vhd"
