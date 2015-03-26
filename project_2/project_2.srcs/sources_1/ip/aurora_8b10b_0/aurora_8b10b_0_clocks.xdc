@@ -50,8 +50,8 @@
 ##
 ################################################################################
 ## aurora_8b10b_0.xdc generated for xc7vx690t-ffg1761-2 device
-# TXOUTCLK Constraint: Value is selected based on the line rate (3.125 Gbps) and lane width (4-Byte)
-create_clock -period 12.800	 [get_pins -hier -filter {name=~*gt_wrapper_i*aurora_8b10b_0_multi_gt_i*gt0_aurora_8b10b_0_i*gthe2_i*TXOUTCLK}]
+# TXOUTCLK Constraint: Value is selected based on the line rate (6.25 Gbps) and lane width (4-Byte)
+create_clock -period 6.400	 [get_pins -hier -filter {name=~*gt_wrapper_i*aurora_8b10b_0_multi_gt_i*gt0_aurora_8b10b_0_i*gthe2_i*TXOUTCLK}]
 
 #### CDC Path #####
 set_false_path -through [get_pins -hier *cdc_to*]

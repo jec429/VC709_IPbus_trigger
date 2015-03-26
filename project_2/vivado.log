@@ -2,126 +2,262 @@
 # Vivado v2014.4 (64-bit)
 # SW Build 1071353 on Tue Nov 18 18:29:27 MST 2014
 # IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
-# Start of session at: Mon Mar 16 16:42:41 2015
-# Process ID: 1900
-# Log file: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/vivado.log
-# Journal file: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2\vivado.jou
+# Start of session at: Fri Mar 20 11:13:50 2015
+# Process ID: 1476
+# Log file: E:/ztaotest/VC709_IPbus_trigger/project_2/vivado.log
+# Journal file: E:/ztaotest/VC709_IPbus_trigger/project_2\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project {C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.xpr}
-INFO: [Project 1-313] Project file moved from 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2' since last save.
-CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/Zhengcheng Tao/Downloads/aurora_sim.v', nor could it be found using path 'C:/Users/ZhengchengTao/Downloads/aurora_sim.v'.
+open_project E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.xpr
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2014.4/data/ip'.
-open_project: Time (s): cpu = 00:00:29 ; elapsed = 00:00:12 . Memory (MB): peak = 805.875 ; gain = 244.195
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-set_property source_mgmt_mode DisplayOnly [current_project]
-file mkdir C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sim_1/new
-can't create directory "C:/Users/Zhengcheng": permission denied
-file mkdir C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sim_1/new
-can't create directory "C:/Users/Zhengcheng": permission denied
-file mkdir C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sim_1/new
-can't create directory "C:/Users/Zhengcheng": permission denied
-file mkdir C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sim_1/new
-can't create directory "C:/Users/Zhengcheng": permission denied
-file mkdir C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sim_1/new
-can't create directory "C:/Users/Zhengcheng": permission denied
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-file mkdir C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sim_1/new
-can't create directory "C:/Users/Zhengcheng": permission denied
-file mkdir {C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sim_1/new}
-close [ open {C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sim_1/new/aurora_sim.v} w ]
-add_files -fileset sim_1 {{C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sim_1/new/aurora_sim.v}}
-remove_files -fileset sim_1 {{C:/Users/Zhengcheng Tao/Downloads/aurora_sim.v}}
-reset_run trigger_clock_synth_synth_1
+open_project: Time (s): cpu = 00:00:37 ; elapsed = 00:00:13 . Memory (MB): peak = 783.691 ; gain = 231.840
+close [ open E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/Link_Interface.v w ]
+add_files E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/Link_Interface.v
+close [ open E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/Data_FSM.v w ]
+add_files E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/Data_FSM.v
 reset_run aurora_8b10b_0_synth_1
+reset_run synth_1
+launch_runs synth_1
+[Wed Mar 25 10:46:40 2015] Launched aurora_8b10b_0_synth_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/aurora_8b10b_0_synth_1/runme.log
+[Wed Mar 25 10:46:40 2015] Launched synth_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/runme.log
+launch_runs impl_1
+[Wed Mar 25 10:50:53 2015] Launched impl_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
+reset_run impl_1 -noclean_dir 
+reset_run synth_1
+launch_runs synth_1
+[Wed Mar 25 12:59:43 2015] Launched synth_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/runme.log
+launch_runs impl_1
+[Wed Mar 25 12:59:46 2015] Launched synth_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/runme.log
+[Wed Mar 25 12:59:46 2015] Launched impl_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Wed Mar 25 18:59:32 2015] Launched impl_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
+open_hw
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2014.4
+  **** Build date : Nov 18 2014-18:09:44
+    ** Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+****** Xilinx hw_server v2014.4
+  **** Build date : Nov 18 2014-18:09:44
+    ** Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1104.691 ; gain = 0.000
+connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210203826185A]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210203826185A]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210203826185A
+set_property PROGRAM.FILE {E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/top.bit} [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/debug_nets.ltx} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7vx690t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+set_property PROBES.FILE {E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/debug_nets.ltx} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-32] Done pin status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1115.969 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7vx690t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+close_hw
+****** Webtalk v2014.4 (64-bit)
+  **** SW Build 1071353 on Tue Nov 18 18:29:27 MST 2014
+  **** IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.hw/webtalk/labtool_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.hw/webtalk/usage_statistics_ext_labtool.xml' has been successfully sent to Xilinx on Wed Mar 25 19:21:45 2015. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2014.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed Mar 25 19:21:45 2015...
+close_hw: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1115.969 ; gain = 0.000
+reset_run synth_1
+launch_runs synth_1
+[Wed Mar 25 20:33:11 2015] Launched synth_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+[Wed Mar 25 20:33:44 2015] Launched synth_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/runme.log
+launch_runs impl_1
+[Wed Mar 25 20:36:40 2015] Launched impl_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 641 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2014.4
+Loading clock regions from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/virtex7/xc7vx690t/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/virtex7/xc7vx690t/ClockBuffers.xml
+Loading clock placement rules from C:/Xilinx/Vivado/2014.4/data/parts/xilinx/virtex7/ClockPlacerRules.xml
+Loading package pin functions from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/PinFunctions.xml...
+Loading package from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/virtex7/xc7vx690t/ffg1761/Package.xml
+Loading io standards from C:/Xilinx/Vivado/2014.4/data\./parts/xilinx/virtex7/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/ConfigModes.xml
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+Parsing XDC File [E:/ztaotest/VC709_IPbus_trigger/project_2/.Xil/Vivado-1476-0602-PC/dcp/top_early.xdc]
+Finished Parsing XDC File [E:/ztaotest/VC709_IPbus_trigger/project_2/.Xil/Vivado-1476-0602-PC/dcp/top_early.xdc]
+Parsing XDC File [E:/ztaotest/VC709_IPbus_trigger/project_2/.Xil/Vivado-1476-0602-PC/dcp/top.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.srcs/constrs_1/imports/new/timing.xdc:26]
+INFO: [Timing 38-2] Deriving generated clocks [E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.srcs/constrs_1/imports/new/timing.xdc:26]
+get_clocks: Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 2268.945 ; gain = 702.012
+Finished Parsing XDC File [E:/ztaotest/VC709_IPbus_trigger/project_2/.Xil/Vivado-1476-0602-PC/dcp/top.xdc]
+Parsing XDC File [E:/ztaotest/VC709_IPbus_trigger/project_2/.Xil/Vivado-1476-0602-PC/dcp/top_late.xdc]
+Finished Parsing XDC File [E:/ztaotest/VC709_IPbus_trigger/project_2/.Xil/Vivado-1476-0602-PC/dcp/top_late.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2295.328 ; gain = 19.699
+Restored from archive | CPU: 11.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2295.328 ; gain = 19.699
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  OBUFDS => OBUFDS: 1 instances
+
+open_run: Time (s): cpu = 00:01:24 ; elapsed = 00:01:11 . Memory (MB): peak = 2493.289 ; gain = 1377.320
+set_false_path -from [get_pins slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i_reg/C] -to [get_pins slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/timer_p2m/run_reg/D]
+set_false_path -from [get_pins slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/aurora_8b10b_0/inst/aurora_8b10b_0_rx_ll_i/rx_ll_pdu_datapath_i/RX_SRC_RDY_N_reg/C] -to [get_pins slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/timer_m2p/run_reg/D]
+set_false_path -from [get_pins slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i_reg/C] -to [get_pins slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/timer_m2p/run_reg/D]
+set_false_path -from [get_pins slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/aurora_8b10b_1/inst/aurora_8b10b_1_rx_ll_i/rx_ll_pdu_datapath_i/RX_SRC_RDY_N_reg/C] -to [get_pins slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/timer_p2m/run_reg/D]
+set_property target_constrs_file E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.srcs/constrs_1/imports/new/timing.xdc [current_fileset -constrset]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-2] Deriving generated clocks
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-2] Deriving generated clocks
+set_false_path -from [get_pins slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/aurora_8b10b_1/inst/aurora_8b10b_1_rx_ll_i/rx_ll_pdu_datapath_i/RX_SRC_RDY_N_reg/C] -to [get_pins slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/timer_p2m/run_reg/D]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-2] Deriving generated clocks
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-2] Deriving generated clocks
+save_constraints
+reset_run synth_1
+launch_runs impl_1
+[Wed Mar 25 20:57:19 2015] Launched synth_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/runme.log
+[Wed Mar 25 20:57:19 2015] Launched impl_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
+close_design
+launch_runs impl_1 -to_step write_bitstream
+[Wed Mar 25 21:08:38 2015] Launched impl_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
+open_hw
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2014.4
+  **** Build date : Nov 18 2014-18:09:44
+    ** Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+****** Xilinx hw_server v2014.4
+  **** Build date : Nov 18 2014-18:09:44
+    ** Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2515.148 ; gain = 0.000
+connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210203826185A]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210203826185A]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210203826185A
+set_property PROGRAM.FILE {E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/top.bit} [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/debug_nets.ltx} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7vx690t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+set_property PROBES.FILE {E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/debug_nets.ltx} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-32] Done pin status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2515.148 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7vx690t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+close_hw
+set_property -dict [list CONFIG.C_LINE_RATE {5.0} CONFIG.C_REFCLK_FREQUENCY {125.000} CONFIG.C_INIT_CLK {50.0}] [get_ips aurora_8b10b_0]
+set_property -dict [list CONFIG.C_LINE_RATE {6.25} CONFIG.C_INIT_CLK {125.0} CONFIG.C_REFCLK_FREQUENCY {125.000}] [get_ips aurora_8b10b_0]
+generate_target all [get_files  E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'aurora_8b10b_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'aurora_8b10b_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'aurora_8b10b_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'aurora_8b10b_0'...
+generate_target: Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2515.148 ; gain = 0.000
+reset_run aurora_8b10b_0_synth_1
+launch_run  aurora_8b10b_0_synth_1
+[Wed Mar 25 21:24:06 2015] Launched aurora_8b10b_0_synth_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/aurora_8b10b_0_synth_1/runme.log
+set_property -dict [list CONFIG.C_LINE_RATE {6.25} CONFIG.C_INIT_CLK {125.0}] [get_ips aurora_8b10b_1]
+generate_target all [get_files  E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_1/aurora_8b10b_1.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'aurora_8b10b_1'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'aurora_8b10b_1'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'aurora_8b10b_1'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'aurora_8b10b_1'...
+generate_target: Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2515.148 ; gain = 0.000
 reset_run aurora_8b10b_1_synth_1
-reset_run gig_ethernet_pcs_pma_0_synth_1
-reset_run link_axis_data_fifo_synth_1
-reset_run TP_raw_stub_fifo_synth_1
+launch_run  aurora_8b10b_1_synth_1
+[Wed Mar 25 21:24:58 2015] Launched aurora_8b10b_1_synth_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/aurora_8b10b_1_synth_1/runme.log
 reset_run synth_1
 launch_runs impl_1
-[Mon Mar 16 16:46:49 2015] Launched trigger_clock_synth_synth_1, aurora_8b10b_0_synth_1, aurora_8b10b_1_synth_1, gig_ethernet_pcs_pma_0_synth_1, link_axis_data_fifo_synth_1, TP_raw_stub_fifo_synth_1, synth_1...
-Run output will be captured here:
-trigger_clock_synth_synth_1: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/trigger_clock_synth_synth_1/runme.log
-aurora_8b10b_0_synth_1: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/aurora_8b10b_0_synth_1/runme.log
-aurora_8b10b_1_synth_1: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/aurora_8b10b_1_synth_1/runme.log
-gig_ethernet_pcs_pma_0_synth_1: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/gig_ethernet_pcs_pma_0_synth_1/runme.log
-link_axis_data_fifo_synth_1: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/link_axis_data_fifo_synth_1/runme.log
-TP_raw_stub_fifo_synth_1: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/TP_raw_stub_fifo_synth_1/runme.log
-synth_1: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/runme.log
-[Mon Mar 16 16:46:49 2015] Launched impl_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 811.227 ; gain = 0.000
-reset_run gig_ethernet_pcs_pma_0_synth_1
-reset_run link_axis_data_fifo_synth_1
-reset_run TP_raw_stub_fifo_synth_1
-reset_run synth_1
-launch_runs synth_1
-[Mon Mar 16 16:55:03 2015] Launched gig_ethernet_pcs_pma_0_synth_1, link_axis_data_fifo_synth_1, TP_raw_stub_fifo_synth_1...
-Run output will be captured here:
-gig_ethernet_pcs_pma_0_synth_1: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/gig_ethernet_pcs_pma_0_synth_1/runme.log
-link_axis_data_fifo_synth_1: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/link_axis_data_fifo_synth_1/runme.log
-TP_raw_stub_fifo_synth_1: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/TP_raw_stub_fifo_synth_1/runme.log
-[Mon Mar 16 16:55:03 2015] Launched synth_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/runme.log
-reset_target all [get_files  {{C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo.xci}}]
-delete_ip_run [get_files -of_objects [get_fileset link_axis_data_fifo] {{C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo.xci}}]
-INFO: [Project 1-386] Moving file 'C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo.xci' from fileset 'link_axis_data_fifo' to fileset 'sources_1'.
-reset_target all [get_files  {{C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0.xci}}]
-delete_ip_run [get_files -of_objects [get_fileset gig_ethernet_pcs_pma_0] {{C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0.xci}}]
-INFO: [Project 1-386] Moving file 'C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0.xci' from fileset 'gig_ethernet_pcs_pma_0' to fileset 'sources_1'.
-reset_target all [get_files  {{C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo.xci}}]
-delete_ip_run [get_files -of_objects [get_fileset TP_raw_stub_fifo] {{C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo.xci}}]
-INFO: [Project 1-386] Moving file 'C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo.xci' from fileset 'TP_raw_stub_fifo' to fileset 'sources_1'.
-generate_target all [get_files  {{C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0.xci}}]
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'gig_ethernet_pcs_pma_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'gig_ethernet_pcs_pma_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'gig_ethernet_pcs_pma_0'...
-INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'gig_ethernet_pcs_pma_0'...
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'gig_ethernet_pcs_pma_0'...
-generate_target: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 816.348 ; gain = 0.000
-create_ip_run [get_files -of_objects [get_fileset sources_1] {{C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0.xci}}]
-launch_run  gig_ethernet_pcs_pma_0_synth_1
-[Mon Mar 16 16:58:45 2015] Launched gig_ethernet_pcs_pma_0_synth_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/gig_ethernet_pcs_pma_0_synth_1/runme.log
-generate_target all [get_files  {{C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo.xci}}]
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'link_axis_data_fifo'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'link_axis_data_fifo'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'link_axis_data_fifo'...
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'link_axis_data_fifo'...
-create_ip_run [get_files -of_objects [get_fileset sources_1] {{C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo.xci}}]
-launch_run  link_axis_data_fifo_synth_1
-[Mon Mar 16 16:58:53 2015] Launched link_axis_data_fifo_synth_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/link_axis_data_fifo_synth_1/runme.log
-generate_target all [get_files  {{C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo.xci}}]
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'TP_raw_stub_fifo'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'TP_raw_stub_fifo'...
-WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'TP_raw_stub_fifo' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'TP_raw_stub_fifo'...
-WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'TP_raw_stub_fifo' does not support 'Verilog Simulation' output products, delivering 'VHDL Simulation' output products instead.
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'TP_raw_stub_fifo'...
-create_ip_run [get_files -of_objects [get_fileset sources_1] {{C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo.xci}}]
-launch_run  TP_raw_stub_fifo_synth_1
-[Mon Mar 16 16:59:02 2015] Launched TP_raw_stub_fifo_synth_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/TP_raw_stub_fifo_synth_1/runme.log
-reset_run synth_1
-launch_runs synth_1
-[Mon Mar 16 17:01:41 2015] Launched synth_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/runme.log
-launch_runs impl_1
-[Mon Mar 16 17:04:55 2015] Launched impl_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
-reset_run synth_1
+[Wed Mar 25 21:29:00 2015] Launched synth_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/runme.log
+[Wed Mar 25 21:29:00 2015] Launched impl_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
 launch_runs impl_1 -to_step write_bitstream
-[Mon Mar 16 17:11:51 2015] Launched synth_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/runme.log
-[Mon Mar 16 17:11:51 2015] Launched impl_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
+[Wed Mar 25 21:40:41 2015] Launched impl_1...
+Run output will be captured here: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
 open_hw
 INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
 INFO: [Labtools 27-2222] Launching hw_server...
@@ -143,65 +279,15 @@ INFO: hw_server application started
 INFO: Use Ctrl-C to exit hw_server application
 
 
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2515.148 ; gain = 0.000
 connect_hw_server -url localhost:3121
 INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
 current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210203826185A]
 set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210203826185A]
 open_hw_target
 INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210203826185A
-set_property PROGRAM.FILE {C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/top.bit} [lindex [get_hw_devices] 0]
-ERROR: [Labtools 27-2149] File C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/top.bit not found. Check file name and file permissions.
-set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {C:/temp/top.bit} [lindex [get_hw_devices] 0]
-program_hw_devices [lindex [get_hw_devices] 0]
-INFO: [Labtools 27-32] Done pin status: HIGH
-program_hw_devices: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 966.406 ; gain = 0.000
-refresh_hw_device [lindex [get_hw_devices] 0]
-INFO: [Labtools 27-1434] Device xc7vx690t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-close_hw
-reset_run synth_1
-launch_runs impl_1
-[Tue Mar 17 12:06:44 2015] Launched synth_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/runme.log
-[Tue Mar 17 12:06:44 2015] Launched impl_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream
-[Tue Mar 17 12:15:50 2015] Launched impl_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
-open_hw
-INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
-INFO: [Labtools 27-2222] Launching hw_server...
-INFO: [Labtools 27-2221] Launch Output:
-
-****** Xilinx hw_server v2014.4
-  **** Build date : Nov 18 2014-18:09:44
-    ** Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
-
-INFO: hw_server application started
-INFO: Use Ctrl-C to exit hw_server application
-
-
-****** Xilinx hw_server v2014.4
-  **** Build date : Nov 18 2014-18:09:44
-    ** Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
-
-INFO: hw_server application started
-INFO: Use Ctrl-C to exit hw_server application
-
-
-connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1001.898 ; gain = 0.000
-connect_hw_server -url localhost:3121
-INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
-current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210203826185A]
-set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210203826185A]
-open_hw_target
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210203826185A
-set_property PROGRAM.FILE {C:\temp\top.bit} [lindex [get_hw_devices] 0]
-set_property PROBES.FILE {C:/temp/debug_nets.ltx} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/top.bit} [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/debug_nets.ltx} [lindex [get_hw_devices] 0]
 current_hw_device [lindex [get_hw_devices] 0]
 refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
 INFO: [Labtools 27-1434] Device xc7vx690t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
@@ -209,182 +295,16 @@ WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Cha
 Resolution: 
 1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
 2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-close_hw
-reset_run synth_1
-launch_runs impl_1
-[Tue Mar 17 13:03:12 2015] Launched synth_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/runme.log
-[Tue Mar 17 13:03:12 2015] Launched impl_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream
-[Tue Mar 17 13:12:09 2015] Launched impl_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
-open_hw
-INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
-INFO: [Labtools 27-2222] Launching hw_server...
-INFO: [Labtools 27-2221] Launch Output:
-
-****** Xilinx hw_server v2014.4
-  **** Build date : Nov 18 2014-18:09:44
-    ** Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
-
-INFO: hw_server application started
-INFO: Use Ctrl-C to exit hw_server application
-
-
-****** Xilinx hw_server v2014.4
-  **** Build date : Nov 18 2014-18:09:44
-    ** Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
-
-INFO: hw_server application started
-INFO: Use Ctrl-C to exit hw_server application
-
-
-connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1001.930 ; gain = 0.000
-connect_hw_server -url localhost:3121
-INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
-current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210203826185A]
-set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210203826185A]
-open_hw_target
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210203826185A
-set_property PROGRAM.FILE {C:\temp\top.bit} [lindex [get_hw_devices] 0]
-set_property PROBES.FILE {C:/temp/debug_nets.ltx} [lindex [get_hw_devices] 0]
-current_hw_device [lindex [get_hw_devices] 0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
-INFO: [Labtools 27-1434] Device xc7vx690t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {C:/temp/top.bit} [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/debug_nets.ltx} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/top.bit} [lindex [get_hw_devices] 0]
 program_hw_devices [lindex [get_hw_devices] 0]
 INFO: [Labtools 27-32] Done pin status: HIGH
-program_hw_devices: Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1001.930 ; gain = 0.000
+program_hw_devices: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2515.148 ; gain = 0.000
 refresh_hw_device [lindex [get_hw_devices] 0]
 INFO: [Labtools 27-1434] Device xc7vx690t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
 Resolution: 
 1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
 2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-close_hw
-close [ open {C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/Reset_Synchronizer.v} w ]
-add_files {{C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/Reset_Synchronizer.v}}
-reset_run synth_1
-launch_runs impl_1
-[Tue Mar 17 14:13:39 2015] Launched synth_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/runme.log
-[Tue Mar 17 14:13:39 2015] Launched impl_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream
-[Tue Mar 17 14:28:57 2015] Launched impl_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
-open_hw
-INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
-INFO: [Labtools 27-2222] Launching hw_server...
-INFO: [Labtools 27-2221] Launch Output:
-
-****** Xilinx hw_server v2014.4
-  **** Build date : Nov 18 2014-18:09:44
-    ** Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
-
-INFO: hw_server application started
-INFO: Use Ctrl-C to exit hw_server application
-
-
-****** Xilinx hw_server v2014.4
-  **** Build date : Nov 18 2014-18:09:44
-    ** Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
-
-INFO: hw_server application started
-INFO: Use Ctrl-C to exit hw_server application
-
-
-connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1001.930 ; gain = 0.000
-connect_hw_server -url localhost:3121
-INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
-current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210203826185A]
-set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210203826185A]
-open_hw_target
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210203826185A
-set_property PROGRAM.FILE {C:\temp\top.bit} [lindex [get_hw_devices] 0]
-set_property PROBES.FILE {C:/temp/debug_nets.ltx} [lindex [get_hw_devices] 0]
-current_hw_device [lindex [get_hw_devices] 0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
-INFO: [Labtools 27-1434] Device xc7vx690t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {C:/temp/top.bit} [lindex [get_hw_devices] 0]
-program_hw_devices [lindex [get_hw_devices] 0]
-INFO: [Labtools 27-32] Done pin status: HIGH
-program_hw_devices: Time (s): cpu = 00:00:17 ; elapsed = 00:00:16 . Memory (MB): peak = 1001.930 ; gain = 0.000
-refresh_hw_device [lindex [get_hw_devices] 0]
-INFO: [Labtools 27-1434] Device xc7vx690t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-close_hw
-reset_run synth_1
-launch_runs impl_1
-[Tue Mar 17 14:42:18 2015] Launched synth_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/runme.log
-[Tue Mar 17 14:42:18 2015] Launched impl_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream
-[Tue Mar 17 14:51:42 2015] Launched impl_1...
-Run output will be captured here: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/impl_1/runme.log
-open_hw
-INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
-INFO: [Labtools 27-2222] Launching hw_server...
-INFO: [Labtools 27-2221] Launch Output:
-
-****** Xilinx hw_server v2014.4
-  **** Build date : Nov 18 2014-18:09:44
-    ** Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
-
-INFO: hw_server application started
-INFO: Use Ctrl-C to exit hw_server application
-
-
-****** Xilinx hw_server v2014.4
-  **** Build date : Nov 18 2014-18:09:44
-    ** Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
-
-INFO: hw_server application started
-INFO: Use Ctrl-C to exit hw_server application
-
-
-connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1001.930 ; gain = 0.000
-connect_hw_server -url localhost:3121
-INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
-current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210203826185A]
-set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210203826185A]
-open_hw_target
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210203826185A
-set_property PROGRAM.FILE {C:\temp\top.bit} [lindex [get_hw_devices] 0]
-set_property PROBES.FILE {C:/temp/debug_nets.ltx} [lindex [get_hw_devices] 0]
-current_hw_device [lindex [get_hw_devices] 0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
-INFO: [Labtools 27-1434] Device xc7vx690t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {C:/temp/top.bit} [lindex [get_hw_devices] 0]
-program_hw_devices [lindex [get_hw_devices] 0]
-INFO: [Labtools 27-32] Done pin status: HIGH
-program_hw_devices: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1001.930 ; gain = 0.000
-refresh_hw_device [lindex [get_hw_devices] 0]
-INFO: [Labtools 27-1434] Device xc7vx690t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-close_hw
 exit
-INFO: [Common 17-206] Exiting Vivado at Tue Mar 17 15:00:02 2015...
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 25 21:47:31 2015...

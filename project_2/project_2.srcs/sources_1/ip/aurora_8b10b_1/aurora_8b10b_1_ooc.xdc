@@ -61,8 +61,8 @@ create_clock -period 8.0	 [get_ports gt_refclk1]
 
 
 ## USER_CLOCK & SYNC_CLOCK constraint
-create_clock -period 12.800	 [get_ports user_clk]
-create_clock -period 12.800	 [get_ports sync_clk]
+create_clock -period 6.400	 [get_ports user_clk]
+create_clock -period 6.400	 [get_ports sync_clk]
 
 ## 8.0 ns period INIT_CLK constraint
 create_clock -period 8.0 [get_ports init_clk_in]

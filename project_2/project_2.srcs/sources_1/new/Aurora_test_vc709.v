@@ -55,44 +55,35 @@ module Aurora_test(
     input wire init_clk
     
     );
-
-    
-    wire [0:31] tx_tdata_pphi;
-    wire [0:3]  tx_tkeep_pphi;
-    wire        tx_tvalid_pphi;
-    wire        tx_tlast_pphi;
-    wire        tx_tready_pphi;
-    wire [0:31] rx_tdata_pphi;
-    wire [0:3]  rx_tkeep_pphi;
-    wire        rx_tlast_pphi;
-    wire        rx_tvalid_pphi;
-    
-    wire [0:31] tx_tdata_mphi;
-    wire [0:3]  tx_tkeep_mphi;
-    wire        tx_tvalid_mphi;
-    wire        tx_tlast_mphi;
-    wire        tx_tready_mphi;
-    wire [0:31] rx_tdata_mphi;
-    wire [0:3]  rx_tkeep_mphi;
-    wire        rx_tlast_mphi;
-    wire        rx_tvalid_mphi;
     
     wire [31:0] io_rd_data_pphi, io_rd_data_mphi;
     wire io_rd_ack_pphi, io_rd_ack_mphi;
     
-    wire txdata_pphi_sel;
-    wire txdata_mphi_sel;
-    wire rxdata_pphi_sel;
-    wire rxdata_mphi_sel;
-    wire txstat_pphi_sel;
-    wire txstat_mphi_sel;
-    wire rxstat_pphi_sel;
-    wire rxstat_mphi_sel;
+    //timer wires and regs
+    wire tx_tvalid_pphi, tx_tvalid_mphi;
+    wire rx_tvalid_pphi, rx_tvalid_mphi;
+    //wire aurora_user_clk_pphi, aurora_user_clk_mphi;
+    wire timer_p2m_sel, timer_m2p_sel;
+    wire [31:0] timer_out_p2m;
+    wire [31:0] timer_out_m2p;
+    reg [31:0] timer_out_p2m_reg;
+    reg [31:0] timer_out_m2p_reg;
+    
     //Access I/O Block in each aurora module
     wire Aurora_pphi_sel, Aurora_mphi_sel;
     //link reset
-    wire link_rst_sel;
+    wire link_rst_sel, fsm_en_sel;
     reg  link_rst;
+    reg [1:0] fsm_en;
+
+    //Address assignments
+    //top eight bits [31:24] already consumed. 5a for Aurora test module
+    assign Aurora_pphi_sel = io_sel && (io_addr[23:20] == 4'b0000);
+    assign Aurora_mphi_sel = io_sel && (io_addr[23:20] == 4'b0001); 
+    assign link_rst_sel = io_sel && (io_addr[23:20] == 4'b1000);  
+    assign fsm_en_sel = io_sel && (io_addr[23:20] == 4'b1001);
+    assign timer_p2m_sel = io_sel && (io_addr[23:20] == 4'b1010);
+    assign timer_m2p_sel = io_sel && (io_addr[23:20] == 4'b1011);
     
 /*    //--- Instance of GT differential buffer ---------//
     IBUFDS_GTE2 IBUFDS_GTE2_CLK1
@@ -107,7 +98,7 @@ module Aurora_test(
     //reset signal
     //wire rst_proc;
     //wire rst_init;
-    wire arst_n;
+    wire arst_n;            //need to be in sync with the clock used for system side of aurora fifo
     //two stage synchronizer for reset
     Reset_Synchronizer io_clk_reset (
         .CLK(io_clk),
@@ -122,26 +113,23 @@ module Aurora_test(
         .RESET_O(rst_init),
         .RESET_OB()
     );
-    
-    //assign arst_n = ~link_rst/*~reset*/;
-    
-    
+      
     Aurora_Channel_0 LinkProjPhiPlus (
-        //.clk(clk),
+        .clk(clk),
         .reset(reset),
         .en_proc(en_proc),
         // programming interface
         // inputs
         .io_clk(io_clk),                    // programming clock
-        .io_sel(Aurora_pphi_sel),                    // this module has been selected for an I/O operation
-        .io_sync(io_sync),                    // start the I/O operation
-        .io_addr(io_addr[19:0]),        // slave address, memory or register. Top 16 bits already consumed.
+        .io_sel(Aurora_pphi_sel),           // this module has been selected for an I/O operation
+        .io_sync(io_sync),                  // start the I/O operation
+        .io_addr(io_addr[19:0]),            // Top 12 bits already consumed.
         .io_rd_en(io_rd_en),                // this is a read operation
         .io_wr_en(io_wr_en),                // this is a write operation
-        .io_wr_data(io_wr_data),    // data to write for write operations
+        .io_wr_data(io_wr_data),            // data to write for write operations
         // outputs
-        .io_rd_data(io_rd_data_pphi),    // data returned for read operations
-        .io_rd_ack(io_rd_ack_pphi),                // 'read' data from this module is ready
+        .io_rd_data(io_rd_data_pphi),       // data returned for read operations
+        .io_rd_ack(io_rd_ack_pphi),         // 'read' data from this module is ready
         //clocks
         .BX(BX),
         .first_clk(first_clk),
@@ -152,22 +140,9 @@ module Aurora_test(
         .init_clk(init_clk),
         .gt_reset_in(rst_init),
         .gt_refclk(gt_refclk),
-        //TX interface to slave side of transmit FIFO
-        .s_axis_aresetn(arst_n),
-        .s_axis_aclk(io_clk),
-        .s_axis_tx_tdata(tx_tdata_pphi),
-        .s_axis_tx_tkeep(tx_tkeep_pphi),
-        .s_axis_tx_tvalid(tx_tvalid_pphi),
-        .s_axis_tx_tlast(tx_tlast_pphi),
-        .s_axis_tx_tready(tx_tready_pphi),
-        //RX interface to master side of receive FIFO
-        .m_axis_aresetn(arst_n),
-        .m_axis_aclk(io_clk),
-        .m_axis_rx_tdata(rx_tdata_pphi),
-        .m_axis_rx_tkeep(rx_tkeep_pphi),
-        .m_axis_rx_tvalid(rx_tvalid_pphi),
-        .m_axis_rx_tlast(rx_tlast_pphi),
-        .m_axis_rx_tready(1'b1),
+        .axis_resetn(arst_n),
+        //state machine enable
+        .fsm_en(fsm_en[0]),
         //serial I/O pins
         .rxp(rxp_pphi), .rxn(rxn_pphi),
         .txp(txp_pphi), .txn(txn_pphi),
@@ -176,35 +151,39 @@ module Aurora_test(
         .gt0_qpllrefclklost(1'b0),           // input
         .gt_qpllclk_quad2(1'b0),             // input
         .gt_qpllrefclk_quad2(1'b0),          // input
-        .gt0_qpllreset(),               // output
+        .gt0_qpllreset(),                    // output
+        //timer ports
+        .aurora_user_clk_out(),
+        .local_tx_tvalid_out(tx_tvalid_pphi),
+        .local_rx_tvalid_out(rx_tvalid_pphi)
       
-        // counter output ports
-        .frame_err(),                    // output, to IPbus I/O
-        .hard_err(),                     // output, to IPbus I/O
-        .soft_err(),                     // output, to IPbus I/O
-        .channel_up(),                   // output, to IPbus I/O
-        .lane_up(),                      // output, to IPbus I/O
-        .tx_resetdone_out(),             // output, to IPbus I/O
-        .rx_resetdone_out(),             // output, to IPbus I/O
-        .link_reset_out()
+//        // counter output ports
+//        .frame_err(),                    // output, to IPbus I/O
+//        .hard_err(),                     // output, to IPbus I/O
+//        .soft_err(),                     // output, to IPbus I/O
+//        .channel_up(),                   // output, to IPbus I/O
+//        .lane_up(),                      // output, to IPbus I/O
+//        .tx_resetdone_out(),             // output, to IPbus I/O
+//        .rx_resetdone_out(),             // output, to IPbus I/O
+//        .link_reset_out()
     );
     
     Aurora_Channel_1 LinkProjPhiMinus (
-        //.clk(clk),
+        .clk(clk),
         .reset(reset),
         .en_proc(en_proc),
         // programming interface
         // inputs
         .io_clk(io_clk),                    // programming clock
-        .io_sel(Aurora_mphi_sel),                    // this module has been selected for an I/O operation
-        .io_sync(io_sync),                    // start the I/O operation
-        .io_addr(io_addr[19:0]),        // slave address, memory or register. Top 16 bits already consumed.
+        .io_sel(Aurora_mphi_sel),           // this module has been selected for an I/O operation
+        .io_sync(io_sync),                  // start the I/O operation
+        .io_addr(io_addr[19:0]),            // Top 12 bits already consumed.
         .io_rd_en(io_rd_en),                // this is a read operation
         .io_wr_en(io_wr_en),                // this is a write operation
-        .io_wr_data(io_wr_data),    // data to write for write operations
+        .io_wr_data(io_wr_data),            // data to write for write operations
         // outputs
-        .io_rd_data(io_rd_data_mphi),    // data returned for read operations
-        .io_rd_ack(io_rd_ack_mphi),                // 'read' data from this module is ready
+        .io_rd_data(io_rd_data_mphi),       // data returned for read operations
+        .io_rd_ack(io_rd_ack_mphi),         // 'read' data from this module is ready
         //clocks
         .BX(BX),
         .first_clk(first_clk),
@@ -215,22 +194,9 @@ module Aurora_test(
         .init_clk(init_clk),
         .gt_reset_in(rst_init),
         .gt_refclk(gt_refclk),
-        //TX interface to slave side of transmit FIFO
-        .s_axis_aresetn(arst_n),
-        .s_axis_aclk(io_clk),
-        .s_axis_tx_tdata(tx_tdata_mphi),
-        .s_axis_tx_tkeep(tx_tkeep_mphi),
-        .s_axis_tx_tvalid(tx_tvalid_mphi),
-        .s_axis_tx_tlast(tx_tlast_mphi),
-        .s_axis_tx_tready(tx_tready_mphi),
-        //RX interface to master side of receive FIFO
-        .m_axis_aresetn(arst_n),
-        .m_axis_aclk(io_clk),
-        .m_axis_rx_tdata(rx_tdata_mphi),
-        .m_axis_rx_tkeep(rx_tkeep_mphi),
-        .m_axis_rx_tvalid(rx_tvalid_mphi),
-        .m_axis_rx_tlast(rx_tlast_mphi),
-        .m_axis_rx_tready(1'b1),
+        .axis_resetn(arst_n),
+        //state machine enable
+        .fsm_en(fsm_en[1]),
         //serial I/O pins
         .rxp(rxp_mphi), .rxn(rxn_mphi),
         .txp(txp_mphi), .txn(txn_mphi),
@@ -239,74 +205,53 @@ module Aurora_test(
         .gt0_qpllrefclklost(1'b0),           // input
         .gt_qpllclk_quad2(1'b0),             // input
         .gt_qpllrefclk_quad2(1'b0),          // input
-        .gt0_qpllreset(),               // output
-  
-        // counter output ports
-        .frame_err(),                    // output, to IPbus I/O
-        .hard_err(),                     // output, to IPbus I/O
-        .soft_err(),                     // output, to IPbus I/O
-        .channel_up(),                   // output, to IPbus I/O
-        .lane_up(),                      // output, to IPbus I/O
-        .tx_resetdone_out(),             // output, to IPbus I/O
-        .rx_resetdone_out(),             // output, to IPbus I/O
-        .link_reset_out()   
+        .gt0_qpllreset(),                    // output
+        //timer ports
+        .aurora_user_clk_out(),
+        .local_tx_tvalid_out(tx_tvalid_mphi),
+        .local_rx_tvalid_out(rx_tvalid_mphi)
+      
+//        // counter output ports
+//        .frame_err(),                    // output, to IPbus I/O
+//        .hard_err(),                     // output, to IPbus I/O
+//        .soft_err(),                     // output, to IPbus I/O
+//        .channel_up(),                   // output, to IPbus I/O
+//        .lane_up(),                      // output, to IPbus I/O
+//        .tx_resetdone_out(),             // output, to IPbus I/O
+//        .rx_resetdone_out(),             // output, to IPbus I/O
+//        .link_reset_out()
     ); 
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //Timers
+    CLK_Counter timer_p2m (
+        .clk(init_clk),
+        .reset(rst_init),
+        .start(tx_tvalid_pphi),
+        .stop(rx_tvalid_mphi),
+        .out(timer_out_p2m)
+    );
     
-    ////////////////////////////////////////////////////////////////////////////////
-    // data regs
-    reg [31:0] txdata_pphi_reg;
-    reg [31:0] txdata_mphi_reg;
-    reg [31:0] rxdata_pphi_reg;
-    reg [31:0] rxdata_mphi_reg;
-    reg [31:0] txstat_pphi_reg;
-    reg [31:0] txstat_mphi_reg;
-    reg [31:0] rxstat_pphi_reg;
-    reg [31:0] rxstat_mphi_reg;
+    CLK_Counter timer_m2p (
+        .clk(init_clk),
+        .reset(rst_init),
+        .start(tx_tvalid_mphi),
+        .stop(rx_tvalid_pphi),
+        .out(timer_out_m2p)
+    );
     
-    assign tx_tdata_pphi = txdata_pphi_reg;
-    assign tx_tvalid_pphi = txstat_pphi_reg[5];
-    assign tx_tkeep_pphi = txstat_pphi_reg [4:1];
-    assign tx_tlast_pphi = txstat_pphi_reg[0];
-    assign tx_tdata_mphi = txdata_mphi_reg;
-    assign tx_tvalid_mphi = txstat_mphi_reg[5];
-    assign tx_tkeep_mphi = txstat_mphi_reg [4:1];
-    assign tx_tlast_mphi = txstat_mphi_reg[0];
-    
-    //Address assignments
-    assign Aurora_pphi_sel = io_sel && (io_addr[23:20] == 4'b0000);
-    assign Aurora_mphi_sel = io_sel && (io_addr[23:20] == 4'b1000);
-    
-    assign txdata_pphi_sel = io_sel && (io_addr[23:20] == 4'b0001);
-    assign txdata_mphi_sel = io_sel && (io_addr[23:20] == 4'b1001);
-    assign rxdata_pphi_sel = io_sel && (io_addr[23:20] == 4'b0010);
-    assign rxdata_mphi_sel = io_sel && (io_addr[23:20] == 4'b1010); 
-    assign txstat_pphi_sel = io_sel && (io_addr[23:20] == 4'b0011);
-    assign txstat_mphi_sel = io_sel && (io_addr[23:20] == 4'b1011);
-    assign rxstat_pphi_sel = io_sel && (io_addr[23:20] == 4'b0100);
-    assign rxstat_mphi_sel = io_sel && (io_addr[23:20] == 4'b1100);
-    
-    assign link_rst_sel = io_sel && (io_addr[23:20] == 4'b1101);
-    
-    initial begin 
-        txdata_pphi_reg <= 32'b0;
-        txdata_mphi_reg <= 32'b0;
-        rxdata_pphi_reg <= 32'b0;
-        rxdata_mphi_reg <= 32'b0;
-        txstat_pphi_reg <= 32'b0;
-        txstat_mphi_reg <= 32'b0;
-        rxstat_pphi_reg <= 32'b0;
-        rxstat_mphi_reg <= 32'b0;
-        link_rst <= 1'b0;
+    always @ (posedge io_clk) begin
+        timer_out_p2m_reg <= timer_out_p2m;
+        timer_out_m2p_reg <= timer_out_m2p;
     end
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //write tx data regs
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //write reset regs
     always @ (posedge io_clk) begin
-        if (io_wr_en && txdata_pphi_sel) txdata_pphi_reg <= io_wr_data;
-        if (io_wr_en && txdata_mphi_sel) txdata_mphi_reg <= io_wr_data;
-        if (io_wr_en && txstat_pphi_sel) txstat_pphi_reg <= io_wr_data;
-        if (io_wr_en && txstat_mphi_sel) txstat_mphi_reg <= io_wr_data;
         if (io_wr_en && link_rst_sel) link_rst <= io_wr_data[0];
+        if (io_wr_en && fsm_en_sel) fsm_en <= io_wr_data[1:0];
     end
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -321,17 +266,7 @@ module Aurora_test(
     reg io_rd_ack_reg;
     assign io_rd_ack = io_rd_ack_reg;
     always @(posedge io_clk) begin
-        io_rd_ack_reg <= io_sync & io_sel & io_rd_en;
-        
-        if (rx_tvalid_pphi == 1'b1) begin
-            rxdata_pphi_reg <= rx_tdata_pphi;
-            rxstat_pphi_reg <= {26'b0, rx_tvalid_pphi, rx_tkeep_pphi[0:3], rx_tlast_pphi};
-        end
-        
-        if (rx_tvalid_mphi == 1'b1) begin
-            rxdata_mphi_reg <= rx_tdata_mphi;
-            rxstat_mphi_reg <= {26'b0, rx_tvalid_mphi, rx_tkeep_mphi[0:3], rx_tlast_pphi};
-        end
+        io_rd_ack_reg <= io_rd_ack_pphi | io_rd_ack_mphi | (io_sync & link_rst_sel & io_rd_en) | (io_sync & fsm_en_sel & io_rd_en) | (io_sync & timer_p2m_sel & io_rd_en) | (io_sync & timer_m2p_sel & io_rd_en);
         
     end
     // Route the selected memory to the 'rdbk' output.
@@ -341,18 +276,12 @@ module Aurora_test(
 //        if (io_rd_en & out_stub_mem_b_sel) io_rd_data_reg[31:0] <= out_stub_mem_b_rd_data;
 //        if (io_rd_en & out_stub_mem_c_sel) io_rd_data_reg[31:0] <= out_stub_mem_c_rd_data;    
 
-        if (io_rd_en & rxdata_pphi_sel) io_rd_data_reg[31:0] <= rxdata_pphi_reg;
-        if (io_rd_en & rxdata_mphi_sel) io_rd_data_reg[31:0] <= rxdata_mphi_reg;
-        if (io_rd_en & rxstat_pphi_sel) io_rd_data_reg[31:0] <= rxstat_pphi_reg;
-        if (io_rd_en & rxstat_mphi_sel) io_rd_data_reg[31:0] <= rxstat_mphi_reg;
         if (io_rd_en & Aurora_pphi_sel) io_rd_data_reg[31:0] <= io_rd_data_pphi;
         if (io_rd_en & Aurora_mphi_sel) io_rd_data_reg[31:0] <= io_rd_data_mphi;
-        if (io_rd_en & txdata_pphi_sel) io_rd_data_reg[31:0] <= txdata_pphi_reg;
-        if (io_rd_en & txdata_mphi_sel) io_rd_data_reg[31:0] <= txdata_mphi_reg;
-        if (io_rd_en & txstat_pphi_sel) io_rd_data_reg[31:0] <= txstat_pphi_reg;
-        if (io_rd_en & txstat_mphi_sel) io_rd_data_reg[31:0] <= txstat_mphi_reg;
-        if (io_rd_en & link_rst_sel) io_rd_data_reg[31:0] <= {31'b0,link_rst};
-      
+        if (io_rd_en & link_rst_sel) io_rd_data_reg[31:0] <= {31'b0, link_rst};    
+        if (io_rd_en & fsm_en_sel) io_rd_data_reg[31:0] <= {30'b0, fsm_en[1:0]};
+        if (io_rd_en & timer_p2m_sel) io_rd_data_reg[31:0] <= timer_out_p2m_reg;
+        if (io_rd_en & timer_m2p_sel) io_rd_data_reg[31:0] <= timer_out_m2p_reg;
     end
     
 endmodule

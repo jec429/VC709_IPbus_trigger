@@ -5,23 +5,22 @@
 //  Some modifications are made to port into tracklet design
 //////////////////////////////////////////////////////////////////////////////////
 
-
 module Aurora_Channel_0(
-    //input wire clk,
+    input wire clk,
     input wire reset,
     input wire en_proc,
     // programming interface
     // inputs
-    input wire io_clk,                    // programming clock
-    input wire io_sel,                    // this module has been selected for an I/O operation
-    input wire io_sync,                    // start the I/O operation
-    input wire [19:0] io_addr,        // slave address, memory or register. Top 16 bits already consumed.
+    input wire io_clk,                  // programming clock
+    input wire io_sel,                  // this module has been selected for an I/O operation
+    input wire io_sync,                 // start the I/O operation
+    input wire [19:0] io_addr,          // slave address, memory or register. Top 16 bits already consumed.
     input wire io_rd_en,                // this is a read operation
     input wire io_wr_en,                // this is a write operation
-    input wire [31:0] io_wr_data,    // data to write for write operations
+    input wire [31:0] io_wr_data,       // data to write for write operations
     // outputs
-    output wire [31:0] io_rd_data,    // data returned for read operations
-    output wire io_rd_ack,                // 'read' data from this module is ready
+    output wire [31:0] io_rd_data,      // data returned for read operations
+    output wire io_rd_ack,              // 'read' data from this module is ready
     //clocks
     input wire [2:0] BX,
     input wire first_clk,
@@ -32,54 +31,56 @@ module Aurora_Channel_0(
     input wire init_clk,
     input wire gt_reset_in,
     input wire gt_refclk,
-    //TX interface to slave side of transmit FIFO
-    input wire s_axis_aresetn,
-    input wire s_axis_aclk,
-    input wire [0:31] s_axis_tx_tdata,
-    input wire [0:3] s_axis_tx_tkeep,
-    input wire s_axis_tx_tvalid,
-    input wire s_axis_tx_tlast,
-    output wire s_axis_tx_tready,
-    //RX interface to master side of receive FIFO
-    input wire m_axis_aresetn,
-    input wire m_axis_aclk,
-    output wire [0:31] m_axis_rx_tdata,
-    output wire [0:3] m_axis_rx_tkeep,
-    output wire m_axis_rx_tvalid,
-    output wire m_axis_rx_tlast,
-    input wire m_axis_rx_tready,
+    input wire axis_resetn,                  //system side reset for fifo
+    //state machine enable
+    input wire fsm_en,
     //serial I/O pins
     input wire rxp, rxn,
     output wire txp, txn,
-   // QPLL Ports
+    // QPLL Ports
     input wire gt0_qplllock,                 // input
     input wire gt0_qpllrefclklost,           // input
     input wire gt_qpllclk_quad2,             // input
     input wire gt_qpllrefclk_quad2,          // input
     output wire gt0_qpllreset,               // output
-  
-    // counter output ports
-    output wire frame_err,                    // output, to IPbus I/O
-    output wire hard_err,                     // output, to IPbus I/O
-    output wire soft_err,                     // output, to IPbus I/O
-    output wire channel_up,                   // output, to IPbus I/O
-    output wire lane_up,                      // output, to IPbus I/O
-    //output wire pll_not_locked,               // input, from channel clock module
-    output wire tx_resetdone_out,             // output, to IPbus I/O
-    output wire rx_resetdone_out,             // output, to IPbus I/O
-    output wire link_reset_out                // output, to IPbus I/O   
+    //signal output for timer
+    output wire aurora_user_clk_out,
+    output wire local_tx_tvalid_out,
+    output wire local_rx_tvalid_out
+     
+//    output wire aurora_user_clk,             // used to connect to the parallel side of the Aurora
+//    output wire frame_err,                    // output, to IPbus I/O
+//    output wire hard_err,                     // output, to IPbus I/O
+//    output wire soft_err,                     // output, to IPbus I/O
+//    output wire channel_up,                   // output, to IPbus I/O
+//    output wire lane_up,                      // output, to IPbus I/O
+//    //output wire pll_not_locked,               // input, from channel clock module
+//    output wire tx_resetdone_out,             // output, to IPbus I/O
+//    output wire rx_resetdone_out,             // output, to IPbus I/O
+//    output wire link_reset_out               // output, to IPbus I/O   
 );
     
+    wire [31:0] link_io_rd_data, stat_io_rd_data;
+    wire link_io_rd_ack, stat_io_rd_ack;
+    
+    wire link_io_sel, stat_io_sel;
+    //address assignments
+    //top 12 bits [31:20] already consumed.
+    assign link_io_sel = io_sel && (io_addr[19:16] == 4'b0001);
+    assign stat_io_sel = io_sel && (io_addr[19:16] == 4'b0010); 
+      
     wire pll_not_locked;
-    wire local_axis_resetn;                 // a local reset synched to the Aurora 'user_clk'
-    wire aurora_user_clk;                      // used to connect to the parallel side of the Aurora
+    wire local_axis_resetn;                    // a local reset synched to the Aurora 'user_clk'
+    wire aurora_user_clk;                      
     wire [31:0] local_axis_tx_tdata, local_axis_rx_tdata;
     wire [3:0] local_axis_tx_tkeep, local_axis_rx_tkeep;
-    wire local_axis_rx_tready;
+    wire local_axis_tx_tvalid, local_axis_rx_tvalid;
+    wire local_axis_tx_tready;
+    
     wire drdy_out_unused;
     wire [15:0] drpdo_out_unused;
 
-    // tie off unused signals, use 'clk50' for DRP clock
+    // tie off unused signals, use 'init_clk' for DRP clock
     wire [8:0] drpaddr_in;
     wire drpen_in, drpwe_in;
     wire [15:0] drpdi_in;
@@ -95,42 +96,48 @@ module Aurora_Channel_0(
 
     assign local_axis_resetn = ~sys_reset_out;    
     
-    // Connect the transmit FIFO that buffers data crossing clock domains
-    link_axis_data_fifo tx_fifo (
-      .s_axis_aresetn(s_axis_aresetn),          // input wire s_axis_aresetn
-      .s_axis_aclk(s_axis_aclk),                // input wire s_axis_aclk
-      .s_axis_tvalid(s_axis_tx_tvalid),          // input wire s_axis_tvalid
-      .s_axis_tready(s_axis_tx_tready),          // output wire s_axis_tready
-      .s_axis_tdata(s_axis_tx_tdata),            // input wire [31 : 0] s_axis_tdata
-      .s_axis_tkeep(s_axis_tx_tkeep),            // input wire [3 : 0] s_axis_tkeep
-      .s_axis_tlast(s_axis_tx_tlast),            // input wire s_axis_tlast
-      .m_axis_aresetn(local_axis_resetn),          // input wire m_axis_aresetn
-      .m_axis_aclk(aurora_user_clk),                // input wire m_axis_aclk
-      .m_axis_tvalid(local_axis_tx_tvalid),          // output wire m_axis_tvalid
-      .m_axis_tdata(local_axis_tx_tdata),            // output wire [31 : 0] m_axis_tdata
-      .m_axis_tkeep(local_axis_tx_tkeep),            // output wire [3 : 0] m_axis_tkeep
-      .m_axis_tready(local_axis_tx_tready),            // input wire m_axis_tready
-      .m_axis_tlast(local_axis_tx_tlast)             // output wire m_axis_tlast
+    //timer ports
+    assign local_tx_tvalid_out = local_axis_tx_tvalid;
+    assign local_rx_tvalid_out = local_axis_rx_tvalid;
+      
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // ipbus interface for aurora data sending and receiving
+    Link_Interface data_io (
+        // programming interface
+        .io_clk(io_clk),                    // io clock
+        .io_reset(reset),                   // active HI
+        .io_sel(link_io_sel),               // this module is selected for an I/O operation
+        .io_addr(io_addr[15:0]),            // memory address, top 16 bits alread consumed
+        .io_sync(io_sync),                  // start the I/O operation
+        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+        .io_wr_data(io_wr_data[31:0]),      // data to write for write operations
+        // outputs
+        .io_rd_data(link_io_rd_data),       // data returned for read operations
+        .io_rd_ack(link_io_rd_ack),         // 'read' data from this module is ready
+        
+        //clocks
+        .clk(io_clk),                                         //input, clock for data stream sending to the link fifo from system side
+        .aurora_user_clk(aurora_user_clk),                    //input from aurora user clock
+        //reset
+        .axis_resetn(axis_resetn),                            // input, reset from system side
+        .local_axis_resetn(local_axis_resetn),                // input, reset from aurora side
+        //enable
+        .fsm_en(fsm_en),
+        //tx ports
+        .local_axis_tx_tvalid(local_axis_tx_tvalid),          // output to aurora s_axi_tx_tvalid
+        .local_axis_tx_tdata(local_axis_tx_tdata),            // output to aurora s_axi_tx_tdata
+        .local_axis_tx_tkeep(local_axis_tx_tkeep),            // output to aurora s_axi_tx_tkeep
+        .local_axis_tx_tlast(local_axis_tx_tlast),            // output to aurora s_axi_tx_tlast
+        .local_axis_tx_tready(local_axis_tx_tready),          // input from aurora s_axi_tx_tready
+        //rx ports
+        .local_axis_rx_tvalid(local_axis_rx_tvalid),          // input from aurora m_axi_rx_tvalid
+        .local_axis_rx_tdata(local_axis_rx_tdata),            // input from aurora m_axi_rx_tdata
+        .local_axis_rx_tkeep(local_axis_rx_tkeep),            // input from aurora m_axi_rx_tkeep
+        .local_axis_rx_tlast(local_axis_rx_tlast)             // input from aurora m_axi_rx_tlast
     );
     
-    // Connect the receive FIFO that buffers data crossing clock domains
-    link_axis_data_fifo rx_fifo (
-      .s_axis_aresetn(local_axis_resetn),          // input wire s_axis_aresetn
-      .s_axis_aclk(aurora_user_clk),                // input wire s_axis_aclk
-      .s_axis_tvalid(local_axis_rx_tvalid),          // input wire s_axis_tvalid
-      .s_axis_tready(local_axis_rx_tready),          // output wire s_axis_tready IGNORED BY AURORA!!!
-      .s_axis_tdata(local_axis_rx_tdata),            // input wire [31 : 0] s_axis_tdata
-      .s_axis_tkeep(local_axis_rx_tkeep),            // input wire [3 : 0] s_axis_tkeep
-      .s_axis_tlast(local_axis_rx_tlast),            // input wire s_axis_tlast
-      .m_axis_aresetn(m_axis_aresetn),          // input wire m_axis_aresetn
-      .m_axis_aclk(m_axis_aclk),                // input wire m_axis_aclk
-      .m_axis_tvalid(m_axis_rx_tvalid),          // output wire m_axis_tvalid
-      .m_axis_tdata(m_axis_rx_tdata),            // output wire [31 : 0] m_axis_tdata
-      .m_axis_tkeep(m_axis_rx_tkeep),            // output wire [3 : 0] m_axis_tkeep
-      .m_axis_tready(m_axis_rx_tready),            // input wire m_axis_tready
-      .m_axis_tlast(m_axis_rx_tlast)             // output wire m_axis_tlast
-    );    
-    
+        
     aurora_8b10b_0 aurora_8b10b_0 (
         // AXI TX Interface from transmit FIFO
         .s_axi_tx_tdata(local_axis_tx_tdata),   // input [0:31], from TX FIFO
@@ -217,10 +224,10 @@ module Aurora_Channel_0(
       .INIT_CLK_IN(init_clk),             // 50 MHz utility clock, always running
       .GT_RESET_IN(gt_reset_in),          // 
       .RESET(reset),                      // direct input to 'user_clk' domain, activates 'system_reset'
-      .USER_CLK(aurora_user_clk),         // Aurora interface clock, 250 MHz, goes away at times
+      .USER_CLK(aurora_user_clk),         // Aurora interface clock, goes away at times
      // outputs 
       .SYSTEM_RESET(system_reset),        // local reset signal in 'aurora_user_clk' domain
-      .GT_RESET_OUT(local_gt_reset)       // local reset signal in 'clk50' domain
+      .GT_RESET_OUT(local_gt_reset)       // local reset signal in init_clk domain
     );
   
     //SLACK Registers
@@ -234,34 +241,53 @@ module Aurora_Channel_0(
     assign lane_up_reduce_i  = &lane_up_r2;
     assign rst_cc_module_i   = !lane_up_reduce_i; 
     
+    
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // ipbus interface for aurora loopback setting and status checking
     aurora_io_block io_block(
       // programming interface
       .io_clk(io_clk),                    // programming clock
-      .io_reset(reset),                        // active HI
-      .io_sel(io_sel),                    // this module is selected for an I/O operation
-      .io_addr(io_addr[19:0]),            // memory address, top 12 bits alread consumed
+      .io_reset(reset),                   // active HI
+      .io_sel(stat_io_sel),               // this module is selected for an I/O operation
+      .io_addr(io_addr[15:0]),            // memory address, top 16 bits alread consumed
       .io_sync(io_sync),                  // start the I/O operation
       .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
       .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
       .io_wr_data(io_wr_data[31:0]),      // data to write for write operations
       // outputs
-      .io_rd_data(io_rd_data),            // data returned for read operations
-      .io_rd_ack(io_rd_ack),              // 'read' data from this module is ready
+      .io_rd_data(stat_io_rd_data),       // data returned for read operations
+      .io_rd_ack(stat_io_rd_ack),         // 'read' data from this module is ready
       // data from 'write' registers
       .loopback_set(loopback_set[2:0]),         // 3-bit setting for the Aurora loopback port
   
       // data to 'read-only' registers
-      .frame_err(frame_err),                  // output, to IPbus I/O
-      .hard_err(hard_err),                    // output, to IPbus I/O
-      .soft_err(soft_err),                    // output, to IPbus I/O
-      .channel_up(channel_up),                // output, to IPbus I/O
-      .lane_up(lane_up),                      // output, to IPbus I/O
-      //.pll_not_locked(pll_not_locked),        // input, from channel clock module
-      .tx_resetdone_out(tx_resetdone_out),        // output, to IPbus I/O
-      .rx_resetdone_out(rx_resetdone_out),        // output, to IPbus I/O
-      .link_reset_out(link_reset_out)             // output, to IPbus I/O
+      .frame_err(frame_err),                  // input, to IPbus I/O
+      .hard_err(hard_err),                    // input, to IPbus I/O
+      .soft_err(soft_err),                    // input, to IPbus I/O
+      .channel_up(channel_up),                // input, to IPbus I/O
+      .lane_up(lane_up),                      // input, to IPbus I/O
+      .pll_not_locked(pll_not_locked),        // input, from channel clock module
+      .tx_resetdone_out(tx_resetdone_out),        // input, to IPbus I/O
+      .rx_resetdone_out(rx_resetdone_out),        // input, to IPbus I/O
+      .link_reset_out(link_reset_out)             // input, to IPbus I/O
     );       
+ 
+    // readback mux
+    // If a particular block is addressed, connect that block's signals
+    // to the 'rdbk' output. At the same time, assert 'rdbk_sel' to tell downstream muxes to
+    // use the 'rdbk' from this module as their source of data.
+    reg [31:0] io_rd_data_reg;
+    assign io_rd_data = io_rd_data_reg;
+    // Assert 'io_rd_ack' if any module is asserting its 'rd_ack'.
+    reg io_rd_ack_reg;
+    assign io_rd_ack = io_rd_ack_reg;
+    always @ (posedge io_clk) begin
+        io_rd_ack_reg <= link_io_rd_ack | stat_io_rd_ack;
+    end
+    // Route the selected register to the 'rdbk' output.
+    always @(posedge io_clk) begin
+        if (link_io_sel) io_rd_data_reg[31:0] <= link_io_rd_data[31:0];
+        if (stat_io_sel) io_rd_data_reg[31:0] <= stat_io_rd_data[31:0];
+     end
     
 endmodule

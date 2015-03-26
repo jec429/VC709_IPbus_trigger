@@ -2,9 +2,9 @@
 # Vivado v2014.4 (64-bit)
 # SW Build 1071353 on Tue Nov 18 18:29:27 MST 2014
 # IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
-# Start of session at: Mon Mar 16 16:58:55 2015
-# Process ID: 1168
-# Log file: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/link_axis_data_fifo_synth_1/link_axis_data_fifo.vds
-# Journal file: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/link_axis_data_fifo_synth_1\vivado.jou
+# Start of session at: Wed Mar 18 13:57:13 2015
+# Process ID: 6484
+# Log file: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/link_axis_data_fifo_synth_1/link_axis_data_fifo.vds
+# Journal file: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/link_axis_data_fifo_synth_1\vivado.jou
 #-----------------------------------------------------------
 source link_axis_data_fifo.tcl

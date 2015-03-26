@@ -48,7 +48,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 `timescale 1ns / 1ps
-(* core_generation_info = "aurora_8b10b_1,aurora_8b10b_v10_3,{user_interface=AXI_4_Streaming,backchannel_mode=Sidebands,c_aurora_lanes=1,c_column_used=right,c_gt_clock_1=GTHQ3,c_gt_clock_2=None,c_gt_loc_1=X,c_gt_loc_10=X,c_gt_loc_11=X,c_gt_loc_12=X,c_gt_loc_13=X,c_gt_loc_14=X,c_gt_loc_15=X,c_gt_loc_16=1,c_gt_loc_17=X,c_gt_loc_18=X,c_gt_loc_19=X,c_gt_loc_2=X,c_gt_loc_20=X,c_gt_loc_21=X,c_gt_loc_22=X,c_gt_loc_23=X,c_gt_loc_24=X,c_gt_loc_25=X,c_gt_loc_26=X,c_gt_loc_27=X,c_gt_loc_28=X,c_gt_loc_29=X,c_gt_loc_3=X,c_gt_loc_30=X,c_gt_loc_31=X,c_gt_loc_32=X,c_gt_loc_33=X,c_gt_loc_34=X,c_gt_loc_35=X,c_gt_loc_36=X,c_gt_loc_37=X,c_gt_loc_38=X,c_gt_loc_39=X,c_gt_loc_4=X,c_gt_loc_40=X,c_gt_loc_41=X,c_gt_loc_42=X,c_gt_loc_43=X,c_gt_loc_44=X,c_gt_loc_45=X,c_gt_loc_46=X,c_gt_loc_47=X,c_gt_loc_48=X,c_gt_loc_5=X,c_gt_loc_6=X,c_gt_loc_7=X,c_gt_loc_8=X,c_gt_loc_9=X,c_lane_width=4,c_line_rate=31250,c_nfc=false,c_nfc_mode=IMM,c_refclk_frequency=125000,c_simplex=false,c_simplex_mode=TX,c_stream=false,c_ufc=false,flow_mode=None,interface_mode=Framing,dataflow_config=Duplex}" *)
+(* core_generation_info = "aurora_8b10b_1,aurora_8b10b_v10_3,{user_interface=AXI_4_Streaming,backchannel_mode=Sidebands,c_aurora_lanes=1,c_column_used=right,c_gt_clock_1=GTHQ3,c_gt_clock_2=None,c_gt_loc_1=X,c_gt_loc_10=X,c_gt_loc_11=X,c_gt_loc_12=X,c_gt_loc_13=X,c_gt_loc_14=X,c_gt_loc_15=X,c_gt_loc_16=1,c_gt_loc_17=X,c_gt_loc_18=X,c_gt_loc_19=X,c_gt_loc_2=X,c_gt_loc_20=X,c_gt_loc_21=X,c_gt_loc_22=X,c_gt_loc_23=X,c_gt_loc_24=X,c_gt_loc_25=X,c_gt_loc_26=X,c_gt_loc_27=X,c_gt_loc_28=X,c_gt_loc_29=X,c_gt_loc_3=X,c_gt_loc_30=X,c_gt_loc_31=X,c_gt_loc_32=X,c_gt_loc_33=X,c_gt_loc_34=X,c_gt_loc_35=X,c_gt_loc_36=X,c_gt_loc_37=X,c_gt_loc_38=X,c_gt_loc_39=X,c_gt_loc_4=X,c_gt_loc_40=X,c_gt_loc_41=X,c_gt_loc_42=X,c_gt_loc_43=X,c_gt_loc_44=X,c_gt_loc_45=X,c_gt_loc_46=X,c_gt_loc_47=X,c_gt_loc_48=X,c_gt_loc_5=X,c_gt_loc_6=X,c_gt_loc_7=X,c_gt_loc_8=X,c_gt_loc_9=X,c_lane_width=4,c_line_rate=62500,c_nfc=false,c_nfc_mode=IMM,c_refclk_frequency=125000,c_simplex=false,c_simplex_mode=TX,c_stream=false,c_ufc=false,flow_mode=None,interface_mode=Framing,dataflow_config=Duplex}" *)
 
 //***************************** Entity Declaration ****************************
 
@@ -61,8 +61,6 @@ module aurora_8b10b_1_gt #
     parameter   TXSYNC_MULTILANE_IN      =   1'b0
 )
 (
-    input           rst_in,               //Connect to System Reset
-    output          drp_busy_out,         //Indicates that the DRP bus is not accessible to the User
     //-------------------------------- Channel ---------------------------------
     input           qpllclk_in,
     input           qpllrefclk_in,
@@ -201,41 +199,6 @@ module aurora_8b10b_1_gt #
     //TX Datapath signals
     wire    [63:0]  txdata_i;         
 
-// DRP state machine signals
-    wire            rxpmaresetdone_t;
-    wire            gtrxreset_out;
-    wire            rxpmareset_out;
-    wire    [2:0]   rxrate_out;
-    wire            drp_op_done;
-    wire            drp_pma_busy;
-    wire            drp_rate_busy;
-    reg             drp_busy_i1= 1'b0;
-    reg             drp_busy_i2= 1'b0;
-    wire            drpen_rst_t;
-    wire    [8:0]   drpaddr_rst_t;
-    wire            drpwe_rst_t;
-    wire    [15:0]  drpdo_rst_t;
-    wire    [15:0]  drpdi_rst_t;
-    wire            drprdy_rst_t;
-    wire            drpen_pma_t;
-    wire    [8:0]   drpaddr_pma_t;
-    wire            drpwe_pma_t;
-    wire    [15:0]  drpdo_pma_t;
-    wire    [15:0]  drpdi_pma_t;
-    wire            drprdy_pma_t;
-    wire            drpen_rate_t;
-    wire    [8:0]   drpaddr_rate_t;
-    wire            drpwe_rate_t;
-    wire    [15:0]  drpdo_rate_t;
-    wire    [15:0]  drpdi_rate_t;
-    wire            drprdy_rate_t;
-    wire            drpen_i;
-    wire    [8:0]   drpaddr_i;
-    wire            drpwe_i;
-    wire    [15:0]  drpdo_i;
-    wire    [15:0]  drpdi_i;
-    wire            drprdy_i;
-      
 
 (* equivalent_register_removal="no" *) reg [95:0]   cpllpd_wait    =  96'hFFFFFFFFFFFFFFFFFFFFFFFF;
 (* equivalent_register_removal="no" *) reg [127:0]  cpllreset_wait = 128'h000000000000000000000000000000FF;
@@ -420,7 +383,7 @@ module aurora_8b10b_1_gt #
             .RX_DEFER_RESET_BUF_EN                  ("TRUE"),
 
            //---------------------CDR Attributes-------------------------
-            .RXCDR_CFG                              (83'h0002007FE1000C2200018),
+            .RXCDR_CFG                              (83'h0002007FE2000C2080018),
             .RXCDR_FR_RESET_ON_EIDLE                (1'b0),
             .RXCDR_HOLD_DURING_EIDLE                (1'b0),
             .RXCDR_PH_RESET_ON_EIDLE                (1'b0),
@@ -515,8 +478,8 @@ module aurora_8b10b_1_gt #
             .CPLL_INIT_CFG                          (24'h00001E),
             .CPLL_LOCK_CFG                          (16'h01E8),
             .CPLL_REFCLK_DIV                        (1),
-            .RXOUT_DIV                              (2),
-            .TXOUT_DIV                              (2),
+            .RXOUT_DIV                              (1),
+            .TXOUT_DIV                              (1),
             .SATA_CPLL_CFG                          ("VCO_3000MHZ"),
 
            //------------RX Initialization and Reset Attributes-------------
@@ -642,13 +605,13 @@ module aurora_8b10b_1_gt #
         .QPLLREFCLK                     (qpllrefclk_in),
         .RESETOVRD                      (tied_to_ground_i),
         //-------------- Channel - Dynamic Reconfiguration Port (DRP) --------------
-        .DRPADDR                        (drpaddr_i),
+        .DRPADDR                        (drpaddr_in),
         .DRPCLK                         (drpclk_in),
-        .DRPDI                          (drpdi_i),
-        .DRPDO                          (drpdo_i),
-        .DRPEN                          (drpen_i),
-        .DRPRDY                         (drprdy_i),
-        .DRPWE                          (drpwe_i),
+        .DRPDI                          (drpdi_in),
+        .DRPDO                          (drpdo_out),
+        .DRPEN                          (drpen_in),
+        .DRPRDY                         (drprdy_out),
+        .DRPWE                          (drpwe_in),
         //----------------------- Channel - Ref Clock Ports ------------------------
         .GTGREFCLK                      (tied_to_ground_i),
         .GTNORTHREFCLK0                 (tied_to_ground_i),
@@ -736,7 +699,7 @@ module aurora_8b10b_1_gt #
         .RXPRBSERR                      (rxprbserr_out),
         .RXPRBSSEL                      (rxprbssel_in),
         //----------------- Receive Ports - RX Data Path interface -----------------
-        .GTRXRESET                      (gtrxreset_out),
+        .GTRXRESET                      (gtrxreset_in),
         .RXDATA                         (rxdata_i),
         .RXOUTCLK                       (rxoutclk_out),
         .RXOUTCLKFABRIC                 (),
@@ -953,76 +916,6 @@ module aurora_8b10b_1_gt #
      );
 
     assign rxpmaresetdone_out           = rxpmaresetdone_t;
-
-    //------------------------- Soft Fix for Production Silicon----------------------
-         aurora_8b10b_1_gtrxreset_seq gtrxreset_seq_i
-            (
-        .RST                            (rst_in),
-        .GTRXRESET_IN                   (gtrxreset_in),
-        .RXPMARESETDONE                 (rxpmaresetdone_t),
-        .GTRXRESET_OUT                  (gtrxreset_out),
-        .DRP_OP_DONE                    (drp_op_done),
-        .DRPCLK                         (drpclk_in),
-        .DRPEN                          (drpen_rst_t),
-        .DRPADDR                        (drpaddr_rst_t),
-        .DRPWE                          (drpwe_rst_t),
-        .DRPDO                          (drpdo_rst_t),
-        .DRPDI                          (drpdi_rst_t),
-        .DRPRDY                         (drprdy_rst_t)
-
-            ); 
-
-     assign drpen_i        = !drp_op_done   ?   drpen_rst_t  : 
-                              drp_pma_busy  ?   drpen_pma_t  : 
-                              drp_rate_busy ?   drpen_rate_t : drpen_in;
-
-     assign drpaddr_i      = !drp_op_done   ?   drpaddr_rst_t  :
-                              drp_pma_busy  ?   drpaddr_pma_t  : 
-                              drp_rate_busy ?   drpaddr_rate_t : drpaddr_in;
-
-     assign drpwe_i        = !drp_op_done   ?   drpwe_rst_t    :
-                              drp_pma_busy  ?   drpwe_pma_t    : 
-                              drp_rate_busy ?   drpwe_rate_t   : drpwe_in;
-
-     assign drpdo_out      = (drp_op_done || !drp_pma_busy || !drp_rate_busy) ? drpdo_i     : 16'd0;
-
-     assign drpdo_rst_t    = drpdo_i;
-
-     assign drpdo_pma_t    = drpdo_i;
-
-     assign drpdo_rate_t   = drpdo_i;
-
-     assign drpdi_i        = !drp_op_done   ? drpdi_rst_t  :
-                              drp_pma_busy  ? drpdi_pma_t  :    
-                              drp_rate_busy ? drpdi_rate_t : drpdi_in;
-
-     assign drprdy_out     = (drp_op_done || !drp_pma_busy || !drp_rate_busy) ? drprdy_i    : 1'b0;
-
-     assign drprdy_rst_t   = drprdy_i;
-
-     assign drprdy_pma_t   = drprdy_i;
-
-     assign drprdy_rate_t  = drprdy_i;
-
-
-  assign drp_pma_busy = 1'b0;
-  assign drp_rate_busy = 1'b0;
-
-   always @ (posedge drpclk_in) begin
-      if(!drp_op_done || drp_rate_busy) 
-         drp_busy_i1 <= 1'b1;
-      else
-         drp_busy_i1 <= 1'b0;
-   end
-
-   always @ (posedge drpclk_in) begin
-      if(!drp_op_done || drp_pma_busy) 
-         drp_busy_i2 <= 1'b1;
-      else
-         drp_busy_i2 <= 1'b0;
-   end
-
-   assign drp_busy_out = drp_busy_i1 || drp_busy_i2;
 
 
 always @(posedge gtrefclk0_in)

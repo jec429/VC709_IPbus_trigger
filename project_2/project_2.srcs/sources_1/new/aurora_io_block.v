@@ -11,7 +11,7 @@ module aurora_io_block(
   input io_reset,					// active HI
   input io_sel,                    // this module has been selected for an I/O operation
   input io_sync,                   // start the I/O operation
-  input [19:0] io_addr,            // slave address, memory or register. Top 12 bits already consumed.
+  input [15:0] io_addr,            // slave address, memory or register. Top 12 bits already consumed.
   input io_rd_en,                  // this is a read operation
   input io_wr_en,                  // this is a write operation
   input [31:0] io_wr_data,         // data to write for write operations

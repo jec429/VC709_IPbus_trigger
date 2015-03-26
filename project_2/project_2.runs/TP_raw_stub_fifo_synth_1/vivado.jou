@@ -2,9 +2,9 @@
 # Vivado v2014.4 (64-bit)
 # SW Build 1071353 on Tue Nov 18 18:29:27 MST 2014
 # IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
-# Start of session at: Mon Mar 16 16:59:03 2015
-# Process ID: 5768
-# Log file: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/TP_raw_stub_fifo_synth_1/TP_raw_stub_fifo.vds
-# Journal file: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/TP_raw_stub_fifo_synth_1\vivado.jou
+# Start of session at: Wed Mar 18 13:57:24 2015
+# Process ID: 5376
+# Log file: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/TP_raw_stub_fifo_synth_1/TP_raw_stub_fifo.vds
+# Journal file: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/TP_raw_stub_fifo_synth_1\vivado.jou
 #-----------------------------------------------------------
 source TP_raw_stub_fifo.tcl

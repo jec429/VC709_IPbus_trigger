@@ -1,7 +1,7 @@
 Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
-| Date         : Tue Mar 17 14:51:15 2015
+| Date         : Wed Mar 25 21:40:12 2015
 | Host         : 0602-PC running 64-bit major release  (build 9200)
 | Command      : report_drc
 ------------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
            Max violations: <unlimited>
-         Violations found: 146
+         Violations found: 150
 
 2. REPORT DETAILS
 -----------------
@@ -751,6 +751,38 @@ LVDS-1#1 Warning
 Bidirection LVDS IOs  
 The following port(s) use the LVDS I/O standard and have bi-directional differential usage. Please note that LVDS is a fixed impedance structure optimized to 100ohm differential. This is only intended to be used in point-to-point transmissions that do not have turn around timing requirements. If the intended usage is a bus structure, please use BLVDS/BLVDS_25, instead. 
 sma_clk_n and sma_clk_p.
+Related violations: <none>
+
+PDRC-153#1 Warning
+Gated clock check  
+Net slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/n_3_n_2_2824_BUFG_inst is a gated clock net sourced by a combinational pin slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/n_2_2824_BUFG_inst_i_1/O, cell slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/n_2_2824_BUFG_inst_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/n_1_n_0_2770_BUFG_inst is a gated clock net sourced by a combinational pin slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/n_0_2770_BUFG_inst_i_1/O, cell slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/n_0_2770_BUFG_inst_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/n_2_2824_BUFG_inst_i_1 is driving clock pin of 35 cells. This could lead to large hold time violations. First few involved cells are:
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[19] {LDCE}
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[18] {LDCE}
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[17] {LDCE}
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[16] {LDCE}
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[15] {LDCE}
+
+Related violations: <none>
+
+PLHOLDVIO-2#2 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/n_0_2770_BUFG_inst_i_1 is driving clock pin of 35 cells. This could lead to large hold time violations. First few involved cells are:
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[0] {LDCE}
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[10] {LDCE}
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[11] {LDCE}
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[12] {LDCE}
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[13] {LDCE}
+
 Related violations: <none>
 
 RPBF-3#1 Warning

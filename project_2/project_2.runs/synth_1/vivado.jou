@@ -2,9 +2,9 @@
 # Vivado v2014.4 (64-bit)
 # SW Build 1071353 on Tue Nov 18 18:29:27 MST 2014
 # IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
-# Start of session at: Tue Mar 17 14:42:20 2015
-# Process ID: 4264
-# Log file: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/top.vds
-# Journal file: C:/Users/Zhengcheng Tao/Documents/VC709_IPbus_trigger/project_2/project_2.runs/synth_1\vivado.jou
+# Start of session at: Wed Mar 25 21:29:02 2015
+# Process ID: 6704
+# Log file: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/synth_1/top.vds
+# Journal file: E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top.tcl

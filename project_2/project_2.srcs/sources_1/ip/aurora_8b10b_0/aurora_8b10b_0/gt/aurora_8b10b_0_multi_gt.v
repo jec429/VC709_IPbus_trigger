@@ -70,7 +70,6 @@ module aurora_8b10b_0_multi_gt #
     //_________________________________________________________________________
     //GT0 
     //____________________________CHANNEL PORTS________________________________
-    output          gt0_drp_busy_out,
     //-------------- Channel - Dynamic Reconfiguration Port (DRP) --------------
     input   [8:0]   gt0_drpaddr_in,
     input           gt0_drpclk_in,
@@ -208,8 +207,6 @@ module aurora_8b10b_0_multi_gt #
     )
     gt0_aurora_8b10b_0_i
     (
-        .rst_in                         (gt0_cpllreset_in),
-        .drp_busy_out                   (gt0_drp_busy_out),	    
         //-------------------------------- Channel ---------------------------------
         .qpllclk_in                     (gt_qpllclk_quad4_i),
         .qpllrefclk_in                  (gt_qpllrefclk_quad4_i),

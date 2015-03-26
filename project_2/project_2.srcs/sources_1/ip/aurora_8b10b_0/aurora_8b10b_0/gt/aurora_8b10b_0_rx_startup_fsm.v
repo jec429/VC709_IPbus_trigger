@@ -174,7 +174,7 @@ module aurora_8b10b_0_rx_startup_fsm #
   localparam integer WAIT_TIMEOUT_500us = 500000 / STABLE_CLOCK_PERIOD;   //500 us time-out
   localparam integer WAIT_TIMEOUT_1us   = 1000 / STABLE_CLOCK_PERIOD;     //1 us time-out
   localparam integer WAIT_TIMEOUT_100us = 100000 / STABLE_CLOCK_PERIOD;   //100us time-out
-  integer    WAIT_TIME_ADAPT            = (37000000 /3.125)/STABLE_CLOCK_PERIOD;
+  integer    WAIT_TIME_ADAPT            = (37000000 /6.25)/STABLE_CLOCK_PERIOD;
   localparam integer WAIT_TIME_MAX      = EXAMPLE_SIMULATION? 100 : 10000 / STABLE_CLOCK_PERIOD;
   localparam integer PORT_WIDTH         = `CLOG2(WAIT_TIMEOUT_2ms);
     
@@ -276,7 +276,7 @@ module aurora_8b10b_0_rx_startup_fsm #
       if(gtrxreset_s == 1'b1)
         rxpmaresetdone_i <= `DLY 1'b0;
       else
-        rxpmaresetdone_i <= `DLY pmaresetdone_fallingedge_detect_s & rxpmaresetdone_rx_s;
+        rxpmaresetdone_i <= `DLY rxpmaresetdone_rx_s;
   end
 
 aurora_8b10b_0_cdc_sync
@@ -370,64 +370,6 @@ aurora_8b10b_0_cdc_sync
      .prmry_ack       (                    ),
      .scndry_out      (txpmaresetdone_sync ),
      .scndry_vect_out (                    ) 
-    );
-
-aurora_8b10b_0_cdc_sync
-  #(
-     .c_cdc_type      (1             ),   
-     .c_flop_input    (0             ),  
-     .c_reset_state   (0             ),  
-     .c_single_bit    (1             ),  
-     .c_vector_width  (2             ),  
-     .c_mtbf_stages   (3              )  
-   )sync_pmaresetdone_cdc_sync 
-   (
-     .prmry_aclk      (1'b0                ),
-     .prmry_rst_n     (1'b1                ),
-     .prmry_in        (RXPMARESETDONE      ),
-     .prmry_vect_in   (2'd0                ),
-     .scndry_aclk     (STABLE_CLOCK        ),
-     .scndry_rst_n    (1'b1                ),
-     .prmry_ack       (                    ),
-     .scndry_out      (rxpmaresetdone_s    ),
-     .scndry_vect_out (                    ) 
-    );
-
- always @(posedge STABLE_CLOCK)
-  begin
-   rxpmaresetdone_ss <= `DLY rxpmaresetdone_s;
-  end
-
-
- always @(posedge STABLE_CLOCK)
-  begin
-  if(gtrxreset_i ==1'b1)
-  pmaresetdone_fallingedge_detect <= `DLY 1'b0;
-   else if(!rxpmaresetdone_s && rxpmaresetdone_ss)
-  pmaresetdone_fallingedge_detect <= `DLY 1'b1;
-   else
-  pmaresetdone_fallingedge_detect <= `DLY pmaresetdone_fallingedge_detect;
-  end
-
-aurora_8b10b_0_cdc_sync
-  #(
-     .c_cdc_type      (1             ),   
-     .c_flop_input    (0             ),  
-     .c_reset_state   (0             ),  
-     .c_single_bit    (1             ),  
-     .c_vector_width  (2             ),  
-     .c_mtbf_stages   (3              )  
-   )sync_pmaresetdone_fallingedge_detect_cdc_sync 
-   (
-     .prmry_aclk      (STABLE_CLOCK                      ),
-     .prmry_rst_n     (1'b1                              ),
-     .prmry_in        (pmaresetdone_fallingedge_detect   ),
-     .prmry_vect_in   (2'd0                              ),
-     .scndry_aclk     (RXOUTCLK                          ),
-     .scndry_rst_n    (1'b1                              ),
-     .prmry_ack       (                                  ),
-     .scndry_out      (pmaresetdone_fallingedge_detect_s ),
-     .scndry_vect_out (                                  ) 
     );
 
 

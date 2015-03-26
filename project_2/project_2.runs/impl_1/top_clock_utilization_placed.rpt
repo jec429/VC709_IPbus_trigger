@@ -1,7 +1,7 @@
 Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
-| Date         : Tue Mar 17 14:46:27 2015
+| Date         : Wed Mar 25 21:34:26 2015
 | Host         : 0602-PC running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file top_clock_utilization_placed.rpt
 | Design       : top
@@ -19,13 +19,15 @@ Table of Contents
 5. Details of I/O Clocks
 6. Details of Local Clocks
 7. Clock Regions : Key Resource Utilization
-8. Net wise resources used in clock region X1Y2
-9. Net wise resources used in clock region X1Y3
-10. Net wise resources used in clock region X0Y4
-11. Net wise resources used in clock region X1Y4
-12. Net wise resources used in clock region X0Y5
-13. Net wise resources used in clock region X0Y9
-14. Net wise resources used in clock region X1Y9
+8. Net wise resources used in clock region X0Y0
+9. Net wise resources used in clock region X1Y2
+10. Net wise resources used in clock region X0Y3
+11. Net wise resources used in clock region X1Y3
+12. Net wise resources used in clock region X0Y4
+13. Net wise resources used in clock region X1Y4
+14. Net wise resources used in clock region X0Y5
+15. Net wise resources used in clock region X0Y8
+16. Net wise resources used in clock region X0Y9
 
 1. Clock Primitive Utilization
 ------------------------------
@@ -33,7 +35,7 @@ Table of Contents
 +-------+------+-----------+-----------+
 | Type  | Used | Available | Num Fixed |
 +-------+------+-----------+-----------+
-| BUFG  |   11 |        32 |         0 |
+| BUFG  |   13 |        32 |         0 |
 | BUFH  |    0 |       240 |         0 |
 | BUFIO |    0 |        80 |         0 |
 | MMCM  |    4 |        20 |         0 |
@@ -52,16 +54,18 @@ Table of Contents
 | Index | BUFG Cell                                                                                                       | Net Name                                                                                                     | BELs | Sites | Fixed | MaxDelay (ns) | Skew (ns) |
 +-------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+------+-------+-------+---------------+-----------+
 |     1 | BUFG_inst                                                                                                       | clk125_bufg                                                                                                  |    1 |     1 |    no |         1.603 |     0.080 |
-|     2 | eth/phy/inst/core_clocking_i/bufg_txoutclk                                                                      | eth/phy/inst/core_clocking_i/txoutclk_bufg                                                                   |    1 |     1 |    no |         1.367 |     0.068 |
+|     2 | eth/phy/inst/core_clocking_i/bufg_txoutclk                                                                      | eth/phy/inst/core_clocking_i/txoutclk_bufg                                                                   |    1 |     1 |    no |         2.020 |     0.101 |
 |     3 | slaves/slave6/trigger_top/trigger_clock_synth/inst/clkin1_bufg                                                  | slaves/slave6/trigger_top/trigger_clock_synth/inst/clk_in1_trigger_clock_synth                               |    1 |     1 |    no |         1.959 |     0.098 |
 |     4 | eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/bufg_gtrefclk0_in    | eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/gtrefclk0_in_bufg |   15 |     3 |    no |         1.751 |     0.121 |
-|     5 | eth/bufg_fr                                                                                                     | eth/clk125_fr                                                                                                |   37 |    13 |    no |         1.994 |     0.770 |
-|     6 | eth/phy/inst/core_clocking_i/bufg_userclk                                                                       | eth/phy/inst/core_clocking_i/userclk                                                                         |  129 |    40 |    no |         1.829 |     0.213 |
-|     7 | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/clock_module/user_clk_buf_i | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/clock_module/sync_clk    |  993 |   266 |    no |         1.837 |     0.402 |
-|     8 | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/clock_module/user_clk_buf_i  | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/clock_module/sync_clk     |  993 |   243 |    no |         1.829 |     0.228 |
-|     9 | slaves/slave6/trigger_top/trigger_clock_synth/inst/clkout2_buf                                                  | slaves/slave6/trigger_top/trigger_clock_synth/inst/proc_clk                                                  | 1299 |   412 |    no |         1.915 |     0.688 |
-|    10 | clocks/bufgipb                                                                                                  | clocks/ipb_clk                                                                                               | 1656 |   628 |    no |         1.750 |     0.468 |
-|    11 | eth/phy/inst/core_clocking_i/bufg_userclk2                                                                      | eth/phy/inst/core_clocking_i/userclk2                                                                        | 4150 |  1309 |    no |         1.835 |     0.536 |
+|     5 | n_0_2770_BUFG_inst                                                                                              | n_0_2770_BUFG                                                                                                |   35 |    12 |    no |         1.737 |     0.127 |
+|     6 | n_2_2824_BUFG_inst                                                                                              | n_2_2824_BUFG                                                                                                |   35 |    13 |    no |         1.740 |     0.171 |
+|     7 | eth/bufg_fr                                                                                                     | eth/clk125_fr                                                                                                |   37 |    13 |    no |         1.798 |     0.477 |
+|     8 | eth/phy/inst/core_clocking_i/bufg_userclk                                                                       | eth/phy/inst/core_clocking_i/userclk                                                                         |  129 |    39 |    no |         1.925 |     0.308 |
+|     9 | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/clock_module/user_clk_buf_i | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/clock_module/sync_clk    |  993 |   266 |    no |         1.837 |     0.430 |
+|    10 | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/clock_module/user_clk_buf_i  | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/clock_module/sync_clk     |  993 |   259 |    no |         1.829 |     0.234 |
+|    11 | slaves/slave6/trigger_top/trigger_clock_synth/inst/clkout2_buf                                                  | slaves/slave6/trigger_top/trigger_clock_synth/inst/proc_clk                                                  | 1299 |   433 |    no |         1.912 |     0.716 |
+|    12 | clocks/bufgipb                                                                                                  | clocks/ipb_clk                                                                                               | 2075 |   715 |    no |         1.748 |     0.530 |
+|    13 | eth/phy/inst/core_clocking_i/bufg_userclk2                                                                      | eth/phy/inst/core_clocking_i/userclk2                                                                        | 4116 |  1301 |    no |         1.862 |     0.563 |
 +-------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+------+-------+-------+---------------+-----------+
 
 
@@ -72,11 +76,11 @@ Table of Contents
 +-------+------------------------------------------------------------------+---------------------------------------------------------------------------------+------+-------+-------+---------------+-----------+
 |     1 | mcmm                                                             | clk125_ub                                                                       |    1 |     1 |    no |         1.425 |     0.071 |
 |     2 | mcmm                                                             | clkdiv_fb                                                                       |    1 |     1 |    no |         0.012 |     0.001 |
-|     3 | clocks/mmcm                                                      | clocks/I                                                                        |    1 |     1 |    no |         2.411 |     0.121 |
+|     3 | clocks/mmcm                                                      | clocks/I                                                                        |    1 |     1 |    no |         1.935 |     0.097 |
 |     4 | clocks/mmcm                                                      | clocks/clkfb                                                                    |    1 |     1 |    no |         0.012 |     0.001 |
 |     5 | eth/phy/inst/core_clocking_i/mmcm_adv_inst                       | eth/phy/inst/core_clocking_i/clkfbout                                           |    1 |     1 |    no |         0.012 |     0.001 |
-|     6 | eth/phy/inst/core_clocking_i/mmcm_adv_inst                       | eth/phy/inst/core_clocking_i/clkout0                                            |    1 |     1 |    no |         1.463 |     0.073 |
-|     7 | eth/phy/inst/core_clocking_i/mmcm_adv_inst                       | eth/phy/inst/core_clocking_i/clkout1                                            |    1 |     1 |    no |         1.463 |     0.073 |
+|     6 | eth/phy/inst/core_clocking_i/mmcm_adv_inst                       | eth/phy/inst/core_clocking_i/clkout0                                            |    1 |     1 |    no |         3.979 |     0.199 |
+|     7 | eth/phy/inst/core_clocking_i/mmcm_adv_inst                       | eth/phy/inst/core_clocking_i/clkout1                                            |    1 |     1 |    no |         3.979 |     0.199 |
 |     8 | slaves/slave6/trigger_top/trigger_clock_synth/inst/mmcm_adv_inst | slaves/slave6/trigger_top/trigger_clock_synth/inst/clkfbout_trigger_clock_synth |    1 |     1 |    no |         0.012 |     0.001 |
 |     9 | slaves/slave6/trigger_top/trigger_clock_synth/inst/mmcm_adv_inst | slaves/slave6/trigger_top/trigger_clock_synth/inst/proc_clk_trigger_clock_synth |    1 |     1 |    no |         2.172 |     0.109 |
 +-------+------------------------------------------------------------------+---------------------------------------------------------------------------------+------+-------+-------+---------------+-----------+
@@ -100,7 +104,7 @@ Table of Contents
 | Index | Local Clk Src                                | Net Name                              | BELs | Sites | Fixed | MaxDelay (ns) | Skew (ns) |
 +-------+----------------------------------------------+---------------------------------------+------+-------+-------+---------------+-----------+
 |     1 | eth/phy/inst/core_clocking_i/ibufds_gtrefclk | eth/phy/inst/core_clocking_i/gtrefclk |   36 |    12 |   yes |         2.024 |     2.024 |
-|     2 | IBUFGDS_clk200                               | clk200                                |  322 |    98 |   yes |         5.618 |     3.392 |
+|     2 | IBUFGDS_clk200                               | clk200                                |  322 |    95 |   yes |         5.760 |     3.534 |
 +-------+----------------------------------------------+---------------------------------------+------+-------+-------+---------------+-----------+
 
 
@@ -112,84 +116,105 @@ Table of Contents
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
-| X0Y0              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 42400 |    0 |  7400 |    0 |   140 |    0 |    70 |    0 |   140 |
+| X0Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 42400 |    0 |  7400 |    0 |   140 |    0 |    70 |    0 |   140 |
 | X1Y0              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 46400 |    0 | 10200 |    0 |   160 |    0 |    80 |    0 |   220 |
 | X0Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 42400 |    0 |  7400 |    0 |   140 |    0 |    70 |    0 |   140 |
 | X1Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 44400 |    0 |  9900 |    0 |   150 |    0 |    75 |    0 |   220 |
 | X0Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 42400 |    0 |  7400 |    0 |   140 |    0 |    70 |    0 |   140 |
-| X1Y2              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |  538 | 44400 |  105 |  9900 |    8 |   150 |    1 |    75 |   14 |   220 |
-| X0Y3              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 42400 |    0 |  7400 |    0 |   140 |    0 |    70 |    0 |   140 |
-| X1Y3              |    8 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    4 |     5 |    0 |     0 |    0 |    50 |    0 |    50 | 7115 | 46400 |  181 | 10200 |    7 |   160 |   30 |    80 |   46 |   220 |
-| X0Y4              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    1 |    50 |    1 | 37600 |    0 |  7400 |    0 |   140 |    0 |    70 |    0 |   140 |
-| X1Y4              |    6 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 | 1458 | 44400 |   36 |  9900 |    2 |   150 |    3 |    75 |   14 |   220 |
+| X1Y2              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 | 1476 | 44400 |  127 |  9900 |   13 |   150 |    3 |    75 |   18 |   220 |
+| X0Y3              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |   22 | 42400 |    0 |  7400 |    0 |   140 |    0 |    70 |    0 |   140 |
+| X1Y3              |    8 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    4 |     5 |    0 |     0 |    0 |    50 |    0 |    50 | 7674 | 46400 |  193 | 10200 |    4 |   160 |   28 |    80 |   28 |   220 |
+| X0Y4              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    1 |    50 |   13 | 37600 |    0 |  7400 |    0 |   140 |    0 |    70 |    0 |   140 |
+| X1Y4              |    4 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |  382 | 44400 |    2 |  9900 |    0 |   150 |    3 |    75 |   28 |   220 |
 | X0Y5              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |   33 | 37600 |    0 |  7400 |    0 |   140 |    0 |    70 |    0 |   140 |
 | X1Y5              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 44400 |    0 |  9900 |    0 |   150 |    0 |    75 |    0 |   220 |
 | X0Y6              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 42400 |    0 |  7400 |    0 |   140 |    0 |    70 |    0 |   140 |
 | X1Y6              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 46400 |    0 | 10200 |    0 |   160 |    0 |    80 |    0 |   220 |
 | X0Y7              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 42400 |    0 |  7400 |    0 |   140 |    0 |    70 |    0 |   140 |
 | X1Y7              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 44400 |    0 |  9900 |    0 |   150 |    0 |    75 |    0 |   220 |
-| X0Y8              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 42400 |    0 |  7400 |    0 |   140 |    0 |    70 |    0 |   140 |
+| X0Y8              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 42400 |    0 |  7400 |    0 |   140 |    0 |    70 |    0 |   140 |
 | X1Y8              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 44400 |    0 |  9900 |    0 |   150 |    0 |    75 |    0 |   220 |
 | X0Y9              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 42400 |    0 |  7400 |    0 |   140 |    0 |    70 |    0 |   140 |
-| X1Y9              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 46400 |    0 | 10200 |    0 |   160 |    0 |    80 |    0 |   220 |
+| X1Y9              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     5 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 46400 |    0 | 10200 |    0 |   160 |    0 |    80 |    0 |   220 |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 * RAMB36 site can be used as two RAMB18/FIFO18 sites
 
 
-8. Net wise resources used in clock region X1Y2
+8. Net wise resources used in clock region X0Y0
 -----------------------------------------------
 
-+-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-------------------------------------------------------------+
-| Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s |                        Clock Net Name                       |
-+-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-------------------------------------------------------------+
-| BUFG        |     ---     |   no  |         0 |        0 |       0 |        18 |       0 |       0 | 538 |   105 |       13 | slaves/slave6/trigger_top/trigger_clock_synth/inst/proc_clk |
-+-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-------------------------------------------------------------+
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+--------------------------------------------+
+| Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s |               Clock Net Name               |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+--------------------------------------------+
+| BUFG        |     ---     |   no  |         1 |        0 |       0 |         0 |       0 |       0 |   0 |     0 |        0 | eth/phy/inst/core_clocking_i/txoutclk_bufg |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+--------------------------------------------+
 
 
-9. Net wise resources used in clock region X1Y3
+9. Net wise resources used in clock region X1Y2
 -----------------------------------------------
+
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-------------------------------------------------------------+
+| Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |                        Clock Net Name                       |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-------------------------------------------------------------+
+| BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       0 |   12 |     0 |        0 | eth/phy/inst/core_clocking_i/userclk                        |
+| BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  318 |     0 |        0 | eth/phy/inst/core_clocking_i/userclk2                       |
+| BUFG        |     ---     |   no  |         0 |        0 |       0 |        32 |       0 |       0 | 1066 |   127 |       16 | slaves/slave6/trigger_top/trigger_clock_synth/inst/proc_clk |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-------------------------------------------------------------+
+
+
+10. Net wise resources used in clock region X0Y3
+------------------------------------------------
+
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+----------------+
+| Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s | Clock Net Name |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+----------------+
+| BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       0 |   1 |     0 |        0 | clocks/ipb_clk |
+| BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  21 |     0 |        0 | eth/clk125_fr  |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+----------------+
+
+
+11. Net wise resources used in clock region X1Y3
+------------------------------------------------
 
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------------------------------------------------------------+
 | Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |                                                Clock Net Name                                                |
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------------------------------------------------------------+
 | BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       0 |    2 |     0 |        0 | eth/clk125_fr                                                                                                |
 | BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       0 |    8 |     7 |        0 | eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/gtrefclk0_in_bufg |
-| BUFG        |     ---     |   no  |         0 |        0 |       4 |         0 |       0 |       0 |  128 |     0 |        0 | eth/phy/inst/core_clocking_i/userclk                                                                         |
-| BUFG        |     ---     |   no  |         0 |        0 |       4 |         1 |       0 |       0 |  210 |     9 |        0 | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/clock_module/sync_clk    |
-| BUFG        |     ---     |   no  |         0 |        0 |       0 |        30 |       0 |       0 |  538 |    22 |       45 | slaves/slave6/trigger_top/trigger_clock_synth/inst/proc_clk                                                  |
+| BUFG        |     ---     |   no  |         0 |        0 |       0 |        10 |       0 |       0 |    8 |     0 |       28 | slaves/slave6/trigger_top/trigger_clock_synth/inst/proc_clk                                                  |
+| BUFG        |     ---     |   no  |         0 |        0 |       4 |         0 |       0 |       0 |  116 |     0 |        0 | eth/phy/inst/core_clocking_i/userclk                                                                         |
+| BUFG        |     ---     |   no  |         0 |        0 |       4 |         4 |       0 |       0 |  782 |    43 |        0 | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/clock_module/sync_clk    |
 | BUFG        |     ---     |   no  |         0 |        0 |       4 |         4 |       0 |       0 |  943 |    45 |        0 | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/clock_module/sync_clk     |
-| BUFG        |     ---     |   no  |         0 |        0 |       0 |        21 |       0 |       0 | 1192 |     0 |        0 | clocks/ipb_clk                                                                                               |
-| BUFG        |     ---     |   no  |         0 |        0 |       5 |        16 |       0 |       0 | 3759 |    84 |        0 | eth/phy/inst/core_clocking_i/userclk2                                                                        |
+| BUFG        |     ---     |   no  |         0 |        0 |       0 |        26 |       0 |       0 | 2038 |     0 |        0 | clocks/ipb_clk                                                                                               |
+| BUFG        |     ---     |   no  |         0 |        0 |       5 |        18 |       0 |       0 | 3452 |    84 |        0 | eth/phy/inst/core_clocking_i/userclk2                                                                        |
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------------------------------------------------------------+
 
 
-10. Net wise resources used in clock region X0Y4
+12. Net wise resources used in clock region X0Y4
 ------------------------------------------------
 
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+----------------+
 | Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s | Clock Net Name |
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+----------------+
 | BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       1 |   0 |     0 |        0 | clk125_bufg    |
-| BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       0 |   1 |     0 |        0 | eth/clk125_fr  |
+| BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  13 |     0 |        0 | eth/clk125_fr  |
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+----------------+
 
 
-11. Net wise resources used in clock region X1Y4
+13. Net wise resources used in clock region X1Y4
 ------------------------------------------------
 
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-----------------------------------------------------------------------------------------------------------+
 | Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s |                                               Clock Net Name                                              |
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-----------------------------------------------------------------------------------------------------------+
-| BUFG        |     ---     |   no  |         1 |        0 |       0 |         0 |       0 |       0 |   0 |     0 |        0 | eth/phy/inst/core_clocking_i/txoutclk_bufg                                                                |
-| BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       0 |   0 |     0 |       14 | slaves/slave6/trigger_top/trigger_clock_synth/inst/proc_clk                                               |
-| BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  33 |     0 |        0 | eth/clk125_fr                                                                                             |
-| BUFG        |     ---     |   no  |         0 |        0 |       0 |         2 |       0 |       0 | 254 |     0 |        0 | eth/phy/inst/core_clocking_i/userclk2                                                                     |
-| BUFG        |     ---     |   no  |         0 |        0 |       0 |         5 |       0 |       0 | 438 |     0 |        0 | clocks/ipb_clk                                                                                            |
-| BUFG        |     ---     |   no  |         0 |        0 |       0 |         3 |       0 |       0 | 733 |    36 |        0 | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/clock_module/sync_clk |
+| BUFG        |     ---     |   no  |         0 |        0 |       0 |         6 |       0 |       0 |   2 |     0 |       28 | slaves/slave6/trigger_top/trigger_clock_synth/inst/proc_clk                                               |
+| BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  10 |     0 |        0 | clocks/ipb_clk                                                                                            |
+| BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       0 | 161 |     2 |        0 | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/clock_module/sync_clk |
+| BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       0 | 209 |     0 |        0 | eth/phy/inst/core_clocking_i/userclk2                                                                     |
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-----------------------------------------------------------------------------------------------------------+
 
 
-12. Net wise resources used in clock region X0Y5
+14. Net wise resources used in clock region X0Y5
 ------------------------------------------------
 
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+---------------------------------------+
@@ -199,17 +224,7 @@ Table of Contents
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+---------------------------------------+
 
 
-13. Net wise resources used in clock region X0Y9
-------------------------------------------------
-
-+-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+--------------------------------------------------------------------------------+
-| Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s |                                 Clock Net Name                                 |
-+-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+--------------------------------------------------------------------------------+
-| BUFG        |     ---     |   no  |         1 |        0 |       0 |         0 |       0 |       0 |   0 |     0 |        0 | slaves/slave6/trigger_top/trigger_clock_synth/inst/clk_in1_trigger_clock_synth |
-+-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+--------------------------------------------------------------------------------+
-
-
-14. Net wise resources used in clock region X1Y9
+15. Net wise resources used in clock region X0Y8
 ------------------------------------------------
 
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+----------------+
@@ -219,15 +234,27 @@ Table of Contents
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+----------------+
 
 
+16. Net wise resources used in clock region X0Y9
+------------------------------------------------
+
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+--------------------------------------------------------------------------------+
+| Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s |                                 Clock Net Name                                 |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+--------------------------------------------------------------------------------+
+| BUFG        |     ---     |   no  |         1 |        0 |       0 |         0 |       0 |       0 |   0 |     0 |        0 | slaves/slave6/trigger_top/trigger_clock_synth/inst/clk_in1_trigger_clock_synth |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+--------------------------------------------------------------------------------+
+
+
 
 # Location of BUFG Primitives 
 set_property LOC BUFGCTRL_X0Y4 [get_cells BUFG_inst]
 set_property LOC BUFGCTRL_X0Y16 [get_cells clocks/bufgipb]
 set_property LOC BUFGCTRL_X0Y5 [get_cells eth/bufg_fr]
-set_property LOC BUFGCTRL_X0Y7 [get_cells eth/phy/inst/core_clocking_i/bufg_txoutclk]
+set_property LOC BUFGCTRL_X0Y9 [get_cells eth/phy/inst/core_clocking_i/bufg_txoutclk]
 set_property LOC BUFGCTRL_X0Y3 [get_cells eth/phy/inst/core_clocking_i/bufg_userclk]
 set_property LOC BUFGCTRL_X0Y0 [get_cells eth/phy/inst/core_clocking_i/bufg_userclk2]
-set_property LOC BUFGCTRL_X0Y6 [get_cells eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/bufg_gtrefclk0_in]
+set_property LOC BUFGCTRL_X0Y8 [get_cells eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/bufg_gtrefclk0_in]
+set_property LOC BUFGCTRL_X0Y6 [get_cells n_0_2770_BUFG_inst]
+set_property LOC BUFGCTRL_X0Y7 [get_cells n_2_2824_BUFG_inst]
 set_property LOC BUFGCTRL_X0Y1 [get_cells slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/clock_module/user_clk_buf_i]
 set_property LOC BUFGCTRL_X0Y2 [get_cells slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/clock_module/user_clk_buf_i]
 set_property LOC BUFGCTRL_X0Y18 [get_cells slaves/slave6/trigger_top/trigger_clock_synth/inst/clkin1_bufg]
@@ -237,8 +264,8 @@ set_property LOC BUFGCTRL_X0Y17 [get_cells slaves/slave6/trigger_top/trigger_clo
 
 # Location of MMCM Clock Primitives
 set_property LOC MMCME2_ADV_X0Y4 [get_cells mcmm]
-set_property LOC MMCME2_ADV_X1Y9 [get_cells clocks/mmcm]
-set_property LOC MMCME2_ADV_X1Y4 [get_cells eth/phy/inst/core_clocking_i/mmcm_adv_inst]
+set_property LOC MMCME2_ADV_X0Y8 [get_cells clocks/mmcm]
+set_property LOC MMCME2_ADV_X0Y0 [get_cells eth/phy/inst/core_clocking_i/mmcm_adv_inst]
 set_property LOC MMCME2_ADV_X0Y9 [get_cells slaves/slave6/trigger_top/trigger_clock_synth/inst/mmcm_adv_inst]
 
 # Location of BUFH Clock Primitives
@@ -290,7 +317,7 @@ resize_pblock [get_pblocks CLKAG_eth/clk125_fr] -add {CLOCKREGION_X0Y0:CLOCKREGI
 # Clock net "eth/phy/inst/core_clocking_i/gtrefclk" driven by instance "eth/phy/inst/core_clocking_i/ibufds_gtrefclk" located at site "IBUFDS_GTE2_X1Y7"
 #startgroup
 create_pblock CLKAG_eth/phy/inst/core_clocking_i/gtrefclk
-add_cells_to_pblock [get_pblocks  CLKAG_eth/phy/inst/core_clocking_i/gtrefclk] [get_cells  -filter { IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL && NAME!=eth/bufg_fr && NAME!=eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/bufg_gtrefclk0_in} -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="eth/phy/inst/core_clocking_i/gtrefclk"}]]]
+add_cells_to_pblock [get_pblocks  CLKAG_eth/phy/inst/core_clocking_i/gtrefclk] [get_cells  -filter { IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL && NAME!=eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/bufg_gtrefclk0_in && NAME!=eth/bufg_fr} -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="eth/phy/inst/core_clocking_i/gtrefclk"}]]]
 resize_pblock [get_pblocks CLKAG_eth/phy/inst/core_clocking_i/gtrefclk] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X0Y4:CLOCKREGION_X0Y4 CLOCKREGION_X0Y5:CLOCKREGION_X0Y5 CLOCKREGION_X0Y6:CLOCKREGION_X0Y6 CLOCKREGION_X0Y7:CLOCKREGION_X0Y7 CLOCKREGION_X0Y8:CLOCKREGION_X0Y8 CLOCKREGION_X0Y9:CLOCKREGION_X0Y9 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3 CLOCKREGION_X1Y4:CLOCKREGION_X1Y4 CLOCKREGION_X1Y5:CLOCKREGION_X1Y5 CLOCKREGION_X1Y6:CLOCKREGION_X1Y6 CLOCKREGION_X1Y7:CLOCKREGION_X1Y7 CLOCKREGION_X1Y8:CLOCKREGION_X1Y8 CLOCKREGION_X1Y9:CLOCKREGION_X1Y9}
 #endgroup
 
@@ -308,11 +335,25 @@ add_cells_to_pblock [get_pblocks  CLKAG_eth/phy/inst/core_clocking_i/userclk2] [
 resize_pblock [get_pblocks CLKAG_eth/phy/inst/core_clocking_i/userclk2] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X0Y4:CLOCKREGION_X0Y4 CLOCKREGION_X0Y5:CLOCKREGION_X0Y5 CLOCKREGION_X0Y6:CLOCKREGION_X0Y6 CLOCKREGION_X0Y7:CLOCKREGION_X0Y7 CLOCKREGION_X0Y8:CLOCKREGION_X0Y8 CLOCKREGION_X0Y9:CLOCKREGION_X0Y9 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3 CLOCKREGION_X1Y4:CLOCKREGION_X1Y4 CLOCKREGION_X1Y5:CLOCKREGION_X1Y5 CLOCKREGION_X1Y6:CLOCKREGION_X1Y6 CLOCKREGION_X1Y7:CLOCKREGION_X1Y7 CLOCKREGION_X1Y8:CLOCKREGION_X1Y8 CLOCKREGION_X1Y9:CLOCKREGION_X1Y9}
 #endgroup
 
-# Clock net "eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/gtrefclk0_in_bufg" driven by instance "eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/bufg_gtrefclk0_in" located at site "BUFGCTRL_X0Y6"
+# Clock net "eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/gtrefclk0_in_bufg" driven by instance "eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/bufg_gtrefclk0_in" located at site "BUFGCTRL_X0Y8"
 #startgroup
 create_pblock CLKAG_eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/gtrefclk0_in_bufg
 add_cells_to_pblock [get_pblocks  CLKAG_eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/gtrefclk0_in_bufg] [get_cells  -filter { IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/gtrefclk0_in_bufg"}]]]
 resize_pblock [get_pblocks CLKAG_eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/gtrefclk0_in_bufg] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X0Y4:CLOCKREGION_X0Y4 CLOCKREGION_X0Y5:CLOCKREGION_X0Y5 CLOCKREGION_X0Y6:CLOCKREGION_X0Y6 CLOCKREGION_X0Y7:CLOCKREGION_X0Y7 CLOCKREGION_X0Y8:CLOCKREGION_X0Y8 CLOCKREGION_X0Y9:CLOCKREGION_X0Y9 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3 CLOCKREGION_X1Y4:CLOCKREGION_X1Y4 CLOCKREGION_X1Y5:CLOCKREGION_X1Y5 CLOCKREGION_X1Y6:CLOCKREGION_X1Y6 CLOCKREGION_X1Y7:CLOCKREGION_X1Y7 CLOCKREGION_X1Y8:CLOCKREGION_X1Y8 CLOCKREGION_X1Y9:CLOCKREGION_X1Y9}
+#endgroup
+
+# Clock net "n_0_2770_BUFG" driven by instance "n_0_2770_BUFG_inst" located at site "BUFGCTRL_X0Y6"
+#startgroup
+create_pblock CLKAG_n_0_2770_BUFG
+add_cells_to_pblock [get_pblocks  CLKAG_n_0_2770_BUFG] [get_cells  -filter { IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="n_0_2770_BUFG"}]]]
+resize_pblock [get_pblocks CLKAG_n_0_2770_BUFG] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3 CLOCKREGION_X1Y4:CLOCKREGION_X1Y4 CLOCKREGION_X1Y5:CLOCKREGION_X1Y5 CLOCKREGION_X1Y6:CLOCKREGION_X1Y6 CLOCKREGION_X1Y7:CLOCKREGION_X1Y7 CLOCKREGION_X1Y8:CLOCKREGION_X1Y8 CLOCKREGION_X1Y9:CLOCKREGION_X1Y9}
+#endgroup
+
+# Clock net "n_2_2824_BUFG" driven by instance "n_2_2824_BUFG_inst" located at site "BUFGCTRL_X0Y7"
+#startgroup
+create_pblock CLKAG_n_2_2824_BUFG
+add_cells_to_pblock [get_pblocks  CLKAG_n_2_2824_BUFG] [get_cells  -filter { IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="n_2_2824_BUFG"}]]]
+resize_pblock [get_pblocks CLKAG_n_2_2824_BUFG] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
 #endgroup
 
 # Clock net "slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/clock_module/sync_clk" driven by instance "slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/clock_module/user_clk_buf_i" located at site "BUFGCTRL_X0Y1"

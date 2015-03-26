@@ -1,10 +1,10 @@
 -- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
--- Date        : Mon Mar 16 16:47:31 2015
+-- Date        : Wed Mar 18 13:40:21 2015
 -- Host        : 0602-PC running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {C:/Users/Zhengcheng
---               Tao/Documents/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/trigger_clock_synth/trigger_clock_synth_funcsim.vhdl}
+-- Command     : write_vhdl -force -mode funcsim
+--               E:/ztaotest/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/trigger_clock_synth/trigger_clock_synth_funcsim.vhdl
 -- Design      : trigger_clock_synth
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.

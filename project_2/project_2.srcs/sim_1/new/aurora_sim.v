@@ -23,31 +23,31 @@
 module aurora_sim_tb;
     
     //inputs
-    wire reset;
-    wire io_clk;
-    wire init_clk;
-    wire gt_refclk;
+    reg reset;
+    reg io_clk;
+    reg init_clk;
+    reg gt_refclk;
     
-    wire [0:31] tx_tdata_pphi;
-    wire [0:3] tx_tkeep_pphi;
-    wire tx_tvalid_pphi;
-    wire tx_tlast_pphi;
-    wire [0:31] tx_tdata_mphi;
-    wire [0:3] tx_tkeep_mphi;
-    wire tx_tvalid_mphi;
-    wire tx_tlast_mphi;
+    reg [0:31] tx_tdata_pphi;
+    reg [0:3] tx_tkeep_pphi;
+    reg tx_tvalid_pphi;
+    reg tx_tlast_pphi;
+    reg [0:31] tx_tdata_mphi;
+    reg [0:3] tx_tkeep_mphi;
+    reg tx_tvalid_mphi;
+    reg tx_tlast_mphi;
     
     //outputs
-    reg [0:31] rx_tdata_pphi;
-    reg [0:3] rx_tkeep_pphi;
-    reg rx_tvalid_pphi;
-    reg rx_tlast_pphi;
-    reg tx_tready_pphi;
-    reg [0:31] rx_tdata_mphi;
-    reg [0:3] rx_tkeep_mphi;
-    reg rx_tvalid_mphi;
-    reg rx_tlast_mphi;
-    reg tx_tready_mphi;
+    wire [0:31] rx_tdata_pphi;
+    wire [0:3] rx_tkeep_pphi;
+    wire rx_tvalid_pphi;
+    wire rx_tlast_pphi;
+    wire tx_tready_pphi;
+    wire [0:31] rx_tdata_mphi;
+    wire [0:3] rx_tkeep_mphi;
+    wire rx_tvalid_mphi;
+    wire rx_tlast_mphi;
+    wire tx_tready_mphi;
     
     
     wire rxp_pphi,rxn_pphi;
