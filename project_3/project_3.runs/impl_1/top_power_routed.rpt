@@ -1,0 +1,536 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:24:04 MST 2014
+| Date             : Mon Apr 06 15:22:42 2015
+| Host             : PCPSB375 running 64-bit Service Pack 1  (build 7601)
+| Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb
+| Design           : top
+| Device           : xc7vx690tffg1761-2
+| Design State     : Routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+-----------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------+
+| Total On-Chip Power (W)  | 2.120  |
+| Dynamic (W)              | 1.734  |
+| Device Static (W)        | 0.386  |
+| Total Off-Chip Power (W) | 0.001  |
+| Effective TJA (C/W)      | 1.1    |
+| Max Ambient (C)          | 82.6   |
+| Junction Temperature (C) | 27.4   |
+| Confidence Level         | Medium |
+| Setting File             | ---    |
+| Simulation Activity File | ---    |
+| Design Nets Matched      | NA     |
++--------------------------+--------+
+
+
+1.1 On-Chip Components
+----------------------
+
++-------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
++-------------------------+-----------+----------+-----------+-----------------+
+| Clocks                  |     0.114 |       19 |       --- |             --- |
+| Slice Logic             |     0.020 |    16461 |       --- |             --- |
+|   LUT as Logic          |     0.016 |     5405 |    433200 |            1.24 |
+|   Register              |     0.002 |     8624 |    866400 |            0.99 |
+|   CARRY4                |     0.001 |      478 |    108300 |            0.44 |
+|   LUT as Shift Register |     0.001 |      209 |    174200 |            0.11 |
+|   F7/F8 Muxes           |    <0.001 |       79 |    433200 |            0.01 |
+|   Others                |     0.000 |      649 |       --- |             --- |
+| Signals                 |     0.031 |    15346 |       --- |             --- |
+| Block RAM               |     0.065 |     40.5 |      1470 |            2.75 |
+| MMCM                    |     0.470 |        4 |        20 |           20.00 |
+| DSPs                    |     0.042 |       74 |      3600 |            2.05 |
+| I/O                     |     0.026 |       25 |       850 |            2.94 |
+| GTH                     |     0.966 |        3 |       --- |             --- |
+| Static Power            |     0.386 |          |           |                 |
+| Total                   |     2.120 |          |           |                 |
++-------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |     0.579 |       0.372 |      0.206 |
+| Vccaux    |       1.800 |     0.317 |       0.264 |      0.053 |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.012 |       0.011 |      0.001 |
+| Vcco15    |       1.500 |     0.001 |       0.000 |      0.001 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.009 |       0.003 |      0.006 |
+| MGTAVcc   |       1.000 |     0.606 |       0.577 |      0.029 |
+| MGTAVtt   |       1.200 |     0.248 |       0.241 |      0.008 |
+| MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
+| MGTZVccl  |       1.075 |     0.000 |       0.000 |      0.000 |
+| MGTZAVcc  |       1.075 |     0.000 |       0.000 |      0.000 |
+| MGTZVcch  |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Medium     | More than 25% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Medium     |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 1.1                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 2.2                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+| Clock                                                                                                                                                                                | Domain                                                                                                                                                                         | Constraint (ns) |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+| I                                                                                                                                                                                    | clocks/I                                                                                                                                                                       |            32.0 |
+| clk125_ub                                                                                                                                                                            | clk125_ub                                                                                                                                                                      |             8.0 |
+| clk200                                                                                                                                                                               | clk200_p                                                                                                                                                                       |             5.0 |
+| clkdiv_fb                                                                                                                                                                            | clkdiv_fb                                                                                                                                                                      |            32.0 |
+| clkfb                                                                                                                                                                                | clocks/clkfb                                                                                                                                                                   |             8.0 |
+| clkfbout                                                                                                                                                                             | eth/phy/inst/core_clocking_i/clkfbout                                                                                                                                          |            16.0 |
+| clkfbout_trigger_clock_synth                                                                                                                                                         | slaves/slave6/trigger_top/trigger_clock_synth/inst/clkfbout_trigger_clock_synth                                                                                                |             5.0 |
+| clkout0                                                                                                                                                                              | eth/phy/inst/core_clocking_i/clkout0                                                                                                                                           |             8.0 |
+| clkout1                                                                                                                                                                              | eth/phy/inst/core_clocking_i/clkout1                                                                                                                                           |            16.0 |
+| eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/gthe2_i/TXOUTCLK                                                                          | eth/phy/inst/pcs_pma_block_i/transceiver_inst/gtwizard_inst/inst/gtwizard_i/gt0_GTWIZARD_i/txoutclk                                                                            |            16.0 |
+| gt_clk                                                                                                                                                                               | gt_clkp                                                                                                                                                                        |             8.0 |
+| proc_clk_trigger_clock_synth                                                                                                                                                         | slaves/slave6/trigger_top/trigger_clock_synth/inst/proc_clk_trigger_clock_synth                                                                                                |            10.0 |
+| prog_clk                                                                                                                                                                             | prog_clk_p                                                                                                                                                                     |             6.4 |
+| slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/aurora_8b10b_1/inst/gt_wrapper_i/aurora_8b10b_1_multi_gt_i/gt0_aurora_8b10b_1_i/gthe2_i/TXOUTCLK | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/aurora_8b10b_1/inst/gt_wrapper_i/aurora_8b10b_1_multi_gt_i/gt0_aurora_8b10b_1_i/tx_out_clk |             3.2 |
+| slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/aurora_8b10b_0/inst/gt_wrapper_i/aurora_8b10b_0_multi_gt_i/gt0_aurora_8b10b_0_i/gthe2_i/TXOUTCLK  | slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/aurora_8b10b_0/inst/gt_wrapper_i/aurora_8b10b_0_multi_gt_i/gt0_aurora_8b10b_0_i/tx_out_clk  |             3.2 |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++-----------------------------------------------------------------+-----------+
+| Name                                                            | Power (W) |
++-----------------------------------------------------------------+-----------+
+| top                                                             |     1.734 |
+|   clocks                                                        |     0.110 |
+|     clkdiv                                                      |     0.003 |
+|   eth                                                           |     0.398 |
+|     mac                                                         |     0.004 |
+|       i_rx_CRC32D8                                              |     0.001 |
+|       i_tx_CRC32D8                                              |    <0.001 |
+|     phy                                                         |     0.394 |
+|       inst                                                      |     0.394 |
+|         core_clocking_i                                         |     0.106 |
+|         core_gt_common_i                                        |    <0.001 |
+|         core_resets_i                                           |    <0.001 |
+|         pcs_pma_block_i                                         |     0.287 |
+|           gig_ethernet_pcs_pma_0_core                           |     0.003 |
+|             gpcs_pma_inst                                       |     0.003 |
+|               HAS_AUTO_NEG.AUTO_NEGOTIATION                     |    <0.001 |
+|               RECEIVER                                          |    <0.001 |
+|               SYNCHRONISATION                                   |    <0.001 |
+|               SYNC_SIGNAL_DETECT                                |    <0.001 |
+|               TRANSMITTER                                       |    <0.001 |
+|           sync_block_reset_done                                 |    <0.001 |
+|           transceiver_inst                                      |     0.284 |
+|             gtwizard_inst                                       |     0.278 |
+|               inst                                              |     0.278 |
+|                 gt0_rxresetfsm_i                                |     0.016 |
+|                   sync_RXRESETDONE                              |    <0.001 |
+|                   sync_cplllock                                 |    <0.001 |
+|                   sync_data_valid                               |    <0.001 |
+|                   sync_mmcm_lock_reclocked                      |    <0.001 |
+|                   sync_run_phase_alignment_int                  |    <0.001 |
+|                   sync_rx_fsm_reset_done_int                    |    <0.001 |
+|                   sync_time_out_wait_bypass                     |    <0.001 |
+|                 gt0_txresetfsm_i                                |     0.012 |
+|                   sync_TXRESETDONE                              |    <0.001 |
+|                   sync_cplllock                                 |    <0.001 |
+|                   sync_mmcm_lock_reclocked                      |    <0.001 |
+|                   sync_run_phase_alignment_int                  |    <0.001 |
+|                   sync_time_out_wait_bypass                     |    <0.001 |
+|                   sync_tx_fsm_reset_done_int                    |    <0.001 |
+|                 gtwizard_i                                      |     0.245 |
+|                   gt0_GTWIZARD_i                                |     0.245 |
+|                     gtrxreset_seq_i                             |    <0.001 |
+|                       sync_gtrxreset_in                         |    <0.001 |
+|                       sync_rst                                  |    <0.001 |
+|                       sync_rxpmaresetdone                       |    <0.001 |
+|                 sync_block_gtrxreset                            |    <0.001 |
+|             reclock_encommaalign                                |    <0.001 |
+|             reclock_rxreset                                     |    <0.001 |
+|             reclock_txreset                                     |    <0.001 |
+|             reset_wtd_timer                                     |     0.004 |
+|             sync_block_data_valid                               |    <0.001 |
+|   ipbus                                                         |     0.038 |
+|     stretch_rx                                                  |    <0.001 |
+|       clkdiv                                                    |    <0.001 |
+|     stretch_tx                                                  |    <0.001 |
+|     trans                                                       |     0.004 |
+|       cfg                                                       |    <0.001 |
+|       iface                                                     |     0.002 |
+|       sm                                                        |     0.002 |
+|     udp_if                                                      |     0.034 |
+|       ARP                                                       |    <0.001 |
+|       IPADDR                                                    |    <0.001 |
+|       RARP_block                                                |     0.002 |
+|       clock_crossing_if                                         |    <0.001 |
+|       internal_ram                                              |    <0.001 |
+|       internal_ram_selector                                     |    <0.001 |
+|       internal_ram_shim                                         |    <0.001 |
+|       ipbus_rx_ram                                              |     0.008 |
+|       ipbus_tx_ram                                              |     0.005 |
+|       payload                                                   |     0.001 |
+|       ping                                                      |    <0.001 |
+|       resend                                                    |    <0.001 |
+|       rx_byte_sum                                               |    <0.001 |
+|       rx_packet_parser                                          |     0.003 |
+|       rx_ram_mux                                                |    <0.001 |
+|       rx_ram_selector                                           |    <0.001 |
+|       rx_reset_block                                            |    <0.001 |
+|       rx_transactor                                             |    <0.001 |
+|       status                                                    |     0.001 |
+|       status_buffer                                             |     0.003 |
+|       tx_byte_sum                                               |    <0.001 |
+|       tx_main                                                   |     0.002 |
+|       tx_ram_selector                                           |    <0.001 |
+|       tx_transactor                                             |     0.002 |
+|   slaves                                                        |     1.009 |
+|     slave0                                                      |    <0.001 |
+|     slave1                                                      |    <0.001 |
+|     slave2                                                      |    <0.001 |
+|     slave3                                                      |    <0.001 |
+|     slave4                                                      |    <0.001 |
+|     slave5                                                      |    <0.001 |
+|     slave6                                                      |     1.008 |
+|       trigger_top                                               |     1.008 |
+|         IPB_IO_interface                                        |    <0.001 |
+|         tracklet_processing_phi0                                |     0.898 |
+|           AllProj_L3                                            |     0.007 |
+|             AllProjection                                       |     0.006 |
+|           AllStubs_R1L1n1                                       |     0.003 |
+|             AllStub                                             |     0.003 |
+|           AllStubs_R1L2n1                                       |     0.003 |
+|             AllStub                                             |     0.003 |
+|           AllStubs_R1L3n1                                       |     0.002 |
+|             AllStub_MC                                          |     0.001 |
+|           FML3_L1L2                                             |     0.004 |
+|             FullMatch                                           |     0.004 |
+|           Match_L3PHI1Z2                                        |    <0.001 |
+|             Match                                               |    <0.001 |
+|           ProjCombL3_L1L2                                       |     0.002 |
+|           ProjRouteL3_L1L2                                      |    <0.001 |
+|           Proj_L1L2_L3                                          |     0.008 |
+|             Projection                                          |     0.007 |
+|           R1Link1                                               |    <0.001 |
+|           R1Link1L1                                             |    <0.001 |
+|             StubsMemory                                         |    <0.001 |
+|           R1Link1L2                                             |    <0.001 |
+|             StubsMemory                                         |    <0.001 |
+|           R1Link1L3                                             |    <0.001 |
+|             StubsMemory                                         |    <0.001 |
+|           R1VMRouteL1                                           |    <0.001 |
+|           R1VMRouteL2                                           |    <0.001 |
+|           R1VMRouteL3                                           |     0.000 |
+|           StubPairs_L1PHI1Z2_L2PHI2Z2                           |     0.001 |
+|             StubPair                                            |     0.001 |
+|           TC_L1L2                                               |     0.038 |
+|             lookup_dr_inv                                       |     0.002 |
+|             projection1                                         |     0.014 |
+|           TE_L1PHI1Z2_L2PHI2Z2                                  |     0.002 |
+|             lookup_phi                                          |    <0.001 |
+|             lookup_z                                            |    <0.001 |
+|           TF_L1L2                                               |     0.052 |
+|             lookup_phi_0                                        |     0.003 |
+|             lookup_phi_1                                        |     0.003 |
+|             lookup_phi_2                                        |     0.003 |
+|             lookup_phi_3                                        |     0.003 |
+|             lookup_z_0                                          |     0.003 |
+|             lookup_z_1                                          |     0.003 |
+|             lookup_z_2                                          |     0.003 |
+|             lookup_z_3                                          |     0.003 |
+|           VMStub_R1L1PHI1Z2n1                                   |    <0.001 |
+|             VMStub                                              |    <0.001 |
+|           VMStub_R1L2PHI2Z2n1                                   |    <0.001 |
+|             VMStub                                              |    <0.001 |
+|           aurora_test_top                                       |     0.774 |
+|             LinkProjPhiMinus                                    |     0.389 |
+|               aurora_8b10b_1                                    |     0.380 |
+|                 inst                                            |     0.380 |
+|                   aurora_lane_0_i                               |     0.008 |
+|                     aurora_8b10b_1_hotplug_i                    |    <0.001 |
+|                       rx_cc_cdc_sync                            |    <0.001 |
+|                     err_detect_i                                |    <0.001 |
+|                     lane_init_sm_i                              |     0.001 |
+|                     sym_dec_i                                   |     0.003 |
+|                     sym_gen_i                                   |     0.002 |
+|                   axi_to_ll_pdu_i                               |    <0.001 |
+|                   core_reset_logic_i                            |    <0.001 |
+|                     link_reset_cdc_sync                         |    <0.001 |
+|                     tx_lock_cdc_sync                            |    <0.001 |
+|                     tx_resetdone_cdc_sync                       |    <0.001 |
+|                   global_logic_i                                |     0.002 |
+|                     channel_err_detect_i                        |    <0.001 |
+|                     channel_init_sm_i                           |     0.001 |
+|                     idle_and_ver_gen_i                          |    <0.001 |
+|                   gt_wrapper_i                                  |     0.367 |
+|                     aurora_8b10b_1_multi_gt_i                   |     0.363 |
+|                       gt0_aurora_8b10b_1_i                      |     0.363 |
+|                     gt_rxresetfsm_i                             |     0.002 |
+|                       sync_RXRESETDONE_cdc_sync                 |    <0.001 |
+|                       sync_cplllock_cdc_sync                    |    <0.001 |
+|                       sync_data_valid_cdc_sync                  |    <0.001 |
+|                       sync_mmcm_lock_reclocked_cdc_sync         |    <0.001 |
+|                       sync_run_phase_alignment_int_cdc_sync     |    <0.001 |
+|                       sync_rx_fsm_reset_done_int_cdc_sync       |    <0.001 |
+|                       sync_time_out_wait_bypass_cdc_sync        |    <0.001 |
+|                     gt_txresetfsm_i                             |     0.002 |
+|                       sync_TXRESETDONE_cdc_sync                 |    <0.001 |
+|                       sync_cplllock_cdc_sync                    |    <0.001 |
+|                       sync_mmcm_lock_reclocked_cdc_sync         |    <0.001 |
+|                       sync_run_phase_alignment_int_cdc_sync     |    <0.001 |
+|                       sync_time_out_wait_bypass_cdc_sync        |    <0.001 |
+|                       sync_tx_fsm_reset_done_int_cdc_sync       |    <0.001 |
+|                     gtrxreset_cdc_sync                          |    <0.001 |
+|                   rx_ll_i                                       |     0.001 |
+|                     rx_ll_pdu_datapath_i                        |     0.001 |
+|                   tx_ll_i                                       |     0.002 |
+|                     tx_ll_control_i                             |    <0.001 |
+|                     tx_ll_datapath_i                            |     0.001 |
+|               clock_module                                      |    <0.001 |
+|               data_io                                           |     0.006 |
+|                 datain_io                                       |    <0.001 |
+|                 rx_fifo                                         |     0.002 |
+|                   inst                                          |     0.002 |
+|                     gen_fifo_generator.fifo_generator_inst      |     0.002 |
+|                       inst_fifo_gen                             |     0.002 |
+|                         gaxis_fifo.gaxisf.axisf                 |     0.002 |
+|                           grf.rf                                |     0.002 |
+|                             gntv_or_sync_fifo.gcx.clkx          |    <0.001 |
+|                               gsync_stage[1].rd_stg_inst        |    <0.001 |
+|                               gsync_stage[1].wr_stg_inst        |    <0.001 |
+|                               gsync_stage[2].rd_stg_inst        |    <0.001 |
+|                               gsync_stage[2].wr_stg_inst        |    <0.001 |
+|                             gntv_or_sync_fifo.gl0.rd            |    <0.001 |
+|                               gr1.rfwft                         |    <0.001 |
+|                               gras.rsts                         |    <0.001 |
+|                                 c0                              |    <0.001 |
+|                                 c1                              |    <0.001 |
+|                               rpntr                             |    <0.001 |
+|                             gntv_or_sync_fifo.gl0.wr            |    <0.001 |
+|                               gwas.wsts                         |    <0.001 |
+|                                 c1                              |    <0.001 |
+|                                 c2                              |    <0.001 |
+|                               wpntr                             |    <0.001 |
+|                             gntv_or_sync_fifo.mem               |    <0.001 |
+|                               gbm.gbmg.gbmga.ngecc.bmg          |    <0.001 |
+|                                 inst_blk_mem_gen                |    <0.001 |
+|                                   gnativebmg.native_blk_mem_gen |    <0.001 |
+|                                     valid.cstr                  |    <0.001 |
+|                                       ramloop[0].ram.r          |    <0.001 |
+|                                         prim_noinit.ram         |    <0.001 |
+|                             rstblk                              |    <0.001 |
+|                 tx_fifo                                         |     0.004 |
+|                   inst                                          |     0.004 |
+|                     gen_fifo_generator.fifo_generator_inst      |     0.004 |
+|                       inst_fifo_gen                             |     0.004 |
+|                         gaxis_fifo.gaxisf.axisf                 |     0.004 |
+|                           grf.rf                                |     0.004 |
+|                             gntv_or_sync_fifo.gcx.clkx          |    <0.001 |
+|                               gsync_stage[1].rd_stg_inst        |    <0.001 |
+|                               gsync_stage[1].wr_stg_inst        |    <0.001 |
+|                               gsync_stage[2].rd_stg_inst        |    <0.001 |
+|                               gsync_stage[2].wr_stg_inst        |    <0.001 |
+|                             gntv_or_sync_fifo.gl0.rd            |    <0.001 |
+|                               gr1.rfwft                         |    <0.001 |
+|                               gras.rsts                         |    <0.001 |
+|                                 c0                              |     0.000 |
+|                                 c1                              |    <0.001 |
+|                               rpntr                             |    <0.001 |
+|                             gntv_or_sync_fifo.gl0.wr            |    <0.001 |
+|                               gwas.wsts                         |    <0.001 |
+|                                 c1                              |    <0.001 |
+|                                 c2                              |    <0.001 |
+|                               wpntr                             |    <0.001 |
+|                             gntv_or_sync_fifo.mem               |     0.002 |
+|                               gbm.gbmg.gbmga.ngecc.bmg          |     0.001 |
+|                                 inst_blk_mem_gen                |     0.001 |
+|                                   gnativebmg.native_blk_mem_gen |     0.001 |
+|                                     valid.cstr                  |     0.001 |
+|                                       ramloop[0].ram.r          |     0.001 |
+|                                         prim_noinit.ram         |     0.001 |
+|                             rstblk                              |    <0.001 |
+|               io_block                                          |    <0.001 |
+|                 loopback_reg                                    |    <0.001 |
+|               reset_logic                                       |    <0.001 |
+|                 gt_rst_r_cdc_sync                               |    <0.001 |
+|               standard_cc_module                                |     0.002 |
+|             LinkProjPhiPlus                                     |     0.385 |
+|               aurora_8b10b_0                                    |     0.378 |
+|                 inst                                            |     0.378 |
+|                   aurora_lane_0_i                               |     0.007 |
+|                     aurora_8b10b_0_hotplug_i                    |    <0.001 |
+|                       rx_cc_cdc_sync                            |    <0.001 |
+|                     err_detect_i                                |    <0.001 |
+|                     lane_init_sm_i                              |     0.001 |
+|                     sym_dec_i                                   |     0.003 |
+|                     sym_gen_i                                   |     0.002 |
+|                   axi_to_ll_pdu_i                               |    <0.001 |
+|                   core_reset_logic_i                            |    <0.001 |
+|                     link_reset_cdc_sync                         |    <0.001 |
+|                     tx_lock_cdc_sync                            |    <0.001 |
+|                     tx_resetdone_cdc_sync                       |    <0.001 |
+|                   global_logic_i                                |     0.002 |
+|                     channel_err_detect_i                        |    <0.001 |
+|                     channel_init_sm_i                           |    <0.001 |
+|                     idle_and_ver_gen_i                          |    <0.001 |
+|                   gt_wrapper_i                                  |     0.367 |
+|                     aurora_8b10b_0_multi_gt_i                   |     0.363 |
+|                       gt0_aurora_8b10b_0_i                      |     0.363 |
+|                     gt_rxresetfsm_i                             |     0.002 |
+|                       sync_RXRESETDONE_cdc_sync                 |    <0.001 |
+|                       sync_cplllock_cdc_sync                    |    <0.001 |
+|                       sync_data_valid_cdc_sync                  |    <0.001 |
+|                       sync_mmcm_lock_reclocked_cdc_sync         |    <0.001 |
+|                       sync_run_phase_alignment_int_cdc_sync     |    <0.001 |
+|                       sync_rx_fsm_reset_done_int_cdc_sync       |    <0.001 |
+|                       sync_time_out_wait_bypass_cdc_sync        |    <0.001 |
+|                     gt_txresetfsm_i                             |     0.002 |
+|                       sync_TXRESETDONE_cdc_sync                 |    <0.001 |
+|                       sync_cplllock_cdc_sync                    |    <0.001 |
+|                       sync_mmcm_lock_reclocked_cdc_sync         |    <0.001 |
+|                       sync_run_phase_alignment_int_cdc_sync     |    <0.001 |
+|                       sync_time_out_wait_bypass_cdc_sync        |    <0.001 |
+|                       sync_tx_fsm_reset_done_int_cdc_sync       |    <0.001 |
+|                     gtrxreset_cdc_sync                          |    <0.001 |
+|                   rx_ll_i                                       |    <0.001 |
+|                     rx_ll_pdu_datapath_i                        |    <0.001 |
+|                   tx_ll_i                                       |     0.001 |
+|                     tx_ll_control_i                             |    <0.001 |
+|                     tx_ll_datapath_i                            |    <0.001 |
+|               clock_module                                      |    <0.001 |
+|               data_io                                           |     0.005 |
+|                 datain_io                                       |    <0.001 |
+|                 rx_fifo                                         |     0.002 |
+|                   inst                                          |     0.002 |
+|                     gen_fifo_generator.fifo_generator_inst      |     0.002 |
+|                       inst_fifo_gen                             |     0.002 |
+|                         gaxis_fifo.gaxisf.axisf                 |     0.002 |
+|                           grf.rf                                |     0.002 |
+|                             gntv_or_sync_fifo.gcx.clkx          |    <0.001 |
+|                               gsync_stage[1].rd_stg_inst        |    <0.001 |
+|                               gsync_stage[1].wr_stg_inst        |    <0.001 |
+|                               gsync_stage[2].rd_stg_inst        |    <0.001 |
+|                               gsync_stage[2].wr_stg_inst        |    <0.001 |
+|                             gntv_or_sync_fifo.gl0.rd            |    <0.001 |
+|                               gr1.rfwft                         |    <0.001 |
+|                               gras.rsts                         |    <0.001 |
+|                                 c0                              |    <0.001 |
+|                                 c1                              |    <0.001 |
+|                               rpntr                             |    <0.001 |
+|                             gntv_or_sync_fifo.gl0.wr            |    <0.001 |
+|                               gwas.wsts                         |    <0.001 |
+|                                 c1                              |    <0.001 |
+|                                 c2                              |    <0.001 |
+|                               wpntr                             |    <0.001 |
+|                             gntv_or_sync_fifo.mem               |    <0.001 |
+|                               gbm.gbmg.gbmga.ngecc.bmg          |    <0.001 |
+|                                 inst_blk_mem_gen                |    <0.001 |
+|                                   gnativebmg.native_blk_mem_gen |    <0.001 |
+|                                     valid.cstr                  |    <0.001 |
+|                                       ramloop[0].ram.r          |    <0.001 |
+|                                         prim_noinit.ram         |    <0.001 |
+|                             rstblk                              |    <0.001 |
+|                 tx_fifo                                         |     0.003 |
+|                   inst                                          |     0.003 |
+|                     gen_fifo_generator.fifo_generator_inst      |     0.003 |
+|                       inst_fifo_gen                             |     0.003 |
+|                         gaxis_fifo.gaxisf.axisf                 |     0.003 |
+|                           grf.rf                                |     0.003 |
+|                             gntv_or_sync_fifo.gcx.clkx          |    <0.001 |
+|                               gsync_stage[1].rd_stg_inst        |    <0.001 |
+|                               gsync_stage[1].wr_stg_inst        |    <0.001 |
+|                               gsync_stage[2].rd_stg_inst        |    <0.001 |
+|                               gsync_stage[2].wr_stg_inst        |    <0.001 |
+|                             gntv_or_sync_fifo.gl0.rd            |    <0.001 |
+|                               gr1.rfwft                         |    <0.001 |
+|                               gras.rsts                         |    <0.001 |
+|                                 c0                              |    <0.001 |
+|                                 c1                              |    <0.001 |
+|                               rpntr                             |    <0.001 |
+|                             gntv_or_sync_fifo.gl0.wr            |    <0.001 |
+|                               gwas.wsts                         |    <0.001 |
+|                                 c1                              |    <0.001 |
+|                                 c2                              |    <0.001 |
+|                               wpntr                             |    <0.001 |
+|                             gntv_or_sync_fifo.mem               |     0.002 |
+|                               gbm.gbmg.gbmga.ngecc.bmg          |     0.001 |
+|                                 inst_blk_mem_gen                |     0.001 |
+|                                   gnativebmg.native_blk_mem_gen |     0.001 |
+|                                     valid.cstr                  |     0.001 |
+|                                       ramloop[0].ram.r          |     0.001 |
+|                                         prim_noinit.ram         |     0.001 |
+|                             rstblk                              |    <0.001 |
+|               io_block                                          |    <0.001 |
+|                 loopback_reg                                    |    <0.001 |
+|               reset_logic                                       |    <0.001 |
+|                 gt_rst_r_cdc_sync                               |    <0.001 |
+|               standard_cc_module                                |     0.001 |
+|             init_clk_reset                                      |    <0.001 |
+|             io_clk_reset                                        |    <0.001 |
+|         trigger_clock_synth                                     |     0.110 |
+|           inst                                                  |     0.110 |
++-----------------------------------------------------------------+-----------+
+
+

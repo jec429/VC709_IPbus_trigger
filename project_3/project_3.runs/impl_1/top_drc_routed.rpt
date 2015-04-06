@@ -1,0 +1,798 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:24:04 MST 2014
+| Date         : Mon Apr 06 15:22:31 2015
+| Host         : PCPSB375 running 64-bit Service Pack 1  (build 7601)
+| Command      : report_drc
+------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+           Max violations: <unlimited>
+         Violations found: 150
+
+2. REPORT DETAILS
+-----------------
+CFGBVS-1#1 Warning
+Missing CFGBVS and CONFIG_VOLTAGE Design Properties  
+Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
+
+ set_property CFGBVS value1 [current_design]
+ #where value1 is either VCCO or GND
+
+ set_property CONFIG_VOLTAGE value2 [current_design]
+ #where value2 is the voltage provided to configuration bank 0
+
+Refer to the device configuration user guide for more information.
+Related violations: <none>
+
+CKLD-2#1 Warning
+Clock Net has direct IO Driver  
+Clock net clk200 is directly driven by an IO rather than a Clock Buffer. Driver(s): IBUFGDS_clk200/O2000
+Related violations: <none>
+
+DPIP-1#1 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_iDelta_inv_reg input B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#2 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_idelta_reg input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#3 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_irinv_reg input A B C is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#4 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it2_reg input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#5 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it3_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#6 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it5_reg input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#7 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it7_reg input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#8 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_pre_it12_reg input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#9 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/it12_13_reg input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#10 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/it7_tmp_sqr_11 input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#11 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/it_11_reg input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#12 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/full_is1_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#13 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/is2_20 input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#14 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/is4_3_reg input B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#15 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/is5_5_reg input B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#16 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/is6_6_reg input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#17 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_11 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#18 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_1_reg input A B C is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#19 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_21 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#20 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_2_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#21 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_31 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#22 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_3_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#23 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_41 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#24 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_4_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#25 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_51 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#26 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_5_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#27 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_61 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#28 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_6_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#29 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_71 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#30 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_7_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#31 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_11 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#32 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_1_reg input A B C is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#33 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_21 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#34 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_2_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#35 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_31 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#36 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_3_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#37 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_41 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#38 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_4_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#39 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_51 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#40 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_5_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#41 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_61 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#42 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_6_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#43 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_71 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#44 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_7_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#45 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_11 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#46 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_1_reg input A B C is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#47 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_21 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#48 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_2_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#49 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_31 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#50 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_3_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#51 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_41 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#52 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_4_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#53 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_51 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#54 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_5_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#55 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_61 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#56 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_6_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#57 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_71 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#58 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_7_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#59 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_11 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#60 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_1_reg input A B C is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#61 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_21 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#62 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_2_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#63 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_31 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#64 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_3_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#65 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_41 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#66 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_4_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#67 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_51 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#68 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_5_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#69 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_61 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#70 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_6_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#71 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_71 input A is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#72 Warning
+Input pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_7_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-1#1 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_iDelta_inv_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#2 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_idelta_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#3 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_irinv_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#4 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it1_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#5 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it2_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#6 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it3_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#7 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it5_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#8 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it7_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#9 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_pre_it12_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#10 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/it10_13_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#11 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/it12_13_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#12 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/it7_tmp_sqr_11 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#13 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/full_is1_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#14 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/is2_20 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#15 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/is4_3_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#16 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/is5_5_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#17 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/is6_6_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#18 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_11 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#19 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_21 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#20 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_2_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#21 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_31 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#22 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_3_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#23 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_41 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#24 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_4_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#25 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_51 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#26 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_5_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#27 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_61 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#28 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_6_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#29 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_71 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#30 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_7_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#31 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_11 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#32 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_21 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#33 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_2_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#34 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_31 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#35 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_3_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#36 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_41 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#37 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_4_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#38 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_51 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#39 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_5_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#40 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_61 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#41 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_6_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#42 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_71 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#43 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_7_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#44 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_11 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#45 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_21 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#46 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_2_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#47 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_31 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#48 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_3_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#49 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_41 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#50 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_4_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#51 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_51 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#52 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_5_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#53 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_61 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#54 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_6_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#55 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_71 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#56 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_7_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#57 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_11 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#58 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_21 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#59 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_2_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#60 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_31 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#61 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_3_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#62 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_41 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#63 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_4_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#64 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_51 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#65 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_5_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#66 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_61 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#67 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_6_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#68 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_71 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+DPOP-1#69 Warning
+Output pipelining  
+DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_7_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+Related violations: <none>
+
+LVDS-1#1 Warning
+Bidirection LVDS IOs  
+The following port(s) use the LVDS I/O standard and have bi-directional differential usage. Please note that LVDS is a fixed impedance structure optimized to 100ohm differential. This is only intended to be used in point-to-point transmissions that do not have turn around timing requirements. If the intended usage is a bus structure, please use BLVDS/BLVDS_25, instead. 
+sma_clk_n and sma_clk_p.
+Related violations: <none>
+
+PDRC-153#1 Warning
+Gated clock check  
+Net slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/n_0_data_reg[15]_i_2__0 is a gated clock net sourced by a combinational pin slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[15]_i_2__0/O, cell slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[15]_i_2__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/n_0_data_reg[15]_i_2 is a gated clock net sourced by a combinational pin slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[15]_i_2/O, cell slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[15]_i_2__0 is driving clock pin of 19 cells. This could lead to large hold time violations. First few involved cells are:
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[10] {LDCE}
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[0] {LDCE}
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[11] {LDCE}
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[12] {LDCE}
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[13] {LDCE}
+
+Related violations: <none>
+
+PLHOLDVIO-2#2 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[15]_i_2 is driving clock pin of 19 cells. This could lead to large hold time violations. First few involved cells are:
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[10] {LDCE}
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[0] {LDCE}
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[11] {LDCE}
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[12] {LDCE}
+    slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[13] {LDCE}
+
+Related violations: <none>
+
+RPBF-3#1 Warning
+IO port buffering is incomplete  
+Device port sma_clk_n expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#2 Warning
+IO port buffering is incomplete  
+Device port sma_clk_p expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+

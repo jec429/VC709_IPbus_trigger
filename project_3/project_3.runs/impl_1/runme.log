@@ -1,0 +1,761 @@
+
+*** Running vivado
+    with args -log top.vdi -applog -m64 -messageDb vivado.pb -mode batch -source top.tcl -notrace
+
+
+****** Vivado v2014.4 (64-bit)
+  **** SW Build 1071353 on Tue Nov 18 18:24:04 MST 2014
+  **** IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source top.tcl -notrace
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Project 1-454] Reading design checkpoint 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/trigger_clock_synth_synth_1/trigger_clock_synth.dcp' for cell 'slaves/slave6/trigger_top/trigger_clock_synth'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/aurora_8b10b_0_synth_1/aurora_8b10b_0.dcp' for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/aurora_8b10b_0'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/aurora_8b10b_1_synth_1/aurora_8b10b_1.dcp' for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/aurora_8b10b_1'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/link_axis_data_fifo_synth_1/link_axis_data_fifo.dcp' for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/link_axis_data_fifo_synth_1/link_axis_data_fifo.dcp' for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/link_axis_data_fifo_synth_1/link_axis_data_fifo.dcp' for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/link_axis_data_fifo_synth_1/link_axis_data_fifo.dcp' for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/gig_ethernet_pcs_pma_0_synth_1/gig_ethernet_pcs_pma_0.dcp' for cell 'eth/phy'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/TP_raw_stub_fifo_synth_1/TP_raw_stub_fifo.dcp' for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/R1Link1/raw_stubs'
+INFO: [Netlist 29-17] Analyzing 653 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2014.4
+Loading clock regions from D:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/virtex7/xc7vx690t/ClockRegion.xml
+Loading clock buffers from D:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/virtex7/xc7vx690t/ClockBuffers.xml
+Loading clock placement rules from D:/Xilinx/Vivado/2014.4/data/parts/xilinx/virtex7/ClockPlacerRules.xml
+Loading package pin functions from D:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/PinFunctions.xml...
+Loading package from D:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/virtex7/xc7vx690t/ffg1761/Package.xml
+Loading io standards from D:/Xilinx/Vivado/2014.4/data\./parts/xilinx/virtex7/IOStandards.xml
+Loading device configuration modes from D:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/ConfigModes.xml
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 2 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 0 OBUFs to IO ports without IO buffers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/R1Link1/raw_stubs/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/R1Link1/raw_stubs/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/R1Link1/raw_stubs/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/R1Link1/raw_stubs/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/trigger_clock_synth/trigger_clock_synth_board.xdc] for cell 'slaves/slave6/trigger_top/trigger_clock_synth/inst'
+Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/trigger_clock_synth/trigger_clock_synth_board.xdc] for cell 'slaves/slave6/trigger_top/trigger_clock_synth/inst'
+Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/trigger_clock_synth/trigger_clock_synth.xdc] for cell 'slaves/slave6/trigger_top/trigger_clock_synth/inst'
+Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/trigger_clock_synth/trigger_clock_synth.xdc] for cell 'slaves/slave6/trigger_top/trigger_clock_synth/inst'
+Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo/link_axis_data_fifo.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst'
+Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo/link_axis_data_fifo.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst'
+Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo/link_axis_data_fifo.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst'
+Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo/link_axis_data_fifo.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst'
+Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo/link_axis_data_fifo.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst'
+Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo/link_axis_data_fifo.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst'
+Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo/link_axis_data_fifo.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst'
+Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo/link_axis_data_fifo.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst'
+Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0_board.xdc] for cell 'eth/phy'
+Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0_board.xdc] for cell 'eth/phy'
+Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/gig_ethernet_pcs_pma_0/synth/gig_ethernet_pcs_pma_0.xdc] for cell 'eth/phy'
+Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/gig_ethernet_pcs_pma_0/synth/gig_ethernet_pcs_pma_0.xdc] for cell 'eth/phy'
+Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo/TP_raw_stub_fifo.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/R1Link1/raw_stubs/U0'
+Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo/TP_raw_stub_fifo.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/R1Link1/raw_stubs/U0'
+Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/constrs_1/imports/new/pins.xdc]
+Finished Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/constrs_1/imports/new/pins.xdc]
+Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/constrs_1/imports/new/timing.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/constrs_1/imports/new/timing.xdc:26]
+INFO: [Timing 38-2] Deriving generated clocks [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/constrs_1/imports/new/timing.xdc:26]
+get_clocks: Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1395.328 ; gain = 704.023
+Finished Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/constrs_1/imports/new/timing.xdc]
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/trigger_clock_synth_synth_1/trigger_clock_synth.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/aurora_8b10b_0_synth_1/aurora_8b10b_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/aurora_8b10b_1_synth_1/aurora_8b10b_1.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/link_axis_data_fifo_synth_1/link_axis_data_fifo.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/link_axis_data_fifo_synth_1/link_axis_data_fifo.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/link_axis_data_fifo_synth_1/link_axis_data_fifo.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/link_axis_data_fifo_synth_1/link_axis_data_fifo.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/gig_ethernet_pcs_pma_0_synth_1/gig_ethernet_pcs_pma_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/TP_raw_stub_fifo_synth_1/TP_raw_stub_fifo.dcp'
+Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_clocks.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/aurora_8b10b_0'
+Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/aurora_8b10b_0/aurora_8b10b_0_clocks.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/aurora_8b10b_0'
+Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/aurora_8b10b_1/aurora_8b10b_1_clocks.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/aurora_8b10b_1'
+Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/aurora_8b10b_1/aurora_8b10b_1_clocks.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/aurora_8b10b_1'
+Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo/link_axis_data_fifo_clocks.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst'
+Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo/link_axis_data_fifo_clocks.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst'
+Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo/link_axis_data_fifo_clocks.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst'
+Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo/link_axis_data_fifo_clocks.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst'
+Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo/link_axis_data_fifo_clocks.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst'
+Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo/link_axis_data_fifo_clocks.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst'
+Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo/link_axis_data_fifo_clocks.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst'
+Finished Parsing XDC File [c:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo/link_axis_data_fifo_clocks.xdc] for cell 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+link_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 1399.090 ; gain = 1203.805
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7vx690t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7vx690t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [Drc 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.290 . Memory (MB): peak = 1399.090 ; gain = 0.000
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+
+INFO: [Opt 31-138] Pushed 2 inverter(s) to 4 load pin(s).
+WARNING: [Opt 31-143] Automatic BUFG insertion was skipped because there are already at least 12 clock buffers (BUFG and BUFHCE) using global resources.
+Resolution: Manually insert a BUFG to drive the high fanout net. However, make sure to first analyze clock buffer utilization to determine if the insertion is safe to perform.
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 170cc45b7
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1399.090 ; gain = 0.000
+
+Phase 2 Constant Propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-10] Eliminated 787 cells.
+Phase 2 Constant Propagation | Checksum: 1da2c12ca
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1399.090 ; gain = 0.000
+
+Phase 3 Sweep
+INFO: [Opt 31-12] Eliminated 5650 unconnected nets.
+INFO: [Opt 31-140] Inserted 0 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 0 OBUFs to IO ports without IO buffers.
+INFO: [Opt 31-11] Eliminated 1945 unconnected cells.
+Phase 3 Sweep | Checksum: 2b466af02
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1399.090 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 2b466af02
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1399.090 ; gain = 0.000
+Implement Debug Cores | Checksum: 158400ab0
+Logic Optimization | Checksum: 158400ab0
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 3.13 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 4 BRAM(s) out of a total of 47 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 8 newly gated: 38 Total Ports: 94
+Number of Flops added for Enable Generation: 14
+
+Ending PowerOpt Patch Enables Task | Checksum: 19251ac2e
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 1520.637 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 19251ac2e
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 1520.637 ; gain = 121.547
+INFO: [Common 17-83] Releasing license: Implementation
+46 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1520.637 ; gain = 121.547
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.118 . Memory (MB): peak = 1520.637 ; gain = 0.000
+INFO: [Drc 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/impl_1/top_drc_opted.rpt.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7vx690t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7vx690t'
+INFO: [Drc 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [Drc 23-27] Running DRC with 2 threads
+WARNING: [Drc 23-20] Rule violation (CKLD-2) Clock Net has direct IO Driver - Clock net clk200 is directly driven by an IO rather than a Clock Buffer. Driver(s): IBUFGDS_clk200/O2000
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 1 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Runtime Estimator
+Phase 1 Placer Runtime Estimator | Checksum: 1406e0e31
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.266 . Memory (MB): peak = 1530.512 ; gain = 0.000
+
+Phase 2 Placer Initialization
+
+Phase 2.1 Placer Initialization Core
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 1530.512 ; gain = 0.000
+INFO: [Opt 31-140] Inserted 0 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 0 OBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1530.512 ; gain = 0.000
+
+Phase 2.1.1 IO Placement/ Clock Placement/ Build Placer Device
+
+Phase 2.1.1.1 Pre-Place Cells
+Phase 2.1.1.1 Pre-Place Cells | Checksum: e1219d8e
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1530.512 ; gain = 0.000
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Place 30-568] A LUT 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[15]_i_2__0' is driving clock pin of 19 registers. This could lead to large hold time violations. First few involved registers are:
+	slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[10] {LDCE}
+	slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[0] {LDCE}
+	slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[11] {LDCE}
+	slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[12] {LDCE}
+	slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/datain_io/data_reg[13] {LDCE}
+WARNING: [Place 30-568] A LUT 'slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[15]_i_2' is driving clock pin of 19 registers. This could lead to large hold time violations. First few involved registers are:
+	slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[10] {LDCE}
+	slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[0] {LDCE}
+	slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[11] {LDCE}
+	slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[12] {LDCE}
+	slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/datain_io/data_reg[13] {LDCE}
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 2.1.1.2 IO & Clk Clean Up
+Phase 2.1.1.2 IO & Clk Clean Up | Checksum: e1219d8e
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 1557.605 ; gain = 27.094
+
+Phase 2.1.1.3 Implementation Feasibility check On IDelay
+Phase 2.1.1.3 Implementation Feasibility check On IDelay | Checksum: e1219d8e
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 1557.605 ; gain = 27.094
+
+Phase 2.1.1.4 Commit IO Placement
+Phase 2.1.1.4 Commit IO Placement | Checksum: 68a6caf5
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 1557.605 ; gain = 27.094
+Phase 2.1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: af73aa07
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 1557.605 ; gain = 27.094
+
+Phase 2.1.2 Build Placer Netlist Model
+
+Phase 2.1.2.1 Place Init Design
+
+Phase 2.1.2.1.1 Init Lut Pin Assignment
+Phase 2.1.2.1.1 Init Lut Pin Assignment | Checksum: 17ae95448
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 1557.785 ; gain = 27.273
+Phase 2.1.2.1 Place Init Design | Checksum: d6b7e370
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:20 . Memory (MB): peak = 1557.785 ; gain = 27.273
+Phase 2.1.2 Build Placer Netlist Model | Checksum: d6b7e370
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:20 . Memory (MB): peak = 1557.785 ; gain = 27.273
+
+Phase 2.1.3 Constrain Clocks/Macros
+
+Phase 2.1.3.1 Constrain Global/Regional Clocks
+Phase 2.1.3.1 Constrain Global/Regional Clocks | Checksum: 100db9d4b
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:20 . Memory (MB): peak = 1557.785 ; gain = 27.273
+Phase 2.1.3 Constrain Clocks/Macros | Checksum: 100db9d4b
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:21 . Memory (MB): peak = 1557.785 ; gain = 27.273
+Phase 2.1 Placer Initialization Core | Checksum: 100db9d4b
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:21 . Memory (MB): peak = 1557.785 ; gain = 27.273
+Phase 2 Placer Initialization | Checksum: 100db9d4b
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:21 . Memory (MB): peak = 1557.785 ; gain = 27.273
+
+Phase 3 Global Placement
+Phase 3 Global Placement | Checksum: 18325623a
+
+Time (s): cpu = 00:00:57 ; elapsed = 00:00:37 . Memory (MB): peak = 1587.031 ; gain = 56.520
+
+Phase 4 Detail Placement
+
+Phase 4.1 Commit Multi Column Macros
+Phase 4.1 Commit Multi Column Macros | Checksum: 18325623a
+
+Time (s): cpu = 00:00:57 ; elapsed = 00:00:37 . Memory (MB): peak = 1587.031 ; gain = 56.520
+
+Phase 4.2 Commit Most Macros & LUTRAMs
+Phase 4.2 Commit Most Macros & LUTRAMs | Checksum: 190d1d1ee
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:41 . Memory (MB): peak = 1587.031 ; gain = 56.520
+
+Phase 4.3 Area Swap Optimization
+Phase 4.3 Area Swap Optimization | Checksum: 15e44b45e
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:41 . Memory (MB): peak = 1587.031 ; gain = 56.520
+
+Phase 4.4 updateClock Trees: DP
+Phase 4.4 updateClock Trees: DP | Checksum: 15e44b45e
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:41 . Memory (MB): peak = 1587.031 ; gain = 56.520
+
+Phase 4.5 Timing Path Optimizer
+Phase 4.5 Timing Path Optimizer | Checksum: 1665714dd
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:42 . Memory (MB): peak = 1587.031 ; gain = 56.520
+
+Phase 4.6 Small Shape Detail Placement
+
+Phase 4.6.1 Commit Small Macros & Core Logic
+
+Phase 4.6.1.1 setBudgets
+Phase 4.6.1.1 setBudgets | Checksum: 1b30d1f51
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:42 . Memory (MB): peak = 1587.031 ; gain = 56.520
+
+Phase 4.6.1.2 Commit Slice Clusters
+Phase 4.6.1.2 Commit Slice Clusters | Checksum: 19f5a076c
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:46 . Memory (MB): peak = 1617.824 ; gain = 87.313
+Phase 4.6.1 Commit Small Macros & Core Logic | Checksum: 19f5a076c
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:46 . Memory (MB): peak = 1617.824 ; gain = 87.313
+
+Phase 4.6.2 Clock Restriction Legalization for Leaf Columns
+Phase 4.6.2 Clock Restriction Legalization for Leaf Columns | Checksum: 19f5a076c
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:46 . Memory (MB): peak = 1617.824 ; gain = 87.313
+
+Phase 4.6.3 Clock Restriction Legalization for Non-Clock Pins
+Phase 4.6.3 Clock Restriction Legalization for Non-Clock Pins | Checksum: 19f5a076c
+
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:46 . Memory (MB): peak = 1617.824 ; gain = 87.313
+Phase 4.6 Small Shape Detail Placement | Checksum: 19f5a076c
+
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:46 . Memory (MB): peak = 1617.824 ; gain = 87.313
+
+Phase 4.7 Re-assign LUT pins
+Phase 4.7 Re-assign LUT pins | Checksum: 19f5a076c
+
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:47 . Memory (MB): peak = 1617.824 ; gain = 87.313
+Phase 4 Detail Placement | Checksum: 19f5a076c
+
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:47 . Memory (MB): peak = 1617.824 ; gain = 87.313
+
+Phase 5 Post Placement Optimization and Clean-Up
+
+Phase 5.1 PCOPT Shape updates
+Phase 5.1 PCOPT Shape updates | Checksum: 21d8aba77
+
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:47 . Memory (MB): peak = 1617.824 ; gain = 87.313
+
+Phase 5.2 Post Commit Optimization
+
+Phase 5.2.1 updateClock Trees: PCOPT
+Phase 5.2.1 updateClock Trees: PCOPT | Checksum: 21d8aba77
+
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:47 . Memory (MB): peak = 1617.824 ; gain = 87.313
+
+Phase 5.2.2 Post Placement Optimization
+
+Phase 5.2.2.1 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.600. For the most accurate timing information please run report_timing.
+Phase 5.2.2.1 Post Placement Timing Optimization | Checksum: 1c5d39557
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:49 . Memory (MB): peak = 1617.824 ; gain = 87.313
+Phase 5.2.2 Post Placement Optimization | Checksum: 1c5d39557
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:50 . Memory (MB): peak = 1617.824 ; gain = 87.313
+Phase 5.2 Post Commit Optimization | Checksum: 1c5d39557
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:50 . Memory (MB): peak = 1617.824 ; gain = 87.313
+
+Phase 5.3 Sweep Clock Roots: Post-Placement
+Phase 5.3 Sweep Clock Roots: Post-Placement | Checksum: 1c5d39557
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:50 . Memory (MB): peak = 1617.824 ; gain = 87.313
+
+Phase 5.4 Post Placement Cleanup
+Phase 5.4 Post Placement Cleanup | Checksum: 1c5d39557
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:50 . Memory (MB): peak = 1617.824 ; gain = 87.313
+
+Phase 5.5 Placer Reporting
+
+Phase 5.5.1 Restore STA
+Phase 5.5.1 Restore STA | Checksum: 1c5d39557
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:50 . Memory (MB): peak = 1617.824 ; gain = 87.313
+Phase 5.5 Placer Reporting | Checksum: 1c5d39557
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:50 . Memory (MB): peak = 1617.824 ; gain = 87.313
+
+Phase 5.6 Final Placement Cleanup
+Phase 5.6 Final Placement Cleanup | Checksum: 1bf07993c
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:50 . Memory (MB): peak = 1617.824 ; gain = 87.313
+Phase 5 Post Placement Optimization and Clean-Up | Checksum: 1bf07993c
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:50 . Memory (MB): peak = 1617.824 ; gain = 87.313
+Ending Placer Task | Checksum: 1402f013c
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:50 . Memory (MB): peak = 1617.824 ; gain = 87.313
+INFO: [Common 17-83] Releasing license: Implementation
+62 Infos, 22 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:01:19 ; elapsed = 00:00:53 . Memory (MB): peak = 1617.824 ; gain = 89.359
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1617.824 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.247 . Memory (MB): peak = 1617.824 ; gain = 0.000
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.530 . Memory (MB): peak = 1617.824 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.061 . Memory (MB): peak = 1617.824 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7vx690t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7vx690t'
+Running DRC as a precondition to command route_design
+INFO: [Drc 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: ce9b6a9d
+
+Time (s): cpu = 00:04:31 ; elapsed = 00:04:02 . Memory (MB): peak = 1894.887 ; gain = 277.063
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: ce9b6a9d
+
+Time (s): cpu = 00:04:32 ; elapsed = 00:04:03 . Memory (MB): peak = 1894.887 ; gain = 277.063
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: ce9b6a9d
+
+Time (s): cpu = 00:04:32 ; elapsed = 00:04:03 . Memory (MB): peak = 1908.766 ; gain = 290.941
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 21466e2d4
+
+Time (s): cpu = 00:04:46 ; elapsed = 00:04:14 . Memory (MB): peak = 2037.059 ; gain = 419.234
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.512  | TNS=0      | WHS=-2.81  | THS=-692   |
+
+Phase 2 Router Initialization | Checksum: 145a0f217
+
+Time (s): cpu = 00:04:50 ; elapsed = 00:04:16 . Memory (MB): peak = 2037.059 ; gain = 419.234
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 1461e9376
+
+Time (s): cpu = 00:04:56 ; elapsed = 00:04:19 . Memory (MB): peak = 2037.059 ; gain = 419.234
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 1092
+ Number of Nodes with overlaps = 86
+ Number of Nodes with overlaps = 0
+
+Phase 4.1.1 Update Timing
+Phase 4.1.1 Update Timing | Checksum: 1d1537708
+
+Time (s): cpu = 00:05:05 ; elapsed = 00:04:24 . Memory (MB): peak = 2037.059 ; gain = 419.234
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.513  | TNS=0      | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 20516673f
+
+Time (s): cpu = 00:05:05 ; elapsed = 00:04:24 . Memory (MB): peak = 2037.059 ; gain = 419.234
+Phase 4 Rip-up And Reroute | Checksum: 20516673f
+
+Time (s): cpu = 00:05:05 ; elapsed = 00:04:24 . Memory (MB): peak = 2037.059 ; gain = 419.234
+
+Phase 5 Delay CleanUp
+
+Phase 5.1 Update Timing
+Phase 5.1 Update Timing | Checksum: 1fdd178ac
+
+Time (s): cpu = 00:05:06 ; elapsed = 00:04:25 . Memory (MB): peak = 2037.059 ; gain = 419.234
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.6    | TNS=0      | WHS=N/A    | THS=N/A    |
+
+Phase 5 Delay CleanUp | Checksum: 1fdd178ac
+
+Time (s): cpu = 00:05:06 ; elapsed = 00:04:25 . Memory (MB): peak = 2037.059 ; gain = 419.234
+
+Phase 6 Clock Skew Optimization
+Phase 6 Clock Skew Optimization | Checksum: 1fdd178ac
+
+Time (s): cpu = 00:05:07 ; elapsed = 00:04:25 . Memory (MB): peak = 2037.059 ; gain = 419.234
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Update Timing
+Phase 7.1 Update Timing | Checksum: 1eed55b14
+
+Time (s): cpu = 00:05:09 ; elapsed = 00:04:26 . Memory (MB): peak = 2037.059 ; gain = 419.234
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.6    | TNS=0      | WHS=-0.214 | THS=-1.83  |
+
+Phase 7 Post Hold Fix | Checksum: 1dad3896b
+
+Time (s): cpu = 00:05:11 ; elapsed = 00:04:28 . Memory (MB): peak = 2037.059 ; gain = 419.234
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.379896 %
+  Global Horizontal Routing Utilization  = 0.419884 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 8 Route finalize | Checksum: 15fae0128
+
+Time (s): cpu = 00:05:12 ; elapsed = 00:04:28 . Memory (MB): peak = 2037.059 ; gain = 419.234
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 15fae0128
+
+Time (s): cpu = 00:05:12 ; elapsed = 00:04:28 . Memory (MB): peak = 2037.059 ; gain = 419.234
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 1216c550f
+
+Time (s): cpu = 00:05:13 ; elapsed = 00:04:29 . Memory (MB): peak = 2037.059 ; gain = 419.234
+
+Phase 11 Post Router Timing
+
+Phase 11.1 Update Timing
+Phase 11.1 Update Timing | Checksum: 1216c550f
+
+Time (s): cpu = 00:05:15 ; elapsed = 00:04:30 . Memory (MB): peak = 2037.059 ; gain = 419.234
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.6    | TNS=0      | WHS=-0.086 | THS=-0.822 |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 11 Post Router Timing | Checksum: 1216c550f
+
+Time (s): cpu = 00:05:15 ; elapsed = 00:04:30 . Memory (MB): peak = 2037.059 ; gain = 419.234
+INFO: [Route 35-16] Router Completed Successfully
+
+Routing Is Done.
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:04:30 . Memory (MB): peak = 2037.059 ; gain = 419.234
+INFO: [Common 17-83] Releasing license: Implementation
+74 Infos, 23 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:05:18 ; elapsed = 00:04:33 . Memory (MB): peak = 2037.059 ; gain = 419.234
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2037.059 ; gain = 0.000
+INFO: [Drc 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/impl_1/top_drc_routed.rpt.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+report_timing_summary: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 2037.059 ; gain = 0.000
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-218] MMCM/PLL RST static_probability should be either 0 or 1, power analysis is using 0 by default.
+Use 'set_switching_activity -static_probability 1 -signal_rate 0 [get_nets clocks/rsto_eth]'  to set the static_probability to '1'  if desired.
+WARNING: [Power 33-218] MMCM/PLL RST static_probability should be either 0 or 1, power analysis is using 0 by default.
+Use 'set_switching_activity -static_probability 1 -signal_rate 0 [get_nets clocks/rsto_ipb]'  to set the static_probability to '1'  if desired.
+report_power: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2037.059 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 06 15:22:42 2015...
+
+*** Running vivado
+    with args -log top.vdi -applog -m64 -messageDb vivado.pb -mode batch -source top.tcl -notrace
+
+
+****** Vivado v2014.4 (64-bit)
+  **** SW Build 1071353 on Tue Nov 18 18:24:04 MST 2014
+  **** IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source top.tcl -notrace
+Command: open_checkpoint top_routed.dcp
+INFO: [Netlist 29-17] Analyzing 617 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2014.4
+Loading clock regions from D:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/virtex7/xc7vx690t/ClockRegion.xml
+Loading clock buffers from D:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/virtex7/xc7vx690t/ClockBuffers.xml
+Loading clock placement rules from D:/Xilinx/Vivado/2014.4/data/parts/xilinx/virtex7/ClockPlacerRules.xml
+Loading package pin functions from D:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/PinFunctions.xml...
+Loading package from D:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/virtex7/xc7vx690t/ffg1761/Package.xml
+Loading io standards from D:/Xilinx/Vivado/2014.4/data\./parts/xilinx/virtex7/IOStandards.xml
+Loading device configuration modes from D:/Xilinx/Vivado/2014.4/data\parts/xilinx/virtex7/ConfigModes.xml
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/rx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/data_io/tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/impl_1/.Xil/Vivado-6188-PCPSB375/dcp/top_early.xdc]
+Finished Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/impl_1/.Xil/Vivado-6188-PCPSB375/dcp/top_early.xdc]
+Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/impl_1/.Xil/Vivado-6188-PCPSB375/dcp/top.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/constrs_1/imports/new/timing.xdc:26]
+INFO: [Timing 38-2] Deriving generated clocks [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.srcs/constrs_1/imports/new/timing.xdc:26]
+get_clocks: Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1387.180 ; gain = 698.637
+Finished Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/impl_1/.Xil/Vivado-6188-PCPSB375/dcp/top.xdc]
+Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/impl_1/.Xil/Vivado-6188-PCPSB375/dcp/top_late.xdc]
+Finished Parsing XDC File [C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/impl_1/.Xil/Vivado-6188-PCPSB375/dcp/top_late.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1413.426 ; gain = 21.305
+Restored from archive | CPU: 5.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1413.426 ; gain = 21.305
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  OBUFDS => OBUFDS: 1 instances
+
+INFO: [Project 1-484] Checkpoint was created with build 1071353
+open_checkpoint: Time (s): cpu = 00:00:44 ; elapsed = 00:00:44 . Memory (MB): peak = 1413.426 ; gain = 1234.238
+Attempting to get a license for feature 'Implementation' and/or device 'xc7vx690t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7vx690t'
+Running DRC as a precondition to command write_bitstream
+INFO: [Drc 23-27] Running DRC with 2 threads
+WARNING: [Drc 23-20] Rule violation (CFGBVS-1) Missing CFGBVS and CONFIG_VOLTAGE Design Properties - Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
+
+ set_property CFGBVS value1 [current_design]
+ #where value1 is either VCCO or GND
+
+ set_property CONFIG_VOLTAGE value2 [current_design]
+ #where value2 is the voltage provided to configuration bank 0
+
+Refer to the device configuration user guide for more information.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_iDelta_inv_reg input B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_idelta_reg input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_irinv_reg input A B C is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it2_reg input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it3_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it5_reg input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it7_reg input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_pre_it12_reg input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/it12_13_reg input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/it7_tmp_sqr_11 input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/it_11_reg input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/full_is1_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/is2_20 input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/is4_3_reg input B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/is5_5_reg input B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/is6_6_reg input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_11 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_1_reg input A B C is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_21 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_2_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_31 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_3_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_41 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_4_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_51 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_5_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_61 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_6_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_71 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_7_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_11 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_1_reg input A B C is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_21 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_2_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_31 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_3_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_41 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_4_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_51 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_5_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_61 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_6_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_71 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/irinv_corr_7_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_11 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_1_reg input A B C is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_21 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_2_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_31 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_3_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_41 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_4_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_51 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_5_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_61 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_6_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_71 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/it_corr_7_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_11 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_1_reg input A B C is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_21 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_2_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_31 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_3_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_41 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_4_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_51 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_5_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_61 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_6_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_71 input A is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPIP-1) Input pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iz0_corr_7_reg input A B is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_iDelta_inv_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_idelta_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_irinv_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it1_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it2_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it3_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it5_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_it7_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/full_pre_it12_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/it10_13_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/it12_13_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/it7_tmp_sqr_11 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/full_is1_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/is2_20 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/is4_3_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/is5_5_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TC_L1L2/projection1/is6_6_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_11 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_21 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_2_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_31 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_3_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_41 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_4_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_51 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_5_reg output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+WARNING: [Drc 23-20] Rule violation (DPOP-1) Output pipelining - DSP slaves/slave6/trigger_top/tracklet_processing_phi0/TF_L1L2/iphi0_corr_61 output P is not pipelined. Pipelining DSP48 output will improve performance. Both multiplier/adder output can be pipelined.
+INFO: [Common 17-14] Message 'Drc 23-20' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 149 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./top.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-118] WebTalk data collection is enabled (User setting is ON. Install Setting is ON.).
+INFO: [Common 17-186] 'C:/Users/ZhengchengTao/Documents/VC709_IPbus_trigger/project_3/project_3.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Mon Apr 06 15:26:32 2015. For additional details about this file, please refer to the WebTalk help file at D:/Xilinx/Vivado/2014.4/doc/webtalk_introduction.html.
+INFO: [Common 17-83] Releasing license: Implementation
+write_bitstream: Time (s): cpu = 00:02:52 ; elapsed = 00:02:54 . Memory (MB): peak = 1877.285 ; gain = 463.859
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 06 15:26:32 2015...
