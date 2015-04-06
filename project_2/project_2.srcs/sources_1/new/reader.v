@@ -183,7 +183,7 @@ module reader(
         
     end
     
-    always @(posedge io_clk) begin
+    always @(posedge clk) begin
         if(number_in1 > 0)
             read_add1 <= read_add1 + 1'b1;
         else
@@ -319,6 +319,84 @@ module reader(
             
     end   
     
+     reg [31:0] rd_data_reg;
+    
+    wire sel_data1,sel_data2,sel_data3,sel_data4,sel_data5,sel_data6,sel_data7,sel_data8,sel_data9,sel_data10;
+    wire sel_data11,sel_data12,sel_data13,sel_data14,sel_data15,sel_data16,sel_data17,sel_data18,sel_data19,sel_data20;
+    wire sel_data21,sel_data22,sel_data23,sel_data24,sel_data25,sel_data26,sel_data27,sel_data28,sel_data29,sel_data30;
+    wire sel_data31,sel_data32;
+    
+    assign sel_data1 = (input1[0] != 0 );
+    assign sel_data2 = (input2[0] != 0 );
+    assign sel_data3 = (input3[0] != 0 );
+    assign sel_data4 = (input4[0] != 0 );
+    assign sel_data5 = (input5[0] != 0 );
+    assign sel_data6 = (input6[0] != 0 );
+    assign sel_data7 = (input7[0] != 0 );
+    assign sel_data8 = (input8[0] != 0 );
+    assign sel_data9 = (input9[0] != 0 );
+    assign sel_data10 = (input10[0] != 0 );
+    assign sel_data11 = (input11[0] != 0 );
+    assign sel_data12 = (input12[0] != 0 );
+    assign sel_data13 = (input13[0] != 0 );
+    assign sel_data14 = (input14[0] != 0 );
+    assign sel_data15 = (input15[0] != 0 );
+    assign sel_data16 = (input16[0] != 0 );
+    assign sel_data17 = (input17[0] != 0 );
+    assign sel_data18 = (input18[0] != 0 );
+    assign sel_data19 = (input19[0] != 0 );
+    assign sel_data20 = (input20[0] != 0 );
+    assign sel_data21 = (input21[0] != 0 );
+    assign sel_data22 = (input22[0] != 0 );
+    assign sel_data23 = (input23[0] != 0 );
+    assign sel_data24 = (input24[0] != 0 );
+    assign sel_data25 = (input25[0] != 0 );
+    assign sel_data26 = (input26[0] != 0 );
+    assign sel_data27 = (input27[0] != 0 );
+    assign sel_data28 = (input28[0] != 0 );
+    assign sel_data29 = (input29[0] != 0 );
+    assign sel_data30 = (input30[0] != 0 );
+    assign sel_data31 = (input31[0] != 0 );
+    assign sel_data32 = (input32[0] != 0 );
+    
+    always @(posedge clk) begin
+        if (sel_data1) rd_data_reg <= input1[31:0];
+        else if (sel_data2) rd_data_reg <= input2[31:0];
+        else if (sel_data3) rd_data_reg <= input3[31:0];
+        else if (sel_data4) rd_data_reg <= input4[31:0];
+        else if (sel_data5) rd_data_reg <= input5[31:0];
+        else if (sel_data6) rd_data_reg <= input6[31:0];
+        else if (sel_data7) rd_data_reg <= input7[31:0];
+        else if (sel_data8) rd_data_reg <= input8[31:0];
+        else if (sel_data9) rd_data_reg <= input9[31:0];
+        else if (sel_data10) rd_data_reg <= input10[31:0];
+        else if (sel_data11) rd_data_reg <= input11[31:0];
+        else if (sel_data12) rd_data_reg <= input12[31:0];
+        else if (sel_data13) rd_data_reg <= input13[31:0];
+        else if (sel_data14) rd_data_reg <= input14[31:0];
+        else if (sel_data15) rd_data_reg <= input15[31:0];
+        else if (sel_data16) rd_data_reg <= input16[31:0];
+        else if (sel_data17) rd_data_reg <= input17[31:0];
+        else if (sel_data18) rd_data_reg <= input18[31:0];
+        else if (sel_data19) rd_data_reg <= input19[31:0];
+        else if (sel_data20) rd_data_reg <= input20[31:0];
+        else if (sel_data21) rd_data_reg <= input21[31:0];
+        else if (sel_data22) rd_data_reg <= input22[31:0];
+        else if (sel_data23) rd_data_reg <= input23[31:0];
+        else if (sel_data24) rd_data_reg <= input24[31:0];
+        else if (sel_data25) rd_data_reg <= input25[31:0];
+        else if (sel_data26) rd_data_reg <= input26[31:0];
+        else if (sel_data27) rd_data_reg <= input27[31:0];
+        else if (sel_data28) rd_data_reg <= input28[31:0];
+        else if (sel_data29) rd_data_reg <= input29[31:0];
+        else if (sel_data30) rd_data_reg <= input30[31:0];
+        else if (sel_data31) rd_data_reg <= input31[31:0];
+        else if (sel_data32) rd_data_reg <= input32[31:0];
+        
+     end
+    
+
+    
     assign io_sel_data1 = io_sel && (io_addr[4:0] == 5'b00000);
     assign io_sel_data2 = io_sel && (io_addr[4:0] == 5'b00001);
     assign io_sel_data3 = io_sel && (io_addr[4:0] == 5'b00010);
@@ -352,11 +430,29 @@ module reader(
     assign io_sel_data31 = io_sel && (io_addr[4:0] == 5'b11110);
     assign io_sel_data32 = io_sel && (io_addr[4:0] == 5'b11111);
     
+    wire io_sel_fifo;
+    assign io_sel_fifo = io_sel_data1 | io_sel_data2 | io_sel_data3 | io_sel_data4 | io_sel_data5 | io_sel_data6 | io_sel_data7 | io_sel_data8 | io_sel_data9 | io_sel_data10 |
+                        io_sel_data11 | io_sel_data12 | io_sel_data13 | io_sel_data14 | io_sel_data15 | io_sel_data16 | io_sel_data17 | io_sel_data18 | io_sel_data19 | io_sel_data20 |
+                        io_sel_data21 | io_sel_data22 | io_sel_data23 | io_sel_data24 | io_sel_data25 | io_sel_data26 | io_sel_data27 | io_sel_data28 | io_sel_data29 | io_sel_data30 |
+                        io_sel_data31 | io_sel_data32;
+                        
+    wire wr_en;
+    assign wr_en = sel_data1 | sel_data2 | sel_data3 | sel_data4 | sel_data5 | sel_data6 | sel_data7 | sel_data8 | sel_data9 | sel_data10 |
+                    sel_data11 | sel_data12 | sel_data13 | sel_data14 | sel_data15 | sel_data16 | sel_data17 | sel_data18 | sel_data19 | sel_data20 |
+                    sel_data21 | sel_data22 | sel_data23 | sel_data24 | sel_data25 | sel_data26 | sel_data27 | sel_data28 | sel_data29 | sel_data30 |
+                    sel_data31 | sel_data32;
+                        
+    wire [31:0] data_out;
+    TP_raw_stub_fifo read_out_fifo(.wr_clk(clk), .rst(reset), .din(rd_data_reg), .wr_en(wr_en), 
+                                     .rd_clk(io_clk), .rd_en(io_sel_fifo), .dout(data_out),
+                                     .empty(fifo_empty), .full(fifo_full));
+    
    ///////////////////////////////////////////////////////////////////////////////////////////////
     // readback mux
     // If a particular register or memory is addressed, connect that register's or memory's signals
     // to the 'io_rd_data' output. At the same time, assert 'io_rd_ack' to tell downstream muxes to
     // use the 'io_rd_data' from this module as their source of data.
+   
     reg [31:0] io_rd_data_reg;
     assign io_rd_data[31:0] = io_rd_data_reg[31:0];
     // Assert 'io_rd_ack' if chip select for this module is asserted during a 'read' operation.
@@ -367,39 +463,7 @@ module reader(
     end
     // Route the selected memory to the 'rdbk' output.
     always @(posedge io_clk) begin
-        if (io_sel_data1) io_rd_data_reg <= input1[31:0];
-        if (io_sel_data2) io_rd_data_reg <= input2[31:0];
-        if (io_sel_data3) io_rd_data_reg <= input3[31:0];
-        if (io_sel_data4) io_rd_data_reg <= input4[31:0];
-        if (io_sel_data5) io_rd_data_reg <= input5[31:0];
-        if (io_sel_data6) io_rd_data_reg <= input6[31:0];
-        if (io_sel_data7) io_rd_data_reg <= input7[31:0];
-        if (io_sel_data8) io_rd_data_reg <= input8[31:0];
-        if (io_sel_data9) io_rd_data_reg <= input9[31:0];
-        if (io_sel_data10) io_rd_data_reg <= input10[31:0];
-        if (io_sel_data11) io_rd_data_reg <= input11[31:0];
-        if (io_sel_data12) io_rd_data_reg <= input12[31:0];
-        if (io_sel_data13) io_rd_data_reg <= input13[31:0];
-        if (io_sel_data14) io_rd_data_reg <= input14[31:0];
-        if (io_sel_data15) io_rd_data_reg <= input15[31:0];
-        if (io_sel_data16) io_rd_data_reg <= input16[31:0];
-        if (io_sel_data17) io_rd_data_reg <= input17[31:0];
-        if (io_sel_data18) io_rd_data_reg <= input18[31:0];
-        if (io_sel_data19) io_rd_data_reg <= input19[31:0];
-        if (io_sel_data20) io_rd_data_reg <= input20[31:0];
-        if (io_sel_data21) io_rd_data_reg <= input21[31:0];
-        if (io_sel_data22) io_rd_data_reg <= input22[31:0];
-        if (io_sel_data23) io_rd_data_reg <= input23[31:0];
-        if (io_sel_data24) io_rd_data_reg <= input24[31:0];
-        if (io_sel_data25) io_rd_data_reg <= input25[31:0];
-        if (io_sel_data26) io_rd_data_reg <= input26[31:0];
-        if (io_sel_data27) io_rd_data_reg <= input27[31:0];
-        if (io_sel_data28) io_rd_data_reg <= input28[31:0];
-        if (io_sel_data29) io_rd_data_reg <= input29[31:0];
-        if (io_sel_data30) io_rd_data_reg <= input30[31:0];
-        if (io_sel_data31) io_rd_data_reg <= input31[31:0];
-        if (io_sel_data32) io_rd_data_reg <= input32[31:0];
-        
-     end
+        if (io_sel_fifo) io_rd_data_reg <= data_out[31:0];
+    end
     
 endmodule
