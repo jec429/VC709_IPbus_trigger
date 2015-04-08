@@ -31,20 +31,35 @@ use UNISIM.vcomponents.all;
 entity top is
     port(
         -- clocking & GT
-        sma_clk_n, sma_clk_p: out std_logic;
+        sma_clk_n, sma_clk_p: inout std_logic;
         clk200_n, clk200_p: in std_logic;        
         prog_clk_n, prog_clk_p: in std_logic;        
         gt_clkp, gt_clkn: in std_logic;
         gt_txp, gt_txn: out std_logic;
         gt_rxp, gt_rxn: in std_logic;
+        
+        -- LEDs
+        leds: out std_logic_vector(7 downto 0);
+        -- Switch
+        en_proc_switch: in std_logic;
         -- SFP
         sfp_los, sfp_mod_det: in std_logic;   
         sfp_rs0, sfp_rs1: out std_logic;        
         sfp_tx_disable: out std_logic;  
-        -- LEDs
-        leds: out std_logic_vector(7 downto 0);
-        -- Switch
-        en_proc_switch: in std_logic
+        
+        SFP3_LOS_LS, SFP3_MOD_DETECT_LS: in std_logic;
+        SFP3_RS0_LS, SFP3_RS1_LS: out std_logic;
+        SFP3_TX_DISABLE_LS_B: out std_logic;
+ --       SFP3_TX_FAULT_LS: in std_logic; 
+        SFP3_RX_N, SFP3_RX_P: in std_logic;
+        SFP3_TX_N, SFP3_TX_P: out std_logic;
+        
+        SFP4_LOS_LS, SFP4_MOD_DETECT_LS: in std_logic;
+        SFP4_RS0_LS, SFP4_RS1_LS: out std_logic;
+        SFP4_TX_DISABLE_LS_B: out std_logic;
+--        SFP4_TX_FAULT_LS: in std_logic; 
+        SFP4_RX_N, SFP4_RX_P: in std_logic;
+        SFP4_TX_N, SFP4_TX_P: out std_logic
     );
 end top;
 
@@ -72,6 +87,16 @@ architecture rtl of top is
 begin
 
     -- value initialization
+    SFP3_RS0_LS <= '0';
+    SFP3_RS1_LS <= '0';
+    SFP3_TX_DISABLE_LS_B <= '0';
+    --light_detect <= not SFP3_LOS_LS
+
+    SFP4_RS0_LS <= '0';
+    SFP4_RS1_LS <= '0';
+    SFP4_TX_DISABLE_LS_B <= '0';
+    --light_detect <= not SFP4_LOS_LS
+    
     sfp_rs0 <= '0';                       -- for AFBR-703SDDZ, sets 1.25 Gbps
     sfp_rs1 <= '0';                       --
     sfp_tx_disable <= '0';
@@ -119,6 +144,7 @@ begin
         rx_error => mac_rx_error,
         clk125_out => clk125,
         clk125_out_fr => clk125_fr,
+        gt_refclk_out => gtrefclk_out,
         rsti => rst_eth,
         clk200 => clk200
       );
@@ -162,7 +188,20 @@ begin
         pkt_rx => pkt_rx,
         pkt_tx => pkt_tx,
         -- en proc switch
-        en_proc_switch => en_proc_switch
+        en_proc_switch => en_proc_switch,
+        --interboard links
+        sfp3_tx_n => SFP3_TX_N,
+        sfp3_tx_p => SFP3_TX_P,
+        sfp3_rx_n => SFP3_RX_N,
+        sfp3_rx_p => SFP3_RX_P,
+        sfp4_tx_n => SFP4_TX_N,
+        sfp4_tx_p => SFP4_TX_P,
+        sfp4_rx_n => SFP4_RX_N,
+        sfp4_rx_p => SFP4_RX_P,
+        --gt ref clk
+        gt_clk => gtrefclk_out,   
+        --init clk
+        init_clk => clk125
       );
 
 

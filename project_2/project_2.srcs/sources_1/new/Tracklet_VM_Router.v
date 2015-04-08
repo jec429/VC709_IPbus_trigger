@@ -1126,8 +1126,8 @@ module Tracklet_VM_Router(
     .io_rd_en(io_rd_en),
     .io_wr_en(io_wr_en),
     .io_wr_data(io_wr_data[31:0]),
-    .io_rd_data(reader_out),
-    .io_rd_ack(reader_ack),
+    .io_rd_data(),
+    .io_rd_ack(),
     .BX(BX[2:0]),
     .first_clk(first_clk),
     .not_first_clk(not_first_clk)

@@ -47,6 +47,42 @@ set_property IOSTANDARD LVCMOS18 [get_ports sfp_rs1]
 set_property PACKAGE_PIN Y42 [get_ports sfp_tx_disable]
 set_property IOSTANDARD LVCMOS18 [get_ports sfp_tx_disable]
 
+#SFP3
+set_property PACKAGE_PIN AL5 [get_ports SFP3_RX_N]
+set_property PACKAGE_PIN AL6 [get_ports SFP3_RX_P]
+set_property PACKAGE_PIN AM3 [get_ports SFP3_TX_N]
+set_property PACKAGE_PIN AM4 [get_ports SFP3_TX_P]
+
+set_property PACKAGE_PIN AD38 [get_ports SFP3_LOS_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports SFP3_LOS_LS]
+set_property PACKAGE_PIN AC39 [get_ports SFP3_MOD_DETECT_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports SFP3_MOD_DETECT_LS]
+set_property PACKAGE_PIN AD42 [get_ports SFP3_RS0_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports SFP3_RS0_LS]
+set_property PACKAGE_PIN AE42 [get_ports SFP3_RS1_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports SFP3_RS1_LS]
+set_property PACKAGE_PIN AC38 [get_ports SFP3_TX_DISABLE_LS_B]
+set_property IOSTANDARD LVCMOS18 [get_ports SFP3_TX_DISABLE_LS_B]
+#set_property LOC GTHE2_CHANNEL_X1Y14 [get_cells slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiPlus/aurora_8b10b_0/inst/gt_wrapper_i/aurora_8b10b_0_multi_gt_i/gt0_aurora_8b10b_0_i/gthe2_i]
+
+#SFP4
+set_property PACKAGE_PIN AJ5 [get_ports SFP4_RX_N]
+set_property PACKAGE_PIN AJ6 [get_ports SFP4_RX_P]
+set_property PACKAGE_PIN AL1 [get_ports SFP4_TX_N]
+set_property PACKAGE_PIN AL2 [get_ports SFP4_TX_P]
+
+set_property PACKAGE_PIN AD40 [get_ports SFP4_LOS_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports SFP4_LOS_LS]
+set_property PACKAGE_PIN AC41 [get_ports SFP4_MOD_DETECT_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports SFP4_MOD_DETECT_LS]
+set_property PACKAGE_PIN AE39 [get_ports SFP4_RS0_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports SFP4_RS0_LS]
+set_property PACKAGE_PIN AE40 [get_ports SFP4_RS1_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports SFP4_RS1_LS]
+set_property PACKAGE_PIN AC40 [get_ports SFP4_TX_DISABLE_LS_B]
+set_property IOSTANDARD LVCMOS18 [get_ports SFP4_TX_DISABLE_LS_B]
+#set_property LOC GTHE2_CHANNEL_X1Y15 [get_cells slaves/slave6/trigger_top/tracklet_processing_phi0/aurora_test_top/LinkProjPhiMinus/aurora_8b10b_1/inst/gt_wrapper_i/aurora_8b10b_1_multi_gt_i/gt0_aurora_8b10b_1_i/gthe2_i]
+
 # LEDs
 # GPIO_LED_n_LS in the VC709 manual, 'leds<n>' in this project
 set_property PACKAGE_PIN AM39 [get_ports {leds[0]}]
@@ -69,6 +105,8 @@ set_property IOSTANDARD LVCMOS18 [get_ports {leds[7]}]
 # Switch to enable and turn on LED
 set_property PACKAGE_PIN AU38 [get_ports en_proc_switch]
 set_property IOSTANDARD LVCMOS18 [get_ports en_proc_switch]
+
+
 
 
 

@@ -41,44 +41,58 @@ module ProjTransceiver(
     input wire first_clk,
     input wire not_first_clk,
     
+    // links
+    output wire txn_pphi,          //Links to neighbouring sector board with larger phi (+phi)
+    output wire txp_pphi,          //Links to neighbouring sector board with larger phi (+phi)
+    input  wire rxn_pphi,          //Links to neighbouring sector board with larger phi (+phi)
+    input  wire rxp_pphi,          //Links to neighbouring sector board with larger phi (+phi)
+    output wire txn_mphi,          //Links to neighbouring sector board with smaller phi (phi)
+    output wire txp_mphi,          //Links to neighbouring sector board with smaller phi (phi)
+    input  wire rxn_mphi,          //Links to neighbouring sector board with smaller phi (phi)
+    input  wire rxp_mphi,          //Links to neighbouring sector board with smaller phi (phi)
+    //gt reference clock
+    input wire gt_refclk,         
+    //initial clock
+    input wire init_clk,
+     
     input start,
     output reg done,
     
     input [5:0] number_in1,
-    output [5:0] read_add1,
+    output reg [5:0] read_add1,
     input [53:0] input_L1L2_1,
     input [5:0] number_in2,
-    output [5:0] read_add2,
+    output reg [5:0] read_add2,
     input [53:0] input_L1L2_2,
     input [5:0] number_in3,
-    output [5:0] read_add3,
+    output reg [5:0] read_add3,
     input [53:0] input_L1L2_3,
     input [5:0] number_in4,
-    output [5:0] read_add4,
+    output reg [5:0] read_add4,
     input [53:0] input_L1L2_4,
     input [5:0] number_in5,
-    output [5:0] read_add5,
+    output reg [5:0] read_add5,
     input [53:0] input_L3L4_1,
     input [5:0] number_in6,
-    output [5:0] read_add6,
+    output reg [5:0] read_add6,
     input [53:0] input_L3L4_2,
     input [5:0] number_in7,
-    output [5:0] read_add7,
+    output reg [5:0] read_add7,
     input [53:0] input_L3L4_3,
     input [5:0] number_in8,
-    output [5:0] read_add8,
+    output reg [5:0] read_add8,
     input [53:0] input_L3L4_4,
     input [5:0] number_in9,
-    output [5:0] read_add9,
+    output reg [5:0] read_add9,
     input [53:0] input_L5L6_1,
     input [5:0] number_in10,
-    output [5:0] read_add10,
+    output reg [5:0] read_add10,
     input [53:0] input_L5L6_2,
     input [5:0] number_in11,
-    output [5:0] read_add11,
+    output reg [5:0] read_add11,
     input [53:0] input_L5L6_3,
     input [5:0] number_in12,
-    output [5:0] read_add12,
+    output reg [5:0] read_add12,
     input [53:0] input_L5L6_4,
     
     output [53:0] output_L1L2_1,
@@ -130,39 +144,93 @@ module ProjTransceiver(
     end
     
     
-    reg [2:0] test_hold1;
-    reg [2:0] test_hold2;
-    reg [2:0] test_hold3;
-    reg [2:0] test_hold4;
-    reg [2:0] test_hold5;
-    reg [2:0] test_hold6;
-    reg [2:0] test_hold7;
-    reg [2:0] test_hold8;
-    reg [2:0] test_hold9;
+    initial begin
+        read_add1 = 6'h3f;
+        read_add2 = 6'h3f;
+        read_add3 = 6'h3f;
+    end
     
     always @(posedge clk) begin
-        test_hold1 <= BX_pipe;
-        test_hold2 <= test_hold1;
-        test_hold3 <= test_hold2;
-        test_hold4 <= test_hold3;
-        test_hold5 <= test_hold4;
-        test_hold6 <= test_hold5;
-        test_hold7 <= test_hold6;
-        test_hold8 <= test_hold7;
-        test_hold9 <= test_hold8;
+        if(first_clk_pipe) begin
+            read_add1 <= 6'h3f;
+            read_add2 <= 6'h3f;
+            read_add3 <= 6'h3f;    
+        end
+        else begin
+            if(read_add1 + 1'b1 < number_in1) begin
+                read_add1 <= read_add1 + 1'b1;
+            end
+            else begin
+                read_add1 <= read_add1;
+                if(read_add2 + 1'b1 < number_in2) begin
+                    read_add2 <= read_add2 + 1'b1;
+                end
+                else begin
+                    read_add2 <= read_add2;
+                    if(read_add3 + 1'b1 < number_in3) begin
+                        read_add3 <= read_add3 + 1'b1;
+                    end
+                    else
+                        read_add3 <= read_add3;
+                end
+            end
+        end
     end
+    
+    wire [31:0] Aurora_test_io_rd_data;
+    wire [15:0] Aurora_data_out;
+    assign output_L1L2_1 = {Aurora_data_out,38'h3fffffffff};
+    Aurora_test aurora_test_top(
+        // clocks and reset
+        .clk(clk),                // processing clock
+        .reset(reset),                        // active HI
+        .en_proc(en_proc),
+        // programming interface
+        .io_clk(io_clk),                    // programming clock
+        .io_sel(io_sel),                    // this module is selected for an I/O operation
+        .io_addr(io_addr[23:0]),        // memory address, top 8 bits alread consumed
+        .io_sync(io_sync),                // start the I/O operation
+        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+        .io_wr_data(io_wr_data[31:0]),// data to write for write operations
+        // outputs
+        .io_rd_data(Aurora_test_io_rd_data),        // data returned for read operations
+        .io_rd_ack(Aurora_test_io_rd_ack),            // 'read' data from this module is ready
+        // clocks
+        .BX(BX[2:0]),
+        .first_clk(first_clk),
+        .not_first_clk(not_first_clk),
         
-    assign output_L1L2_1 = test_hold9 + 1;
-    assign output_L1L2_2 = test_hold9 + 2;
-    assign output_L1L2_3 = test_hold9 + 3;
-    assign output_L1L2_4 = test_hold9 + 4;
-    assign output_L3L4_1 = test_hold9 + 5;
-    assign output_L3L4_2 = test_hold9 + 6;
-    assign output_L3L4_3 = test_hold9 + 7;
-    assign output_L3L4_4 = test_hold9 + 8;
-    assign output_L5L6_1 = test_hold9 + 9;
-    assign output_L5L6_2 = test_hold9 + 10;
-    assign output_L5L6_3 = test_hold9 + 11;
-    assign output_L5L6_4 = test_hold9 + 12;
+        .data_in(input_L1L2_1),
+        .data_out(Aurora_data_out),
+        
+        //Links
+        .txp_pphi(txp_pphi),
+        .txn_pphi(txn_pphi),
+        .rxp_pphi(rxp_pphi),
+        .rxn_pphi(rxn_pphi),
+        .txp_mphi(txp_mphi),
+        .txn_mphi(txn_mphi),
+        .rxp_mphi(rxp_mphi),
+        .rxn_mphi(rxn_mphi),
+        .gt_refclk(gt_refclk),
+        .init_clk(init_clk)
+    );
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    // connect a mux to steer the readback data from one of the segments to the ipbus
+    reg [31:0] io_rd_data_reg;
+    assign io_rd_data = io_rd_data_reg;
+    // Assert 'io_rd_ack' if any modules below this function assert their 'io_rd_ack'.
+    reg io_rd_ack_reg;
+    assign io_rd_ack = io_rd_ack_reg;
+    always @(posedge io_clk) begin
+        io_rd_ack_reg <= io_sync & io_rd_en & (Aurora_test_io_rd_ack);
+    end
+
+    always @(posedge io_clk) begin
+        if (Aurora_test_io_rd_ack)    io_rd_data_reg <= Aurora_test_io_rd_data;
+    end
+    
     
 endmodule

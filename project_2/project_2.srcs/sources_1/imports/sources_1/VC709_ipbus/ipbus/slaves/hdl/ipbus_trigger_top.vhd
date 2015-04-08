@@ -13,7 +13,20 @@ entity ipbus_trigger_top is
 		reset: in STD_LOGIC;
 		ipbus_in: in ipb_wbus;
 		ipbus_out: out ipb_rbus;
-		en_proc_switch: in std_logic
+		en_proc_switch: in std_logic;
+		--sfp
+        txn_pphi: out std_logic;
+        txp_pphi: out std_logic;
+        rxn_pphi: in std_logic;
+        rxp_pphi: in std_logic;
+        txn_mphi: out std_logic;
+        txp_mphi: out std_logic;
+        rxn_mphi: in std_logic;
+        rxp_mphi: in std_logic;
+        --gt ref clk
+        gt_refclk: in std_logic;
+        --init clk
+        init_clk: in std_logic
 	);
 	
 end ipbus_trigger_top;
@@ -34,7 +47,20 @@ component verilog_trigger_top
     ipb_addr : in std_logic_vector ( 31 downto 0 ); 
     ipb_wdata : in std_logic_vector ( 31 downto 0 ); 
     ipb_rdata : out std_logic_vector ( 31 downto 0 );
-    en_proc_switch: in std_logic 
+    en_proc_switch: in std_logic;
+    --sfp
+    txn_pphi: out std_logic;
+    txp_pphi: out std_logic;
+    rxn_pphi: in std_logic;
+    rxp_pphi: in std_logic;
+    txn_mphi: out std_logic;
+    txp_mphi: out std_logic;
+    rxn_mphi: in std_logic;
+    rxp_mphi: in std_logic;
+    --gt ref clk
+    gt_refclk: in std_logic;
+    --init clk
+    init_clk: in std_logic
   );
 end component;
 
@@ -92,7 +118,20 @@ begin
 	   ipb_rdata => ipbus_out.ipb_rdata,		-- data returned for read operations
 	   ipb_ack => ipbus_out.ipb_ack,			-- 'write' data has been stored, 'read' data is ready
 	   ipb_err => ipbus_out.ipb_err,			-- '1' if error, '0' if OK?
-	   en_proc_switch => en_proc_switch
+	   en_proc_switch => en_proc_switch,
+	   --sfp
+       txn_pphi => txn_pphi,
+       txp_pphi => txp_pphi,
+       rxn_pphi => rxn_pphi,
+       rxp_pphi => rxp_pphi,
+       txn_mphi => txn_mphi,
+       txp_mphi => txp_mphi,
+       rxn_mphi => rxn_mphi,
+       rxp_mphi => rxp_mphi,
+       --gt ref clk
+       gt_refclk => gt_refclk,
+       --init clk
+       init_clk => init_clk
       );
 
 end rtl;

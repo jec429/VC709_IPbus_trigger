@@ -39,18 +39,52 @@ module Tracklet_Communication(
     //clocks
     input wire [2:0] BX,
     input wire first_clk,
-    input wire not_first_clk
+    input wire not_first_clk,
+    // links
+    output wire txn_pphi,          //Links to neighbouring sector board with larger phi (+phi)
+    output wire txp_pphi,          //Links to neighbouring sector board with larger phi (+phi)
+    input  wire rxn_pphi,          //Links to neighbouring sector board with larger phi (+phi)
+    input  wire rxp_pphi,          //Links to neighbouring sector board with larger phi (+phi)
+    output wire txn_mphi,          //Links to neighbouring sector board with smaller phi (phi)
+    output wire txp_mphi,          //Links to neighbouring sector board with smaller phi (phi)
+    input  wire rxn_mphi,          //Links to neighbouring sector board with smaller phi (phi)
+    input  wire rxp_mphi,          //Links to neighbouring sector board with smaller phi (phi)
+    //gt reference clock
+    input wire gt_refclk,         
+    //initial clock
+    input wire init_clk
+    
     );
     
-    wire io_sel_R3_io_block;
-    assign io_sel_R3_io_block = io_sel && (io_addr[27:24] == 4'b1000);
+    wire io_sel_communication;
+    assign io_sel_communication = io_sel && (io_addr[27:24] == 4'b1010);
+    wire io_sel_writer;
+    assign io_sel_writer = io_sel && (io_addr[27:24] == 4'b1001);
+    wire io_sel_reader;
+    assign io_sel_reader = io_sel && (io_addr[27:24] == 4'b1011);
+    
+    reg [6:0] clk_cnt;
+    initial
+        clk_cnt = 7'b0;
+        
+    always @(posedge clk) begin
+        if(en_proc)
+           clk_cnt <= clk_cnt + 1'b1;
+        else begin
+           clk_cnt <= 7'b0;
+        end
+    end
+    
+    assign start5 = (clk_cnt == 1);
+    
        
     wire [53:0] TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3;
     wire [5:0] TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_number;
     wire [5:0] TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_read_add;
     wire [53:0] TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3;
-    TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L3(
+    TrackletProjections #(1,1) TPROJ_ToPlus_L1D3L2D3_L3(
     .data_in(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3),
+    .valid(~TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3_valid), // Valid Bit
     .number_out(TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_number),
     .read_add(TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_read_add),
     .data_out(TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3),
@@ -105,6 +139,7 @@ module Tracklet_Communication(
     wire [53:0] TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3;
     TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L4(
     .data_in(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L4),
+    .valid(~TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L4_valid), // Valid Bit
     .number_out(TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3_number),
     .read_add(TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3_read_add),
     .data_out(TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3),
@@ -159,6 +194,7 @@ module Tracklet_Communication(
     wire [53:0] TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3;
     TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L5(
     .data_in(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L5),
+    .valid(~TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L5_valid), // Valid Bit
     .number_out(TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3_number),
     .read_add(TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3_read_add),
     .data_out(TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3),
@@ -213,6 +249,7 @@ module Tracklet_Communication(
     wire [53:0] TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3;
     TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L6(
     .data_in(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L6),
+    .valid(~TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L6_valid), // Valid Bit
     .number_out(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3_number),
     .read_add(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3_read_add),
     .data_out(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3),
@@ -260,6 +297,7 @@ module Tracklet_Communication(
     .not_first_clk(not_first_clk)
     );
 
+    wire [31:0] commy_out;
     
     ProjTransceiver  PT_Plus_D3(
     .number_in1(TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_number),
@@ -284,39 +322,57 @@ module Tracklet_Communication(
     .reset(reset),
     .en_proc(en_proc),
     .io_clk(io_clk),
-    .io_sel(io_sel_R3_io_block),
+    .io_sel(io_sel_communication),
     .io_addr(io_addr[23:0]),        
     .io_sync(io_sync),
     .io_rd_en(io_rd_en),
     .io_wr_en(io_wr_en),
     .io_wr_data(io_wr_data[31:0]),
-    .io_rd_data(io_rd_data_R3_io_block),
-    .io_rd_ack(io_rd_ack_R3_io_block),
+    .io_rd_data(commy_out),
+    .io_rd_ack(commy_ack),
     .BX(BX[2:0]),
     .first_clk(first_clk),
-    .not_first_clk(not_first_clk)
+    .not_first_clk(not_first_clk),
+    //Links
+    .txn_pphi(txn_pphi),
+    .txp_pphi(txp_pphi),
+    .rxn_pphi(rxn_pphi),
+    .rxp_pphi(rxp_pphi),
+    .txn_mphi(txn_mphi),
+    .txp_mphi(txp_mphi),
+    .rxn_mphi(rxn_mphi),
+    .rxp_mphi(rxp_mphi),
+    //gt reference clock
+    .gt_refclk(gt_refclk),
+    //initial clock
+    .init_clk(init_clk)
     );
 
-
+    wire [31:0] writer_out;
+    
      writer writer1(
     .read_en(en_proc),
+    .valid1(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3_valid),
+    .valid2(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L4_valid),
+    .valid3(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L5_valid),
+    .valid4(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L6_valid),
     .data_out1(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3),
     .data_out2(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L4),
     .data_out3(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L5),
-    .data_out3(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L6),
+    .data_out4(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L6),
     
     .clk(clk),
     .reset(reset),
     .en_proc(en_proc),
     .io_clk(io_clk),
-    .io_sel(io_sel_R3_io_block),
+    .io_sel(io_sel_writer),
     .io_addr(io_addr[23:0]),        
     .io_sync(io_sync),
     .io_rd_en(io_rd_en),
     .io_wr_en(io_wr_en),
     .io_wr_data(io_wr_data[31:0]),
-    .io_rd_data(reader_out),
-    .io_rd_ack(reader_ack),
+    .io_rd_data(writer_out),
+    .io_rd_ack(writer_ack),
     .BX(BX[2:0]),
     .first_clk(first_clk),
     .not_first_clk(not_first_clk)
@@ -345,7 +401,7 @@ module Tracklet_Communication(
     .reset(reset),
     .en_proc(en_proc),
     .io_clk(io_clk),
-    .io_sel(io_sel_R3_io_block),
+    .io_sel(io_sel_reader),
     .io_addr(io_addr[23:0]),        
     .io_sync(io_sync),
     .io_rd_en(io_rd_en),
@@ -367,11 +423,13 @@ module Tracklet_Communication(
     reg io_rd_ack_reg;
     assign io_rd_ack = io_rd_ack_reg;
     always @(posedge io_clk) begin
-        io_rd_ack_reg <= io_sync & io_rd_en & (reader_ack);
+        io_rd_ack_reg <= io_sync & io_rd_en & (reader_ack | writer_ack | commy_ack);
     end
 
     always @(posedge io_clk) begin
         if (reader_ack)    io_rd_data_reg <= reader_out;
+        if (writer_ack)    io_rd_data_reg <= writer_out;
+        if (commy_ack)    io_rd_data_reg <= commy_out;
     end
 
 endmodule

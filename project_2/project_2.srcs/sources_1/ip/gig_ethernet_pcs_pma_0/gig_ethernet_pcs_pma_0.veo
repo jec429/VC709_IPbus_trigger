@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2014 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2015 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -46,7 +46,7 @@
 // 
 // DO NOT MODIFY THIS FILE.
 
-// IP VLNV: xilinx.com:ip:gig_ethernet_pcs_pma:14.2
+// IP VLNV: xilinx.com:ip:gig_ethernet_pcs_pma:14.3
 // IP Revision: 1
 
 // The following must be inserted into your Verilog file for this

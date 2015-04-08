@@ -20,7 +20,20 @@ entity slaves is
 		eth_err_stat: in std_logic_vector(47 downto 0) := X"000000000000";
 		pkt_rx: in std_logic := '0';
 		pkt_tx: in std_logic := '0';
-		en_proc_switch: in std_logic
+		en_proc_switch: in std_logic;
+		--sfp
+		sfp3_tx_n: out std_logic;
+        sfp3_tx_p: out std_logic;
+        sfp3_rx_n: in std_logic;
+        sfp3_rx_p: in std_logic;
+        sfp4_tx_n: out std_logic;
+        sfp4_tx_p: out std_logic;
+        sfp4_rx_n: in std_logic;
+        sfp4_rx_p: in std_logic;
+        --gt ref clk
+        gt_clk: in std_logic;
+        --init clk
+        init_clk: in std_logic
 	);
 
 end slaves;
@@ -127,7 +140,20 @@ begin
 			reset => ipb_rst,
 			ipbus_in => ipbw(6),
 			ipbus_out => ipbr(6),
-			en_proc_switch => en_proc_switch 
+			en_proc_switch => en_proc_switch,
+			--sfp
+			txn_pphi => sfp3_tx_n,
+            txp_pphi => sfp3_tx_p,
+            rxn_pphi => sfp3_rx_n,
+            rxp_pphi => sfp3_rx_p,
+            txn_mphi => sfp4_tx_n,
+            txp_mphi => sfp4_tx_p,
+            rxn_mphi => sfp4_rx_n,
+            rxp_mphi => sfp4_rx_p,
+            --gt ref clk
+            gt_refclk => gt_clk,
+            --init clk
+            init_clk => init_clk
 		);
 
 end rtl;

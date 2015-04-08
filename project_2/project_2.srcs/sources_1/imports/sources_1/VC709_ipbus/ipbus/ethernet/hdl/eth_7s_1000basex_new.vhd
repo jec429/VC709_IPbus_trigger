@@ -30,6 +30,9 @@ entity eth_7s_1000basex is
     gt_rxp, gt_rxn: in std_logic;
     sig_detn: in std_logic := '1';
     clk125_out_fr: out std_logic;
+--
+    gt_refclk_out: out std_logic;
+--
     clk125_out: out std_logic;
     clk200: in std_logic;
     rsti: in std_logic;
@@ -136,6 +139,7 @@ architecture rtl of eth_7s_1000basex is
 	signal gmii_tx_en, gmii_tx_er, gmii_rx_dv, gmii_rx_er: std_logic;
 	signal gmii_rx_clk: std_logic;
 	signal clkin, clk125, clk125_ub, clk125_gt, clk125_fr : std_logic;
+--    signal clkin, clk125, clk125_ub, clk125_gt : std_logic;
 	signal mac_rst, phy_done, mmcm_locked, locked_int, sig_det: std_logic;
 	signal status: std_logic_vector(15 downto 0);
     signal gig_pcs_pma_config_vector: std_logic_vector(4 downto 0) := "00000";
@@ -143,6 +147,7 @@ architecture rtl of eth_7s_1000basex is
     CONSTANT BIT_0 : STD_LOGIC:= '0';
 begin
 	
+    gt_refclk_out <= clk125_gt;
 
 	bufg_fr: BUFG port map(
 		i => clk125_gt,

@@ -45,6 +45,7 @@ module TrackletProjections(
     output done,
     
     input [53:0] data_in,
+    input valid,
     
     output [5:0] number_out,
     input [5:0] read_add,
@@ -98,7 +99,7 @@ module TrackletProjections(
     reg [5:0] hold_number_out;
     reg [5:0] pipe_number_out;
 
-    always @(posedge clk) begin
+     always @(posedge clk) begin
         if(data_in > 0)
             data_in_dly <= data_in;
         else
@@ -109,14 +110,19 @@ module TrackletProjections(
             hold_number_out <= pre_number_out;             
         end
         else begin
-            if(data_in > 0 & data_in != data_in_dly) begin
-                wr_add <= wr_add + 1'b1;
+            if(valid) begin
                 wr_en <= 1'b1;
             end
             else begin
-                wr_add <= wr_add;
                 wr_en <= 1'b0;
             end
+            if(wr_en) begin
+                wr_add <= wr_add + 1'b1;
+            end
+            else begin
+                wr_add <= wr_add;
+            end
+            
         end
         if(NHOLD)
             pipe_number_out <= hold_number_out; // Local projection memories have to wait an extra BX to send the number

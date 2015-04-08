@@ -156,8 +156,9 @@ module gig_ethernet_pcs_pma_0_transceiver #
    wire             resetdone_tx;
    wire             resetdone_rx;
    wire             pcsreset;
-   (* KEEP = "TRUE" *) reg              data_valid_reg;
    wire             data_valid_reg2;
+   wire             wtd_rxpcsreset_in;
+   wire             rxpcsreset_comb; 
 
    wire      [2:0]  rxbufstatus;
    wire      [1:0]  txbufstatus;
@@ -226,9 +227,29 @@ module gig_ethernet_pcs_pma_0_transceiver #
 
    reg              rxpowerdown = 1'b0;
    wire       [1:0] rxpowerdown_int;
+   wire             wtd_rxpcsreset_in_comb;
+   wire             gt0_rxprbssel_in_orded;
 
-   assign txpowerdown_int = {2{txpowerdown}};
-   assign rxpowerdown_int = {2{rxpowerdown}};
+   gig_ethernet_pcs_pma_0_sync_block sync_block_data_valid
+          (
+             .clk             (independent_clock),
+             .data_in         (data_valid),
+             .data_out        (data_valid_reg2)
+          );
+
+   gig_ethernet_pcs_pma_0_reset_wtd_timer reset_wtd_timer
+          (
+             .clk             (independent_clock),
+             .data_valid      (data_valid_reg2),
+             .reset           (wtd_rxpcsreset_in)
+          );
+   
+   assign gt0_rxprbssel_in_orded = |(gt0_rxprbssel_in);
+   assign wtd_rxpcsreset_in_comb = gt0_rxprbssel_in_orded ? 1'b0 : wtd_rxpcsreset_in;
+   assign rxpcsreset_comb = (wtd_rxpcsreset_in_comb || gt0_rxpcsreset_in);
+
+   assign txpowerdown_int      = {2{txpowerdown}};
+   assign rxpowerdown_int      = {2{rxpowerdown}};
 
    assign gt0_rxbufstatus_out  = rxbufstatus;
    assign gt0_txbufstatus_out  = txbufstatus;
@@ -477,118 +498,114 @@ module gig_ethernet_pcs_pma_0_transceiver #
         .gt0_txpolarity_in              (gt0_txpolarity_in),
     //---------------- Transmit Ports - pattern Generator Ports ----------------
         .gt0_txprbssel_in               (gt0_txprbssel_in),
-        .gt0_drpaddr_in(gt0_drpaddr_in) ,
-        .gt0_drpclk_in (gt0_drpclk_in ) ,
-        .gt0_drpdi_in  (gt0_drpdi_in  ) ,
-        .gt0_drpdo_out (gt0_drpdo_out ) ,
-        .gt0_drpen_in  (gt0_drpen_in  ) ,
-        .gt0_drprdy_out(gt0_drprdy_out) ,
-        .gt0_drpwe_in  (gt0_drpwe_in  ) ,
-        .sysclk_in                       (independent_clock),
-        .soft_reset_in                   (pmareset),
-        .dont_reset_on_data_error_in    (1'b1),
-        .gt0_tx_fsm_reset_done_out       (resetdone_tx),
-        .gt0_rx_fsm_reset_done_out       (resetdone_rx),
-        .gt0_data_valid_in               (data_valid_reg2),
+        .gt0_drpaddr_in                 (gt0_drpaddr_in) ,
+        .gt0_drpclk_in                  (gt0_drpclk_in ) ,
+        .gt0_drpdi_in                   (gt0_drpdi_in  ) ,
+        .gt0_drpdo_out                  (gt0_drpdo_out ) ,
+        .gt0_drpen_in                   (gt0_drpen_in  ) ,
+        .gt0_drprdy_out                 (gt0_drprdy_out) ,
+        .gt0_drpwe_in                   (gt0_drpwe_in  ) ,
+        .sysclk_in                      (independent_clock),
+        .soft_reset_in                  (pmareset),
+        .dont_reset_on_data_error_in    (gt0_rxprbssel_in_orded),
+        .gt0_tx_fsm_reset_done_out      (resetdone_tx),
+        .gt0_rx_fsm_reset_done_out      (resetdone_rx),
+        .gt0_data_valid_in              (data_valid_reg2),
         //_________________________________________________________________________
         //_________________________________________________________________________
         //gt0  (x0y4)
         //____________________________channel ports________________________________
         //----------------------- channel - ref clock ports ------------------------
-        .gt0_gtrefclk0_in                (gtrefclk),
+        .gt0_gtrefclk0_in               (gtrefclk),
         //------------------------------ channel pll -------------------------------
-        .gt0_cpllfbclklost_out           (),
-        .gt0_cplllock_out                (cplllock),
-        .gt0_cplllockdetclk_in           (independent_clock),
-        .gt0_cpllreset_in                (pmareset),
+        .gt0_cpllfbclklost_out          (),
+        .gt0_cplllock_out               (cplllock),
+        .gt0_cplllockdetclk_in          (independent_clock),
+        .gt0_cpllreset_in               (pmareset),
         //---------------------- loopback and powerdown ports ----------------------
-        .gt0_rxpd_in                     (rxpowerdown_int),
-        .gt0_txpd_in                     (txpowerdown_int),
+        .gt0_rxpd_in                    (rxpowerdown_int),
+        .gt0_txpd_in                    (txpowerdown_int),
         //----------------------------- receive ports ------------------------------
-        .gt0_rxuserrdy_in                (mmcm_locked),
+        .gt0_rxuserrdy_in               (mmcm_locked),
         //--------------------- receive ports - 8b10b decoder ----------------------
-        .gt0_rxchariscomma_out           (rxchariscomma_int),
-        .gt0_rxcharisk_out               (rxcharisk_int),
-        .gt0_rxdisperr_out               (rxdisperr_int),
-        .gt0_rxnotintable_out            (rxnotintable_int),
+        .gt0_rxchariscomma_out          (rxchariscomma_int),
+        .gt0_rxcharisk_out              (rxcharisk_int),
+        .gt0_rxdisperr_out              (rxdisperr_int),
+        .gt0_rxnotintable_out           (rxnotintable_int),
         //----------------- receive ports - clock correction ports -----------------
-        .gt0_rxclkcorcnt_out             (rxclkcorcnt_int),
+        .gt0_rxclkcorcnt_out            (rxclkcorcnt_int),
         //------------- receive ports - comma detection and alignment --------------
-        .gt0_rxmcommaalignen_in          (encommaalign_int),
-        .gt0_rxpcommaalignen_in          (encommaalign_int),
+        .gt0_rxmcommaalignen_in         (encommaalign_int),
+        .gt0_rxpcommaalignen_in         (encommaalign_int),
         //----------------- receive ports - rx data path interface -----------------
-        .gt0_gtrxreset_in                (gt_reset_rx),
-        .gt0_rxdata_out                  (rxdata_int),
-        .gt0_rxoutclk_out                (rxoutclk),
-        .gt0_rxusrclk_in                 (rxusrclk),
-        .gt0_rxusrclk2_in                (rxusrclk2),
+        .gt0_gtrxreset_in               (gt_reset_rx),
+        .gt0_rxdata_out                 (rxdata_int),
+        .gt0_rxoutclk_out               (rxoutclk),
+        .gt0_rxusrclk_in                (rxusrclk),
+        .gt0_rxusrclk2_in               (rxusrclk2),
         //----- receive ports - rx driver,oob signalling,coupling and eq.,cdr ------
-        .gt0_gthrxn_in                   (rxn),
-        .gt0_gthrxp_in                   (rxp),
+        .gt0_gthrxn_in                  (rxn),
+        .gt0_gthrxp_in                  (rxp),
         //------ receive ports - rx elastic buffer and phase alignment ports -------
-        .gt0_rxbufreset_in               (gt0_rxbufreset_in),
-        .gt0_rxbufstatus_out             (rxbufstatus),
+        .gt0_rxbufreset_in              (gt0_rxbufreset_in),
+        .gt0_rxbufstatus_out            (rxbufstatus),
         //---------------------- receive ports - rx pll ports ----------------------
-        .gt0_rxresetdone_out             (),
+        .gt0_rxresetdone_out            (),
         //----------------------------- transmit ports -----------------------------
-        .gt0_txuserrdy_in                (mmcm_locked),
+        .gt0_txuserrdy_in               (mmcm_locked),
         //-------------- transmit ports - 8b10b encoder control ports --------------
-        .gt0_txchardispmode_in           (txchardispmode_int),
-        .gt0_txchardispval_in            (txchardispval_int),
-        .gt0_txcharisk_in                (txcharisk_int),
+        .gt0_txchardispmode_in          (txchardispmode_int),
+        .gt0_txchardispval_in           (txchardispval_int),
+        .gt0_txcharisk_in               (txcharisk_int),
         //---------- transmit ports - tx buffer and phase alignment ports ----------
-        .gt0_txbufstatus_out             (txbufstatus),
+        .gt0_txbufstatus_out            (txbufstatus),
         //---------------- transmit ports - tx data path interface -----------------
-        .gt0_gttxreset_in                (gt_reset_tx),
-        .gt0_txdata_in                   (txdata_int),
-        .gt0_txoutclk_out                (txoutclk),
-        .gt0_txoutclkfabric_out          (),
-        .gt0_txoutclkpcs_out             (),
-        .gt0_txusrclk_in                 (usrclk),
-        .gt0_txusrclk2_in                (usrclk),
+        .gt0_gttxreset_in               (gt_reset_tx),
+        .gt0_txdata_in                  (txdata_int),
+        .gt0_txoutclk_out               (txoutclk),
+        .gt0_txoutclkfabric_out         (),
+        .gt0_txoutclkpcs_out            (),
+        .gt0_txusrclk_in                (usrclk),
+        .gt0_txusrclk2_in               (usrclk),
         //-------------- transmit ports - tx driver and oob signaling --------------
-        .gt0_gthtxn_out                  (txn),
-        .gt0_gthtxp_out                  (txp),
+        .gt0_gthtxn_out                 (txn),
+        .gt0_gthtxp_out                 (txp),
         //--------------------- transmit ports - tx pll ports ----------------------
-        .gt0_txresetdone_out             (),
+        .gt0_txresetdone_out            (),
         //--------------- transmit ports - tx ports for pci express ----------------
-        .gt0_txelecidle_in               (txpowerdown),
+        .gt0_txelecidle_in              (txpowerdown),
         //--------------- debug ports  ----------------
-        .gt0_txpmareset_in               (gt0_txpmareset_in               ),
-        .gt0_txpcsreset_in               (gt0_txpcsreset_in               ),
-        .gt0_rxpmareset_in               (gt0_rxpmareset_in               ),
-        .gt0_rxpcsreset_in               (gt0_rxpcsreset_in               ),
-        .gt0_rxpmaresetdone_out          (gt0_rxpmaresetdone_out          ),
-        .gt0_dmonitorout_out             (gt0_dmonitorout_out             ),   
+        .gt0_txpmareset_in              (gt0_txpmareset_in               ),
+        .gt0_txpcsreset_in              (gt0_txpcsreset_in               ),
+        .gt0_rxpmareset_in              (gt0_rxpmareset_in               ),
+        .gt0_rxpcsreset_in              (rxpcsreset_comb                 ),
+        .gt0_rxpmaresetdone_out         (gt0_rxpmaresetdone_out          ),
+        .gt0_dmonitorout_out            (gt0_dmonitorout_out             ),   
     //____________________________common ports________________________________
     //-------------------- common block  - ref clock ports ---------------------
-        .gt0_qplloutclk_in                (gt0_qplloutclk),                    
-        .gt0_qplloutrefclk_in             (gt0_qplloutrefclk)
+        .gt0_qplloutclk_in              (gt0_qplloutclk),                    
+        .gt0_qplloutrefclk_in           (gt0_qplloutrefclk)
    );
-
 
    // Hold the transmitter and receiver paths of the GT transceiver in reset
    // until the PLL has locked.
-   assign gt_reset_rx = (rxreset_int & resetdone_rx);
-   assign gt_reset_tx = (txreset_int & resetdone_tx);
+   assign gt_reset_rx         = (rxreset_int & resetdone_rx);
+   assign gt_reset_tx         = (txreset_int & resetdone_tx);
 
    assign gt0_rxresetdone_out = resetdone_rx;
    assign gt0_txresetdone_out = resetdone_tx;
 
    // Output the PLL locked status
-   assign plllkdet = cplllock;
-
+   assign plllkdet            = cplllock;
 
    // Report overall status for both transmitter and receiver reset done signals
-   assign resetdone = cplllock;
-
+   assign resetdone           = cplllock;
 
    // reset to PCS part of GT
-   assign pcsreset = !mmcm_locked;
+   assign pcsreset            = !mmcm_locked;
 
    // temporary
-   assign rxrundisp_int = 2'b0;
-
+   assign rxrundisp_int       = 2'b0;
 
    // Decode the GT transceiver buffer status signals
   always @(posedge usrclk2)
@@ -598,22 +615,4 @@ module gig_ethernet_pcs_pma_0_transceiver #
     rxclkcorcnt <= {1'b0, rxclkcorcnt_int};
   end
 
-   //---------------------------------------------------------------------------
-   // The core works from a 125MHz clock source userclk2, the init statemachines 
-   // work at 200 MHz. 
-   //---------------------------------------------------------------------------
-
-   // Cross the clock domain
-   always @(posedge usrclk2)
-   begin
-     data_valid_reg    <= data_valid;
-   end
-
-
-   gig_ethernet_pcs_pma_0_sync_block sync_block_data_valid
-          (
-             .clk             (independent_clock),
-             .data_in         (data_valid_reg),
-             .data_out        (data_valid_reg2)
-          );
 endmodule

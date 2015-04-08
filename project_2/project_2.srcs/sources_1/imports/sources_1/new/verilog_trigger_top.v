@@ -35,7 +35,20 @@ module verilog_trigger_top(
     output wire [31:0] ipb_rdata,    // data returned for read operations
     output wire ipb_ack,                // 'write' data has been stored, 'read' data is ready
     output wire ipb_err,                    // '1' if error, '0' if OK?
-    input wire en_proc_switch    
+    input wire en_proc_switch,
+    // links
+    output wire txn_pphi,
+    output wire txp_pphi,
+    input  wire rxn_pphi,
+    input  wire rxp_pphi,
+    output wire txn_mphi,
+    output wire txp_mphi,
+    input  wire rxn_mphi,
+    input  wire rxp_mphi,
+    //gt reference clock
+    input wire gt_refclk,
+    //initial clock
+    input wire init_clk
     );
     
     // Convert the 200 MHz clock to something representing 10 MHz bunch crossing clock,
@@ -80,7 +93,7 @@ module verilog_trigger_top(
     reg first_clk;
     reg not_first_clk;
    
-    reg en_proc;
+    reg [31:0] en_proc;
     reg en_proc_1;
     reg en_proc_2;
     initial begin
@@ -93,16 +106,16 @@ module verilog_trigger_top(
     
     //BUFG enable(.O(en_proc_bufg),.I(en_proc_2)); // Force the enable signal to be a BUFG
     
-    assign io_sel_en = (ipb_addr[27:24] == 4'b0101);
+    assign io_sel_en = tracklet_processing_sel & (ipb_addr[27:24] == 4'b0101);
     
     always @(posedge ipb_clk) begin
         if (io_wr_en && io_sel_en) 
             en_proc <= ipb_wdata;       // enable comes from IPbus if add == 32'h5500000
-    end    
+        end    
     
     always @(posedge proc_clk) begin 
         //en_proc_1 <= en_proc_switch;
-        en_proc_1 <= en_proc;
+        en_proc_1 <= en_proc[0];
         en_proc_2 <= en_proc_1;         // synchronize enable since it comes from IPbus clock domain
         if(en_proc_2)
         //if(en_proc)
@@ -121,14 +134,22 @@ module verilog_trigger_top(
             not_first_clk <= 1'b1;
         end
     end
+    parameter [7:0] n_hold = 8'd60;
+    reg [n_hold:0] hold;
+    reg proc_reset; // The processing reset is delayed until the processing clock is generated
     
+    always @(posedge clk200) begin // This shift register runs with the 200 MHz clock
+       hold[0] <= reset;
+       hold[n_hold:1] <= hold[n_hold-1:0];
+       proc_reset <= hold[n_hold];
+    end
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     // connect each sector
          
 //    Tracklet_processing layer_router(
 //        // clocks and reset
-//        .reset(reset),                        // active HI
+//        .reset(proc_reset),                        // active HI
 //        .clk(proc_clk),                // processing clock at a multiple of the crossing clock
 //        .en_proc(en_proc_2),
 //        //.en_proc(en_proc),
@@ -153,7 +174,7 @@ module verilog_trigger_top(
          
 //       Tracklet_Layer_Router layer_router(
 //        // clocks and reset
-//        .reset(reset),                        // active HI
+//        .reset(proc_reset),                        // active HI
 //        .clk(proc_clk),                // processing clock at a multiple of the crossing clock
 //        .en_proc(en_proc_2),
 //        //.en_proc(en_proc),
@@ -178,7 +199,7 @@ module verilog_trigger_top(
         
 //     Tracklet_VM_Router vm_router(
 //        // clocks and reset
-//        .reset(reset),                        // active HI
+//        .reset(proc_reset),                        // active HI
 //        .clk(clk200),                // processing clock at a multiple of the crossing clock
 //        .en_proc(en_proc_2),
 //        //.en_proc(en_proc),
@@ -204,7 +225,7 @@ module verilog_trigger_top(
 
 //    Tracklet_Tracklet_Engine tengine(
 //        //clocks and reset
-//        .reset(reset),                        // active HI
+//        .reset(proc_reset),                        // active HI
 //        .clk(proc_clk),                // processing clock at a multiple of the crossing clock
 //        .en_proc(en_proc_2),
 //        //.en_proc(en_proc),
@@ -228,7 +249,7 @@ module verilog_trigger_top(
         
 //    Tracklet_TrackletCalculator TC(
 //        //clocks and reset
-//        .reset(reset),                        // active HI
+//        .reset(proc_reset),                        // active HI
 //        .clk(proc_clk),                // processing clock at a multiple of the crossing clock
 //        .en_proc(en_proc_2),
 //        //.en_proc(en_proc),
@@ -250,14 +271,51 @@ module verilog_trigger_top(
 //        .not_first_clk(not_first_clk)
 //    );
      
-     Tracklet_Communication commy();
+     Tracklet_Communication commy(
+         //clocks and reset
+         .reset(proc_reset),                        // active HI
+         .clk(proc_clk),                // processing clock at a multiple of the crossing clock
+         .en_proc(en_proc_2),
+         //.en_proc(en_proc),
+         // programming interface
+         // inputs
+         .io_clk(ipb_clk),                    // programming clock
+         .io_sel(tracklet_processing_sel),    // this module has been selected for an I/O operation
+         .io_sync(io_sync),                // start the I/O operation
+         .io_addr(ipb_addr[27:0]),        // slave address, memory or register. Top 4 bits already consumed.
+         .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+         .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+         .io_wr_data(ipb_wdata),    // data to write for write operations
+         // outputs
+         .io_rd_data(tracklet_processing_io_rd_data),    // data returned for read operations
+         .io_rd_ack(tracklet_processing_io_rd_ack),        // 'read' data from this module is ready
+         // clocks
+         .BX(BX),
+         .first_clk(first_clk),
+         .not_first_clk(not_first_clk),
+         //Links
+         .txn_pphi(txn_pphi),
+         .txp_pphi(txp_pphi),
+         .rxn_pphi(rxn_pphi),
+         .rxp_pphi(rxp_pphi),
+         .txn_mphi(txn_mphi),
+         .txp_mphi(txp_mphi),
+         .rxn_mphi(rxn_mphi),
+         .rxp_mphi(rxp_mphi),
+         //gt reference clock
+         .gt_refclk(gt_refclk),
+         //initial clock
+         .init_clk(init_clk)
+     );
+        
+    
         
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     // connect a state machine to handle the IPbus transactions, wait states and drive 'ipb_ack'
      IPB_IO_interface IPB_IO_interface(
          // inputs
          .clk(ipb_clk),               // IPbus clock
-         .res(reset),                // Global reset
+         .res(proc_reset),                // Global reset
          .ipb_strobe(ipb_strobe),    // IPbus strobe
          .ipb_write(ipb_write),     // IPbus write
          .io_rd_ack(io_rd_ack),    // verilog ack
@@ -276,11 +334,12 @@ module verilog_trigger_top(
     reg io_rd_ack_reg;
     assign io_rd_ack = io_rd_ack_reg;
     always @(posedge ipb_clk) begin
-        io_rd_ack_reg <= io_sync & io_rd_en & (tracklet_processing_io_rd_ack);
+        io_rd_ack_reg <= io_sync & io_rd_en & (tracklet_processing_io_rd_ack | io_sel_en);
     end
 
     always @(posedge ipb_clk) begin
-        if (tracklet_processing_io_rd_ack)    io_rd_data_reg <= tracklet_processing_io_rd_data;
+        if (tracklet_processing_io_rd_ack)      io_rd_data_reg <= tracklet_processing_io_rd_data;
+        if (io_rd_en & io_sel_en)               io_rd_data_reg <= en_proc;
     end
     
          
