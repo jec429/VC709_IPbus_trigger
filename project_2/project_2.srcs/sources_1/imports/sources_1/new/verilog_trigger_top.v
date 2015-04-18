@@ -200,7 +200,7 @@ module verilog_trigger_top(
 //     Tracklet_VM_Router vm_router(
 //        // clocks and reset
 //        .reset(proc_reset),                        // active HI
-//        .clk(clk200),                // processing clock at a multiple of the crossing clock
+//        .clk(proc_clk),                // processing clock at a multiple of the crossing clock
 //        .en_proc(en_proc_2),
 //        //.en_proc(en_proc),
 //        // programming interface

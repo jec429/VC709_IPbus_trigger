@@ -84,7 +84,7 @@ module Tracklet_Communication(
     wire [53:0] TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3;
     TrackletProjections #(1,1) TPROJ_ToPlus_L1D3L2D3_L3(
     .data_in(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3),
-    .valid(~TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3_valid), // Valid Bit
+    .valid(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3_valid), // Valid Bit
     .number_out(TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_number),
     .read_add(TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_read_add),
     .data_out(TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3),
@@ -112,6 +112,7 @@ module Tracklet_Communication(
     wire [53:0] TPROJ_FromPlus_L1D3L2D3_L3_PR_L3D3_L1L2;
     TrackletProjections #(16,1) TPROJ_FromPlus_L1D3L2D3_L3(
     .data_in(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L3),
+    .valid(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L3_valid),
     .number_out(TPROJ_FromPlus_L1D3L2D3_L3_PR_L3D3_L1L2_number),
     .read_add(TPROJ_FromPlus_L1D3L2D3_L3_PR_L3D3_L1L2_read_add),
     .data_out(TPROJ_FromPlus_L1D3L2D3_L3_PR_L3D3_L1L2),
@@ -139,7 +140,7 @@ module Tracklet_Communication(
     wire [53:0] TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3;
     TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L4(
     .data_in(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L4),
-    .valid(~TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L4_valid), // Valid Bit
+    .valid(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L4_valid), // Valid Bit
     .number_out(TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3_number),
     .read_add(TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3_read_add),
     .data_out(TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3),
@@ -194,7 +195,7 @@ module Tracklet_Communication(
     wire [53:0] TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3;
     TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L5(
     .data_in(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L5),
-    .valid(~TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L5_valid), // Valid Bit
+    .valid(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L5_valid), // Valid Bit
     .number_out(TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3_number),
     .read_add(TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3_read_add),
     .data_out(TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3),
@@ -249,7 +250,7 @@ module Tracklet_Communication(
     wire [53:0] TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3;
     TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L6(
     .data_in(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L6),
-    .valid(~TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L6_valid), // Valid Bit
+    .valid(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L6_valid), // Valid Bit
     .number_out(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3_number),
     .read_add(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3_read_add),
     .data_out(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3),
@@ -314,6 +315,7 @@ module Tracklet_Communication(
     .input_L1L2_4(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3),
     
     .output_L1L2_1(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L3),
+    .valid_L1L2_1(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L3_valid),
     .output_L1L2_2(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L4),
     .output_L1L2_3(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L5),
     .output_L1L2_4(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L6),

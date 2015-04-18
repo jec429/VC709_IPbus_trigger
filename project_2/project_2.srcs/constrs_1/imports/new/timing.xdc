@@ -7,7 +7,7 @@ create_clock -period 5.000 -name clk200 -waveform {0.000 2.500} [get_ports clk20
 # and something representing the faster processing clock, maybe 15 times as fast.
 # They are currently 10 MHz and 150 MHz
 create_clock -period 100.000 -name cross_clk
-create_clock -period 2.500 -name proc_clk -waveform {0.000 1.250}
+create_clock -period 6.667 -name proc_clk
 
 # programmable oscillator
 # 'USER_CLOCK' in the VC709 manual, 'prog_clk' in this project
@@ -25,6 +25,8 @@ set_clock_groups -asynchronous -group [get_clocks proc_clk]
 set_clock_groups -asynchronous -group [get_clocks prog_clk]
 set_clock_groups -asynchronous -group [get_clocks -include_generated_clocks gt_clk]
 
+###### CDC in RESET_LOGIC from INIT_CLK to USER_CLK ##############
+set_false_path -through [get_pins -hier *cdc_to*]
 
 
 

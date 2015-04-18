@@ -98,8 +98,9 @@ module TrackletProjections(
     reg [5:0] pre_number_out;
     reg [5:0] hold_number_out;
     reg [5:0] pipe_number_out;
-
-     always @(posedge clk) begin
+    reg wr_en_hold;
+    
+    always @(posedge clk) begin
         if(data_in > 0)
             data_in_dly <= data_in;
         else
@@ -127,8 +128,11 @@ module TrackletProjections(
         if(NHOLD)
             pipe_number_out <= hold_number_out; // Local projection memories have to wait an extra BX to send the number
         else
-            pipe_number_out <= pre_number_out;         
+            pipe_number_out <= pre_number_out; 
+            
+                    
         data_out <= pre_data_out;
+        wr_en_hold <= wr_en;
     end
       
     // The start comes from the tracklet parameter calculation
@@ -148,14 +152,21 @@ module TrackletProjections(
     pipe_delay #(.STAGES(delay), .WIDTH(6)) NUM_OUT(.pipe_in(start_proj), .pipe_out(), .clk(clk),
                                                    .val_in(pipe_number_out), .val_out(number_out));
 
-    Memory #(54) Projection(
-        // Output
-        .output_data(pre_data_out),
-        // Input
-        .clock(clk),
-        .write_address({BX_pipe - 3'd4 + NHOLD,wr_add}),
-        .write_enable(wr_en),
-        .read_address({rd_BX_pipe-3'd5,read_add}),
-        .input_data(data_in_dly)
+    Memory #(
+            .RAM_WIDTH(54),                       // Specify RAM data width
+            .RAM_DEPTH(341),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+          ) Projection (
+            .addra({BX_pipe,wr_add}),    // Write address bus, width determined from RAM_DEPTH
+            .addrb({rd_BX_pipe - 1'b1,read_add}),    // Read address bus, width determined from RAM_DEPTH
+            .dina(data_in_dly),      // RAM input data, width determined from RAM_WIDTH
+            .clka(clk),      // Write clock
+            .clkb(clk),      // Read clock
+            .wea(wr_en_hold),        // Write enable
+            .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+            .rstb(reset),      // Output reset (does not affect memory contents)
+            .regceb(1'b1),  // Output register enable
+            .doutb(pre_data_out)     // RAM output data, width determined from RAM_WIDTH
     );
 endmodule

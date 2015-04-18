@@ -95,18 +95,30 @@ module ProjTransceiver(
     output reg [5:0] read_add12,
     input [53:0] input_L5L6_4,
     
-    output [53:0] output_L1L2_1,
-    output [53:0] output_L1L2_2,
-    output [53:0] output_L1L2_3,
-    output [53:0] output_L1L2_4,
-    output [53:0] output_L3L4_1,
-    output [53:0] output_L3L4_2,
-    output [53:0] output_L3L4_3,
-    output [53:0] output_L3L4_4,
-    output [53:0] output_L5L6_1,
-    output [53:0] output_L5L6_2,
-    output [53:0] output_L5L6_3,
-    output [53:0] output_L5L6_4
+    output reg [53:0] output_L1L2_1,
+    output reg [53:0] output_L1L2_2,
+    output reg [53:0] output_L1L2_3,
+    output reg [53:0] output_L1L2_4,
+    output reg [53:0] output_L3L4_1,
+    output reg [53:0] output_L3L4_2,
+    output reg [53:0] output_L3L4_3,
+    output reg [53:0] output_L3L4_4,
+    output reg [53:0] output_L5L6_1,
+    output reg [53:0] output_L5L6_2,
+    output reg [53:0] output_L5L6_3,
+    output reg [53:0] output_L5L6_4,
+    output reg valid_L1L2_1,
+    output reg valid_L1L2_2,
+    output reg valid_L1L2_3,
+    output reg valid_L1L2_4,
+    output reg valid_L3L4_1,
+    output reg valid_L3L4_2,
+    output reg valid_L3L4_3,
+    output reg valid_L3L4_4,
+    output reg valid_L5L6_1,
+    output reg valid_L5L6_2,
+    output reg valid_L5L6_3,
+    output reg valid_L5L6_4
     
     );
     
@@ -142,14 +154,12 @@ module ProjTransceiver(
        hold[n_hold:1] <= hold[n_hold-1:0];
        done <= hold[n_hold];
     end
-    
-    
+
     initial begin
         read_add1 = 6'h3f;
         read_add2 = 6'h3f;
         read_add3 = 6'h3f;
-    end
-    
+    end    
     always @(posedge clk) begin
         if(first_clk_pipe) begin
             read_add1 <= 6'h3f;
@@ -179,7 +189,17 @@ module ProjTransceiver(
     
     wire [31:0] Aurora_test_io_rd_data;
     wire [15:0] Aurora_data_out;
-    assign output_L1L2_1 = {Aurora_data_out,38'h3fffffffff};
+    always @(posedge clk) begin
+        if(Aurora_data_out != 0) begin
+            output_L1L2_1 <= {Aurora_data_out,38'h3fffffffff};
+            valid_L1L2_1 <= 1'b1;            
+        end
+        else begin
+            output_L1L2_1 <= {16'h0000,38'h3fffffffff};
+            valid_L1L2_1 <= 1'b0;
+        end
+    end
+    
     Aurora_test aurora_test_top(
         // clocks and reset
         .clk(clk),                // processing clock

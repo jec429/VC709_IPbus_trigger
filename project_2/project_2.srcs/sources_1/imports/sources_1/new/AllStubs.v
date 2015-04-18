@@ -117,26 +117,38 @@ module AllStubs(
     pipe_delay #(.STAGES(5), .WIDTH(3)) READ_BX2(.pipe_in(), .pipe_out(), .clk(clk),
                                                        .val_in(BX_pipe), .val_out(BX_hold_2));
                                                        
-    Memory AllStub(
-        // Output
-        .output_data(data_out),
-        // Input
-        .clock(clk),
-        .write_address({BX_pipe-1'b1,wr_add}),
-        .write_enable(wr_en),
-        .read_address({BX_hold_1-3'b011,read_add}),
-        .input_data(data_in_dly)
-    );
-    
-    Memory AllStub_MC(
-        // Output
-        .output_data(pre_data_out_MC),
-        // Input
-        .clock(clk),
-        .write_address({BX_pipe-1'b1,wr_add}),
-        .write_enable(wr_en),
-        .read_address({BX_hold_2-3'b101,read_add_MC}),
-        .input_data(data_in_dly)
-    );
-    
+    Memory #(
+            .RAM_WIDTH(36),                       // Specify RAM data width
+            .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+          ) AllStub (
+            .addra({BX_pipe-1'b1,wr_add}),    // Write address bus, width determined from RAM_DEPTH
+            .addrb({BX_hold_1-3'b011,read_add}),    // Read address bus, width determined from RAM_DEPTH
+            .dina(data_in_dly),      // RAM input data, width determined from RAM_WIDTH
+            .clka(clk),      // Write clock
+            .clkb(clk),      // Read clock
+            .wea(wr_en),        // Write enable
+            .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use
+            .rstb(reset),      // Output reset (does not affect memory contents)
+            .regceb(1'b1),  // Output register enable
+            .doutb(data_out)     // RAM output data, width determined from RAM_WIDTH
+            );
+    Memory #(
+        .RAM_WIDTH(36),                       // Specify RAM data width
+        .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+        .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+        .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+      ) AllStub_MC (
+        .addra({BX_pipe-1'b1,wr_add}),    // Write address bus, width determined from RAM_DEPTH
+        .addrb({BX_hold_2-3'b101,read_add_MC}),    // Read address bus, width determined from RAM_DEPTH
+        .dina(data_in_dly),      // RAM input data, width determined from RAM_WIDTH
+        .clka(clk),      // Write clock
+        .clkb(clk),      // Read clock
+        .wea(wr_en),        // Write enable
+        .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use
+        .rstb(reset),      // Output reset (does not affect memory contents)
+        .regceb(1'b1),  // Output register enable
+        .doutb(pre_data_out_MC)     // RAM output data, width determined from RAM_WIDTH
+        );
 endmodule

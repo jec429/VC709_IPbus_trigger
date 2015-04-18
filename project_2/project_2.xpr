@@ -1046,7 +1046,9 @@
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="verilog_trigger_top_test1"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="SimMode" Val="post-implementation"/>
         <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="NLNetlistMode" Val="funcsim"/>
       </Config>
     </FileSet>
     <FileSet Name="aurora_8b10b_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/aurora_8b10b_0">
@@ -1090,19 +1092,6 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="link_axis_data_fifo" Type="BlockSrcs" RelSrcDir="$PSRCDIR/link_axis_data_fifo">
-      <File Path="$PSRCDIR/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo.xci">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <Config>
-        <Option Name="TopModule" Val="link_axis_data_fifo"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="TP_track_fit_fifo" Type="BlockSrcs" RelSrcDir="$PSRCDIR/TP_track_fit_fifo">
       <File Path="$PSRCDIR/sources_1/ip/TP_track_fit_fifo/TP_track_fit_fifo.xci">
         <FileInfo>
@@ -1141,6 +1130,19 @@
       </File>
       <Config>
         <Option Name="TopModule" Val="aurora_8b10b_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="link_axis_data_fifo" Type="BlockSrcs" RelSrcDir="$PSRCDIR/link_axis_data_fifo">
+      <File Path="$PSRCDIR/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="link_axis_data_fifo"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -1189,13 +1191,6 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="link_axis_data_fifo_synth_1" Type="Ft3:Synth" SrcSet="link_axis_data_fifo" Part="xc7vx690tffg1761-2" ConstrsSet="link_axis_data_fifo" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/link_axis_data_fifo_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-    </Run>
     <Run Id="TP_track_fit_fifo_synth_1" Type="Ft3:Synth" SrcSet="TP_track_fit_fifo" Part="xc7vx690tffg1761-2" ConstrsSet="TP_track_fit_fifo" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/TP_track_fit_fifo_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
@@ -1211,6 +1206,13 @@
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="aurora_8b10b_1_synth_1" Type="Ft3:Synth" SrcSet="aurora_8b10b_1" Part="xc7vx690tffg1761-2" ConstrsSet="aurora_8b10b_1" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/aurora_8b10b_1_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="link_axis_data_fifo_synth_1" Type="Ft3:Synth" SrcSet="link_axis_data_fifo" Part="xc7vx690tffg1761-2" ConstrsSet="link_axis_data_fifo" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/link_axis_data_fifo_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
         <Step Id="synth_design"/>
@@ -1282,20 +1284,6 @@
         <Step Id="write_bitstream"/>
       </Strategy>
     </Run>
-    <Run Id="link_axis_data_fifo_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="link_axis_data_fifo" Description="Vivado Implementation Defaults" SynthRun="link_axis_data_fifo_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-    </Run>
     <Run Id="TP_track_fit_fifo_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="TP_track_fit_fifo" Description="Vivado Implementation Defaults" SynthRun="TP_track_fit_fifo_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
@@ -1325,6 +1313,20 @@
       </Strategy>
     </Run>
     <Run Id="aurora_8b10b_1_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="aurora_8b10b_1" Description="Vivado Implementation Defaults" SynthRun="aurora_8b10b_1_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="link_axis_data_fifo_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="link_axis_data_fifo" Description="Vivado Implementation Defaults" SynthRun="link_axis_data_fifo_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
         <Step Id="init_design"/>

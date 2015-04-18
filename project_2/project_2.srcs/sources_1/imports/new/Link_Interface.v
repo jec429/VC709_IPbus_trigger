@@ -86,10 +86,10 @@ module Link_Interface(
     reg [15:0] rxstat3_reg;
     
     //TX interface to slave side of transmit FIFO
-    wire [0:15] s_axis_tx_tdata;
-    wire [0:1] s_axis_tx_tkeep;
-    wire s_axis_tx_tvalid;
-    wire s_axis_tx_tlast;
+    reg [0:15] s_axis_tx_tdata;
+    reg [0:1] s_axis_tx_tkeep;
+    reg s_axis_tx_tvalid;
+    reg s_axis_tx_tlast;
     wire s_axis_tx_tready;      //ready signal from tx_fifo. untied for now. Use for state machine enable?
     //RX interface to master side of receive FIFO
     wire [0:15] m_axis_rx_tdata;
@@ -105,21 +105,35 @@ module Link_Interface(
     
     wire local_rst;
     assign local_rst = ~local_axis_resetn;
+    always @(posedge clk) begin
+        if(data_in != 0) begin
+            s_axis_tx_tdata <= data_in;
+            s_axis_tx_tkeep <= 2'b11;
+            s_axis_tx_tvalid <= 1'b1;
+            s_axis_tx_tlast <= 1'b1;    
+        end
+        else begin
+            s_axis_tx_tdata <= 16'h0000;
+            s_axis_tx_tkeep <= 2'b00;
+            s_axis_tx_tvalid <= 1'b0;
+            s_axis_tx_tlast <= 1'b0;    
+        end
+    end
     
-    Data_FSM datain_io (
-        //outputs
-        .data(s_axis_tx_tdata),
-        .valid(s_axis_tx_tvalid),
-        .keep(s_axis_tx_tkeep),
-        .last(s_axis_tx_tlast),
-        //inputs
-        .en(fsm_en),
-        .reset(fsm_rst),
-        .clk(clk),
-        .data_1(data_in),
-        .data_2(data_in),
-        .data_3(data_in)
-    );
+//    Data_FSM datain_io (
+//        //outputs
+//        .data(s_axis_tx_tdata),
+//        .valid(s_axis_tx_tvalid),
+//        .keep(s_axis_tx_tkeep),
+//        .last(s_axis_tx_tlast),
+//        //inputs
+//        .en(fsm_en),
+//        .reset(fsm_rst),
+//        .clk(clk),
+//        .data_1(data_in),
+//        .data_2(data_in),
+//        .data_3(data_in)
+//    );
     
     // Connect the transmit FIFO that buffers data crossing clock domains
     link_axis_data_fifo tx_fifo (
@@ -157,16 +171,16 @@ module Link_Interface(
       .m_axis_tlast(m_axis_rx_tlast)             // output wire m_axis_tlast
     );    
     
-    //readout from tx fifo
+    //readout from rx fifo
     always @ (posedge clk) begin
         if (m_axis_rx_tvalid) begin
             data_out <= m_axis_rx_tdata;
-            rxdata2_reg <= rxdata3_reg;
-            rxdata1_reg <= rxdata2_reg;
+            //rxdata2_reg <= rxdata3_reg;
+            //rxdata1_reg <= rxdata2_reg;
             
-            rxstat3_reg <= {12'b0, m_axis_rx_tvalid, m_axis_rx_tkeep[0:1], m_axis_rx_tlast};
-            rxstat2_reg <= rxstat3_reg;
-            rxstat1_reg <= rxstat2_reg;
+            //rxstat3_reg <= {12'b0, m_axis_rx_tvalid, m_axis_rx_tkeep[0:1], m_axis_rx_tlast};
+            //rxstat2_reg <= rxstat3_reg;
+            //rxstat1_reg <= rxstat2_reg;
         end
     end
 

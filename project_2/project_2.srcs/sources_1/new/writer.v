@@ -112,13 +112,14 @@ module writer(
     assign io_sel_data_in20  = io_sel && (io_addr[4:0] == 5'b10011);
     
     wire wr_en;
-    assign wr_en = io_sel_data_in1;
+    assign wr_en = io_sel_data_in1 & (io_wr_data != 0);
     wire [35:0] wr_data;
         
     TP_raw_stub_fifo input_fifo(.wr_clk(io_clk), .rst(reset), .din({4'ha,io_wr_data}), .wr_en(wr_en), 
                                     .rd_clk(clk), .rd_en(en_proc), .dout(wr_data),
-                                    .empty(valid1), .full(fifo_full));
+                                    .empty(fifo_empty), .full(fifo_full));
                                     
+    assign valid1 = !fifo_empty & en_proc; 
     assign valid2 = valid1;
     assign valid3 = valid1;
     assign valid4 = valid1;
@@ -139,7 +140,7 @@ module writer(
     assign valid19 = valid1;
     assign valid20 = valid1;
                                     
-    always @ (posedge io_clk) begin
+    always @ (posedge clk) begin
         data_out1 <= {wr_data,wr_data};
         data_out2 <= {wr_data,wr_data};
         data_out3 <= {wr_data,wr_data};
