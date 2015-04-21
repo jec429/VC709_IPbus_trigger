@@ -76,7 +76,9 @@ module Tracklet_Communication(
     end
     
     assign start5 = (clk_cnt == 1);
+    assign start6 = done5;
     
+    assign start5_5 = done4_5;
        
     wire [53:0] TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3;
     wire [5:0] TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_number;
@@ -144,7 +146,7 @@ module Tracklet_Communication(
     .number_out(TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3_number),
     .read_add(TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3_read_add),
     .data_out(TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3),
-    .start(start5),.done(done4_5),.clk(clk), // Sending memories are processed immediately
+    .start(start5),.done(),.clk(clk), // Sending memories are processed immediately
     .reset(reset),
     .en_proc(en_proc),
     .io_clk(io_clk),
@@ -199,7 +201,7 @@ module Tracklet_Communication(
     .number_out(TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3_number),
     .read_add(TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3_read_add),
     .data_out(TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3),
-    .start(start5),.done(done4_5),.clk(clk), // Sending memories are processed immediately
+    .start(start5),.done(),.clk(clk), // Sending memories are processed immediately
     .reset(reset),
     .en_proc(en_proc),
     .io_clk(io_clk),
@@ -254,7 +256,7 @@ module Tracklet_Communication(
     .number_out(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3_number),
     .read_add(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3_read_add),
     .data_out(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3),
-    .start(start5),.done(done4_5),.clk(clk), // Sending memories are processed immediately
+    .start(start5),.done(),.clk(clk), // Sending memories are processed immediately
     .reset(reset),
     .en_proc(en_proc),
     .io_clk(io_clk),

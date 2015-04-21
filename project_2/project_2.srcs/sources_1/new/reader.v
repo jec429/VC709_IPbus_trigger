@@ -147,40 +147,39 @@ module reader(
     );
     
     initial begin
-        read_add1 = 6'b0;
-        read_add2 = 6'b0;
-        read_add3 = 6'b0;
-        read_add4 = 6'b0;
-        read_add5 = 6'b0;
-        read_add6 = 6'b0;
-        read_add7 = 6'b0;
-        read_add8 = 6'b0;
-        read_add9 = 6'b0;
-        read_add10 = 6'b0;
-        read_add11 = 6'b0;
-        read_add12 = 6'b0;
-        read_add13 = 6'b0;
-        read_add14 = 6'b0;
-        read_add15 = 6'b0;
-        read_add16 = 6'b0;
-        read_add17 = 6'b0;
-        read_add18 = 6'b0;
-        read_add19 = 6'b0;
-        read_add20 = 6'b0;
-        read_add21 = 6'b0;
-        read_add22 = 6'b0;
-        read_add23 = 6'b0;
-        read_add24 = 6'b0;
-        read_add25 = 6'b0;
-        read_add26 = 6'b0;
-        read_add27 = 6'b0;
-        read_add28 = 6'b0;
-        read_add29 = 6'b0;
-        read_add30 = 6'b0;
-        read_add31 = 6'b0;
-        read_add32 = 6'b0;
-        read_add33 = 6'b0;
-        
+        read_add1 = 6'h3f;
+        read_add2 = 6'h3f;
+        read_add3 = 6'h3f;
+        read_add4 = 6'h3f;
+        read_add5 = 6'h3f;
+        read_add6 = 6'h3f;
+        read_add7 = 6'h3f;
+        read_add8 = 6'h3f;
+        read_add9 = 6'h3f;
+        read_add10 = 6'h3f;
+        read_add11 = 6'h3f;
+        read_add12 = 6'h3f;
+        read_add13 = 6'h3f;
+        read_add14 = 6'h3f;
+        read_add15 = 6'h3f;
+        read_add16 = 6'h3f;
+        read_add17 = 6'h3f;
+        read_add18 = 6'h3f;
+        read_add19 = 6'h3f;
+        read_add20 = 6'h3f;
+        read_add21 = 6'h3f;
+        read_add22 = 6'h3f;
+        read_add23 = 6'h3f;
+        read_add24 = 6'h3f;
+        read_add25 = 6'h3f;
+        read_add26 = 6'h3f;
+        read_add27 = 6'h3f;
+        read_add28 = 6'h3f;
+        read_add29 = 6'h3f;
+        read_add30 = 6'h3f;
+        read_add31 = 6'h3f;
+        read_add32 = 6'h3f;
+        read_add33 = 6'h3f;   
     end
     
     always @(posedge clk) begin
@@ -319,8 +318,39 @@ module reader(
             
     end   
     
-     reg [31:0] rd_data_reg;
-    
+    reg [31:0] rd_data_reg1;
+    reg [31:0] rd_data_reg2;
+    reg [31:0] rd_data_reg3;
+    reg [31:0] rd_data_reg4;
+    reg [31:0] rd_data_reg5;
+    reg [31:0] rd_data_reg6;
+    reg [31:0] rd_data_reg7;
+    reg [31:0] rd_data_reg8;
+    reg [31:0] rd_data_reg9;
+    reg [31:0] rd_data_reg10;
+    reg [31:0] rd_data_reg11;
+    reg [31:0] rd_data_reg12;
+    reg [31:0] rd_data_reg13;
+    reg [31:0] rd_data_reg14;
+    reg [31:0] rd_data_reg15;
+    reg [31:0] rd_data_reg16;
+    reg [31:0] rd_data_reg17;
+    reg [31:0] rd_data_reg18;
+    reg [31:0] rd_data_reg19;
+    reg [31:0] rd_data_reg20;
+    reg [31:0] rd_data_reg21;
+    reg [31:0] rd_data_reg22;
+    reg [31:0] rd_data_reg23;
+    reg [31:0] rd_data_reg24;
+    reg [31:0] rd_data_reg25;
+    reg [31:0] rd_data_reg26;
+    reg [31:0] rd_data_reg27;
+    reg [31:0] rd_data_reg28;
+    reg [31:0] rd_data_reg29;
+    reg [31:0] rd_data_reg30;
+    reg [31:0] rd_data_reg31;
+    reg [31:0] rd_data_reg32;
+        
     wire sel_data1,sel_data2,sel_data3,sel_data4,sel_data5,sel_data6,sel_data7,sel_data8,sel_data9,sel_data10;
     wire sel_data11,sel_data12,sel_data13,sel_data14,sel_data15,sel_data16,sel_data17,sel_data18,sel_data19,sel_data20;
     wire sel_data21,sel_data22,sel_data23,sel_data24,sel_data25,sel_data26,sel_data27,sel_data28,sel_data29,sel_data30;
@@ -359,76 +389,50 @@ module reader(
     assign sel_data31 = (input31[0] != 0 );
     assign sel_data32 = (input32[0] != 0 );
     
+    reg [8:0] wr_add;
     always @(posedge clk) begin
-        if (sel_data1) rd_data_reg <= input1[31:0];
-        else if (sel_data2) rd_data_reg <= input2[31:0];
-        else if (sel_data3) rd_data_reg <= input3[31:0];
-        else if (sel_data4) rd_data_reg <= input4[31:0];
-        else if (sel_data5) rd_data_reg <= input5[31:0];
-        else if (sel_data6) rd_data_reg <= input6[31:0];
-        else if (sel_data7) rd_data_reg <= input7[31:0];
-        else if (sel_data8) rd_data_reg <= input8[31:0];
-        else if (sel_data9) rd_data_reg <= input9[31:0];
-        else if (sel_data10) rd_data_reg <= input10[31:0];
-        else if (sel_data11) rd_data_reg <= input11[31:0];
-        else if (sel_data12) rd_data_reg <= input12[31:0];
-        else if (sel_data13) rd_data_reg <= input13[31:0];
-        else if (sel_data14) rd_data_reg <= input14[31:0];
-        else if (sel_data15) rd_data_reg <= input15[31:0];
-        else if (sel_data16) rd_data_reg <= input16[31:0];
-        else if (sel_data17) rd_data_reg <= input17[31:0];
-        else if (sel_data18) rd_data_reg <= input18[31:0];
-        else if (sel_data19) rd_data_reg <= input19[31:0];
-        else if (sel_data20) rd_data_reg <= input20[31:0];
-        else if (sel_data21) rd_data_reg <= input21[31:0];
-        else if (sel_data22) rd_data_reg <= input22[31:0];
-        else if (sel_data23) rd_data_reg <= input23[31:0];
-        else if (sel_data24) rd_data_reg <= input24[31:0];
-        else if (sel_data25) rd_data_reg <= input25[31:0];
-        else if (sel_data26) rd_data_reg <= input26[31:0];
-        else if (sel_data27) rd_data_reg <= input27[31:0];
-        else if (sel_data28) rd_data_reg <= input28[31:0];
-        else if (sel_data29) rd_data_reg <= input29[31:0];
-        else if (sel_data30) rd_data_reg <= input30[31:0];
-        else if (sel_data31) rd_data_reg <= input31[31:0];
-        else if (sel_data32) rd_data_reg <= input32[31:0];
-        
+        if(input1[31:0] == 0)
+            wr_add <= 9'h000;
+        else begin
+            if (sel_data1)
+                wr_add <= wr_add + 1'b1;
+            else
+                wr_add <= wr_add;
+        end
      end
-    
-
-    
-    assign io_sel_data1 = io_sel && (io_addr[4:0] == 5'b00000);
-    assign io_sel_data2 = io_sel && (io_addr[4:0] == 5'b00001);
-    assign io_sel_data3 = io_sel && (io_addr[4:0] == 5'b00010);
-    assign io_sel_data4 = io_sel && (io_addr[4:0] == 5'b00011);
-    assign io_sel_data5 = io_sel && (io_addr[4:0] == 5'b00100);
-    assign io_sel_data6 = io_sel && (io_addr[4:0] == 5'b00101);
-    assign io_sel_data7 = io_sel && (io_addr[4:0] == 5'b00110);
-    assign io_sel_data8 = io_sel && (io_addr[4:0] == 5'b00111);
-    assign io_sel_data9 = io_sel && (io_addr[4:0] == 5'b01000);
-    assign io_sel_data10 = io_sel && (io_addr[4:0] == 5'b01001);
-    assign io_sel_data11 = io_sel && (io_addr[4:0] == 5'b01010);
-    assign io_sel_data12 = io_sel && (io_addr[4:0] == 5'b01011);
-    assign io_sel_data13 = io_sel && (io_addr[4:0] == 5'b01100);
-    assign io_sel_data14 = io_sel && (io_addr[4:0] == 5'b01101);
-    assign io_sel_data15 = io_sel && (io_addr[4:0] == 5'b01110);
-    assign io_sel_data16 = io_sel && (io_addr[4:0] == 5'b01111);
-    assign io_sel_data17 = io_sel && (io_addr[4:0] == 5'b10000);
-    assign io_sel_data18 = io_sel && (io_addr[4:0] == 5'b10001);
-    assign io_sel_data19 = io_sel && (io_addr[4:0] == 5'b10010);
-    assign io_sel_data20 = io_sel && (io_addr[4:0] == 5'b10011);
-    assign io_sel_data21 = io_sel && (io_addr[4:0] == 5'b10100);
-    assign io_sel_data22 = io_sel && (io_addr[4:0] == 5'b10101);
-    assign io_sel_data23 = io_sel && (io_addr[4:0] == 5'b10110);
-    assign io_sel_data24 = io_sel && (io_addr[4:0] == 5'b10111);
-    assign io_sel_data25 = io_sel && (io_addr[4:0] == 5'b11000);
-    assign io_sel_data26 = io_sel && (io_addr[4:0] == 5'b11001);
-    assign io_sel_data27 = io_sel && (io_addr[4:0] == 5'b11010);
-    assign io_sel_data28 = io_sel && (io_addr[4:0] == 5'b11011);
-    assign io_sel_data29 = io_sel && (io_addr[4:0] == 5'b11100);
-    assign io_sel_data30 = io_sel && (io_addr[4:0] == 5'b11101);
-    assign io_sel_data31 = io_sel && (io_addr[4:0] == 5'b11110);
-    assign io_sel_data32 = io_sel && (io_addr[4:0] == 5'b11111);
+        
+    assign io_sel_data1 = io_sel && (io_addr[23:19] == 5'b00000);
+    assign io_sel_data2 = io_sel && (io_addr[23:19] == 5'b00001);
+    assign io_sel_data3 = io_sel && (io_addr[23:19] == 5'b00010);
+    assign io_sel_data4 = io_sel && (io_addr[23:19] == 5'b00011);
+    assign io_sel_data5 = io_sel && (io_addr[23:19] == 5'b00100);
+    assign io_sel_data6 = io_sel && (io_addr[23:19] == 5'b00101);
+    assign io_sel_data7 = io_sel && (io_addr[23:19] == 5'b00110);
+    assign io_sel_data8 = io_sel && (io_addr[23:19] == 5'b00111);
+    assign io_sel_data9 = io_sel && (io_addr[23:19] == 5'b01000);
+    assign io_sel_data10 = io_sel && (io_addr[23:19] == 5'b01001);
+    assign io_sel_data11 = io_sel && (io_addr[23:19] == 5'b01010);
+    assign io_sel_data12 = io_sel && (io_addr[23:19] == 5'b01011);
+    assign io_sel_data13 = io_sel && (io_addr[23:19] == 5'b01100);
+    assign io_sel_data14 = io_sel && (io_addr[23:19] == 5'b01101);
+    assign io_sel_data15 = io_sel && (io_addr[23:19] == 5'b01110);
+    assign io_sel_data16 = io_sel && (io_addr[23:19] == 5'b01111);
+    assign io_sel_data17 = io_sel && (io_addr[23:19] == 5'b10000);
+    assign io_sel_data18 = io_sel && (io_addr[23:19] == 5'b10001);
+    assign io_sel_data19 = io_sel && (io_addr[23:19] == 5'b10010);
+    assign io_sel_data20 = io_sel && (io_addr[23:19] == 5'b10011);
+    assign io_sel_data21 = io_sel && (io_addr[23:19] == 5'b10100);
+    assign io_sel_data22 = io_sel && (io_addr[23:19] == 5'b10101);
+    assign io_sel_data23 = io_sel && (io_addr[23:19] == 5'b10110);
+    assign io_sel_data24 = io_sel && (io_addr[23:19] == 5'b10111);
+    assign io_sel_data25 = io_sel && (io_addr[23:19] == 5'b11000);
+    assign io_sel_data26 = io_sel && (io_addr[23:19] == 5'b11001);
+    assign io_sel_data27 = io_sel && (io_addr[23:19] == 5'b11010);
+    assign io_sel_data28 = io_sel && (io_addr[23:19] == 5'b11011);
+    assign io_sel_data29 = io_sel && (io_addr[23:19] == 5'b11100);
+    assign io_sel_data30 = io_sel && (io_addr[23:19] == 5'b11101);
+    assign io_sel_data31 = io_sel && (io_addr[23:19] == 5'b11110);
+    assign io_sel_data32 = io_sel && (io_addr[23:19] == 5'b11111);
     
     wire io_sel_fifo;
     assign io_sel_fifo = io_sel_data1 | io_sel_data2 | io_sel_data3 | io_sel_data4 | io_sel_data5 | io_sel_data6 | io_sel_data7 | io_sel_data8 | io_sel_data9 | io_sel_data10 |
@@ -442,11 +446,81 @@ module reader(
                     sel_data21 | sel_data22 | sel_data23 | sel_data24 | sel_data25 | sel_data26 | sel_data27 | sel_data28 | sel_data29 | sel_data30 |
                     sel_data31 | sel_data32;
                         
-    wire [35:0] data_out;
-    TP_raw_stub_fifo read_out_fifo(.wr_clk(clk), .rst(reset), .din({4'hf,rd_data_reg}), .wr_en(wr_en), 
-                                     .rd_clk(io_clk), .rd_en(io_sel_fifo), .dout(data_out),
-                                     .empty(fifo_empty), .full(fifo_full));
-    
+    wire [35:0] data_out1;
+    wire [35:0] data_out2;
+    wire [35:0] data_out3;
+    wire [35:0] data_out4;
+    //TP_raw_stub_fifo read_out_fifo(.wr_clk(clk), .rst(reset), .din({4'hf,rd_data_reg}), .wr_en(wr_en), 
+      //                               .rd_clk(io_clk), .rd_en(io_sel_fifo), .dout(data_out),
+        //                             .empty(fifo_empty), .full(fifo_full));
+    Memory #(
+             .RAM_WIDTH(32),                       // Specify RAM data width
+             .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+             .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+           ) reader_memory1(
+             .addra(wr_add),    // Write address bus, width determined from RAM_DEPTH
+             .addrb(io_addr[8:0]),    // Read address bus, width determined from RAM_DEPTH
+             .dina(input1[31:0]),      // RAM input data, width determined from RAM_WIDTH
+             .clka(clk),      // Write clock
+             .clkb(io_clk),      // Read clock
+             .wea(sel_data1),        // Write enable
+             .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+             .rstb(reset),      // Output reset (does not affect memory contents)
+             .regceb(1'b1),  // Output register enable
+             .doutb(data_out1)     // RAM output data, width determined from RAM_WIDTH
+     );
+   Memory #(
+             .RAM_WIDTH(32),                       // Specify RAM data width
+             .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+             .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+           ) reader_memory2(
+             .addra(wr_add),    // Write address bus, width determined from RAM_DEPTH
+             .addrb(io_addr[8:0]),    // Read address bus, width determined from RAM_DEPTH
+             .dina(input2[31:0]),      // RAM input data, width determined from RAM_WIDTH
+             .clka(clk),      // Write clock
+             .clkb(io_clk),      // Read clock
+             .wea(sel_data2),        // Write enable
+             .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+             .rstb(reset),      // Output reset (does not affect memory contents)
+             .regceb(1'b1),  // Output register enable
+             .doutb(data_out2)     // RAM output data, width determined from RAM_WIDTH
+     );
+   Memory #(
+             .RAM_WIDTH(32),                       // Specify RAM data width
+             .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+             .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+           ) reader_memory3(
+             .addra(wr_add),    // Write address bus, width determined from RAM_DEPTH
+             .addrb(io_addr[8:0]),    // Read address bus, width determined from RAM_DEPTH
+             .dina(input3[31:0]),      // RAM input data, width determined from RAM_WIDTH
+             .clka(clk),      // Write clock
+             .clkb(io_clk),      // Read clock
+             .wea(sel_data3),        // Write enable
+             .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+             .rstb(reset),      // Output reset (does not affect memory contents)
+             .regceb(1'b1),  // Output register enable
+             .doutb(data_out3)     // RAM output data, width determined from RAM_WIDTH
+     );
+   Memory #(
+             .RAM_WIDTH(32),                       // Specify RAM data width
+             .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+             .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+           ) reader_memory4(
+             .addra(wr_add),    // Write address bus, width determined from RAM_DEPTH
+             .addrb(io_addr[8:0]),    // Read address bus, width determined from RAM_DEPTH
+             .dina(input4[31:0]),      // RAM input data, width determined from RAM_WIDTH
+             .clka(clk),      // Write clock
+             .clkb(io_clk),      // Read clock
+             .wea(sel_data4),        // Write enable
+             .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+             .rstb(reset),      // Output reset (does not affect memory contents)
+             .regceb(1'b1),  // Output register enable
+             .doutb(data_out4)     // RAM output data, width determined from RAM_WIDTH
+     );
    ///////////////////////////////////////////////////////////////////////////////////////////////
     // readback mux
     // If a particular register or memory is addressed, connect that register's or memory's signals
@@ -463,7 +537,10 @@ module reader(
     end
     // Route the selected memory to the 'rdbk' output.
     always @(posedge io_clk) begin
-        if (io_sel_fifo) io_rd_data_reg <= data_out[31:0];
+        if (io_sel_data1) io_rd_data_reg <= data_out1[31:0];
+        if (io_sel_data2) io_rd_data_reg <= data_out2[31:0];
+        if (io_sel_data3) io_rd_data_reg <= data_out3[31:0];
+        if (io_sel_data4) io_rd_data_reg <= data_out4[31:0];
     end
     
 endmodule

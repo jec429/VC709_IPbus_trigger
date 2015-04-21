@@ -122,15 +122,13 @@ module TrackletProjections(
             end
             else begin
                 wr_add <= wr_add;
-            end
-            
+            end          
         end
         if(NHOLD)
             pipe_number_out <= hold_number_out; // Local projection memories have to wait an extra BX to send the number
         else
             pipe_number_out <= pre_number_out; 
-            
-                    
+                               
         data_out <= pre_data_out;
         wr_en_hold <= wr_en;
     end

@@ -191,11 +191,11 @@ module ProjTransceiver(
     wire [15:0] Aurora_data_out;
     always @(posedge clk) begin
         if(Aurora_data_out != 0) begin
-            output_L1L2_1 <= {Aurora_data_out,38'h3fffffffff};
+            output_L1L2_1 <= {38'h3fffffffff,Aurora_data_out};
             valid_L1L2_1 <= 1'b1;            
         end
         else begin
-            output_L1L2_1 <= {16'h0000,38'h3fffffffff};
+            output_L1L2_1 <= {38'h3fffffffff,16'h0000};
             valid_L1L2_1 <= 1'b0;
         end
     end
