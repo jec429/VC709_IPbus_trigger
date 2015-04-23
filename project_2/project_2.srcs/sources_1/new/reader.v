@@ -319,7 +319,7 @@ module reader(
             
     end   
     
-     reg [31:0] rd_data_reg;
+     reg [35:0] rd_data_reg;
     
     wire sel_data1,sel_data2,sel_data3,sel_data4,sel_data5,sel_data6,sel_data7,sel_data8,sel_data9,sel_data10;
     wire sel_data11,sel_data12,sel_data13,sel_data14,sel_data15,sel_data16,sel_data17,sel_data18,sel_data19,sel_data20;
@@ -442,7 +442,7 @@ module reader(
                     sel_data21 | sel_data22 | sel_data23 | sel_data24 | sel_data25 | sel_data26 | sel_data27 | sel_data28 | sel_data29 | sel_data30 |
                     sel_data31 | sel_data32;
                         
-    wire [31:0] data_out;
+    wire [35:0] data_out;
     TP_raw_stub_fifo read_out_fifo(.wr_clk(clk), .rst(reset), .din(rd_data_reg), .wr_en(wr_en), 
                                      .rd_clk(io_clk), .rd_en(io_sel_fifo), .dout(data_out),
                                      .empty(fifo_empty), .full(fifo_full));

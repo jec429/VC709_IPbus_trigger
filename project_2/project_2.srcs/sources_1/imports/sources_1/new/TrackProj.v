@@ -42,7 +42,7 @@ module TrackletProjections(
     input wire not_first_clk,
     
     input start,
-    output done,
+    output reg done,
     
     input [53:0] data_in,
     input valid,
@@ -51,7 +51,11 @@ module TrackletProjections(
     input [5:0] read_add,
     output reg [53:0] data_out
     );
-    
+   
+    always @ (posedge clk) begin
+        done <= start_proj;
+    end
+    //assign done = start;
     // Communication delay parameter
     wire [2:0] rd_BX;
     parameter [7:0] delay = 1;
@@ -141,14 +145,15 @@ module TrackletProjections(
         start_proj <= hold[n_hold];
     end     
         
-    pipe_delay #(.STAGES(delay), .WIDTH(3)) READ_BX(.pipe_in(start_proj), .pipe_out(done), .clk(clk),
+    pipe_delay #(.STAGES(delay), .WIDTH(3)) READ_BX(.pipe_in(start_proj), .pipe_out(), .clk(clk),
+    //pipe_delay #(.STAGES(delay), .WIDTH(3)) READ_BX(.pipe_in(start_proj), .pipe_out(done), .clk(clk),
                                                    .val_in(BX_pipe), .val_out(rd_BX));
                                                    
                                                    
     pipe_delay #(.STAGES(delay), .WIDTH(6)) NUM_OUT(.pipe_in(start_proj), .pipe_out(), .clk(clk),
                                                    .val_in(pipe_number_out), .val_out(number_out));
 
-    Memory #(54) Projection(
+    Memory #(54,9,"E:/MargaretVC709/TrackletCommunication/project_1/testdata4.txt") Projection(
         // Output
         .output_data(pre_data_out),
         // Input

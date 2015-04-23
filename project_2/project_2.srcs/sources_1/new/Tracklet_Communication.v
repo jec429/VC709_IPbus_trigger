@@ -75,7 +75,17 @@ module Tracklet_Communication(
         end
     end
     
+    wire done4_5_1, done4_5_2, done4_5_3, done4_5_4;
+    reg tmpdone;
+    //reg start5_5;
     assign start5 = (clk_cnt == 1);
+   /* always @ (posedge clk) begin
+        tmpdone <= start5;
+        start5_5 <= tmpdone;
+    end*/
+      
+    //assign start5_5 = start5;
+    assign start5_5 = (done4_5_1 || done4_5_2 || done4_5_3 || done4_5_4);
     
        
     wire [53:0] TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3;
@@ -88,7 +98,7 @@ module Tracklet_Communication(
     .number_out(TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_number),
     .read_add(TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_read_add),
     .data_out(TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3),
-    .start(start5),.done(done4_5),.clk(clk), // Sending memories are processed immediately
+    .start(start5),.done(done4_5_1),.clk(clk), // Sending memories are processed immediately
     .reset(reset),
     .en_proc(en_proc),
     .io_clk(io_clk),
@@ -137,13 +147,13 @@ module Tracklet_Communication(
     wire [5:0] TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3_number;
     wire [5:0] TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3_read_add;
     wire [53:0] TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3;
-    TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L4(
+    TrackletProjections #(1,1) TPROJ_ToPlus_L1D3L2D3_L4(
     .data_in(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L4),
     .valid(~TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L4_valid), // Valid Bit
     .number_out(TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3_number),
     .read_add(TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3_read_add),
     .data_out(TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3),
-    .start(start5),.done(done4_5),.clk(clk), // Sending memories are processed immediately
+    .start(start5),.done(done4_5_2),.clk(clk), // Sending memories are processed immediately
     .reset(reset),
     .en_proc(en_proc),
     .io_clk(io_clk),
@@ -192,13 +202,13 @@ module Tracklet_Communication(
     wire [5:0] TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3_number;
     wire [5:0] TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3_read_add;
     wire [53:0] TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3;
-    TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L5(
+    TrackletProjections #(1,1) TPROJ_ToPlus_L1D3L2D3_L5(
     .data_in(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L5),
     .valid(~TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L5_valid), // Valid Bit
     .number_out(TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3_number),
     .read_add(TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3_read_add),
     .data_out(TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3),
-    .start(start5),.done(done4_5),.clk(clk), // Sending memories are processed immediately
+    .start(start5),.done(done4_5_3),.clk(clk), // Sending memories are processed immediately
     .reset(reset),
     .en_proc(en_proc),
     .io_clk(io_clk),
@@ -247,13 +257,13 @@ module Tracklet_Communication(
     wire [5:0] TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3_number;
     wire [5:0] TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3_read_add;
     wire [53:0] TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3;
-    TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L6(
+    TrackletProjections #(1,1) TPROJ_ToPlus_L1D3L2D3_L6(
     .data_in(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L6),
     .valid(~TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L6_valid), // Valid Bit
     .number_out(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3_number),
     .read_add(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3_read_add),
     .data_out(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3),
-    .start(start5),.done(done4_5),.clk(clk), // Sending memories are processed immediately
+    .start(start5),.done(done4_5_4),.clk(clk), // Sending memories are processed immediately
     .reset(reset),
     .en_proc(en_proc),
     .io_clk(io_clk),
@@ -296,6 +306,88 @@ module Tracklet_Communication(
     .first_clk(first_clk),
     .not_first_clk(not_first_clk)
     );
+    
+        //MARGARET ADDED
+    /*wire [53:0] TC_L3D3L4D3_TPROJ_ToPlus_L3D3L4D3_L1; 
+    wire [5:0] TPROJ_ToPlus_L3D3L4D3_L1_PT_Plus_D3_number;
+    wire [5:0] TPROJ_ToPlus_L3D3L4D3_L1_PT_Plus_D3_read_add;
+    wire [53:0] TPROJ_ToPlus_L3D3L4D3_L1_PT_Plus_D3;
+    TrackletProjections #(1) TPROJ_ToPlus_L3D3L4D3_L1(
+    .data_in(TC_L3D3L4D3_TPROJ_ToPlus_L3D3L4D3_L1),
+    .valid(~TC_L3D3L4D3_TPROJ_ToPlus_L3D3L4D3_L1_valid), // Valid Bit
+    .number_out(TPROJ_ToPlus_L3D3L4D3_L1_PT_Plus_D3_number),
+    .read_add(TPROJ_ToPlus_L3D3L4D3_L1_PT_Plus_D3_read_add),
+    .data_out(TPROJ_ToPlus_L3D3L4D3_L1_PT_Plus_D3),
+    .start(start5),.done(done4_5_5),.clk(clk), // Sending memories are processed immediately
+    .reset(reset),
+    .en_proc(en_proc),
+    .io_clk(io_clk),
+    .io_sel(io_sel_R3_io_block),
+    .io_addr(io_addr[23:0]),        
+    .io_sync(io_sync),
+    .io_rd_en(io_rd_en),
+    .io_wr_en(io_wr_en),
+    .io_wr_data(io_wr_data[31:0]),
+    .io_rd_data(io_rd_data_R3_io_block),
+    .io_rd_ack(io_rd_ack_R3_io_block),
+    .BX(BX[2:0]),
+    .first_clk(first_clk),
+    .not_first_clk(not_first_clk)
+    );
+    
+    wire [53:0] PT_Plus_D3_TPROJ_FromPlus_L3D3L4D3_L1;
+    wire [5:0] TPROJ_FromPlus_L3D3L4D3_L1_PR_L1D3_L3L4_number;
+    wire [5:0] TPROJ_FromPlus_L3D3L4D3_L1_PR_L1D3_L3L4_read_add;
+    wire [53:0] TPROJ_FromPlus_L3D3L4D3_L1_PR_L1D3_L3L4;
+    TrackletProjections #(16,1) TPROJ_FromPlus_L3D3L4D3_L1(
+    .data_in(PT_Plus_D3_TPROJ_FromPlus_L3D3L4D3_L1),
+    .number_out(TPROJ_FromPlus_L3D3L4D3_L1_PR_L1D3_L3L4_number),
+    .read_add(TPROJ_FromPlus_L3D3L4D3_L1_PR_L1D3_L3L4_read_add),
+    .data_out(TPROJ_FromPlus_L3D3L4D3_L1_PR_L1D3_L3L4),
+    .start(start6),.done(done5_5),.clk(clk), // Receiving memories have to wait for neighbor communication
+    .reset(reset),
+    .en_proc(en_proc),
+    .io_clk(io_clk),
+    .io_sel(io_sel_R3_io_block),
+    .io_addr(io_addr[23:0]),        
+    .io_sync(io_sync),
+    .io_rd_en(io_rd_en),
+    .io_wr_en(io_wr_en),
+    .io_wr_data(io_wr_data[31:0]),
+    .io_rd_data(io_rd_data_R3_io_block),
+    .io_rd_ack(io_rd_ack_R3_io_block),
+    .BX(BX[2:0]),
+    .first_clk(first_clk),
+    .not_first_clk(not_first_clk)
+    );*/
+    
+    
+    /*wire [53:0] PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L6;
+    wire [5:0] TPROJ_FromPlus_L1D3L2D3_L6_PR_L6D3_L1L2_number;
+    wire [5:0] TPROJ_FromPlus_L1D3L2D3_L6_PR_L6D3_L1L2_read_add;
+    wire [53:0] TPROJ_FromPlus_L1D3L2D3_L6_PR_L6D3_L1L2;
+    TrackletProjections #(16,1) TPROJ_FromPlus_L1D3L2D3_L6(
+    .data_in(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L6),
+    .number_out(TPROJ_FromPlus_L1D3L2D3_L6_PR_L6D3_L1L2_number),
+    .read_add(TPROJ_FromPlus_L1D3L2D3_L6_PR_L6D3_L1L2_read_add),
+    .data_out(TPROJ_FromPlus_L1D3L2D3_L6_PR_L6D3_L1L2),
+    .start(start6),.done(done5_5),.clk(clk), // Receiving memories have to wait for neighbor communication
+    .reset(reset),
+    .en_proc(en_proc),
+    .io_clk(io_clk),
+    .io_sel(io_sel_R3_io_block),
+    .io_addr(io_addr[23:0]),        
+    .io_sync(io_sync),
+    .io_rd_en(io_rd_en),
+    .io_wr_en(io_wr_en),
+    .io_wr_data(io_wr_data[31:0]),
+    .io_rd_data(io_rd_data_R3_io_block),
+    .io_rd_ack(io_rd_ack_R3_io_block),
+    .BX(BX[2:0]),
+    .first_clk(first_clk),
+    .not_first_clk(not_first_clk)
+    );*/
+    
 
     wire [31:0] commy_out;
     
@@ -312,11 +404,15 @@ module Tracklet_Communication(
     .number_in4(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3_number),
     .read_add4(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3_read_add),
     .input_L1L2_4(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3),
+    .number_in5(TPROJ_ToPlus_L3D3L4D3_L1_PT_Plus_D3_number),
+    .read_add5(TPROJ_ToPlus_L3D3L4D3_L1_PT_Plus_D3_read_add),
+    .input_L3L4_1(TPROJ_ToPlus_L3D3L4D3_L1_PT_Plus_D3),
     
     .output_L1L2_1(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L3),
     .output_L1L2_2(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L4),
     .output_L1L2_3(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L5),
     .output_L1L2_4(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L6),
+    .output_L3L4_1(PT_Plus_D3_TPROJ_FromPlus_L3D3L4D3_L1),
     
     .start(start5_5),.done(done5),.clk(clk),
     .reset(reset),

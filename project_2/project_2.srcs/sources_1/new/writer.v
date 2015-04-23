@@ -138,28 +138,39 @@ module writer(
     assign valid18 = valid1;
     assign valid19 = valid1;
     assign valid20 = valid1;
-                                    
-    always @ (posedge io_clk) begin
-        data_out1 <= {wr_data,wr_data};
-        data_out2 <= {wr_data,wr_data};
-        data_out3 <= {wr_data,wr_data};
-        data_out4 <= {wr_data,wr_data};
-        data_out5 <= {wr_data,wr_data};
-        data_out6 <= {wr_data,wr_data};
-        data_out7 <= {wr_data,wr_data};
-        data_out8 <= {wr_data,wr_data};
-        data_out9 <= {wr_data,wr_data};
-        data_out10 <= {wr_data,wr_data};
-        data_out11 <= {wr_data,wr_data};
-        data_out12 <= {wr_data,wr_data};
-        data_out13 <= {wr_data,wr_data};
-        data_out14 <= {wr_data,wr_data};
-        data_out15 <= {wr_data,wr_data};
-        data_out16 <= {wr_data,wr_data};
-        data_out17 <= {wr_data,wr_data};
-        data_out18 <= {wr_data,wr_data};
-        data_out19 <= {wr_data,wr_data};
-        data_out20 <= {wr_data,wr_data};
+                              
+    reg [3:0] blah = 4'h0;
+    reg [3:0] blah1 = 4'h1;
+    reg [3:0] blah2 = 4'h2;
+    reg [3:0] blah3 = 4'h3;
+    reg [3:0] blah4 = 4'h4;
+    reg [3:0] blah5 = 4'h5;
+    reg [3:0] blah6 = 4'h6;
+    reg [3:0] blah7 = 4'h7;
+    reg [3:0] blah8 = 4'h8;
+    reg [3:0] blah9 = 4'h9;
+    reg [3:0] blah10 = 4'hA;                                   
+    always @ (posedge clk) begin
+        data_out1 <= {blah,wr_data,wr_data[35:7],blah};
+        data_out2 <= {blah1,wr_data,wr_data[35:7],blah1};
+        data_out3 <= {blah2,wr_data,wr_data[35:7],blah2};
+        data_out4 <= {blah3,wr_data,wr_data[35:7],blah3};
+        data_out5 <= {blah4,wr_data,wr_data[35:7],blah4};
+        data_out6 <= {blah5,wr_data,wr_data[35:7],blah5};
+        data_out7 <= {blah6,wr_data,wr_data[35:7],blah6};
+        data_out8 <= {blah7,wr_data,wr_data[35:7],blah7};
+        data_out9 <= {blah8,wr_data,wr_data[35:7],blah8};
+        data_out10 <= {blah9,wr_data,wr_data[35:7],blah9};
+        data_out11 <= {blah10,wr_data,wr_data[35:7],blah10};
+        data_out12 <= {blah1,wr_data,wr_data[35:7],blah1};
+        data_out13 <= {blah2,wr_data,wr_data[35:7],blah2};
+        data_out14 <= {blah3,wr_data,wr_data[35:7],blah3};
+        data_out15 <= {blah4,wr_data,wr_data[35:7],blah4};
+        data_out16 <= {blah5,wr_data,wr_data[35:7],blah5};
+        data_out17 <= {blah6,wr_data,wr_data[35:7],blah6};
+        data_out18 <= {blah7,wr_data,wr_data[35:7],blah7};
+        data_out19 <= {blah8,wr_data,wr_data[35:7],blah8};
+        data_out20 <= {blah9,wr_data,wr_data[35:7],blah9};
     end
     
     ///////////////////////////////////////////////////////////////////////////////////////////////

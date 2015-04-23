@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="2" Path="D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/project_2.xpr">
+<Project Version="7" Minor="2" Path="E:/MargaretVC709/VC709_IPbus_trigger/project_2/project_2.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="c23733cf04ac4332a3865016dc9e5aad"/>
@@ -19,7 +19,7 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sources_1/imports/new/reg_ce2.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="E:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/reg_ce2.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/reg_ce2.v"/>
           <Attr Name="ImportTime" Val="1428337984"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -28,7 +28,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/Data_FSM.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="E:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/Data_FSM.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/Data_FSM.v"/>
           <Attr Name="ImportTime" Val="1428337984"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -37,7 +37,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/aurora_8b10b_cdc_sync_exdes.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="E:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/aurora_8b10b_cdc_sync_exdes.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/aurora_8b10b_cdc_sync_exdes.v"/>
           <Attr Name="ImportTime" Val="1428337984"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -46,7 +46,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/Link_Interface.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="E:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/Link_Interface.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/Link_Interface.v"/>
           <Attr Name="ImportTime" Val="1428337984"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -55,7 +55,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/aurora_io_block.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="E:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/aurora_io_block.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/aurora_io_block.v"/>
           <Attr Name="ImportTime" Val="1428337984"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -64,7 +64,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/aurora_8b10b_support_reset_logic.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="E:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/aurora_8b10b_support_reset_logic.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/aurora_8b10b_support_reset_logic.v"/>
           <Attr Name="ImportTime" Val="1428337984"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -73,7 +73,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/aurora_8b10b_standard_cc_module.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="E:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/aurora_8b10b_standard_cc_module.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/aurora_8b10b_standard_cc_module.v"/>
           <Attr Name="ImportTime" Val="1428337984"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -82,7 +82,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/aurora_8b10b_clock_module.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="E:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/aurora_8b10b_clock_module.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/aurora_8b10b_clock_module.v"/>
           <Attr Name="ImportTime" Val="1428337984"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -91,7 +91,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/Reset_Synchronizer.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="E:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/Reset_Synchronizer.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/Reset_Synchronizer.v"/>
           <Attr Name="ImportTime" Val="1428337984"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -100,7 +100,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/Aurora_Channel_1.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="E:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/Aurora_Channel_1.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/Aurora_Channel_1.v"/>
           <Attr Name="ImportTime" Val="1428337984"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -109,7 +109,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/Aurora_Channel_0.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="E:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/Aurora_Channel_0.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/Aurora_Channel_0.v"/>
           <Attr Name="ImportTime" Val="1428337984"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -126,7 +126,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/Aurora_test_vc709.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="E:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/Aurora_test_vc709.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../VC709_IPbus_trigger1/VC709_IPbus_trigger/project_3/project_3.srcs/sources_1/new/Aurora_test_vc709.v"/>
           <Attr Name="ImportTime" Val="1428337984"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -201,7 +201,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/prio_encoder_demo/prio_support.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../GLIB Firmware/python_scripts/prio_encoder_demo/prio_encoder_demo/prio_support.v"/>
+          <Attr Name="ImportPath" Val="D:/GLIB Firmware/python_scripts/prio_encoder_demo/prio_encoder_demo/prio_support.v"/>
           <Attr Name="ImportTime" Val="1417532392"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -210,7 +210,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/prio_encoder_demo/prio_encoder.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../GLIB Firmware/python_scripts/prio_encoder_demo/prio_encoder_demo/prio_encoder.v"/>
+          <Attr Name="ImportPath" Val="D:/GLIB Firmware/python_scripts/prio_encoder_demo/prio_encoder_demo/prio_encoder.v"/>
           <Attr Name="ImportTime" Val="1417532392"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -219,7 +219,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/prio_encoder_demo/mem_mux.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../GLIB Firmware/python_scripts/prio_encoder_demo/prio_encoder_demo/mem_mux.v"/>
+          <Attr Name="ImportPath" Val="D:/GLIB Firmware/python_scripts/prio_encoder_demo/prio_encoder_demo/mem_mux.v"/>
           <Attr Name="ImportTime" Val="1417532392"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -458,7 +458,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/prio_encoder_demo/mem_readout_top.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../GLIB Firmware/python_scripts/prio_encoder_demo/prio_encoder_demo/mem_readout_top.v"/>
+          <Attr Name="ImportPath" Val="D:/GLIB Firmware/python_scripts/prio_encoder_demo/prio_encoder_demo/mem_readout_top.v"/>
           <Attr Name="ImportTime" Val="1417532588"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -815,7 +815,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/archive_project_summary.txt"/>
+      <File Path="D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/archive_project_summary.txt"/>
       <File Path="$PSRCDIR/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo.upgrade_log"/>
       <File Path="$PSRCDIR/sources_1/ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0.upgrade_log"/>
       <File Path="$PSRCDIR/sources_1/ip/trigger_clock_synth/trigger_clock_synth.upgrade_log"/>
@@ -824,6 +824,43 @@
       <File Path="$PSRCDIR/sources_1/ip/trigger_clock_synth_0/trigger_clock_synth.upgrade_log"/>
       <File Path="$PSRCDIR/sources_1/ip/TP_track_fit_fifo/TP_track_fit_fifo.upgrade_log"/>
       <File Path="$PSRCDIR/sources_1/ip/aurora_8b10b_1_0/aurora_8b10b_1.upgrade_log"/>
+      <File Path="$PPRDIR/../../TrackletCommunication/prio_encoder_demo/prio_support_2.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../TrackletCommunication/prio_encoder_demo/mem_readout_top_2.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../TrackletCommunication/prio_encoder_demo/prio_encoder_2.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../TrackletCommunication/prio_encoder_demo/mem_mux_2.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/new/memory.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../TrackletCommunication/project_1/project_1.srcs/sources_1/new/memory.v"/>
+          <Attr Name="ImportTime" Val="1429117198"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="top"/>
@@ -849,17 +886,28 @@
       </File>
       <File Path="$PSRCDIR/constrs_1/new/debug.xdc">
         <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
       <Config>
-        <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/debug.xdc"/>
+        <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/imports/new/pins.xdc"/>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sim_1/imports/sim5/Simulation_Top.v">
+        <FileInfo>
+          <Attr Name="Library" Val="xil_defaultlib"/>
+          <Attr Name="ImportPath" Val="D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/project_2.srcs/sim_1/imports/sim5/Simulation_Top.v"/>
+          <Attr Name="ImportTime" Val="1429015746"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Memory.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -889,13 +937,6 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/verilog_trigger_top.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../../GLIB Firmware/branches/jectest/prj/viv_1/project_2/project_2.srcs/sim_1/imports/sim5/Simulation_Top.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -1047,6 +1088,7 @@
         <Option Name="TopModule" Val="verilog_trigger_top_test1"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="NLNetlistMode" Val="funcsim"/>
       </Config>
     </FileSet>
     <FileSet Name="aurora_8b10b_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/aurora_8b10b_0">
@@ -1059,21 +1101,6 @@
       </File>
       <Config>
         <Option Name="TopModule" Val="aurora_8b10b_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="TP_raw_stub_fifo" Type="BlockSrcs" RelSrcDir="$PSRCDIR/TP_raw_stub_fifo">
-      <File Path="$PSRCDIR/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo.xci">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2.srcs/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo.xci"/>
-          <Attr Name="ImportTime" Val="1413299071"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <Config>
-        <Option Name="TopModule" Val="TP_raw_stub_fifo"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -1090,8 +1117,8 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="link_axis_data_fifo" Type="BlockSrcs" RelSrcDir="$PSRCDIR/link_axis_data_fifo">
-      <File Path="$PSRCDIR/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo.xci">
+    <FileSet Name="aurora_8b10b_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/aurora_8b10b_1">
+      <File Path="$PSRCDIR/sources_1/ip/aurora_8b10b_1_0/aurora_8b10b_1.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -1099,20 +1126,7 @@
         </FileInfo>
       </File>
       <Config>
-        <Option Name="TopModule" Val="link_axis_data_fifo"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="TP_track_fit_fifo" Type="BlockSrcs" RelSrcDir="$PSRCDIR/TP_track_fit_fifo">
-      <File Path="$PSRCDIR/sources_1/ip/TP_track_fit_fifo/TP_track_fit_fifo.xci">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <Config>
-        <Option Name="TopModule" Val="TP_track_fit_fifo"/>
+        <Option Name="TopModule" Val="aurora_8b10b_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -1131,8 +1145,23 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="aurora_8b10b_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/aurora_8b10b_1">
-      <File Path="$PSRCDIR/sources_1/ip/aurora_8b10b_1_0/aurora_8b10b_1.xci">
+    <FileSet Name="TP_raw_stub_fifo" Type="BlockSrcs" RelSrcDir="$PSRCDIR/TP_raw_stub_fifo">
+      <File Path="$PSRCDIR/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo.xci">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../USER_LOCAL/crs/CMS_trigger/Xilinx/VC709_trigger/jectest/viv_1/project_2.srcs/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo.xci"/>
+          <Attr Name="ImportTime" Val="1413299071"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="TP_raw_stub_fifo"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="TP_track_fit_fifo" Type="BlockSrcs" RelSrcDir="$PSRCDIR/TP_track_fit_fifo">
+      <File Path="$PSRCDIR/sources_1/ip/TP_track_fit_fifo/TP_track_fit_fifo.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -1140,7 +1169,20 @@
         </FileInfo>
       </File>
       <Config>
-        <Option Name="TopModule" Val="aurora_8b10b_1"/>
+        <Option Name="TopModule" Val="TP_track_fit_fifo"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="link_axis_data_fifo" Type="BlockSrcs" RelSrcDir="$PSRCDIR/link_axis_data_fifo">
+      <File Path="$PSRCDIR/sources_1/ip/link_axis_data_fifo_1/link_axis_data_fifo.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="link_axis_data_fifo"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -1175,35 +1217,7 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="TP_raw_stub_fifo_synth_1" Type="Ft3:Synth" SrcSet="TP_raw_stub_fifo" Part="xc7vx690tffg1761-2" ConstrsSet="TP_raw_stub_fifo" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/TP_raw_stub_fifo_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-    </Run>
     <Run Id="trigger_clock_synth_synth_1" Type="Ft3:Synth" SrcSet="trigger_clock_synth" Part="xc7vx690tffg1761-2" ConstrsSet="trigger_clock_synth" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/trigger_clock_synth_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-    </Run>
-    <Run Id="link_axis_data_fifo_synth_1" Type="Ft3:Synth" SrcSet="link_axis_data_fifo" Part="xc7vx690tffg1761-2" ConstrsSet="link_axis_data_fifo" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/link_axis_data_fifo_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-    </Run>
-    <Run Id="TP_track_fit_fifo_synth_1" Type="Ft3:Synth" SrcSet="TP_track_fit_fifo" Part="xc7vx690tffg1761-2" ConstrsSet="TP_track_fit_fifo" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/TP_track_fit_fifo_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-    </Run>
-    <Run Id="gig_ethernet_pcs_pma_0_synth_1" Type="Ft3:Synth" SrcSet="gig_ethernet_pcs_pma_0" Part="xc7vx690tffg1761-2" ConstrsSet="gig_ethernet_pcs_pma_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/gig_ethernet_pcs_pma_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
         <Step Id="synth_design"/>
@@ -1217,30 +1231,35 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="constrs_1" Description="Uses multiple algorithms for optimization, placement, and routing to get potentially better results." State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1">
+    <Run Id="gig_ethernet_pcs_pma_0_synth_1" Type="Ft3:Synth" SrcSet="gig_ethernet_pcs_pma_0" Part="xc7vx690tffg1761-2" ConstrsSet="gig_ethernet_pcs_pma_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/gig_ethernet_pcs_pma_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Performance_Explore" Flow="Vivado Implementation 2014"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design">
-          <Option Id="Directive">0</Option>
-        </Step>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design">
-          <Option Id="Directive">0</Option>
-        </Step>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design" EnableStepBool="1">
-          <Option Id="Directive">0</Option>
-        </Step>
-        <Step Id="route_design">
-          <Option Id="Directive">0</Option>
-        </Step>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
+        <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="aurora_8b10b_0_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="aurora_8b10b_0" Description="Vivado Implementation Defaults" SynthRun="aurora_8b10b_0_synth_1">
+    <Run Id="TP_raw_stub_fifo_synth_1" Type="Ft3:Synth" SrcSet="TP_raw_stub_fifo" Part="xc7vx690tffg1761-2" ConstrsSet="TP_raw_stub_fifo" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/TP_raw_stub_fifo_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="TP_track_fit_fifo_synth_1" Type="Ft3:Synth" SrcSet="TP_track_fit_fifo" Part="xc7vx690tffg1761-2" ConstrsSet="TP_track_fit_fifo" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/TP_track_fit_fifo_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="link_axis_data_fifo_synth_1" Type="Ft3:Synth" SrcSet="link_axis_data_fifo" Part="xc7vx690tffg1761-2" ConstrsSet="link_axis_data_fifo" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/link_axis_data_fifo_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="constrs_1" Description="Vivado Implementation Defaults" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
         <Step Id="init_design"/>
@@ -1253,8 +1272,9 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="TP_raw_stub_fifo_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="TP_raw_stub_fifo" Description="Vivado Implementation Defaults" SynthRun="TP_raw_stub_fifo_synth_1">
+    <Run Id="aurora_8b10b_0_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="aurora_8b10b_0" Description="Vivado Implementation Defaults" SynthRun="aurora_8b10b_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
         <Step Id="init_design"/>
@@ -1282,21 +1302,7 @@
         <Step Id="write_bitstream"/>
       </Strategy>
     </Run>
-    <Run Id="link_axis_data_fifo_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="link_axis_data_fifo" Description="Vivado Implementation Defaults" SynthRun="link_axis_data_fifo_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-    </Run>
-    <Run Id="TP_track_fit_fifo_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="TP_track_fit_fifo" Description="Vivado Implementation Defaults" SynthRun="TP_track_fit_fifo_synth_1">
+    <Run Id="aurora_8b10b_1_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="aurora_8b10b_1" Description="Vivado Implementation Defaults" SynthRun="aurora_8b10b_1_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
         <Step Id="init_design"/>
@@ -1324,7 +1330,35 @@
         <Step Id="write_bitstream"/>
       </Strategy>
     </Run>
-    <Run Id="aurora_8b10b_1_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="aurora_8b10b_1" Description="Vivado Implementation Defaults" SynthRun="aurora_8b10b_1_synth_1">
+    <Run Id="TP_raw_stub_fifo_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="TP_raw_stub_fifo" Description="Vivado Implementation Defaults" SynthRun="TP_raw_stub_fifo_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="TP_track_fit_fifo_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="TP_track_fit_fifo" Description="Vivado Implementation Defaults" SynthRun="TP_track_fit_fifo_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="link_axis_data_fifo_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="link_axis_data_fifo" Description="Vivado Implementation Defaults" SynthRun="link_axis_data_fifo_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
         <Step Id="init_design"/>
