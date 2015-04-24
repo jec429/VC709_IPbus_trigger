@@ -202,92 +202,149 @@ module FitTrack(
         read_mem_z_3_pipe2 <= read_mem_z_3_pipe;
     end
     
-    Memory #(60, 4,"D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_1_hex.txt") lookup_phi_0(
-        // Output   
-        .output_data(dout_dphi_0),
-        // Input
-        .clock(clk),
-        .write_address(4'b0),
-        .write_enable(1'b0),
-        .read_address(read_mem_phi_0),
-        .input_data(60'b0)
-    );
+    Memory #(
+            .RAM_WIDTH(60),                       // Specify RAM data width
+            .RAM_DEPTH(16),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_1_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+          ) lookup_phi_0 (
+            .addra(4'b0),    // Write address bus, width determined from RAM_DEPTH
+            .addrb(read_mem_phi_0),    // Read address bus, width determined from RAM_DEPTH
+            .dina(60'b0),      // RAM input data, width determined from RAM_WIDTH
+            .clka(clk),      // Write clock
+            .clkb(clk),      // Read clock
+            .wea(1'b0),        // Write enable
+            .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+            .rstb(reset),      // Output reset (does not affect memory contents)
+            .regceb(1'b1),  // Output register enable
+            .doutb(dout_dphi_0)     // RAM output data, width determined from RAM_WIDTH
+        );
     
-    Memory #(60, 4,"D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_2_hex.txt") lookup_phi_1(
-         // Output   
-        .output_data(dout_dphi_1),
-        // Input
-        .clock(clk),
-        .write_address(4'b0),
-        .write_enable(1'b0),
-        .read_address(read_mem_phi_1),
-        .input_data(60'b0)
-   );
+    Memory #(
+            .RAM_WIDTH(60),                       // Specify RAM data width
+            .RAM_DEPTH(16),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_2_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+          ) lookup_phi_1 (
+            .addra(4'b0),    // Write address bus, width determined from RAM_DEPTH
+            .addrb(read_mem_phi_1),    // Read address bus, width determined from RAM_DEPTH
+            .dina(60'b0),      // RAM input data, width determined from RAM_WIDTH
+            .clka(clk),      // Write clock
+            .clkb(clk),      // Read clock
+            .wea(1'b0),        // Write enable
+            .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+            .rstb(reset),      // Output reset (does not affect memory contents)
+            .regceb(1'b1),  // Output register enable
+            .doutb(dout_dphi_1)     // RAM output data, width determined from RAM_WIDTH
+        );
    
-    Memory #(60, 4,"D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_3_hex.txt") lookup_phi_2(
-        // Output   
-        .output_data(dout_dphi_2),
-        // Input
-        .clock(clk),
-        .write_address(4'b0),
-        .write_enable(1'b0),
-        .read_address(read_mem_phi_2),
-        .input_data(60'b0)
-   );
+    Memory #(
+            .RAM_WIDTH(60),                       // Specify RAM data width
+            .RAM_DEPTH(16),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_3_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+          ) lookup_phi_2 (
+            .addra(4'b0),    // Write address bus, width determined from RAM_DEPTH
+            .addrb(read_mem_phi_2),    // Read address bus, width determined from RAM_DEPTH
+            .dina(60'b0),      // RAM input data, width determined from RAM_WIDTH
+            .clka(clk),      // Write clock
+            .clkb(clk),      // Read clock
+            .wea(1'b0),        // Write enable
+            .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+            .rstb(reset),      // Output reset (does not affect memory contents)
+            .regceb(1'b1),  // Output register enable
+            .doutb(dout_dphi_2)     // RAM output data, width determined from RAM_WIDTH
+        );
     
-    Memory #(60, 4,"D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_4_hex.txt") lookup_phi_3(
-        // Output   
-        .output_data(dout_dphi_3),
-        // Input
-        .clock(clk),.write_address(4'b0),
-        .write_enable(1'b0),
-        .read_address(read_mem_phi_3),
-        .input_data(60'b0)
-    );
+    Memory #(
+            .RAM_WIDTH(60),                       // Specify RAM data width
+            .RAM_DEPTH(16),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_4_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+          ) lookup_phi_3 (
+            .addra(4'b0),    // Write address bus, width determined from RAM_DEPTH
+            .addrb(read_mem_phi_3),    // Read address bus, width determined from RAM_DEPTH
+            .dina(60'b0),      // RAM input data, width determined from RAM_WIDTH
+            .clka(clk),      // Write clock
+            .clkb(clk),      // Read clock
+            .wea(1'b0),        // Write enable
+            .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+            .rstb(reset),      // Output reset (does not affect memory contents)
+            .regceb(1'b1),  // Output register enable
+            .doutb(dout_dphi_3)     // RAM output data, width determined from RAM_WIDTH
+        );
     
-    Memory #(60, 4,"D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_5_hex.txt") lookup_z_0(
-        // Output   
-        .output_data(dout_dz_0),
-        // Input
-        .clock(clk),
-        .write_address(4'b0),
-        .write_enable(1'b0),    
-        .read_address(read_mem_z_0),
-        .input_data(60'b0)
-    );
+    Memory #(
+            .RAM_WIDTH(60),                       // Specify RAM data width
+            .RAM_DEPTH(16),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_5_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+          ) lookup_z_0 (
+            .addra(4'b0),    // Write address bus, width determined from RAM_DEPTH
+            .addrb(read_mem_z_0),    // Read address bus, width determined from RAM_DEPTH
+            .dina(60'b0),      // RAM input data, width determined from RAM_WIDTH
+            .clka(clk),      // Write clock
+            .clkb(clk),      // Read clock
+            .wea(1'b0),        // Write enable
+            .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+            .rstb(reset),      // Output reset (does not affect memory contents)
+            .regceb(1'b1),  // Output register enable
+            .doutb(dout_dz_0)     // RAM output data, width determined from RAM_WIDTH
+        );
     
-    Memory #(60, 4,"D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_6_hex.txt") lookup_z_1(
-        // Output   
-        .output_data(dout_dz_1),
-        // Input
-        .clock(clk),
-        .write_address(4'b0),
-        .write_enable(1'b0),
-        .read_address(read_mem_z_1),
-        .input_data(60'b0)
-    );
+    Memory #(
+            .RAM_WIDTH(60),                       // Specify RAM data width
+            .RAM_DEPTH(16),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_6_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+          ) lookup_z_1 (
+            .addra(4'b0),    // Write address bus, width determined from RAM_DEPTH
+            .addrb(read_mem_z_1),    // Read address bus, width determined from RAM_DEPTH
+            .dina(60'b0),      // RAM input data, width determined from RAM_WIDTH
+            .clka(clk),      // Write clock
+            .clkb(clk),      // Read clock
+            .wea(1'b0),        // Write enable
+            .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+            .rstb(reset),      // Output reset (does not affect memory contents)
+            .regceb(1'b1),  // Output register enable
+            .doutb(dout_dz_1)     // RAM output data, width determined from RAM_WIDTH
+        );
     
-    Memory #(60, 4,"D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_7_hex.txt") lookup_z_2(
-        // Output   
-        .output_data(dout_dz_2),
-        // Input
-        .clock(clk),
-        .write_address(4'b0),
-        .write_enable(1'b0),
-        .read_address(read_mem_z_2),
-        .input_data(60'b0)
-    );
+    Memory #(
+            .RAM_WIDTH(60),                       // Specify RAM data width
+            .RAM_DEPTH(16),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_7_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+          ) lookup_z_2 (
+            .addra(4'b0),    // Write address bus, width determined from RAM_DEPTH
+            .addrb(read_mem_z_2),    // Read address bus, width determined from RAM_DEPTH
+            .dina(60'b0),      // RAM input data, width determined from RAM_WIDTH
+            .clka(clk),      // Write clock
+            .clkb(clk),      // Read clock
+            .wea(1'b0),        // Write enable
+            .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+            .rstb(reset),      // Output reset (does not affect memory contents)
+            .regceb(1'b1),  // Output register enable
+            .doutb(dout_dz_2)     // RAM output data, width determined from RAM_WIDTH
+        );
     
-    Memory #(60, 4,"D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_8_hex.txt") lookup_z_3(
-        // Output   
-        .output_data(dout_dz_3),
-        // Input
-        .clock(clk),
-        .write_address(4'b0),
-        .write_enable(1'b0),
-        .read_address(read_mem_z_3),
-        .input_data(60'b0)
-    );
+    Memory #(
+            .RAM_WIDTH(60),                       // Specify RAM data width
+            .RAM_DEPTH(16),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_8_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+          ) lookup_z_3 (
+            .addra(4'b0),    // Write address bus, width determined from RAM_DEPTH
+            .addrb(read_mem_z_3),    // Read address bus, width determined from RAM_DEPTH
+            .dina(60'b0),      // RAM input data, width determined from RAM_WIDTH
+            .clka(clk),      // Write clock
+            .clkb(clk),      // Read clock
+            .wea(1'b0),        // Write enable
+            .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+            .rstb(reset),      // Output reset (does not affect memory contents)
+            .regceb(1'b1),  // Output register enable
+            .doutb(dout_dz_3)     // RAM output data, width determined from RAM_WIDTH
+        );
     
     // Step 0: Read the residuals:
     // Declare:

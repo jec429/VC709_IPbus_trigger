@@ -110,14 +110,21 @@ module StubPairs(
 
     assign done = start;
 
-    Memory #(12,9,"D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/full.txt") StubPair(
-        // Output
-        .output_data(pre_data_out),
-        // Input
-        .clock(clk),
-        .write_address({BX_pipe-3'b010,wr_add}),
-        .write_enable(wr_en),
-        .read_address({BX_pipe_dly-3'b011,read_add}),
-        .input_data(data_in_dly)
+    Memory #(
+            .RAM_WIDTH(12),                       // Specify RAM data width
+            .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/full.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+          ) StubPair (
+            .addra({BX_pipe-3'b010,wr_add}),    // Write address bus, width determined from RAM_DEPTH
+            .addrb({BX_pipe_dly-3'b011,read_add}),    // Read address bus, width determined from RAM_DEPTH
+            .dina(data_in_dly),      // RAM input data, width determined from RAM_WIDTH
+            .clka(clk),      // Write clock
+            .clkb(clk),      // Read clock
+            .wea(wr_en),        // Write enable
+            .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+            .rstb(reset),      // Output reset (does not affect memory contents)
+            .regceb(1'b1),  // Output register enable
+            .doutb(pre_data_out)     // RAM output data, width determined from RAM_WIDTH
     );
 endmodule

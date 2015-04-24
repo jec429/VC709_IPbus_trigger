@@ -109,29 +109,25 @@ module TrackletParameters(
         end
     end
 
-    Memory #(54) Tracklet(
-        // Output
-        .output_data(data_out),
-        // Input
-        .clock(clk),
-        .write_address({BX_pipe-3'b011,wr_add}),
-        .write_enable(wr_en),
-        .read_address({BX_pipe-3'b111,read_add}),
-        .input_data(data_in_dly)
+    Memory #(
+            .RAM_WIDTH(54),                       // Specify RAM data width
+            .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+          ) Tracklet (
+            .addra({BX_pipe-3'b011,wr_add}),    // Write address bus, width determined from RAM_DEPTH
+            .addrb({BX_pipe_dly-3'b111,read_add}),    // Read address bus, width determined from RAM_DEPTH
+            .dina(data_in_dly),      // RAM input data, width determined from RAM_WIDTH
+            .clka(clk),      // Write clock
+            .clkb(clk),      // Read clock
+            .wea(wr_en),        // Write enable
+            .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+            .rstb(reset),      // Output reset (does not affect memory contents)
+            .regceb(1'b1),  // Output register enable
+            .doutb(data_out)     // RAM output data, width determined from RAM_WIDTH
     );
     
     wire [53:0] data_out_spy;
-    
-    Memory #(54,11) Tracklet_spy(
-        // Output
-        .output_data(data_out_spy),
-        // Input
-        .clock(clk),
-        .write_address({BX_pipe_spy-3'b011,wr_add}),
-        .write_enable(wr_en),
-        .read_address(io_addr[10:0]),
-        .input_data(data_in_dly)
-    );
     
     ///////////////////////////////////////////////////////////////////////////////////////////////
     // readback mux

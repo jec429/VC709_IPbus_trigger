@@ -333,17 +333,23 @@ module TrackletCalculator(
     reg [23:0] full_it1_pipe;    
     wire [11:0] it1_2;
     
-    // how do I write to this memory?
-    Memory #(16, 11, "D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/dr_inv.txt") lookup_dr_inv(
-        // Output
-        .output_data(idr_inv_2),
-        // Input
-        .clock(clk),
-        .write_address(11'b0),
-        .write_enable(1'b0),
-        .input_data(16'b0),
-        .read_address(idelta_r_pipe[10:0])
-    );
+    Memory #(
+            .RAM_WIDTH(16),                       // Specify RAM data width
+            .RAM_DEPTH(2048),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/dr_inv.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+          ) lookup_dr_inv (
+            .addra(11'b0),    // Write address bus, width determined from RAM_DEPTH
+            .addrb(idelta_r_pipe[10:0]),    // Read address bus, width determined from RAM_DEPTH
+            .dina(16'b0),      // RAM input data, width determined from RAM_WIDTH
+            .clka(clk),      // Write clock
+            .clkb(clk),      // Read clock
+            .wea(1'b0),        // Write enable
+            .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+            .rstb(reset),      // Output reset (does not affect memory contents)
+            .regceb(1'b1),  // Output register enable
+            .doutb(idr_inv_2)     // RAM output data, width determined from RAM_WIDTH
+        );
     
     wire signed [15:0] idr_inv_pipe8;
         

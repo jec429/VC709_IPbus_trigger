@@ -56,3 +56,5 @@ project_2/*.jou
 project_2/*.log
 *.rpx
 
+project_2/vivado.jou
+project_2/vivado.log

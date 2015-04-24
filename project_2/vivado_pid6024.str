@@ -1,0 +1,378 @@
+/*
+
+Vivado v2014.4 (64-bit)
+SW Build 1071353 on Tue Nov 18 18:29:27 MST 2014
+Process ID: 6024
+
+Current time: 	4/24/15 9:49:27 AM
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Windows 8
+Version: 6.2
+Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1680x1050
+Screen resolution (DPI): 96
+Available screens: 2
+
+Java version: 	1.8.0_05 64-bit
+Java home: 	C:/Xilinx/Vivado/2014.4/tps/win64/jre
+
+User name: 	Jorge
+User directory: D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2
+User country: 	US
+User language: 	en
+User locale: 	en_US
+Vivado preferences path: C:/Users/Jorge/AppData/Roaming/Xilinx/Vivado/2014.4/vivado.ini
+Vivado layouts directory: C:/Users/Jorge/AppData/Roaming/Xilinx/Vivado/2014.4/layouts/application
+
+GUI allocated memory:	142 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 386 MB
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// cm:N (ch:JFrame):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: MSGMGR_REFRESH_MSG
+// [GUI Memory]: 49 MB (+48717kb) [00:00:05]
+// [Engine Memory]: 386 MB (+253135kb) [00:00:05]
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 455 MB. GUI used memory: 26 MB. Current time: 4/24/15 9:49:29 AM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 482 MB (+100687kb) [00:00:09]
+// [Engine Memory]: 499 MB (+17534kb) [00:00:10]
+// [GUI Memory]: 74 MB (+26136kb) [00:00:10]
+// [Engine Memory]: 511 MB (+13090kb) [00:00:10]
+// [GUI Memory]: 83 MB (+9379kb) [00:00:12]
+// [Engine Memory]: 597 MB (+89829kb) [00:00:12]
+// [GUI Memory]: 84 MB (+1274kb) [00:00:12]
+// [Engine Memory]: 598 MB (+1081kb) [00:00:12]
+// [Engine Memory]: 599 MB (+1335kb) [00:00:12]
+// [Engine Memory]: 600 MB (+1396kb) [00:00:13]
+// [GUI Memory]: 105 MB (+21848kb) [00:00:14]
+// [Engine Memory]: 611 MB (+10825kb) [00:00:14]
+// [Engine Memory]: 613 MB (+2854kb) [00:00:15]
+// [GUI Memory]: 105 MB (+301kb) [00:00:16]
+// Tcl Message: open_project D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/project_2.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2014.4/data/ip'. 
+// [Engine Memory]: 617 MB (+3272kb) [00:00:18]
+// [Engine Memory]: 618 MB (+1241kb) [00:00:18]
+// [Engine Memory]: 618 MB (+606kb) [00:00:18]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 620 MB (+1323kb) [00:00:18]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 621 MB (+1114kb) [00:00:18]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 622 MB (+1204kb) [00:00:19]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 622 MB (+290kb) [00:00:19]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 106 MB (+508kb) [00:00:19]
+// [GUI Memory]: 106 MB (+916kb) [00:00:19]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 107 MB (+986kb) [00:00:19]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 108 MB (+916kb) [00:00:19]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 109 MB (+916kb) [00:00:19]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 110 MB (+919kb) [00:00:19]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 111 MB (+916kb) [00:00:19]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 112 MB (+986kb) [00:00:19]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 113 MB (+916kb) [00:00:19]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 114 MB (+925kb) [00:00:19]
+// [GUI Memory]: 114 MB (+917kb) [00:00:19]
+// [GUI Memory]: 115 MB (+988kb) [00:00:19]
+// [GUI Memory]: 116 MB (+916kb) [00:00:19]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 117 MB (+916kb) [00:00:19]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 118 MB (+836kb) [00:00:19]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: project_2; location: D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2; part: xc7vx690tffg1761-2
+// Tcl Message: open_project: Time (s): cpu = 00:00:33 ; elapsed = 00:00:17 . Memory (MB): peak = 801.719 ; gain = 241.695 
+dismissDialog("Open Project"); // cm:N (ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// [Engine Memory]: 623 MB (+471kb) [00:00:22]
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// [Engine Memory]: 626 MB (+3670kb) [00:00:22]
+// [Engine Memory]: 626 MB (+32kb) [00:00:22]
+// [Engine Memory]: 626 MB (+229kb) [00:00:22]
+// [Engine Memory]: 626 MB (+20kb) [00:00:22]
+// [Engine Memory]: 626 MB (+8kb) [00:00:22]
+// [Engine Memory]: 627 MB (+360kb) [00:00:22]
+// [Engine Memory]: 628 MB (+1490kb) [00:00:22]
+// [Engine Memory]: 628 MB (+73kb) [00:00:22]
+// [Engine Memory]: 631 MB (+2490kb) [00:00:22]
+// [Engine Memory]: 632 MB (+1597kb) [00:00:23]
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 119 MB (+771kb) [00:00:36]
+// [GUI Memory]: 120 MB (+1061kb) [00:00:39]
+// [GUI Memory]: 124 MB (+4930kb) [00:00:43]
+// Elapsed time: 28 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_Tracklet_Engine (Tracklet_Tracklet_Engine.v)]", 6); // u:k (I:JPanel, ch:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_Tracklet_Engine (Tracklet_Tracklet_Engine.v)]", 6); // u:k (I:JPanel, ch:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v)]", 3); // u:k (I:JPanel, ch:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v)]", 37); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), it_pipe - pipe_delay (pipe_delay.v)]", 48, false); // u:k (I:JPanel, ch:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 641 MB. GUI used memory: 55 MB. Current time: 4/24/15 9:50:34 AM
+// [Engine Memory]: 641 MB (+9334kb) [00:01:14]
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), StubPairs - mem_readout_top (mem_readout_top.v)]", 38, true); // u:k (I:JPanel, ch:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), full_it5_mult - pipe_mult (pipe_mult.v)]", 47, false); // u:k (I:JPanel, ch:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v)]", 37); // u:k (I:JPanel, ch:JFrame)
+// [Engine Memory]: 643 MB (+2605kb) [00:01:24]
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v)]", 37); // u:k (I:JPanel, ch:JFrame)
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), full_it7_mult - pipe_mult (pipe_mult.v)]", 50, false); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), full_it7_mult - pipe_mult (pipe_mult.v)]", 50, false, false, false, false, true, false); // u:k (I:JPanel, ch:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // Z:JMenuItem (ag:JPopupMenu, ch:JFrame)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// ay:N (ch:JFrame): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ay:N)
+// 'c' command handler elapsed time: 3 seconds
+dismissDialog("Remove Sources"); // ay:N (ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_mult.v 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), irinv_pipe - pipe_delay (pipe_delay.v)]", 49, false); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), irinv_pipe - pipe_delay (pipe_delay.v)]", 49, false, false, false, false, true, false); // u:k (I:JPanel, ch:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // Z:JMenuItem (ag:JPopupMenu, ch:JFrame)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// ay:N (ch:JFrame): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ay:N)
+dismissDialog("Remove Sources"); // ay:N (ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_delay.v 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), it7_tmp_mult - pipe_mult]", 51, false); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // w:Y (v:I, ch:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// b:g (ch:JFrame): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // a:JButton (H:JPanel, b:g)
+// [Engine Memory]: 647 MB (+3227kb) [00:02:17]
+// [Engine Memory]: 648 MB (+1286kb) [00:02:24]
+// Elapsed time: 13 seconds
+String[] filenames31467 = {"D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/pipe_delay.v", "D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/pipe_mult.v"};
+setFileChooser(filenames31467);
+selectButton("FINISH", "Finish"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+// 'f' command handler elapsed time: 17 seconds
+dismissDialog("Add Sources"); // b:g (ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/pipe_delay.v D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/pipe_mult.v} 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceEtoH.FileSetPanel_0_WARNING, "2 warnings"); // h:k (CommandBar:DockableBar, ch:JFrame)
+// [Engine Memory]: 649 MB (+1753kb) [00:02:32]
+// [Engine Memory]: 651 MB (+1736kb) [00:02:33]
+// [Engine Memory]: 655 MB (+3911kb) [00:02:33]
+// [Engine Memory]: 680 MB (+26308kb) [00:02:33]
+// HMemoryUtils.trashcanNow. Engine heap size: 680 MB. GUI used memory: 62 MB. Current time: 4/24/15 9:51:59 AM
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sim_1, [filemgmt 20-1318] Duplicate Design Unit 'pipe_delay' found in library 'xil_defaultlib'. 	(Active) Duplicate found at line 22 of file C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_delay.v. 	Duplicate found at line 22 of file D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/pipe_delay.v. ]", 2, false); // ae:k (JViewport:JComponent, ch:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Jorge\Documents\GitHub\VC709\project_3\project_3.srcs\sources_1\imports\new\pipe_delay.v;-;;-;15;-;line;-;22;-;;-;15;-;"); // ae:k (JViewport:JComponent, ch:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v)]", 3); // u:k (I:JPanel, ch:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, verilog_trigger_top_test1 (Simulation_Top.v), uut - verilog_trigger_top (verilog_trigger_top.v), tracklet_processing - Tracklet_processing (Tracklet_processing.v)]", 16); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, pipe_delay (pipe_delay.v)]", 25, false); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, pipe_mult (pipe_mult.v)]", 26, false); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, pipe_delay (pipe_delay.v)]", 25, false, false, false, false, true, false); // u:k (I:JPanel, ch:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // Z:JMenuItem (ag:JPopupMenu, ch:JFrame)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// ay:N (ch:JFrame): Remove Sources: addNotify
+selectCheckBox(PAResourceQtoS.RemoveSourcesDialog_ALSO_DELETE, "Also delete  project local files/directories from disk", true); // h:JCheckBox (JPanel:JComponent, ay:N): TRUE
+selectCheckBox(PAResourceQtoS.RemoveSourcesDialog_ALSO_DELETE, "Also delete  project local files/directories from disk", false); // h:JCheckBox (JPanel:JComponent, ay:N): FALSE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ay:N)
+// 'c' command handler elapsed time: 4 seconds
+dismissDialog("Remove Sources"); // ay:N (ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files {D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/pipe_delay.v D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/pipe_mult.v} 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v)]", 19); // u:k (I:JPanel, ch:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v)]", 53); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), irinv_pipe - pipe_delay (pipe_delay.v)]", 65, false); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), it_pipe - pipe_delay (pipe_delay.v)]", 64, false, true, false, false, false, false); // u:k (I:JPanel, ch:JFrame) - Shift Key
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), it_pipe - pipe_delay (pipe_delay.v)]", 64, false, false, false, false, true, false); // u:k (I:JPanel, ch:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // Z:JMenuItem (ag:JPopupMenu, ch:JFrame)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// ay:N (ch:JFrame): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ay:N)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F:b
+dismissDialog("Remove Sources"); // ay:N (ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files -fileset sim_1 C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_delay.v 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v)]", 3); // u:k (I:JPanel, ch:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v)]", 37); // u:k (I:JPanel, ch:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v)]", 37); // u:k (I:JPanel, ch:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, verilog_trigger_top_test1 (Simulation_Top.v), uut - verilog_trigger_top (verilog_trigger_top.v)]", 50); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // w:Y (v:I, ch:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// b:g (ch:JFrame): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // a:JButton (H:JPanel, b:g)
+String[] filenames16706 = {"D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/pipe_delay.v", "D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/pipe_mult.v"};
+setFileChooser(filenames16706);
+selectButton("FINISH", "Finish"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+// 'f' command handler elapsed time: 6 seconds
+dismissDialog("Add Sources"); // b:g (ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/pipe_delay.v D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/pipe_mult.v} 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceEtoH.FileSetPanel_0_WARNING, "1 warning"); // h:k (CommandBar:DockableBar, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, pipe_mult (pipe_mult.v)]", 115, false); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, pipe_mult (pipe_mult.v)]", 115, false, false, false, false, true, false); // u:k (I:JPanel, ch:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // Z:JMenuItem (ag:JPopupMenu, ch:JFrame)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// ay:N (ch:JFrame): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ay:N)
+dismissDialog("Remove Sources"); // ay:N (ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/pipe_mult.v 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), it7_tmp_mult - pipe_mult (pipe_mult.v)]", 100, false); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), it7_pipe - pipe_delay (pipe_delay.v)]", 101, false); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), it7_tmp_mult - pipe_mult (pipe_mult.v)]", 100, false); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), it7_tmp_mult - pipe_mult (pipe_mult.v)]", 100, false, false, false, false, true, false); // u:k (I:JPanel, ch:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // Z:JMenuItem (ag:JPopupMenu, ch:JFrame)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// ay:N (ch:JFrame): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ay:N)
+dismissDialog("Remove Sources"); // ay:N (ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files -fileset sim_1 C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_mult.v 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 11 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v)]", 37); // u:k (I:JPanel, ch:JFrame)
+// Elapsed time: 17 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), full_it5_mult - pipe_mult]", 47, false); // u:k (I:JPanel, ch:JFrame)
+// [Engine Memory]: 684 MB (+4448kb) [00:04:30]
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // w:Y (v:I, ch:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// b:g (ch:JFrame): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // a:JButton (H:JPanel, b:g)
+setFileChooser("D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/pipe_mult.v");
+selectButton("FINISH", "Finish"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+// 'f' command handler elapsed time: 5 seconds
+dismissDialog("Add Sources"); // b:g (ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/new/pipe_mult.v 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v), idelta_phi_pipe - pipe_delay (pipe_delay.v)]", 41, false); // u:k (I:JPanel, ch:JFrame)
+// Elapsed time: 119 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v), TC_L1D3L2D3 - TrackletCalculator (TrackletCombiner_test.v)]", 37); // u:k (I:JPanel, ch:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, verilog_trigger_top_test1 (Simulation_Top.v)]", 49, true); // u:k (I:JPanel, ch:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, verilog_trigger_top_test1 (Simulation_Top.v)]", 49, true, false, false, false, true, false); // u:k (I:JPanel, ch:JFrame) - Popup Trigger - Node
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // Z:JMenuItem (ag:JPopupMenu, ch:JFrame)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// ay:N (ch:JFrame): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ay:N)
+// 'c' command handler elapsed time: 3 seconds
+dismissDialog("Remove Sources"); // ay:N (ch:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files -fileset sim_1 {{D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/project_2.srcs/sim_1/imports/sim5/Simulation_Top.v}} 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // w:Y (v:I, ch:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// b:g (ch:JFrame): Add Sources: addNotify
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES, "Add or create simulation sources"); // a:JRadioButton (JPanel:JComponent, b:g)
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // a:JButton (H:JPanel, b:g)
+// Elapsed time: 84 seconds
+dismissFileChooser();
+selectButton("CANCEL", "Cancel"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+// 'f' command handler elapsed time: 91 seconds
+dismissDialog("Add Sources"); // b:g (ch:JFrame)
+// Elapsed time: 221 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // w:Y (v:I, ch:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// b:g (ch:JFrame): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // a:JButton (H:JPanel, b:g)
+dismissFileChooser();
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // a:JButton (H:JPanel, b:g)
+// Elapsed time: 34 seconds
+setFileChooser("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/project_2.srcs/sim_1/imports/sim5/Simulation_Top.v");
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO, "Copy sources into project", true); // h:JCheckBox (JPanel:JComponent, b:g): TRUE
+selectButton("FINISH", "Finish"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+// 'f' command handler elapsed time: 51 seconds
+dismissDialog("Add Sources"); // b:g (ch:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property SOURCE_SET sources_1 [get_filesets sim_1] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: import_files -fileset sim_1 -norecurse {{D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/project_2.srcs/sim_1/imports/sim5/Simulation_Top.v}} 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Tracklet_TrackletCalculator (Tracklet_TrackletCalculator.v)]", 51); // u:k (I:JPanel, ch:JFrame)

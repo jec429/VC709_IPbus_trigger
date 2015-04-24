@@ -138,27 +138,41 @@ module TrackletEngine #(parameter PHI_MEM = "D:/GLIB Firmware/branches/jectest/p
     assign delta_phi = outervmstubin_hold2[4:2] - innervmstubin[4:2];
     assign delta_r   = outervmstubin_hold2[1:0] - innervmstubin[1:0];
     
-    Memory #(1,13,PHI_MEM) lookup_phi(
-        // Output
-        .output_data(dout_phi),
-        // Input
-        .clock(clk),
-        .write_address(13'b0),
-        .write_enable(1'b0),
-        .read_address({innervmstubin[17:15],outervmstubin[17:15],delta_phi,delta_r}),
-        .input_data(1'b0)
-    );
+    Memory #(
+            .RAM_WIDTH(1),                       // Specify RAM data width
+            .RAM_DEPTH(8192),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .INIT_FILE(PHI_MEM)                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+          ) lookup_phi (
+            .addra(13'b0),    // Write address bus, width determined from RAM_DEPTH
+            .addrb({innervmstubin[17:15],outervmstubin[17:15],delta_phi,delta_r}),    // Read address bus, width determined from RAM_DEPTH
+            .dina(1'b0),      // RAM input data, width determined from RAM_WIDTH
+            .clka(clk),      // Write clock
+            .clkb(clk),      // Read clock
+            .wea(1'b0),        // Write enable
+            .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+            .rstb(reset),      // Output reset (does not affect memory contents)
+            .regceb(1'b1),  // Output register enable
+            .doutb(dout_phi)     // RAM output data, width determined from RAM_WIDTH
+        );
     
-    Memory #(1,12,Z_MEM) lookup_z(
-        // Output
-        .output_data(dout_z),
-        // Input
-        .clock(clk),
-        .write_address(12'b0),
-        .write_enable(1'b0),
-        .read_address({innervmstubin[8:5],outervmstubin[8:5],innervmstubin[1:0],outervmstubin[1:0]}),
-        .input_data(1'b0)
-    );
+    Memory #(
+            .RAM_WIDTH(1),                       // Specify RAM data width
+            .RAM_DEPTH(4096),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .INIT_FILE(Z_MEM)                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+          ) lookup_z (
+            .addra(12'b0),    // Write address bus, width determined from RAM_DEPTH
+            .addrb({innervmstubin[8:5],outervmstubin[8:5],innervmstubin[1:0],outervmstubin[1:0]}),    // Read address bus, width determined from RAM_DEPTH
+            .dina(1'b0),      // RAM input data, width determined from RAM_WIDTH
+            .clka(clk),      // Write clock
+            .clkb(clk),      // Read clock
+            .wea(1'b0),        // Write enable
+            .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+            .rstb(reset),      // Output reset (does not affect memory contents)
+            .regceb(1'b1),  // Output register enable
+            .doutb(dout_z)     // RAM output data, width determined from RAM_WIDTH
+        );
     
     reg [11:0] stubpair;
     always @(posedge clk) begin

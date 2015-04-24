@@ -104,14 +104,21 @@ module VMProjections(
         data_out <= pre_data_out;
     end
 
-    Memory #(13) VMProjection(
-        // Output
-        .output_data(pre_data_out),
-        // Input
-        .clock(clk),
-        .write_address({BX_pipe-3'b100,wr_add}),
-        .write_enable(wr_en & enable),
-        .read_address({BX_pipe-3'b101,read_add}),
-        .input_data(data_in_dly)
+    Memory #(
+            .RAM_WIDTH(13),                       // Specify RAM data width
+            .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+          ) VMProjection (
+            .addra({BX_pipe-3'b100,wr_add}),    // Write address bus, width determined from RAM_DEPTH
+            .addrb({BX_pipe_dly-3'b101,read_add}),    // Read address bus, width determined from RAM_DEPTH
+            .dina(data_in_dly),      // RAM input data, width determined from RAM_WIDTH
+            .clka(clk),      // Write clock
+            .clkb(clk),      // Read clock
+            .wea(wr_en),        // Write enable
+            .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+            .rstb(reset),      // Output reset (does not affect memory contents)
+            .regceb(1'b1),  // Output register enable
+            .doutb(pre_data_out)     // RAM output data, width determined from RAM_WIDTH
     );
 endmodule

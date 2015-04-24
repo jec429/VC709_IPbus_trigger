@@ -71,6 +71,8 @@ module Tracklet_Layer_Router(
 //    assign start9 = done8; 
 //    assign start10 = done9; 
     
+    assign done1_5 = done1_5_1 | done1_5_2 | done1_5_3 | done1_5_4 | done1_5_5 | done1_5_6;
+    
     assign start1_5 = (clk_cnt == 1);
     assign start2_5 = done1_5; 
 //    assign start3_5 = done2_5; 
@@ -127,7 +129,7 @@ module Tracklet_Layer_Router(
     .number_out(SL1_L1D3_VMR_L1D3_number),
     .read_add(SL1_L1D3_VMR_L1D3_read_add),
     .data_out(SL1_L1D3_VMR_L1D3),
-    .start(start2),.done(done1_5),.clk(clk),
+    .start(start2),.done(done1_5_1),.clk(clk),
     .reset(reset),
     .en_proc(en_proc),
     .io_clk(io_clk),
@@ -154,7 +156,7 @@ module Tracklet_Layer_Router(
     .number_out(SL1_L2D3_VMR_L2D3_number),
     .read_add(SL1_L2D3_VMR_L2D3_read_add),
     .data_out(SL1_L2D3_VMR_L2D3),
-    .start(start2),.done(done1_5),.clk(clk),
+    .start(start2),.done(done1_5_2),.clk(clk),
     .reset(reset),
     .en_proc(en_proc),
     .io_clk(io_clk),
@@ -181,7 +183,7 @@ module Tracklet_Layer_Router(
     .number_out(SL1_L3D3_VMR_L3D3_number),
     .read_add(SL1_L3D3_VMR_L3D3_read_add),
     .data_out(SL1_L3D3_VMR_L3D3),
-    .start(start2),.done(done1_5),.clk(clk),
+    .start(start2),.done(done1_5_3),.clk(clk),
     .reset(reset),
     .en_proc(en_proc),
     .io_clk(io_clk),
@@ -208,7 +210,7 @@ module Tracklet_Layer_Router(
     .number_out(SL1_L4D3_VMR_L4D3_number),
     .read_add(SL1_L4D3_VMR_L4D3_read_add),
     .data_out(SL1_L4D3_VMR_L4D3),
-    .start(start2),.done(done1_5),.clk(clk),
+    .start(start2),.done(done1_5_4),.clk(clk),
     .reset(reset),
     .en_proc(en_proc),
     .io_clk(io_clk),
@@ -235,7 +237,7 @@ module Tracklet_Layer_Router(
     .number_out(SL1_L5D3_VMR_L5D3_number),
     .read_add(SL1_L5D3_VMR_L5D3_read_add),
     .data_out(SL1_L5D3_VMR_L5D3),
-    .start(start2),.done(done1_5),.clk(clk),
+    .start(start2),.done(done1_5_5),.clk(clk),
     .reset(reset),
     .en_proc(en_proc),
     .io_clk(io_clk),
@@ -262,7 +264,7 @@ module Tracklet_Layer_Router(
     .number_out(SL1_L6D3_VMR_L6D3_number),
     .read_add(SL1_L6D3_VMR_L6D3_read_add),
     .data_out(SL1_L6D3_VMR_L6D3),
-    .start(start2),.done(done1_5),.clk(clk),
+    .start(start2),.done(done1_5_6),.clk(clk),
     .reset(reset),
     .en_proc(en_proc),
     .io_clk(io_clk),
