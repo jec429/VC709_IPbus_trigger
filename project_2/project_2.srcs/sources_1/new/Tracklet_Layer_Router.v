@@ -359,11 +359,12 @@ module Tracklet_Layer_Router(
     reg io_rd_ack_reg;
     assign io_rd_ack = io_rd_ack_reg;
     always @(posedge io_clk) begin
-        io_rd_ack_reg <= io_sync & io_rd_en & (reader_ack);
+        io_rd_ack_reg <= io_sync & io_rd_en & (reader_ack | InputLink_R1Link1_io_rd_ack);
     end
 
     always @(posedge io_clk) begin
         if (reader_ack)    io_rd_data_reg <= reader_out;
+        if (InputLink_R1Link1_io_rd_ack) io_rd_data_reg <= InputLink_R1Link1_io_rd_data;
     end
     
 

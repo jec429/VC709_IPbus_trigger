@@ -57,4 +57,8 @@ project_2/*.log
 *.rpx
 
 project_2/vivado.jou
-project_2/vivado.log
+project_2/vivado.log*.backup.log
+*.log
+*.jou
+*.str
+*~

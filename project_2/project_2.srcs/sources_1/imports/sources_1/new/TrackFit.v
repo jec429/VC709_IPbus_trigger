@@ -206,7 +206,7 @@ module FitTrack(
             .RAM_WIDTH(60),                       // Specify RAM data width
             .RAM_DEPTH(16),                     // Specify RAM depth (number of entries)
             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
-            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_1_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+            .INIT_FILE("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_1_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) lookup_phi_0 (
             .addra(4'b0),    // Write address bus, width determined from RAM_DEPTH
             .addrb(read_mem_phi_0),    // Read address bus, width determined from RAM_DEPTH
@@ -224,7 +224,7 @@ module FitTrack(
             .RAM_WIDTH(60),                       // Specify RAM data width
             .RAM_DEPTH(16),                     // Specify RAM depth (number of entries)
             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
-            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_2_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+            .INIT_FILE("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_2_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) lookup_phi_1 (
             .addra(4'b0),    // Write address bus, width determined from RAM_DEPTH
             .addrb(read_mem_phi_1),    // Read address bus, width determined from RAM_DEPTH
@@ -242,7 +242,7 @@ module FitTrack(
             .RAM_WIDTH(60),                       // Specify RAM data width
             .RAM_DEPTH(16),                     // Specify RAM depth (number of entries)
             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
-            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_3_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+            .INIT_FILE("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_3_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) lookup_phi_2 (
             .addra(4'b0),    // Write address bus, width determined from RAM_DEPTH
             .addrb(read_mem_phi_2),    // Read address bus, width determined from RAM_DEPTH
@@ -260,7 +260,7 @@ module FitTrack(
             .RAM_WIDTH(60),                       // Specify RAM data width
             .RAM_DEPTH(16),                     // Specify RAM depth (number of entries)
             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
-            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_4_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+            .INIT_FILE("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_4_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) lookup_phi_3 (
             .addra(4'b0),    // Write address bus, width determined from RAM_DEPTH
             .addrb(read_mem_phi_3),    // Read address bus, width determined from RAM_DEPTH
@@ -278,7 +278,7 @@ module FitTrack(
             .RAM_WIDTH(60),                       // Specify RAM data width
             .RAM_DEPTH(16),                     // Specify RAM depth (number of entries)
             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
-            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_5_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+            .INIT_FILE("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_5_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) lookup_z_0 (
             .addra(4'b0),    // Write address bus, width determined from RAM_DEPTH
             .addrb(read_mem_z_0),    // Read address bus, width determined from RAM_DEPTH
@@ -296,7 +296,7 @@ module FitTrack(
             .RAM_WIDTH(60),                       // Specify RAM data width
             .RAM_DEPTH(16),                     // Specify RAM depth (number of entries)
             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
-            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_6_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+            .INIT_FILE("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_6_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) lookup_z_1 (
             .addra(4'b0),    // Write address bus, width determined from RAM_DEPTH
             .addrb(read_mem_z_1),    // Read address bus, width determined from RAM_DEPTH
@@ -314,7 +314,7 @@ module FitTrack(
             .RAM_WIDTH(60),                       // Specify RAM data width
             .RAM_DEPTH(16),                     // Specify RAM depth (number of entries)
             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
-            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_7_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+            .INIT_FILE("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_7_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) lookup_z_2 (
             .addra(4'b0),    // Write address bus, width determined from RAM_DEPTH
             .addrb(read_mem_z_2),    // Read address bus, width determined from RAM_DEPTH
@@ -332,7 +332,7 @@ module FitTrack(
             .RAM_WIDTH(60),                       // Specify RAM data width
             .RAM_DEPTH(16),                     // Specify RAM depth (number of entries)
             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
-            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_8_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+            .INIT_FILE("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_2/FitDerTable_L1_8_hex.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) lookup_z_3 (
             .addra(4'b0),    // Write address bus, width determined from RAM_DEPTH
             .addrb(read_mem_z_3),    // Read address bus, width determined from RAM_DEPTH

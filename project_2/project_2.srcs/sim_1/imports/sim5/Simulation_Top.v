@@ -111,11 +111,11 @@ module verilog_trigger_top_test1;
         #310;
         ////////////////////////////////////////
         // Input from a file
-        fdi = $fopen("D:/GLIB Firmware/python_scripts/data_in2.dat","r");
-        fdo = $fopen("D:/GLIB Firmware/python_scripts/stubs_out.dat","w"); 
-        fdo2 = $fopen("D:/GLIB Firmware/python_scripts/data_out.dat","w"); 
-        fdo3 = $fopen("D:/GLIB Firmware/python_scripts/proj_out.dat","w"); 
-        fdo4 = $fopen("D:/GLIB Firmware/python_scripts/res_out.dat","w"); 
+        fdi = $fopen("/mnt/Ddrive/GLIB Firmware/python_scripts/data_in2.dat","r");
+        fdo = $fopen("/mnt/Ddrive/GLIB Firmware/python_scripts/stubs_out.dat","w"); 
+        fdo2 = $fopen("/mnt/Ddrive/GLIB Firmware/python_scripts/data_out.dat","w"); 
+        fdo3 = $fopen("/mnt/Ddrive/GLIB Firmware/python_scripts/proj_out.dat","w"); 
+        fdo4 = $fopen("/mnt/Ddrive/GLIB Firmware/python_scripts/res_out.dat","w"); 
     
 //        while (!$feof(fdi)) begin
 //            val = $fgets(str, fdi);

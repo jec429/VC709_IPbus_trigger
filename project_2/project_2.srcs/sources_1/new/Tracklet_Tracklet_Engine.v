@@ -126,7 +126,7 @@ module Tracklet_Tracklet_Engine(
     .not_first_clk(not_first_clk)
     );
         
-    TrackletEngine #("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_3/tables/TETable_R3L1Z1PHI0_R3L2Z1PHI1_phi.txt","D:/GLIB Firmware/branches/jectest/prj/viv_1/project_3/tables/TETable_R3L1Z1PHI0_R3L2Z1PHI1_z.txt") TE_L1D3PHI1Z1_L2D3PHI2Z1(
+    TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3/tables/TETable_R3L1Z1PHI0_R3L2Z1PHI1_phi.txt","/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3/tables/TETable_R3L1Z1PHI0_R3L2Z1PHI1_z.txt") TE_L1D3PHI1Z1_L2D3PHI2Z1(
     .number_in1(VMS_L1D3PHI1Z1n2_TE_L1D3PHI1Z1_L2D3PHI2Z1_number),
     .read_add1(VMS_L1D3PHI1Z1n2_TE_L1D3PHI1Z1_L2D3PHI2Z1_read_add),
     .innervmstubin(VMS_L1D3PHI1Z1n2_TE_L1D3PHI1Z1_L2D3PHI2Z1),

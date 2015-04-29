@@ -111,7 +111,7 @@ module CandidateMatch(
             .RAM_WIDTH(12),                       // Specify RAM data width
             .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
-            .INIT_FILE("D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/full.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+            .INIT_FILE("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_2/full.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) Match (
             .addra({BX_pipe-3'b011,wr_add}),    // Write address bus, width determined from RAM_DEPTH
             .addrb({BX_pipe_dly-3'b100,read_add}),    // Read address bus, width determined from RAM_DEPTH

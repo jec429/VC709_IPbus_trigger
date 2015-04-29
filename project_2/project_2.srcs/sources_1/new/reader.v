@@ -318,87 +318,83 @@ module reader(
             
     end   
     
-    reg [31:0] rd_data_reg1;
-    reg [31:0] rd_data_reg2;
-    reg [31:0] rd_data_reg3;
-    reg [31:0] rd_data_reg4;
-    reg [31:0] rd_data_reg5;
-    reg [31:0] rd_data_reg6;
-    reg [31:0] rd_data_reg7;
-    reg [31:0] rd_data_reg8;
-    reg [31:0] rd_data_reg9;
-    reg [31:0] rd_data_reg10;
-    reg [31:0] rd_data_reg11;
-    reg [31:0] rd_data_reg12;
-    reg [31:0] rd_data_reg13;
-    reg [31:0] rd_data_reg14;
-    reg [31:0] rd_data_reg15;
-    reg [31:0] rd_data_reg16;
-    reg [31:0] rd_data_reg17;
-    reg [31:0] rd_data_reg18;
-    reg [31:0] rd_data_reg19;
-    reg [31:0] rd_data_reg20;
-    reg [31:0] rd_data_reg21;
-    reg [31:0] rd_data_reg22;
-    reg [31:0] rd_data_reg23;
-    reg [31:0] rd_data_reg24;
-    reg [31:0] rd_data_reg25;
-    reg [31:0] rd_data_reg26;
-    reg [31:0] rd_data_reg27;
-    reg [31:0] rd_data_reg28;
-    reg [31:0] rd_data_reg29;
-    reg [31:0] rd_data_reg30;
-    reg [31:0] rd_data_reg31;
-    reg [31:0] rd_data_reg32;
-        
     wire sel_data1,sel_data2,sel_data3,sel_data4,sel_data5,sel_data6,sel_data7,sel_data8,sel_data9,sel_data10;
     wire sel_data11,sel_data12,sel_data13,sel_data14,sel_data15,sel_data16,sel_data17,sel_data18,sel_data19,sel_data20;
     wire sel_data21,sel_data22,sel_data23,sel_data24,sel_data25,sel_data26,sel_data27,sel_data28,sel_data29,sel_data30;
     wire sel_data31,sel_data32;
     
-    assign sel_data1 = (input1[0] != 0 );
-    assign sel_data2 = (input2[0] != 0 );
-    assign sel_data3 = (input3[0] != 0 );
-    assign sel_data4 = (input4[0] != 0 );
-    assign sel_data5 = (input5[0] != 0 );
-    assign sel_data6 = (input6[0] != 0 );
-    assign sel_data7 = (input7[0] != 0 );
-    assign sel_data8 = (input8[0] != 0 );
-    assign sel_data9 = (input9[0] != 0 );
-    assign sel_data10 = (input10[0] != 0 );
-    assign sel_data11 = (input11[0] != 0 );
-    assign sel_data12 = (input12[0] != 0 );
-    assign sel_data13 = (input13[0] != 0 );
-    assign sel_data14 = (input14[0] != 0 );
-    assign sel_data15 = (input15[0] != 0 );
-    assign sel_data16 = (input16[0] != 0 );
-    assign sel_data17 = (input17[0] != 0 );
-    assign sel_data18 = (input18[0] != 0 );
-    assign sel_data19 = (input19[0] != 0 );
-    assign sel_data20 = (input20[0] != 0 );
-    assign sel_data21 = (input21[0] != 0 );
-    assign sel_data22 = (input22[0] != 0 );
-    assign sel_data23 = (input23[0] != 0 );
-    assign sel_data24 = (input24[0] != 0 );
-    assign sel_data25 = (input25[0] != 0 );
-    assign sel_data26 = (input26[0] != 0 );
-    assign sel_data27 = (input27[0] != 0 );
-    assign sel_data28 = (input28[0] != 0 );
-    assign sel_data29 = (input29[0] != 0 );
-    assign sel_data30 = (input30[0] != 0 );
-    assign sel_data31 = (input31[0] != 0 );
-    assign sel_data32 = (input32[0] != 0 );
+    assign sel_data1 = (input1 != 0 );
+    assign sel_data2 = (input2 != 0 );
+    assign sel_data3 = (input3 != 0 );
+    assign sel_data4 = (input4 != 0 );
+    assign sel_data5 = (input5 != 0 );
+    assign sel_data6 = (input6 != 0 );
+    assign sel_data7 = (input7 != 0 );
+    assign sel_data8 = (input8 != 0 );
+    assign sel_data9 = (input9 != 0 );
+    assign sel_data10 = (input10 != 0 );
+    assign sel_data11 = (input11 != 0 );
+    assign sel_data12 = (input12 != 0 );
+    assign sel_data13 = (input13 != 0 );
+    assign sel_data14 = (input14 != 0 );
+    assign sel_data15 = (input15 != 0 );
+    assign sel_data16 = (input16 != 0 );
+    assign sel_data17 = (input17 != 0 );
+    assign sel_data18 = (input18 != 0 );
+    assign sel_data19 = (input19 != 0 );
+    assign sel_data20 = (input20 != 0 );
+    assign sel_data21 = (input21 != 0 );
+    assign sel_data22 = (input22 != 0 );
+    assign sel_data23 = (input23 != 0 );
+    assign sel_data24 = (input24 != 0 );
+    assign sel_data25 = (input25 != 0 );
+    assign sel_data26 = (input26 != 0 );
+    assign sel_data27 = (input27 != 0 );
+    assign sel_data28 = (input28 != 0 );
+    assign sel_data29 = (input29 != 0 );
+    assign sel_data30 = (input30 != 0 );
+    assign sel_data31 = (input31 != 0 );
+    assign sel_data32 = (input32 != 0 );
     
-    reg [8:0] wr_add;
+    reg [8:0] wr_add1;
+    reg [8:0] wr_add2;
+    reg [8:0] wr_add3;
+    reg [8:0] wr_add4;
+    reg [8:0] wr_add5;
+    reg [8:0] wr_add6;
+    initial begin
+        wr_add1 <= 9'h1ff;
+        wr_add2 <= 9'h1ff;
+        wr_add3 <= 9'h1ff;
+        wr_add4 <= 9'h1ff;
+        wr_add5 <= 9'h1ff;
+        wr_add6 <= 9'h1ff;
+    end
     always @(posedge clk) begin
-        if(input1[31:0] == 0)
-            wr_add <= 9'h000;
-        else begin
-            if (sel_data1)
-                wr_add <= wr_add + 1'b1;
-            else
-                wr_add <= wr_add;
-        end
+        if (sel_data1)
+            wr_add1 <= wr_add1 + 1'b1;
+        else
+            wr_add1 <= wr_add1;
+        if (sel_data2)
+            wr_add2 <= wr_add2 + 1'b1;
+        else
+            wr_add2 <= wr_add2;
+        if (sel_data3)
+            wr_add3 <= wr_add3 + 1'b1;
+        else
+            wr_add3 <= wr_add3;
+        if (sel_data4)
+            wr_add4 <= wr_add4 + 1'b1;
+        else
+            wr_add4 <= wr_add4;
+        if (sel_data5)
+            wr_add5 <= wr_add5 + 1'b1;
+        else
+            wr_add5 <= wr_add5;
+        if (sel_data6)
+            wr_add6 <= wr_add6 + 1'b1;
+        else
+            wr_add6 <= wr_add6;
      end
         
     assign io_sel_data1 = io_sel && (io_addr[23:19] == 5'b00000);
@@ -450,6 +446,8 @@ module reader(
     wire [35:0] data_out2;
     wire [35:0] data_out3;
     wire [35:0] data_out4;
+    wire [35:0] data_out5;
+    wire [35:0] data_out6;
     //TP_raw_stub_fifo read_out_fifo(.wr_clk(clk), .rst(reset), .din({4'hf,rd_data_reg}), .wr_en(wr_en), 
       //                               .rd_clk(io_clk), .rd_en(io_sel_fifo), .dout(data_out),
         //                             .empty(fifo_empty), .full(fifo_full));
@@ -459,7 +457,7 @@ module reader(
              .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
              .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
            ) reader_memory1(
-             .addra(wr_add),    // Write address bus, width determined from RAM_DEPTH
+             .addra(wr_add1),    // Write address bus, width determined from RAM_DEPTH
              .addrb(io_addr[8:0]),    // Read address bus, width determined from RAM_DEPTH
              .dina(input1[31:0]),      // RAM input data, width determined from RAM_WIDTH
              .clka(clk),      // Write clock
@@ -476,7 +474,7 @@ module reader(
              .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
              .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
            ) reader_memory2(
-             .addra(wr_add),    // Write address bus, width determined from RAM_DEPTH
+             .addra(wr_add2),    // Write address bus, width determined from RAM_DEPTH
              .addrb(io_addr[8:0]),    // Read address bus, width determined from RAM_DEPTH
              .dina(input2[31:0]),      // RAM input data, width determined from RAM_WIDTH
              .clka(clk),      // Write clock
@@ -493,7 +491,7 @@ module reader(
              .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
              .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
            ) reader_memory3(
-             .addra(wr_add),    // Write address bus, width determined from RAM_DEPTH
+             .addra(wr_add3),    // Write address bus, width determined from RAM_DEPTH
              .addrb(io_addr[8:0]),    // Read address bus, width determined from RAM_DEPTH
              .dina(input3[31:0]),      // RAM input data, width determined from RAM_WIDTH
              .clka(clk),      // Write clock
@@ -510,7 +508,7 @@ module reader(
              .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
              .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
            ) reader_memory4(
-             .addra(wr_add),    // Write address bus, width determined from RAM_DEPTH
+             .addra(wr_add4),    // Write address bus, width determined from RAM_DEPTH
              .addrb(io_addr[8:0]),    // Read address bus, width determined from RAM_DEPTH
              .dina(input4[31:0]),      // RAM input data, width determined from RAM_WIDTH
              .clka(clk),      // Write clock
@@ -520,6 +518,40 @@ module reader(
              .rstb(reset),      // Output reset (does not affect memory contents)
              .regceb(1'b1),  // Output register enable
              .doutb(data_out4)     // RAM output data, width determined from RAM_WIDTH
+     );
+   Memory #(
+             .RAM_WIDTH(32),                       // Specify RAM data width
+             .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+             .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+           ) reader_memory5(
+             .addra(wr_add5),    // Write address bus, width determined from RAM_DEPTH
+             .addrb(io_addr[8:0]),    // Read address bus, width determined from RAM_DEPTH
+             .dina(input5[31:0]),      // RAM input data, width determined from RAM_WIDTH
+             .clka(clk),      // Write clock
+             .clkb(io_clk),      // Read clock
+             .wea(sel_data5),        // Write enable
+             .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+             .rstb(reset),      // Output reset (does not affect memory contents)
+             .regceb(1'b1),  // Output register enable
+             .doutb(data_out5)     // RAM output data, width determined from RAM_WIDTH
+     );
+   Memory #(
+             .RAM_WIDTH(32),                       // Specify RAM data width
+             .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+             .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
+           ) reader_memory6(
+             .addra(wr_add6),    // Write address bus, width determined from RAM_DEPTH
+             .addrb(io_addr[8:0]),    // Read address bus, width determined from RAM_DEPTH
+             .dina(input6[31:0]),      // RAM input data, width determined from RAM_WIDTH
+             .clka(clk),      // Write clock
+             .clkb(io_clk),      // Read clock
+             .wea(sel_data6),        // Write enable
+             .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
+             .rstb(reset),      // Output reset (does not affect memory contents)
+             .regceb(1'b1),  // Output register enable
+             .doutb(data_out6)     // RAM output data, width determined from RAM_WIDTH
      );
    ///////////////////////////////////////////////////////////////////////////////////////////////
     // readback mux
@@ -541,6 +573,8 @@ module reader(
         if (io_sel_data2) io_rd_data_reg <= data_out2[31:0];
         if (io_sel_data3) io_rd_data_reg <= data_out3[31:0];
         if (io_sel_data4) io_rd_data_reg <= data_out4[31:0];
+        if (io_sel_data5) io_rd_data_reg <= data_out5[31:0];
+        if (io_sel_data6) io_rd_data_reg <= data_out6[31:0];
     end
     
 endmodule
