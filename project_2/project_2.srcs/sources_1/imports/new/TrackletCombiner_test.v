@@ -335,8 +335,8 @@ module TrackletCalculator(
     
     Memory #(
             .RAM_WIDTH(16),                       // Specify RAM data width
-            .RAM_DEPTH(2048),                     // Specify RAM depth (number of entries)
-            .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+            .RAM_DEPTH(1024),                     // Specify RAM depth (number of entries)
+            .RAM_PERFORMANCE("LOW_LATENCY"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
             .INIT_FILE("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_2/dr_inv.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) lookup_dr_inv (
             .addra(11'b0),    // Write address bus, width determined from RAM_DEPTH

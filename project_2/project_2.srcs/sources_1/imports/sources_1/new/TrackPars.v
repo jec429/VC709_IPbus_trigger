@@ -116,7 +116,7 @@ module TrackletParameters(
             .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) Tracklet (
             .addra({BX_pipe-3'b011,wr_add}),    // Write address bus, width determined from RAM_DEPTH
-            .addrb({BX_pipe_dly-3'b111,read_add}),    // Read address bus, width determined from RAM_DEPTH
+            .addrb({BX_pipe-3'b111,read_add}),    // Read address bus, width determined from RAM_DEPTH
             .dina(data_in_dly),      // RAM input data, width determined from RAM_WIDTH
             .clka(clk),      // Write clock
             .clkb(clk),      // Read clock

@@ -111,7 +111,7 @@ module TrackletProjections(
             hold_number_out <= pre_number_out;             
         end
         else begin
-            if(valid) begin
+            if(valid | (data_in > 0 & data_in != data_in_dly)) begin
                 wr_en <= 1'b1;
             end
             else begin
@@ -156,8 +156,8 @@ module TrackletProjections(
             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
             .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) Projection (
-            .addra({BX_pipe,wr_add}),    // Write address bus, width determined from RAM_DEPTH
-            .addrb({rd_BX_pipe - 1'b1,read_add}),    // Read address bus, width determined from RAM_DEPTH
+            .addra({BX_pipe-2'b11,wr_add}),    // Write address bus, width determined from RAM_DEPTH
+            .addrb({rd_BX_pipe - 3'b101,read_add}),    // Read address bus, width determined from RAM_DEPTH
             .dina(data_in_dly),      // RAM input data, width determined from RAM_WIDTH
             .clka(clk),      // Write clock
             .clkb(clk),      // Read clock

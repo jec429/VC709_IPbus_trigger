@@ -86,8 +86,8 @@ module TrackletProjections_test(
     
     // Step 1:
     // Declare:
-    wire signed [30:0] full_is1;
-    reg signed [30:0] full_is1_pipe;
+    wire signed [29:0] full_is1;
+    reg signed [29:0] full_is1_pipe;
     reg signed [29:0] is1_1;
     reg signed [14:0] pre_is1_1;
     reg signed [14:0] pre_is1_1_pipe;
@@ -112,8 +112,8 @@ module TrackletProjections_test(
     // Declare:
     wire signed [29:0] is2_2;
     
-    wire signed [41:0] pre_is2_2_5_test1;
-    wire signed [41:0] pre_is2_2_5_test2;
+    wire signed [36:0] pre_is2_2_5_test1;
+    wire signed [16:0] pre_is2_2_5_test2;
     reg signed [41:0] pre_is2_2_5;
         
     pipe_mult #(.STAGES(2), .AWIDTH(15), .BWIDTH(15))

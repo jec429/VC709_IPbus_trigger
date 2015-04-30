@@ -147,7 +147,7 @@ module reader(
     );
     
     initial begin
-        read_add1 = 6'h3f;
+        read_add1 = 6'h0;
         read_add2 = 6'h3f;
         read_add3 = 6'h3f;
         read_add4 = 6'h3f;
@@ -453,7 +453,7 @@ module reader(
         //                             .empty(fifo_empty), .full(fifo_full));
     Memory #(
              .RAM_WIDTH(32),                       // Specify RAM data width
-             .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+             .RAM_DEPTH(256),                     // Specify RAM depth (number of entries)
              .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
              .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
            ) reader_memory1(
@@ -470,7 +470,7 @@ module reader(
      );
    Memory #(
              .RAM_WIDTH(32),                       // Specify RAM data width
-             .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+             .RAM_DEPTH(256),                     // Specify RAM depth (number of entries)
              .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
              .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
            ) reader_memory2(
@@ -487,7 +487,7 @@ module reader(
      );
    Memory #(
              .RAM_WIDTH(32),                       // Specify RAM data width
-             .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+             .RAM_DEPTH(256),                     // Specify RAM depth (number of entries)
              .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
              .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
            ) reader_memory3(
@@ -504,7 +504,7 @@ module reader(
      );
    Memory #(
              .RAM_WIDTH(32),                       // Specify RAM data width
-             .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+             .RAM_DEPTH(256),                     // Specify RAM depth (number of entries)
              .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
              .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
            ) reader_memory4(
@@ -521,7 +521,7 @@ module reader(
      );
    Memory #(
              .RAM_WIDTH(32),                       // Specify RAM data width
-             .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+             .RAM_DEPTH(256),                     // Specify RAM depth (number of entries)
              .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
              .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
            ) reader_memory5(
@@ -538,7 +538,7 @@ module reader(
      );
    Memory #(
              .RAM_WIDTH(32),                       // Specify RAM data width
-             .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+             .RAM_DEPTH(256),                     // Specify RAM depth (number of entries)
              .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
              .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
            ) reader_memory6(

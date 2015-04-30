@@ -62,3 +62,4 @@ project_2/vivado.log*.backup.log
 *.jou
 *.str
 *~
+*.btree

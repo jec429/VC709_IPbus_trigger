@@ -111,43 +111,44 @@ module verilog_trigger_top_test1;
         #310;
         ////////////////////////////////////////
         // Input from a file
-        fdi = $fopen("/mnt/Ddrive/GLIB Firmware/python_scripts/data_in2.dat","r");
+        fdi = $fopen("/home/Jorge/Documents/work/VC709_IPbus_trigger/project_2/data_in2.dat","r");
         fdo = $fopen("/mnt/Ddrive/GLIB Firmware/python_scripts/stubs_out.dat","w"); 
         fdo2 = $fopen("/mnt/Ddrive/GLIB Firmware/python_scripts/data_out.dat","w"); 
         fdo3 = $fopen("/mnt/Ddrive/GLIB Firmware/python_scripts/proj_out.dat","w"); 
         fdo4 = $fopen("/mnt/Ddrive/GLIB Firmware/python_scripts/res_out.dat","w"); 
-    
-//        while (!$feof(fdi)) begin
-//            val = $fgets(str, fdi);
-//            dummy = $sscanf(str, "%x %x %x %x", data_in0, data_in1, add_0, add_1);
-//            #2  ipb_addr = add_0;
-//                ipb_wdata= data_in0; ipb_write = 1'b1;
-//            #4  ipb_strobe = 1'b1;
-//                while (ipb_ack == 1'b0) begin #4; end
-//            #2  ipb_strobe=1'b0; ipb_write=1'b0;
         
-//            #2  ipb_addr = add_1;
-//                ipb_wdata=data_in1; ipb_write = 1'b1;
-//            #4  ipb_strobe = 1'b1;
-//                while (ipb_ack == 1'b0) begin #4; end
-//            #2  ipb_strobe=1'b0; ipb_write=1'b0;
-//            @(posedge cross_clk);
-//        end       
-        //$fclose(fdo);             
-        //$fclose(fdi);
         # 900
-        
         #2  ipb_addr = 32'h55000000;
             ipb_wdata=32'h0; ipb_write = 1'b1;
         #4  ipb_strobe = 1'b1;
             while (ipb_ack == 1'b0) begin #4; end
         #2  ipb_strobe=1'b0; ipb_write=1'b0;
         
-        #2  ipb_addr = 32'h59000000;
-            ipb_wdata= 32'hdeadbebe; ipb_write = 1'b1;
-        #4  ipb_strobe = 1'b1;
-            while (ipb_ack == 1'b0) begin #4; end
-        #2  ipb_strobe=1'b0; ipb_write=1'b0;
+        while (!$feof(fdi)) begin
+            val = $fgets(str, fdi);
+            dummy = $sscanf(str, "%x %x %x %x", data_in0, data_in1, add_0, add_1);
+            #2  ipb_addr = add_0;
+                ipb_wdata= data_in0; ipb_write = 1'b1;
+            #4  ipb_strobe = 1'b1;
+                while (ipb_ack == 1'b0) begin #4; end
+            #2  ipb_strobe=1'b0; ipb_write=1'b0;
+        
+            #2  ipb_addr = add_1;
+                ipb_wdata=data_in1; ipb_write = 1'b1;
+            #4  ipb_strobe = 1'b1;
+                while (ipb_ack == 1'b0) begin #4; end
+            #2  ipb_strobe=1'b0; ipb_write=1'b0;
+            @(posedge cross_clk);
+        end       
+        $fclose(fdo);             
+        $fclose(fdi);
+        
+            
+//        #2  ipb_addr = 32'h59000000;
+//            ipb_wdata= 32'hdeadbebe; ipb_write = 1'b1;
+//        #4  ipb_strobe = 1'b1;
+//            while (ipb_ack == 1'b0) begin #4; end
+//        #2  ipb_strobe=1'b0; ipb_write=1'b0;
         
         //////////////////////////////////////////////////////////////////////////////
 		
