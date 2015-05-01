@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="2" Path="E:/MargaretVC709/VC709_IPbus_trigger/project_2/project_2.xpr">
+<Project Version="7" Minor="2" Path="/home/Margaret/MargaretVC709/VC709_IPbus_trigger/project_2/project_2.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="c23733cf04ac4332a3865016dc9e5aad"/>
@@ -133,12 +133,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_delay.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/writer.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -224,12 +218,6 @@
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_mult.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/VC709_ipbus/ipbus/ipbus_core/hdl/udp_tx_mux.vhd">
@@ -815,7 +803,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="D:/VC709_IPbus_trigger1/VC709_IPbus_trigger/project_2/archive_project_summary.txt"/>
       <File Path="$PSRCDIR/sources_1/ip/TP_raw_stub_fifo/TP_raw_stub_fifo.upgrade_log"/>
       <File Path="$PSRCDIR/sources_1/ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0.upgrade_log"/>
       <File Path="$PSRCDIR/sources_1/ip/trigger_clock_synth/trigger_clock_synth.upgrade_log"/>
@@ -856,6 +843,20 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../TrackletCommunication/project_1/project_1.srcs/sources_1/new/memory.v"/>
           <Attr Name="ImportTime" Val="1429117198"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/pipe_mult.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/pipe_delay.v">
+        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -915,13 +916,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_delay.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/TrackProj.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -937,13 +931,6 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/verilog_trigger_top.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="C:/Users/Jorge/Documents/GitHub/VC709/project_3/project_3.srcs/sources_1/imports/new/pipe_mult.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -1077,6 +1064,20 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Tracklet_processing.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/pipe_delay.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/pipe_mult.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
