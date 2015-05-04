@@ -21,7 +21,7 @@
 
 
   //module Memory #(parameter RAM_WIDTH = 36, parameter RAM_ADDR_BITS = 9, parameter INIT_FILE = "E:/MargaretVC709/TrackletCommunication/project_1/testdata4" )(
-  module Memory #(parameter RAM_WIDTH = 36, parameter RAM_ADDR_BITS = 9, parameter INIT_FILE = "D:/GLIB Firmware/branches/jectest/prj/viv_1/project_2/empty.txt" )(
+  module Memory #(parameter RAM_WIDTH = 36, parameter RAM_ADDR_BITS = 9, parameter INIT_FILE = "/home/Margaret/MargaretVC709/VC709_IPbus_trigger/project_2/empty.txt" )(
     // Output
 	output reg [RAM_WIDTH-1:0] output_data,
 	// Input
