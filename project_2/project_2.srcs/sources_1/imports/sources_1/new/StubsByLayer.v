@@ -112,7 +112,7 @@ module StubsByLayer(
     
     Memory #(
                 .RAM_WIDTH(36),                       // Specify RAM data width
-                .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
+                .RAM_DEPTH(256),                     // Specify RAM depth (number of entries)
                 .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
                 .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
               ) StubsMemory  (

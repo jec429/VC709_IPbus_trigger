@@ -72,7 +72,7 @@ module TrackletProjections_test(
     wire signed [9:0] iz0_pipe4;
     wire en2_5;
     wire en5b;
-    pipe_delay #(.STAGES(15), .WIDTH(17))
+    pipe_delay #(.STAGES(16), .WIDTH(17))
         iphi0_pipe(.pipe_in(en_proc), .pipe_out(en5b), .clk(clk),
         .val_in(iphi0_0), .val_out(iphi0_pipe3));
     
@@ -80,7 +80,7 @@ module TrackletProjections_test(
         irinv_pipe(.pipe_in(en_proc), .pipe_out(en5b), .clk(clk),
         .val_in(irinv_0), .val_out(irinv_pipe2));
     
-   pipe_delay #(.STAGES(13), .WIDTH(10))
+   pipe_delay #(.STAGES(14), .WIDTH(10))
         iz0_pipe(.pipe_in(en_proc), .pipe_out(en5b), .clk(clk),
         .val_in(iz0_0), .val_out(iz0_pipe4));
     
@@ -234,10 +234,10 @@ module TrackletProjections_test(
     pipe_delay #(.STAGES(2), .WIDTH(Z_BITS))
             iz_proj_pipe(.pipe_in(en_proc), .pipe_out(en5b), .clk(clk),
             .val_in(iz_proj_4), .val_out(iz_proj_pipe_out));
-    pipe_delay #(.STAGES(12), .WIDTH(PHID_BITS))
+    pipe_delay #(.STAGES(13), .WIDTH(PHID_BITS))
             iphi_der_pipe(.pipe_in(en_proc), .pipe_out(en5b), .clk(clk),
             .val_in(iphi_der_4), .val_out(iphi_der_pipe_out));
-    pipe_delay #(.STAGES(15), .WIDTH(ZD_BITS))
+    pipe_delay #(.STAGES(16), .WIDTH(ZD_BITS))
             iz_der_pipe(.pipe_in(en_proc), .pipe_out(en5b), .clk(clk),
             .val_in(iz_der_4), .val_out(iz_der_pipe_out));
             

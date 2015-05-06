@@ -63,3 +63,4 @@ project_2/vivado.log*.backup.log
 *.str
 *~
 *.btree
+.Xil
