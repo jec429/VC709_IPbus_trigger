@@ -95,7 +95,7 @@ module ProjTransceiver(
     output [5:0] read_add12,
     input [53:0] input_L5L6_4,
     
-    output [53:0] output_L1L2_1,
+    output reg [53:0] output_L1L2_1,
     output [53:0] output_L1L2_2,
     output [53:0] output_L1L2_3,
     output [53:0] output_L1L2_4,
@@ -188,7 +188,7 @@ module ProjTransceiver(
             .read_add11(read_add11),          // lower part of memory address
             .read_add12(read_add12),          // lower part of memory address
             
-            .mem_dat_stream(output_L1L2_1),
+            .mem_dat_stream(mem_dat_stream),
             .valid(valid),
             .send_BX(send_BX),
             .none(done_sending_proj)                 // no more items
@@ -205,11 +205,20 @@ module ProjTransceiver(
             fifo_rst <= ( reset || fifo_rst1 || fifo_rst2 || fifo_rst3 || fifo_rst4 || fifo_rst5 );
             fifo_rst_dly1 <= fifo_rst;
             fifo_rst_dly2 <= fifo_rst_dly1;
-            //valid_dly <= valid;
+            /*valid_dly <= valid;
             //FIFO_wr_en <= (valid_dly || send_BX);        //delay on the valid signal because data is off by one clock tick
-            //if (!first_clk) FIFO_wr_en <= (valid_dly || send_BX);        //delay on the valid signal because data is off by one clock tick
-            //FIFO_rd_en <= (!fifo_rst && !fifo_rst_dly1 && !fifo_rst_dly2);
-            //mem_dat_stream_dly <= mem_dat_stream;
+            if (!first_clk) FIFO_wr_en <= (valid_dly || send_BX);        //delay on the valid signal because data is off by one clock tick
+            FIFO_rd_en <= (!fifo_rst && !fifo_rst_dly1 && !fifo_rst_dly2);*/
+            mem_dat_stream_dly <= mem_dat_stream;
+            
+            if (!first_clk) FIFO_wr_en <= (valid || send_BX);
+            
+            
+        end
+   
+        always @ (posedge clk) begin
+            if (FIFO_wr_en) output_L1L2_1 <= {6'hFF,mem_dat_stream_dly};
+            else            output_L1L2_1 <= {54'h00000000000000};
         end
    
     

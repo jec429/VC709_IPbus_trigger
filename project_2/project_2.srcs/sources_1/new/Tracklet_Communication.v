@@ -91,6 +91,12 @@ module Tracklet_Communication(
     wire [53:0] TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3;
     wire [5:0] TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_number;
     wire [5:0] TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_read_add;
+    
+    reg [8:0] TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_read_add_update;
+    always @ (posedge clk) begin
+        TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_read_add_update <= {3'h0,TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_read_add};
+    end
+    
     wire [53:0] TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3;
     TrackletProjections #(1,1) TPROJ_ToPlus_L1D3L2D3_L3(
     .data_in(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3),

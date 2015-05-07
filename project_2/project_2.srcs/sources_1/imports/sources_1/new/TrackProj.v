@@ -153,7 +153,7 @@ module TrackletProjections(
     pipe_delay #(.STAGES(delay), .WIDTH(6)) NUM_OUT(.pipe_in(start_proj), .pipe_out(), .clk(clk),
                                                    .val_in(pipe_number_out), .val_out(number_out));
 
-    Memory #(54,9,"E:/MargaretVC709/TrackletCommunication/project_1/testdata4.txt") Projection(
+    Memory #(54,9,"E:/MargaretVC709/TrackletCommunication/project_1/testdata.txt") Projection(
         // Output
         .output_data(pre_data_out),
         // Input
