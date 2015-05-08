@@ -97,11 +97,16 @@ module TrackletProjections(
        end
        rd_BX_pipe <= rd_BX;
     end
+
+
+
+
     
     wire [53:0] pre_data_out;
     reg [5:0] pre_number_out;
     reg [5:0] hold_number_out;
     reg [5:0] pipe_number_out;
+
 
      always @(posedge clk) begin
         if(data_in > 0)
@@ -158,9 +163,9 @@ module TrackletProjections(
         .output_data(pre_data_out),
         // Input
         .clock(clk),
-        .write_address({BX_pipe - 3'd4 + NHOLD,wr_add}),
+        .write_address({BX_pipe + 3'd4,wr_add}),
         .write_enable(wr_en),
-        .read_address({rd_BX_pipe-3'd5,read_add}),
+        .read_address({rd_BX_pipe+3'd3,read_add}),
         .input_data(data_in_dly)
     );
 endmodule

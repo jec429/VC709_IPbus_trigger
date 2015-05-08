@@ -118,7 +118,7 @@ module ProjTransceiver(
     wire valid;
     reg valid_dly;
     wire [47:0] mem_dat_stream; //priority encoded data stream from the 12 memories
-    reg [47:0] mem_dat_stream_dly;
+    reg [53:0] mem_dat_stream_dly;
     wire [47:0] data_output;    //same memory stream but now coming from the FIFO
     
         // FIFO internal outputs
@@ -209,17 +209,20 @@ module ProjTransceiver(
             //FIFO_wr_en <= (valid_dly || send_BX);        //delay on the valid signal because data is off by one clock tick
             if (!first_clk) FIFO_wr_en <= (valid_dly || send_BX);        //delay on the valid signal because data is off by one clock tick
             FIFO_rd_en <= (!fifo_rst && !fifo_rst_dly1 && !fifo_rst_dly2);*/
-            mem_dat_stream_dly <= mem_dat_stream;
-            
+            mem_dat_stream_dly <= {6'hFF,mem_dat_stream};
             if (!first_clk) FIFO_wr_en <= (valid || send_BX);
-            
+            case (FIFO_wr_en) 
+                1: output_L1L2_1 <= mem_dat_stream_dly;
+                0: output_L1L2_1 <= 54'h00000000000000;
+            default output_L1L2_1 <= 54'h00000000000000;
+            endcase
             
         end
    
-        always @ (posedge clk) begin
+        /* always @ (posedge clk) begin
             if (FIFO_wr_en) output_L1L2_1 <= {6'hFF,mem_dat_stream_dly};
             else            output_L1L2_1 <= {54'h00000000000000};
-        end
+        end */
    
     
    /* always @ (posedge clk) begin
