@@ -22,7 +22,7 @@
 
 module ProjTransceiver(
     input clk,
-    input reset,
+    input reset,                        //whole system reset at beginning i.e. setup board
     input en_proc,
     // programming interface
     // inputs
@@ -38,8 +38,8 @@ module ProjTransceiver(
     output wire io_rd_ack,                // 'read' data from this module is ready
     //clocks
     input wire [2:0] BX,
-    input wire first_clk,
-    input wire not_first_clk,
+    input wire first_clk,               // start a new BX!
+    input wire not_first_clk,           // !first_clk
     
     // links
     output wire txn_pphi,          //Links to neighbouring sector board with larger phi (+phi)
@@ -135,8 +135,7 @@ module ProjTransceiver(
         reg fifo_rst_dly2;
    
     reg startdly1, startdly2, startdly3;
-    always @ (posedge clk) begin  
-        $display("number_in1 at PROJTRANSMITTER = %h", number_in1);
+    always @ (posedge clk) begin            //delay start to synch with Jorge's code
         startdly1 <= start;
         startdly2 <= startdly1;
         startdly3 <= startdly2;
@@ -148,6 +147,8 @@ module ProjTransceiver(
             .BX(BX),                    // BX number
             .clk_cnt(clk_cnt),          // clock cylces gone by in BX
             .BX_pipe(BX_pipe),
+            .first_clk(first_clk),
+            .not_first_clk(not_first_clk),
             
             .number_in1(number_in1),          // starting number of items for this memory
             .number_in2(number_in2),          // starting number of items for this memory

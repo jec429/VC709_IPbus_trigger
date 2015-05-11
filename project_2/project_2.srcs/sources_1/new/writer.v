@@ -118,6 +118,7 @@ module writer(
     TP_raw_stub_fifo input_fifo(.wr_clk(io_clk), .rst(reset), .din({4'h0,io_wr_data}), .wr_en(wr_en), // Make a 36 bit word from 32 bits of IPbus
                                     .rd_clk(clk), .rd_en(en_proc), .dout(wr_data),
                                     .empty(valid1), .full(fifo_full));
+   
                                     
     assign valid2 = valid1;
     assign valid3 = valid1;
@@ -151,26 +152,50 @@ module writer(
     reg [3:0] blah9 = 4'h9;
     reg [3:0] blah10 = 4'hA;                                   
     always @ (posedge clk) begin
-        data_out1 <= {blah,wr_data,wr_data[35:7],blah};
-        data_out2 <= {blah1,wr_data,wr_data[35:7],blah1};
-        data_out3 <= {blah2,wr_data,wr_data[35:7],blah2};
-        data_out4 <= {blah3,wr_data,wr_data[35:7],blah3};
-        data_out5 <= {blah4,wr_data,wr_data[35:7],blah4};
-        data_out6 <= {blah5,wr_data,wr_data[35:7],blah5};
-        data_out7 <= {blah6,wr_data,wr_data[35:7],blah6};
-        data_out8 <= {blah7,wr_data,wr_data[35:7],blah7};
-        data_out9 <= {blah8,wr_data,wr_data[35:7],blah8};
-        data_out10 <= {blah9,wr_data,wr_data[35:7],blah9};
-        data_out11 <= {blah10,wr_data,wr_data[35:7],blah10};
-        data_out12 <= {blah1,wr_data,wr_data[35:7],blah1};
-        data_out13 <= {blah2,wr_data,wr_data[35:7],blah2};
-        data_out14 <= {blah3,wr_data,wr_data[35:7],blah3};
-        data_out15 <= {blah4,wr_data,wr_data[35:7],blah4};
-        data_out16 <= {blah5,wr_data,wr_data[35:7],blah5};
-        data_out17 <= {blah6,wr_data,wr_data[35:7],blah6};
-        data_out18 <= {blah7,wr_data,wr_data[35:7],blah7};
-        data_out19 <= {blah8,wr_data,wr_data[35:7],blah8};
-        data_out20 <= {blah9,wr_data,wr_data[35:7],blah9};
+        if (!reset && wr_data > 0 && !valid1) begin
+            data_out1 <= {blah,wr_data,wr_data[35:7],blah};
+            data_out2 <= {blah1,wr_data,wr_data[35:7],blah1};
+            data_out3 <= {blah2,wr_data,wr_data[35:7],blah2};
+            data_out4 <= {blah3,wr_data,wr_data[35:7],blah3};
+            data_out5 <= {blah4,wr_data,wr_data[35:7],blah4};
+            data_out6 <= {blah5,wr_data,wr_data[35:7],blah5};
+            data_out7 <= {blah6,wr_data,wr_data[35:7],blah6};
+            data_out8 <= {blah7,wr_data,wr_data[35:7],blah7};
+            data_out9 <= {blah8,wr_data,wr_data[35:7],blah8};
+            data_out10 <= {blah9,wr_data,wr_data[35:7],blah9};
+            data_out11 <= {blah10,wr_data,wr_data[35:7],blah10};
+            data_out12 <= {blah1,wr_data,wr_data[35:7],blah1};
+            data_out13 <= {blah2,wr_data,wr_data[35:7],blah2};
+            data_out14 <= {blah3,wr_data,wr_data[35:7],blah3};
+            data_out15 <= {blah4,wr_data,wr_data[35:7],blah4};
+            data_out16 <= {blah5,wr_data,wr_data[35:7],blah5};
+            data_out17 <= {blah6,wr_data,wr_data[35:7],blah6};
+            data_out18 <= {blah7,wr_data,wr_data[35:7],blah7};
+            data_out19 <= {blah8,wr_data,wr_data[35:7],blah8};
+            data_out20 <= {blah9,wr_data,wr_data[35:7],blah9};
+        end
+        else begin
+            data_out1 <= 64'h0000000000000000;
+            data_out2 <= 64'h0000000000000000;
+            data_out3 <= 64'h0000000000000000;
+            data_out4 <= 64'h0000000000000000;
+            data_out5 <= 64'h0000000000000000;
+            data_out6 <= 64'h0000000000000000;
+            data_out7 <= 64'h0000000000000000;
+            data_out8 <= 64'h0000000000000000;
+            data_out9 <= 64'h0000000000000000;
+            data_out10 <= 64'h0000000000000000;
+            data_out11 <= 64'h0000000000000000;
+            data_out12 <= 64'h0000000000000000;
+            data_out13 <= 64'h0000000000000000;
+            data_out14 <= 64'h0000000000000000;
+            data_out15 <= 64'h0000000000000000;
+            data_out16 <= 64'h0000000000000000;
+            data_out17 <= 64'h0000000000000000;
+            data_out18 <= 64'h0000000000000000;
+            data_out19 <= 64'h0000000000000000;
+            data_out20 <= 64'h0000000000000000;
+        end
     end
     
     ///////////////////////////////////////////////////////////////////////////////////////////////
