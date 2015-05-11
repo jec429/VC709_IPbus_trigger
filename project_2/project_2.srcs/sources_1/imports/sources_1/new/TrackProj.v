@@ -119,7 +119,7 @@ module TrackletProjections(
             hold_number_out <= pre_number_out;             
         end
         else begin
-            if(valid) begin
+            if(valid && data_in > 0) begin
                 wr_en <= 1'b1;
             end
             else begin

@@ -115,7 +115,7 @@ module writer(
     assign wr_en = io_sel_data_in1;
     wire [35:0] wr_data;
         
-    TP_raw_stub_fifo input_fifo(.wr_clk(io_clk), .rst(reset), .din({4'ha,io_wr_data}), .wr_en(wr_en), 
+    TP_raw_stub_fifo input_fifo(.wr_clk(io_clk), .rst(reset), .din({4'h0,io_wr_data}), .wr_en(wr_en), // Make a 36 bit word from 32 bits of IPbus
                                     .rd_clk(clk), .rd_en(en_proc), .dout(wr_data),
                                     .empty(valid1), .full(fifo_full));
                                     
