@@ -811,28 +811,28 @@
       <File Path="$PSRCDIR/sources_1/ip/trigger_clock_synth_0/trigger_clock_synth.upgrade_log"/>
       <File Path="$PSRCDIR/sources_1/ip/TP_track_fit_fifo/TP_track_fit_fifo.upgrade_log"/>
       <File Path="$PSRCDIR/sources_1/ip/aurora_8b10b_1_0/aurora_8b10b_1.upgrade_log"/>
-      <File Path="$PPRDIR/../../TrackletCommunication/prio_encoder_demo/prio_support_2.v">
+      <File Path="$PPRDIR/../CommySrcs/prio_encoder_demo/prio_support_2.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../TrackletCommunication/prio_encoder_demo/mem_readout_top_2.v">
+      <File Path="$PPRDIR/../CommySrcs/prio_encoder_demo/mem_readout_top_2.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../TrackletCommunication/prio_encoder_demo/prio_encoder_2.v">
+      <File Path="$PPRDIR/../CommySrcs/prio_encoder_demo/prio_encoder_2.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../TrackletCommunication/prio_encoder_demo/mem_mux_2.v">
+      <File Path="$PPRDIR/../CommySrcs/prio_encoder_demo/mem_mux_2.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -862,7 +862,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../TrackletCommunication/project_1/project_1.srcs/sources_1/new/mem_readin_top.v">
+      <File Path="$PPRDIR/../CommySrcs/project_1/project_1.srcs/sources_1/new/mem_readin_top.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
