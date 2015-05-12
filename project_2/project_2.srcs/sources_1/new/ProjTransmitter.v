@@ -95,7 +95,7 @@ module ProjTransceiver(
     output [5:0] read_add12,
     input [53:0] input_L5L6_4,
     
-    output reg [53:0] output_L1L2_1,
+    output [53:0] output_L1L2_1,
     output [53:0] output_L1L2_2,
     output [53:0] output_L1L2_3,
     output [53:0] output_L1L2_4,
@@ -120,6 +120,9 @@ module ProjTransceiver(
     wire [47:0] mem_dat_stream; //priority encoded data stream from the 12 memories
     reg [53:0] mem_dat_stream_dly;
     wire [47:0] data_output;    //same memory stream but now coming from the FIFO
+    
+    wire [3:0] output_BX;       //output BX from the returning residuals
+    wire sent_BX;
     
         // FIFO internal outputs
         reg fifo_rst;                // reset fifo after each new_event
@@ -208,17 +211,34 @@ module ProjTransceiver(
             fifo_rst_dly2 <= fifo_rst_dly1;
             /*valid_dly <= valid;
             //FIFO_wr_en <= (valid_dly || send_BX);        //delay on the valid signal because data is off by one clock tick
-            if (!first_clk) FIFO_wr_en <= (valid_dly || send_BX);        //delay on the valid signal because data is off by one clock tick
-            FIFO_rd_en <= (!fifo_rst && !fifo_rst_dly1 && !fifo_rst_dly2);*/
+            if (!first_clk) FIFO_wr_en <= (valid_dly || send_BX);        //delay on the valid signal because data is off by one clock tick*/
+            FIFO_rd_en <= (!fifo_rst && !fifo_rst_dly1 && !fifo_rst_dly2);
             mem_dat_stream_dly <= {6'hFF,mem_dat_stream};
             if (!first_clk) FIFO_wr_en <= (valid || send_BX);
-            case (FIFO_wr_en) 
+           /* case (FIFO_wr_en) 
                 1: output_L1L2_1 <= mem_dat_stream_dly;
-                0: output_L1L2_1 <= 54'h00000000000000;
-            default output_L1L2_1 <= 54'h00000000000000;
-            endcase
+                0: output_L1L2_1 <= 54'h0000000000000;
+            default output_L1L2_1 <= 54'h0000000000000;
+            endcase*/
+
             
         end
+
+        
+        /////////////////////////////////////////////////////////////////////
+        // send the mem_dat_stream to a single-clock FIFO
+       fifo_projection_out fifo(
+            .rst(fifo_rst),                             // 1 bit in data reset
+            .clk(clk),                                  // 1 bit read and write clock
+            .din(mem_dat_stream_dly[47:0]),                   // 48 bit in data into FIFO
+            .wr_en(FIFO_wr_en),                         // 1 bit in write enable
+            .rd_en(FIFO_rd_en),                         // 1 bit in read enable
+            .dout(data_output),                         // 48 bit out data out of FIFO
+            .full(FIFO_FULL),                           // 1 bit out FIFO full signal
+            .empty(FIFO_EMPTY)                          // 1 bit out FIFO empty signal
+          );
+
+        
    
         /* always @ (posedge clk) begin
             if (FIFO_wr_en) output_L1L2_1 <= {6'hFF,mem_dat_stream_dly};
@@ -235,6 +255,29 @@ module ProjTransceiver(
     end */
     
     
+    mem_readin_top get_resid(
+        .clk(clk),
+        .reset(fifo_rst5),
+        .data_residuals(data_output),
+        .datanull(FIFO_EMPTY),
+
+        .output_BX(output_BX),
+        .send_BX(BX_sent),
+
+        .output_L1L2_1(output_L1L2_1), //returning residuals for this memory
+        .output_L1L2_2(output_L1L2_2), //returning residuals for this memory
+        .output_L1L2_3(output_L1L2_3), //returning residuals for this memory
+        .output_L1L2_4(output_L1L2_4), //returning residuals for this memory
+        .output_L3L4_1(output_L3L4_1), //returning residuals for this memory
+        .output_L3L4_2(output_L3L4_2), //returning residuals for this memory
+        .output_L3L4_3(output_L3L4_3), //returning residuals for this memory
+        .output_L3L4_4(output_L3L4_4), //returning residuals for this memory
+        .output_L5L6_1(output_L5L6_1), //returning residuals for this memory        
+        .output_L5L6_2(output_L5L6_2), //returning residuals for this memory  
+        .output_L5L6_3(output_L5L6_3), //returning residuals for this memory  
+        .output_L5L6_4(output_L5L6_4) //returning residuals for this memory 
+
+    );
     
     
     
