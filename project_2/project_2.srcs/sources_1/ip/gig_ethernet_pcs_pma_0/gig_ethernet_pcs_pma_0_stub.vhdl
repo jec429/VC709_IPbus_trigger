@@ -1,10 +1,17 @@
 -- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2014.4 (lin64) Build 1071353 Tue Nov 18 16:47:07 MST 2014
+<<<<<<< HEAD
 -- Date        : Mon Apr 27 16:26:01 2015
 -- Host        : mq154.lns.cornell.edu running 64-bit Scientific Linux release 6.6 (Carbon)
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/Jorge/Documents/work/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0_stub.vhdl
+=======
+-- Date        : Mon May  4 10:43:39 2015
+-- Host        : mq154.lns.cornell.edu running 64-bit Scientific Linux release 6.6 (Carbon)
+-- Command     : write_vhdl -force -mode synth_stub
+--               /home/Margaret/MargaretVC709/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0_stub.vhdl
+>>>>>>> bc00d9db5310a6fe74b49e8be398be678f1c8a71
 -- Design      : gig_ethernet_pcs_pma_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7vx690tffg1761-2
