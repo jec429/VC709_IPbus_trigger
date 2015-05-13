@@ -1,10 +1,10 @@
 -- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2014.4 (lin64) Build 1071353 Tue Nov 18 16:47:07 MST 2014
--- Date        : Mon May 11 17:55:31 2015
+-- Date        : Wed May 13 15:06:42 2015
 -- Host        : mq154.lns.cornell.edu running 64-bit Scientific Linux release 6.6 (Carbon)
 -- Command     : write_vhdl -force -mode funcsim
---               /home/Margaret/MargaretVC709/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/fifo_projection_out/fifo_projection_out_funcsim.vhdl
+--               /home/Margaret/MargaretVC709/CombinedVC709/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/fifo_projection_out/fifo_projection_out_funcsim.vhdl
 -- Design      : fifo_projection_out
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.

@@ -1,17 +1,10 @@
 -- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2014.4 (lin64) Build 1071353 Tue Nov 18 16:47:07 MST 2014
-<<<<<<< HEAD
--- Date        : Mon Apr 27 16:21:30 2015
+-- Date        : Wed May 13 15:00:12 2015
 -- Host        : mq154.lns.cornell.edu running 64-bit Scientific Linux release 6.6 (Carbon)
 -- Command     : write_vhdl -force -mode funcsim
---               /home/Jorge/Documents/work/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0_0/aurora_8b10b_0_funcsim.vhdl
-=======
--- Date        : Mon May  4 10:41:33 2015
--- Host        : mq154.lns.cornell.edu running 64-bit Scientific Linux release 6.6 (Carbon)
--- Command     : write_vhdl -force -mode funcsim
---               /home/Margaret/MargaretVC709/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0_0/aurora_8b10b_0_funcsim.vhdl
->>>>>>> bc00d9db5310a6fe74b49e8be398be678f1c8a71
+--               /home/Margaret/MargaretVC709/CombinedVC709/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/aurora_8b10b_0_0/aurora_8b10b_0_funcsim.vhdl
 -- Design      : aurora_8b10b_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
