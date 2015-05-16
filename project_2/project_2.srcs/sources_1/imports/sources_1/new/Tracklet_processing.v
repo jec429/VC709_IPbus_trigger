@@ -223,11 +223,13 @@ InputLink  IL3_D3(
 
 
 wire [35:0] LR1_D3_SL1_L1D3;
+wire LR1_D3_SL1_L1D3_wr_en;
 wire [5:0] SL1_L1D3_VMR_L1D3_number;
 wire [5:0] SL1_L1D3_VMR_L1D3_read_add;
 wire [35:0] SL1_L1D3_VMR_L1D3;
 StubsByLayer  SL1_L1D3(
 .data_in(LR1_D3_SL1_L1D3),
+.enable(LR1_D3_SL1_L1D3_wr_en),
 .number_out(SL1_L1D3_VMR_L1D3_number),
 .read_add(SL1_L1D3_VMR_L1D3_read_add),
 .data_out(SL1_L1D3_VMR_L1D3),
@@ -242,19 +244,18 @@ StubsByLayer  SL1_L1D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
 wire [35:0] LR1_D3_SL1_L2D3;
+wire LR1_D3_SL1_L2D3_wr_en;
 wire [5:0] SL1_L2D3_VMR_L2D3_number;
 wire [5:0] SL1_L2D3_VMR_L2D3_read_add;
 wire [35:0] SL1_L2D3_VMR_L2D3;
 StubsByLayer  SL1_L2D3(
 .data_in(LR1_D3_SL1_L2D3),
+.enable(LR1_D3_SL1_L2D3_wr_en),
 .number_out(SL1_L2D3_VMR_L2D3_number),
 .read_add(SL1_L2D3_VMR_L2D3_read_add),
 .data_out(SL1_L2D3_VMR_L2D3),
@@ -269,19 +270,18 @@ StubsByLayer  SL1_L2D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
 wire [35:0] LR1_D3_SL1_L3D3;
+wire LR1_D3_SL1_L3D3_wr_en;
 wire [5:0] SL1_L3D3_VMR_L3D3_number;
 wire [5:0] SL1_L3D3_VMR_L3D3_read_add;
 wire [35:0] SL1_L3D3_VMR_L3D3;
 StubsByLayer  SL1_L3D3(
 .data_in(LR1_D3_SL1_L3D3),
+.enable(LR1_D3_SL1_L3D3_wr_en),
 .number_out(SL1_L3D3_VMR_L3D3_number),
 .read_add(SL1_L3D3_VMR_L3D3_read_add),
 .data_out(SL1_L3D3_VMR_L3D3),
@@ -296,19 +296,18 @@ StubsByLayer  SL1_L3D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
 wire [35:0] LR1_D3_SL1_L4D3;
+wire LR1_D3_SL1_L4D3_wr_en;
 wire [5:0] SL1_L4D3_VMR_L4D3_number;
 wire [5:0] SL1_L4D3_VMR_L4D3_read_add;
 wire [35:0] SL1_L4D3_VMR_L4D3;
 StubsByLayer  SL1_L4D3(
 .data_in(LR1_D3_SL1_L4D3),
+.enable(LR1_D3_SL1_L4D3_wr_en),
 .number_out(SL1_L4D3_VMR_L4D3_number),
 .read_add(SL1_L4D3_VMR_L4D3_read_add),
 .data_out(SL1_L4D3_VMR_L4D3),
@@ -323,19 +322,18 @@ StubsByLayer  SL1_L4D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
 wire [35:0] LR1_D3_SL1_L5D3;
+wire LR1_D3_SL1_L5D3_wr_en;
 wire [5:0] SL1_L5D3_VMR_L5D3_number;
 wire [5:0] SL1_L5D3_VMR_L5D3_read_add;
 wire [35:0] SL1_L5D3_VMR_L5D3;
 StubsByLayer  SL1_L5D3(
 .data_in(LR1_D3_SL1_L5D3),
+.enable(LR1_D3_SL1_L5D3_wr_en),
 .number_out(SL1_L5D3_VMR_L5D3_number),
 .read_add(SL1_L5D3_VMR_L5D3_read_add),
 .data_out(SL1_L5D3_VMR_L5D3),
@@ -350,19 +348,18 @@ StubsByLayer  SL1_L5D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
 wire [35:0] LR1_D3_SL1_L6D3;
+wire LR1_D3_SL1_L6D3_wr_en;
 wire [5:0] SL1_L6D3_VMR_L6D3_number;
 wire [5:0] SL1_L6D3_VMR_L6D3_read_add;
 wire [35:0] SL1_L6D3_VMR_L6D3;
 StubsByLayer  SL1_L6D3(
 .data_in(LR1_D3_SL1_L6D3),
+.enable(LR1_D3_SL1_L6D3_wr_en),
 .number_out(SL1_L6D3_VMR_L6D3_number),
 .read_add(SL1_L6D3_VMR_L6D3_read_add),
 .data_out(SL1_L6D3_VMR_L6D3),
@@ -377,10 +374,7 @@ StubsByLayer  SL1_L6D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
@@ -404,10 +398,7 @@ StubsByLayer  SL2_L1D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
@@ -431,10 +422,7 @@ StubsByLayer  SL2_L2D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
@@ -458,10 +446,7 @@ StubsByLayer  SL2_L3D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
@@ -485,10 +470,7 @@ StubsByLayer  SL2_L4D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
@@ -512,10 +494,7 @@ StubsByLayer  SL2_L5D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
@@ -539,10 +518,7 @@ StubsByLayer  SL2_L6D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
@@ -566,10 +542,7 @@ StubsByLayer  SL3_L1D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
@@ -593,10 +566,7 @@ StubsByLayer  SL3_L2D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
@@ -620,10 +590,7 @@ StubsByLayer  SL3_L3D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
@@ -647,10 +614,7 @@ StubsByLayer  SL3_L4D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
@@ -674,10 +638,7 @@ StubsByLayer  SL3_L5D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
@@ -701,10 +662,7 @@ StubsByLayer  SL3_L6D3(
 .io_wr_en(io_wr_en),
 .io_wr_data(io_wr_data[31:0]),
 .io_rd_data(io_rd_data_R3_io_block),
-.io_rd_ack(io_rd_ack_R3_io_block),
-.BX(BX[2:0]),
-.first_clk(first_clk),
-.not_first_clk(not_first_clk)
+.io_rd_ack(io_rd_ack_R3_io_block)
 );
 
 
@@ -15135,6 +15093,12 @@ LayerRouter  LR1_D3(
 .stuboutL4(LR1_D3_SL1_L4D3),
 .stuboutL5(LR1_D3_SL1_L5D3),
 .stuboutL6(LR1_D3_SL1_L6D3),
+.wr_en1(LR1_D3_SL1_L1D3_wr_en),
+.wr_en2(LR1_D3_SL1_L2D3_wr_en),
+.wr_en3(LR1_D3_SL1_L3D3_wr_en),
+.wr_en4(LR1_D3_SL1_L4D3_wr_en),
+.wr_en5(LR1_D3_SL1_L5D3_wr_en),
+.wr_en6(LR1_D3_SL1_L6D3_wr_en),
 .start(start1_5),.done(done1_0),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
