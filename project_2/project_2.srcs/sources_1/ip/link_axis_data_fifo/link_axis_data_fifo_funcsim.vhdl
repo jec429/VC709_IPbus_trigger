@@ -1,10 +1,18 @@
 -- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
+<<<<<<< HEAD
 -- Tool Version: Vivado v.2014.4 (lin64) Build 1071353 Tue Nov 18 16:47:07 MST 2014
 -- Date        : Mon Apr 27 16:28:18 2015
 -- Host        : mq154.lns.cornell.edu running 64-bit Scientific Linux release 6.6 (Carbon)
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/Jorge/Documents/work/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo_funcsim.vhdl
+=======
+-- Tool Version: Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
+-- Date        : Fri Apr 10 15:44:13 2015
+-- Host        : 0602-PC running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               E:/MargaretVC709/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/link_axis_data_fifo/link_axis_data_fifo_funcsim.vhdl
+>>>>>>> bc00d9db5310a6fe74b49e8be398be678f1c8a71
 -- Design      : link_axis_data_fifo
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.

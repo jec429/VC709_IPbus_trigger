@@ -318,6 +318,8 @@ module reader(
             
     end   
     
+    reg [35:0] rd_data_reg;
+    
     wire sel_data1,sel_data2,sel_data3,sel_data4,sel_data5,sel_data6,sel_data7,sel_data8,sel_data9,sel_data10;
     wire sel_data11,sel_data12,sel_data13,sel_data14,sel_data15,sel_data16,sel_data17,sel_data18,sel_data19,sel_data20;
     wire sel_data21,sel_data22,sel_data23,sel_data24,sel_data25,sel_data26,sel_data27,sel_data28,sel_data29,sel_data30;
@@ -553,6 +555,7 @@ module reader(
              .regceb(1'b1),  // Output register enable
              .doutb(data_out6)     // RAM output data, width determined from RAM_WIDTH
      );
+
    ///////////////////////////////////////////////////////////////////////////////////////////////
     // readback mux
     // If a particular register or memory is addressed, connect that register's or memory's signals

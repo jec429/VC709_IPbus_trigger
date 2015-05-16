@@ -1,10 +1,14 @@
 // Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2014.4 (lin64) Build 1071353 Tue Nov 18 16:47:07 MST 2014
+<<<<<<< HEAD
 // Date        : Sat May 16 11:04:37 2015
+=======
+// Date        : Wed May 13 15:00:46 2015
+>>>>>>> a57d495b7a8c13e7f79daefef568e30c0295852d
 // Host        : mq154.lns.cornell.edu running 64-bit Scientific Linux release 6.6 (Carbon)
 // Command     : write_verilog -force -mode synth_stub
-//               /home/Jorge/Documents/work/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/trigger_clock_synth_0/trigger_clock_synth_stub.v
+//               /home/Margaret/MargaretVC709/CombinedVC709/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/trigger_clock_synth_0/trigger_clock_synth_stub.v
 // Design      : trigger_clock_synth
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7vx690tffg1761-2
