@@ -45,6 +45,7 @@ module StubPairs(
     output done,
     
     input [11:0] data_in,
+    input enable,
     
     output reg [5:0] number_out,
     input [5:0] read_add,
@@ -70,12 +71,6 @@ module StubPairs(
     end
     
     always @(posedge clk) begin
-        if(en_proc)
-            clk_cnt <= clk_cnt + 1'b1;
-        else begin
-            clk_cnt <= 7'b0;
-            BX_pipe <= 3'b111;
-        end
         if(start) begin
             BX_pipe <= BX_pipe + 1'b1;
             first_clk_pipe <= 1'b1;
@@ -96,7 +91,7 @@ module StubPairs(
         else begin
             //number_out <= 0;
             data_in_dly <= data_in;
-            if(data_in != 12'hfff & data_in != data_in_dly) begin
+            if(enable) begin
                 wr_add <= wr_add + 1'b1;
                 wr_en <= 1'b1;
             end

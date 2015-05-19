@@ -573,11 +573,11 @@ module reader(
     // Route the selected memory to the 'rdbk' output.
     always @(posedge io_clk) begin
         if (io_sel_data1) io_rd_data_reg <= data_out1[31:0];
-        if (io_sel_data2) io_rd_data_reg <= data_out2[31:0];
-        if (io_sel_data3) io_rd_data_reg <= data_out3[31:0];
-        if (io_sel_data4) io_rd_data_reg <= data_out4[31:0];
-        if (io_sel_data5) io_rd_data_reg <= data_out5[31:0];
-        if (io_sel_data6) io_rd_data_reg <= data_out6[31:0];
+        else if (io_sel_data2) io_rd_data_reg <= data_out2[31:0];
+        else if (io_sel_data3) io_rd_data_reg <= data_out3[31:0];
+        else if (io_sel_data4) io_rd_data_reg <= data_out4[31:0];
+        else if (io_sel_data5) io_rd_data_reg <= data_out5[31:0];
+        else if (io_sel_data6) io_rd_data_reg <= data_out6[31:0];
     end
     
 endmodule

@@ -136,40 +136,42 @@ module Link_Interface(
 //    );
     
     // Connect the transmit FIFO that buffers data crossing clock domains
-    link_axis_data_fifo tx_fifo (
-      .s_axis_aresetn(axis_resetn),          // input wire axis_resetn
-      .s_axis_aclk(clk),                
-      .s_axis_tvalid(s_axis_tx_tvalid),          // input wire s_axis_tvalid
-      .s_axis_tready(s_axis_tx_tready),          // output wire s_axis_tready
-      .s_axis_tdata(s_axis_tx_tdata),            // input wire [31 : 0] s_axis_tdata
-      .s_axis_tkeep(s_axis_tx_tkeep),            // input wire [3 : 0] s_axis_tkeep
-      .s_axis_tlast(s_axis_tx_tlast),            // input wire s_axis_tlast
-      .m_axis_aresetn(local_axis_resetn),          // input wire m_axis_aresetn
-      .m_axis_aclk(aurora_user_clk),                // input wire m_axis_aclk
-      .m_axis_tvalid(local_axis_tx_tvalid),          // output wire m_axis_tvalid
-      .m_axis_tdata(local_axis_tx_tdata),            // output wire [31 : 0] m_axis_tdata
-      .m_axis_tkeep(local_axis_tx_tkeep),            // output wire [3 : 0] m_axis_tkeep
-      .m_axis_tready(local_axis_tx_tready),            // input wire m_axis_tready
-      .m_axis_tlast(local_axis_tx_tlast)             // output wire m_axis_tlast
-    );
+    // BROKEN FIFOS JEC429
     
-    // Connect the receive FIFO that buffers data crossing clock domains
-    link_axis_data_fifo rx_fifo (
-      .s_axis_aresetn(local_axis_resetn),          // input wire s_axis_aresetn
-      .s_axis_aclk(aurora_user_clk),                // input wire s_axis_aclk
-      .s_axis_tvalid(local_axis_rx_tvalid),          // input wire s_axis_tvalid
-      .s_axis_tready(local_axis_rx_tready),          // output wire s_axis_tready IGNORED BY AURORA!!!
-      .s_axis_tdata(local_axis_rx_tdata),            // input wire [31 : 0] s_axis_tdata
-      .s_axis_tkeep(local_axis_rx_tkeep),            // input wire [3 : 0] s_axis_tkeep
-      .s_axis_tlast(local_axis_rx_tlast),            // input wire s_axis_tlast
-      .m_axis_aresetn(axis_resetn),                 // input wire axis_aresetn
-      .m_axis_aclk(clk),                
-      .m_axis_tvalid(m_axis_rx_tvalid),          // output wire m_axis_tvalid
-      .m_axis_tdata(m_axis_rx_tdata),            // output wire [31 : 0] m_axis_tdata
-      .m_axis_tkeep(m_axis_rx_tkeep),            // output wire [3 : 0] m_axis_tkeep
-      .m_axis_tready(m_axis_rx_tready),            // input wire m_axis_tready
-      .m_axis_tlast(m_axis_rx_tlast)             // output wire m_axis_tlast
-    );    
+//    link_axis_data_fifo tx_fifo (
+//      .s_axis_aresetn(axis_resetn),          // input wire axis_resetn
+//      .s_axis_aclk(clk),                
+//      .s_axis_tvalid(s_axis_tx_tvalid),          // input wire s_axis_tvalid
+//      .s_axis_tready(s_axis_tx_tready),          // output wire s_axis_tready
+//      .s_axis_tdata(s_axis_tx_tdata),            // input wire [31 : 0] s_axis_tdata
+//      .s_axis_tkeep(s_axis_tx_tkeep),            // input wire [3 : 0] s_axis_tkeep
+//      .s_axis_tlast(s_axis_tx_tlast),            // input wire s_axis_tlast
+//      .m_axis_aresetn(local_axis_resetn),          // input wire m_axis_aresetn
+//      .m_axis_aclk(aurora_user_clk),                // input wire m_axis_aclk
+//      .m_axis_tvalid(local_axis_tx_tvalid),          // output wire m_axis_tvalid
+//      .m_axis_tdata(local_axis_tx_tdata),            // output wire [31 : 0] m_axis_tdata
+//      .m_axis_tkeep(local_axis_tx_tkeep),            // output wire [3 : 0] m_axis_tkeep
+//      .m_axis_tready(local_axis_tx_tready),            // input wire m_axis_tready
+//      .m_axis_tlast(local_axis_tx_tlast)             // output wire m_axis_tlast
+//    );
+    
+//    // Connect the receive FIFO that buffers data crossing clock domains
+//    link_axis_data_fifo rx_fifo (
+//      .s_axis_aresetn(local_axis_resetn),          // input wire s_axis_aresetn
+//      .s_axis_aclk(aurora_user_clk),                // input wire s_axis_aclk
+//      .s_axis_tvalid(local_axis_rx_tvalid),          // input wire s_axis_tvalid
+//      .s_axis_tready(local_axis_rx_tready),          // output wire s_axis_tready IGNORED BY AURORA!!!
+//      .s_axis_tdata(local_axis_rx_tdata),            // input wire [31 : 0] s_axis_tdata
+//      .s_axis_tkeep(local_axis_rx_tkeep),            // input wire [3 : 0] s_axis_tkeep
+//      .s_axis_tlast(local_axis_rx_tlast),            // input wire s_axis_tlast
+//      .m_axis_aresetn(axis_resetn),                 // input wire axis_aresetn
+//      .m_axis_aclk(clk),                
+//      .m_axis_tvalid(m_axis_rx_tvalid),          // output wire m_axis_tvalid
+//      .m_axis_tdata(m_axis_rx_tdata),            // output wire [31 : 0] m_axis_tdata
+//      .m_axis_tkeep(m_axis_rx_tkeep),            // output wire [3 : 0] m_axis_tkeep
+//      .m_axis_tready(m_axis_rx_tready),            // input wire m_axis_tready
+//      .m_axis_tlast(m_axis_rx_tlast)             // output wire m_axis_tlast
+//    );    
     
     //readout from rx fifo
     always @ (posedge clk) begin

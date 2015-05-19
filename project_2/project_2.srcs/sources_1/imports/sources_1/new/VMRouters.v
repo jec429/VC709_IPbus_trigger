@@ -103,14 +103,16 @@ module VMRouter(
     output [17:0] vmstuboutPHI4Z2n3,
     output [17:0] vmstuboutPHI4Z2n4,
     
-    output reg vmstuboutPHI1Z1_en,
-    output reg vmstuboutPHI1Z2_en,
-    output reg vmstuboutPHI2Z1_en,
-    output reg vmstuboutPHI2Z2_en,
-    output reg vmstuboutPHI3Z1_en,
-    output reg vmstuboutPHI3Z2_en,
-    output reg vmstuboutPHI4Z1_en,
-    output reg vmstuboutPHI4Z2_en
+    output vmstuboutPHI1Z1_en,
+    output vmstuboutPHI1Z2_en,
+    output vmstuboutPHI2Z1_en,
+    output vmstuboutPHI2Z2_en,
+    output vmstuboutPHI3Z1_en,
+    output vmstuboutPHI3Z2_en,
+    output vmstuboutPHI4Z1_en,
+    output vmstuboutPHI4Z2_en,
+    
+    output reg valid_data
     
     );
     
@@ -119,22 +121,14 @@ module VMRouter(
     assign io_rd_ack = 1'b0;
 
 	///////////////////////////////////////////////
-    reg [6:0] clk_cnt;
     reg [2:0] BX_pipe;
     reg first_clk_pipe;
     
     initial begin
-       clk_cnt = 7'b0;
        BX_pipe = 3'b111;
     end
     
     always @(posedge clk) begin
-        if(en_proc)
-           clk_cnt <= clk_cnt + 1'b1;
-        else begin
-           clk_cnt <= 7'b0;
-           BX_pipe <= 3'b111;
-        end
         if(start) begin
            BX_pipe <= BX_pipe + 1'b1;
            first_clk_pipe <= 1'b1;
@@ -159,6 +153,8 @@ module VMRouter(
     
     reg [5:0] index;
     reg [17:0] vmstubout;
+    reg pre_valid_data;
+    reg [3:0] behold;
     
     initial begin
         read_add1 = 6'h3f;
@@ -168,6 +164,10 @@ module VMRouter(
     end
     
     always @(posedge clk) begin
+        behold[0] <= pre_valid_data;
+        behold[3:1] <= behold[2:0];
+        valid_data <= behold[3];
+    
         if(first_clk_pipe) begin
             read_add1 <= 6'h3f;
             read_add2 <= 6'h3f;
@@ -176,19 +176,24 @@ module VMRouter(
         else begin
             if(read_add1 + 1'b1 < number_in1) begin
                 read_add1 <= read_add1 + 1'b1;
+                pre_valid_data <= 1'b1;
             end
             else begin
                 read_add1 <= read_add1;
                 if(read_add2 + 1'b1 < number_in2) begin
                     read_add2 <= read_add2 + 1'b1;
+                    pre_valid_data <= 1'b1;
                 end
                 else begin
                     read_add2 <= read_add2;
                     if(read_add3 + 1'b1 < number_in3) begin
                         read_add3 <= read_add3 + 1'b1;
+                        pre_valid_data <= 1'b1;
                     end
-                    else
+                    else begin
                         read_add3 <= read_add3;
+                        pre_valid_data <= 1'b0;
+                    end
                 end
             end
         end
@@ -236,58 +241,79 @@ module VMRouter(
     end
     
     ///////////////////////////////////////////////////////////////////////////
-    
+    reg [17:0] vmstubout_dly;
+
     assign allstuboutn2 = allstuboutn1;
     assign allstuboutn3 = allstuboutn1;
     
-    assign vmstuboutPHI1Z1n1 = vmstubout;
+    assign vmstuboutPHI1Z1n1 = vmstubout_dly;
     assign vmstuboutPHI1Z1n2 = vmstuboutPHI1Z1n1;
     assign vmstuboutPHI1Z1n3 = vmstuboutPHI1Z1n1;
     assign vmstuboutPHI1Z1n4 = vmstuboutPHI1Z1n1;
     assign vmstuboutPHI1Z1n5 = vmstuboutPHI1Z1n1;
     assign vmstuboutPHI1Z1n6 = vmstuboutPHI1Z1n1;
-    assign vmstuboutPHI1Z2n1 = vmstubout;
+    assign vmstuboutPHI1Z2n1 = vmstubout_dly;
     assign vmstuboutPHI1Z2n2 = vmstuboutPHI1Z2n1;
     assign vmstuboutPHI1Z2n3 = vmstuboutPHI1Z2n1;
     assign vmstuboutPHI1Z2n4 = vmstuboutPHI1Z2n1;
         
-    assign vmstuboutPHI2Z1n1 = vmstubout;
+    assign vmstuboutPHI2Z1n1 = vmstubout_dly;
     assign vmstuboutPHI2Z1n2 = vmstuboutPHI2Z1n1;
     assign vmstuboutPHI2Z1n3 = vmstuboutPHI2Z1n1;
     assign vmstuboutPHI2Z1n4 = vmstuboutPHI2Z1n1;
     assign vmstuboutPHI2Z1n5 = vmstuboutPHI2Z1n1;
     assign vmstuboutPHI2Z1n6 = vmstuboutPHI2Z1n1;
-    assign vmstuboutPHI2Z2n1 = vmstubout;
+    assign vmstuboutPHI2Z2n1 = vmstubout_dly;
     assign vmstuboutPHI2Z2n2 = vmstuboutPHI2Z2n1;
     assign vmstuboutPHI2Z2n3 = vmstuboutPHI2Z2n1;
     assign vmstuboutPHI2Z2n4 = vmstuboutPHI2Z2n1;
     assign vmstuboutPHI2Z2n5 = vmstuboutPHI2Z2n1;
     assign vmstuboutPHI2Z2n6 = vmstuboutPHI2Z2n1;
 
-    assign vmstuboutPHI3Z1n1 = vmstubout;        
+    assign vmstuboutPHI3Z1n1 = vmstubout_dly;        
     assign vmstuboutPHI3Z1n2 = vmstuboutPHI3Z1n1;
     assign vmstuboutPHI3Z1n3 = vmstuboutPHI3Z1n1;
     assign vmstuboutPHI3Z1n4 = vmstuboutPHI3Z1n1;
     assign vmstuboutPHI3Z1n5 = vmstuboutPHI3Z1n1;
     assign vmstuboutPHI3Z1n6 = vmstuboutPHI3Z1n1;
-    assign vmstuboutPHI3Z2n1 = vmstubout;
+    assign vmstuboutPHI3Z2n1 = vmstubout_dly;
     assign vmstuboutPHI3Z2n2 = vmstuboutPHI3Z2n1;
     assign vmstuboutPHI3Z2n3 = vmstuboutPHI3Z2n1;
     assign vmstuboutPHI3Z2n4 = vmstuboutPHI3Z2n1;
     assign vmstuboutPHI3Z2n5 = vmstuboutPHI3Z2n1;
     assign vmstuboutPHI3Z2n6 = vmstuboutPHI3Z2n1;
             
-    assign vmstuboutPHI4Z1n1 = vmstubout;
+    assign vmstuboutPHI4Z1n1 = vmstubout_dly;
     assign vmstuboutPHI4Z1n2 = vmstuboutPHI4Z1n1;
     assign vmstuboutPHI4Z1n3 = vmstuboutPHI4Z1n1;
-    assign vmstuboutPHI4Z2n1 = vmstubout;
+    assign vmstuboutPHI4Z2n1 = vmstubout_dly;
     assign vmstuboutPHI4Z2n2 = vmstuboutPHI4Z2n1;
     assign vmstuboutPHI4Z2n3 = vmstuboutPHI4Z2n1;
     assign vmstuboutPHI4Z2n4 = vmstuboutPHI4Z2n1;
     
     ////////////////////////////////////////////////////////////////////////////
+    reg valid_data_dly;
+    reg pre_vmstuboutPHI1Z1_en;
+    reg pre_vmstuboutPHI1Z2_en;
+    reg pre_vmstuboutPHI2Z1_en;
+    reg pre_vmstuboutPHI2Z2_en;
+    reg pre_vmstuboutPHI3Z1_en;
+    reg pre_vmstuboutPHI3Z2_en;
+    reg pre_vmstuboutPHI4Z1_en;
+    reg pre_vmstuboutPHI4Z2_en;
     
+    assign vmstuboutPHI1Z1_en = pre_vmstuboutPHI1Z1_en & valid_data_dly;
+    assign vmstuboutPHI1Z2_en = pre_vmstuboutPHI1Z2_en & valid_data_dly;
+    assign vmstuboutPHI2Z1_en = pre_vmstuboutPHI2Z1_en & valid_data_dly;
+    assign vmstuboutPHI2Z2_en = pre_vmstuboutPHI2Z2_en & valid_data_dly;
+    assign vmstuboutPHI3Z1_en = pre_vmstuboutPHI3Z1_en & valid_data_dly;
+    assign vmstuboutPHI3Z2_en = pre_vmstuboutPHI3Z2_en & valid_data_dly;
+    assign vmstuboutPHI4Z1_en = pre_vmstuboutPHI4Z1_en & valid_data_dly;
+    assign vmstuboutPHI4Z2_en = pre_vmstuboutPHI4Z2_en & valid_data_dly;
+
     always @(posedge clk) begin
+        valid_data_dly <= valid_data;
+        vmstubout_dly <= vmstubout;
         if(INNER) begin        
             vmstubout[17:15] <= stubin[2:0];     
             vmstubout[14:9]  <= index;
@@ -295,37 +321,37 @@ module VMRouter(
             vmstubout[4:2]   <= {ODD ^ stubin[14],stubin[13:12]};
             vmstubout[1:0]   <= stubin[35:34];
             if(stubin1 != 0 & allstuboutn1[23] == 1'b0 & (allstuboutn1[13:11] == (3'b000 + ODD) | allstuboutn1[13:11] == (3'b001 + ODD)))
-                vmstuboutPHI1Z1_en <= 1'b1;
+                pre_vmstuboutPHI1Z1_en <= 1'b1;
             else 
-                vmstuboutPHI1Z1_en <= 0; 
+                pre_vmstuboutPHI1Z1_en <= 0; 
             if(allstuboutn1[23] == 1'b0 & (allstuboutn1[13:11] == (3'b010 + ODD) | allstuboutn1[13:11] == (3'b011 + ODD)))
-                vmstuboutPHI2Z1_en <= 1'b1;
+                pre_vmstuboutPHI2Z1_en <= 1'b1;
             else 
-                vmstuboutPHI2Z1_en <= 0;
+                pre_vmstuboutPHI2Z1_en <= 0;
             if(allstuboutn1[23] == 1'b0 & (allstuboutn1[13:11] == (3'b100 + ODD) | allstuboutn1[13:11] == (3'b101 + ODD)))
-                vmstuboutPHI3Z1_en <= 1'b1;
+                pre_vmstuboutPHI3Z1_en <= 1'b1;
             else 
-                vmstuboutPHI3Z1_en <= 0;
+                pre_vmstuboutPHI3Z1_en <= 0;
             if(allstuboutn1[23] == 1'b0 & (allstuboutn1[13:11] == (3'b110 + ODD) | allstuboutn1[13:11] == 3'b111))
-                vmstuboutPHI4Z1_en <= 1'b1;
+                pre_vmstuboutPHI4Z1_en <= 1'b1;
             else 
-                vmstuboutPHI4Z1_en <= 0;
+                pre_vmstuboutPHI4Z1_en <= 0;
             if(allstuboutn1[23] == 1'b1 & (allstuboutn1[13:11] == (3'b000 + ODD) | allstuboutn1[13:11] == (3'b001 + ODD)))
-                vmstuboutPHI1Z2_en <= 1'b1;
+                pre_vmstuboutPHI1Z2_en <= 1'b1;
             else 
-                vmstuboutPHI1Z2_en <= 0;
+                pre_vmstuboutPHI1Z2_en <= 0;
             if(allstuboutn1[23] == 1'b1 & (allstuboutn1[13:11] == (3'b010 + ODD) | allstuboutn1[13:11] == (3'b011 + ODD)))
-                vmstuboutPHI2Z2_en <= 1'b1;
+                pre_vmstuboutPHI2Z2_en <= 1'b1;
             else 
-                vmstuboutPHI2Z2_en <= 0;
+                pre_vmstuboutPHI2Z2_en <= 0;
             if(allstuboutn1[23] == 1'b1 & (allstuboutn1[13:11] == (3'b100 + ODD) | allstuboutn1[13:11] == (3'b101 + ODD)))
-                vmstuboutPHI3Z2_en <= 1'b1;
+                pre_vmstuboutPHI3Z2_en <= 1'b1;
             else 
-                vmstuboutPHI3Z2_en <= 0;
+                pre_vmstuboutPHI3Z2_en <= 0;
             if(allstuboutn1[23] == 1'b1 & (allstuboutn1[13:11] == (3'b110 + ODD) | allstuboutn1[13:11] == 3'b111))
-                vmstuboutPHI4Z2_en <= 1'b1;
+                pre_vmstuboutPHI4Z2_en <= 1'b1;
             else 
-                vmstuboutPHI4Z2_en <= 0;
+                pre_vmstuboutPHI4Z2_en <= 0;
         end
         else begin
             vmstubout[17:15] <= stubin[2:0];
@@ -334,37 +360,37 @@ module VMRouter(
             vmstubout[4:2]   <= {ODD ^ stubin[17],stubin[16:15]};
             vmstubout[1:0]   <= stubin[35:34];
             if(stubin1 != 0 & allstuboutn1[22] == 1'b0 & (allstuboutn1[16:14] == (3'b000 + ODD) | allstuboutn1[16:14] == (3'b001 + ODD)))
-                vmstuboutPHI1Z1_en <= 1'b1;
+                pre_vmstuboutPHI1Z1_en <= 1'b1;
             else 
-                vmstuboutPHI1Z1_en <= 0;
+                pre_vmstuboutPHI1Z1_en <= 0;
             if(allstuboutn1[22] == 1'b0 & (allstuboutn1[16:14] == (3'b010 + ODD) | allstuboutn1[16:14] == (3'b011 + ODD)))
-                vmstuboutPHI2Z1_en <= 1'b1;
+                pre_vmstuboutPHI2Z1_en <= 1'b1;
             else 
-                vmstuboutPHI2Z1_en <= 0;
+                pre_vmstuboutPHI2Z1_en <= 0;
             if(allstuboutn1[22] == 1'b0 & (allstuboutn1[16:14] == (3'b100 + ODD) | allstuboutn1[16:14] == (3'b101 + ODD)))
-                vmstuboutPHI3Z1_en <= 1'b1;
+                pre_vmstuboutPHI3Z1_en <= 1'b1;
             else 
-                vmstuboutPHI3Z1_en <= 0;
+                pre_vmstuboutPHI3Z1_en <= 0;
             if(allstuboutn1[22] == 1'b0 & (allstuboutn1[16:14] == (3'b110 + ODD) | allstuboutn1[16:14] == 3'b111))
-                vmstuboutPHI4Z1_en <= 1'b1;
+                pre_vmstuboutPHI4Z1_en <= 1'b1;
             else 
-                vmstuboutPHI4Z1_en <= 0;
+                pre_vmstuboutPHI4Z1_en <= 0;
             if(allstuboutn1[22] == 1'b1 & (allstuboutn1[16:14] == (3'b000 + ODD) | allstuboutn1[16:14] == (3'b001 + ODD)))
-                vmstuboutPHI1Z2_en <= 1'b1;
+                pre_vmstuboutPHI1Z2_en <= 1'b1;
             else 
-                vmstuboutPHI1Z2_en <= 0;
+                pre_vmstuboutPHI1Z2_en <= 0;
             if(allstuboutn1[22] == 1'b1 & (allstuboutn1[16:14] == (3'b010 + ODD) | allstuboutn1[16:14] == (3'b011 + ODD)))
-                vmstuboutPHI2Z2_en <= 1'b1;
+                pre_vmstuboutPHI2Z2_en <= 1'b1;
             else 
-                vmstuboutPHI2Z2_en <= 0;
+                pre_vmstuboutPHI2Z2_en <= 0;
             if(allstuboutn1[22] == 1'b1 & (allstuboutn1[16:14] == (3'b100 + ODD) | allstuboutn1[16:14] == (3'b101 + ODD)))
-                vmstuboutPHI3Z2_en <= 1'b1;
+                pre_vmstuboutPHI3Z2_en <= 1'b1;
             else 
-                vmstuboutPHI3Z2_en <= 0;
+                pre_vmstuboutPHI3Z2_en <= 0;
             if(allstuboutn1[22] == 1'b1 & (allstuboutn1[16:14] == (3'b110 + ODD) | allstuboutn1[16:14] == 3'b111))
-                vmstuboutPHI4Z2_en <= 1'b1;
+                pre_vmstuboutPHI4Z2_en <= 1'b1;
             else 
-                vmstuboutPHI4Z2_en <= 0;
+                pre_vmstuboutPHI4Z2_en <= 0;
         end
     end
     

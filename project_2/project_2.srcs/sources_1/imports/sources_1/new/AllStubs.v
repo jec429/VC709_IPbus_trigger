@@ -45,6 +45,7 @@ module AllStubs(
     output done,
     
     input [35:0] data_in,
+    input enable,
     
     //output reg [5:0] number_out,
     input [5:0] read_add,
@@ -58,22 +59,14 @@ module AllStubs(
     assign io_rd_ack = 1'b0;
 
 	///////////////////////////////////////////////
-    reg [6:0] clk_cnt;
     reg [2:0] BX_pipe;
     reg first_clk_pipe;
     
     initial begin
-       clk_cnt = 7'b0;
        BX_pipe = 3'b111;
     end
     
     always @(posedge clk) begin
-        if(en_proc)
-           clk_cnt <= clk_cnt + 1'b1;
-        else begin
-           clk_cnt <= 7'b0;
-           BX_pipe <= 3'b111;
-        end
         if(start) begin
            BX_pipe <= BX_pipe + 1'b1;
            first_clk_pipe <= 1'b1;
@@ -87,19 +80,22 @@ module AllStubs(
     reg [5:0] wr_add;
     reg wr_en;
     wire [2:0] BX_hold_1;
-    wire [2:0] BX_hold_2;
-    
-    
+    wire [2:0] BX_hold_2;  
     wire [35:0] pre_data_out_MC;
+    
+    reg [3:0] hold;
+    reg enable_dly;
     
     always @(posedge clk) begin      
         data_in_dly <= data_in;
+        enable_dly <= enable;
+        
         if(first_clk_pipe) begin
             wr_add <= 6'h3f;
             //number_out <= wr_add + 1'b1;
         end
         else begin
-            if(data_in != 0 & data_in != data_in_dly) begin
+            if(enable) begin
                 wr_add <= wr_add + 1'b1;
                 wr_en <= 1'b1;
             end
@@ -119,7 +115,7 @@ module AllStubs(
                                                        
     Memory #(
             .RAM_WIDTH(36),                       // Specify RAM data width
-            .RAM_DEPTH(256),                     // Specify RAM depth (number of entries)
+            .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
             .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) AllStub (
@@ -136,7 +132,7 @@ module AllStubs(
             );
     Memory #(
         .RAM_WIDTH(36),                       // Specify RAM data width
-        .RAM_DEPTH(256),                     // Specify RAM depth (number of entries)
+        .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
         .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
         .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
       ) AllStub_MC (

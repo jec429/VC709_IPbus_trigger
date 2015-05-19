@@ -45,6 +45,7 @@ module TrackletParameters(
     output done,
     
     input [53:0] data_in,
+    input enable,
     
     input [5:0] read_add,
     output [53:0] data_out
@@ -72,13 +73,6 @@ module TrackletParameters(
     end
     
     always @(posedge clk) begin
-       if(en_proc)
-           clk_cnt <= clk_cnt + 1'b1;
-       else begin
-           clk_cnt <= 7'b0;
-           BX_pipe <= 3'b111;
-           BX_pipe_spy <= 5'b11111;
-       end
        if(start) begin
            BX_pipe <= BX_pipe + 1'b1;
            BX_pipe_spy <= BX_pipe_spy + 1'b1;
@@ -98,7 +92,7 @@ module TrackletParameters(
             wr_add <= 6'h3f;
         end
         else begin
-            if(data_in != 0 & data_in != data_in_dly) begin
+            if(enable) begin
                 wr_add <= wr_add + 1'b1;
                 wr_en <= 1'b1;
             end

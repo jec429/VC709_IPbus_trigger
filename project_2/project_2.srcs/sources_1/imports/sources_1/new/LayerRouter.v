@@ -47,6 +47,14 @@ module LayerRouter(
     output read_en,
     
     input [35:0] stubin,
+    
+    output reg wr_en1,
+    output reg wr_en2,
+    output reg wr_en3,
+    output reg wr_en4,
+    output reg wr_en5,
+    output reg wr_en6,
+    
     output reg [35:0] stuboutL1, 
     output reg [35:0] stuboutL2,
     output reg [35:0] stuboutL3,
@@ -66,12 +74,6 @@ module LayerRouter(
     reg [5:0] numberL4;
     reg [5:0] numberL5;
     reg [5:0] numberL6;
-    reg wr_en1;
-    reg wr_en2;
-    reg wr_en3;
-    reg wr_en4;
-    reg wr_en5;
-    reg wr_en6;
     reg [35:0] stubin_hold;
     reg [7:0] BX_read;
     
@@ -102,7 +104,7 @@ module LayerRouter(
         BX_hold <= BX_pipe;       
     end
     
-    parameter [7:0] n_hold = 8'd2;  
+    parameter [7:0] n_hold = 8'd1;  
     reg [n_hold:0] hold;
     always @(posedge clk) begin
         hold[0] <= start;

@@ -1,7 +1,11 @@
 // Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2014.4 (lin64) Build 1071353 Tue Nov 18 16:47:07 MST 2014
+<<<<<<< HEAD
+// Date        : Sat May 16 11:04:37 2015
+=======
 // Date        : Wed May 13 15:00:46 2015
+>>>>>>> a57d495b7a8c13e7f79daefef568e30c0295852d
 // Host        : mq154.lns.cornell.edu running 64-bit Scientific Linux release 6.6 (Carbon)
 // Command     : write_verilog -force -mode funcsim
 //               /home/Margaret/MargaretVC709/CombinedVC709/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/trigger_clock_synth_0/trigger_clock_synth_funcsim.v
@@ -93,16 +97,16 @@ module trigger_clock_synth_trigger_clock_synth_clk_wiz
 (* BOX_TYPE = "PRIMITIVE" *) 
    MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
-    .CLKFBOUT_MULT_F(5.000000),
+    .CLKFBOUT_MULT_F(5.250000),
     .CLKFBOUT_PHASE(0.000000),
     .CLKFBOUT_USE_FINE_PS("FALSE"),
     .CLKIN1_PERIOD(5.000000),
     .CLKIN2_PERIOD(0.000000),
-    .CLKOUT0_DIVIDE_F(100.000000),
+    .CLKOUT0_DIVIDE_F(105.000000),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),
-    .CLKOUT1_DIVIDE(4),
+    .CLKOUT1_DIVIDE(3),
     .CLKOUT1_DUTY_CYCLE(0.500000),
     .CLKOUT1_PHASE(0.000000),
     .CLKOUT1_USE_FINE_PS("FALSE"),
