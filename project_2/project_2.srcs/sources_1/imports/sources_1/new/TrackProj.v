@@ -106,12 +106,14 @@ module TrackletProjections(
         else
             data_in_dly <= data_in_dly;
         if(first_clk_pipe) begin
+            wr_en <= 1'b0;
             wr_add <= 6'h3f;
             pre_number_out <= wr_add + 1'b1;
             hold_number_out <= pre_number_out;             
         end
         else begin
-            if(valid | (data_in > 0 & data_in != data_in_dly)) begin
+            if (data_in != 53'h0000000000000 && data_in != data_in_dly) begin
+            //if(valid || (data_in > 0 && data_in != data_in_dly)) begin
                 wr_en <= 1'b1;
             end
             else begin

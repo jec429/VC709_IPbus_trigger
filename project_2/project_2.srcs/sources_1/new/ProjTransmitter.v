@@ -107,18 +107,18 @@ module ProjTransceiver(
     output [53:0] output_L5L6_2,
     output [53:0] output_L5L6_3,
     output [53:0] output_L5L6_4,
-    output reg valid_L1L2_1,
-    output reg valid_L1L2_2,
-    output reg valid_L1L2_3,
-    output reg valid_L1L2_4,
-    output reg valid_L3L4_1,
-    output reg valid_L3L4_2,
-    output reg valid_L3L4_3,
-    output reg valid_L3L4_4,
-    output reg valid_L5L6_1,
-    output reg valid_L5L6_2,
-    output reg valid_L5L6_3,
-    output reg valid_L5L6_4
+    output valid_L1L2_1,
+    output valid_L1L2_2,
+    output valid_L1L2_3,
+    output valid_L1L2_4,
+    output valid_L3L4_1,
+    output valid_L3L4_2,
+    output valid_L3L4_3,
+    output valid_L3L4_4,
+    output valid_L5L6_1,
+    output valid_L5L6_2,
+    output valid_L5L6_3,
+    output valid_L5L6_4
     
     );
 
@@ -130,7 +130,7 @@ module ProjTransceiver(
     wire valid;
     reg valid_dly;
     wire [47:0] mem_dat_stream; //priority encoded data stream from the 12 memories
-    reg [53:0] mem_dat_stream_dly;
+    reg [47:0] mem_dat_stream_dly;
     wire [47:0] data_output;    //same memory stream but now coming from the FIFO
     
     wire [3:0] output_BX;       //output BX from the returning residuals
@@ -156,6 +156,24 @@ module ProjTransceiver(
         startdly3 <= startdly2;
     end 
      
+    reg [5:0] num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num12;
+    always @ (posedge clk) begin
+        num1 <= number_in1;
+        num2 <= number_in2;
+        num3 <= number_in3;
+        num4 <= number_in4;
+        num5 <= number_in5;
+        num6 <= number_in6;
+        num7 <= number_in7;
+        num8 <= number_in8;
+        num9 <= number_in9;
+        num10 <= number_in10;
+        num11 <= number_in11;
+        num12 <= number_in12;
+    end
+     
+     
+     
     mem_readout_top_2 send_proj(
             .clk(clk),                  // main clock
             .reset(startdly3),              // synchronously negated active-hi reset
@@ -165,18 +183,18 @@ module ProjTransceiver(
             .first_clk(first_clk),
             .not_first_clk(not_first_clk),
             
-            .number_in1(number_in1),          // starting number of items for this memory
-            .number_in2(number_in2),          // starting number of items for this memory
-            .number_in3(number_in3),          // starting number of items for this memory
-            .number_in4(number_in4),          // starting number of items for this memory
-            .number_in5(number_in5),          // starting number of items for this memory
-            .number_in6(number_in6),          // starting number of items for this memory
-            .number_in7(number_in7),          // starting number of items for this memory
-            .number_in8(number_in8),          // starting number of items for this memory
-            .number_in9(number_in9),          // starting number of items for this memory
-            .number_in10(number_in10),          // starting number of items for this memory
-            .number_in11(number_in11),          // starting number of items for this memory
-            .number_in12(number_in12),          // starting number of items for this memory
+            .number_in1(num1),          // starting number of items for this memory
+            .number_in2(num2),          // starting number of items for this memory
+            .number_in3(num3),          // starting number of items for this memory
+            .number_in4(num4),          // starting number of items for this memory
+            .number_in5(num5),          // starting number of items for this memory
+            .number_in6(num6),          // starting number of items for this memory
+            .number_in7(num7),          // starting number of items for this memory
+            .number_in8(num8),          // starting number of items for this memory
+            .number_in9(num9),          // starting number of items for this memory
+            .number_in10(num10),          // starting number of items for this memory
+            .number_in11(num11),          // starting number of items for this memory
+            .number_in12(num12),          // starting number of items for this memory
             
             .input_L1L2_1(input_L1L2_1[43:0]),     
             .input_L1L2_2(input_L1L2_2[43:0]),     
@@ -225,7 +243,7 @@ module ProjTransceiver(
             //FIFO_wr_en <= (valid_dly || send_BX);        //delay on the valid signal because data is off by one clock tick
             if (!first_clk) FIFO_wr_en <= (valid_dly || send_BX);        //delay on the valid signal because data is off by one clock tick*/
             FIFO_rd_en <= (!fifo_rst && !fifo_rst_dly1 && !fifo_rst_dly2);
-            mem_dat_stream_dly <= {6'hFF,mem_dat_stream};
+            mem_dat_stream_dly <= mem_dat_stream;
             if (!first_clk) FIFO_wr_en <= (valid || send_BX);
            /* case (FIFO_wr_en) 
                 1: output_L1L2_1 <= mem_dat_stream_dly;
@@ -242,7 +260,7 @@ module ProjTransceiver(
        fifo_projection_out fifo(
             .rst(fifo_rst),                             // 1 bit in data reset
             .clk(clk),                                  // 1 bit read and write clock
-            .din(mem_dat_stream_dly[47:0]),                   // 48 bit in data into FIFO
+            .din(mem_dat_stream_dly),                   // 48 bit in data into FIFO
             .wr_en(FIFO_wr_en),                         // 1 bit in write enable
             .rd_en(FIFO_rd_en),                         // 1 bit in read enable
             .dout(data_output),                         // 48 bit out data out of FIFO
@@ -287,8 +305,22 @@ module ProjTransceiver(
         .output_L5L6_1(output_L5L6_1), //returning residuals for this memory        
         .output_L5L6_2(output_L5L6_2), //returning residuals for this memory  
         .output_L5L6_3(output_L5L6_3), //returning residuals for this memory  
-        .output_L5L6_4(output_L5L6_4) //returning residuals for this memory 
+        .output_L5L6_4(output_L5L6_4), //returning residuals for this memory 
 
+        .wr_en_mem00(valid_L1L2_1), //valid signal for writing to memory
+        .wr_en_mem01(valid_L1L2_2), //valid signal for writing to memory
+        .wr_en_mem02(valid_L1L2_3), //valid signal for writing to memory
+        .wr_en_mem03(valid_L1L2_4), //valid signal for writing to memory
+        .wr_en_mem04(valid_L3L4_1), //valid signal for writing to memory
+        .wr_en_mem05(valid_L3L4_2), //valid signal for writing to memory
+        .wr_en_mem06(valid_L3L4_3), //valid signal for writing to memory
+        .wr_en_mem07(valid_L3L4_4), //valid signal for writing to memory
+        .wr_en_mem08(valid_L5L6_1), //valid signal for writing to memory
+        .wr_en_mem09(valid_L5L6_2), //valid signal for writing to memory
+        .wr_en_mem10(valid_L5L6_3), //valid signal for writing to memory
+        .wr_en_mem11(valid_L5L6_4) //valid signal for writing to memory
+        
+        
     );
     
     

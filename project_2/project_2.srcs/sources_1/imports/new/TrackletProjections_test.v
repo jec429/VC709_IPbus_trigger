@@ -52,6 +52,8 @@ module TrackletProjections_test(
     parameter ZD_BITS = 8;
     parameter layer = 1'b1;
     parameter rproj = 16'h86a;
+    parameter toplus = 1'b0;
+    parameter tominus = 1'b0;
      
     // Step 0: Read the parameters and Constants
     reg signed [13:0] irinv_0;
@@ -213,19 +215,100 @@ module TrackletProjections_test(
     // Step 5:
     reg [PHI_BITS-1:0] iphi_proj_5;
 
+
+    //if in inner layers (layer==1) phi of proj is 14 bits 
+    //if in outer laters (layer==0) phi of proj is 17 bits only relevant are 16 though
+    //compare the phi_proj4 with the 1/2 of the bounds before shifting to do computation in one step
+    //and then shift by the number of bits needed for each of the different layers
+    
+    //assign reg phi_minus_high <= (1<<PHI_BITS)/8;
+    
+    
+    //18'd57344 == 7*(1<<17)/8
+    parameter [16:0] phi_minus_low  = 17'h00000;  // below zero is outside phi region of next VM             d=0
+    parameter [16:0] phi_minus_high = 17'h02000;  // (1<<17)/8                                               d=8192
+    parameter [16:0] phi_plus_low   = 17'h0E000;  // 7*(1<<17)/8                                             d=57344
+    parameter [16:0] phi_plus_high  = 17'h10000;  // (1<<17)/4 above this is outside phi region of next VM   d=65536
+
     always @(posedge clk) begin
-        if(layer)
-            if(iphi_proj_4 < 18'd57344)
-                iphi_proj_5    <= iphi_proj_4 >>> 2'b10;
-            else
-                iphi_proj_5    <= 16'hffff;
+        if(layer) begin
+            if(iphi_proj_4 >= phi_minus_high && iphi_proj_4 < phi_plus_low) begin
+                if(!tominus && !toplus) iphi_proj_5 <= iphi_proj_4 >>> 2'b10;
+                else iphi_proj_5 <= 16'hFFFF;
+            end
+            if(iphi_proj_4 >= phi_minus_low && iphi_proj_4 < phi_minus_high) begin
+                if(tominus) iphi_proj_5 <= (iphi_proj_4 >>> 2'b10)+(3*(1<<17)/4);
+                else iphi_proj_5 <= 16'hFFFF;
+            end
+            if(iphi_proj_4 >= phi_plus_low && iphi_proj_4 < phi_plus_high) begin
+                if(toplus) iphi_proj_5 <= (iphi_proj_4 >>> 2'b10)-(3*(1<<17)/4);
+                else iphi_proj_5 <= 16'hFFFF;
+            end
+            if(iphi_proj_4 < phi_minus_low || iphi_proj_4 >= phi_plus_high) iphi_proj_5 <= 16'hFFFF;
+        end
         else begin
-            if(iphi_proj_4 < 18'd57344)
-                iphi_proj_5    <= iphi_proj_4 <<< 1'b1;
-            else
-                iphi_proj_5    <= 16'hffff;
+            if(iphi_proj_4 >= phi_minus_high && iphi_proj_4 < phi_plus_low) begin
+                if(!tominus && !toplus) iphi_proj_5 <= iphi_proj_4 <<< 1'b1;
+                else iphi_proj_5 <= 16'hFFFF;
+            end
+            if(iphi_proj_4 >= phi_minus_low && iphi_proj_4 < phi_minus_high) begin
+             if(tominus) iphi_proj_5 <= (iphi_proj_4 <<< 1'b1)+(3*(1<<17)/4);
+                else iphi_proj_5 <= 16'hFFFF;
+            end
+            if(iphi_proj_4 >= phi_plus_low && iphi_proj_4 < phi_plus_high) begin
+                if(toplus) iphi_proj_5 <= (iphi_proj_4 <<< 1'b1)-(3*(1<<17)/4);
+                else iphi_proj_5 <= 16'hFFFF;
+            end
+            if(iphi_proj_4 < phi_minus_low || iphi_proj_4 >= phi_plus_high) iphi_proj_5 <= 16'hFFFF;
         end
     end
+
+
+
+
+
+
+
+    /*always @(posedge clk) begin
+        if(layer) begin //14 bits for phi
+            if( iphi_proj_4 >= phi_minus_high && iphi_proj_4 < phi_plus_low && !tominus && !toplus) begin //projection stays in same sector
+                iphi_proj_5 <= iphi_proj_4 >>> 2'b10;
+            end
+            if( iphi_proj_4 >= phi_minus_low && iphi_proj_4 < phi_minus_high && tominus ) begin//projection goes to minus neighbor
+                iphi_proj_5 <= (iphi_proj_4 >>> 2'b10) + 3*(1<<17)/4;
+            end
+            if( iphi_proj_4 >= phi_plus_low && iphi_proj_4 < phi_plus_high && toplus) begin//projection goes to plus neighbor
+                iphi_proj_5 <= iphi_proj_4 >>> 2'b10;
+            end
+            if( iphi_proj_4 < phi_minus_low || iphi_proj_4 >= phi_plus_high) begin
+                iphi_proj_5 <= 16'hffff; //projection goes past neighboring sectors OR looking at other sectors based on params: toplus tominus 
+            end
+        end else begin //16 bits for phi
+            if( iphi_proj_4 >= 18'd8192 && iphi_proj_4 < 18'd57344 && !tominus && !toplus) begin//projection stays in same sector
+                iphi_proj_5 <= iphi_proj_4 <<< 1'b1;
+            end
+            else if( iphi_proj_4 >= 0 && iphi_proj_4 < 18'd8192 && tominus ) begin//projection goes to minus neighbor
+                iphi_proj_5 <= 3*(iphi_proj_4 >>> 2'b10)/4;
+            end
+            else if( iphi_proj_4 >= 18'd57344 && iphi_proj_4 < 18'd65536 && toplus) begin //projection goes to plus neighbor
+                iphi_proj_5 <= iphi_proj_4 >>> 2'b10;
+            end
+            else iphi_proj_5 <= 16'hffff; //projection goes past neighboring sectors OR looking at other sectors based on params: toplus tominus ;
+        end
+        ///if(layer) begin
+       //     if(iphi_proj_4 < 18'd57344 &&) begin //18'd57344 == 7*(1<<17)/8
+       //         iphi_proj_5    <= iphi_proj_4 >>> 2'b10;
+       //     end else if (iphi_proj_4 < 18'd57344 ) begin
+       //         iphi_proj_5    <= 16'hffff;
+      ////      end
+      //  else begin
+      //      if(iphi_proj_4 < 18'd57344) begin
+       ///         iphi_proj_5    <= iphi_proj_4 <<< 1'b1;
+       //     end else begin
+       ///         iphi_proj_5    <= 16'hffff;
+      //      end    
+      //  end
+    end*/
 
     wire signed [Z_BITS-1:0] iz_proj_pipe_out;
     wire signed [PHID_BITS-1:0] iphi_der_pipe_out;

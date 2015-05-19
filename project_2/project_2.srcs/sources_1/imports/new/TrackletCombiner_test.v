@@ -611,7 +611,7 @@ module TrackletCalculator(
         if (io_sel) io_rd_data_reg <= trackpar[31:0];
     end
     
-    TrackletProjections_test #(14,12,9,9,1'b1,16'h86a) projection1(
+    TrackletProjections_test #(14,12,9,9,1'b1,16'h86a,1'b0,1'b0) projection1(
     // clocks and reset
         .clk(clk),                // processing clock
         .reset(reset),                        // active HI
@@ -636,7 +636,7 @@ module TrackletCalculator(
         .projection(proj1)
     );
     
-    TrackletProjections_test #(17,8,11,8,1'b0,16'hb66) projection2(
+    TrackletProjections_test #(17,8,11,8,1'b0,16'hb66,1'b0,1'b0) projection2(
     // clocks and reset
         .clk(clk),                // processing clock
         .reset(reset),                        // active HI
@@ -661,7 +661,7 @@ module TrackletCalculator(
         .projection(proj2)
     );
     
-    TrackletProjections_test #(17,8,11,8,1'b0,16'hebb) projection3(
+    TrackletProjections_test #(17,8,11,8,1'b0,16'hebb,1'b0,1'b0) projection3(
     // clocks and reset
         .clk(clk),                // processing clock
         .reset(reset),                        // active HI
@@ -686,7 +686,7 @@ module TrackletCalculator(
         .projection(proj3)
     );
     
-    TrackletProjections_test #(17,8,11,8,1'b0,16'h11f7) projection4(
+    TrackletProjections_test #(17,8,11,8,1'b0,16'h11f7,1'b0,1'b0) projection4(
     // clocks and reset
         .clk(clk),                // processing clock
         .reset(reset),                        // active HI
@@ -710,6 +710,211 @@ module TrackletCalculator(
         .tracklet(trackpar),
         .projection(proj4)
     );
+    
+        TrackletProjections_test #(14,12,9,9,1'b1,16'h86a,1'b1,1'b0) projection5(
+    // clocks and reset
+        .clk(clk),                // processing clock
+        .reset(reset),                        // active HI
+        .en_proc(en_proc),
+        // programming interface
+        .io_clk(io_clk),                    // programming clock
+        .io_sel(io_sel),                    // this module is selected for an I/O operation
+        .io_addr(io_addr),        // memory address, top 16 bits alread consumed
+        .io_sync(io_sync),                // start the I/O operation
+        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+        .io_wr_data(io_wr_data[31:0]),// data to write for write operations
+        // outputs
+        .io_rd_data(),        // data returned for read operations
+        .io_rd_ack(),            // 'read' data from this module is ready
+        // clocks
+        .BX(BX[2:0]),
+        .first_clk(first_clk_pipe),
+        .not_first_clk(not_first_clk),
+        
+        .tracklet(trackpar),
+        .projection(projPlus1)
+    );
+    
+       
+        TrackletProjections_test #(17,8,11,8,1'b0,16'hb66,1'b1,1'b0) projection6(
+        // clocks and reset
+        .clk(clk),                // processing clock
+        .reset(reset),                        // active HI
+        .en_proc(en_proc),
+        // programming interface
+        .io_clk(io_clk),                    // programming clock
+        .io_sel(io_sel),                    // this module is selected for an I/O operation
+        .io_addr(io_addr),        // memory address, top 16 bits alread consumed
+        .io_sync(io_sync),                // start the I/O operation
+        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+        .io_wr_data(io_wr_data[31:0]),// data to write for write operations
+        // outputs
+        .io_rd_data(),        // data returned for read operations
+        .io_rd_ack(),            // 'read' data from this module is ready
+        // clocks
+        .BX(BX[2:0]),
+        .first_clk(first_clk_pipe),
+        .not_first_clk(not_first_clk),
+        
+        .tracklet(trackpar),
+        .projection(projPlus2)
+    );
+
+        TrackletProjections_test #(17,8,11,8,1'b0,16'hebb,1'b1,1'b0) projection7(
+        // clocks and reset
+        .clk(clk),                // processing clock
+        .reset(reset),                        // active HI
+        .en_proc(en_proc),
+        // programming interface
+        .io_clk(io_clk),                    // programming clock
+        .io_sel(io_sel),                    // this module is selected for an I/O operation
+        .io_addr(io_addr),        // memory address, top 16 bits alread consumed
+        .io_sync(io_sync),                // start the I/O operation
+        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+        .io_wr_data(io_wr_data[31:0]),// data to write for write operations
+        // outputs
+        .io_rd_data(),        // data returned for read operations
+        .io_rd_ack(),            // 'read' data from this module is ready
+        // clocks
+        .BX(BX[2:0]),
+        .first_clk(first_clk_pipe),
+        .not_first_clk(not_first_clk),
+        
+        .tracklet(trackpar),
+        .projection(projPlus3)
+    );
+    
+        TrackletProjections_test #(17,8,11,8,1'b0,16'h11f7,1'b1,1'b0) projection8(
+        // clocks and reset
+        .clk(clk),                // processing clock
+        .reset(reset),                        // active HI
+        .en_proc(en_proc),
+        // programming interface
+        .io_clk(io_clk),                    // programming clock
+        .io_sel(io_sel),                    // this module is selected for an I/O operation
+        .io_addr(io_addr),        // memory address, top 16 bits alread consumed
+        .io_sync(io_sync),                // start the I/O operation
+        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+        .io_wr_data(io_wr_data[31:0]),// data to write for write operations
+        // outputs
+        .io_rd_data(),        // data returned for read operations
+        .io_rd_ack(),            // 'read' data from this module is ready
+        // clocks
+        .BX(BX[2:0]),
+        .first_clk(first_clk_pipe),
+        .not_first_clk(not_first_clk),
+        
+        .tracklet(trackpar),
+        .projection(projPlus4)
+    );      
+    
+    TrackletProjections_test #(14,12,9,9,1'b1,16'h86a,1'b0,1'b1) projection9(
+        // clocks and reset
+        .clk(clk),                // processing clock
+        .reset(reset),                        // active HI
+        .en_proc(en_proc),
+        // programming interface
+        .io_clk(io_clk),                    // programming clock
+        .io_sel(io_sel),                    // this module is selected for an I/O operation
+        .io_addr(io_addr),        // memory address, top 16 bits alread consumed
+        .io_sync(io_sync),                // start the I/O operation
+        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+        .io_wr_data(io_wr_data[31:0]),// data to write for write operations
+        // outputs
+        .io_rd_data(),        // data returned for read operations
+        .io_rd_ack(),            // 'read' data from this module is ready
+        // clocks
+        .BX(BX[2:0]),
+        .first_clk(first_clk_pipe),
+        .not_first_clk(not_first_clk),
+        
+        .tracklet(trackpar),
+        .projection(projMinus1)
+    );      
+
+    TrackletProjections_test #(17,8,11,8,1'b0,16'hb66,1'b0,1'b1) projection10(
+        // clocks and reset
+        .clk(clk),                // processing clock
+        .reset(reset),                        // active HI
+        .en_proc(en_proc),
+        // programming interface
+        .io_clk(io_clk),                    // programming clock
+        .io_sel(io_sel),                    // this module is selected for an I/O operation
+        .io_addr(io_addr),        // memory address, top 16 bits alread consumed
+        .io_sync(io_sync),                // start the I/O operation
+        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+        .io_wr_data(io_wr_data[31:0]),// data to write for write operations
+        // outputs
+        .io_rd_data(),        // data returned for read operations
+        .io_rd_ack(),            // 'read' data from this module is ready
+        // clocks
+        .BX(BX[2:0]),
+        .first_clk(first_clk_pipe),
+        .not_first_clk(not_first_clk),
+        
+        .tracklet(trackpar),
+        .projection(projMinus2)
+    );   
+
+    TrackletProjections_test #(17,8,11,8,1'b0,16'hebb,1'b0,1'b1) projection11(
+        // clocks and reset
+        .clk(clk),                // processing clock
+        .reset(reset),                        // active HI
+        .en_proc(en_proc),
+        // programming interface
+        .io_clk(io_clk),                    // programming clock
+        .io_sel(io_sel),                    // this module is selected for an I/O operation
+        .io_addr(io_addr),        // memory address, top 16 bits alread consumed
+        .io_sync(io_sync),                // start the I/O operation
+        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+        .io_wr_data(io_wr_data[31:0]),// data to write for write operations
+        // outputs
+        .io_rd_data(),        // data returned for read operations
+        .io_rd_ack(),            // 'read' data from this module is ready
+        // clocks
+        .BX(BX[2:0]),
+        .first_clk(first_clk_pipe),
+        .not_first_clk(not_first_clk),
+        
+        .tracklet(trackpar),
+        .projection(projMinus3)
+    );   
+
+
+    TrackletProjections_test #(17,8,11,8,1'b0,16'h11f7,1'b0,1'b1) projection12(
+        // clocks and reset
+        .clk(clk),                // processing clock
+        .reset(reset),                        // active HI
+        .en_proc(en_proc),
+        // programming interface
+        .io_clk(io_clk),                    // programming clock
+        .io_sel(io_sel),                    // this module is selected for an I/O operation
+        .io_addr(io_addr),        // memory address, top 16 bits alread consumed
+        .io_sync(io_sync),                // start the I/O operation
+        .io_rd_en(io_rd_en),                // this is a read operation, enable readback logic
+        .io_wr_en(io_wr_en),                // this is a write operation, enable target for one clock
+        .io_wr_data(io_wr_data[31:0]),// data to write for write operations
+        // outputs
+        .io_rd_data(),        // data returned for read operations
+        .io_rd_ack(),            // 'read' data from this module is ready
+        // clocks
+        .BX(BX[2:0]),
+        .first_clk(first_clk_pipe),
+        .not_first_clk(not_first_clk),
+        
+        .tracklet(trackpar),
+        .projection(projMinus4)
+    );   
+
+    
+    
     
 endmodule
 
