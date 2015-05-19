@@ -108,7 +108,7 @@ module VMStubs(
             number_out_ME <= number_hold1;
         end
         else begin
-            if(data_in != 0 & data_in != data_in_dly) begin
+            if(enable) begin
                 wr_add <= wr_add + 1'b1;
                 wr_en <= 1'b1;
             end
@@ -125,7 +125,7 @@ module VMStubs(
 
     Memory #(
         .RAM_WIDTH(18),                       // Specify RAM data width
-        .RAM_DEPTH(256),                     // Specify RAM depth (number of entries)
+        .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
         .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
         .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
       ) VMStub (
@@ -134,7 +134,7 @@ module VMStubs(
         .dina(data_in_dly),      // RAM input data, width determined from RAM_WIDTH
         .clka(clk),      // Write clock
         .clkb(clk),      // Read clock
-        .wea(wr_en & enable),        // Write enable
+        .wea(wr_en),        // Write enable
         .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use
         .rstb(reset),      // Output reset (does not affect memory contents)
         .regceb(1'b1),  // Output register enable
@@ -142,7 +142,7 @@ module VMStubs(
         );
     Memory #(
         .RAM_WIDTH(18),                       // Specify RAM data width
-        .RAM_DEPTH(256),                     // Specify RAM depth (number of entries)
+        .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
         .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
         .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
       ) VMStub_ME (
@@ -151,7 +151,7 @@ module VMStubs(
         .dina(data_in_dly),      // RAM input data, width determined from RAM_WIDTH
         .clka(clk),      // Write clock
         .clkb(clk),      // Read clock
-        .wea(wr_en & enable),        // Write enable
+        .wea(wr_en),        // Write enable
         .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use
         .rstb(reset),      // Output reset (does not affect memory contents)
         .regceb(1'b1),  // Output register enable

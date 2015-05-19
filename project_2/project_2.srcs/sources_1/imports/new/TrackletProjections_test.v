@@ -43,7 +43,11 @@ module TrackletProjections_test(
     input wire not_first_clk,
     
     input wire [53:0] tracklet,            
-    output reg [53:0] projection
+    output reg [53:0] projection,
+    input valid_trackpar,
+    output reg valid_proj,
+    output reg valid_projPlus,
+    output reg valid_projMinus
     );
     
     parameter PHI_BITS = 17;
@@ -212,18 +216,54 @@ module TrackletProjections_test(
 
     // Step 5:
     reg [PHI_BITS-1:0] iphi_proj_5;
+    reg [18:0] behold;
+    reg local_valid, minus_valid, plus_valid;
 
     always @(posedge clk) begin
-        if(layer)
-            if(iphi_proj_4 < 18'd57344)
+        behold[0] <= valid_trackpar;
+        behold[18:1] <= behold[17:0];
+        valid_proj <= (behold[18] & local_valid);
+        valid_projMinus <= (behold[18] & minus_valid);
+        valid_projPlus <= (behold[18] & plus_valid);        
+        if(layer) begin
+            if(iphi_proj_4 < 18'd8192) begin
+                iphi_proj_5    <= (iphi_proj_4 + 20'd491520) >>> 2'b10;
+                minus_valid <= 1'b1;
+                local_valid <= 1'b0;
+                plus_valid <= 1'b0;
+            end
+            else if(iphi_proj_4 < 18'd57344) begin
                 iphi_proj_5    <= iphi_proj_4 >>> 2'b10;
-            else
-                iphi_proj_5    <= 16'hffff;
+                minus_valid <= 1'b0;
+                local_valid <= 1'b1;
+                plus_valid <= 1'b0;
+            end
+            else begin
+                iphi_proj_5    <= (iphi_proj_4 - 20'd491520) >>> 2'b10;
+                minus_valid <= 1'b0;
+                local_valid <= 1'b0;
+                plus_valid <= 1'b1;
+            end
+        end
         else begin
-            if(iphi_proj_4 < 18'd57344)
+            if(iphi_proj_4 < 18'd8192) begin
+                iphi_proj_5    <= (iphi_proj_4 + 20'd491520) <<< 1'b1;
+                minus_valid <= 1'b1;
+                local_valid <= 1'b0;
+                plus_valid <= 1'b0;
+            end
+            else if(iphi_proj_4 < 18'd57344) begin
                 iphi_proj_5    <= iphi_proj_4 <<< 1'b1;
-            else
-                iphi_proj_5    <= 16'hffff;
+                minus_valid <= 1'b0;
+                local_valid <= 1'b1;
+                plus_valid <= 1'b0;
+            end
+            else begin
+                iphi_proj_5    <= (iphi_proj_4 - 20'd491520) <<< 1'b1;
+                minus_valid <= 1'b0;
+                local_valid <= 1'b0;
+                plus_valid <= 1'b1;
+            end
         end
     end
 

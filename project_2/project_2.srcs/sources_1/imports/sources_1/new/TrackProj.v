@@ -45,7 +45,7 @@ module TrackletProjections(
     output done,
     
     input [53:0] data_in,
-    input valid,
+    input enable,
     
     output [5:0] number_out,
     input [5:0] read_add,
@@ -111,7 +111,7 @@ module TrackletProjections(
             hold_number_out <= pre_number_out;             
         end
         else begin
-            if(valid | (data_in > 0 & data_in != data_in_dly)) begin
+            if(enable) begin
                 wr_en <= 1'b1;
             end
             else begin

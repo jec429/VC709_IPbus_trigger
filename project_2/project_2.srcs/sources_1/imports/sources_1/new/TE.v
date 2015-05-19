@@ -53,7 +53,8 @@ module TrackletEngine #(parameter PHI_MEM = "/mnt/Ddrive/GLIB Firmware/branches/
     output reg [5:0] read_add2,
     input [17:0] outervmstubin,
     
-    output reg [11:0] stubpairout
+    output reg [11:0] stubpairout,
+    output reg valid_data
     
     );
 
@@ -65,22 +66,14 @@ module TrackletEngine #(parameter PHI_MEM = "/mnt/Ddrive/GLIB Firmware/branches/
         read_add1 = 6'h3f;
         read_add2 = 6'h3f;
     end
-    reg [6:0] clk_cnt;
     reg [2:0] BX_pipe;
     reg first_clk_pipe;
     
     initial begin
-       clk_cnt = 7'b0;
        BX_pipe = 3'b111;
     end
     
     always @(posedge clk) begin
-       if(en_proc)
-           clk_cnt <= clk_cnt + 1'b1;
-       else begin
-           clk_cnt <= 7'b0;
-           BX_pipe <= 3'b111;
-       end
        if(start) begin
            BX_pipe <= BX_pipe + 1'b1;
            first_clk_pipe <= 1'b1;
@@ -98,27 +91,38 @@ module TrackletEngine #(parameter PHI_MEM = "/mnt/Ddrive/GLIB Firmware/branches/
         done <= hold[n_hold];
     end
     
+    reg pre_valid_data;
+    reg [4:0] behold;
+    
     // Double nested loop
     // Hold outer stub 2 clk cycles
     reg [17:0] outervmstubin_hold1;
     reg [17:0] outervmstubin_hold2;
     
     always @(posedge clk) begin
+        behold[0] <= pre_valid_data;
+        behold[4:1] <= behold[3:0];
+        
         if(first_clk_pipe) begin
             read_add1 <= 6'h3f; 
             read_add2 <= 6'h0; // if number_in2 > 0?
         end
         else begin
-            if(read_add1 + 1'b1 < number_in1)
+            if(read_add1 + 1'b1 < number_in1) begin
                 read_add1 <= read_add1 + 1'b1;
+                pre_valid_data <= 1'b1;
+            end
             else begin
                 read_add1 <= read_add1;
                 if(read_add1 + 1'b1 == number_in1 && read_add2 + 1'b1 < number_in2) begin
                     read_add2 <= read_add2 + 1'b1;
+                    pre_valid_data <= 1'b1;
                     read_add1 <= 6'h0;
                 end
-                else
+                else begin
                     read_add2 <= read_add2;
+                    pre_valid_data <= 1'b0;
+                end
             end
             //if(read_add2 + 1'b1 < number_in2)
                 //read_add2 <= read_add2 + 1'b1;
@@ -175,12 +179,18 @@ module TrackletEngine #(parameter PHI_MEM = "/mnt/Ddrive/GLIB Firmware/branches/
         );
     
     reg [11:0] stubpair;
+    reg [11:0] pre_stubpair;
     always @(posedge clk) begin
-        stubpair <= {innervmstubin[14:9],outervmstubin[14:9]};
-        if(dout_phi & dout_z & innervmstubin != 0 & outervmstubin != 0)
+        pre_stubpair <= {innervmstubin[14:9],outervmstubin[14:9]};
+        stubpair <= pre_stubpair; // The new memories have an extra clock
+        if(dout_phi & dout_z & innervmstubin != 0 & outervmstubin != 0) begin
             stubpairout <= stubpair;
-        else
+            valid_data <= behold[4];
+        end
+        else begin
             stubpairout <= 12'hfff;
+            valid_data <= 1'b0;
+        end
     end
     
 endmodule

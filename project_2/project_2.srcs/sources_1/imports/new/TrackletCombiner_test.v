@@ -117,7 +117,21 @@ module TrackletCalculator(
     output [53:0] projMinus1,
     output [53:0] projMinus2,
     output [53:0] projMinus3,
-    output [53:0] projMinus4
+    output [53:0] projMinus4,
+    
+    output reg valid_trackpar,
+    output valid_proj1,
+    output valid_proj2,
+    output valid_proj3,
+    output valid_proj4,
+    output valid_projPlus1,
+    output valid_projPlus2,
+    output valid_projPlus3,
+    output valid_projPlus4,
+    output valid_projMinus1,
+    output valid_projMinus2,
+    output valid_projMinus3,
+    output valid_projMinus4
     
     );
     
@@ -147,7 +161,7 @@ module TrackletCalculator(
         end
     end
     
-    parameter [7:0] n_hold = 8'd48;  
+    parameter [7:0] n_hold = 8'd47;  
     reg [n_hold:0] hold;
     always @(posedge clk) begin
         hold[0] <= start;
@@ -165,7 +179,7 @@ module TrackletCalculator(
    wire [11:0] stubpair;
    reg first_clk_pipe_dly;
    reg first_clk_pipe_dly2;
-   
+
    mem_readout_top StubPairs(
       .clk(clk),
       .new_event(first_clk_pipe_dly),
@@ -227,11 +241,17 @@ module TrackletCalculator(
       .mem_dat17(stubpair18in),
       
       .mem_dat_stream(stubpair),
-      .valid(),
+      .valid(pre_valid_trackpar),
       .none()
       );
-    
+      
+    reg [44:0] behold; // valid tracklet data hold
+
     always @(posedge clk) begin
+        behold[0] <= pre_valid_trackpar;
+        behold[44:1] <= behold[43:0];
+        valid_trackpar <= behold[44];
+
         first_clk_pipe_dly  <= first_clk_pipe;
         first_clk_pipe_dly2 <= first_clk_pipe_dly;
         if(stubpair >= 0) begin
@@ -588,8 +608,7 @@ module TrackletCalculator(
         irinv_14     <= irinv_pipe13>>>4'd13;
         iphi0_14     <= (phi_A_pipe13 + pre_it10_13)>>>1'b1;
         iz0_14       <= z_A_pipe13 - pre_it12_13;
-        if(irinv_14 != 0) // This has to be fixed to use a valid-data bit
-            trackpar     <= {irinv_14,iphi0_14,iz0_14,it_14}; // register for now, but should be wire
+        trackpar     <= {irinv_14,iphi0_14,iz0_14,it_14}; // register for now, but should be wire
     end
       
     
@@ -610,6 +629,15 @@ module TrackletCalculator(
     always @(posedge io_clk) begin
         if (io_sel) io_rd_data_reg <= trackpar[31:0];
     end
+    
+    assign projPlus1 = proj1;
+    assign projMinus1 = proj1;
+    assign projPlus2 = proj2;
+    assign projMinus2 = proj2;
+    assign projPlus3 = proj3;
+    assign projMinus3 = proj3;
+    assign projPlus4 = proj4;
+    assign projMinus4 = proj4;
     
     TrackletProjections_test #(14,12,9,9,1'b1,16'h86a) projection1(
     // clocks and reset
@@ -633,7 +661,11 @@ module TrackletCalculator(
         .not_first_clk(not_first_clk),
         
         .tracklet(trackpar),
-        .projection(proj1)
+        .projection(proj1),
+        .valid_trackpar(valid_trackpar),
+        .valid_proj(valid_proj1),
+        .valid_projPlus(valid_projPlus1),
+        .valid_projMinus(valid_projMinus1)
     );
     
     TrackletProjections_test #(17,8,11,8,1'b0,16'hb66) projection2(
@@ -658,7 +690,11 @@ module TrackletCalculator(
         .not_first_clk(not_first_clk),
         
         .tracklet(trackpar),
-        .projection(proj2)
+        .projection(proj2),
+        .valid_trackpar(valid_trackpar),
+        .valid_proj(valid_proj2),
+        .valid_projPlus(valid_projPlus2),
+        .valid_projMinus(valid_projMinus2)
     );
     
     TrackletProjections_test #(17,8,11,8,1'b0,16'hebb) projection3(
@@ -683,7 +719,11 @@ module TrackletCalculator(
         .not_first_clk(not_first_clk),
         
         .tracklet(trackpar),
-        .projection(proj3)
+        .projection(proj3),
+        .valid_trackpar(valid_trackpar),
+        .valid_proj(valid_proj3),
+        .valid_projPlus(valid_projPlus3),
+        .valid_projMinus(valid_projMinus3)
     );
     
     TrackletProjections_test #(17,8,11,8,1'b0,16'h11f7) projection4(
@@ -708,7 +748,11 @@ module TrackletCalculator(
         .not_first_clk(not_first_clk),
         
         .tracklet(trackpar),
-        .projection(proj4)
+        .projection(proj4),
+        .valid_trackpar(valid_trackpar),
+        .valid_proj(valid_proj4),
+        .valid_projPlus(valid_projPlus4),
+        .valid_projMinus(valid_projMinus4)
     );
     
 endmodule

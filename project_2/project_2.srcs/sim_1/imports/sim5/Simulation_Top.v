@@ -111,7 +111,7 @@ module verilog_trigger_top_test1;
         #310;
         ////////////////////////////////////////
         // Input from a file
-        fdi = $fopen("/home/Margaret/MargaretVC709/CombinedVC709/VC709_IPbus_trigger/project_2/data_in2.dat","r");
+        fdi = $fopen("/home/Jorge/Documents/work/VC709_IPbus_trigger/project_2/data_in2.dat","r");
         fdo = $fopen("/mnt/Ddrive/GLIB Firmware/python_scripts/stubs_out.dat","w"); 
         fdo2 = $fopen("/mnt/Ddrive/GLIB Firmware/python_scripts/data_out.dat","w"); 
         fdo3 = $fopen("/mnt/Ddrive/GLIB Firmware/python_scripts/proj_out.dat","w"); 

@@ -104,7 +104,7 @@ module LayerRouter(
         BX_hold <= BX_pipe;       
     end
     
-    parameter [7:0] n_hold = 8'd2;  
+    parameter [7:0] n_hold = 8'd1;  
     reg [n_hold:0] hold;
     always @(posedge clk) begin
         hold[0] <= start;

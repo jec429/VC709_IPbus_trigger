@@ -379,11 +379,13 @@ StubsByLayer  SL1_L6D3(
 
 
 wire [35:0] LR2_D3_SL2_L1D3;
+wire LR2_D3_SL2_L1D3_wr_en;
 wire [5:0] SL2_L1D3_VMR_L1D3_number;
 wire [5:0] SL2_L1D3_VMR_L1D3_read_add;
 wire [35:0] SL2_L1D3_VMR_L1D3;
 StubsByLayer  SL2_L1D3(
 .data_in(LR2_D3_SL2_L1D3),
+.enable(LR2_D3_SL2_L1D3_wr_en),
 .number_out(SL2_L1D3_VMR_L1D3_number),
 .read_add(SL2_L1D3_VMR_L1D3_read_add),
 .data_out(SL2_L1D3_VMR_L1D3),
@@ -403,11 +405,13 @@ StubsByLayer  SL2_L1D3(
 
 
 wire [35:0] LR2_D3_SL2_L2D3;
+wire LR2_D3_SL2_L2D3_wr_en;
 wire [5:0] SL2_L2D3_VMR_L2D3_number;
 wire [5:0] SL2_L2D3_VMR_L2D3_read_add;
 wire [35:0] SL2_L2D3_VMR_L2D3;
 StubsByLayer  SL2_L2D3(
 .data_in(LR2_D3_SL2_L2D3),
+.enable(LR2_D3_SL2_L2D3_wr_en),
 .number_out(SL2_L2D3_VMR_L2D3_number),
 .read_add(SL2_L2D3_VMR_L2D3_read_add),
 .data_out(SL2_L2D3_VMR_L2D3),
@@ -427,11 +431,13 @@ StubsByLayer  SL2_L2D3(
 
 
 wire [35:0] LR2_D3_SL2_L3D3;
+wire LR2_D3_SL2_L3D3_wr_en;
 wire [5:0] SL2_L3D3_VMR_L3D3_number;
 wire [5:0] SL2_L3D3_VMR_L3D3_read_add;
 wire [35:0] SL2_L3D3_VMR_L3D3;
 StubsByLayer  SL2_L3D3(
 .data_in(LR2_D3_SL2_L3D3),
+.enable(LR2_D3_SL2_L3D3_wr_en),
 .number_out(SL2_L3D3_VMR_L3D3_number),
 .read_add(SL2_L3D3_VMR_L3D3_read_add),
 .data_out(SL2_L3D3_VMR_L3D3),
@@ -451,11 +457,13 @@ StubsByLayer  SL2_L3D3(
 
 
 wire [35:0] LR2_D3_SL2_L4D3;
+wire LR2_D3_SL2_L4D3_wr_en;
 wire [5:0] SL2_L4D3_VMR_L4D3_number;
 wire [5:0] SL2_L4D3_VMR_L4D3_read_add;
 wire [35:0] SL2_L4D3_VMR_L4D3;
 StubsByLayer  SL2_L4D3(
 .data_in(LR2_D3_SL2_L4D3),
+.enable(LR2_D3_SL2_L4D3_wr_en),
 .number_out(SL2_L4D3_VMR_L4D3_number),
 .read_add(SL2_L4D3_VMR_L4D3_read_add),
 .data_out(SL2_L4D3_VMR_L4D3),
@@ -475,11 +483,13 @@ StubsByLayer  SL2_L4D3(
 
 
 wire [35:0] LR2_D3_SL2_L5D3;
+wire LR2_D3_SL2_L5D3_wr_en;
 wire [5:0] SL2_L5D3_VMR_L5D3_number;
 wire [5:0] SL2_L5D3_VMR_L5D3_read_add;
 wire [35:0] SL2_L5D3_VMR_L5D3;
 StubsByLayer  SL2_L5D3(
 .data_in(LR2_D3_SL2_L5D3),
+.enable(LR2_D3_SL2_L5D3_wr_en),
 .number_out(SL2_L5D3_VMR_L5D3_number),
 .read_add(SL2_L5D3_VMR_L5D3_read_add),
 .data_out(SL2_L5D3_VMR_L5D3),
@@ -499,11 +509,13 @@ StubsByLayer  SL2_L5D3(
 
 
 wire [35:0] LR2_D3_SL2_L6D3;
+wire LR2_D3_SL2_L6D3_wr_en;
 wire [5:0] SL2_L6D3_VMR_L6D3_number;
 wire [5:0] SL2_L6D3_VMR_L6D3_read_add;
 wire [35:0] SL2_L6D3_VMR_L6D3;
 StubsByLayer  SL2_L6D3(
 .data_in(LR2_D3_SL2_L6D3),
+.enable(LR2_D3_SL2_L6D3_wr_en),
 .number_out(SL2_L6D3_VMR_L6D3_number),
 .read_add(SL2_L6D3_VMR_L6D3_read_add),
 .data_out(SL2_L6D3_VMR_L6D3),
@@ -523,11 +535,13 @@ StubsByLayer  SL2_L6D3(
 
 
 wire [35:0] LR3_D3_SL3_L1D3;
+wire LR3_D3_SL3_L1D3_wr_en;
 wire [5:0] SL3_L1D3_VMR_L1D3_number;
 wire [5:0] SL3_L1D3_VMR_L1D3_read_add;
 wire [35:0] SL3_L1D3_VMR_L1D3;
 StubsByLayer  SL3_L1D3(
 .data_in(LR3_D3_SL3_L1D3),
+.enable(LR3_D3_SL3_L1D3_wr_en),
 .number_out(SL3_L1D3_VMR_L1D3_number),
 .read_add(SL3_L1D3_VMR_L1D3_read_add),
 .data_out(SL3_L1D3_VMR_L1D3),
@@ -547,11 +561,13 @@ StubsByLayer  SL3_L1D3(
 
 
 wire [35:0] LR3_D3_SL3_L2D3;
+wire LR3_D3_SL3_L2D3_wr_en;
 wire [5:0] SL3_L2D3_VMR_L2D3_number;
 wire [5:0] SL3_L2D3_VMR_L2D3_read_add;
 wire [35:0] SL3_L2D3_VMR_L2D3;
 StubsByLayer  SL3_L2D3(
 .data_in(LR3_D3_SL3_L2D3),
+.enable(LR3_D3_SL3_L2D3_wr_en),
 .number_out(SL3_L2D3_VMR_L2D3_number),
 .read_add(SL3_L2D3_VMR_L2D3_read_add),
 .data_out(SL3_L2D3_VMR_L2D3),
@@ -571,11 +587,13 @@ StubsByLayer  SL3_L2D3(
 
 
 wire [35:0] LR3_D3_SL3_L3D3;
+wire LR3_D3_SL3_L3D3_wr_en;
 wire [5:0] SL3_L3D3_VMR_L3D3_number;
 wire [5:0] SL3_L3D3_VMR_L3D3_read_add;
 wire [35:0] SL3_L3D3_VMR_L3D3;
 StubsByLayer  SL3_L3D3(
 .data_in(LR3_D3_SL3_L3D3),
+.enable(LR3_D3_SL3_L3D3_wr_en),
 .number_out(SL3_L3D3_VMR_L3D3_number),
 .read_add(SL3_L3D3_VMR_L3D3_read_add),
 .data_out(SL3_L3D3_VMR_L3D3),
@@ -595,11 +613,13 @@ StubsByLayer  SL3_L3D3(
 
 
 wire [35:0] LR3_D3_SL3_L4D3;
+wire LR3_D3_SL3_L4D3_wr_en;
 wire [5:0] SL3_L4D3_VMR_L4D3_number;
 wire [5:0] SL3_L4D3_VMR_L4D3_read_add;
 wire [35:0] SL3_L4D3_VMR_L4D3;
 StubsByLayer  SL3_L4D3(
 .data_in(LR3_D3_SL3_L4D3),
+.enable(LR3_D3_SL3_L4D3_wr_en),
 .number_out(SL3_L4D3_VMR_L4D3_number),
 .read_add(SL3_L4D3_VMR_L4D3_read_add),
 .data_out(SL3_L4D3_VMR_L4D3),
@@ -619,11 +639,13 @@ StubsByLayer  SL3_L4D3(
 
 
 wire [35:0] LR3_D3_SL3_L5D3;
+wire LR3_D3_SL3_L5D3_wr_en;
 wire [5:0] SL3_L5D3_VMR_L5D3_number;
 wire [5:0] SL3_L5D3_VMR_L5D3_read_add;
 wire [35:0] SL3_L5D3_VMR_L5D3;
 StubsByLayer  SL3_L5D3(
 .data_in(LR3_D3_SL3_L5D3),
+.enable(LR3_D3_SL3_L5D3_wr_en),
 .number_out(SL3_L5D3_VMR_L5D3_number),
 .read_add(SL3_L5D3_VMR_L5D3_read_add),
 .data_out(SL3_L5D3_VMR_L5D3),
@@ -643,11 +665,13 @@ StubsByLayer  SL3_L5D3(
 
 
 wire [35:0] LR3_D3_SL3_L6D3;
+wire LR3_D3_SL3_L6D3_wr_en;
 wire [5:0] SL3_L6D3_VMR_L6D3_number;
 wire [5:0] SL3_L6D3_VMR_L6D3_read_add;
 wire [35:0] SL3_L6D3_VMR_L6D3;
 StubsByLayer  SL3_L6D3(
 .data_in(LR3_D3_SL3_L6D3),
+.enable(LR3_D3_SL3_L6D3_wr_en),
 .number_out(SL3_L6D3_VMR_L6D3_number),
 .read_add(SL3_L6D3_VMR_L6D3_read_add),
 .data_out(SL3_L6D3_VMR_L6D3),
@@ -667,10 +691,12 @@ StubsByLayer  SL3_L6D3(
 
 
 wire [35:0] VMR_L1D3_AS_D3L1n1;
+wire VMR_L1D3_AS_D3L1_wr_en;
 wire [5:0] AS_D3L1n1_TC_L1D3L2D3_read_add;
 wire [35:0] AS_D3L1n1_TC_L1D3L2D3;
 AllStubs  AS_D3L1n1(
 .data_in(VMR_L1D3_AS_D3L1n1),
+.enable(VMR_L1D3_AS_D3L1_wr_en),
 .read_add(AS_D3L1n1_TC_L1D3L2D3_read_add),
 .data_out(AS_D3L1n1_TC_L1D3L2D3),
 .start(start3_0),.done(),.clk(clk),
@@ -696,6 +722,7 @@ wire [5:0] AS_D3L1n2_MC_L3L4_L1D3_read_add;
 wire [35:0] AS_D3L1n2_MC_L3L4_L1D3;
 AllStubs  AS_D3L1n2(
 .data_in(VMR_L1D3_AS_D3L1n2),
+.enable(VMR_L1D3_AS_D3L1_wr_en),
 .read_add_MC(AS_D3L1n2_MC_L3L4_L1D3_read_add),
 .data_out_MC(AS_D3L1n2_MC_L3L4_L1D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -721,6 +748,7 @@ wire [5:0] AS_D3L1n3_MC_L5L6_L1D3_read_add;
 wire [35:0] AS_D3L1n3_MC_L5L6_L1D3;
 AllStubs  AS_D3L1n3(
 .data_in(VMR_L1D3_AS_D3L1n3),
+.enable(VMR_L1D3_AS_D3L1_wr_en),
 .read_add_MC(AS_D3L1n3_MC_L5L6_L1D3_read_add),
 .data_out_MC(AS_D3L1n3_MC_L5L6_L1D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -742,10 +770,12 @@ AllStubs  AS_D3L1n3(
 
 
 wire [35:0] VMR_L2D3_AS_D3L2n1;
+wire VMR_L2D3_AS_D3L2_wr_en;
 wire [5:0] AS_D3L2n1_TC_L1D3L2D3_read_add;
 wire [35:0] AS_D3L2n1_TC_L1D3L2D3;
 AllStubs  AS_D3L2n1(
 .data_in(VMR_L2D3_AS_D3L2n1),
+.enable(VMR_L2D3_AS_D3L2_wr_en),
 .read_add(AS_D3L2n1_TC_L1D3L2D3_read_add),
 .data_out(AS_D3L2n1_TC_L1D3L2D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -771,6 +801,7 @@ wire [5:0] AS_D3L2n2_MC_L3L4_L2D3_read_add;
 wire [35:0] AS_D3L2n2_MC_L3L4_L2D3;
 AllStubs  AS_D3L2n2(
 .data_in(VMR_L2D3_AS_D3L2n2),
+.enable(VMR_L2D3_AS_D3L2_wr_en),
 .read_add_MC(AS_D3L2n2_MC_L3L4_L2D3_read_add),
 .data_out_MC(AS_D3L2n2_MC_L3L4_L2D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -796,6 +827,7 @@ wire [5:0] AS_D3L2n3_MC_L5L6_L2D3_read_add;
 wire [35:0] AS_D3L2n3_MC_L5L6_L2D3;
 AllStubs  AS_D3L2n3(
 .data_in(VMR_L2D3_AS_D3L2n3),
+.enable(VMR_L2D3_AS_D3L2_wr_en),
 .read_add_MC(AS_D3L2n3_MC_L5L6_L2D3_read_add),
 .data_out_MC(AS_D3L2n3_MC_L5L6_L2D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -817,10 +849,12 @@ AllStubs  AS_D3L2n3(
 
 
 wire [35:0] VMR_L3D3_AS_D3L3n1;
+wire VMR_L3D3_AS_D3L3_wr_en;
 wire [5:0] AS_D3L3n1_TC_L3D3L4D3_read_add;
 wire [35:0] AS_D3L3n1_TC_L3D3L4D3;
 AllStubs  AS_D3L3n1(
 .data_in(VMR_L3D3_AS_D3L3n1),
+.enable(VMR_L3D3_AS_D3L3_wr_en),
 .read_add(AS_D3L3n1_TC_L3D3L4D3_read_add),
 .data_out(AS_D3L3n1_TC_L3D3L4D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -846,6 +880,7 @@ wire [5:0] AS_D3L3n2_MC_L5L6_L3D3_read_add;
 wire [35:0] AS_D3L3n2_MC_L5L6_L3D3;
 AllStubs  AS_D3L3n2(
 .data_in(VMR_L3D3_AS_D3L3n2),
+.enable(VMR_L3D3_AS_D3L3_wr_en),
 .read_add_MC(AS_D3L3n2_MC_L5L6_L3D3_read_add),
 .data_out_MC(AS_D3L3n2_MC_L5L6_L3D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -871,6 +906,7 @@ wire [5:0] AS_D3L3n3_MC_L1L2_L3D3_read_add;
 wire [35:0] AS_D3L3n3_MC_L1L2_L3D3;
 AllStubs  AS_D3L3n3(
 .data_in(VMR_L3D3_AS_D3L3n3),
+.enable(VMR_L3D3_AS_D3L3_wr_en),
 .read_add_MC(AS_D3L3n3_MC_L1L2_L3D3_read_add),
 .data_out_MC(AS_D3L3n3_MC_L1L2_L3D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -892,10 +928,12 @@ AllStubs  AS_D3L3n3(
 
 
 wire [35:0] VMR_L4D3_AS_D3L4n1;
+wire VMR_L4D3_AS_D3L4_wr_en;
 wire [5:0] AS_D3L4n1_TC_L3D3L4D3_read_add;
 wire [35:0] AS_D3L4n1_TC_L3D3L4D3;
 AllStubs  AS_D3L4n1(
 .data_in(VMR_L4D3_AS_D3L4n1),
+.enable(VMR_L4D3_AS_D3L4_wr_en),
 .read_add(AS_D3L4n1_TC_L3D3L4D3_read_add),
 .data_out(AS_D3L4n1_TC_L3D3L4D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -921,6 +959,7 @@ wire [5:0] AS_D3L4n2_MC_L5L6_L4D3_read_add;
 wire [35:0] AS_D3L4n2_MC_L5L6_L4D3;
 AllStubs  AS_D3L4n2(
 .data_in(VMR_L4D3_AS_D3L4n2),
+.enable(VMR_L4D3_AS_D3L4_wr_en),
 .read_add_MC(AS_D3L4n2_MC_L5L6_L4D3_read_add),
 .data_out_MC(AS_D3L4n2_MC_L5L6_L4D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -946,6 +985,7 @@ wire [5:0] AS_D3L4n3_MC_L1L2_L4D3_read_add;
 wire [35:0] AS_D3L4n3_MC_L1L2_L4D3;
 AllStubs  AS_D3L4n3(
 .data_in(VMR_L4D3_AS_D3L4n3),
+.enable(VMR_L4D3_AS_D3L4_wr_en),
 .read_add_MC(AS_D3L4n3_MC_L1L2_L4D3_read_add),
 .data_out_MC(AS_D3L4n3_MC_L1L2_L4D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -967,10 +1007,12 @@ AllStubs  AS_D3L4n3(
 
 
 wire [35:0] VMR_L5D3_AS_D3L5n1;
+wire VMR_L5D3_AS_D3L5_wr_en;
 wire [5:0] AS_D3L5n1_TC_L5D3L6D3_read_add;
 wire [35:0] AS_D3L5n1_TC_L5D3L6D3;
 AllStubs  AS_D3L5n1(
 .data_in(VMR_L5D3_AS_D3L5n1),
+.enable(VMR_L5D3_AS_D3L5_wr_en),
 .read_add(AS_D3L5n1_TC_L5D3L6D3_read_add),
 .data_out(AS_D3L5n1_TC_L5D3L6D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -996,6 +1038,7 @@ wire [5:0] AS_D3L5n2_MC_L1L2_L5D3_read_add;
 wire [35:0] AS_D3L5n2_MC_L1L2_L5D3;
 AllStubs  AS_D3L5n2(
 .data_in(VMR_L5D3_AS_D3L5n2),
+.enable(VMR_L5D3_AS_D3L5_wr_en),
 .read_add_MC(AS_D3L5n2_MC_L1L2_L5D3_read_add),
 .data_out_MC(AS_D3L5n2_MC_L1L2_L5D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -1021,6 +1064,7 @@ wire [5:0] AS_D3L5n3_MC_L3L4_L5D3_read_add;
 wire [35:0] AS_D3L5n3_MC_L3L4_L5D3;
 AllStubs  AS_D3L5n3(
 .data_in(VMR_L5D3_AS_D3L5n3),
+.enable(VMR_L5D3_AS_D3L5_wr_en),
 .read_add_MC(AS_D3L5n3_MC_L3L4_L5D3_read_add),
 .data_out_MC(AS_D3L5n3_MC_L3L4_L5D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -1042,10 +1086,12 @@ AllStubs  AS_D3L5n3(
 
 
 wire [35:0] VMR_L6D3_AS_D3L6n1;
+wire VMR_L6D3_AS_D3L6_wr_en;
 wire [5:0] AS_D3L6n1_TC_L5D3L6D3_read_add;
 wire [35:0] AS_D3L6n1_TC_L5D3L6D3;
 AllStubs  AS_D3L6n1(
 .data_in(VMR_L6D3_AS_D3L6n1),
+.enable(VMR_L6D3_AS_D3L6_wr_en),
 .read_add(AS_D3L6n1_TC_L5D3L6D3_read_add),
 .data_out(AS_D3L6n1_TC_L5D3L6D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -1071,6 +1117,7 @@ wire [5:0] AS_D3L6n2_MC_L1L2_L6D3_read_add;
 wire [35:0] AS_D3L6n2_MC_L1L2_L6D3;
 AllStubs  AS_D3L6n2(
 .data_in(VMR_L6D3_AS_D3L6n2),
+.enable(VMR_L6D3_AS_D3L6_wr_en),
 .read_add_MC(AS_D3L6n2_MC_L1L2_L6D3_read_add),
 .data_out_MC(AS_D3L6n2_MC_L1L2_L6D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -1096,6 +1143,7 @@ wire [5:0] AS_D3L6n3_MC_L3L4_L6D3_read_add;
 wire [35:0] AS_D3L6n3_MC_L3L4_L6D3;
 AllStubs  AS_D3L6n3(
 .data_in(VMR_L6D3_AS_D3L6n3),
+.enable(VMR_L6D3_AS_D3L6_wr_en),
 .read_add_MC(AS_D3L6n3_MC_L3L4_L6D3_read_add),
 .data_out_MC(AS_D3L6n3_MC_L3L4_L6D3),
 .start(start3_0),.done(done),.clk(clk),
@@ -6535,11 +6583,13 @@ VMStubs  VMS_L6D3PHI4Z2n4(
 
 
 wire [11:0] TE_L1D3PHI1Z1_L2D3PHI1Z1_SP_L1D3PHI1Z1_L2D3PHI1Z1;
+wire TE_L1D3PHI1Z1_L2D3PHI1Z1_SP_L1D3PHI1Z1_L2D3PHI1Z1_en;
 wire [5:0] SP_L1D3PHI1Z1_L2D3PHI1Z1_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI1Z1_L2D3PHI1Z1_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI1Z1_L2D3PHI1Z1_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI1Z1_L2D3PHI1Z1(
 .data_in(TE_L1D3PHI1Z1_L2D3PHI1Z1_SP_L1D3PHI1Z1_L2D3PHI1Z1),
+.enable(TE_L1D3PHI1Z1_L2D3PHI1Z1_SP_L1D3PHI1Z1_L2D3PHI1Z1_en),
 .number_out(SP_L1D3PHI1Z1_L2D3PHI1Z1_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI1Z1_L2D3PHI1Z1_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI1Z1_L2D3PHI1Z1_TC_L1D3L2D3),
@@ -6562,11 +6612,13 @@ StubPairs  SP_L1D3PHI1Z1_L2D3PHI1Z1(
 
 
 wire [11:0] TE_L1D3PHI1Z1_L2D3PHI2Z1_SP_L1D3PHI1Z1_L2D3PHI2Z1;
+wire TE_L1D3PHI1Z1_L2D3PHI2Z1_SP_L1D3PHI1Z1_L2D3PHI2Z1_en;
 wire [5:0] SP_L1D3PHI1Z1_L2D3PHI2Z1_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI1Z1_L2D3PHI2Z1_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI1Z1_L2D3PHI2Z1_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI1Z1_L2D3PHI2Z1(
 .data_in(TE_L1D3PHI1Z1_L2D3PHI2Z1_SP_L1D3PHI1Z1_L2D3PHI2Z1),
+.enable(TE_L1D3PHI1Z1_L2D3PHI2Z1_SP_L1D3PHI1Z1_L2D3PHI2Z1_en),
 .number_out(SP_L1D3PHI1Z1_L2D3PHI2Z1_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI1Z1_L2D3PHI2Z1_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI1Z1_L2D3PHI2Z1_TC_L1D3L2D3),
@@ -6589,11 +6641,13 @@ StubPairs  SP_L1D3PHI1Z1_L2D3PHI2Z1(
 
 
 wire [11:0] TE_L1D3PHI1Z1_L2D3PHI1Z2_SP_L1D3PHI1Z1_L2D3PHI1Z2;
+wire TE_L1D3PHI1Z1_L2D3PHI1Z2_SP_L1D3PHI1Z1_L2D3PHI1Z2_en;
 wire [5:0] SP_L1D3PHI1Z1_L2D3PHI1Z2_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI1Z1_L2D3PHI1Z2_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI1Z1_L2D3PHI1Z2_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI1Z1_L2D3PHI1Z2(
 .data_in(TE_L1D3PHI1Z1_L2D3PHI1Z2_SP_L1D3PHI1Z1_L2D3PHI1Z2),
+.enable(TE_L1D3PHI1Z1_L2D3PHI1Z2_SP_L1D3PHI1Z1_L2D3PHI1Z2_en),
 .number_out(SP_L1D3PHI1Z1_L2D3PHI1Z2_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI1Z1_L2D3PHI1Z2_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI1Z1_L2D3PHI1Z2_TC_L1D3L2D3),
@@ -6616,11 +6670,13 @@ StubPairs  SP_L1D3PHI1Z1_L2D3PHI1Z2(
 
 
 wire [11:0] TE_L1D3PHI1Z1_L2D3PHI2Z2_SP_L1D3PHI1Z1_L2D3PHI2Z2;
+wire TE_L1D3PHI1Z1_L2D3PHI2Z2_SP_L1D3PHI1Z1_L2D3PHI2Z2_en;
 wire [5:0] SP_L1D3PHI1Z1_L2D3PHI2Z2_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI1Z1_L2D3PHI2Z2_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI1Z1_L2D3PHI2Z2_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI1Z1_L2D3PHI2Z2(
 .data_in(TE_L1D3PHI1Z1_L2D3PHI2Z2_SP_L1D3PHI1Z1_L2D3PHI2Z2),
+.enable(TE_L1D3PHI1Z1_L2D3PHI2Z2_SP_L1D3PHI1Z1_L2D3PHI2Z2_en),
 .number_out(SP_L1D3PHI1Z1_L2D3PHI2Z2_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI1Z1_L2D3PHI2Z2_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI1Z1_L2D3PHI2Z2_TC_L1D3L2D3),
@@ -6643,11 +6699,13 @@ StubPairs  SP_L1D3PHI1Z1_L2D3PHI2Z2(
 
 
 wire [11:0] TE_L1D3PHI1Z2_L2D3PHI1Z2_SP_L1D3PHI1Z2_L2D3PHI1Z2;
+wire TE_L1D3PHI1Z2_L2D3PHI1Z2_SP_L1D3PHI1Z2_L2D3PHI1Z2_en;
 wire [5:0] SP_L1D3PHI1Z2_L2D3PHI1Z2_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI1Z2_L2D3PHI1Z2_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI1Z2_L2D3PHI1Z2_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI1Z2_L2D3PHI1Z2(
 .data_in(TE_L1D3PHI1Z2_L2D3PHI1Z2_SP_L1D3PHI1Z2_L2D3PHI1Z2),
+.enable(TE_L1D3PHI1Z2_L2D3PHI1Z2_SP_L1D3PHI1Z2_L2D3PHI1Z2_en),
 .number_out(SP_L1D3PHI1Z2_L2D3PHI1Z2_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI1Z2_L2D3PHI1Z2_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI1Z2_L2D3PHI1Z2_TC_L1D3L2D3),
@@ -6670,11 +6728,13 @@ StubPairs  SP_L1D3PHI1Z2_L2D3PHI1Z2(
 
 
 wire [11:0] TE_L1D3PHI1Z2_L2D3PHI2Z2_SP_L1D3PHI1Z2_L2D3PHI2Z2;
+wire TE_L1D3PHI1Z2_L2D3PHI2Z2_SP_L1D3PHI1Z2_L2D3PHI2Z2_en;
 wire [5:0] SP_L1D3PHI1Z2_L2D3PHI2Z2_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI1Z2_L2D3PHI2Z2_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI1Z2_L2D3PHI2Z2_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI1Z2_L2D3PHI2Z2(
 .data_in(TE_L1D3PHI1Z2_L2D3PHI2Z2_SP_L1D3PHI1Z2_L2D3PHI2Z2),
+.enable(TE_L1D3PHI1Z2_L2D3PHI2Z2_SP_L1D3PHI1Z2_L2D3PHI2Z2_en),
 .number_out(SP_L1D3PHI1Z2_L2D3PHI2Z2_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI1Z2_L2D3PHI2Z2_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI1Z2_L2D3PHI2Z2_TC_L1D3L2D3),
@@ -6697,11 +6757,13 @@ StubPairs  SP_L1D3PHI1Z2_L2D3PHI2Z2(
 
 
 wire [11:0] TE_L1D3PHI2Z1_L2D3PHI2Z1_SP_L1D3PHI2Z1_L2D3PHI2Z1;
+wire TE_L1D3PHI2Z1_L2D3PHI2Z1_SP_L1D3PHI2Z1_L2D3PHI2Z1_en;
 wire [5:0] SP_L1D3PHI2Z1_L2D3PHI2Z1_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI2Z1_L2D3PHI2Z1_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI2Z1_L2D3PHI2Z1_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI2Z1_L2D3PHI2Z1(
 .data_in(TE_L1D3PHI2Z1_L2D3PHI2Z1_SP_L1D3PHI2Z1_L2D3PHI2Z1),
+.enable(TE_L1D3PHI2Z1_L2D3PHI2Z1_SP_L1D3PHI2Z1_L2D3PHI2Z1_en),
 .number_out(SP_L1D3PHI2Z1_L2D3PHI2Z1_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI2Z1_L2D3PHI2Z1_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI2Z1_L2D3PHI2Z1_TC_L1D3L2D3),
@@ -6724,11 +6786,13 @@ StubPairs  SP_L1D3PHI2Z1_L2D3PHI2Z1(
 
 
 wire [11:0] TE_L1D3PHI2Z1_L2D3PHI3Z1_SP_L1D3PHI2Z1_L2D3PHI3Z1;
+wire TE_L1D3PHI2Z1_L2D3PHI3Z1_SP_L1D3PHI2Z1_L2D3PHI3Z1_en;
 wire [5:0] SP_L1D3PHI2Z1_L2D3PHI3Z1_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI2Z1_L2D3PHI3Z1_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI2Z1_L2D3PHI3Z1_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI2Z1_L2D3PHI3Z1(
 .data_in(TE_L1D3PHI2Z1_L2D3PHI3Z1_SP_L1D3PHI2Z1_L2D3PHI3Z1),
+.enable(TE_L1D3PHI2Z1_L2D3PHI3Z1_SP_L1D3PHI2Z1_L2D3PHI3Z1_en),
 .number_out(SP_L1D3PHI2Z1_L2D3PHI3Z1_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI2Z1_L2D3PHI3Z1_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI2Z1_L2D3PHI3Z1_TC_L1D3L2D3),
@@ -6751,11 +6815,13 @@ StubPairs  SP_L1D3PHI2Z1_L2D3PHI3Z1(
 
 
 wire [11:0] TE_L1D3PHI2Z1_L2D3PHI2Z2_SP_L1D3PHI2Z1_L2D3PHI2Z2;
+wire TE_L1D3PHI2Z1_L2D3PHI2Z2_SP_L1D3PHI2Z1_L2D3PHI2Z2_en;
 wire [5:0] SP_L1D3PHI2Z1_L2D3PHI2Z2_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI2Z1_L2D3PHI2Z2_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI2Z1_L2D3PHI2Z2_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI2Z1_L2D3PHI2Z2(
 .data_in(TE_L1D3PHI2Z1_L2D3PHI2Z2_SP_L1D3PHI2Z1_L2D3PHI2Z2),
+.enable(TE_L1D3PHI2Z1_L2D3PHI2Z2_SP_L1D3PHI2Z1_L2D3PHI2Z2_en),
 .number_out(SP_L1D3PHI2Z1_L2D3PHI2Z2_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI2Z1_L2D3PHI2Z2_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI2Z1_L2D3PHI2Z2_TC_L1D3L2D3),
@@ -6778,11 +6844,13 @@ StubPairs  SP_L1D3PHI2Z1_L2D3PHI2Z2(
 
 
 wire [11:0] TE_L1D3PHI2Z1_L2D3PHI3Z2_SP_L1D3PHI2Z1_L2D3PHI3Z2;
+wire TE_L1D3PHI2Z1_L2D3PHI3Z2_SP_L1D3PHI2Z1_L2D3PHI3Z2_en;
 wire [5:0] SP_L1D3PHI2Z1_L2D3PHI3Z2_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI2Z1_L2D3PHI3Z2_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI2Z1_L2D3PHI3Z2_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI2Z1_L2D3PHI3Z2(
 .data_in(TE_L1D3PHI2Z1_L2D3PHI3Z2_SP_L1D3PHI2Z1_L2D3PHI3Z2),
+.enable(TE_L1D3PHI2Z1_L2D3PHI3Z2_SP_L1D3PHI2Z1_L2D3PHI3Z2_en),
 .number_out(SP_L1D3PHI2Z1_L2D3PHI3Z2_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI2Z1_L2D3PHI3Z2_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI2Z1_L2D3PHI3Z2_TC_L1D3L2D3),
@@ -6805,11 +6873,13 @@ StubPairs  SP_L1D3PHI2Z1_L2D3PHI3Z2(
 
 
 wire [11:0] TE_L1D3PHI2Z2_L2D3PHI2Z2_SP_L1D3PHI2Z2_L2D3PHI2Z2;
+wire TE_L1D3PHI2Z2_L2D3PHI2Z2_SP_L1D3PHI2Z2_L2D3PHI2Z2_en;
 wire [5:0] SP_L1D3PHI2Z2_L2D3PHI2Z2_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI2Z2_L2D3PHI2Z2_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI2Z2_L2D3PHI2Z2_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI2Z2_L2D3PHI2Z2(
 .data_in(TE_L1D3PHI2Z2_L2D3PHI2Z2_SP_L1D3PHI2Z2_L2D3PHI2Z2),
+.enable(TE_L1D3PHI2Z2_L2D3PHI2Z2_SP_L1D3PHI2Z2_L2D3PHI2Z2_en),
 .number_out(SP_L1D3PHI2Z2_L2D3PHI2Z2_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI2Z2_L2D3PHI2Z2_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI2Z2_L2D3PHI2Z2_TC_L1D3L2D3),
@@ -6832,11 +6902,13 @@ StubPairs  SP_L1D3PHI2Z2_L2D3PHI2Z2(
 
 
 wire [11:0] TE_L1D3PHI2Z2_L2D3PHI3Z2_SP_L1D3PHI2Z2_L2D3PHI3Z2;
+wire TE_L1D3PHI2Z2_L2D3PHI3Z2_SP_L1D3PHI2Z2_L2D3PHI3Z2_en;
 wire [5:0] SP_L1D3PHI2Z2_L2D3PHI3Z2_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI2Z2_L2D3PHI3Z2_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI2Z2_L2D3PHI3Z2_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI2Z2_L2D3PHI3Z2(
 .data_in(TE_L1D3PHI2Z2_L2D3PHI3Z2_SP_L1D3PHI2Z2_L2D3PHI3Z2),
+.enable(TE_L1D3PHI2Z2_L2D3PHI3Z2_SP_L1D3PHI2Z2_L2D3PHI3Z2_en),
 .number_out(SP_L1D3PHI2Z2_L2D3PHI3Z2_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI2Z2_L2D3PHI3Z2_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI2Z2_L2D3PHI3Z2_TC_L1D3L2D3),
@@ -6859,11 +6931,13 @@ StubPairs  SP_L1D3PHI2Z2_L2D3PHI3Z2(
 
 
 wire [11:0] TE_L1D3PHI3Z1_L2D3PHI3Z1_SP_L1D3PHI3Z1_L2D3PHI3Z1;
+wire TE_L1D3PHI3Z1_L2D3PHI3Z1_SP_L1D3PHI3Z1_L2D3PHI3Z1_en;
 wire [5:0] SP_L1D3PHI3Z1_L2D3PHI3Z1_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI3Z1_L2D3PHI3Z1_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI3Z1_L2D3PHI3Z1_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI3Z1_L2D3PHI3Z1(
 .data_in(TE_L1D3PHI3Z1_L2D3PHI3Z1_SP_L1D3PHI3Z1_L2D3PHI3Z1),
+.enable(TE_L1D3PHI3Z1_L2D3PHI3Z1_SP_L1D3PHI3Z1_L2D3PHI3Z1_en),
 .number_out(SP_L1D3PHI3Z1_L2D3PHI3Z1_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI3Z1_L2D3PHI3Z1_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI3Z1_L2D3PHI3Z1_TC_L1D3L2D3),
@@ -6886,11 +6960,13 @@ StubPairs  SP_L1D3PHI3Z1_L2D3PHI3Z1(
 
 
 wire [11:0] TE_L1D3PHI3Z1_L2D3PHI4Z1_SP_L1D3PHI3Z1_L2D3PHI4Z1;
+wire TE_L1D3PHI3Z1_L2D3PHI4Z1_SP_L1D3PHI3Z1_L2D3PHI4Z1_en;
 wire [5:0] SP_L1D3PHI3Z1_L2D3PHI4Z1_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI3Z1_L2D3PHI4Z1_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI3Z1_L2D3PHI4Z1_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI3Z1_L2D3PHI4Z1(
 .data_in(TE_L1D3PHI3Z1_L2D3PHI4Z1_SP_L1D3PHI3Z1_L2D3PHI4Z1),
+.enable(TE_L1D3PHI3Z1_L2D3PHI4Z1_SP_L1D3PHI3Z1_L2D3PHI4Z1_en),
 .number_out(SP_L1D3PHI3Z1_L2D3PHI4Z1_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI3Z1_L2D3PHI4Z1_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI3Z1_L2D3PHI4Z1_TC_L1D3L2D3),
@@ -6913,11 +6989,13 @@ StubPairs  SP_L1D3PHI3Z1_L2D3PHI4Z1(
 
 
 wire [11:0] TE_L1D3PHI3Z1_L2D3PHI3Z2_SP_L1D3PHI3Z1_L2D3PHI3Z2;
+wire TE_L1D3PHI3Z1_L2D3PHI3Z2_SP_L1D3PHI3Z1_L2D3PHI3Z2_en;
 wire [5:0] SP_L1D3PHI3Z1_L2D3PHI3Z2_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI3Z1_L2D3PHI3Z2_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI3Z1_L2D3PHI3Z2_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI3Z1_L2D3PHI3Z2(
 .data_in(TE_L1D3PHI3Z1_L2D3PHI3Z2_SP_L1D3PHI3Z1_L2D3PHI3Z2),
+.enable(TE_L1D3PHI3Z1_L2D3PHI3Z2_SP_L1D3PHI3Z1_L2D3PHI3Z2_en),
 .number_out(SP_L1D3PHI3Z1_L2D3PHI3Z2_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI3Z1_L2D3PHI3Z2_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI3Z1_L2D3PHI3Z2_TC_L1D3L2D3),
@@ -6940,11 +7018,13 @@ StubPairs  SP_L1D3PHI3Z1_L2D3PHI3Z2(
 
 
 wire [11:0] TE_L1D3PHI3Z1_L2D3PHI4Z2_SP_L1D3PHI3Z1_L2D3PHI4Z2;
+wire TE_L1D3PHI3Z1_L2D3PHI4Z2_SP_L1D3PHI3Z1_L2D3PHI4Z2_en;
 wire [5:0] SP_L1D3PHI3Z1_L2D3PHI4Z2_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI3Z1_L2D3PHI4Z2_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI3Z1_L2D3PHI4Z2_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI3Z1_L2D3PHI4Z2(
 .data_in(TE_L1D3PHI3Z1_L2D3PHI4Z2_SP_L1D3PHI3Z1_L2D3PHI4Z2),
+.enable(TE_L1D3PHI3Z1_L2D3PHI4Z2_SP_L1D3PHI3Z1_L2D3PHI4Z2_en),
 .number_out(SP_L1D3PHI3Z1_L2D3PHI4Z2_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI3Z1_L2D3PHI4Z2_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI3Z1_L2D3PHI4Z2_TC_L1D3L2D3),
@@ -6967,11 +7047,13 @@ StubPairs  SP_L1D3PHI3Z1_L2D3PHI4Z2(
 
 
 wire [11:0] TE_L1D3PHI3Z2_L2D3PHI3Z2_SP_L1D3PHI3Z2_L2D3PHI3Z2;
+wire TE_L1D3PHI3Z2_L2D3PHI3Z2_SP_L1D3PHI3Z2_L2D3PHI3Z2_en;
 wire [5:0] SP_L1D3PHI3Z2_L2D3PHI3Z2_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI3Z2_L2D3PHI3Z2_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI3Z2_L2D3PHI3Z2_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI3Z2_L2D3PHI3Z2(
 .data_in(TE_L1D3PHI3Z2_L2D3PHI3Z2_SP_L1D3PHI3Z2_L2D3PHI3Z2),
+.enable(TE_L1D3PHI3Z2_L2D3PHI3Z2_SP_L1D3PHI3Z2_L2D3PHI3Z2_en),
 .number_out(SP_L1D3PHI3Z2_L2D3PHI3Z2_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI3Z2_L2D3PHI3Z2_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI3Z2_L2D3PHI3Z2_TC_L1D3L2D3),
@@ -6994,11 +7076,13 @@ StubPairs  SP_L1D3PHI3Z2_L2D3PHI3Z2(
 
 
 wire [11:0] TE_L1D3PHI3Z2_L2D3PHI4Z2_SP_L1D3PHI3Z2_L2D3PHI4Z2;
+wire TE_L1D3PHI3Z2_L2D3PHI4Z2_SP_L1D3PHI3Z2_L2D3PHI4Z2_en;
 wire [5:0] SP_L1D3PHI3Z2_L2D3PHI4Z2_TC_L1D3L2D3_number;
 wire [5:0] SP_L1D3PHI3Z2_L2D3PHI4Z2_TC_L1D3L2D3_read_add;
 wire [11:0] SP_L1D3PHI3Z2_L2D3PHI4Z2_TC_L1D3L2D3;
 StubPairs  SP_L1D3PHI3Z2_L2D3PHI4Z2(
 .data_in(TE_L1D3PHI3Z2_L2D3PHI4Z2_SP_L1D3PHI3Z2_L2D3PHI4Z2),
+.enable(TE_L1D3PHI3Z2_L2D3PHI4Z2_SP_L1D3PHI3Z2_L2D3PHI4Z2_en),
 .number_out(SP_L1D3PHI3Z2_L2D3PHI4Z2_TC_L1D3L2D3_number),
 .read_add(SP_L1D3PHI3Z2_L2D3PHI4Z2_TC_L1D3L2D3_read_add),
 .data_out(SP_L1D3PHI3Z2_L2D3PHI4Z2_TC_L1D3L2D3),
@@ -7993,10 +8077,12 @@ StubPairs  SP_L5D3PHI3Z2_L6D3PHI4Z2(
 
 
 wire [71:0] TC_L1D3L2D3_TPAR_L1D3L2D3;
+wire TC_L1D3L2D3_TPAR_L1D3L2D3_en;
 wire [5:0] TPAR_L1D3L2D3_FT_L1L2_read_add;
 wire [71:0] TPAR_L1D3L2D3_FT_L1L2;
 TrackletParameters  TPAR_L1D3L2D3(
 .data_in(TC_L1D3L2D3_TPAR_L1D3L2D3),
+.enable(TC_L1D3L2D3_TPAR_L1D3L2D3_en),
 .read_add(TPAR_L1D3L2D3_FT_L1L2_read_add),
 .data_out(TPAR_L1D3L2D3_FT_L1L2),
 .start(start5_0),.done(done),.clk(clk),
@@ -8018,11 +8104,13 @@ TrackletParameters  TPAR_L1D3L2D3(
 
 
 wire [53:0] TC_L1D3L2D3_TPROJ_L1D3L2D3_L3;
+wire TC_L1D3L2D3_TPROJ_L1D3L2D3_L3_en;
 wire [5:0] TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2_number;
 wire [5:0] TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2_read_add;
 wire [53:0] TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2;
 TrackletProjections #(25,16,1) TPROJ_L1D3L2D3_L3(
 .data_in(TC_L1D3L2D3_TPROJ_L1D3L2D3_L3),
+.enable(TC_L1D3L2D3_TPROJ_L1D3L2D3_L3_en),
 .number_out(TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2_number),
 .read_add(TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2_read_add),
 .data_out(TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2),
@@ -8045,11 +8133,13 @@ TrackletProjections #(25,16,1) TPROJ_L1D3L2D3_L3(
 
 
 wire [53:0] TC_L1D3L2D3_TPROJ_L1D3L2D3_L4;
+wire TC_L1D3L2D3_TPROJ_L1D3L2D3_L4_en;
 wire [5:0] TPROJ_L1D3L2D3_L4_PR_L4D3_L1L2_number;
 wire [5:0] TPROJ_L1D3L2D3_L4_PR_L4D3_L1L2_read_add;
 wire [53:0] TPROJ_L1D3L2D3_L4_PR_L4D3_L1L2;
 TrackletProjections #(25,16,1) TPROJ_L1D3L2D3_L4(
 .data_in(TC_L1D3L2D3_TPROJ_L1D3L2D3_L4),
+.enable(TC_L1D3L2D3_TPROJ_L1D3L2D3_L4_en),
 .number_out(TPROJ_L1D3L2D3_L4_PR_L4D3_L1L2_number),
 .read_add(TPROJ_L1D3L2D3_L4_PR_L4D3_L1L2_read_add),
 .data_out(TPROJ_L1D3L2D3_L4_PR_L4D3_L1L2),
@@ -8072,11 +8162,13 @@ TrackletProjections #(25,16,1) TPROJ_L1D3L2D3_L4(
 
 
 wire [53:0] TC_L1D3L2D3_TPROJ_L1D3L2D3_L5;
+wire TC_L1D3L2D3_TPROJ_L1D3L2D3_L5_en;
 wire [5:0] TPROJ_L1D3L2D3_L5_PR_L5D3_L1L2_number;
 wire [5:0] TPROJ_L1D3L2D3_L5_PR_L5D3_L1L2_read_add;
 wire [53:0] TPROJ_L1D3L2D3_L5_PR_L5D3_L1L2;
 TrackletProjections #(25,16,1) TPROJ_L1D3L2D3_L5(
 .data_in(TC_L1D3L2D3_TPROJ_L1D3L2D3_L5),
+.enable(TC_L1D3L2D3_TPROJ_L1D3L2D3_L5_en),
 .number_out(TPROJ_L1D3L2D3_L5_PR_L5D3_L1L2_number),
 .read_add(TPROJ_L1D3L2D3_L5_PR_L5D3_L1L2_read_add),
 .data_out(TPROJ_L1D3L2D3_L5_PR_L5D3_L1L2),
@@ -8099,11 +8191,13 @@ TrackletProjections #(25,16,1) TPROJ_L1D3L2D3_L5(
 
 
 wire [53:0] TC_L1D3L2D3_TPROJ_L1D3L2D3_L6;
+wire TC_L1D3L2D3_TPROJ_L1D3L2D3_L6_en;
 wire [5:0] TPROJ_L1D3L2D3_L6_PR_L6D3_L1L2_number;
 wire [5:0] TPROJ_L1D3L2D3_L6_PR_L6D3_L1L2_read_add;
 wire [53:0] TPROJ_L1D3L2D3_L6_PR_L6D3_L1L2;
 TrackletProjections #(25,16,1) TPROJ_L1D3L2D3_L6(
 .data_in(TC_L1D3L2D3_TPROJ_L1D3L2D3_L6),
+.enable(TC_L1D3L2D3_TPROJ_L1D3L2D3_L6_en),
 .number_out(TPROJ_L1D3L2D3_L6_PR_L6D3_L1L2_number),
 .read_add(TPROJ_L1D3L2D3_L6_PR_L6D3_L1L2_read_add),
 .data_out(TPROJ_L1D3L2D3_L6_PR_L6D3_L1L2),
@@ -8126,11 +8220,13 @@ TrackletProjections #(25,16,1) TPROJ_L1D3L2D3_L6(
 
 
 wire [53:0] TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3;
+wire TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3_en;
 wire [5:0] TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_number;
 wire [5:0] TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_read_add;
 wire [53:0] TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3;
 TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L3(
 .data_in(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3),
+.enable(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3_en),
 .number_out(TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_number),
 .read_add(TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3_read_add),
 .data_out(TPROJ_ToPlus_L1D3L2D3_L3_PT_Plus_D3),
@@ -8153,11 +8249,13 @@ TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L3(
 
 
 wire [53:0] PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L3;
+wire PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L3_en;
 wire [5:0] TPROJ_FromPlus_L1D3L2D3_L3_PR_L3D3_L1L2_number;
 wire [5:0] TPROJ_FromPlus_L1D3L2D3_L3_PR_L3D3_L1L2_read_add;
 wire [53:0] TPROJ_FromPlus_L1D3L2D3_L3_PR_L3D3_L1L2;
 TrackletProjections #(16,1) TPROJ_FromPlus_L1D3L2D3_L3(
 .data_in(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L3),
+.enable(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L3_en),
 .number_out(TPROJ_FromPlus_L1D3L2D3_L3_PR_L3D3_L1L2_number),
 .read_add(TPROJ_FromPlus_L1D3L2D3_L3_PR_L3D3_L1L2_read_add),
 .data_out(TPROJ_FromPlus_L1D3L2D3_L3_PR_L3D3_L1L2),
@@ -8180,11 +8278,13 @@ TrackletProjections #(16,1) TPROJ_FromPlus_L1D3L2D3_L3(
 
 
 wire [53:0] TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L4;
+wire TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L4_en;
 wire [5:0] TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3_number;
 wire [5:0] TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3_read_add;
 wire [53:0] TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3;
 TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L4(
 .data_in(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L4),
+.enable(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L4_en),
 .number_out(TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3_number),
 .read_add(TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3_read_add),
 .data_out(TPROJ_ToPlus_L1D3L2D3_L4_PT_Plus_D3),
@@ -8207,11 +8307,13 @@ TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L4(
 
 
 wire [53:0] PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L4;
+wire PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L4_en;
 wire [5:0] TPROJ_FromPlus_L1D3L2D3_L4_PR_L4D3_L1L2_number;
 wire [5:0] TPROJ_FromPlus_L1D3L2D3_L4_PR_L4D3_L1L2_read_add;
 wire [53:0] TPROJ_FromPlus_L1D3L2D3_L4_PR_L4D3_L1L2;
 TrackletProjections #(16,1) TPROJ_FromPlus_L1D3L2D3_L4(
 .data_in(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L4),
+.enable(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L4_en),
 .number_out(TPROJ_FromPlus_L1D3L2D3_L4_PR_L4D3_L1L2_number),
 .read_add(TPROJ_FromPlus_L1D3L2D3_L4_PR_L4D3_L1L2_read_add),
 .data_out(TPROJ_FromPlus_L1D3L2D3_L4_PR_L4D3_L1L2),
@@ -8234,11 +8336,13 @@ TrackletProjections #(16,1) TPROJ_FromPlus_L1D3L2D3_L4(
 
 
 wire [53:0] TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L5;
+wire TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L5_en;
 wire [5:0] TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3_number;
 wire [5:0] TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3_read_add;
 wire [53:0] TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3;
 TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L5(
 .data_in(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L5),
+.enable(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L5_en),
 .number_out(TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3_number),
 .read_add(TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3_read_add),
 .data_out(TPROJ_ToPlus_L1D3L2D3_L5_PT_Plus_D3),
@@ -8261,11 +8365,13 @@ TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L5(
 
 
 wire [53:0] PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L5;
+wire PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L5_en;
 wire [5:0] TPROJ_FromPlus_L1D3L2D3_L5_PR_L5D3_L1L2_number;
 wire [5:0] TPROJ_FromPlus_L1D3L2D3_L5_PR_L5D3_L1L2_read_add;
 wire [53:0] TPROJ_FromPlus_L1D3L2D3_L5_PR_L5D3_L1L2;
 TrackletProjections #(16,1) TPROJ_FromPlus_L1D3L2D3_L5(
 .data_in(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L5),
+.enable(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L5_en),
 .number_out(TPROJ_FromPlus_L1D3L2D3_L5_PR_L5D3_L1L2_number),
 .read_add(TPROJ_FromPlus_L1D3L2D3_L5_PR_L5D3_L1L2_read_add),
 .data_out(TPROJ_FromPlus_L1D3L2D3_L5_PR_L5D3_L1L2),
@@ -8288,11 +8394,13 @@ TrackletProjections #(16,1) TPROJ_FromPlus_L1D3L2D3_L5(
 
 
 wire [53:0] TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L6;
+wire TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L6_en;
 wire [5:0] TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3_number;
 wire [5:0] TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3_read_add;
 wire [53:0] TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3;
 TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L6(
 .data_in(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L6),
+.enable(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L6_en),
 .number_out(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3_number),
 .read_add(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3_read_add),
 .data_out(TPROJ_ToPlus_L1D3L2D3_L6_PT_Plus_D3),
@@ -8315,11 +8423,13 @@ TrackletProjections #(1) TPROJ_ToPlus_L1D3L2D3_L6(
 
 
 wire [53:0] PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L6;
+wire PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L6_en;
 wire [5:0] TPROJ_FromPlus_L1D3L2D3_L6_PR_L6D3_L1L2_number;
 wire [5:0] TPROJ_FromPlus_L1D3L2D3_L6_PR_L6D3_L1L2_read_add;
 wire [53:0] TPROJ_FromPlus_L1D3L2D3_L6_PR_L6D3_L1L2;
 TrackletProjections #(16,1) TPROJ_FromPlus_L1D3L2D3_L6(
 .data_in(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L6),
+.enable(PT_Plus_D3_TPROJ_FromPlus_L1D3L2D3_L6_en),
 .number_out(TPROJ_FromPlus_L1D3L2D3_L6_PR_L6D3_L1L2_number),
 .read_add(TPROJ_FromPlus_L1D3L2D3_L6_PR_L6D3_L1L2_read_add),
 .data_out(TPROJ_FromPlus_L1D3L2D3_L6_PR_L6D3_L1L2),
@@ -8342,11 +8452,13 @@ TrackletProjections #(16,1) TPROJ_FromPlus_L1D3L2D3_L6(
 
 
 wire [53:0] TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L3;
+wire TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L3_en;
 wire [5:0] TPROJ_ToMinus_L1D3L2D3_L3_PT_Minus_D3_number;
 wire [5:0] TPROJ_ToMinus_L1D3L2D3_L3_PT_Minus_D3_read_add;
 wire [53:0] TPROJ_ToMinus_L1D3L2D3_L3_PT_Minus_D3;
 TrackletProjections #(1) TPROJ_ToMinus_L1D3L2D3_L3(
 .data_in(TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L3),
+.enable(TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L3_en),
 .number_out(TPROJ_ToMinus_L1D3L2D3_L3_PT_Minus_D3_number),
 .read_add(TPROJ_ToMinus_L1D3L2D3_L3_PT_Minus_D3_read_add),
 .data_out(TPROJ_ToMinus_L1D3L2D3_L3_PT_Minus_D3),
@@ -8369,11 +8481,13 @@ TrackletProjections #(1) TPROJ_ToMinus_L1D3L2D3_L3(
 
 
 wire [53:0] PT_Minus_D3_TPROJ_FromMinus_L1D3L2D3_L3;
+wire PT_Minus_D3_TPROJ_FromMinus_L1D3L2D3_L3_en;
 wire [5:0] TPROJ_FromMinus_L1D3L2D3_L3_PR_L3D3_L1L2_number;
 wire [5:0] TPROJ_FromMinus_L1D3L2D3_L3_PR_L3D3_L1L2_read_add;
 wire [53:0] TPROJ_FromMinus_L1D3L2D3_L3_PR_L3D3_L1L2;
 TrackletProjections #(16,1) TPROJ_FromMinus_L1D3L2D3_L3(
 .data_in(PT_Minus_D3_TPROJ_FromMinus_L1D3L2D3_L3),
+.enable(PT_Minus_D3_TPROJ_FromMinus_L1D3L2D3_L3_en),
 .number_out(TPROJ_FromMinus_L1D3L2D3_L3_PR_L3D3_L1L2_number),
 .read_add(TPROJ_FromMinus_L1D3L2D3_L3_PR_L3D3_L1L2_read_add),
 .data_out(TPROJ_FromMinus_L1D3L2D3_L3_PR_L3D3_L1L2),
@@ -8396,11 +8510,13 @@ TrackletProjections #(16,1) TPROJ_FromMinus_L1D3L2D3_L3(
 
 
 wire [53:0] TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L4;
+wire TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L4_en;
 wire [5:0] TPROJ_ToMinus_L1D3L2D3_L4_PT_Minus_D3_number;
 wire [5:0] TPROJ_ToMinus_L1D3L2D3_L4_PT_Minus_D3_read_add;
 wire [53:0] TPROJ_ToMinus_L1D3L2D3_L4_PT_Minus_D3;
 TrackletProjections #(1) TPROJ_ToMinus_L1D3L2D3_L4(
 .data_in(TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L4),
+.enable(TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L4_en),
 .number_out(TPROJ_ToMinus_L1D3L2D3_L4_PT_Minus_D3_number),
 .read_add(TPROJ_ToMinus_L1D3L2D3_L4_PT_Minus_D3_read_add),
 .data_out(TPROJ_ToMinus_L1D3L2D3_L4_PT_Minus_D3),
@@ -8423,11 +8539,13 @@ TrackletProjections #(1) TPROJ_ToMinus_L1D3L2D3_L4(
 
 
 wire [53:0] PT_Minus_D3_TPROJ_FromMinus_L1D3L2D3_L4;
+wire PT_Minus_D3_TPROJ_FromMinus_L1D3L2D3_L4_en;
 wire [5:0] TPROJ_FromMinus_L1D3L2D3_L4_PR_L4D3_L1L2_number;
 wire [5:0] TPROJ_FromMinus_L1D3L2D3_L4_PR_L4D3_L1L2_read_add;
 wire [53:0] TPROJ_FromMinus_L1D3L2D3_L4_PR_L4D3_L1L2;
 TrackletProjections #(16,1) TPROJ_FromMinus_L1D3L2D3_L4(
 .data_in(PT_Minus_D3_TPROJ_FromMinus_L1D3L2D3_L4),
+.enable(PT_Minus_D3_TPROJ_FromMinus_L1D3L2D3_L4_en),
 .number_out(TPROJ_FromMinus_L1D3L2D3_L4_PR_L4D3_L1L2_number),
 .read_add(TPROJ_FromMinus_L1D3L2D3_L4_PR_L4D3_L1L2_read_add),
 .data_out(TPROJ_FromMinus_L1D3L2D3_L4_PR_L4D3_L1L2),
@@ -8450,11 +8568,13 @@ TrackletProjections #(16,1) TPROJ_FromMinus_L1D3L2D3_L4(
 
 
 wire [53:0] TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L5;
+wire TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L5_en;
 wire [5:0] TPROJ_ToMinus_L1D3L2D3_L5_PT_Minus_D3_number;
 wire [5:0] TPROJ_ToMinus_L1D3L2D3_L5_PT_Minus_D3_read_add;
 wire [53:0] TPROJ_ToMinus_L1D3L2D3_L5_PT_Minus_D3;
 TrackletProjections #(1) TPROJ_ToMinus_L1D3L2D3_L5(
 .data_in(TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L5),
+.enable(TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L5_en),
 .number_out(TPROJ_ToMinus_L1D3L2D3_L5_PT_Minus_D3_number),
 .read_add(TPROJ_ToMinus_L1D3L2D3_L5_PT_Minus_D3_read_add),
 .data_out(TPROJ_ToMinus_L1D3L2D3_L5_PT_Minus_D3),
@@ -8477,11 +8597,13 @@ TrackletProjections #(1) TPROJ_ToMinus_L1D3L2D3_L5(
 
 
 wire [53:0] PT_Minus_D3_TPROJ_FromMinus_L1D3L2D3_L5;
+wire PT_Minus_D3_TPROJ_FromMinus_L1D3L2D3_L5_en;
 wire [5:0] TPROJ_FromMinus_L1D3L2D3_L5_PR_L5D3_L1L2_number;
 wire [5:0] TPROJ_FromMinus_L1D3L2D3_L5_PR_L5D3_L1L2_read_add;
 wire [53:0] TPROJ_FromMinus_L1D3L2D3_L5_PR_L5D3_L1L2;
 TrackletProjections #(16,1) TPROJ_FromMinus_L1D3L2D3_L5(
 .data_in(PT_Minus_D3_TPROJ_FromMinus_L1D3L2D3_L5),
+.enable(PT_Minus_D3_TPROJ_FromMinus_L1D3L2D3_L5_en),
 .number_out(TPROJ_FromMinus_L1D3L2D3_L5_PR_L5D3_L1L2_number),
 .read_add(TPROJ_FromMinus_L1D3L2D3_L5_PR_L5D3_L1L2_read_add),
 .data_out(TPROJ_FromMinus_L1D3L2D3_L5_PR_L5D3_L1L2),
@@ -8504,11 +8626,13 @@ TrackletProjections #(16,1) TPROJ_FromMinus_L1D3L2D3_L5(
 
 
 wire [53:0] TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L6;
+wire TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L6_en;
 wire [5:0] TPROJ_ToMinus_L1D3L2D3_L6_PT_Minus_D3_number;
 wire [5:0] TPROJ_ToMinus_L1D3L2D3_L6_PT_Minus_D3_read_add;
 wire [53:0] TPROJ_ToMinus_L1D3L2D3_L6_PT_Minus_D3;
 TrackletProjections #(1) TPROJ_ToMinus_L1D3L2D3_L6(
 .data_in(TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L6),
+.enable(TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L6_en),
 .number_out(TPROJ_ToMinus_L1D3L2D3_L6_PT_Minus_D3_number),
 .read_add(TPROJ_ToMinus_L1D3L2D3_L6_PT_Minus_D3_read_add),
 .data_out(TPROJ_ToMinus_L1D3L2D3_L6_PT_Minus_D3),
@@ -8531,11 +8655,13 @@ TrackletProjections #(1) TPROJ_ToMinus_L1D3L2D3_L6(
 
 
 wire [53:0] PT_Minus_D3_TPROJ_FromMinus_L1D3L2D3_L6;
+wire PT_Minus_D3_TPROJ_FromMinus_L1D3L2D3_L6_en;
 wire [5:0] TPROJ_FromMinus_L1D3L2D3_L6_PR_L6D3_L1L2_number;
 wire [5:0] TPROJ_FromMinus_L1D3L2D3_L6_PR_L6D3_L1L2_read_add;
 wire [53:0] TPROJ_FromMinus_L1D3L2D3_L6_PR_L6D3_L1L2;
 TrackletProjections #(16,1) TPROJ_FromMinus_L1D3L2D3_L6(
 .data_in(PT_Minus_D3_TPROJ_FromMinus_L1D3L2D3_L6),
+.enable(PT_Minus_D3_TPROJ_FromMinus_L1D3L2D3_L6_en),
 .number_out(TPROJ_FromMinus_L1D3L2D3_L6_PR_L6D3_L1L2_number),
 .read_add(TPROJ_FromMinus_L1D3L2D3_L6_PR_L6D3_L1L2_read_add),
 .data_out(TPROJ_FromMinus_L1D3L2D3_L6_PR_L6D3_L1L2),
@@ -8562,6 +8688,7 @@ wire [5:0] TPAR_L3D3L4D3_FT_L3L4_read_add;
 wire [71:0] TPAR_L3D3L4D3_FT_L3L4;
 TrackletParameters  TPAR_L3D3L4D3(
 .data_in(TC_L3D3L4D3_TPAR_L3D3L4D3),
+.enable(),
 .read_add(TPAR_L3D3L4D3_FT_L3L4_read_add),
 .data_out(TPAR_L3D3L4D3_FT_L3L4),
 .start(start5_0),.done(done),.clk(clk),
@@ -9127,6 +9254,7 @@ wire [5:0] TPAR_L5D3L6D3_FT_L5L6_read_add;
 wire [71:0] TPAR_L5D3L6D3_FT_L5L6;
 TrackletParameters  TPAR_L5D3L6D3(
 .data_in(TC_L5D3L6D3_TPAR_L5D3L6D3),
+.enable(),
 .read_add(TPAR_L5D3L6D3_FT_L5L6_read_add),
 .data_out(TPAR_L5D3L6D3_FT_L5L6),
 .start(start5_0),.done(done),.clk(clk),
@@ -15126,6 +15254,12 @@ LayerRouter  LR2_D3(
 .stuboutL4(LR2_D3_SL2_L4D3),
 .stuboutL5(LR2_D3_SL2_L5D3),
 .stuboutL6(LR2_D3_SL2_L6D3),
+.wr_en1(LR2_D3_SL2_L1D3_wr_en),
+.wr_en2(LR2_D3_SL2_L2D3_wr_en),
+.wr_en3(LR2_D3_SL2_L3D3_wr_en),
+.wr_en4(LR2_D3_SL2_L4D3_wr_en),
+.wr_en5(LR2_D3_SL2_L5D3_wr_en),
+.wr_en6(LR2_D3_SL2_L6D3_wr_en),
 .start(start1_5),.done(done1),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15153,6 +15287,12 @@ LayerRouter  LR3_D3(
 .stuboutL4(LR3_D3_SL3_L4D3),
 .stuboutL5(LR3_D3_SL3_L5D3),
 .stuboutL6(LR3_D3_SL3_L6D3),
+.wr_en1(LR3_D3_SL3_L1D3_wr_en),
+.wr_en2(LR3_D3_SL3_L2D3_wr_en),
+.wr_en3(LR3_D3_SL3_L3D3_wr_en),
+.wr_en4(LR3_D3_SL3_L4D3_wr_en),
+.wr_en5(LR3_D3_SL3_L5D3_wr_en),
+.wr_en6(LR3_D3_SL3_L6D3_wr_en),
 .start(start1_5),.done(done1),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15220,6 +15360,7 @@ VMRouter #(1'b1,1'b1) VMR_L1D3(
 .vmstuboutPHI2Z2_en(VMR_L1D3_VMS_L1D3PHI2Z2_en),
 .vmstuboutPHI3Z1_en(VMR_L1D3_VMS_L1D3PHI3Z1_en),
 .vmstuboutPHI3Z2_en(VMR_L1D3_VMS_L1D3PHI3Z2_en),
+.valid_data(VMR_L1D3_AS_D3L1_wr_en),
 .start(start2_5),.done(done2_0),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15293,6 +15434,7 @@ VMRouter #(1'b1,1'b0) VMR_L2D3(
 .vmstuboutPHI3Z2_en(VMR_L2D3_VMS_L2D3PHI3Z2_en),
 .vmstuboutPHI4Z1_en(VMR_L2D3_VMS_L2D3PHI4Z1_en),
 .vmstuboutPHI4Z2_en(VMR_L2D3_VMS_L2D3PHI4Z2_en),
+.valid_data(VMR_L2D3_AS_D3L2_wr_en),
 .start(start2_5),.done(done2),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15360,6 +15502,7 @@ VMRouter #(1'b1,1'b1) VMR_L3D3(
 .vmstuboutPHI2Z2_en(VMR_L3D3_VMS_L3D3PHI2Z2_en),
 .vmstuboutPHI3Z1_en(VMR_L3D3_VMS_L3D3PHI3Z1_en),
 .vmstuboutPHI3Z2_en(VMR_L3D3_VMS_L3D3PHI3Z2_en),
+.valid_data(VMR_L3D3_AS_D3L3_wr_en),
 .start(start2_5),.done(done2),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15433,6 +15576,7 @@ VMRouter #(1'b0,1'b0) VMR_L4D3(
 .vmstuboutPHI3Z2_en(VMR_L4D3_VMS_L4D3PHI3Z2_en),
 .vmstuboutPHI4Z1_en(VMR_L4D3_VMS_L4D3PHI4Z1_en),
 .vmstuboutPHI4Z2_en(VMR_L4D3_VMS_L4D3PHI4Z2_en),
+.valid_data(VMR_L4D3_AS_D3L4_wr_en),
 .start(start2_5),.done(done2),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15500,6 +15644,7 @@ VMRouter #(1'b0,1'b1) VMR_L5D3(
 .vmstuboutPHI2Z2_en(VMR_L5D3_VMS_L5D3PHI2Z2_en),
 .vmstuboutPHI3Z1_en(VMR_L5D3_VMS_L5D3PHI3Z1_en),
 .vmstuboutPHI3Z2_en(VMR_L5D3_VMS_L5D3PHI3Z2_en),
+.valid_data(VMR_L5D3_AS_D3L5_wr_en),
 .start(start2_5),.done(done2),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15573,6 +15718,7 @@ VMRouter #(1'b0,1'b0) VMR_L6D3(
 .vmstuboutPHI3Z2_en(VMR_L6D3_VMS_L6D3PHI3Z2_en),
 .vmstuboutPHI4Z1_en(VMR_L6D3_VMS_L6D3PHI4Z1_en),
 .vmstuboutPHI4Z2_en(VMR_L6D3_VMS_L6D3PHI4Z2_en),
+.valid_data(VMR_L6D3_AS_D3L6_wr_en),
 .start(start2_5),.done(done2),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15599,6 +15745,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI1Z1n1_TE_L1D3PHI1Z1_L2D3PHI1Z1_read_add),
 .outervmstubin(VMS_L2D3PHI1Z1n1_TE_L1D3PHI1Z1_L2D3PHI1Z1),
 .stubpairout(TE_L1D3PHI1Z1_L2D3PHI1Z1_SP_L1D3PHI1Z1_L2D3PHI1Z1),
+.valid_data(TE_L1D3PHI1Z1_L2D3PHI1Z1_SP_L1D3PHI1Z1_L2D3PHI1Z1_en),
 .start(start3_5),.done(done3_0),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15625,6 +15772,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI2Z1n1_TE_L1D3PHI1Z1_L2D3PHI2Z1_read_add),
 .outervmstubin(VMS_L2D3PHI2Z1n1_TE_L1D3PHI1Z1_L2D3PHI2Z1),
 .stubpairout(TE_L1D3PHI1Z1_L2D3PHI2Z1_SP_L1D3PHI1Z1_L2D3PHI2Z1),
+.valid_data(TE_L1D3PHI1Z1_L2D3PHI2Z1_SP_L1D3PHI1Z1_L2D3PHI2Z1_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15651,6 +15799,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI1Z2n1_TE_L1D3PHI1Z1_L2D3PHI1Z2_read_add),
 .outervmstubin(VMS_L2D3PHI1Z2n1_TE_L1D3PHI1Z1_L2D3PHI1Z2),
 .stubpairout(TE_L1D3PHI1Z1_L2D3PHI1Z2_SP_L1D3PHI1Z1_L2D3PHI1Z2),
+.valid_data(TE_L1D3PHI1Z1_L2D3PHI1Z2_SP_L1D3PHI1Z1_L2D3PHI1Z2_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15677,6 +15826,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI2Z2n1_TE_L1D3PHI1Z1_L2D3PHI2Z2_read_add),
 .outervmstubin(VMS_L2D3PHI2Z2n1_TE_L1D3PHI1Z1_L2D3PHI2Z2),
 .stubpairout(TE_L1D3PHI1Z1_L2D3PHI2Z2_SP_L1D3PHI1Z1_L2D3PHI2Z2),
+.valid_data(TE_L1D3PHI1Z1_L2D3PHI2Z2_SP_L1D3PHI1Z1_L2D3PHI2Z2_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15703,6 +15853,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI1Z2n2_TE_L1D3PHI1Z2_L2D3PHI1Z2_read_add),
 .outervmstubin(VMS_L2D3PHI1Z2n2_TE_L1D3PHI1Z2_L2D3PHI1Z2),
 .stubpairout(TE_L1D3PHI1Z2_L2D3PHI1Z2_SP_L1D3PHI1Z2_L2D3PHI1Z2),
+.valid_data(TE_L1D3PHI1Z2_L2D3PHI1Z2_SP_L1D3PHI1Z2_L2D3PHI1Z2_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15729,6 +15880,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI2Z2n3_TE_L1D3PHI1Z2_L2D3PHI2Z2_read_add),
 .outervmstubin(VMS_L2D3PHI2Z2n3_TE_L1D3PHI1Z2_L2D3PHI2Z2),
 .stubpairout(TE_L1D3PHI1Z2_L2D3PHI2Z2_SP_L1D3PHI1Z2_L2D3PHI2Z2),
+.valid_data(TE_L1D3PHI1Z2_L2D3PHI2Z2_SP_L1D3PHI1Z2_L2D3PHI2Z2_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15755,6 +15907,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI2Z1n2_TE_L1D3PHI2Z1_L2D3PHI2Z1_read_add),
 .outervmstubin(VMS_L2D3PHI2Z1n2_TE_L1D3PHI2Z1_L2D3PHI2Z1),
 .stubpairout(TE_L1D3PHI2Z1_L2D3PHI2Z1_SP_L1D3PHI2Z1_L2D3PHI2Z1),
+.valid_data(TE_L1D3PHI2Z1_L2D3PHI2Z1_SP_L1D3PHI2Z1_L2D3PHI2Z1_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15781,6 +15934,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI3Z1n1_TE_L1D3PHI2Z1_L2D3PHI3Z1_read_add),
 .outervmstubin(VMS_L2D3PHI3Z1n1_TE_L1D3PHI2Z1_L2D3PHI3Z1),
 .stubpairout(TE_L1D3PHI2Z1_L2D3PHI3Z1_SP_L1D3PHI2Z1_L2D3PHI3Z1),
+.valid_data(TE_L1D3PHI2Z1_L2D3PHI3Z1_SP_L1D3PHI2Z1_L2D3PHI3Z1_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15807,6 +15961,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI2Z2n2_TE_L1D3PHI2Z1_L2D3PHI2Z2_read_add),
 .outervmstubin(VMS_L2D3PHI2Z2n2_TE_L1D3PHI2Z1_L2D3PHI2Z2),
 .stubpairout(TE_L1D3PHI2Z1_L2D3PHI2Z2_SP_L1D3PHI2Z1_L2D3PHI2Z2),
+.valid_data(TE_L1D3PHI2Z1_L2D3PHI2Z2_SP_L1D3PHI2Z1_L2D3PHI2Z2_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15833,6 +15988,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI3Z2n1_TE_L1D3PHI2Z1_L2D3PHI3Z2_read_add),
 .outervmstubin(VMS_L2D3PHI3Z2n1_TE_L1D3PHI2Z1_L2D3PHI3Z2),
 .stubpairout(TE_L1D3PHI2Z1_L2D3PHI3Z2_SP_L1D3PHI2Z1_L2D3PHI3Z2),
+.valid_data(TE_L1D3PHI2Z1_L2D3PHI3Z2_SP_L1D3PHI2Z1_L2D3PHI3Z2_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15859,6 +16015,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI2Z2n4_TE_L1D3PHI2Z2_L2D3PHI2Z2_read_add),
 .outervmstubin(VMS_L2D3PHI2Z2n4_TE_L1D3PHI2Z2_L2D3PHI2Z2),
 .stubpairout(TE_L1D3PHI2Z2_L2D3PHI2Z2_SP_L1D3PHI2Z2_L2D3PHI2Z2),
+.valid_data(TE_L1D3PHI2Z2_L2D3PHI2Z2_SP_L1D3PHI2Z2_L2D3PHI2Z2_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15885,6 +16042,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI3Z2n3_TE_L1D3PHI2Z2_L2D3PHI3Z2_read_add),
 .outervmstubin(VMS_L2D3PHI3Z2n3_TE_L1D3PHI2Z2_L2D3PHI3Z2),
 .stubpairout(TE_L1D3PHI2Z2_L2D3PHI3Z2_SP_L1D3PHI2Z2_L2D3PHI3Z2),
+.valid_data(TE_L1D3PHI2Z2_L2D3PHI3Z2_SP_L1D3PHI2Z2_L2D3PHI3Z2_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15911,6 +16069,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI3Z1n2_TE_L1D3PHI3Z1_L2D3PHI3Z1_read_add),
 .outervmstubin(VMS_L2D3PHI3Z1n2_TE_L1D3PHI3Z1_L2D3PHI3Z1),
 .stubpairout(TE_L1D3PHI3Z1_L2D3PHI3Z1_SP_L1D3PHI3Z1_L2D3PHI3Z1),
+.valid_data(TE_L1D3PHI3Z1_L2D3PHI3Z1_SP_L1D3PHI3Z1_L2D3PHI3Z1_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15937,6 +16096,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI4Z1n1_TE_L1D3PHI3Z1_L2D3PHI4Z1_read_add),
 .outervmstubin(VMS_L2D3PHI4Z1n1_TE_L1D3PHI3Z1_L2D3PHI4Z1),
 .stubpairout(TE_L1D3PHI3Z1_L2D3PHI4Z1_SP_L1D3PHI3Z1_L2D3PHI4Z1),
+.valid_data(TE_L1D3PHI3Z1_L2D3PHI4Z1_SP_L1D3PHI3Z1_L2D3PHI4Z1_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15963,6 +16123,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI3Z2n2_TE_L1D3PHI3Z1_L2D3PHI3Z2_read_add),
 .outervmstubin(VMS_L2D3PHI3Z2n2_TE_L1D3PHI3Z1_L2D3PHI3Z2),
 .stubpairout(TE_L1D3PHI3Z1_L2D3PHI3Z2_SP_L1D3PHI3Z1_L2D3PHI3Z2),
+.valid_data(TE_L1D3PHI3Z1_L2D3PHI3Z2_SP_L1D3PHI3Z1_L2D3PHI3Z2_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -15989,6 +16150,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI4Z2n1_TE_L1D3PHI3Z1_L2D3PHI4Z2_read_add),
 .outervmstubin(VMS_L2D3PHI4Z2n1_TE_L1D3PHI3Z1_L2D3PHI4Z2),
 .stubpairout(TE_L1D3PHI3Z1_L2D3PHI4Z2_SP_L1D3PHI3Z1_L2D3PHI4Z2),
+.valid_data(TE_L1D3PHI3Z1_L2D3PHI4Z2_SP_L1D3PHI3Z1_L2D3PHI4Z2_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -16015,6 +16177,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI3Z2n4_TE_L1D3PHI3Z2_L2D3PHI3Z2_read_add),
 .outervmstubin(VMS_L2D3PHI3Z2n4_TE_L1D3PHI3Z2_L2D3PHI3Z2),
 .stubpairout(TE_L1D3PHI3Z2_L2D3PHI3Z2_SP_L1D3PHI3Z2_L2D3PHI3Z2),
+.valid_data(TE_L1D3PHI3Z2_L2D3PHI3Z2_SP_L1D3PHI3Z2_L2D3PHI3Z2_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -16041,6 +16204,7 @@ TrackletEngine #("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_3
 .read_add2(VMS_L2D3PHI4Z2n2_TE_L1D3PHI3Z2_L2D3PHI4Z2_read_add),
 .outervmstubin(VMS_L2D3PHI4Z2n2_TE_L1D3PHI3Z2_L2D3PHI4Z2),
 .stubpairout(TE_L1D3PHI3Z2_L2D3PHI4Z2_SP_L1D3PHI3Z2_L2D3PHI4Z2),
+.valid_data(TE_L1D3PHI3Z2_L2D3PHI4Z2_SP_L1D3PHI3Z2_L2D3PHI4Z2_en),
 .start(start3_5),.done(done3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -17067,6 +17231,19 @@ TrackletCalculator  TC_L1D3L2D3(
 .projMinus2(TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L4),
 .projMinus3(TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L5),
 .projMinus4(TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L6),
+.valid_trackpar(TC_L1D3L2D3_TPAR_L1D3L2D3_en),
+.valid_proj1(TC_L1D3L2D3_TPROJ_L1D3L2D3_L3_en),
+.valid_proj2(TC_L1D3L2D3_TPROJ_L1D3L2D3_L4_en),
+.valid_proj3(TC_L1D3L2D3_TPROJ_L1D3L2D3_L5_en),
+.valid_proj4(TC_L1D3L2D3_TPROJ_L1D3L2D3_L6_en),
+.valid_projPlus1(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L3_en),
+.valid_projPlus2(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L4_en),
+.valid_projPlus3(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L5_en),
+.valid_projPlus4(TC_L1D3L2D3_TPROJ_ToPlus_L1D3L2D3_L6_en),
+.valid_projMinus1(TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L3_en),
+.valid_projMinus2(TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L4_en),
+.valid_projMinus3(TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L5_en),
+.valid_projMinus4(TC_L1D3L2D3_TPROJ_ToMinus_L1D3L2D3_L6_en),
 .start(start4_5),.done(done4_0_1),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -17157,6 +17334,19 @@ TrackletCalculator  TC_L3D3L4D3(
 .projMinus2(TC_L3D3L4D3_TPROJ_ToMinus_L3D3L4D3_L2),
 .projMinus3(TC_L3D3L4D3_TPROJ_ToMinus_L3D3L4D3_L5),
 .projMinus4(TC_L3D3L4D3_TPROJ_ToMinus_L3D3L4D3_L6),
+.valid_trackpar(),
+.valid_proj1(),
+.valid_proj2(),
+.valid_proj3(),
+.valid_proj4(),
+.valid_projPlus1(),
+.valid_projPlus2(),
+.valid_projPlus3(),
+.valid_projPlus4(),
+.valid_projMinus1(),
+.valid_projMinus2(),
+.valid_projMinus3(),
+.valid_projMinus4(),
 .start(start4_5),.done(done4_0_2),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
@@ -17247,6 +17437,19 @@ TrackletCalculator  TC_L5D3L6D3(
 .projMinus2(TC_L5D3L6D3_TPROJ_ToMinus_L5D3L6D3_L2),
 .projMinus3(TC_L5D3L6D3_TPROJ_ToMinus_L5D3L6D3_L3),
 .projMinus4(TC_L5D3L6D3_TPROJ_ToMinus_L5D3L6D3_L4),
+.valid_trackpar(),
+.valid_proj1(),
+.valid_proj2(),
+.valid_proj3(),
+.valid_proj4(),
+.valid_projPlus1(),
+.valid_projPlus2(),
+.valid_projPlus3(),
+.valid_projPlus4(),
+.valid_projMinus1(),
+.valid_projMinus2(),
+.valid_projMinus3(),
+.valid_projMinus4(),
 .start(start4_5),.done(done4_0_3),.clk(clk),
 .reset(reset),
 .en_proc(en_proc),
