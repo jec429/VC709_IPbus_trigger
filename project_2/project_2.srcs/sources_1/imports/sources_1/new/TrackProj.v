@@ -113,16 +113,12 @@ module TrackletProjections(
         else begin
             if(enable) begin
                 wr_en <= 1'b1;
-            end
-            else begin
-                wr_en <= 1'b0;
-            end
-            if(wr_en) begin
                 wr_add <= wr_add + 1'b1;
             end
             else begin
+                wr_en <= 1'b0;
                 wr_add <= wr_add;
-            end          
+            end                      
         end
         if(NHOLD)
             pipe_number_out <= hold_number_out; // Local projection memories have to wait an extra BX to send the number
@@ -152,16 +148,16 @@ module TrackletProjections(
 
     Memory #(
             .RAM_WIDTH(54),                       // Specify RAM data width
-            .RAM_DEPTH(341),                     // Specify RAM depth (number of entries)
+            .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
             .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) Projection (
             .addra({BX_pipe-2'b11,wr_add}),    // Write address bus, width determined from RAM_DEPTH
-            .addrb({rd_BX_pipe - 3'b101,read_add}),    // Read address bus, width determined from RAM_DEPTH
+            .addrb({rd_BX_pipe - 3'b100 - NHOLD ,read_add}),    // Read address bus, width determined from RAM_DEPTH
             .dina(data_in_dly),      // RAM input data, width determined from RAM_WIDTH
             .clka(clk),      // Write clock
             .clkb(clk),      // Read clock
-            .wea(wr_en_hold),        // Write enable
+            .wea(wr_en),        // Write enable
             .enb(1'b1),        // Read Enable, for additional power savings, disable when not in use // Maybe don't read add = 6'h3f?
             .rstb(reset),      // Output reset (does not affect memory contents)
             .regceb(1'b1),  // Output register enable

@@ -17470,7 +17470,7 @@ TrackletCalculator  TC_L5D3L6D3(
 
 ProjectionRouter #(1'b1,29) PR_L3D3_L1L2(
 .number_in1(TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2_number),
-//.read_add1(TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2_read_add),
+.read_add1(TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2_read_add),
 .projin(TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2),
 .number_in2(TPROJ_FromPlus_L1D3L2D3_L3_PR_L3D3_L1L2_number),
 .read_add2(TPROJ_FromPlus_L1D3L2D3_L3_PR_L3D3_L1L2_read_add),
@@ -20946,20 +20946,20 @@ FitTrack  FT_L1L2(
     
 reader reader1(
 
-.read_add1(TPAR_L1D3L2D3_FT_L1L2_read_add),
-.read_add2(TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2_read_add),
+//.read_add1(TPAR_L1D3L2D3_FT_L1L2_read_add),
+//.read_add2(TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2_read_add),
 //.read_add3(SL1_L3D3_VMR_L3D3_read_add),
 //.read_add4(SL1_L4D3_VMR_L4D3_read_add),
 //.read_add5(SL1_L5D3_VMR_L5D3_read_add),
 
 //.number_in1(TPAR_L1D3L2D3_FT_L1L2_number),
-.number_in2(TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2_number),
+//.number_in2(TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2_number),
 //.number_in3(SL1_L3D3_VMR_L3D3_number),
 //.number_in4(SL1_L4D3_VMR_L4D3_number),
 //.number_in5(SL1_L5D3_VMR_L5D3_number),
 
-.input1(TPAR_L1D3L2D3_FT_L1L2),
-.input2(TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2),
+//.input1(TPAR_L1D3L2D3_FT_L1L2),
+//.input2(TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2),
 //.input3(SL1_L3D3_VMR_L3D3),
 //.input4(SL1_L4D3_VMR_L4D3),
 //.input5(SL1_L5D3_VMR_L5D3),
