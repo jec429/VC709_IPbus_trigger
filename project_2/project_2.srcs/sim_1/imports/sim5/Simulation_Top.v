@@ -126,7 +126,7 @@ module verilog_trigger_top_test1;
             while (ipb_ack == 1'b0) begin #4; end
         #2  ipb_strobe=1'b0; ipb_write=1'b0;
         
-        while (!$feof(fdi)) begin
+        /*while (!$feof(fdi)) begin
             val = $fgets(str, fdi);
             dummy = $sscanf(str, "%x %x %x %x", data_in0, data_in1, add_0, add_1);
             #2  ipb_addr = add_0;
@@ -143,14 +143,14 @@ module verilog_trigger_top_test1;
             @(posedge cross_clk);
         end       
         $fclose(fdo);             
-        $fclose(fdi);
-        /*
+        $fclose(fdi); */
+        
         #2  ipb_addr = 32'h59000000;
             ipb_wdata= 32'hbabababa; ipb_write = 1'b1;
         #4  ipb_strobe = 1'b1;
             while (ipb_ack == 1'b0) begin #4; end
         #2  ipb_strobe=1'b0; ipb_write=1'b0;
-        */
+        
         //////////////////////////////////////////////////////////////////////////////
 		
         #10	en_proc = 1'b1;
