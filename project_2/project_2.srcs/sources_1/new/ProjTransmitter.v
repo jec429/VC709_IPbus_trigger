@@ -258,18 +258,18 @@ module ProjTransceiver(
         /////////////////////////////////////////////////////////////////////
         // send the mem_dat_stream to a single-clock FIFO
         // NOT WORKING JEC429
-        
-//       fifo_projection_out fifo(
-//            .rst(fifo_rst),                             // 1 bit in data reset
-//            .clk(clk),                                  // 1 bit read and write clock
-//            .din(mem_dat_stream_dly[47:0]),                   // 48 bit in data into FIFO
-//            .wr_en(FIFO_wr_en),                         // 1 bit in write enable
-//            .rd_en(FIFO_rd_en),                         // 1 bit in read enable
-//            .dout(data_output),                         // 48 bit out data out of FIFO
-//            .full(FIFO_FULL),                           // 1 bit out FIFO full signal
-//            .empty(FIFO_EMPTY)                          // 1 bit out FIFO empty signal
-//          );
     
+       fifo_projection_out fifo(
+            .rst(fifo_rst),                     // input wire rst
+            .wr_clk(clk),                       // input wire wr_clk
+            .rd_clk(clk),                       // input wire rd_clk
+            .din(mem_dat_stream_dly[47:0]),    // input wire [47 : 0] din
+            .wr_en(FIFO_wr_en),                 // input wire wr_en
+            .rd_en(FIFO_rd_en),                 // input wire rd_en
+            .dout(data_output),                 // output wire [47 : 0] dout
+            .full(FIFO_FULL),                   // output wire full
+            .empty(FIFO_EMPTY)                  // output wire empty
+          );
     
         mem_readin_top get_resid(
             .clk(clk),
