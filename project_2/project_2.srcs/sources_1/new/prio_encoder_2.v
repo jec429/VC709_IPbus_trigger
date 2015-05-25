@@ -83,6 +83,7 @@ always @ (posedge clk) begin
     if (sel09) sel <= 4'b1010;
     if (sel10) sel <= 4'b1011;
     if (sel11) sel <= 4'b1100;
+    if (none)  sel <= 4'b0000;
 end
            
 endmodule

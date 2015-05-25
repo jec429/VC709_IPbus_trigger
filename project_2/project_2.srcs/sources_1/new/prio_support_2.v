@@ -42,16 +42,11 @@ always @ (posedge clk) begin
     valid <= count_en;
 end
 
-
-    always @ (posedge clk) begin  
-        $display("number_in1 at PRIO_SUPPORT = %h", initial_count);
-        $display("number_in1 after loading = %h", item_cntr);
-    end 
 //////////////////////////////////////////////////////////////////////////
 // address counter, gets cleared by 'init', counts up
 always @ (posedge clk) begin
     if (init)                     // at the start of a crossing, clear the counter
-        addr[5:0] <= 6'b000000;
+        addr[5:0] <= 6'h00;
     else if (count_en)            // if we are selected, increment counter  
         addr[5:0] <= addr[5:0] + 1'b000001;
 end
