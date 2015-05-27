@@ -913,7 +913,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
+<<<<<<< HEAD
             <spirit:value>72095ac7</spirit:value>
+=======
+            <spirit:value>30527b98</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -921,7 +925,11 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Tue May 26 21:19:45 UTC 2015</spirit:value>
+=======
+            <spirit:value>Tue May 26 14:25:19 UTC 2015</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -940,7 +948,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
+<<<<<<< HEAD
             <spirit:value>72095ac7</spirit:value>
+=======
+            <spirit:value>30527b98</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -948,7 +960,11 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Tue May 26 21:19:45 UTC 2015</spirit:value>
+=======
+            <spirit:value>Tue May 26 14:25:19 UTC 2015</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -967,7 +983,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
+<<<<<<< HEAD
             <spirit:value>72095ac7</spirit:value>
+=======
+            <spirit:value>30527b98</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -975,7 +995,11 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Tue May 26 21:19:45 UTC 2015</spirit:value>
+=======
+            <spirit:value>Tue May 26 14:25:19 UTC 2015</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -994,7 +1018,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
+<<<<<<< HEAD
             <spirit:value>a42b34e1</spirit:value>
+=======
+            <spirit:value>3ac2c9cc</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -1002,7 +1030,11 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Tue May 26 21:19:45 UTC 2015</spirit:value>
+=======
+            <spirit:value>Tue May 26 14:25:19 UTC 2015</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -1021,7 +1053,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
+<<<<<<< HEAD
             <spirit:value>a42b34e1</spirit:value>
+=======
+            <spirit:value>3ac2c9cc</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -1029,7 +1065,11 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Tue May 26 21:19:45 UTC 2015</spirit:value>
+=======
+            <spirit:value>Tue May 26 14:25:19 UTC 2015</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -1047,7 +1087,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
+<<<<<<< HEAD
             <spirit:value>72095ac7</spirit:value>
+=======
+            <spirit:value>30527b98</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -1055,7 +1099,11 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Tue May 26 21:19:45 UTC 2015</spirit:value>
+=======
+            <spirit:value>Tue May 26 14:25:20 UTC 2015</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -1073,7 +1121,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
+<<<<<<< HEAD
             <spirit:value>72095ac7</spirit:value>
+=======
+            <spirit:value>30527b98</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -1081,7 +1133,11 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Tue May 26 21:19:45 UTC 2015</spirit:value>
+=======
+            <spirit:value>Tue May 26 14:25:20 UTC 2015</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -1099,7 +1155,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
+<<<<<<< HEAD
             <spirit:value>72095ac7</spirit:value>
+=======
+            <spirit:value>30527b98</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -3034,11 +3094,19 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_OUTCLK_SUM_ROW1</spirit:name>
+<<<<<<< HEAD
         <spirit:value spirit:format="string" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTCLK_SUM_ROW1" spirit:order="247">CLK_OUT1____10.000______0.000______50.0______269.808____190.431</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_OUTCLK_SUM_ROW2</spirit:name>
         <spirit:value spirit:format="string" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTCLK_SUM_ROW2" spirit:order="248">CLK_OUT2___330.000______0.000______50.0______138.380____190.431</spirit:value>
+=======
+        <spirit:value spirit:format="string" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTCLK_SUM_ROW1" spirit:order="247">CLK_OUT1____10.000______0.000______50.0______175.839_____91.235</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="STRING">
+        <spirit:name>C_OUTCLK_SUM_ROW2</spirit:name>
+        <spirit:value spirit:format="string" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTCLK_SUM_ROW2" spirit:order="248">CLK_OUT2___300.000______0.000______50.0_______89.301_____91.235</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_OUTCLK_SUM_ROW3</spirit:name>
@@ -3066,7 +3134,11 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT2_REQUESTED_OUT_FREQ</spirit:name>
+<<<<<<< HEAD
         <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT2_REQUESTED_OUT_FREQ" spirit:order="255">330.000</spirit:value>
+=======
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT2_REQUESTED_OUT_FREQ" spirit:order="255">300.000</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT3_REQUESTED_OUT_FREQ</spirit:name>
@@ -3150,7 +3222,11 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT2_OUT_FREQ</spirit:name>
+<<<<<<< HEAD
         <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT2_OUT_FREQ" spirit:order="276">330.000</spirit:value>
+=======
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT2_OUT_FREQ" spirit:order="276">300.000</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT3_OUT_FREQ</spirit:name>
@@ -3274,7 +3350,11 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_MMCM_CLKFBOUT_MULT_F</spirit:name>
+<<<<<<< HEAD
         <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MMCM_CLKFBOUT_MULT_F" spirit:order="298">24.750</spirit:value>
+=======
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MMCM_CLKFBOUT_MULT_F" spirit:order="298">4.500</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_MMCM_CLKIN1_PERIOD</spirit:name>
@@ -3314,7 +3394,11 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_MMCM_CLKOUT0_DIVIDE_F</spirit:name>
+<<<<<<< HEAD
         <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MMCM_CLKOUT0_DIVIDE_F" spirit:order="308">99.000</spirit:value>
+=======
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MMCM_CLKOUT0_DIVIDE_F" spirit:order="308">90.000</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="INTEGER">
         <spirit:name>C_MMCM_CLKOUT1_DIVIDE</spirit:name>
@@ -4300,7 +4384,11 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLKOUT2_REQUESTED_OUT_FREQ</spirit:name>
+<<<<<<< HEAD
       <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT2_REQUESTED_OUT_FREQ" spirit:order="65" spirit:configGroups="0 NoDisplay">330.000</spirit:value>
+=======
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT2_REQUESTED_OUT_FREQ" spirit:order="65" spirit:configGroups="0 NoDisplay">300.000</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLKOUT2_REQUESTED_PHASE</spirit:name>
@@ -4544,7 +4632,11 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MMCM_CLKFBOUT_MULT_F</spirit:name>
+<<<<<<< HEAD
       <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.MMCM_CLKFBOUT_MULT_F" spirit:order="126" spirit:configGroups="0 NoDisplay">24.750</spirit:value>
+=======
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.MMCM_CLKFBOUT_MULT_F" spirit:order="126" spirit:configGroups="0 NoDisplay">4.500</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MMCM_CLKFBOUT_PHASE</spirit:name>
@@ -4588,7 +4680,11 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MMCM_CLKOUT0_DIVIDE_F</spirit:name>
+<<<<<<< HEAD
       <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.MMCM_CLKOUT0_DIVIDE_F" spirit:order="137" spirit:configGroups="0 NoDisplay">99.000</spirit:value>
+=======
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.MMCM_CLKOUT0_DIVIDE_F" spirit:order="137" spirit:configGroups="0 NoDisplay">90.000</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MMCM_CLKOUT0_DUTY_CYCLE</spirit:name>
@@ -4899,22 +4995,38 @@
     <spirit:parameter>
       <spirit:name>CLKOUT1_JITTER</spirit:name>
       <spirit:displayName>Clkout1 Jitter</spirit:displayName>
+<<<<<<< HEAD
       <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT1_JITTER" spirit:order="1000">269.808</spirit:value>
+=======
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT1_JITTER" spirit:order="1000">175.839</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLKOUT1_PHASE_ERROR</spirit:name>
       <spirit:displayName>Clkout1 Phase</spirit:displayName>
+<<<<<<< HEAD
       <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT1_PHASE_ERROR" spirit:order="1001">190.431</spirit:value>
+=======
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT1_PHASE_ERROR" spirit:order="1001">91.235</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLKOUT2_JITTER</spirit:name>
       <spirit:displayName>Clkout2 Jitter</spirit:displayName>
+<<<<<<< HEAD
       <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT2_JITTER" spirit:order="1002">138.380</spirit:value>
+=======
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT2_JITTER" spirit:order="1002">89.301</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLKOUT2_PHASE_ERROR</spirit:name>
       <spirit:displayName>Clkout2 Phase</spirit:displayName>
+<<<<<<< HEAD
       <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT2_PHASE_ERROR" spirit:order="1003">190.431</spirit:value>
+=======
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT2_PHASE_ERROR" spirit:order="1003">91.235</spirit:value>
+>>>>>>> 23954dda2e9a389a287a0563da8d490424e0ee4c
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLKOUT3_JITTER</spirit:name>

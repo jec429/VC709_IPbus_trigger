@@ -113,7 +113,7 @@ module verilog_trigger_top_test1;
         // Input from a file
 	// fdi = $fopen("/home/Margaret/MargaretVC709/CombinedVC709/VC709_IPbus_trigger/project_2/data_in.dat","r");
 
-	fdi = $fopen("/home/Jorge/Documents/work/VC709_IPbus_trigger/project_2/data_in2.dat","r");
+        fdi = $fopen("/home/Margaret/MargaretVC709/CombinedVC709/VC709_IPbus_trigger/project_2/data_in2.dat","r");
         fdo = $fopen("/mnt/Ddrive/GLIB Firmware/python_scripts/stubs_out.dat","w"); 
         fdo2 = $fopen("/mnt/Ddrive/GLIB Firmware/python_scripts/data_out.dat","w"); 
         fdo3 = $fopen("/mnt/Ddrive/GLIB Firmware/python_scripts/proj_out.dat","w"); 
@@ -144,13 +144,13 @@ module verilog_trigger_top_test1;
         end       
         $fclose(fdo);             
         $fclose(fdi);
-        /*
-        #2  ipb_addr = 32'h59000000;
-            ipb_wdata= 32'hbabababa; ipb_write = 1'b1;
-        #4  ipb_strobe = 1'b1;
-            while (ipb_ack == 1'b0) begin #4; end
-        #2  ipb_strobe=1'b0; ipb_write=1'b0;
-        */
+        
+//        #2  ipb_addr = 32'h59000000;
+//            ipb_wdata= 32'hbabababa; ipb_write = 1'b1;
+//        #4  ipb_strobe = 1'b1;
+//            while (ipb_ack == 1'b0) begin #4; end
+//        #2  ipb_strobe=1'b0; ipb_write=1'b0;
+        
         //////////////////////////////////////////////////////////////////////////////
 		
         #10	en_proc = 1'b1;

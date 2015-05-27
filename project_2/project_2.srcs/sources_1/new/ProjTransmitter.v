@@ -107,18 +107,18 @@ module ProjTransceiver(
     output [53:0] output_L5L6_2,
     output [53:0] output_L5L6_3,
     output [53:0] output_L5L6_4,
-    output valid_L1L2_1,
-    output valid_L1L2_2,
-    output valid_L1L2_3,
-    output valid_L1L2_4,
-    output valid_L3L4_1,
-    output valid_L3L4_2,
-    output valid_L3L4_3,
-    output valid_L3L4_4,
-    output valid_L5L6_1,
-    output valid_L5L6_2,
-    output valid_L5L6_3,
-    output valid_L5L6_4
+    output reg valid_L1L2_1,
+    output reg valid_L1L2_2,
+    output reg valid_L1L2_3,
+    output reg valid_L1L2_4,
+    output reg valid_L3L4_1,
+    output reg valid_L3L4_2,
+    output reg valid_L3L4_3,
+    output reg valid_L3L4_4,
+    output reg valid_L5L6_1,
+    output reg valid_L5L6_2,
+    output reg valid_L5L6_3,
+    output reg valid_L5L6_4
     
     );
 
@@ -130,11 +130,15 @@ module ProjTransceiver(
     wire valid;
     reg valid_dly;
     wire [47:0] mem_dat_stream; //priority encoded data stream from the 12 memories
-    reg [47:0] mem_dat_stream_dly;
+    reg [47:0] mem_dat_stream_dly1;
+    reg [47:0] mem_dat_stream_dly2;
     wire [47:0] data_output;    //same memory stream but now coming from the FIFO
     
+    wire valid_L1L2_1_pre, valid_L1L2_2_pre, valid_L1L2_3_pre, valid_L1L2_4_pre, 
+         valid_L3L4_1_pre, valid_L3L4_2_pre, valid_L3L4_3_pre, valid_L3L4_4_pre, 
+         valid_L5L6_1_pre, valid_L5L6_2_pre, valid_L5L6_3_pre, valid_L5L6_4_pre; 
+    
     wire [3:0] output_BX;       //output BX from the returning residuals
-    wire sent_BX;
     
         // FIFO internal outputs
         reg fifo_rst;                // reset fifo after each new_event
@@ -149,52 +153,51 @@ module ProjTransceiver(
         reg fifo_rst_dly1;
         reg fifo_rst_dly2;
    
-    reg startdly1, startdly2, startdly3;
-    always @ (posedge clk) begin            //delay start to synch with Jorge's code
+    reg startdly1, startdly2, startdly3, startdly4;
+    
+    always @ (posedge clk) begin 
+        // delay start to synch with Jorge's code
         startdly1 <= start;
         startdly2 <= startdly1;
         startdly3 <= startdly2;
-    end 
-     
-    reg [5:0] num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num12;
-    always @ (posedge clk) begin
-        num1 <= number_in1;
-        num2 <= number_in2;
-        num3 <= number_in3;
-        num4 <= number_in4;
-        num5 <= number_in5;
-        num6 <= number_in6;
-        num7 <= number_in7;
-        num8 <= number_in8;
-        num9 <= number_in9;
-        num10 <= number_in10;
-        num11 <= number_in11;
-        num12 <= number_in12;
+        startdly4 <= startdly3;
+        
+        // delay to synch output data and valid signals
+        valid_L1L2_1 <= valid_L1L2_1_pre;
+        valid_L1L2_2 <= valid_L1L2_2_pre;
+        valid_L1L2_3 <= valid_L1L2_3_pre;
+        valid_L1L2_4 <= valid_L1L2_4_pre;
+        valid_L3L4_1 <= valid_L3L4_1_pre;
+        valid_L3L4_2 <= valid_L3L4_2_pre;
+        valid_L3L4_3 <= valid_L3L4_3_pre;
+        valid_L3L4_4 <= valid_L3L4_4_pre;
+        valid_L5L6_1 <= valid_L5L6_1_pre;
+        valid_L5L6_2 <= valid_L5L6_2_pre;
+        valid_L5L6_3 <= valid_L5L6_3_pre;
+        valid_L5L6_4 <= valid_L5L6_4_pre;
     end
-     
-     
      
     mem_readout_top_2 send_proj(
             .clk(clk),                  // main clock
-            .reset(startdly3),              // synchronously negated active-hi reset
+            .reset(startdly4),              // synchronously negated active-hi reset
             .BX(BX),                    // BX number
             .clk_cnt(clk_cnt),          // clock cylces gone by in BX
             .BX_pipe(BX_pipe),
             .first_clk(first_clk),
             .not_first_clk(not_first_clk),
             
-            .number_in1(num1),          // starting number of items for this memory
-            .number_in2(num2),          // starting number of items for this memory
-            .number_in3(num3),          // starting number of items for this memory
-            .number_in4(num4),          // starting number of items for this memory
-            .number_in5(num5),          // starting number of items for this memory
-            .number_in6(num6),          // starting number of items for this memory
-            .number_in7(num7),          // starting number of items for this memory
-            .number_in8(num8),          // starting number of items for this memory
-            .number_in9(num9),          // starting number of items for this memory
-            .number_in10(num10),          // starting number of items for this memory
-            .number_in11(num11),          // starting number of items for this memory
-            .number_in12(num12),          // starting number of items for this memory
+            .number_in1(number_in1),          // starting number of items for this memory
+            .number_in2(number_in2),          // starting number of items for this memory
+            .number_in3(number_in3),          // starting number of items for this memory
+            .number_in4(number_in4),          // starting number of items for this memory
+            .number_in5(number_in5),          // starting number of items for this memory
+            .number_in6(number_in6),          // starting number of items for this memory
+            .number_in7(number_in7),          // starting number of items for this memory
+            .number_in8(number_in8),          // starting number of items for this memory
+            .number_in9(number_in9),          // starting number of items for this memory
+            .number_in10(number_in10),        // starting number of items for this memory
+            .number_in11(number_in11),        // starting number of items for this memory
+            .number_in12(number_in12),        // starting number of items for this memory
             
             .input_L1L2_1(input_L1L2_1[43:0]),     
             .input_L1L2_2(input_L1L2_2[43:0]),     
@@ -228,9 +231,8 @@ module ProjTransceiver(
             .none(done_sending_proj)                 // no more items
         );
  
-
+        reg send_BX_dly;
         always @ (posedge clk) begin
-            //if (first_clk) FIFO_wr_en <= 1'b0;
             fifo_rst1 <= reset;
             fifo_rst2 <= fifo_rst1;
             fifo_rst3 <= fifo_rst2;
@@ -239,91 +241,73 @@ module ProjTransceiver(
             fifo_rst <= ( reset || fifo_rst1 || fifo_rst2 || fifo_rst3 || fifo_rst4 || fifo_rst5 );
             fifo_rst_dly1 <= fifo_rst;
             fifo_rst_dly2 <= fifo_rst_dly1;
-            /*valid_dly <= valid;
-            //FIFO_wr_en <= (valid_dly || send_BX);        //delay on the valid signal because data is off by one clock tick
-            if (!first_clk) FIFO_wr_en <= (valid_dly || send_BX);        //delay on the valid signal because data is off by one clock tick*/
             FIFO_rd_en <= (!fifo_rst && !fifo_rst_dly1 && !fifo_rst_dly2);
-            mem_dat_stream_dly <= mem_dat_stream;
-            if (!first_clk) FIFO_wr_en <= (valid || send_BX);
-           /* case (FIFO_wr_en) 
-                1: output_L1L2_1 <= mem_dat_stream_dly;
-                0: output_L1L2_1 <= 54'h0000000000000;
-            default output_L1L2_1 <= 54'h0000000000000;
-            endcase*/
 
-            
+            send_BX_dly <= send_BX;                     // introduce delay for send_BX to create a strobe to send the BX info        
+            valid_dly <= valid;                         // hold valid to synch with the send_BX delay
+            mem_dat_stream_dly1 <= mem_dat_stream;      // delay for the data_stream to synch with the valid signals above
+            mem_dat_stream_dly2 <= mem_dat_stream_dly1; 
+                        
+            if (!first_clk) begin
+                if (valid_dly) FIFO_wr_en <= 1'b1;
+                else if( send_BX_dly==1'b1 && (send_BX_dly != send_BX) ) FIFO_wr_en <= 1'b1;
+                else FIFO_wr_en <= 1'b0;
+            end
+            //FIFO_wr_en <= (valid_dly || send_BX);
         end
 
         
         /////////////////////////////////////////////////////////////////////
         // send the mem_dat_stream to a single-clock FIFO
-        // NOT WORKING JEC429
-        
-//       fifo_projection_out fifo(
-//            .rst(fifo_rst),                             // 1 bit in data reset
-//            .clk(clk),                                  // 1 bit read and write clock
-//            .din(mem_dat_stream_dly[47:0]),                   // 48 bit in data into FIFO
-//            .wr_en(FIFO_wr_en),                         // 1 bit in write enable
-//            .rd_en(FIFO_rd_en),                         // 1 bit in read enable
-//            .dout(data_output),                         // 48 bit out data out of FIFO
-//            .full(FIFO_FULL),                           // 1 bit out FIFO full signal
-//            .empty(FIFO_EMPTY)                          // 1 bit out FIFO empty signal
-//          );
-
-        
-   
-        /* always @ (posedge clk) begin
-            if (FIFO_wr_en) output_L1L2_1 <= {6'hFF,mem_dat_stream_dly};
-            else            output_L1L2_1 <= {54'h00000000000000};
-        end */
-   
     
-   /* always @ (posedge clk) begin
-         if ( first_clk ) begin
-            read_add
-         end
-         else begin
-         end
-    end */
+       fifo_projection_out fifo(
+            .rst(fifo_rst),                     // input wire rst
+            .wr_clk(clk),                       // input wire wr_clk
+            .rd_clk(clk),                       // input wire rd_clk
+            .din(mem_dat_stream_dly2[47:0]),    // input wire [47 : 0] din
+            .wr_en(FIFO_wr_en),                 // input wire wr_en
+            .rd_en(FIFO_rd_en),                 // input wire rd_en
+            .dout(data_output),                 // output wire [47 : 0] dout
+            .full(FIFO_FULL),                   // output wire full
+            .empty(FIFO_EMPTY)                  // output wire empty
+        );
     
+        mem_readin_top get_resid(
+            .clk(clk),
+            .reset(fifo_rst5),
+            .data_residuals(data_output[47:0]),       //with FIFO: data_output without FIFO: mem_dat_stream_dly2
+            .datanull(FIFO_EMPTY),               //with FIFO: FIFO_EMPTY  without FIFO: !FIFO_wr_en  
+
+            .output_BX(output_BX),
+            .send_BX(BX_sent),
     
-//    mem_readin_top get_resid(
-//        .clk(clk),
-//        .reset(fifo_rst5),
-//        .data_residuals(data_output),
-//        .datanull(FIFO_EMPTY),
+            .output_L1L2_1(output_L1L2_1), //returning residuals for this memory
+            .output_L1L2_2(output_L1L2_2), //returning residuals for this memory
+            .output_L1L2_3(output_L1L2_3), //returning residuals for this memory
+            .output_L1L2_4(output_L1L2_4), //returning residuals for this memory
+            .output_L3L4_1(output_L3L4_1), //returning residuals for this memory
+            .output_L3L4_2(output_L3L4_2), //returning residuals for this memory
+            .output_L3L4_3(output_L3L4_3), //returning residuals for this memory
+            .output_L3L4_4(output_L3L4_4), //returning residuals for this memory
+            .output_L5L6_1(output_L5L6_1), //returning residuals for this memory        
+            .output_L5L6_2(output_L5L6_2), //returning residuals for this memory  
+            .output_L5L6_3(output_L5L6_3), //returning residuals for this memory  
+            .output_L5L6_4(output_L5L6_4), //returning residuals for this memory 
+    
+            .wr_en_mem00(valid_L1L2_1_pre), //valid signal for writing to memory
+            .wr_en_mem01(valid_L1L2_2_pre), //valid signal for writing to memory
+            .wr_en_mem02(valid_L1L2_3_pre), //valid signal for writing to memory
+            .wr_en_mem03(valid_L1L2_4_pre), //valid signal for writing to memory
+            .wr_en_mem04(valid_L3L4_1_pre), //valid signal for writing to memory
+            .wr_en_mem05(valid_L3L4_2_pre), //valid signal for writing to memory
+            .wr_en_mem06(valid_L3L4_3_pre), //valid signal for writing to memory
+            .wr_en_mem07(valid_L3L4_4_pre), //valid signal for writing to memory
+            .wr_en_mem08(valid_L5L6_1_pre), //valid signal for writing to memory
+            .wr_en_mem09(valid_L5L6_2_pre), //valid signal for writing to memory
+            .wr_en_mem10(valid_L5L6_3_pre), //valid signal for writing to memory
+            .wr_en_mem11(valid_L5L6_4_pre)  //valid signal for writing to memory  
+        );
 
-//        .output_BX(output_BX),
-//        .send_BX(BX_sent),
-
-//        .output_L1L2_1(output_L1L2_1), //returning residuals for this memory
-//        .output_L1L2_2(output_L1L2_2), //returning residuals for this memory
-//        .output_L1L2_3(output_L1L2_3), //returning residuals for this memory
-//        .output_L1L2_4(output_L1L2_4), //returning residuals for this memory
-//        .output_L3L4_1(output_L3L4_1), //returning residuals for this memory
-//        .output_L3L4_2(output_L3L4_2), //returning residuals for this memory
-//        .output_L3L4_3(output_L3L4_3), //returning residuals for this memory
-//        .output_L3L4_4(output_L3L4_4), //returning residuals for this memory
-//        .output_L5L6_1(output_L5L6_1), //returning residuals for this memory        
-//        .output_L5L6_2(output_L5L6_2), //returning residuals for this memory  
-//        .output_L5L6_3(output_L5L6_3), //returning residuals for this memory  
-//        .output_L5L6_4(output_L5L6_4), //returning residuals for this memory 
-
-//        .wr_en_mem00(valid_L1L2_1), //valid signal for writing to memory
-//        .wr_en_mem01(valid_L1L2_2), //valid signal for writing to memory
-//        .wr_en_mem02(valid_L1L2_3), //valid signal for writing to memory
-//        .wr_en_mem03(valid_L1L2_4), //valid signal for writing to memory
-//        .wr_en_mem04(valid_L3L4_1), //valid signal for writing to memory
-//        .wr_en_mem05(valid_L3L4_2), //valid signal for writing to memory
-//        .wr_en_mem06(valid_L3L4_3), //valid signal for writing to memory
-//        .wr_en_mem07(valid_L3L4_4), //valid signal for writing to memory
-//        .wr_en_mem08(valid_L5L6_1), //valid signal for writing to memory
-//        .wr_en_mem09(valid_L5L6_2), //valid signal for writing to memory
-//        .wr_en_mem10(valid_L5L6_3), //valid signal for writing to memory
-//        .wr_en_mem11(valid_L5L6_4) //valid signal for writing to memory
-        
-        
-//    );
     
     
     
