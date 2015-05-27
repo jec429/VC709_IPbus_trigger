@@ -51,7 +51,8 @@ module MatchEngine(
     output reg [5:0] read_add2,
     input [12:0] vmprojin,
     
-    output reg [11:0] matchout
+    output reg [11:0] matchout,
+    output reg valid_data
     );
     
     // no IPbus here yet
@@ -68,13 +69,7 @@ module MatchEngine(
     end
     
     always @(posedge clk) begin
-        if(en_proc)
-           clk_cnt <= clk_cnt + 1'b1;
-        else begin
-           clk_cnt <= 7'b0;
-           BX_pipe <= 3'b111;
-        end
-        if(clk_cnt == 7'b1) begin
+        if(start) begin
            BX_pipe <= BX_pipe + 1'b1;
            first_clk_pipe <= 1'b1;
         end
@@ -88,29 +83,56 @@ module MatchEngine(
         read_add2 = 6'h3f;
     end
     
+    assign done = start;
+    
+    reg pre_valid_data;
+    reg [4:0] behold;
+    reg [12:0] vmprojin_hold1;
+    reg [12:0] vmprojin_hold2;
+    
     always @(posedge clk) begin
+        behold[0] <= pre_valid_data;
+        behold[4:1] <= behold[3:0];
+        vmprojin_hold1 <= vmprojin;
+        vmprojin_hold2 <= vmprojin_hold1;
+        
         if(first_clk_pipe) begin
-            read_add1 <= 6'h3f;
-            read_add2 <= 6'h3f;
+            read_add1 <= 6'h3f; 
+            read_add2 <= 6'h0; // if number_in2 > 0?
         end
         else begin
-            if(read_add1 + 1'b1 < number_in1)
+            if(read_add1 + 1'b1 < number_in1) begin
                 read_add1 <= read_add1 + 1'b1;
-            else
+                pre_valid_data <= 1'b1;
+            end
+            else begin
                 read_add1 <= read_add1;
-            if(read_add2 + 1'b1 < number_in2)
-                read_add2 <= read_add2 + 1'b1;
-            else
-                read_add2 <= read_add2;
+                if(read_add1 + 1'b1 == number_in1 && read_add2 + 1'b1 < number_in2) begin
+                    read_add2 <= read_add2 + 1'b1;
+                    pre_valid_data <= 1'b1;
+                    read_add1 <= 6'h0;
+                end
+                else begin
+                    read_add2 <= read_add2;
+                    pre_valid_data <= 1'b0;
+                end
+            end
+            //if(read_add2 + 1'b1 < number_in2)
+                //read_add2 <= read_add2 + 1'b1;
+            //else
+                //read_add2 <= read_add2;
         end
     end
     
     ///////////////////////////////////////////////////////////////////////////
     
     always @(posedge clk)
-        if(vmprojin > 0 & vmstubin > 0)
-            matchout <= {vmprojin[12:7],vmstubin[14:9]};
-        else
+        if(vmprojin_hold2 > 0 & vmstubin > 0) begin
+            matchout <= {vmprojin_hold2[12:7],vmstubin[14:9]};
+            valid_data <= behold[4];
+        end
+        else begin
             matchout <= 12'hfff;
-    
+            valid_data <= 1'b0;
+        end
 endmodule

@@ -69,14 +69,10 @@ module VMProjections(
        BX_pipe = 3'b111;
     end
     
+    assign done = start;
+    
     always @(posedge clk) begin
-       if(en_proc)
-           clk_cnt <= clk_cnt + 1'b1;
-       else begin
-           clk_cnt <= 7'b0;
-           BX_pipe <= 3'b111;
-       end
-       if(clk_cnt == 7'b1) begin
+       if(start) begin
            BX_pipe <= BX_pipe + 1'b1;
            first_clk_pipe <= 1'b1;
        end
@@ -92,7 +88,7 @@ module VMProjections(
             number_out <= wr_add + 1'b1;
         end
         else begin
-            if(data_in != 0 & data_in != data_in_dly) begin
+            if(enable) begin
                 wr_add <= wr_add + 1'b1;
                 wr_en <= 1'b1;
             end
@@ -111,7 +107,7 @@ module VMProjections(
             .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) VMProjection (
             .addra({BX_pipe-3'b100,wr_add}),    // Write address bus, width determined from RAM_DEPTH
-            .addrb({BX_pipe_dly-3'b101,read_add}),    // Read address bus, width determined from RAM_DEPTH
+            .addrb({BX_pipe-3'b101,read_add}),    // Read address bus, width determined from RAM_DEPTH
             .dina(data_in_dly),      // RAM input data, width determined from RAM_WIDTH
             .clka(clk),      // Write clock
             .clkb(clk),      // Read clock

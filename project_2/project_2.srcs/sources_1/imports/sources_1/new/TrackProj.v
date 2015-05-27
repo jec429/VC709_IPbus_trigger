@@ -145,7 +145,7 @@ module TrackletProjections(
                                                    
                                                    
     pipe_delay #(.STAGES(delay), .WIDTH(6)) NUM_OUT(.pipe_in(start_proj), .pipe_out(), .clk(clk),
-                                                   .val_in(pipe_number_out), .val_out(number_out));
+                                                   .val_in(pre_number_out), .val_out(number_out));
 
     Memory #(
             .RAM_WIDTH(54),                       // Specify RAM data width
@@ -154,7 +154,7 @@ module TrackletProjections(
             .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) Projection (
             .addra({BX_pipe-2'b11,wr_add}),    // Write address bus, width determined from RAM_DEPTH
-            .addrb({rd_BX_pipe - 3'b100 - NHOLD ,read_add}),    // Read address bus, width determined from RAM_DEPTH
+            .addrb({rd_BX_pipe - 3'b100 ,read_add}),    // Read address bus, width determined from RAM_DEPTH
             .dina(data_in_dly),      // RAM input data, width determined from RAM_WIDTH
             .clka(clk),      // Write clock
             .clkb(clk),      // Read clock

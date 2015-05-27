@@ -45,6 +45,7 @@ module CandidateMatch(
     output done,
     
     input [11:0] data_in,
+    input enable,
     
     output reg [5:0] number_out,
     input [5:0] read_add,
@@ -69,13 +70,7 @@ module CandidateMatch(
     end
     
     always @(posedge clk) begin
-        if(en_proc)
-            clk_cnt <= clk_cnt + 1'b1;
-        else begin
-            clk_cnt <= 7'b0;
-            BX_pipe <= 3'b111;
-        end
-        if(clk_cnt == 7'b1) begin
+        if(start) begin
             BX_pipe <= BX_pipe + 1'b1;
             first_clk_pipe <= 1'b1;
         end
@@ -95,7 +90,7 @@ module CandidateMatch(
         else begin
             //number_out <= 0;
             data_in_dly <= data_in;
-            if(data_in != 12'hfff & data_in != data_in_dly) begin
+            if(enable) begin
                 wr_add <= wr_add + 1'b1;
                 wr_en <= 1'b1;
             end
@@ -113,8 +108,8 @@ module CandidateMatch(
             .RAM_PERFORMANCE("HIGH_PERFORMANCE"), // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
             .INIT_FILE("/mnt/Ddrive/GLIB Firmware/branches/jectest/prj/viv_1/project_2/full.txt")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
           ) Match (
-            .addra({BX_pipe-3'b011,wr_add}),    // Write address bus, width determined from RAM_DEPTH
-            .addrb({BX_pipe_dly-3'b100,read_add}),    // Read address bus, width determined from RAM_DEPTH
+            .addra({BX_pipe-3'b100,wr_add}),    // Write address bus, width determined from RAM_DEPTH
+            .addrb({BX_pipe-3'b101,read_add}),    // Read address bus, width determined from RAM_DEPTH
             .dina(data_in_dly),      // RAM input data, width determined from RAM_WIDTH
             .clka(clk),      // Write clock
             .clkb(clk),      // Read clock

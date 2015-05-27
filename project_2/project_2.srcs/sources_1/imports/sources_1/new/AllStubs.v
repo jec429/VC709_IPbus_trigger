@@ -137,7 +137,7 @@ module AllStubs(
         .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
       ) AllStub_MC (
         .addra({BX_pipe-1'b1,wr_add}),    // Write address bus, width determined from RAM_DEPTH
-        .addrb({BX_hold_2-3'b101,read_add_MC}),    // Read address bus, width determined from RAM_DEPTH
+        .addrb({BX_hold_2-3'b110,read_add_MC}),    // Read address bus, width determined from RAM_DEPTH
         .dina(data_in_dly),      // RAM input data, width determined from RAM_WIDTH
         .clka(clk),      // Write clock
         .clkb(clk),      // Read clock

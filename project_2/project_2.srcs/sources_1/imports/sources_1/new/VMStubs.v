@@ -50,7 +50,7 @@ module VMStubs(
     output reg [5:0] number_out,
     input [5:0] read_add,
     output reg [17:0] data_out,
-    output reg [5:0] number_out_ME,
+    output [5:0] number_out_ME,
     input [5:0] read_add_ME,
     output reg [17:0] data_out_ME
     );
@@ -105,7 +105,7 @@ module VMStubs(
             number_hold1 <= number_hold0;
             number_hold2 <= number_hold1;
             number_hold3 <= number_hold2;
-            number_out_ME <= number_hold1;
+            //number_out_ME <= number_hold1;
         end
         else begin
             if(enable) begin
@@ -140,6 +140,14 @@ module VMStubs(
         .regceb(1'b1),  // Output register enable
         .doutb(pre_data_out)     // RAM output data, width determined from RAM_WIDTH
         );
+        
+    wire [2:0] rd_BX;
+    pipe_delay #(.STAGES(101), .WIDTH(3)) BX_READ(.pipe_in(start), .pipe_out(), .clk(clk),
+                                                           .val_in(BX_pipe), .val_out(rd_BX));
+        
+   pipe_delay #(.STAGES(101), .WIDTH(6)) NUM_OUT(.pipe_in(start), .pipe_out(), .clk(clk),
+                                                           .val_in(number_hold2), .val_out(number_out_ME));
+        
     Memory #(
         .RAM_WIDTH(18),                       // Specify RAM data width
         .RAM_DEPTH(512),                     // Specify RAM depth (number of entries)
@@ -147,7 +155,7 @@ module VMStubs(
         .INIT_FILE("")                        // Specify name/location of RAM initialization file if using one (leave blank if not)
       ) VMStub_ME (
         .addra({BX_pipe-3'b001,wr_add}),    // Write address bus, width determined from RAM_DEPTH
-        .addrb({BX_pipe-3'b101,read_add_ME}),    // Read address bus, width determined from RAM_DEPTH
+        .addrb({rd_BX-3'b101,read_add_ME}),    // Read address bus, width determined from RAM_DEPTH
         .dina(data_in_dly),      // RAM input data, width determined from RAM_WIDTH
         .clka(clk),      // Write clock
         .clkb(clk),      // Read clock

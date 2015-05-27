@@ -42,7 +42,7 @@ module MatchCalculator(
     input wire not_first_clk,
     
     input start,
-    output done,
+    output reg done,
     
     input [5:0] number_in1,
     input [5:0] number_in2,
@@ -52,14 +52,14 @@ module MatchCalculator(
     input [5:0] number_in6,
     input [5:0] number_in7,
     input [5:0] number_in8,
-    output reg [5:0] read_add1,
-    output reg [5:0] read_add2,
-    output reg [5:0] read_add3,
-    output reg [5:0] read_add4,
-    output reg [5:0] read_add5,
-    output reg [5:0] read_add6,
-    output reg [5:0] read_add7,
-    output reg [5:0] read_add8,
+    output [5:0] read_add1,
+    output [5:0] read_add2,
+    output [5:0] read_add3,
+    output [5:0] read_add4,
+    output [5:0] read_add5,
+    output [5:0] read_add6,
+    output [5:0] read_add7,
+    output [5:0] read_add8,
     input [11:0] match1in,
     input [11:0] match2in,
     input [11:0] match3in,
@@ -74,7 +74,8 @@ module MatchCalculator(
     input [35:0] allstubin,
     input [53:0] allprojin,
     
-    output [35:0] projout
+    output [35:0] projout,
+    output reg valid_match
     );
 
     // no IPbus here yet
@@ -94,20 +95,14 @@ module MatchCalculator(
     end
     
     always @(posedge clk) begin
-        if(en_proc)
-           clk_cnt <= clk_cnt + 1'b1;
-        else begin
-           clk_cnt <= 7'b0;
-           BX_pipe <= 3'b111;
-        end
-        if(clk_cnt == 7'b1) begin
+        if(start) begin
            BX_pipe <= BX_pipe + 1'b1;
            first_clk_pipe <= 1'b1;
         end
         else begin
            first_clk_pipe <= 1'b0;
         end
-        
+        first_clk_dly <= first_clk_pipe;
     end
     ///////////////////////////////////////////////////
     parameter PHI_BITS 	= 14;
@@ -120,132 +115,79 @@ module MatchCalculator(
     parameter layer     = 1'b1;
         
     initial begin
-        read_add1 = 6'h3f;
-        read_add2 = 6'h3f;
-        read_add3 = 6'h3f;
-        read_add4 = 6'h3f;
-        read_add5 = 6'h3f;
-        read_add6 = 6'h3f;
-        read_add7 = 6'h3f;
-        read_add8 = 6'h3f;
         read_add_allstub = 6'h3f;
         read_add_allproj = 6'h3f;
     end
     
+    wire [11:0] matchpair;
+    
+    mem_readout_top StubPairs(
+      .clk(clk),
+      .new_event(first_clk_dly),
+      
+      .items00(number_in1),
+      .addr00(read_add1),
+      .mem_dat00(match1in),
+      .items01(number_in2),
+      .addr01(read_add2),
+      .mem_dat01(match2in),
+      .items02(number_in3),
+      .addr02(read_add3),
+      .mem_dat02(match3in),
+      .items03(number_in4),
+      .addr03(read_add4),
+      .mem_dat03(match4in),
+      .items04(number_in5),
+      .addr04(read_add5),
+      .mem_dat04(match5in),
+      .items05(number_in6),
+      .addr05(read_add6),
+      .mem_dat05(match6in),
+      .items06(number_in7),
+      .addr06(read_add7),
+      .mem_dat06(match7in),
+      .items07(number_in8),
+      .addr07(read_add8),
+      .mem_dat07(match8in),
+      .items08(6'b0),
+      .items09(6'b0),
+      .items10(6'b0),
+      .items11(6'b0),
+      .items12(6'b0),
+      .items13(6'b0),
+      .items14(6'b0),
+      .items15(6'b0),
+      .items16(6'b0),
+      .items17(6'b0),
+      
+      .mem_dat_stream(matchpair),
+      .valid(pre_valid_match),
+      .none()
+      );
+      
+    parameter [7:0] n_hold = 8'd14;  
+    reg [n_hold:0] hold;
     always @(posedge clk) begin
-        if(first_clk_pipe) begin
-            read_add1 <= 6'h3f;
-            read_add2 <= 6'h3f;
-            read_add3 <= 6'h3f;
-            read_add4 <= 6'h3f;
-            read_add5 <= 6'h3f;
-            read_add6 <= 6'h3f;
-            read_add7 <= 6'h3f;
-            read_add8 <= 6'h3f;
-            //read_add_allstub <= 6'h3f;
-            //read_add_allproj <= 6'h3f;
-        end
-        else begin    
-            if(read_add1 + 1'b1 < number_in1)
-                read_add1 <= read_add1 + 1'b1;
-            else begin 
-                read_add1 <= read_add1;
-                if(read_add2 + 1'b1 < number_in2)
-                    read_add2 <= read_add2 + 1'b1;
-                else begin
-                    read_add2 <= read_add2;
-                    if(read_add3 + 1'b1 < number_in3)
-                        read_add3 <= read_add3 + 1'b1;
-                    else begin
-                        read_add3 <= read_add3;
-                        if(read_add4 + 1'b1 < number_in4)
-                            read_add4 <= read_add4 + 1'b1;
-                        else begin
-                            read_add4 <= read_add4;
-                            if(read_add5 + 1'b1 < number_in5)
-                                read_add5 <= read_add5 + 1'b1;
-                            else begin
-                                read_add5 <= read_add5;
-                                if(read_add6 + 1'b1 < number_in6)
-                                    read_add6 <= read_add6 + 1'b1;
-                                else begin
-                                    read_add6 <= read_add6;
-                                    if(read_add7 + 1'b1 < number_in7)
-                                        read_add7 <= read_add7 + 1'b1;
-                                    else begin
-                                        read_add7 <= read_add7;
-                                        if(read_add8 + 1'b1 < number_in8)
-                                            read_add8 <= read_add8 + 1'b1;
-                                        else
-                                            read_add8 <= read_add8;
-                                    end
-                                end
-                            end
-                        end
-                    end
-                end
-            end
-        end
-        first_clk_dly <= first_clk_pipe;
-        first_clk_dly2 <= first_clk_dly;
-        if(first_clk_dly) begin
-            read_add_allstub <= 6'h3f;
-            read_add_allproj <= 6'h3f;
-        end
-        else begin                
-            if(match8in < 12'hfff) begin
-                read_add_allproj <= match8in[11:6];
-                read_add_allstub <= match8in[5:0];
-            end
-            else begin 
-                if(match7in < 12'hfff) begin
-                    read_add_allproj <= match7in[11:6];
-                    read_add_allstub <= match7in[5:0];
-                end
-                else begin 
-                    if(match6in < 12'hfff) begin
-                        read_add_allproj <= match6in[11:6];
-                        read_add_allstub <= match6in[5:0];
-                    end
-                    else begin
-                        if(match5in < 12'hfff) begin
-                            read_add_allproj <= match5in[11:6];
-                            read_add_allstub <= match5in[5:0];
-                        end
-                        else begin
-                            if(match4in < 12'hfff) begin
-                                read_add_allproj <= match4in[11:6];
-                                read_add_allstub <= match4in[5:0];
-                            end
-                            else begin
-                                if(match3in < 12'hfff) begin
-                                    read_add_allproj <= match3in[11:6];
-                                    read_add_allstub <= match3in[5:0];
-                                end
-                                else begin
-                                    if(match2in < 12'hfff) begin
-                                        read_add_allproj <= match2in[11:6];
-                                        read_add_allstub <= match2in[5:0];
-                                    end
-                                    else begin
-                                        if(match1in < 12'hfff) begin
-                                            read_add_allproj <= match1in[11:6];
-                                            read_add_allstub <= match1in[5:0];
-                                        end
-                                        else begin
-                                            read_add_allproj <= 6'h3f;
-                                            read_add_allstub <= 6'h3f;
-                                        end
-                                    end
-                                end
-                            end
-                        end
-                    end
-                end
-            end
-        end
+      hold[0] <= start;
+      hold[n_hold:1] <= hold[n_hold-1:0];
+      done <= hold[n_hold];
     end
     
+    always @(posedge clk) begin
+        if(matchpair >= 0) begin
+            read_add_allproj <= matchpair[11:6];
+            read_add_allstub <= matchpair[5:0];
+        end
+    end
+
+    reg [9:0] behold; // valid tracklet data hold
+
+    always @(posedge clk) begin
+        behold[0] <= pre_valid_match;
+        behold[9:1] <= behold[8:0];
+        valid_match <= behold[9];
+    end
+
     //////////////////////////////////////////////////////////////////
     
     reg [PHI_BITS-1:0] iphi_proj_0;
@@ -369,20 +311,24 @@ module MatchCalculator(
     wire signed [12:0] iphi_res_3;
     reg [5:0] stub_index_3;
     reg [5:0] proj_index_3;
+    reg [5:0] stub_index_4;
+    reg [5:0] proj_index_4;
     
     always @(posedge clk) begin
         full_iphi_res_3     <= iphi_stub_2 - iphi_2;
         iz_res_3                 <= iz_stub_2 - iz_2;
         stub_index_3 <= stub_index_2;
         proj_index_3 <= proj_index_2;
+        stub_index_4 <= stub_index_3;
+        proj_index_4 <= proj_index_3;
     end
 
     assign iphi_res_3 = full_iphi_res_3 <<< (2'b11 & {layer,layer} );
     
     assign projout[8:0]     = iz_res_3;
     assign projout[16:9]    = iphi_res_3[7:0];
-    assign projout[25:17]   = {3'b000,stub_index_3};
-    assign projout[35:26]   = {4'b0000,proj_index_3};
+    assign projout[25:17]   = {3'b000,stub_index_4};
+    assign projout[35:26]   = {4'b0000,proj_index_4};
 
     /////////////////////////////////////////////////////////
     

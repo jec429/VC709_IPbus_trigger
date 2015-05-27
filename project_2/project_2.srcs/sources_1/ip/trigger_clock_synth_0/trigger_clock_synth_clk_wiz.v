@@ -55,8 +55,8 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// CLK_OUT1____10.000______0.000______50.0______174.660_____87.375
-// CLK_OUT2___350.000______0.000______50.0_______86.350_____87.375
+// CLK_OUT1____10.000______0.000______50.0______269.808____190.431
+// CLK_OUT2___330.000______0.000______50.0______138.380____190.431
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -113,11 +113,11 @@ module trigger_clock_synth_clk_wiz
     .CLKOUT4_CASCADE      ("FALSE"),
     .COMPENSATION         ("ZHOLD"),
     .STARTUP_WAIT         ("FALSE"),
-    .DIVCLK_DIVIDE        (1),
-    .CLKFBOUT_MULT_F      (5.250),
+    .DIVCLK_DIVIDE        (5),
+    .CLKFBOUT_MULT_F      (24.750),
     .CLKFBOUT_PHASE       (0.000),
     .CLKFBOUT_USE_FINE_PS ("FALSE"),
-    .CLKOUT0_DIVIDE_F     (105.000),
+    .CLKOUT0_DIVIDE_F     (99.000),
     .CLKOUT0_PHASE        (0.000),
     .CLKOUT0_DUTY_CYCLE   (0.500),
     .CLKOUT0_USE_FINE_PS  ("FALSE"),

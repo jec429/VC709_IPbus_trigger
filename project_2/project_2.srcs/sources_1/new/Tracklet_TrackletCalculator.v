@@ -609,7 +609,7 @@ module Tracklet_TrackletCalculator(
     wire [5:0] TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2_number;
     wire [5:0] TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2_read_add;
     wire [53:0] TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2;
-    TrackletProjections #(25,16,1) TPROJ_L1D3L2D3_L3(
+    TrackletProjections #(24,16,1) TPROJ_L1D3L2D3_L3(
     .data_in(TC_L1D3L2D3_TPROJ_L1D3L2D3_L3),
     .number_out(TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2_number),
     .read_add(TPROJ_L1D3L2D3_L3_PR_L3D3_L1L2_read_add),
@@ -635,7 +635,7 @@ module Tracklet_TrackletCalculator(
     wire [5:0] TPROJ_L1D3L2D3_L4_PR_L4D3_L1L2_number;
     wire [5:0] TPROJ_L1D3L2D3_L4_PR_L4D3_L1L2_read_add;
     wire [53:0] TPROJ_L1D3L2D3_L4_PR_L4D3_L1L2;
-    TrackletProjections #(25,16,1) TPROJ_L1D3L2D3_L4(
+    TrackletProjections #(24,16,1) TPROJ_L1D3L2D3_L4(
     .data_in(TC_L1D3L2D3_TPROJ_L1D3L2D3_L4),
     .number_out(TPROJ_L1D3L2D3_L4_PR_L4D3_L1L2_number),
     .read_add(TPROJ_L1D3L2D3_L4_PR_L4D3_L1L2_read_add),
@@ -662,7 +662,7 @@ module Tracklet_TrackletCalculator(
     wire [5:0] TPROJ_L1D3L2D3_L5_PR_L5D3_L1L2_number;
     wire [5:0] TPROJ_L1D3L2D3_L5_PR_L5D3_L1L2_read_add;
     wire [53:0] TPROJ_L1D3L2D3_L5_PR_L5D3_L1L2;
-    TrackletProjections #(25,16,1) TPROJ_L1D3L2D3_L5(
+    TrackletProjections #(24,16,1) TPROJ_L1D3L2D3_L5(
     .data_in(TC_L1D3L2D3_TPROJ_L1D3L2D3_L5),
     .number_out(TPROJ_L1D3L2D3_L5_PR_L5D3_L1L2_number),
     .read_add(TPROJ_L1D3L2D3_L5_PR_L5D3_L1L2_read_add),
@@ -689,7 +689,7 @@ module Tracklet_TrackletCalculator(
     wire [5:0] TPROJ_L1D3L2D3_L6_PR_L6D3_L1L2_number;
     wire [5:0] TPROJ_L1D3L2D3_L6_PR_L6D3_L1L2_read_add;
     wire [53:0] TPROJ_L1D3L2D3_L6_PR_L6D3_L1L2;
-    TrackletProjections #(25,16,1) TPROJ_L1D3L2D3_L6(
+    TrackletProjections #(24,16,1) TPROJ_L1D3L2D3_L6(
     .data_in(TC_L1D3L2D3_TPROJ_L1D3L2D3_L6),
     .number_out(TPROJ_L1D3L2D3_L6_PR_L6D3_L1L2_number),
     .read_add(TPROJ_L1D3L2D3_L6_PR_L6D3_L1L2_read_add),
