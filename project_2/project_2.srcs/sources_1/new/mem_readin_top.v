@@ -125,7 +125,9 @@ module mem_readin_top(
             write_addr10 <= 5'b11111;
             write_addr11 <= 5'b11111;
         end
-        else if (datanull_dly) begin //don't write out anything if reading out EMPTY from FIFO
+        else if (datanull_dly) begin //without FIFO datanull_dly; with FIFO datanull
+        // don't write out anything if reading out EMPTY from FIFO
+        // when with a FIFO use datanull_dly
             wr_en_mem00 <= 1'b0;
             wr_en_mem01 <= 1'b0;
             wr_en_mem02 <= 1'b0;

@@ -107,18 +107,18 @@ module ProjTransceiver(
     output [53:0] output_L5L6_2,
     output [53:0] output_L5L6_3,
     output [53:0] output_L5L6_4,
-    output valid_L1L2_1,
-    output valid_L1L2_2,
-    output valid_L1L2_3,
-    output valid_L1L2_4,
-    output valid_L3L4_1,
-    output valid_L3L4_2,
-    output valid_L3L4_3,
-    output valid_L3L4_4,
-    output valid_L5L6_1,
-    output valid_L5L6_2,
-    output valid_L5L6_3,
-    output valid_L5L6_4
+    output reg valid_L1L2_1,
+    output reg valid_L1L2_2,
+    output reg valid_L1L2_3,
+    output reg valid_L1L2_4,
+    output reg valid_L3L4_1,
+    output reg valid_L3L4_2,
+    output reg valid_L3L4_3,
+    output reg valid_L3L4_4,
+    output reg valid_L5L6_1,
+    output reg valid_L5L6_2,
+    output reg valid_L5L6_3,
+    output reg valid_L5L6_4
     
     );
 
@@ -133,6 +133,10 @@ module ProjTransceiver(
     reg [47:0] mem_dat_stream_dly1;
     reg [47:0] mem_dat_stream_dly2;
     wire [47:0] data_output;    //same memory stream but now coming from the FIFO
+    
+    wire valid_L1L2_1_pre, valid_L1L2_2_pre, valid_L1L2_3_pre, valid_L1L2_4_pre, 
+         valid_L3L4_1_pre, valid_L3L4_2_pre, valid_L3L4_3_pre, valid_L3L4_4_pre, 
+         valid_L5L6_1_pre, valid_L5L6_2_pre, valid_L5L6_3_pre, valid_L5L6_4_pre; 
     
     wire [3:0] output_BX;       //output BX from the returning residuals
     
@@ -151,11 +155,26 @@ module ProjTransceiver(
    
     reg startdly1, startdly2, startdly3, startdly4;
     
-    always @ (posedge clk) begin            //delay start to synch with Jorge's code
+    always @ (posedge clk) begin 
+        // delay start to synch with Jorge's code
         startdly1 <= start;
         startdly2 <= startdly1;
         startdly3 <= startdly2;
         startdly4 <= startdly3;
+        
+        // delay to synch output data and valid signals
+        valid_L1L2_1 <= valid_L1L2_1_pre;
+        valid_L1L2_2 <= valid_L1L2_2_pre;
+        valid_L1L2_3 <= valid_L1L2_3_pre;
+        valid_L1L2_4 <= valid_L1L2_4_pre;
+        valid_L3L4_1 <= valid_L3L4_1_pre;
+        valid_L3L4_2 <= valid_L3L4_2_pre;
+        valid_L3L4_3 <= valid_L3L4_3_pre;
+        valid_L3L4_4 <= valid_L3L4_4_pre;
+        valid_L5L6_1 <= valid_L5L6_1_pre;
+        valid_L5L6_2 <= valid_L5L6_2_pre;
+        valid_L5L6_3 <= valid_L5L6_3_pre;
+        valid_L5L6_4 <= valid_L5L6_4_pre;
     end
      
     mem_readout_top_2 send_proj(
@@ -252,13 +271,13 @@ module ProjTransceiver(
             .dout(data_output),                 // output wire [47 : 0] dout
             .full(FIFO_FULL),                   // output wire full
             .empty(FIFO_EMPTY)                  // output wire empty
-          );
+        );
     
         mem_readin_top get_resid(
             .clk(clk),
             .reset(fifo_rst5),
-            .data_residuals(data_output),
-            .datanull(FIFO_EMPTY),
+            .data_residuals(data_output[47:0]),       //with FIFO: data_output without FIFO: mem_dat_stream_dly2
+            .datanull(FIFO_EMPTY),               //with FIFO: FIFO_EMPTY  without FIFO: !FIFO_wr_en  
     
             .output_BX(output_BX),
             .send_BX(BX_sent),
@@ -276,18 +295,18 @@ module ProjTransceiver(
             .output_L5L6_3(output_L5L6_3), //returning residuals for this memory  
             .output_L5L6_4(output_L5L6_4), //returning residuals for this memory 
     
-            .wr_en_mem00(valid_L1L2_1), //valid signal for writing to memory
-            .wr_en_mem01(valid_L1L2_2), //valid signal for writing to memory
-            .wr_en_mem02(valid_L1L2_3), //valid signal for writing to memory
-            .wr_en_mem03(valid_L1L2_4), //valid signal for writing to memory
-            .wr_en_mem04(valid_L3L4_1), //valid signal for writing to memory
-            .wr_en_mem05(valid_L3L4_2), //valid signal for writing to memory
-            .wr_en_mem06(valid_L3L4_3), //valid signal for writing to memory
-            .wr_en_mem07(valid_L3L4_4), //valid signal for writing to memory
-            .wr_en_mem08(valid_L5L6_1), //valid signal for writing to memory
-            .wr_en_mem09(valid_L5L6_2), //valid signal for writing to memory
-            .wr_en_mem10(valid_L5L6_3), //valid signal for writing to memory
-            .wr_en_mem11(valid_L5L6_4) //valid signal for writing to memory  
+            .wr_en_mem00(valid_L1L2_1_pre), //valid signal for writing to memory
+            .wr_en_mem01(valid_L1L2_2_pre), //valid signal for writing to memory
+            .wr_en_mem02(valid_L1L2_3_pre), //valid signal for writing to memory
+            .wr_en_mem03(valid_L1L2_4_pre), //valid signal for writing to memory
+            .wr_en_mem04(valid_L3L4_1_pre), //valid signal for writing to memory
+            .wr_en_mem05(valid_L3L4_2_pre), //valid signal for writing to memory
+            .wr_en_mem06(valid_L3L4_3_pre), //valid signal for writing to memory
+            .wr_en_mem07(valid_L3L4_4_pre), //valid signal for writing to memory
+            .wr_en_mem08(valid_L5L6_1_pre), //valid signal for writing to memory
+            .wr_en_mem09(valid_L5L6_2_pre), //valid signal for writing to memory
+            .wr_en_mem10(valid_L5L6_3_pre), //valid signal for writing to memory
+            .wr_en_mem11(valid_L5L6_4_pre)  //valid signal for writing to memory  
         );
     
     

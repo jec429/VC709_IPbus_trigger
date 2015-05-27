@@ -1,7 +1,7 @@
 -- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2014.4 (lin64) Build 1071353 Tue Nov 18 16:47:07 MST 2014
--- Date        : Mon May 25 15:44:39 2015
+-- Date        : Tue May 26 10:25:52 2015
 -- Host        : mq154.lns.cornell.edu running 64-bit Scientific Linux release 6.6 (Carbon)
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/Margaret/MargaretVC709/CombinedVC709/VC709_IPbus_trigger/project_2/project_2.srcs/sources_1/ip/trigger_clock_synth_0/trigger_clock_synth_stub.vhdl

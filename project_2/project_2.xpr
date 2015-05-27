@@ -1239,9 +1239,7 @@
     </Run>
     <Run Id="fifo_projection_out_synth_1" Type="Ft3:Synth" SrcSet="fifo_projection_out" Part="xc7vx690tffg1761-2" ConstrsSet="fifo_projection_out" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fifo_projection_out_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -1368,9 +1366,7 @@
     </Run>
     <Run Id="fifo_projection_out_impl_1" Type="Ft2:EntireDesign" Part="xc7vx690tffg1761-2" ConstrsSet="fifo_projection_out" Description="Vivado Implementation Defaults" SynthRun="fifo_projection_out_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
-          <Desc>Vivado Implementation Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
